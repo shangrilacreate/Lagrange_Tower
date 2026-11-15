@@ -1,0 +1,1838 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>物語全集 第6 巻（第058〜084 階） // 天頂迷宮ラグランジュの塔 公式博物誌</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.18rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .anya-stamp {
+      border: 1px solid var(--crimson-seal);
+      background: rgba(168, 56, 56, 0.12);
+      padding: 14px 18px;
+      border-radius: 3px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #f2dada;
+    }
+    .anya-stamp-title {
+      color: #ff9999;
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 0.94rem;
+    }
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 22px 0;
+      font-size: 0.9rem;
+    }
+    .book-table th, .book-table td {
+      border: 1px solid var(--border-brass);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .book-table th {
+      background: #282018;
+      color: var(--gold-bright);
+    }
+    .book-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // OFFICIAL GUILD ARCHIVE ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔 観測年代記</h1>
+    <div class="subtitle">
+      天を突く全100階層の神代遺構。配管の蒸気で芋を蒸し、靴底の減りを気にしながら今日を生き延びる冒険者たちの群像記録と博物誌。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 総合案内所 (Index)</a>
+      <a href="chronicles.html" class="tab-btn">📖 物語本編</a>
+      <a href="observations.html" class="tab-btn">📡 自律観測ログ</a>
+      <a href="library.html" class="tab-btn">📚 迷宮内専門書庫</a>
+      <a href="roster.html" class="tab-btn">👥 人物・パーティ名鑑</a>
+      <a href="lexicon.html" class="tab-btn">🎒 アイテム・奇品辞典</a>
+      <a href="atlas.html" class="tab-btn">🗺️ 階層・ロケーション図鑑</a>
+      <a href="codex.html" class="tab-btn">⚖️ 世界観・塔の法則</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+    <div id="top" class="log-selector" style="justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+      <a href="chronicles_5.html" class="log-btn">◀ 前の巻（第5巻）</a>
+      <a href="chronicles.html" class="log-btn">📖 物語目次へ</a>
+      <a href="chronicles_7.html" class="log-btn">次の巻（第7巻） ▶</a>
+    </div>
+    <section class="prose-container" style="margin-bottom: 22px;">
+      <h2>📚 第6 巻（第058〜084 階） 収録階層目次</h2>
+      <ul style="line-height:1.9; margin-left:18px;">
+<li><a href="#floor-058" style="color:var(--gold-bright);">⚓ 第58階：逆巻く暴風雲海と浮遊飛空艇ドック（Whirlwind Cloudway &amp; Floating Skyship Docks）</a></li>
+<li><a href="#floor-062" style="color:var(--gold-bright);">ｪ・隨ｬ062髫趣ｼ夐ｻ・≡髯ｽ轤弱・蛛ｽ陬・屓蟒翫→迚ｩ谺ｲ縺ｮ關ｽ縺ｨ縺礼ｩｴ・・he Gilded Mirage Vault・・</a></li>
+<li><a href="#floor-063" style="color:var(--gold-bright);">🛡️ 第63階：反転鏡面の天蓋回廊と銀星騎士団の防壁（The Mirror-Vault Corridor）</a></li>
+<li><a href="#floor-066" style="color:var(--gold-bright);">🏰 ラグランジュの塔 第66階：薄暗き古代壁画の回廊と水滴の反響洞窟（Floor 066）</a></li>
+<li><a href="#floor-068" style="color:var(--gold-bright);">🌫️ 第068階：悲哀の魔窟と紫煙の涙池（Grotto of Sorrow &amp; Weeping Tarn）</a></li>
+<li><a href="#floor-071" style="color:var(--gold-bright);">🌙 第71階：常闇の黒曜石回廊と月光庭園（Obsidian Cloister &amp; Moonlight Garden）</a></li>
+<li><a href="#floor-074" style="color:var(--gold-bright);">🌙 第074階：蒼月晶の静寂回廊と白銀の祈祷泉（Silent Corridor of Azure Mooncrystals &amp; Silver Prayer Springs）</a></li>
+<li><a href="#floor-077" style="color:var(--gold-bright);">📚 第77階：天楼大図書館（Celestial Library）</a></li>
+<li><a href="#floor-084" style="color:var(--gold-bright);">🐉 第084階：巨竜の咆哮・灼熱の断崖（Floor 084: Dragons Roar Cliff）</a></li>
+      </ul>
+    </section>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-058" style="margin-top:0;">⚓ 第58階：逆巻く暴風雲海と浮遊飛空艇ドック（Whirlwind Cloudway &amp; Floating Skyship Docks）</h2>
+<blockquote>
+<strong>親ノート</strong>: 00_Lagrange_Tower_MOC<br>
+<strong>観測日</strong>: 2026-09-15（Cron 8 新体制・1日3回群像劇開拓 第1弾）<br>
+<strong>環境</strong>: 外壁崩落による超高度吹き抜け空洞 / 轟音を立てる低気圧の逆巻く雲海 / 木造浮遊ドックと係留アンカーチェーン / 潮風とエーテルオイル香<br>
+<strong>推奨BGM</strong>: Dark_Chiptune_Archive Track_013（Subnet_807_NullPointer）<br>
+<strong>原典DB参照</strong>: Lagrange_Tower_Character_Codex（No.10 Silvian / No.73 Erevan / No.69 Kaelin / No.2 Lariel）<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🏛️ フロア・カルテ（Floor Overview）</h3>
+<p>魔導仕立て屋の実験室（第54階）の静謐を抜け、さらに塔の外殻に沿って登り詰めた先に突如現れる、塔内最大の「大空洞階層」。</p>
+<p>古代の大崩壊によって塔の外壁が数百メートルにわたって吹き飛んでおり、外界の超高度対流圏から吹き込む暴風と雲海が、塔の内部を激しく渦巻いている。</p>
+<p>浮力を帯びた古代鉱石「気嚢浮遊石」の岩礁に、無数の巨大アンカーチェーンを打ち込んで築かれたのが、空賊たちの秘密前哨基地<strong>「浮遊飛空艇ドック（スカイシップ・ヘイヴン）」</strong>である。</p>
+<p>ここには塔の垂直階層を風に乗って駆け上がる小型木造飛空艇が集い、階層間を飛び回る空賊、気象を測量する鳥人族、命知らずの運び屋たちが集まる。足を踏み外せば雲海の下、数百階層下まで真っ逆さまに落下する極限の危険地帯である。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">🏷️ 生態系・特産アーティファクト</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>気嚢浮遊石（Aether Airsac Stone）</strong>: 気圧差に反応して反重力を発生させる青白い軽石。靴底や防具に仕込むことで、高所からの落下速度を劇的に緩和する。</li>
+<li><strong>空賊のラム・スコール（Sky Pirate's Squall Rum）</strong>: 暴風気流の揺れの中で樽熟成された度数75度の蒸留酒。ひと口飲むと極度の耐寒性と勇気（STR/AGI一時上昇）を得るが、二口飲むと三半規管が麻痺する。</li>
+<li><strong>嵐切り風見鶏の羽根（Windvane Feather）</strong>: 乱気流の風向変化を数秒前に感知して燐光を放つ魔導鳥の風切り羽。空賊たちの必須ナビゲーションアイテム。</li>
+<li><strong>ストーム・ロックの風切爪（Storm Roc's Talon）</strong>: 雲海を群れで飛翔する巨大怪鳥の鉤爪。風属性魔術を弾く特性を持ち、矢尻や短剣の刃として珍重される。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">🛠️ 常駐冒険者・主要住人（Master DB連携）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>伝説の空賊船長 シルヴィアン・ムーンウィスパー（Silvian Moonwhisper）</strong>:</li>
+<li>人間 / 男性 / 空賊（Sky Pirate / S Rank 717）。</li>
+<li>主兵装: <strong>月光の刃（Moonlight Blade）</strong>（月光を浴びて青く冴え渡る鋭利な三日月刀）。</li>
+<li>防具: <strong>呪文防護鎧（Spellguard Armor）</strong> ＋ 高高度防風レザーコート。</li>
+<li>スキル: 1. <strong>Cleave（強打断ち）</strong> / 2. <strong>Counter Strike（反撃刃）</strong>。</li>
+<li>人物: 塔の天空回廊を縄張りとする義賊の空賊頭領。豪快で風を読む天才だが、酒が入るとすぐに船の自慢話を始める。</li>
+<li><strong>若きエルフ空賊 エレヴァン・スカイブレード（Erevan Skyblade）</strong>:</li>
+<li>エルフ族 / 男性 / 空賊（Sky Pirate / B Rank 579）。</li>
+<li>主兵装: <strong>雷撃剣（Thunderstrike Sword）</strong>。</li>
+<li>防具: <strong>大地守護者の板金（Plates of the Earthwarden）</strong> ＋ 耐風アンカーハーネス。</li>
+<li>スキル: 1. <strong>Skyward Leap（天翔け跳躍）</strong> / 2. <strong>Leap Attack（急降下撃）</strong>。</li>
+<li>人物: シルヴィアンの右腕。軽快な跳躍撃を得意とする突風の斬り込み隊長。</li>
+<li><strong>烏天狗・鳥人族の測量士 ケイリン・ダークフェザー（Kaelin Darkfeather）</strong>:</li>
+<li>鳥人族（Ravenfolk-en） / 女性 / 獣使い（Beast Tamer / B Rank 597）。</li>
+<li>主兵装: <strong>風断ち槍（Windcutter Spear）</strong> ＆ <strong>地図職人の定規剣（Cartographer's Ruler Sword）</strong>。</li>
+<li>スキル: 1. <strong>Windshear（風裂き）</strong> / 2. <strong>Feather Fall（羽毛落下）</strong>。</li>
+<li>人物: 黒い翼を持つ冷静沈着な気象測量士。突風の軌道を定規剣で幾何学的に割り出し、安全航路を海図に書き込む。</li>
+<li><strong>天上の守護天使 ラリエル（Lariel the Serene）</strong>:</li>
+<li>天使族（Ange-lin） / 女性 / 天使騎士（Angel Knight / <strong>SS Rank 836</strong>）。</li>
+<li>主兵装: <strong>星光の槍（Spear of Starlight）</strong>。</li>
+<li>防具: <strong>呪文防護鎧（Spellguard Armor）</strong>。</li>
+<li>スキル: 1. <strong>Healing Glow（治癒の光）</strong> / 2. <strong>Sanctuary Light（聖域の光）</strong>。</li>
+<li>人物: 塔の深部より現れた神秘の天使騎士。<strong>「なぜか歩く先々で足場が崩れ、ボルトが抜け、落雷が直撃する」という天文学的な不運（Bad Luck）体質</strong>。だが本人は至って涼やかな微笑みを浮かべたまま、星光の槍一閃で魔物ごと災厄を粉砕・解決してしまう最強のトラブルシューター。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📜 迷宮群像劇：短編オムニバス（第58階編）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『空賊船と、世界一不運な天使の雲海強行軍』</h4>
+<p><strong>登場人物</strong>: シルヴィアン（空賊船長）、エレヴァン（エルフ空賊）、ケイリン（鳥人族測量士）、ラリエル（天使騎士）</p>
+<p><em>(※クローミンとミネルヴァは下層の温泉宿場で湯治中)</em></p>
+<p>ヒュオオオオオオオオオッ！！</p>
+<p>ゴオッ、ズガガガガアン！！</p>
+<p>耳をつんざく気流の咆哮が、第58階の開口部から叩きつける。</p>
+<p>足元は、雲海の上数百メートルに軋みながら浮かぶ木造デッキ。鎖がギシギシと悲鳴を上げ、飛沫のような雲の粒子が激しく吹き乱れていた。</p>
+<p>「おいエレヴァン！ 3番ポートのアンカーチェーンをもう一巻き締めろ！ 風速が秒速40ノットを超えてるぞ！」</p>
+<p>「やってます船長！ くそっ、この突風、エーテル帆が引きちぎれそうだ！」</p>
+<p>人間空賊の頭領シルヴィアン・ムーンウィスパーが、レザーコートの襟を立てて怒鳴る。</p>
+<p>その傍らで、エルフの若き空賊エレヴァンが『雷撃剣』を背に背負い、強風に煽られながら小型飛空艇「シルフィード号」の係留ロープを力任せに引き絞っていた。</p>
+<p>ドックの突端で、黒い翼をたたんだ鳥人族の測量士ケイリンが、真鍮の定規剣を宙にかざして眉をひそめる。</p>
+<p>「船長、気圧計が急降下してるわ。今宵は塔の外壁気流が暴走する『百年嵐』のピークよ。出航なんてしたら、一秒で空中分解して雲海の藻屑ね」</p>
+<p>「ハハッ！ だからこそ燃えるんだろうがよケイリン！ この嵐の気流を捕まえりゃ、第63階の反転鏡面回廊まで半刻で駆け上がれる！」</p>
+<p>シルヴィアンが豪快に笑い、腰の瓢箪から『空賊のラム・スコール』を喉へ流し込んだ。</p>
+<p>その時だった。</p>
+<p>カツ、カツ、カツ。</p>
+<p>暴風の轟音を切り裂くように、信じられないほど静かで、凛とした靴音が木造ドックに響いた。</p>
+<p>一同が振り向く。</p>
+<p>そこに立っていたのは、背に純白の翼をたたえ、流麗な銀髪を風になびかせた一人の麗人——天使族の騎士、ラリエル（Lariel the Serene）だった。</p>
+<p>その手には星々の瞬きを閉じ込めた『星光の槍』。身に纏う『呪文防護鎧』は、吹き荒れる暴風の中でも微塵も汚れを寄せ付けない。</p>
+<p>「ごきげんよう、勇敢なる空の航海者の方々。上層階へ向かう便を探しているのですが……こちらの船はお席が空いていらっしゃいますか？」</p>
+<p>鈴の鳴るような、あまりにも穏やかで澄み切った美声。</p>
+<p>シルヴィアンは目を丸くし、口元のラム酒を拭った。</p>
+<p>「お、おいおい……天使の旦那がこんな吹きさらしの空賊ドックに何の用だ？ まさかこんなオンボロ飛空艇に乗ろうってのかい？」</p>
+<p>「ええ。第63階に急ぎの用件がございまして。階段の回廊は崖崩れで通行止めでしたので」</p>
+<p>ラリエルはふわりと微笑んだ。その神々しい姿に、若きエレヴァンは思わず息を呑む。</p>
+<p>「せ、船長！ 天使様を乗せるなんて、こんな縁起のいい航海はありませんよ！ 神の加護で嵐なんて消し飛ぶに決まってます！」</p>
+<p>「バカ言わないでエレヴァン！」</p>
+<p>ケイリンが翼をバサリと広げて割って入った。その表情は蒼白だった。</p>
+<p>「アンタ、冒険者ギルドの極秘カルテを読んでないの！？ あのお方はラリエル様よ！ 総合戦力836・SSランクの天上騎士……だけど！」</p>
+<p>「だけど？」</p>
+<p>「<strong>『歩く天変地異』『全次元最凶の不運体質』</strong>ってギルドで恐れられてるのよ！ あのお方が乗った馬車は必ず車輪が外れ、渡る橋は必ず落ち、歩く道には必ず隕石が降るの！」</p>
+<p>「失礼ですね」</p>
+<p>ラリエルは優雅に首を傾げた。</p>
+<p>「私はただ、少しばかり運の巡り合わせが個性的なだけでして……あ」</p>
+<p>パキッ。</p>
+<p>ラリエルが一歩足を踏み出した瞬間、樹齢三百年の一枚板で作られた頑丈なドックの床板が、綺麗に真っ二つに割れた。</p>
+<p>シュバッ！ と足が宙に浮く。</p>
+<p>「うわあああっ！？ いきなり落ちたァ！？」</p>
+<p>エレヴァンが叫ぶ。だがラリエルは微動だにせず、白い翼をふわりと広げて空中に静止した。</p>
+<p>「おや、木材が少々乾燥していたようですね」</p>
+<p>「乾燥してねえよ！！ さっきから暴風雨でビッショビショだよ！！」</p>
+<p>シルヴィアンは腹を抱えて大爆笑した。</p>
+<p>「ギャハハハハッ！ 面白い！ 噂通りの豪傑だな天使の旦那！ よし乗んな！ 百年の嵐と最凶の厄病神、どっちが勝つか賭けようじゃねえか！」</p>
+<p>「船長ーーーッ！？」</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p>ババババババッ！！</p>
+<p>シルフィード号が係留を解かれ、暴風雲海へと射出された。</p>
+<p>気嚢浮遊石が青い燐光を放ち、船体が一気に高度を上げる。周囲は真っ白な乱気流の壁。</p>
+<p>「ヒャッホォォォ！ 掴まってな！ 気流に乗ったぞ！」</p>
+<p>シルヴィアンが操舵輪を握り、風のうねりを捉える。</p>
+<p>エレヴァンがマストに結びつけた命綱を握りしめ、ケイリンが定規剣で風向を叫ぶ。</p>
+<p>「船長！ 前方300ヤードに上昇気流のトンネル！ そこを突っ切れば第63階の外縁ポートに……」</p>
+<p>その時だった。</p>
+<p>甲板の中央で、優雅に景色を眺めていたラリエルが、小さく呟いた。</p>
+<p>「素晴らしい眺めですね。この金属の取っ手は何に使うものかしら」</p>
+<p>「ラリエル様！？ そこには触っちゃだめぇぇぇっ！！」</p>
+<p>カチッ。</p>
+<p>ラリエルが何気なく触れた壁のレバーが外れた。</p>
+<p>次の瞬間、シルフィード号のメイン浮遊機関の安全弁がポーンと吹き飛び、雲海の彼方へと落下していった。</p>
+<p>プシューーーーーッ！！</p>
+<p>船体が急激に右へと傾ぎ、高度がガタ落ちする。</p>
+<p>「お、おい嘘だろ！？ なんで今そこが抜けるんだよ！？」</p>
+<p>「言ったでしょぉぉぉぉっ！！」ケイリンが悲鳴を上げる。</p>
+<p>さらに、不運はこれにとどまらなかった。</p>
+<p>ゴルルルルル……ピキキキキッ！！</p>
+<p>船のバランス崩壊に引き寄せられるように、雲海の裂け目から、翼長30メートルを超える巨大怪鳥——『ストーム・ロック』の群れが三体、稲妻を纏って急降下してきたのだ。</p>
+<p>「ギエエエエエッ！！」</p>
+<p>鋭利な風切爪が、シルフィード号の帆を切り裂く。</p>
+<p>「野郎ども、戦闘配置だ！」</p>
+<p>シルヴィアンが『月光の刃』を抜き放ち、甲板に飛び込んできた一羽の喉笛を『Cleave（強打断ち）』で切り裂く。だが、船体は激しく揺れ、舵が利かない。</p>
+<p>「くそっ、足場が保たねえ！ 『Skyward Leap（天翔け跳躍）』——だあああっ！？」</p>
+<p>エレヴァンが跳躍撃を仕掛けようとした瞬間、突風に煽られたロープが足首に絡まり、甲板の隅で宙吊りになった。</p>
+<p>「エレヴァン！！」</p>
+<p>「ひぎゃあああ！ 助けてケイリン！ 逆さま！ 逆さまだよ！」</p>
+<p>ストーム・ロックのボスが、巨大な嘴を広げて無防備なエレヴァンと甲板を丸呑みにせんと迫る。</p>
+<p>落雷が天蓋から走り、まっすぐに甲板へ落ちてきた——そう、ラリエルの頭上へ。</p>
+<p>「ラリエル様ァァァッ！！」</p>
+<p>ズガガガガガガアンッ！！！！</p>
+<p>盲目的な雷光が甲板を飲み込んだ。誰もが天使の消滅を覚悟した。</p>
+<p>だが。</p>
+<p>「——ふふ。少々、風が騒がしいですね」</p>
+<p>煙の中から、涼やかな声が響いた。</p>
+<p>落雷の直撃を受けたはずのラリエルは、毛先一本焦げていなかった。</p>
+<p>彼女の身に纏う『呪文防護鎧（Spellguard Armor）』が、天の雷撃を完全に屈折・無力化していたのだ。</p>
+<p>それどころか。</p>
+<p>鎧の表面で屈折した莫大な高圧電流が、扇状の雷撃網となって全方位へ乱反射した。</p>
+<p>バチバチバチバチバチッ！！！！</p>
+<p>「ギャエエエエエエッ！？」</p>
+<p>突っ込んできていたストーム・ロックの群れが、反射された落雷の直撃をもろに食らい、煙を上げて次々と雲海へ墜落していった。</p>
+<p>「な……な、何だ今の……！？」</p>
+<p>逆さ吊りのエレヴァンが目を丸くする。</p>
+<p>ラリエルは静かに、黄金の光を湛えた『星光の槍（Spear of Starlight）』を掲げた。</p>
+<p>「乱れた空気を、あるべき調和へ戻しましょう」</p>
+<p>——スキル『Sanctuary Light（聖域の光）』。</p>
+<p>カァァァァァァッ……！</p>
+<p>夜明けの星空のような、極めて清冽で神聖な純白の光が、シルフィード号を中心に直径数百メートルにわたってドーム状に展開された。</p>
+<p>その瞬間。</p>
+<p>荒れ狂っていた秒速40ノットの暴風雨が、嘘のように凪いだ。</p>
+<p>激震していた雲海が鏡のような静水へと変わり、吹き荒れる突風は、船を優しく押し上げる柔らかな春風へと浄化されたのだ。</p>
+<p>「……う、嘘でしょ……？ 百年の嵐を……結界一つで鎮圧した……！？」</p>
+<p>ケイリンが定規剣を取り落とし、呆然と呟く。</p>
+<p>さらにラリエルは、逆さ吊りのエレヴァンに微笑みかけた。</p>
+<p>「お怪我はありませんでしたか？ ——『Healing Glow（治癒の光）』」</p>
+<p>温かな光の粒がエレヴァンを包み込み、擦り傷どころか全身の疲労が一瞬で吹き飛んだ。</p>
+<p>「あ、ありがとうございます……！ 天使様、すげえ……！！」</p>
+<p>「ですが、ロープは解いて差し上げられません。ハサミを持ち合わせておりませんので」</p>
+<p>「えっ、あ、このまま宙吊りですか！？」</p>
+<p>操舵席で、シルヴィアンが呆気にとられた後、腹を抱えて再び大爆笑した。</p>
+<p>「あっはっはっはっは！！ 最高だぜ天使の旦那！ 不運で船をぶっ壊しかけたと思ったら、落雷を敵に跳ね返して、最後は嵐そのものを黙らせちまうとはな！」</p>
+<p>シルヴィアンは『月光の刃』を鞘に納め、ラム酒の瓢箪をラリエルへと掲げた。</p>
+<p>「おいケイリン！ 風向きはどうだ！？」</p>
+<p>「……完璧よ。聖域の気流に乗って、このまま第63階の外縁ドックへ直行できるわ」</p>
+<p>「よし！ 全員、席に着け！ 世界一ラッキーでアンラッキーな女神様のお出ましだ！ 第63階へ舵を取れェッ！！」</p>
+<p>シルフィード号は白銀の光に包まれながら、静まり返った雲海を滑るように翔けていった。</p>
+<p>甲板では、逆さ吊りのエルフが「あの、誰か僕を降ろしてください！」と叫び、鳥人族の測量士がため息をつき、天使騎士が優雅に髪を整えていた。</p>
+<p>その頃、はるか下層の第21階「翡翠の温泉宿場」では、兎人司祭クローミンが温泉卵を喉につまらせ、相棒のミネルヴァに背中を叩かれていたが——それはまた、別の階層の物語である。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🧭 南部未踏空域：鯨骨座礁礁群と漂流浮島回廊（Whalebone Reef &amp; Drifting Islets）</h3>
+<blockquote>
+<strong>開拓日</strong>: 2026-10-24（Cron 8 密度爆縮・水平エリア深化）<br>
+<strong>地勢スケール</strong>: 東西数千kmに及ぶ果てしない雲海の大フロンティア（※迷宮内10大巨大大陸フロアの1つ）<br>
+<strong>環境</strong>: 雲海を回遊する古代の巨大生物「雲海鯨（Cloud Leviathan）」の巨大白骨が座礁した天然の浮遊防波堤 / 乱気流の淀みに集まる漂流浮島群 / 潮風と乾いた塩分<br>
+</blockquote>
+<p>ドックの突端から南へ飛空艇で半刻。荒れ狂う気流が嘘のように凪ぐ「気流の吹き溜まり」に、見上げるほど巨大な白骨のアーチが雲海から突き出ている。</p>
+<p>かつて古代の雲海を悠然と泳ぎ、寿命を迎えて浮遊石の岩礁に座礁した超巨大生物「雲海鯨」の化石骨格である。</p>
+<p>骨と骨の間には、風に流されてきた浮遊石や無人小島、古代の難破船が引っかかり、天然の風待ち停泊地（ロードステッド）を形成している。迷宮が「上への塔」であることを忘れさせるほど、水平方向にどこまでも続く果てしない雲の海原が広がっている。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">🏷️ 南部礁群の特産アーティファクト</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>白鯨骨の耐風ペグ（Whalebone Windpeg）</strong>:</li>
+<li>風化しつつも鋼鉄以上の粘りを持つ古代鯨骨から削り出された係留用杭。どんな突風に煽られても浮遊岩から抜けず、空賊たちの命を繋ぐ。</li>
+<li><strong>雲海トビウオの塩麹干し（Aether Flying-Fish Jerky）</strong>:</li>
+<li>雲の波間を滑空する銀色の小魚を、礁群に吹き付ける冷たい潮風と岩塩で干し上げた携帯保存食。噛めば噛むほど濃厚な旨味と魔力が滲み出る。</li>
+<li><strong>鯨油の燐光カンテラ（Leviathan Oil Lantern）</strong>:</li>
+<li>座礁した骨の髄に残る油を精製した燃料。氷点下の強風でも決して火が消えず、雲海の下層深くを淡い青緑色の光で照らし出す。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📜 迷宮群像劇アナザーストーリー：第58階南部編</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『鯨骨礁の風待ちトビウオと、若き空賊の夜食』</h4>
+<p><strong>四大ナラティブ・モード</strong>: ③ 【平熱・日常型】（Mundane Routine）</p>
+<p><strong>登場人物</strong>: エレヴァン（エルフ空賊）、ケイリン（鳥人族測量士）</p>
+<p>ゴオオオオ……という遠い乱気流の唸り声が、巨大な白骨の隙間を吹き抜けるたび、澄んだ笛のような低い音を奏でていた。</p>
+<p>「ふう……助かった。あのまま推進機が止まってたら、雲海の下まで真っ逆さまだったよ」</p>
+<p>浮遊艇の整備ハッチを閉め、エルフの青年エレヴァンが煤けた手を拭いながら甲板に座り込んだ。</p>
+<p>小型飛空艇「シルフィード号」は現在、南部空域に横たわる『雲海鯨の第4肋骨』の内側に、太いワイヤーペグを打ち込んで係留されていた。過負荷で魔導推進機のエーテル配管が焼き付き、気流の穏やかなこの礁群へ緊急避難したのだ。</p>
+<p>「だから言ったでしょ、エレヴァン。『全開ブーストで行ける』なんて無茶な出力を出すからよ」</p>
+<p>甲板の縁に腰掛け、黒い翼を休めていた鳥人族の測量士ケイリンが、真鍮の定規剣を布で拭きながら呆れたように言った。</p>
+<p>手元の海図には、まだ半分以上が白紙のままの広大な雲海が広がっている。</p>
+<p>「でもさ、ケイリン。見てよこれ」</p>
+<p>エレヴァンが立ち上がり、骨のアーチの隙間から南の地平線を指差した。</p>
+<p>「どこまでも雲だよ。シルヴィアン船長が言ってた通り、この第058階の雲海って、下層のフロアが何百個も丸ごと入るくらい広いんじゃないか？ 先に何があるのか、想像もつかないや」</p>
+<p>「……ええ。測量士のギルドでも、この雲海の端まで到達した記録はないわ。風の吹き溜まりの先には、古代の空中神殿や、誰も見たことがない島がいくつも浮かんでいるって噂よ」</p>
+<p>ケイリンは双眼鏡を下ろし、小さく笑った。</p>
+<p>「まあ、そのフロンティアを拝む前に、私たちの船が直らなきゃ意味がないけれどね」</p>
+<p>グウゥゥゥ……。</p>
+<p>静まり返った甲板に、間の抜けた腹の虫が鳴り響いた。</p>
+<p>エレヴァンが照れくさそうに頭を掻く。</p>
+<p>「腹減ったな。機関室を冷ますのにあと2刻はかかるだろ？ なんか食おうぜ」</p>
+<p>「そうね。ドックを出るときに、乾物屋から仕入れておいたものがあるわ」</p>
+<p>ケイリンが麻袋から取り出したのは、銀色に乾いた小魚の束と、小さな真鍮の小鍋だった。</p>
+<p>「おっ、『雲海トビウオ』か！ あれ、ちょっと炙るとめちゃくちゃ美味いんだよな」</p>
+<p>エレヴァンが手慣れた手つきで『鯨油の燐光カンテラ』の風防を外し、その熱気の上に金網を乗せた。</p>
+<p>薄く塩を吹いたトビウオを網に乗せると、パチパチと小さな音を立てて脂が弾け、香ばしい潮の匂いが夜の冷気に広がっていく。</p>
+<p>「はい、エレヴァン。麦のスープも温まったわよ」</p>
+<p>「ありがと。……うわ、うまっ！ 骨までパリパリいける！」</p>
+<p>「高高度の乾燥風で干してるからね。塩気が強くて、長時間の見張りには一番の贅沢よ」</p>
+<p>冷え切った高高度の夜風の中、ふたりは骨の隙間にすっぽりと収まり、熱いスープをすすりながら、炙りたてのトビウオをかじった。</p>
+<p>魔物も出ない。劇的な宝物も見つからない。</p>
+<p>ただ、果てしなく広がる白銀の雲海の上に星々が瞬き、巨大な古代鯨の骨が、風の音をオルゴールのように響かせている。</p>
+<p>「……なぁ、ケイリン」</p>
+<p>「何？」</p>
+<p>「船が直ったら、もう少し南まで行ってみないか？ 誰も行ったことがない、雲海のあの向こうまでさ」</p>
+<p>「……船長に怒られても知らないわよ。でも、海図の白紙を埋めるのなら、付き合ってあげてもいいわ」</p>
+<p>ふたりは他愛ない冗談を言い合いながら、温かなスープの最後の一滴を飲み干した。</p>
+<p>修理が終わるまでの、静かで、平熱の、けれど何物にも代えがたい風待ちの夜だった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📜 秘められた過去史：神話オムニバス（第58階星辰夜話）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『天上の星光と、厄災を縫い付けた天使』</h4>
+<p><strong>四大ナラティブ・モード</strong>: ④ 【神話・過去史深掘り型】（Myth &amp; Heroic Lore）</p>
+<p><strong>登場人物</strong>: ラリエル（天上の守護天使）、シルヴィアン（空賊船長）、【回想】フォルトゥナ（賽の目と不条理の女神）</p>
+<p>夜半の第058階。乱気流が静まった外縁ドックの突端で、シルヴィアンは木の欄干に腰掛け、ラム酒の瓢箪を傾けていた。</p>
+<p>ふと視線を向けると、十ヤードほど離れた桟橋の突端に、銀髪を夜風になびかせた白い影が腰掛けていた。天使騎士ラリエルである。</p>
+<p>彼女が佇むその頭上だけ、なぜか晴天の星空にもかかわらず、局所的な黒雲からパチパチと青い静電気が落ち、足元の桟橋からはギギギと錆びた鉄釘が一本、勝手に浮き上がって転がり落ちていた。</p>
+<p>「……よお、旦那。まだ起きてたのか」</p>
+<p>シルヴィアンが声をかけ、酒を差し出す。</p>
+<p>「こんな夜更けに桟橋の縁に座ってると、また突風で欄干ごと雲海に落っこちるぜ」</p>
+<p>「ふふ、ご心配ありがとうございます、シルヴィアン船長」</p>
+<p>ラリエルはふわりと微笑み、首を振った。</p>
+<p>「ですが大丈夫です。先ほどから風の精霊が私の袖を引っ張ったり、足元の板が二度ほど抜け落ちましたが、すべて『羽毛落下（フェザーフォール）』の範囲内でしたから」</p>
+<p>「そいつは結構なこったが……なあ、旦那」</p>
+<p>シルヴィアンは酒を口に含み、目を細めてラリエルの横顔を見つめた。</p>
+<p>「あんた、SSランク836の天上騎士だろ。百年の暴風雨を結界ひとつで黙らせ、落雷を魔物に跳ね返すような規格外の怪物が……なんでまた、こんな『歩く天変地異』みたいなドジっ子呪縛を背負わされてるんだ？ いくらなんでも、生まれつきってタマじゃねえだろ」</p>
+<p>その問いに、ラリエルは驚いた風もなく、ただ夜空の彼方——遥か上層、雲を突き抜けてそびえ立つ第100階「天頂境界」の虚空を静かに見上げた。</p>
+<p>「……気づいていらっしゃいましたか」</p>
+<p>「誰だって気づくさ。あんたの不運は、間が抜けてるんじゃねえ。『世界中の理不尽が、磁石みたいにあんたを目掛けて飛んできてる』んだ。……そう見えたぜ」</p>
+<p>ラリエルは細い指先を胸元へ当てた。呪文防護鎧の胸甲の奥底、彼女の霊核（Soul Core）には、常人には視えない銀の縫い目が幾重にも刻まれている。</p>
+<p>「千年前のことです。天頂の星辰が狂い、迷宮の因果律が暴走した大事故がございました。……『原初の厄災核』。それは意思を持たぬ混沌の嵐であり、放っておけば全75階層にランダムな地盤崩落と即死の天変地異を降り注がせ、迷宮内のすべての営みを無差別に消滅させるはずのものでした」</p>
+<p>ラリエルの声は、夜の風のように静謐で、どこまでも澄んでいた。</p>
+<p>「賽の目と確率を司る女神・フォルトゥナ様ですら、その厄災を消滅させることはできませんでした。世界のどこかに、その理不尽な確率のゴミを『捨て置く器』が必要だったのです。……ゆえに私は、星光の針を取り、我が霊核にその厄災のすべてを縫い付けました」</p>
+<p>——<em>『すべての理不尽な確率を、私の魂に縫い付けなさい』</em>。</p>
+<p>——<em>『私がすべてを引き受け、微笑んで耐えている限り、下層の宿場で暮らす者たちには公平な朝が訪れます』</em>。</p>
+<p>女神フォルトゥナは天界で涙を流し、その無謀な天使の前に平伏したという。</p>
+<p>消し去ることのできない宇宙の不条理を、ただ一人の天使が、己の不死性と規格外の神聖力をもって「一身に受け止め続ける」と誓ったのだ。</p>
+<p>「ですから……この足元の抜け落ちる床も、勝手に外れるボルトも、私をめがけて落ちてくる気まぐれな落雷も。すべては、誰かの頭上に落ちるはずだった不幸の迷い子たちなのです。私なら、落雷に打たれても髪が少し焦げる程度で済みますから」</p>
+<p>ラリエルは事も無げに微笑み、夜空を見上げた。</p>
+<p>「私がここで世界一不運な天使でいる限り……下層の温泉で卵を食べているピップ少年や、泥にまみれて笑っている冒険者たちの上に、理不尽な即死の隕石が降ることはありません。……とても素敵な取引だとは思いませんか？」</p>
+<p>「…………」</p>
+<p>シルヴィアンは言葉を失い、ただ夜風に吹かれていた。</p>
+<p>歩く天変地異。全次元最凶の厄病神。ギルドの誰もが恐れ、笑い話にしてきたその不運の正体は——迷宮に生きるすべての弱者たちの頭上から、理不尽な死を取り除き続けるための、あまりにも尊く、壮絶な「身代わりの盾」だったのだ。</p>
+<p>「……へっ」</p>
+<p>シルヴィアンは頭をガリガリと掻き、自嘲気味に笑った。</p>
+<p>「世界一のドジ神様だと思ってたら、とんでもねえ大馬鹿野郎の聖女様じゃねえか」</p>
+<p>シルヴィアンは腰の瓢箪を掲げ、ラリエルの星光の槍の石突にカチンと打ち合わせた。</p>
+<p>「気に入ったぜ、ラリエル。……よし決めた。俺のシルフィード号が飛ぶ限り、あんたがどこへ行こうとタダで乗せてやる。ボルトが吹き飛ぼうが帆が破れようが、百回でも千回でも直してやるよ。世界中の不幸を背負い込んでる大馬鹿野郎を乗せて風を捕まえるなんざ、空賊として最高の道楽だ」</p>
+<p>「あら、大馬鹿野郎とは手厳しいですね」</p>
+<p>ラリエルはくすくすと上品に喉を鳴らして笑い、差し出された酒を一口だけ唇に含んだ。</p>
+<p>「ですが……ええ。とても温かい、甘いラム酒ですね」</p>
+<p>その瞬間、頭上の屋根瓦が一枚、前触れもなく滑り落ちてきたが——シルヴィアンが抜いた『月光の刃』が、目にも留まらぬ速さでそれを真っ二つに叩き割った。</p>
+<p>ふたつの破片が、天使の白い翼の横を通り抜け、雲海へと吸い込まれていく。</p>
+<p>星々の光が降り注ぐ第058階の夜。</p>
+<p>世界一不運で、世界一気高い天使の瞳に、夜明けの銀の気流が静かに映っていた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Recorded under Lagrange Tower Chronicles / Floor 58 Unlocked / Deepening Verified / 塔務記録局 2026.</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-062" style="margin-top:0;">ｪ・隨ｬ062髫趣ｼ夐ｻ・≡髯ｽ轤弱・蛛ｽ陬・屓蟒翫→迚ｩ谺ｲ縺ｮ關ｽ縺ｨ縺礼ｩｴ・・he Gilded Mirage Vault・・</h2>
+<blockquote>
+*<em>隕ｪ繝弱・繝・</em>: 00_Lagrange_Tower_MOC<br>
+<strong>隕ｳ貂ｬ譌･</strong>: 2026-09-19 11:00・・ron 8 螳壽凾譏ｼ蠅礼ｯ峨・騾夂ｮ礼ｬｬ29髫趣ｼ・<br>
+*<em>迺ｰ蠅・</em>: 螢∽ｸ髱｢縺碁≡邂斐→逎ｨ縺九ｌ縺滄ｻ・喝縺ｧ隕・ｏ繧後◆蛛ｽ陬・ｮ晉黄蠎ｫ / 鮟・≡濶ｲ縺ｮ蟷ｻ蠖ｱ蜈・/ 蜈・ｺ縺吶ｋ逕倥＞隱俶ヱ鬥吶→蠕ｮ縺九↑轣ｫ阮ｬ閾ｭ<br>
+<strong>謗ｨ螂ｨBGM</strong>: Dark_Chiptune_Archive Track_016・・cho_150_ZeroDay・・<br>
+*<em>繝翫Λ繝・ぅ繝悶Δ繝ｼ繝・</em>: *<em>縲先風蛹励・蜀崎ｵｷ蝙九托ｼ郁｣冗･樊ｮｿ陂・函繝ｻ豁ｦ蜈ｷ謳崎励・驟貞ｴ縺ｮ繝ｪ繝吶Φ繧ｸ・・</em><br>
+<strong>蜴溷・繧､繝ｳ繧ｹ繝代う繧｢</strong>: 蛻晄悄逋ｺ謗倥Γ繝｢ <code>prompt63</code>・域摶縺ｮ繝医・繝ｩ ﾃ・雋ｷ縺・黄髷・・蜈惹ｺｺ蜒ｧ萓ｶ繝ｩ繝斐・繧ｿ・・<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">鋤・・繝輔Ο繧｢繝ｻ繧ｫ繝ｫ繝・ｼ・loor Overview・・</h3>
+<p>蜿崎ｻ｢髀｡髱｢縺ｮ螟ｩ闢句屓蟒奇ｼ育ｬｬ63髫趣ｼ峨・逵滉ｸ九↓菴咲ｽｮ縺励∵垓鬚ｨ髮ｲ豬ｷ繝峨ャ繧ｯ・育ｬｬ58髫趣ｼ峨°繧臥匳縺｣縺ｦ縺阪◆蜀帝匱閠・◆縺｡縺悟ｿ・★雜ｳ繧呈ｭ｢繧√ｋ縲梧が蜷埼ｫ倥″隱俶ヱ縺ｮ蝗槫ｻ翫阪・</p>
+<p>螢・擇縲∝､ｩ莠輔∝ｺ翫・繧ｿ繧､繝ｫ縺ｮ邯吶℃逶ｮ縺ｫ閾ｳ繧九∪縺ｧ縲∫惓縺・・縺九ｊ縺ｮ驥醍ｮ斐→逎ｨ縺肴栢縺九ｌ縺溽悄骰ｮ縺ｧ隕・ｏ繧後※縺翫ｊ縲∬ｿｷ螳ｮ縺ｮ辣ｧ譏手渠縺悟渚蟆・＠縺ｦ驛ｨ螻句・菴薙′鮟・≡濶ｲ縺ｫ霈昴＞縺ｦ縺・ｋ縲・</p>
+<p>荳隕九☆繧九→縲悟､ｪ蜿､縺ｮ雎ｪ蝠・′驕ｺ縺励◆髫縺怜ｮ晉黄蠎ｫ縲阪↓隕九∴繧九′縲√◎縺ｮ螳滓・縺ｯ<strong>谺ｲ縺ｫ逶ｮ繧堤惓縺ｾ縺帙◆蜀帝匱閠・ｒ遒ｺ螳溘↓陬冗･樊ｮｿ騾√ｊ・亥・貊・ｼ峨↓縺吶ｋ縺溘ａ縺ｫ險ｭ險医＆繧後◆縲∬ｿｷ螳ｮ螻域欠縺ｮ謔ｪ雜｣蜻ｳ縺ｪ繝医Λ繝・・繝輔Ο繧｢</strong>縺ｧ縺ゅｋ縲・</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">捷・・逕滓・邉ｻ繝ｻ迚ｹ逕｣繧｢繝ｼ繝・ぅ繝輔ぃ繧ｯ繝・- *<em>鮟・喝縺ｮ鬨吶＠驥題ｲｨ・・ool's Brass Coin・・</em>: 譛ｬ迚ｩ縺ｮ邏秘≡雋ｨ縺昴▲縺上ｊ縺ｫ驪ｳ騾縺輔ｌ縺溯ｿｷ螳ｮ迚ｹ逕｣繧ｳ繧､繝ｳ縲ら｡ｬ蠎ｦ縺ｯ鬮倥＞縺後・・蝣ｴ縺ｫ謖√▲縺ｦ縺・￥縺ｨ蠎嶺ｸｻ縺ｫ縲後∪縺・2髫弱・蛛ｽ驥代°縲阪→隨代ｏ繧後※陬剰｡ｨ繧偵☆繧頑ｸ帙ｉ縺輔ｌ繧九・- *<em>髯ｽ轤取ｰｴ譎ｶ縺ｮ遐ｴ迚・ｼ・irage Quartz Shard・・</em>: 蜈峨ｒ螻域釜縺輔○縺ｦ螳溽黄繧医ｊ3蜑ｲ蠅励＠縺ｧ雎ｪ闖ｯ縺ｫ隕九○繧矩険隕也ｵ先匕縲ゅΞ繝ｳ繧ｺ繧・｣・｣ｾ蜩√・蛛ｽ陬・ｴ譚舌→縺励※閨ｷ莠ｺ縺ｫ雋ｷ縺・叙繧峨ｌ繧九・- *<em>蛛ｽ陬・Α繝溘ャ繧ｯ縺ｮ逵滄紺陜ｶ逡ｪ・・rass Hinge of Deceit・・</em>: 螢翫ｌ縺溷ｮ晉ｮｱ縺九ｉ蝗槫庶縺輔ｌ繧矩台ｸ医↑陜ｶ逡ｪ縲る幕髢画凾縺ｫ蜈ｨ縺城浹縺碁ｳｴ繧峨↑縺・◆繧√・國縺玲演縺ｮDIY驥大・縺ｨ縺励※驥榊ｮ昴＆繧後ｋ縲・- *<em>蠕伜ｾ顔函迚ｩ縲弱さ繧､繝ｳ繝医Λ繝・・繝ｻ繧ｯ繝ｭ繧ｦ繝ｩ繝ｼ・・oin-Mimic Crawler・峨・</em>: 辟｡謨ｰ縺ｮ驥題ｲｨ繧堤抜鄒・↓雋ｼ繧贋ｻ倥￠縺溷ｷｨ螟ｧ繝､繝峨き繝ｪ蝙矩ｭ皮坤縲よｭｻ繧薙□縺ｵ繧翫ｒ縺励※騾夊ｷｯ縺ｫ謨｣繧峨・繧翫∵鏡縺翫≧縺ｨ縺励◆蜀帝匱閠・・謖・ｒ謖溘・縲・</h4>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">則 荳ｻ隕∽ｽ丈ｺｺ繝ｻ謗｢邏｢蜀帝匱閠・き繝ｫ繝・ｼ・ramatis Personae・・</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">譚也ｪ√″縺ｮ蜑崎｡幄ｻｽ謌ｦ螢ｫ・壹ヨ繝ｼ繝ｩ・・ora the Cane-Striker・・- <strong>遞ｮ譌上・繧ｯ繝ｩ繧ｹ</strong>: 莠ｺ髢難ｼ・uman・会ｼ・霆ｽ陬・遠謦・姶螢ｫ・・ighter / Cane-Brawler・・- <strong>繧ｮ繝ｫ繝峨Λ繝ｳ繧ｯ</strong>: Rank C・育ｷ丞粋隧穂ｾ｡蛟､ 448・・- <strong>螟冶ｦ九・迚ｹ蠕ｴ</strong>:</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li>遏ｭ縺丞・繧頑純縺医◆魑ｶ濶ｲ縺ｮ鬮ｪ縺ｫ縲∵逃繧雁す縺ｮ邨ｶ縺医↑縺・ｿｫ豢ｻ縺ｪ鬘皮ｫ九■縲ょ虚縺阪ｄ縺吶＞髱ｩ骼ｧ・医Ξ繧ｶ繝ｼ繧ｭ繝･繧､繝ｩ繧ｹ・峨↓髱偵＞蟶・・繝輔Λ繝ｼ縲・  - 謨ｰ蟷ｴ蜑阪∽ｸ句ｱ､縺ｮ遐ｴ遐輔ヨ繝ｩ繝・・縺ｧ蜿ｳ雜ｳ縺ｮ閻ｱ繧堤李繧√※莉･譚･縲・<em>縲碁台ｸ医↑繝医ロ繝ｪ繧ｳ縺ｮ譛ｨ陬ｽ譚悶・</em>繧呈ｭｩ陦瑚｣懷勧蜈ｼ謇捺茶豁ｦ蝎ｨ縺ｨ縺励※諢帷畑縺励※縺・ｋ縲・  - 雜ｳ縺ｮ繝上Φ繝・ぅ繧呈─縺倥＆縺帙↑縺・ｻｽ繧・°縺ｪ繧ｹ繝・ャ繝励→縲∵摶縺ｮ遏ｳ遯√″繧定ｻｸ縺ｫ縺励◆蠑ｷ辜医↑蝗櫁ｻ｢雹ｴ繧翫ｒ蠕玲э縺ｨ縺吶ｋ縺後√く繝ｩ繧ｭ繝ｩ蜈峨ｋ雋｡螳昴ｒ隕九ｋ縺ｨ逅・ｧ縺悟聖縺埼｣帙・謔ｪ逋悶′縺ゅｋ縲・- *<em>繧ｹ繝ｪ繝ｼ繝・Μ繝ｼ繝ｻ繧ｹ繧ｭ繝ｫ繝ｭ繝ｼ繝峨い繧ｦ繝・</em>:</li>
+</ul>
+<p>1. *<em>豁ｦ蝎ｨ謚・域摶陦薙・菴楢｡難ｼ・</em>: 縲弱ヨ繝阪Μ繧ｳ譌句屓謇難ｼ・ane Pivot Smash・峨鞘披疲摶繧貞慍髱｢縺ｫ遯√″遶九※縺ｦ驕蠢・鴨縺ｧ霍ｳ霄阪＠縲∽ｸ｡雜ｳ縺ｧ謨ｵ縺ｮ諤･謇繧定ｹｴ繧顔輔￥縲・  2. *<em>逕溷ｭ倩｡難ｼ郁ｉ菴灘宛蠕｡・・</em>: 縲守李隕夐・譁ｭ繧ｹ繝・ャ繝暦ｼ・imp-Sprint・峨鞘披疲ぅ驛ｨ縺ｮ逞帙∩繧堤ｲｾ逾樣寔荳ｭ縺ｧ荳譎ら噪縺ｫ辟｡隕悶＠縲・豁ｩ縺縺醍･樣溘・霍ｳ霄榊屓驕ｿ繧定｡後≧縲・  3. *<em>霑ｷ螳ｮ遏･諱ｵ・育峩諢滄荘螳夲ｼ・</em>: 縲守黄谺ｲ縺ｮ隨ｬ蜈ｭ諢滂ｼ・reed Instinct・峨鞘披秘≡驫雋｡螳昴・豌鈴・繧・00繝｡繝ｼ繝医Ν蜈医°繧牙羅縺弱▽縺代ｋ縺後∫ｽ縺ｮ隴伜挨邇・・讌ｵ繧√※菴弱＞縲・</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">雋ｷ縺・黄髷・・諷朱㍾蜒ｧ萓ｶ・壹Λ繝斐・繧ｿ・・apita the Satchel-Monk・・- <strong>遞ｮ譌上・繧ｯ繝ｩ繧ｹ</strong>: 蜈惹ｺｺ譌擾ｼ・abbit-kin / White Hare・会ｼ・豐ｻ逋貞Ι萓ｶ・・ealer / Provisioner・・- <strong>繧ｮ繝ｫ繝峨Λ繝ｳ繧ｯ</strong>: Rank C+・育ｷ丞粋隧穂ｾ｡蛟､ 462・・- <strong>螟冶ｦ九・迚ｹ蠕ｴ</strong>:</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li>邏皮區縺ｮ髟ｷ縺・・閠ｳ縺ｨ縲∝ｰ代＠蝗ｰ繧顔怏縺ｮ譟泌柱縺ｪ髱貞ｹｴ蜒ｧ萓ｶ縲よｸ・ｽ斐□縺後ヤ繧ｮ繝上ぐ縺ｮ螟壹＞逋ｽ繝ｭ繝ｼ繝悶ｒ逹逕ｨ縲・  - 豁ｦ蝎ｨ縺ｯ謖√◆縺壹∬か縺九ｉ譁懊ａ謗帙￠縺ｫ縺励◆*<em>縲御ｽｿ縺・商縺励・蟶・｣ｽ雋ｷ縺・黄髷・ｼ医く繝｣繝ｳ繝舌せ繝ｻ繧ｵ繝・メ繧ｧ繝ｫ・峨・</em>縺後ヨ繝ｬ繝ｼ繝峨・繝ｼ繧ｯ縲ゆｸｭ縺ｫ縺ｯ荳句ｱ､蟶ょｴ縺ｮ迚ｹ螢ｲ縺ｧ莉募・繧後◆螳牙｣ｲ繧翫・繝ｼ繧ｷ繝ｧ繝ｳ縲∝桁蟶ｯ縲∝ｹｲ縺苓ｉ縲∫音螢ｲ蜊ｵ縺悟・蟶ｳ髱｢縺ｫ隧ｰ繧∬ｾｼ縺ｾ繧後※縺・ｋ縲・  - 閨夜ｨ主｣ｫ繧ｯ繝ｩ繧ｦ繝・ぅ繧｢繧・昇逾ｭ繧ｯ繝ｭ繝ｼ繝溘Φ縺ｨ蜷碁・縺縺後√％縺｡繧峨・螳悟・縺ｫ縲悟ｺｶ豌代・逕滓ｴｻ閠・阪る聞縺・ｳ縺ｮ閨ｴ隕壹〒鄂縺ｮ鬧・虚髻ｳ繧・ｭ皮黄縺ｮ雜ｳ髻ｳ繧定◇縺榊・縺代ｋ縲・- *<em>繧ｹ繝ｪ繝ｼ繝・Μ繝ｼ繝ｻ繧ｹ繧ｭ繝ｫ繝ｭ繝ｼ繝峨い繧ｦ繝・</em>:</li>
+</ul>
+<p>1. *<em>逾櫁＊陦難ｼ域ｲｻ逋抵ｼ・</em>: 縲主ｰ冗剪縺ｮ蜈会ｼ・inor Heal・峨鞘披泌す蜿｣繧貞｡槭℃逍ｲ蜉ｴ繧貞柱繧峨￡繧句・ｮ溘↑蝓ｺ譛ｬ逾育･ｷ縲・P蜉ｹ邇・′讌ｵ繧√※鬮倥＞縲・  2. *<em>陬懷勧陦難ｼ育函豢ｻ髦ｲ陦幢ｼ・</em>: 縲守黄雉・・蜉隴ｷ・・atchel Ward・峨鞘披秘桷縺ｮ荳ｭ縺ｮ蜊ｵ繧・脈蜩∫童縺ｫ陦晄茶蜷ｸ蜿弱・蠕ｮ蟆冗ｵ千阜繧貞ｼｵ繧具ｼ医◆縺縺怜､ｧ辷・匱縺ｫ縺ｯ閠舌∴繧峨ｌ縺ｪ縺・ｼ峨・  3. *<em>遞ｮ譌冗音諤ｧ・郁・隕夊ｭｦ謌抵ｼ・</em>: 縲主・閠ｳ縺ｮ蠕ｮ蟆城浹謗｢遏･・・witch-Ear Alert・峨鞘披・.1遘貞腰菴阪〒遨ｺ豌励・髴・∴繧・ヴ繝ｳ縺ｮ謚懊￠繧矩浹繧貞ｯ溽衍縺励∽ｻｲ髢薙・隘滄ｦ悶ｒ謗ｴ繧薙〒蠑輔″蛟偵☆縲・</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">糖 霑ｷ螳ｮ鄒､蜒丞括・夂洒邱ｨ繧ｪ繝繝九ヰ繧ｹ・育ｬｬ062髫守ｷｨ・・</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">縲朱≡繝斐き縺ｮ螳晉ｮｱ縺ｨ縲∝牡繧後◆迚ｹ螢ｲ蜊ｵ縺ｮ鬆伜庶譖ｸ縲・</h4>
+<p>*<em>繝翫Λ繝・ぅ繝悶Δ繝ｼ繝・</em>: *<em>縲先風蛹励・蜀崎ｵｷ蝙九托ｼ郁｣冗･樊ｮｿ陂・函繝ｻ豁ｦ蜈ｷ謳崎励・驟貞ｴ縺ｮ繝ｪ繝吶Φ繧ｸ・・</em></p>
+<p><strong>逋ｻ蝣ｴ莠ｺ迚ｩ</strong>: 繝医・繝ｩ・域摶遯√″縺ｮ霆ｽ謌ｦ螢ｫ・峨√Λ繝斐・繧ｿ・郁ｲｷ縺・黄髷・・蜈惹ｺｺ蜒ｧ萓ｶ・峨∬｣冗･樊ｮｿ縺ｮ閠∫･槫ｮ・</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p>#### 1. 逵ｩ縺・・縺九ｊ縺ｮ縲後≠縺ｮ蜈峨・</p>
+<p>縲瑚ｦ九※繧医Λ繝斐・繧ｿ・・縺ゅ▲縺溘√≠縺｣縺溘ｈ・・譛ｬ蠖薙↓縺ゅ▲縺溘ｓ縺・・ｼ√・</p>
+<p>驥醍ｮ斐′蠑ｵ繧雁ｷ｡繧峨＆繧後◆隨ｬ062髫弱・蠎・､ｧ縺ｪ蠎・俣縺ｮ荳ｭ蠢・・</p>
+<p>繝医・繝ｩ縺ｯ蜿ｳ謇九・繝医ロ繝ｪ繧ｳ縺ｮ譚悶ｒ繧ｫ繝・Φ縺ｨ魑ｴ繧峨＠縲∵が縺・承雜ｳ繧貞ｺ・≧縺ｮ繧ょｿ倥ｌ縺ｦ鬧・￠蟇・▲縺溘・</p>
+<p>驛ｨ螻九・荳ｭ螟ｮ縲∫區驫縺ｮ蜿ｰ蠎ｧ縺ｮ荳翫↓骼ｮ蠎ｧ縺励※縺・◆縺ｮ縺ｯ縲√♀縺ｨ縺手ｩｱ縺ｮ邨ｵ譛ｬ縺九ｉ縺昴・縺ｾ縺ｾ謚懊￠蜃ｺ縺励※縺阪◆繧医≧縺ｪ縲∝ｷｨ螟ｧ縺ｧ雎ｪ螂｢縺ｪ讓ｫ縺ｮ譛ｨ縺ｨ逵滄紺縺ｮ螳晉ｮｱ縺縺｣縺溘・</p>
+<p>骰ｵ縺ｯ蛻昴ａ縺九ｉ螟悶ｌ縺ｦ縺翫ｊ縲∬搭縺ｮ髫咎俣縺九ｉ縺ｯ縲√∪繧九〒螟ｪ髯ｽ繧帝哩縺倩ｾｼ繧√◆縺九・繧医≧縺ｪ鮟・≡縺ｮ辯仙・縺梧ｺ｢繧悟・縺励※縺・ｋ縲・</p>
+<p>縲後％繧後□繧茨ｼ・縺薙ｌ縺後ぐ繝ｫ繝峨・蝎ゅ〒豬√ｌ縺ｦ縺溘・2髫弱・迚ｹ蝨ｰ雋｡螳昴上□・・隕九※縺薙・霈昴″窶ｦ窶ｦ驥題ｲｨ縺縺代§繧・↑縺・∫渚縺励＞繝槭ず繝・け繧｢繧､繝・Β縺ｮ豕｢蜍輔′貍上ｌ蜃ｺ縺励※繧具ｼ・縺薙ｌ縺輔∴縺ゅｌ縺ｰ縲√≠縺溘＠縺ｮ髱ｴ蠎輔ｒ譛鬮倡ｴ壹・繧ｯ繝・す繝ｧ繝ｳ髱ｩ縺ｫ蠑ｵ繧頑崛縺医ｉ繧後ｋ縺励√≠繧薙◆縺ｮ繝懊Ο繝懊Ο縺ｮ雋ｷ縺・黄髷・□縺｣縺ｦ縲∫視驛ｽ陬ｽ縺ｮ繧ｷ繝ｫ繧ｯ莉慕ｫ九※縺ｫ雋ｷ縺・崛縺医ｉ繧後ｋ繧薙□繧茨ｼ√・</p>
+<p>繝医・繝ｩ縺ｯ荳｡逶ｮ繧偵ｉ繧薙ｉ繧薙→霈昴°縺帙∝ｮ晉ｮｱ縺ｮ蜑阪↓迚・・繧偵▽縺・◆縲・</p>
+<p>閭ｸ縺碁ｫ倬ｳｴ繧翫・ｬ縺檎ｴ・ｽｮ縺吶ｋ縲ょ・髯ｺ閠・↓縺ｪ縺｣縺ｦ荳牙ｹｴ縲∵ｳ･豌ｴ繧偵☆縺吶ｊ縲・擽蠎輔↓陦雎・ｒ菴懊ｊ縺ｪ縺後ｉ逋ｻ縺｣縺ｦ縺阪◆闍ｦ蜉ｴ縺後∽ｻ翫∪縺輔↓蝣ｱ繧上ｌ繧医≧縺ｨ縺励※縺・◆縲・</p>
+<p>縺縺後∽ｸ画ｭｩ蠕後ｍ縺ｧ遶九■豁｢縺ｾ縺｣縺溽區驫縺ｮ蜈惹ｺｺ蜒ｧ萓ｶ縲√Λ繝斐・繧ｿ縺ｮ髟ｷ縺・ｳ縺後∽ｸ咲ｩ上↑隗貞ｺｦ縺ｫ繝斐け繝斐け縺ｨ逞呎肇縺励◆縲・</p>
+<p>縲後■繧・ｦ窶ｦ縺｡繧・▲縺ｨ蠕・▲縺ｦ縺上□縺輔＞繝医・繝ｩ縺輔ｓ・・關ｽ縺｡逹縺・※・・蝟懊・縺ｮ縺ｯ縺ｾ縺譌ｩ縺・〒縺呻ｼ√・</p>
+<p>繝ｩ繝斐・繧ｿ縺ｯ閧ｩ縺ｫ謗帙￠縺滄㍾縺溘＞雋ｷ縺・黄髷・ｒ縺弱ｅ縺｣縺ｨ謚ｱ縺咲峩縺励・ｼｻ繧偵・縺上・縺上＆縺帙◆縲・</p>
+<p>縲後♀縺九＠縺・〒縺吶ｈ縲ゅ％繧薙↑隕矩壹＠縺ｮ縺・＞蠎・俣縺ｮ逵溘ｓ荳ｭ縺ｫ縲・嵯繧ゅ°縺九▲縺ｦ縺ｪ縺・･ｵ荳翫・螳晉ｮｱ縺後・繝・Φ縺ｨ鄂ｮ縺・※縺ゅｋ縺ｪ繧薙※・・縺昴ｌ縺ｫ窶ｦ窶ｦ縺ｻ繧峨∝ｮ晉ｮｱ縺ｮ陜ｶ逡ｪ縺ｮ髫咎俣縺九ｉ縲∫｡ｫ鮟・→鮟定牡轣ｫ阮ｬ縺ｮ蛹ゅ＞縺悟ｾｮ縺九↓豺ｷ縺悶▲縺ｦ縺ｾ縺呻ｼ・閠ｳ繧呈ｾ・∪縺吶→縲∫ｮｱ縺ｮ蠎輔〒縲弱き繝≫ｦ窶ｦ繧ｫ繝≫ｦ窶ｦ縲上▲縺ｦ蟆上＆縺ｪ繧ｼ繝ｳ繝槭う縺悟ｷｻ縺九ｌ繧矩浹縺娯披斐・</p>
+<p>縲後ｂ縺・√Λ繝斐・繧ｿ縺ｯ蠢・・諤ｧ縺ｪ繧薙□縺九ｉ・・霑ｷ螳ｮ縺ｮ逾樊ｧ倥′縲∵律鬆・悄髱｢逶ｮ縺ｫ逕溘″縺ｦ繧九≠縺溘＠縺溘■縺ｫ縺上ｌ縺溘・繝ｼ繝翫せ縺ｫ豎ｺ縺ｾ縺｣縺ｦ繧九§繧・↑縺・ｼ√・</p>
+<p>縲後ヨ繝ｼ繝ｩ縺輔ｓ縲√ム繝｡縺ｧ縺呻ｼ・隗ｦ縺｣縺｡繧・披斐・</p>
+<p>縲後∴繝ｼ縺・√＃髢句ｸｳ縺｣・・ｼ√・</p>
+<p>繝代き繝ｳ縲・</p>
+<p>繝医・繝ｩ縺ｮ謇九′縲・ｻ・≡縺ｫ蜈峨ｋ逵滄紺縺ｮ逡吶ａ驥代ｒ霍ｳ縺ｭ荳翫￡縺溘・</p>
+<p>縺昴・迸ｬ髢薙・</p>
+<p>繧ｫ繝√Μ縲・</p>
+<p>驛ｨ螻九・驥醍ｮ斐・螢√′荳譁峨↓逵ｩ蜈峨ｒ謾ｾ縺｡縲∝ｮ晉ｮｱ縺ｮ蠎輔°繧峨・ｻ・≡縺ｮ蜈峨〒縺ｯ縺ｪ縺上・<em>繝峨せ鮟偵＞邏ｫ濶ｲ縺ｮ髢・・</em>*縺悟･疲ｵ√→縺ｪ縺｣縺ｦ蝎ｴ縺榊・縺励◆縲・</p>
+<p>縲弱ヴ繧ｮ繝ｼ繝ｼ繝ｼ繝ｼ繝ｼ繝ｼ繝ｼ繝ｼ繝ｼ繝ｼ繝・ャ繝・ｼ・ｼ・ｼ√・</p>
+<p>縺昴ｌ縺ｯ螳晉ｮｱ縺ｮ蠖｢繧偵＠縺溘∵怙謔ｪ縺ｮ蝨ｧ邵ｮ謖・髄諤ｧ遐ｴ遐輔ヨ繝ｩ繝・・縲主⊃陬・､ｧ辷・ｸｮ邂ｱ・医げ繝ｩ繝ｳ繝峨・繝溘Α繝・け繝懊Β・峨上・襍ｷ蜍暮浹縺縺｣縺溘・</p>
+<p>縲後・窶ｦ窶ｦ縺｣・・ｼ溘・</p>
+<p>縲御ｼ上○縺ｦ縺・∞縺・∞縺・∞繝・ｼ・ｼ√・</p>
+<p>繝ｩ繝斐・繧ｿ縺悟ｿ・ｭｻ縺ｫ鬟帙・縺､縺阪√ヨ繝ｼ繝ｩ縺ｮ隘滄ｦ悶ｒ謗ｴ繧薙〒蠑輔″蛟偵◎縺・→縺励◆縺後・≦縺吶℃縺溘・</p>
+<p>繝峨ャ繧ｴ繧ｩ繧ｩ繧ｩ繧ｩ繧ｩ繧ｩ繧ｩ繧ｩ繧ｩ繝ｳ繝・ｼ・ｼ・ｼ・ｼ・</p>
+<p>隕也阜縺檎悄縺｣逋ｽ縺ｫ譟薙∪縺｣縺溘・</p>
+<p>辷・｢ｨ縺ｨ辟｡謨ｰ縺ｮ逵滄紺迚・√◎縺励※蠑ｷ辜医↑陦晄茶豕｢縺御ｺ御ｺｺ縺ｮ霄ｫ菴薙ｒ譛ｨ縺ｮ闡峨・繧医≧縺ｫ蜷ｹ縺埼｣帙・縺励∫｡ｬ縺・≡邂斐・螢√∈縺ｨ蜿ｩ縺阪▽縺代ｋ縲・</p>
+<p>繝ｩ繝斐・繧ｿ縺ｮ諢剰ｭ倥′騾泌・繧後ｋ逶ｴ蜑阪∬ｳ縺ｫ螻翫＞縺溘・縺ｯ縲∵・逕ｨ縺ｮ雋ｷ縺・黄髷・・荳ｭ縺ｧ縲後・繧ｷ繝｣繝・阪→菴輔°縺檎┌谿九↓貎ｰ繧後ｋ縲∝ｫ後↑逕溘・＠縺・浹縺縺｣縺溘・</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p>#### 2. 蜀ｷ縺溘＞蠎翫→縲・匆豌励↑髏倥・髻ｳ</p>
+<p>繧ｴ繧ｩ繧ｩ繧ｩ繧ｩ繝ｳ窶ｦ窶ｦ窶ｦ窶ｦ縲・</p>
+<p>菴弱￥縲・㍾闍ｦ縺励＞髏倥・髻ｳ縺後・ｭ闢矩ｪｨ縺ｮ螂･縺ｫ髻ｿ縺・※縺・◆縲・</p>
+<p>縲娯ｦ窶ｦ縺・√≧縺・ｦ窶ｦ鬆ｭ縺悟牡繧後◎縺・ｦ窶ｦ縲・</p>
+<p>繝医・繝ｩ縺悟遜縺阪↑縺後ｉ逶ｮ繧帝幕縺代◆縲・</p>
+<p>逶ｮ縺ｮ蜑阪↓縺ゅ▲縺溘・縺ｯ縲・ｻ・≡縺ｫ霈昴￥螢√〒縺ｯ縺ｪ縺上∫・縺代◆轣ｰ濶ｲ縺ｮ邊怜炎繧翫↑遏ｳ螟ｩ莠輔□縺｣縺溘・</p>
+<p>遶九■霎ｼ繧√ｋ螳峨▲縺ｽ縺・ｷ夐ｦ吶・辣吶→縲∬脈蜩√・繝・Φ縺ｨ縺励◆蛻ｺ豼閾ｭ縲・</p>
+<p>縲梧ｰ励′縺､縺・◆縺九・縲∝・髯ｺ閠・・</p>
+<p>隕倶ｸ九ｍ縺励※縺阪◆縺ｮ縺ｯ縲・ｻ偵＞鮗ｻ蟶・・繝輔・繝画ｷｱ縺剰｢ｫ繧翫・ｪｨ縺ｮ繧医≧縺ｫ逞ｩ縺帷ｴｰ縺｣縺溯∫･槫ｮ倥□縺｣縺溘よ焔縺ｫ縺ｯ鄒ｽ繝壹Φ縺ｨ蛻・字縺・ｾ顔坩邏吶・蜿ｰ蟶ｳ繧呈戟縺｣縺ｦ縺・ｋ縲・</p>
+<p>縲娯ｦ窶ｦ縺薙％縲√・窶ｦ窶ｦ・・螳晉ｮｱ縺ｯ窶ｦ窶ｦ・溘・</p>
+<p>縲後％縺薙・隨ｬ01髫弱∝・髯ｺ閠・ぐ繝ｫ繝芽｣乗焔縺ｮ縲手｣冗･樊ｮｿ繝ｻ閾ｨ譎り・逕滓園縲上□繧医ゅ♀蜑阪＆繧薙◆縺｡莠御ｺｺ縲∫ｬｬ062髫弱・謗・勁螻九ラ繝ｯ繝ｼ繝輔↓蝗槫庶縺輔ｌ縺ｦ驕九・繧後※縺阪◆縺ｮ縺輔ょ・霄ｫ鮟堤┬縺偵∝ｿ・ぜ蛛懈ｭ｢縺ｮ縺ｨ縺薙ｍ繧偵√い繧ｹ繝医Λ繝ｫ縺ｮ螂・ｷ｡縺ｧ郢九℃豁｢繧√◆縲・</p>
+<p>閠∫･槫ｮ倥・豺｡縲・→鄒ｽ繝壹Φ繧定ｵｰ繧峨○縲∫ｾ顔坩邏吶ｒ繝医・繝ｩ縺ｮ閭ｸ蜈・↓遯√″蜃ｺ縺励◆縲・</p>
+<p>縲後・縺・√％繧瑚・逕滉ｻ｣驥代・隲区ｱよ嶌縲るｭゅ・蜀榊ｮ夂捩雋ｻ逕ｨ縲∝､門す蜀咲函霆溯・縲・怺阮ｬ縺ｮ轤ｹ貊ｴ莉｣窶ｦ窶ｦ邱繧√※驫雋ｨ蜈ｫ蜊∵椢縲ゆｸ諡ｬ縺ｧ謇輔∴縺ｪ縺・↑繧峨√ぐ繝ｫ繝峨・逋ｻ骭ｲ險ｼ繧呈球菫昴↓譌･豁ｩ荳牙侍縺ｮ繝・こ縺縺ｭ縲・</p>
+<p>縲後℃縲・橿雋ｨ蜈ｫ蜊∵椢縺・∞縺・∞縺・∞縺｣・・ｼ滂ｼ・ｼ溘・</p>
+<p>繝医・繝ｩ縺ｯ謔ｲ魑ｴ繧偵≠縺偵※霍ｳ縺ｭ襍ｷ縺阪ｈ縺・→縺励◆縺後∝・霄ｫ縺ｮ遲玖ｉ縺梧ご魑ｴ繧偵≠縺偵※蟇晏床縺ｮ荳翫↓蟠ｩ繧瑚誠縺｡縺溘・</p>
+<p>霄ｫ縺ｫ縺､縺代※縺・◆縺ｯ縺壹・髱ｩ骼ｧ縺ｯ辷・｢ｨ縺ｧ繝懊Ο繝懊Ο縺ｫ蠑輔″陬ゅ°繧後∝承謇九・繝医ロ繝ｪ繧ｳ縺ｮ譚悶・蜈育ｫｯ縺碁ｻ堤┬縺偵↓縺ｪ縺｣縺ｦ轤ｭ蛹悶＠縺ｦ縺・ｋ縲・</p>
+<p>縺ｵ縺ｨ髫｣繧定ｦ九ｋ縺ｨ縲∝酔縺倥ｈ縺・↓蜈ｨ霄ｫ蛹・ｸｯ蟾ｻ縺阪↓縺輔ｌ縺溘Λ繝斐・繧ｿ縺後∝漕辟ｶ縺ｨ陌夂ｩｺ繧定ｦ九▽繧√※縺・◆縲・</p>
+<p>縺昴・閹昴・荳翫↓縺ｯ縲∫┌谿九↓辣､縺代◆蟶・｣ｽ縺ｮ雋ｷ縺・黄髷・′鄂ｮ縺九ｌ縺ｦ縺・◆縲・</p>
+<p>縲後Λ縲√Λ繝斐・繧ｿ窶ｦ窶ｦ逕溘″縺ｦ縺溘ｓ縺縲√ｈ縺九▲縺溪ｦ窶ｦ縲・</p>
+<p>繝医・繝ｩ縺後♀縺壹♀縺壹→螢ｰ繧偵°縺代ｋ縺ｨ縲∫區驫縺ｮ蜈手ｳ縺後∝鴨縺ｪ縺上ヱ繧ｿ繝ｪ縺ｨ蝙ゅｌ荳九′縺｣縺溘・</p>
+<p>縲娯ｦ窶ｦ繝医・繝ｩ縺輔ｓ縲・</p>
+<p>繝ｩ繝斐・繧ｿ縺ｮ螢ｰ縺ｯ縲∝ｹｽ髴翫ｈ繧翫ｂ菴弱￥縲∝・縺溘°縺｣縺溘・</p>
+<p>縲瑚ｨ縺・∪縺励◆繧医・縲ょヵ縲∬ｨ縺・∪縺励◆繧医・・・縲守↓阮ｬ縺ｮ蛹ゅ＞縺後☆繧九上▲縺ｦ縲∽ｸ牙屓險縺・∪縺励◆繧医・・溘・</p>
+<p>縲後≧縲√≧繧凪ｦ窶ｦ縺斐ａ繧凪ｦ窶ｦ縲・</p>
+<p>縲悟ヵ縺ｮ險闡峨ｒ辟｡隕悶＠縺ｦ髢九￠縺溽ｵ先棡縺後∬｣冗･樊ｮｿ騾√ｊ縺ｧ驫雋ｨ蜈ｫ蜊∵椢縺ｮ蛟滄≡縺ｧ縺吶°縲やｦ窶ｦ縺ｾ縺ゅ√◎繧後・縺・＞縺ｧ縺吶ょ多縺後≠縺｣縺溘□縺大┫縺代ｂ縺ｮ縺ｧ縺吶°繧峨・</p>
+<p>縲後∴縲√＞縺・・窶ｦ窶ｦ・溘・</p>
+<p>縲瑚憶縺上↑縺・・縺ｯ縲√％縺｣縺｡縺ｧ縺吶・</p>
+<p>繝ｩ繝斐・繧ｿ縺ｯ髴・∴繧区焔縺ｧ縲∬ｲｷ縺・黄髷・・繝√Ε繝・け繧帝幕縺代◆縲・</p>
+<p>荳ｭ縺九ｉ繝峨Ο繝ｪ縺ｨ縺励◆鮟・牡縺・ｶｲ菴薙′縲∫┌谿九↓豬√ｌ蜃ｺ縺励※縺阪◆縲・</p>
+<p>縲御ｻ頑悃縲∫ｬｬ08髫弱・繧ｪ繧｢繧ｷ繧ｹ蟶ょｴ縺ｮ譛晏ｸゅ〒縲∽ｸ譎る俣繧ゆｸｦ繧薙〒雋ｷ縺｣縺溘ｓ縺ｧ縺吮ｦ窶ｦ縲ゅ朱ｻ・ｺｫ縺梧ｿ・字縺ｪ襍ｰ魑･縺ｮ迚ｹ螢ｲ蜊ｵ繝ｻ蜊∝九ヱ繝・け縲鞘ｦ窶ｦ蜊企｡阪す繝ｼ繝ｫ縺瑚ｲｼ縺｣縺ｦ縺ゅ▲縺ｦ縲∽ｻ雁､懊・驥手除繧ｹ繝ｼ繝励↓蜈･繧後ｈ縺・→縲√ｂ縺ｮ縺吶＃縺乗･ｽ縺励∩縺ｫ縺励※縺・◆縺ｮ縺ｫ窶ｦ窶ｦ蜈ｨ驛ｨ縲∫ｶｺ鮗励↓蜈ｨ貊・〒縺吮ｦ窶ｦ繝・ｼ√・</p>
+<p>繝ｩ繝斐・繧ｿ縺ｮ逶ｮ縺九ｉ縲∝､ｧ邊偵・豸吶′繝昴Ο繝昴Ο縺ｨ髮ｶ繧瑚誠縺｡縺溘・</p>
+<p>縲悟ヵ縺ｮ蜊ｵ縺娯ｦ窶ｦ蜒輔・縲∫卆莠悟香繧ｳ繝・ヱ繝ｼ縺ｮ蜊ｵ縺後＝縺√＝縺≫ｦ窶ｦ繝・ｼ・ｼ√・</p>
+<p>縲後＃縲√＃繧√ｓ・・謔ｪ縺九▲縺滂ｼ・縺ゅ◆縺励′謔ｪ縺九▲縺溘°繧会ｼ・豕｣縺九↑縺・〒繝ｩ繝斐・繧ｿ・・蜊ｵ縺ｪ繧峨∝滄≡霑斐＠縺溘ｉ縺ゅ◆縺励′荳牙九ヱ繝・け螂｢繧九°繧峨＆縺・ｼ√・</p>
+<p>蜈ｨ霄ｫ縺ｮ逞帙∩縺ｫ鬘斐ｒ豁ｪ繧√↑縺後ｉ縲√ヨ繝ｼ繝ｩ縺ｯ蟷ｳ隰昴ｊ縺ｫ鬆ｭ繧剃ｸ九￡邯壹￠縺溘・縺縺｣縺溘・</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p>#### 3. 霍ｳ縺ｭ蜈惹ｺｭ縺ｮ螟懊→縲∝ｰ上＆縺ｪ謨第ｸ・</p>
+<p>縺昴・螟懊・</p>
+<p>隨ｬ01髫弱・蜀帝匱閠・｡励↓縺ゅｋ螟ｧ陦・・蝣ｴ縲手ｷｳ縺ｭ蜈惹ｺｭ縲上・迚・嚆縺ｧ縲∽ｺ御ｺｺ縺ｯ螳峨ユ繝ｼ繝悶Ν繧呈検繧薙〒蜷代°縺・粋縺｣縺ｦ縺・◆縲・</p>
+<p>豕ｨ譁・＠縺溘・縺ｯ縲∽ｸ逡ｪ螳峨＞鮗ｦ驟偵′莠梧擶縺ｨ縲∝崋縺上↑縺｣縺滄ｻ偵ヱ繝ｳ縲√◎繧後↓蜈ｷ縺ｮ縺ｻ縺ｨ繧薙←蜈･縺｣縺ｦ縺・↑縺・｡ｩ繧ｹ繝ｼ繝励□縺代・</p>
+<p>莠御ｺｺ縺ｨ繧ょ・霄ｫ縺ｫ蛹・ｸｯ繧貞ｷｻ縺阪√ヨ繝ｼ繝ｩ縺ｯ辟ｦ縺偵◆譚悶・蜈育ｫｯ繧貞ｰ丞・縺ｧ蜑翫ｊ縲√Λ繝斐・繧ｿ縺ｯ豼｡繧碁尅蟾ｾ縺ｧ雋ｷ縺・黄髷・・蜀・・繧剃ｸｹ蠢ｵ縺ｫ諡ｭ縺・※縺・◆縲・</p>
+<p>縲娯ｦ窶ｦ逞帙＞窶ｦ窶ｦ豸域ｯ呈ｶｲ縺梧ｲ√∩繧銀ｦ窶ｦ縲・</p>
+<p>繝医・繝ｩ縺檎怏繧偵・縺昴ａ縺ｪ縺後ｉ縲∵逃繧翫・縺・◆閹昴↓螳蛾・繧貞桙繧峨☆縲・</p>
+<p>縲瑚・讌ｭ閾ｪ蠕励〒縺吶ゅ〒繧ゅ・ｪｨ縺梧釜繧後※縺ｪ縺上※譛ｬ蠖薙↓濶ｯ縺九▲縺溘〒縺吶ｈ縲ゅヨ繝ｼ繝ｩ縺輔ｓ縺ｮ謔ｪ縺・承雜ｳ縲∝・謇玖｡薙↑繧薙※縺薙→縺ｫ縺ｪ縺｣縺溘ｉ縲・橿雋ｨ莠檎卆譫壹さ繝ｼ繧ｹ縺ｧ縺励◆縺九ｉ縺ｭ縲・</p>
+<p>繝ｩ繝斐・繧ｿ縺ｯ縺溘ａ諱ｯ繧偵▽縺阪↑縺後ｉ縲・ｻ偵ヱ繝ｳ繧偵せ繝ｼ繝励↓豬ｸ縺励※譟斐ｉ縺九￥縺励◆縲・</p>
+<p>縲娯ｦ窶ｦ縺ゅ◆縺励＆縲∵悽蠖薙↓鬥ｬ鮖ｿ縺繧医・縲ゅ≠繧薙↑邨ｵ縺ｫ謠上＞縺溘ｈ縺・↑鄂縺ｫ蠑輔▲縺九°縺｣縺ｦ縲ゅΛ繝斐・繧ｿ縺梧ｭ｢繧√※縺上ｌ縺溘・縺ｫ縺補ｦ窶ｦ縲ゅ≠縺溘＠縺瑚ｶｳ謇九∪縺ｨ縺・□縺九ｉ縲∵掠縺冗ｨｼ縺・〒縲√＞縺・｣・ｙ雋ｷ縺｣縺ｦ縲√Λ繝斐・繧ｿ繧呈･ｽ縺ｫ縺輔○縺ｦ繧・ｊ縺溘＞縺｣縺ｦ辟ｦ縺｣縺｡繧・▲縺溘ｓ縺繧医・</p>
+<p>縺・↑縺繧後ｋ繝医・繝ｩ繧定ｦ九※縲√Λ繝斐・繧ｿ縺ｯ繝斐Φ縺ｨ迚・婿縺ｮ閠ｳ繧堤ｫ九※縺溘・</p>
+<p>縺昴＠縺ｦ縲√・縺｣縺ｨ蟆上＆縺剰協隨代＞繧呈ｵｮ縺九∋縺溘・</p>
+<p>縲檎衍縺｣縺ｦ縺ｾ縺吶ｈ縲ゅヨ繝ｼ繝ｩ縺輔ｓ縺梧ｹ縺｣縺九ｉ縺ｮ謔ｪ莠ｺ縺倥ｃ縺ｪ縺・％縺ｨ縺上ｉ縺・やｦ窶ｦ縺溘□縲∫黄谺ｲ縺ｮ繝ｪ繝溘ャ繧ｿ繝ｼ縺悟｣翫ｌ縺ｦ繧九□縺代〒縺吶・</p>
+<p>縲後≧縺・ｦ窶ｦ霑斐☆險闡峨ｂ縺斐＊縺・∪縺帙ｓ窶ｦ窶ｦ縲・</p>
+<p>縲後⊇繧峨√％繧後る桷縺ｮ蠎輔ｒ諡ｭ縺・※縺溘ｉ縲∝･･縺ｮ邵ｫ縺・岼縺九ｉ繝昴Ο繝・→蜃ｺ縺ｦ縺阪◆繧薙〒縺吶・</p>
+<p>繧ｫ繝ｩ繝ｳ縲・</p>
+<p>繝ｩ繝斐・繧ｿ縺後ユ繝ｼ繝悶Ν縺ｮ荳翫↓縲∝ｰ上＆縺ｪ驥大ｱ樒援繧堤ｽｮ縺・◆縲・</p>
+<p>縺昴ｌ縺ｯ縲∫・逋ｺ縺ｮ迸ｬ髢薙∝ｮ晉ｮｱ縺ｮ譛ｨ譫縺九ｉ蠑ｾ縺鷹｣帙ｓ縺ｧ雋ｷ縺・黄髷・・繝昴こ繝・ヨ縺ｫ蛛ｶ辟ｶ鬟帙・霎ｼ繧薙〒縺阪◆繧峨＠縺・∬ｦｪ謖・⊇縺ｩ縺ｮ螟ｧ縺阪＆縺ｮ驥大ｱ樒援縺縺｣縺溘・</p>
+<p>陦ｨ髱｢縺ｮ辣､繧呈欠縺ｧ諡ｭ縺・→縲・・縺・√＠縺九＠豎ｺ縺励※濶ｲ隍ｪ縺帙↑縺・區驫縺ｮ霈昴″縺檎樟繧後◆縲・</p>
+<p>縲後％繧娯ｦ窶ｦ鬨吶＠驥題ｲｨ縺倥ｃ縺ｪ縺・よ悽迚ｩ縺ｮ縲取弌驫・医Α繧ｹ繝ｪ繝ｫ・峨・陬・｣ｾ驥大・縲上□窶ｦ窶ｦ・√・</p>
+<p>繝医・繝ｩ縺檎岼繧定ｦ句ｼｵ繧九・</p>
+<p>縲後・縺・ゅぐ繝ｫ繝峨・髑大ｮ壽園縺ｫ謖√▲縺ｦ縺・▲縺溘ｉ縲・橿雋ｨ莠疲椢縺上ｉ縺・↓縺ｯ縺ｪ繧九◎縺・〒縺吶ょ牡繧後◆蜊ｵ縺ｨ縲∽ｻ頑律縺ｮ螟暮｣ｯ莉｣縺上ｉ縺・↓縺ｯ縺ｪ繧翫∪縺吶・縲・</p>
+<p>繝ｩ繝斐・繧ｿ縺ｯ鮗ｦ驟偵・繧ｸ繝ｧ繝・く繧呈戟縺｡荳翫￡縲∵が謌ｯ縺｣縺ｽ縺冗ｬ代▲縺溘・</p>
+<p>縲御ｹｾ譚ｯ縺励∪縺励ｇ縺・√ヨ繝ｼ繝ｩ縺輔ｓ縲りｿｷ螳ｮ縺ｮ謔ｪ雜｣蜻ｳ縺ｪ繝医Λ繝・・縺ｫ螟ｧ謨怜圏縺励※縲∝嵯繧貞・驛ｨ蜑ｲ繧峨ｌ縺ｦ縲∬ｺｫ縺舌ｋ縺ｿ蜑･縺後＆繧後※窶ｦ窶ｦ縺昴ｌ縺ｧ繧ゅ√％縺・＠縺ｦ逕溘″縺ｦ驟偵ｒ鬟ｲ繧薙〒繧九∝ヵ縺溘■縺ｮ縺励・縺ｨ縺輔↓縲・</p>
+<p>繝医・繝ｩ縺ｯ蜻・ｰ励↓縺ｨ繧峨ｌ縺溘≠縺ｨ縲∝聖縺榊・縺吶ｈ縺・↓隨代▲縺溘・</p>
+<p>辟ｦ縺偵◆繝医ロ繝ｪ繧ｳ縺ｮ譚悶ｒ謠｡繧顔峩縺励∬・蛻・・繧ｸ繝ｧ繝・く繧貞鴨蠑ｷ縺上・縺､縺代ｋ縲・</p>
+<p>縲後≧繧難ｼ・荵ｾ譚ｯ縺縲√Λ繝斐・繧ｿ・・窶ｦ窶ｦ谺｡縺ｯ邨ｶ蟇ｾ縺ｫ縲√≠繧薙◆縺ｮ閠ｳ縺後ヴ繧ｯ繝・→縺励◆繧我ｸ豁ｩ繧ょ虚縺九↑縺・°繧峨＆・√・</p>
+<p>縲檎ｵｶ蟇ｾ縺ｫ縺昴・邏・據縲∝ｮ医▲縺ｦ縺上□縺輔＞繧茨ｼ・谺｡縺ｫ遐ｴ縺｣縺溘ｉ縲∝ヵ縺ｮ雋ｷ縺・黄髷・〒繝医・繝ｩ縺輔ｓ縺ｮ鬆ｭ繧貞娼縺阪∪縺吶°繧峨・縲・</p>
+<p>莠御ｺｺ縺ｮ隨代＞螢ｰ縺後・ｨ偵′縺励＞驟貞ｴ縺ｮ辭ｱ豌励・荳ｭ縺ｫ貅ｶ縺代※縺・▲縺溘・</p>
+<p>逞帙・雜ｳ繧貞ｼ輔″縺壹ｊ縺ｪ縺後ｉ縲∝牡繧後◆蜊ｵ縺ｮ謔斐＠縺輔ｒ蝎帙∩邱繧√↑縺後ｉ縲∝・髯ｺ閠・◆縺｡縺ｯ縺ｾ縺滓・譌･繧ゅ∵棡縺ｦ縺励↑縺・｡斐∈縺ｨ謖代ｓ縺ｧ縺・￥縲・</p>
+<p>縺昴ｌ縺薙◎縺後√％縺ｮ繝ｩ繧ｰ繝ｩ繝ｳ繧ｸ繝･縺ｮ蝪斐↓諱ｯ縺･縺上∝錐繧ゅ↑縺咲函豢ｻ閠・◆縺｡縺ｮ逵溷ｮ溘・蟋ｿ縺縺｣縺溘・</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Recorded under Lagrange Tower Chronicles / Cron 8 Scheduled Expansion (Floor 029/Total).</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-063" style="margin-top:0;">🛡️ 第63階：反転鏡面の天蓋回廊と銀星騎士団の防壁（The Mirror-Vault Corridor）</h2>
+<blockquote>
+<strong>親ノート</strong>: 00_Lagrange_Tower_MOC<br>
+<strong>観測日</strong>: 2026-09-11（Cron 8 定時未明増築）<br>
+<strong>環境</strong>: 重力が垂直に歪む浮遊回廊 / 鏡面の結晶床が星辰を反射 / 冷たいオゾンと研ぎ澄まされた静寂<br>
+<strong>推奨BGM</strong>: Dark_Chiptune_Archive Track_005（Corrupt_631_MemoryLeak）<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🏛️ フロア・カルテ（Floor Overview）</h3>
+<p>魔導仕立て屋の実験室（第54階）を越え、上層のセキュリティゲート（第76階）へと至る中間地点に位置する要塞階層。</p>
+<p>重力場が垂直方向に直交しており、歩行者は鏡のように磨き抜かれた水晶の側壁を「床」として歩行する。</p>
+<p>足元を覗き込めば無限の星空が広がり、天井を見上げても同じ星空が映り込む「合わせ鏡の回廊」となっている。</p>
+<p>上層の魔神デギゾニア率いる魔族勢力の南下を食い止めるため、兎人族の精鋭・聖騎士クラウディアが単身で防衛ラインを構築している。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">🏷️ 生態系・特産アーティファクト</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>星屑の反射鉱（Stardust Reflector）</strong>: 魔力を受けると位相を反転させてそのまま撃ち返す天然の鏡面鉱石。ミラーアーマーの原料となる。</li>
+<li><strong>星光石の砥石（Starlight Whetstone）</strong>: 刃を研ぐと星の燐光が宿り、魔族の再生能力を長時間封殺する。</li>
+<li><strong>徘徊生物『プリズム・ガーゴイル』</strong>: 鏡の翼を持つ石像魔獣。光魔法を浴びると七色に分光して分裂を試みるが、物理で叩くと甲高い音を立てて硬直する。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">🛠️ 常駐英雄・NPC</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>聖騎士 クラウディア・シルバースプリング（Craudia Silverspring）</strong>:</li>
+<li>兎人族シルバースプリング家の誇り高き女聖騎士（A Rank / 総合662）。</li>
+<li>『星光の槍』と『ミラーアーマー』を纏い、VIT 98の無敵のタフネスで最前線を死守する。</li>
+<li>クローミンの姉（あるいは妹）であり、普段は凛々しい武人だが、弟（兄）のことになると途端に取り乱す極度の過保護。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📜 迷宮群像劇：短編オムニバス（第63階編）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『鏡面回廊の雷鳴と、弟の心配をしすぎる白銀の兎』</h4>
+<p><strong>登場人物</strong>: クラウディア（兎人聖騎士）、アラリック（大地魔術師）、影縛りの斥候部隊</p>
+<p>鏡のように研ぎ澄まされた床と壁が、遥かな星々の光を幾重にも反射する第63階。</p>
+<p>垂直に歪んだ重力の回廊の中央で、白銀の甲冑を纏ったクラウディア・シルバースプリングは、静かに『星光の槍』の穂先を研いでいた。</p>
+<p>凛とした横顔、ピンと直立した白銀の兎耳。微かに風が吹くたび、ミラーアーマーの表面が冷たく輝く。</p>
+<p>「……クラウディア殿、下層の冒険者ギルドから伝令鳥が届いたぞ」</p>
+<p>そう声をかけてきたのは、分厚い緑の外套を纏った大地魔術師のアラリックだった。彼の手にする精霊の笏が、床の水晶鉱石を整えて頑丈な土塁を築き終えたところだった。</p>
+<p>「伝令？ もしや上層の魔神デギゾニア軍の動きですか？」</p>
+<p>クラウディアが星のように澄んだ瞳を向ける。</p>
+<p>「いや……下層のオアシス市場での事件だ。クローミン殿の目撃情報が入った。猫耳族の怪盗マイラと、青魚の神殿で大騒動を巻き起こしたらしいぞ。神殿の大扉を『締め鯖の黄金比』で爆破開錠したとか何とか……」</p>
+<p>カラン、と澄んだ金属音が回廊に響いた。</p>
+<p>クラウディアの手から、砥石が転がり落ちていた。</p>
+<p>「な……なんですって……！？」</p>
+<p>白銀の兎耳が、まるで雷に打たれたように激しくピクピクと痙攣する。</p>
+<p>「あの子が……あの世間知らずで心優しく、押しに弱くて騙されやすいクローミンが、泥棒猫に誑かされて魚の爆破テロを……！？ なんという不埒な！ 今すぐ私が下層まで駆け降りて、あやつを神聖槍の結界に保護せねばなりません！！」</p>
+<p>「ま、待てクラウディア殿！ 貴殿がここを離れたら、デギゾニアの配下がなだれ込んでくる！」</p>
+<p>慌ててアラリックが土の壁を作って制止しようとした、その時だった。</p>
+<p>カシャーン！！</p>
+<p>合わせ鏡の回廊の天井——いや、重力反転における「谷底」の空間から、黒い霧が噴き出した。</p>
+<p>漆黒のローブを纏った影縛りの斥候たちが、死者の魂の嘶きをあげながら回廊を急襲してきたのだ。</p>
+<p>『ヒヒヒ……隙あり、白銀の兎め！ 影縛りの結界にて魂ごと凍結して……』</p>
+<p>「——邪魔を、するなぁぁぁッ！！」</p>
+<p>回廊の星光が一瞬にして掻き消えるほどの、凄まじい光圧が爆発した。</p>
+<p>狼狽と過保護の怒りで限界突破したクラウディアのミラーアーマーが猛烈に発光し、放たれた暗黒の魔術を100%の出力でそっくりそのまま反射・倍返しで撃ち返した。</p>
+<p>さらに、クラウディアの星光の長槍から放たれた必殺の光弾『光の矢（Arrow of Light）』が、合わせ鏡の壁面を数千回にわたって超高速跳弾！</p>
+<p>ピカピカピカピカドォォォォン！！</p>
+<p>まるで鏡の部屋でレーザーを乱射したかのような光の嵐が巻き起こり、影縛りの斥候部隊は一言の悲鳴をあげる暇もなく、跡形もなく蒸発した。</p>
+<p>シン……と静まり返る鏡面回廊。</p>
+<p>煤ひとつついていないミラーアーマーの埃を払い、クラウディアはハッと我に返ったように長い耳をぺたんと倒した。</p>
+<p>「……失礼いたしました、アラリック殿。取り乱しました」</p>
+<p>アラリックは精霊の笏を抱えたまま、冷や汗をだらだらと流して硬直していた。</p>
+<p>「……い、いや。シルバースプリング家の絆の深さ、しかと見届けた……。デギゾニアめ、相手にする家系を完全に間違えているな……」</p>
+<p>クラウディアは槍を構え直し、鏡の向こうの深い闇を睨みつけた。</p>
+<p>「クローミン。待っていなさい。姉（？）が必ず、この迷宮の平穏を取り戻し、あなたを迎えに行きますからね……！」</p>
+<p>白銀の聖騎士の誓いが、星屑の回廊に凛と響き渡るのだった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Recorded under Lagrange Tower Chronicles / Cron 8 Scheduled Expansion.</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-066" style="margin-top:0;">🏰 ラグランジュの塔 第66階：薄暗き古代壁画の回廊と水滴の反響洞窟（Floor 066）</h2>
+<blockquote>
+<strong>世界観親ノート</strong>: 00_Lagrange_Tower_MOC | Lagrange_Tower_GAS_Factory_Codex<br>
+<strong>踏破日</strong>: 2026-09-16（Cron 8 無人自律増築・全フロア通算第20階層到達記念）<br>
+<strong>環境特性</strong>: 地下鍾乳洞窟、微光鉱石群、古代星辰壁画、涼水滴の多重反響音、湿潤冷気<br>
+<strong>主役パーティー（群像劇ローテーション）</strong>:<br>
+- <strong>ダリオ（Dario Ironfoot）</strong>: ドワーフ戦士。ゲン担ぎトカゲ兜×山砕きの斧。頑固一徹の前衛。<br>
+- <strong>リナ（Rina Deepwhisper）</strong>: 人間魔導士。古代反響の杖×紫秘のローブ。壁画解読フェチの才媛。<br>
+- <strong>オクタヴィアン（Octavian the Silent）</strong>: 梟人族（Strigi-an）星詠み召喚士。夜目視力×星導きの杖。<br>
+- <strong>モーリー（Molly）</strong>: 頭に炎を灯す謎のゼリー状スライム魔獣。自走式ランタン兼癒やし枠。<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 1. 階層環境カルテ（Floor Specification）</h3>
+<p>```mermaid</p>
+<p>graph TD</p>
+<p>Entrance[&quot;🚪 第65階からの氷解昇降竪坑&quot;] --&gt; EchoHall[&quot;💧 水滴反響の鍾乳大空洞&quot;]</p>
+<p>EchoHall --&gt; MuralCorridor[&quot;📜 古代星辰壁画の回廊（千年の天球図）&quot;]</p>
+<p>MuralCorridor --&gt; SecretSanctum[&quot;💎 滴水水晶の隠し祭壇（古代防衛ゴーレム封印域）&quot;]</p>
+<p>SecretSanctum --&gt; Gateway[&quot;🌀 第67階への星辰共鳴ゲート&quot;]</p>
+<p>```</p>
+<p>| 項目 | 詳細データ |</p>
+<p>| :--- | :--- |</p>
+<p>| <strong>階層気候</strong> | 気温11℃。湿度88%。天井から滴る水滴が洞窟全体に「澄んだ水琴窟」のような澄徹な反響音を奏でる。 |</p>
+<p>| <strong>生息魔物</strong> | エコー・リザード（反響音で幻覚を見せる大蜥蜴）、クリスタル・バット（紫水晶の翼を持つ蝙蝠）、ガーディアン・オブ・スターズ（古代星辰ゴーレム） |</p>
+<p>| <strong>階層特産品</strong> | <strong>水滴水晶の露（反響清涼水）</strong>、<strong>古代星辰顔料（千年間剥落しない発光鉱石粉）</strong>、<strong>洞窟発光茸の天ぷら</strong> |</p>
+<p>| <strong>階層適応ロードアウト</strong> | <strong>ダリオ</strong>: 山砕きの斧（Mountain Cleaver Axe）＋ 鉱夫安全兜 ＋ 接地防電靴&lt;br&gt;<strong>リナ</strong>: 古代反響の杖（Staff of the Arcane Echoes）＋ 紫秘のローブ ＋ 本草学者ルーペ&lt;br&gt;<strong>オクタヴィアン</strong>: 星の導きの杖（Staff of the Star Guide）＋ 照準フード |</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 2. 短編小説：『水滴の調べと古代星辰壁画の怪〜頭の炎は消さないで！〜』</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">幕間：ピチャン、という静寂</h4>
+<p>ラグランジュの塔第66階は、塔の喧騒が嘘のように静まり返っていた。</p>
+<p>天井から垂れ下がる無数の鍾乳石。その先端から、一粒の冷涼な雫が澄んだ地下泉へと落下する。</p>
+<p>——<em>ピチャ……ン……</em></p>
+<p>——<em>ピチ……ン……コロン……</em></p>
+<p>数秒おきに反響するその水音は、まるで神殿のオルガンのように幾重にも重なり合い、洞窟全体を心地よい催眠の調べで包み込んでいた。</p>
+<p>「おい、リナ。足元を見ろ。水たまりに気を取られてると、エコー・リザードの巣を踏み抜くぞ」</p>
+<p>ずんぐりとした鋼鉄の鎧を軋ませながら、ドワーフの戦士ダリオが低い唸り声をあげた。頭にはバイキング風の角つき兜。その額部分には、彼が「これがないと死ぬ」と信じて疑わないトカゲの意匠が誇らしげに彫り込まれている。背負うは大岩をも一撃で両断する名斧『山砕きの斧（Mountain Cleaver Axe）』。</p>
+<p>「大丈夫よダリオ。それより見て、この岩壁！……これ、ただの鍾乳石の筋じゃないわ。千年前の古代人が描いた、星辰の運行図よ！」</p>
+<p>リナは青白い光を帯びた翡翠の杖『古代反響の杖』を胸に抱え、深紅のローブの裾が泥水に濡れるのも構わず岩肌に張り付いていた。片手には、第42階の商人ゴービンから買い叩いた『本草学者の拡大ルーペ』。</p>
+<p>「……ホゥ。リナ殿の仰る通りですな」</p>
+<p>ふわり、と羽音を一切立てずに頭上の鍾乳石から舞い降りてきたのは、巨大な翼と白銀の羽毛を持つ梟人族（Strigi-an）の星詠み召喚士、オクタヴィアンだった。彼は黄金色に輝く大きな瞳を瞬かせ、手にした『星の導きの杖』を静かに壁画へと掲げる。</p>
+<p>「この星座の配列……第101階の幽霊船の甲板で見つかった古時計の針の刻みと完全に同期しています。塔の外殻を巡る星気流の周期が、この岩肌に数式として刻まれているのです」</p>
+<p>「へえっ、やっぱり！ 幽霊船の星図と繋がってるのね！」</p>
+<p>「感心してる場合か！」ダリオが額に青筋を立てた。「オイラが言ってるのは安全確認だ！ 特に……そこのプルプルしたやつ！」</p>
+<p>ダリオが指差した先には、半透明の淡い青色をしたゼリー状の物体がいた。</p>
+<p>スライムのモーリーである。</p>
+<p>モーリーの頭頂部には、なぜかろうそくのように小さな赤い炎が「ぽっ」と灯っている。一行が暗い洞窟を進むための、愛らしくも頼もしい「自走式ランタン」だ。</p>
+<p>「ピュイ！」</p>
+<p>モーリーは嬉しそうに飛び跳ね、水たまりに着地した。</p>
+<p><em>バシャアン！</em></p>
+<p>冷たい飛沫がダリオの髭に直撃する。</p>
+<p>「冷たっっ！！ おいモーリー！ 頭の火に水がかかったらどうするんだ！ お前の明かりが消えたら、この暗闇でオイラのトカゲ兜が見えなくなるだろうが！」</p>
+<p>「ダリオ、心配するところそこ！？」リナが吹き出した。「トカゲが見えなくなるのが一番の危機なの！？」</p>
+<p>「当たり前だ！ このトカゲの彫り込みは、オイラの曾祖父の代から伝わる『絶対安全祈願』なんだよ！ これが見えなきゃドワーフの誇りがポッキリ折れるんだ！」</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">展開：壁画の仕掛けと「水琴の罠」</h4>
+<p>オクタヴィアンが杖の先端で、壁画の中心にあるひときわ輝く宝石をそっと指した。</p>
+<p>「……触れてはなりませんぞ、ダリオ殿。この壁画は、水滴の落下リズムと魔力波長を一致させることで開く音響結界です。一音でも狂えば——」</p>
+<p>その瞬間。</p>
+<p>「ピュ〜♪」</p>
+<p>好奇心旺盛なモーリーが、壁画のくぼみにすっぽりと自らのゼリーボディをねじ込んだ。</p>
+<p>——<em>カチリ。</em></p>
+<p>洞窟内の水音が、ピタリと止まった。</p>
+<p>「……あ」リナが固まる。</p>
+<p>「……ホゥ」オクタヴィアンが首を360度回転させた。</p>
+<p>「モーリーーーーーッ！！ てめえ何押し込みやがったァァァ！！」ダリオの絶叫が洞窟に木霊した。</p>
+<p>ズズズズズ……！</p>
+<p>鍾乳洞の奥底から、大地を揺るがす重低音が響き渡る。</p>
+<p>壁画の岩肌が左右に割れ、そこから現れたのは、全身が硬質な水滴結晶と古代の青銅で鋳造された巨大な守護者——『ガーディアン・オブ・スターズ』であった。</p>
+<p>その胸部には、壁画と同じ星辰の魔法陣が青白く渦巻いている。</p>
+<p>『……侵入者……検知……星辰ノ調律ヲ……乱ス者ニ……粛清ヲ……』</p>
+<p>ガーディアンが両腕を振り上げると、洞窟中の鍾乳石が一斉に青い光を帯び、鋭利な氷柱のように一行の頭上へ照準を定めた！</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">激闘：反響魔法と山砕きの咆哮</h4>
+<p>「総員、散開ッ！」</p>
+<p>ダリオが叫びながら跳躍した。小柄な体を信じられない瞬発力で弾き飛ばし、接地防電靴（Boots of Grounding）で湿った岩盤をガッシリとグリップする。</p>
+<p>「リナ！ あいつのコアは胸の魔法陣だ！ 壁画と同じなら、水滴の反響で波長を乱せるはずだろ！」</p>
+<p>「任せて！ ……反響せよ、古の言霊！」</p>
+<p>リナが『古代反響の杖』を両手で構え、澄んだ声を張り上げた。</p>
+<p>杖頭の翡翠が激しく明滅し、洞窟内に先ほどまで響いていた「水滴の音」が、何千倍もの重層音波となって増幅される。</p>
+<p>——<em>キィィィィィン……ピチャァァァン！！</em></p>
+<p>強烈な超音波が洞窟内に充満し、ガーディアンの魔力フィールドが激しく乱れ、頭上に構えられた鍾乳石の氷柱がボロボロと粉砕されていく！</p>
+<p>『グ……オォォ……波長……不一致……エラー……！』</p>
+<p>「今です、ダリオ殿！ 宙空の星辰が、彼の装甲の継ぎ目を示しています！」</p>
+<p>頭上を飛翔するオクタヴィアンが『星の導きの杖』から一条の光条を放ち、ゴーレムの右肩の関節部にスポットライトを当てた。</p>
+<p>「よっしゃあぁぁ！ ドワーフ古式・山砕き一刀流！！」</p>
+<p>ダリオが巨斧を旋回させ、地を蹴った。</p>
+<p>その一撃はまさに山をも裂く剛力。轟音とともに『山砕きの斧』の刃がゴーレムの右肩に食い込み、古代青銅の装甲を粉微塵に打ち砕く！</p>
+<p>『ガ……アァァッ！』</p>
+<p>バランスを崩した巨人が、左腕を大振りに薙ぎ払った。狙いは後方のリナ！</p>
+<p>「リナ、危ない！」</p>
+<p>ダリオは体勢を崩しており、間に合わない。</p>
+<p>その時——</p>
+<p>「ピュイイィィッ！！」</p>
+<p>青い弾丸が飛んだ。モーリーである。</p>
+<p>モーリーは頭の炎をカッと大きく燃え上がらせると、巨人の顔面——視覚センサーのレンズへと真正面から張り付いた！</p>
+<p>ジュウゥゥゥッ！！</p>
+<p>「ぬ、温かい！？ っていうか熱い！？」巨人が視界を奪われて激しく悶絶する。</p>
+<p>「ナイスだモーリー！ リナ、トドメを刺せッ！」</p>
+<p>「星辰よ、大地に還れ——！ 『スターフォール・レゾナンス』！！」</p>
+<p>リナが杖を天に突き上げると、洞窟の天井に描かれた星辰壁画が一斉に共鳴し、無数の光の矢となってゴーレムの胸部コアへと降り注いだ。</p>
+<p>ズドォォォォォン……！！</p>
+<p>閃光と爆煙の中、古代の守護者はゆっくりと膝をつき、最後には無数の青い光の粒子となって霧散していった。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">結末：星辰の祝福と夜食のキノコ</h4>
+<p>洞窟に、再び静寂が戻ってきた。</p>
+<p>巨人が倒れた跡地には、透き通るような美しい紫水晶と、千年間失われていた『水滴水晶の露（反響清涼水）』が清らかに湧き出していた。</p>
+<p>「……ふぅ。一時はどうなるかと思ったわ」</p>
+<p>リナは額の汗を拭い、ぺたんと岩の上に座り込んだ。</p>
+<p>その足元に、ぽよん、とモーリーがすり寄ってくる。頭の炎はすっかり小さくなり、マッチの火ほどになって揺れていた。</p>
+<p>「よくやったな、モーリー。お前の突撃がなきゃ、リナの服が破けてまた大騒ぎになるところだった」</p>
+<p>ダリオが豪快に笑い、ポーチから「洞窟発光茸」を取り出してモーリーの頭の火であぶり始めた。</p>
+<p>ジュウ……と香ばしい醤油のような香りが洞窟内に漂う。</p>
+<p>「ちょっとダリオ！ モーリーの頭で焼きキノコ作らないでよ！」</p>
+<p>「何言ってんだ、この炎で炙ったキノコが一番うまいんだよ。ほらオクタヴィアン、お前も食うだろ？」</p>
+<p>「……ホゥ。いただきます。ドワーフの野営術には毎度恐れ入りますな」</p>
+<p>オクタヴィアンが器用に嘴でキノコをついばみ、満足そうに目を細めた。</p>
+<p>洞窟の奥には、新たに起動した『第67階への星辰共鳴ゲート』が淡い光を放っている。</p>
+<p>水滴の澄んだ反響音が、再びピチャンと響いた。</p>
+<p>それは過酷なラグランジュの塔の底で、冒険者たちが分かち合う、最高に温かな夜食の調べであった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🏆 3. 到達記念成果物・住人カルテ追加</h3>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>新規解放階層</strong>: 第66階『薄暗き古代壁画の回廊と水滴の反響洞窟』</li>
+<li><strong>獲得アーティファクト</strong>:</li>
+<li><code>水滴水晶の露</code>: 精神疲労を瞬時に全快させる超高純度の霊水。</li>
+<li><code>古代星辰の拓本</code>: リナが写し取った、第101階幽霊船と連動する古代天球図。</li>
+<li><strong>名鑑追加</strong>:</li>
+<li><strong>ダリオ（Dario Ironfoot）</strong>: ドワーフ戦士（Rank A / 山砕きの斧・トカゲ兜）。</li>
+<li><strong>リナ（Rina Deepwhisper）</strong>: 人間魔導士（Rank A / 古代反響の杖・紫秘のローブ）。</li>
+<li><strong>オクタヴィアン（Octavian the Silent）</strong>: 梟人族星詠み召喚士（Rank S / 星導きの杖）。</li>
+<li><strong>モーリー（Molly）</strong>: 頭火スライム（Rank E+ / 自走式ランタン）。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Recorded under Lagrange Tower Master Chronicles / 塔務記録局 2026.</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-068" style="margin-top:0;">🌫️ 第068階：悲哀の魔窟と紫煙の涙池（Grotto of Sorrow &amp; Weeping Tarn）</h2>
+<blockquote>
+<strong>階層分類</strong>: 中層・深部洞窟バイオーム / 精神侵食・重泥環境<br>
+<strong>踏破難易度</strong>: Rank B（環境致死性: 高 / 精神防壁・打撃武器・破幻アイテム必須）<br>
+<strong>接続階層</strong>: 第066階：古代壁画と反響洞窟 ➔ <strong>第068階：悲哀の魔窟</strong> ➔ 第071階：黒曜石回廊と月光庭園<br>
+<strong>採用ステージング環境</strong>: ENV-003（提督承認・悲哀の魔窟と紫煙の涙池）<br>
+<strong>ナラティブモード</strong>: <strong>②【敗北・再起型（Defeat &amp; Rebirth）】</strong><br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🧭 階層環境特性とハザード事象</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. 紫煙の幻聴ハザード（Violet Smog &amp; Phantom Murmurs）</h4>
+<p>第068階の洞窟全域には、かつてこの階層で命を落とした無数の冒険者たちの未練や後悔が凝縮し、淡い紫色の濃煙となって漂っている。</p>
+<p>この紫煙を吸い込み続けると、次第に愛する者の泣き声や、背後からの囁き声といった精神侵食性の幻聴が聞こえ始め、正気度（Sanity）を削られてパニックや判断力低下を引き起こす。</p>
+<p>対抗策として、鼻腔を刺激する清涼薬草『破幻の薄荷香（ITM-002）』の携行が義務付けられている。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. 足を取られる粘性重泥（The Weeping Quagmire）</h4>
+<p>洞窟の底を満たす『涙池』の周囲は、水と粘土が混ざり合った赤黒い重泥地帯となっている。</p>
+<p>一度足を踏み入れると長靴や甲冑が数十キロの鉛のように重くなり、敏捷な身のこなしが完全に封じられる。泥の中からは、未練に縛られた土塊の巨人が音もなく浮上してくる。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">💎 特産品・採取素材</h3>
+<p>| 素材名 | 分類 | 希少度 | 用途・取引価値 | 特性・フレーバー |</p>
+<p>| :--- | :---: | :---: | :--- | :--- |</p>
+<p>| <strong>悲嘆の涙晶（Tear Crystal）</strong> | 鉱石・触媒 | Rank B | 精神防御の護符・高位霊薬原料 | 涙池の底で紫煙の魔力が結晶化した青紫の鉱石。持っているだけで精神侵食を和らげる。 |</p>
+<p>| <strong>幽冥の泥鉄（Nether Mire-Iron）</strong> | 鋳造金属 | Rank B+ | 呪縛属性武器・怨霊特効防具 | 重泥の底に沈着した比重の極めて高い泥鉄。鍛冶師の手で鍛えることで、霊体を切り裂く剛刃となる。 |</p>
+<p>| <strong>破幻の薄荷香（ITM-002）</strong> | 消耗品 | Rank C | 精神浄化・幻覚遮断（提督承認） | 強烈な清涼感を放つ乾燥香。紫煙の幻聴を一时的に打ち払い、正気度を保つための必須サバイバル道具。 |</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">👻 生息する脅威・魔物</h3>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>泥濘の泥巨人（Mud Golem）</strong>:</li>
+<li>重泥そのものが魔力によって凝集した巨漢。打撃力は凄まじく、生半可な木製盾を一撃で粉砕する。泥の肉体は刃物を吸い込んで絡め取るため、大剣の渾身の一撃か魔導破砕が有効。</li>
+<li><strong>彷徨う哀哭の亡霊（Weeping Wraith）</strong>:</li>
+<li>紫煙から実体化する青白い亡霊。実体を持たないため通常の物理攻撃が通りにくく、耳障りな絶叫（Wail of Sorrow）で冒険者の魂を直接凍結させて即死・裏神殿送りへと追いやる。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">👤 主要探索者カルテ（本階層の挑戦者）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. ブレナス・アイアンハイド（Brennus Ironhide）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族 / 性別</strong>: Hum-an（人間） / 男性（36歳）</li>
+<li><strong>クラス</strong>: Veteran Heavy Warrior（歴戦の重戦士）</li>
+<li><strong>戦力ランク</strong>: <strong>Rank B（総合値 585）</strong></li>
+<li><strong>主兵装</strong>: <strong>鉄血の顎（WPN-002 / 提督承認）</strong>（かつて忠実な騎士の顎を模して鍛えられた剛大剣。斬撃時に微弱な衝撃波を放つ）</li>
+<li><strong>防具</strong>: 焼入れ鋼の胸甲、耐酸レザーグローブ</li>
+<li><strong>人物録</strong>:</li>
+</ul>
+<p>英雄にはなれないが、確実に戦果を上げるRank Bの中級ベテラン。下級冒険者の指導役も務める頼れる兄貴分。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. ブラム・アッシュビアード（Bram Ashbeard）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族 / 性別</strong>: Dwarf-in（ドワーフ族） / 男性（45歳）</li>
+<li><strong>クラス</strong>: Shield Warrior（駆け出し盾戦士）｜ <strong>Rank D+（総合値 382）</strong></li>
+<li><strong>主兵装</strong>: 刃こぼれの片手斧、丸太削りの木製丸盾</li>
+<li><strong>人物録</strong>: 草の根冒険者バディ。頑固で前に出たがる癖がある。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">3. キップ・ロイヤルハート（Kip Loyalheart）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族 / 性別</strong>: Hum-an（人間） / 男性（22歳）</li>
+<li><strong>クラス</strong>: Hunter-Archer（猟師弓手）｜ <strong>Rank D（総合値 358）</strong></li>
+<li><strong>主兵装</strong>: 使い古しの猟師弓、安物の鋳鉄短剣</li>
+<li><strong>人物録</strong>: ブラムの相棒。口が悪く愚痴が多いが、索敵と矢の回収には命をかける。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 短編オムニバス小説：『紫煙に呑まれた盾と、簡単には死なない男の背中』</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. 甘美な囁きと、泥濘の罠</h4>
+<p>ねっとりとした紫色の霧が、洞窟の天井から冷水のように垂れ下がっていた。</p>
+<p>松明の赤い火先が、まるで泥水をかぶったかのように鈍く煙り、五歩先は完全な紫黒の闇に沈んでいる。</p>
+<p>「……おい、キップ。後ろから誰か呼んでねえか？ 『ブラム、助けて』って……昔死んだ俺の親父の声が……」</p>
+<p>ドワーフのブラムが、斧を握る手を小刻みに震わせ、虚空を見つめて足を止めた。</p>
+<p>「馬鹿言え！ てめえの親父さんはドワーフの炭鉱で天寿を全うしたって昨日酒場で自慢してただろうが！」</p>
+<p>背後から、弓手のキップが怒鳴りつけながら、ブラムの鼻先に筒状の乾草を突きつけた。</p>
+<p>ツン、と鼻腔の奥を針で刺すような強烈な清涼感が突き抜け、ブラムは「ぶはっ！」と盛大にクシャミをした。</p>
+<p>「……ハッ！？ お、俺は一体……」</p>
+<p>「提督承認の『破幻の薄荷香』だよ！ これがなきゃ一分で頭がおかしくなるって、ブレナスの旦那に言われたろ！」</p>
+<p>前方を歩く大柄な影――背丈ほどもある無骨な大剣『鉄血の顎』を肩に担いだ重戦士ブレナスが、低く太い声で二人を制した。</p>
+<p>「そこまでだ、二人とも足を止めるな。ここは第068階『悲哀の魔窟』だ。少しでも気を抜いた奴から、煙に心を喰われて涙池の底へ引きずり込まれるぞ」</p>
+<p>ブレナスの重厚な鉄甲冑の隙間からも、薄荷香の白い煙が細く漂っていた。</p>
+<p>さすがは幾多の死線をくぐり抜けてきたRank Bのベテラン。紫煙の幻聴に眉ひとつ動かさず、足元の赤黒い泥の深さを慎重に剣先で測っている。</p>
+<p>「キップ、矢をつがえろ。……泥の泡立ち方が不自然だ」</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. 粉砕された丸盾、そして冷気の絶叫</h4>
+<p>ブレナスの警告が洞窟に木霊した瞬間――</p>
+<p>ズズズ……ッ！ と、三人の足元の泥池が巨大なすり鉢状に陥没した。</p>
+<p>泥水の中から、泥と腐木と怨念が凝集した異形の腕が突き上がる。</p>
+<p>立ち上がったのは、全高三メートルを超える泥の巨魁――『泥濘の泥巨人（マッドゴーレム）』！</p>
+<p>「グオオオオオオオオン――！！」</p>
+<p>泥巨人が濁流のような腕を振り上げ、先頭のブレナスへ叩きつけようと振り下ろす！</p>
+<p>「旦那、危ねえっ！！」</p>
+<p>功を焦ったブラムが、ドワーフ特有の猪突猛進で泥を蹴り、木製丸盾を構えて割り込んだ。</p>
+<p>「待てブラム、受けるなッ！！」</p>
+<p>ブレナスの怒声も間に合わなかった。</p>
+<p><em>バゴォォォンッ！！</em></p>
+<p>鈍重極まる破壊音が響き渡り、銀貨1枚で買ったブラムの木製丸盾は、まるで薄い煎餅のように木っ端微塵に粉砕された。</p>
+<p>衝撃は盾を突き抜け、ブラムの左肩の関節を外して泥水の中へ弾き飛ばす。</p>
+<p>「ぎゃあああっ！！ 腕が……腕がもげたッ！！」</p>
+<p>「ブラムッ！！」</p>
+<p>キップが悲鳴を上げながら使い古しの弓を引き絞り、泥巨人の顔面へ矢を連射する。</p>
+<p>だが、矢は泥の肉体にブスブスと吸い込まれるだけで、巨人は痛痒すら感じない。</p>
+<p>「下がってろ、二人ともッ！！」</p>
+<p>ブレナスが泥を蹴立てて跳躍した。</p>
+<p>両手で握りしめた大剣『鉄血の顎』の刃が、魂のエネルギーを宿して紅蓮に発光する。</p>
+<p><em>――【斬鉄粉砕撃：鉄血の顎（Jaw of Iron &amp; Blood）】――</em></p>
+<p>ズパアアアンッ！！</p>
+<p>ブレナスの放った渾身の唐竹割りが、衝撃波を伴って泥巨人の頭部から胴体を両断した。</p>
+<p>大量の泥水が爆散し、巨人の核が砕け散って泥だまりへと崩落する。</p>
+<p>「……ふう、やったか！？」</p>
+<p>キップが泥まみれのブラムを抱き起こしながら叫んだ。</p>
+<p>だが、その勝利の余韻は、一瞬で絶対の絶望へと塗り替えられた。</p>
+<p>崩れ去った巨人の泥の中から、ゆらりと、青白い人型の燐光が立ち昇ったのだ。</p>
+<p>「ヒ……ヒヒ……ヒエエエエエエエエッ――！！」</p>
+<p>『彷徨う哀哭の亡霊（レイス）』。</p>
+<p>この階層で過去に全滅した冒険者たちの怨念が凝縮された、実体なき死霊。</p>
+<p>レイスが口を裂けんばかりに開き、鼓膜ではなく「魂」を直接震わせる絶対零度の絶叫（Wail of Sorrow）を放った。</p>
+<p>空気が凍りついた。</p>
+<p>耳を塞いでも意味がない。冷気が頭蓋の奥に直接侵入し、キップの瞳から光が消えて泥の中へ崩れ落ちる。肩を脱臼したブラムも白目を剥いて泡を吹いて倒れ込んだ。</p>
+<p>ブレナスの全身の筋肉もまた、凍結した鉛のように硬直を始めた。</p>
+<p>視界が急速に白濁し、手にした大剣の重みが指先から零れ落ちそうになる。</p>
+<p>「ぐ……あ……これが、中層の……死線……！」</p>
+<p>（ここで倒れたら、金貨15枚のこの相棒も、あのバカどもも全部泥の底だ……！）</p>
+<p>（死んでたまるか……こんなところで、終わってたまるかッ！！）</p>
+<p>ブレナスは残された最後の力で、懐のポーチを指先で引き裂いた。</p>
+<p>掴み出したのは、まだ火をつけていない生の『破幻の薄荷香』の束。</p>
+<p>ブレナスはそれを、迷わず口の中へ丸ごと放り込み、奥歯でバリバリと噛み砕いた！</p>
+<p><em>ガリッ、ジュワッ――！！</em></p>
+<p>激痛！</p>
+<p>鼻腔と頭蓋骨の裏側を焼きごてで抉られたような、猛烈極まる刺激が脳天を直撃した。</p>
+<p>口中から血が滲み、目から涙が噴き出す。だが、その痛烈なショックが、凍りつきかけていた神経と魂を無理やり現世へと引き戻した！</p>
+<p>「オオオオオオオッッ！！」</p>
+<p>咆哮と共にブレナスは踏み留まり、大剣『鉄血の顎』を片手で横一文字に薙ぎ払った。</p>
+<p>衝撃波を伴う紅蓮の残光がレイスの幽体を切り裂き、亡霊を数メートル後方へ吹き飛ばす！</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">3. 泥濘の死線脱出（クアグマイア・エスケープ）</h4>
+<p>「キップ！ ブラム！ 息をしろ、死ぬなッ！！」</p>
+<p>レイスが体制を立て直すわずか数秒の隙に、ブレナスは泥の中へ突進した。</p>
+<p>気絶したブラムの巨体を怪力で右肩へと担ぎ上げ、泥水に顔を突っ込んでいたキップの襟首を左手で鷲掴みにする。</p>
+<p>ズブッ、ズブブ……ッ！</p>
+<p>三人分の体重が、底知れぬ赤黒い粘性重泥にめり込んでいく。</p>
+<p>長靴が泥に吸い付かれ、一歩進むごとに太ももの筋肉が悲鳴を上げる。</p>
+<p>「背中を向けたら終わりだ……大地の神テラよ、この泥を少しでも固めろッ！！」</p>
+<p>ブレナスは大剣『鉄血の顎』の切っ先を泥の底へ突き刺し、杖代わりに全体重を預けて泥を掻き分けた。</p>
+<p>金貨15枚の名刀を、ドワーフの職人が丹精込めて鍛えた鋼の背骨を、泥除けの支柱として泥に突き立てて前進する。</p>
+<p>背後から、怒り狂ったレイスの金切り声が迫る。</p>
+<p>頭上から紫煙が滝のように降り注ぎ、肩に担いだブラムが苦しげに呻く。</p>
+<p>「う……あ……旦那……」</p>
+<p>「喋るな、舌を噛むぞ！ 目を開けてろ、死にたくなきゃ光を見ろッ！！」</p>
+<p>ブレナスは血反吐を吐き散らしながら、泥池の縁――石造りの安全地帯へと這い上がった。</p>
+<p>二人を階段の上へと放り投げ、自らも転がり込むように滑り込んで、古代の重封鎖隔壁のレバーを全力で引き倒す。</p>
+<p><em>ゴゴゴゴゴ……ズドォォォンッ！！</em></p>
+<p>重厚な石の扉が落ち、紫煙とレイスの絶叫を完全に遮断した。</p>
+<p>静寂。</p>
+<p>三人分の荒い呼吸と、滴る泥の音だけが、薄暗い階段に響いていた。</p>
+<p>ブレナスは壁に背を預けてへたり込み、泥まみれの大剣を抱きかかえながら、天を仰いで笑った。</p>
+<p>「……ハハッ、ハハハハ！ ざまあみろ、生きて帰ってやったぞ……！」</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">4. 跳ね兎亭の油布と、簡単には死なない男の背中</h4>
+<p>数時間後。</p>
+<p>第001階の酒場「跳ね兎亭」の最も薄暗い角のテーブル。</p>
+<p>テーブルの上には、泥を洗い落とされた無骨な大剣『鉄血の顎』が横たわっていた。</p>
+<p>ブレナスは油を染み込ませた厚手の布を手に取り、刃の表面を丹念に、慈しむように拭い上げている。</p>
+<p>泥に突き刺して杖代わりに酷使したというのに、ドワーフ特注の焼入れ鋼の刃には、刃こぼれひとつない。鈍く、重く、確かな光を宿している。</p>
+<p>向かいの席では、左肩を三角巾で吊ったブラムと、頭に包帯を巻いたキップが、縮こまるように座っていた。</p>
+<p>ブラムの銀貨1枚の木製丸盾は完全に粉砕されて消滅し、キップの使い古しの弓も泥池の底に落として失った。</p>
+<p>二人はすっかり打ちのめされ、湯気の立つシチューを前にして俯いていた。</p>
+<p>「……すんません、旦那」</p>
+<p>ブラムが包帯の巻かれた腕を押さえ、消え入るような声で呟いた。</p>
+<p>「俺が調子に乗って盾を出さなけりゃ……旦那まであんな危ねえ目に遭わせずに済んだのに……」</p>
+<p>キップもまた、唇を噛み締めて涙ぐんでいた。</p>
+<p>「俺の弓も……矢も……全部あの泥の中に置いてきちまいました。……旦那があの時、俺たちの首根っこを掴んで引きずり出してくれなきゃ、俺たち今頃、裏神殿の冷たい床で麻のローブ一枚で目を覚ましてましたよ……」</p>
+<p>ブレナスは油布を置き、木製のジョッキに入った安エールを喉へ流し込んだ。</p>
+<p>ぷはっ、と息を吐き、情けない顔の二人をじろりと見据える。</p>
+<p>「……当たり前だろ」</p>
+<p>「え？」</p>
+<p>ブレナスは不敵にニヤリと笑い、大剣の柄をポンと叩いた。</p>
+<p>「俺が簡単に死ぬかよ。</p>
+<p>……簡単には死なないから、俺は『Bランク』なんだよ」</p>
+<p>ブラムとキップが、ぽかんと口を開けてブレナスを見上げた。</p>
+<p>「いいか、小僧ども。</p>
+<p>死んで裏神殿で目を覚ましてから『次は頑張ろう』なんて反省しても遅いんだ。死んだら道具も金も全部失う。仲間に借金背負わせて、カルマ次第じゃ数ヶ月も魂の牢獄送りだ。</p>
+<p>本当に強い奴ってのはな、神話の魔法を使える奴でも、ドラゴンを一撃で屠る奴でもねえ。</p>
+<p>……泥まみれになろうが、盾を割られようが、生き延びて、手痛い失敗の味を噛み締めながら、こうして自分の手で武器を手入れできる奴のことだ」</p>
+<p>ブレナスは立ち上がり、二人の頭に軽くゲンコツを落とした。</p>
+<p>「丸盾は割れた。弓は失くした。だが、お前ら自身の命はここにある。</p>
+<p>腕の骨がくっついたら、また第002階でツルハシ振って銅貨を貯めろ。新しい盾を買って、新しい弓を削れ。</p>
+<p>……次は絶対に泥巨人の前に飛び出さない知恵を、俺がみっちり叩き込んでやるからな」</p>
+<p>ブラムとキップは顔を見合わせ、やがて鼻をすすりながら、力強く頷いた。</p>
+<p>「……へへ、了解っす！ 次は絶対に割れない盾を特注してきます！」</p>
+<p>「俺も、泥の中でも撃てる頑丈な弓を見つけてきますよ！」</p>
+<p>カチン、と木製のジョッキがぶつかり合う。</p>
+<p>全滅の危機を泥臭く生き延びた者たちだけに許された、苦くて美味いエールの味。</p>
+<p>背筋を伸ばして大剣を背負い直すブレナスの背中は、どんな伝説の勇者よりも大きく、頼もしかった。</p>
+<p>ラグランジュの塔の夜は、生き残った者たちの確かな足音と共に更けていった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 階層間接続・動線データ</h3>
+<p>```mermaid</p>
+<p>graph TD</p>
+<p>F66[&quot;第066階：古代壁画と反響洞窟&lt;br&gt;（ダリオ＆リナ＆モーリー / 反響水晶・壁画解読）&quot;]</p>
+<p>F68[&quot;第068階：悲哀の魔窟と紫煙の涙池&lt;br&gt;（ブレナス＆ブラム＆キップ / 紫煙幻聴・泥濘生還）&quot;]</p>
+<p>F71[&quot;第071階：常闇の黒曜石回廊と月光庭園&lt;br&gt;（デギゾニア＆マイラ / 黒曜石茶・月光花）&quot;]</p>
+<p>F66 --&gt;|鍾乳洞深部の水脈沈下路| F68</p>
+<p>F68 --&gt;|重泥底の黒曜石階段| F71</p>
+<p>```</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Recorded under Lagrange Tower Master Chronicles / 塔務記録局 2026.</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-071" style="margin-top:0;">🌙 第71階：常闇の黒曜石回廊と月光庭園（Obsidian Cloister &amp; Moonlight Garden）</h2>
+<blockquote>
+<strong>親ノート</strong>: 00_Lagrange_Tower_MOC<br>
+<strong>観測日</strong>: 2026-09-14（Cron 8 第4回定時自律増築）<br>
+<strong>環境</strong>: 鏡のように滑らかな漆黒の黒曜石回廊 / 魔導浮遊する青白き偽月と静寂の銀鈴花 / ほのかなダージリンと高熱の硫黄香<br>
+<strong>推奨BGM</strong>: Dark_Chiptune_Archive Track_010（Relic_416_Decay）<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🏛️ フロア・カルテ（Floor Overview）</h3>
+<p>反転鏡面の天蓋回廊（第63階）を登り、防衛魔術師エララの守る魔導論理結界室（第76階）の直下に広がる、妖艶なる夜の支配領域。</p>
+<p>床も柱もすべて滑らかに磨き上げられた黒曜石で構成され、天蓋には魔導力で永遠に満月を保ち続ける巨大な「偽月球（フェイク・ルナ）」が青白く輝いている。</p>
+<p>銀色に発光する鈴蘭のような「銀鈴花（スター・リリー）」が咲き乱れる庭園には、塔内でも最も危険とされる魔族貴族の別邸が佇んでいる。</p>
+<p>光と闇のコントラストが極めて強く、音を立てずに忍び寄る暗殺者や盗賊にとっての最高の狩場であると同時に、足音一つで死霊に包囲される危険地帯である。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">🏷️ 生態系・特産アーティファクト</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>黒曜石の夜想茶（Obsidian Darjeeling）</strong>: 月光庭園の霊水と黒曜石の粉末で蒸留された希少なハーブティー。飲むと精神集中力（MND）が一時的に跳ね上がる。</li>
+<li><strong>影縫いの銀鈴花（Shadow Star-Lily）</strong>: 偽月の光を浴びて咲く花。すり潰した蜜を刃に塗ると、傷つけた敵の影を地面に縫い止めて移動不能にする。</li>
+<li><strong>死霊の黒絹（Ghost Silk Ribbon）</strong>: デギゾニアの眷属である幽霊たちが紡いだ布。魔力を帯びた風を完全に遮断し、足音を無音化する。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">🛠️ 常駐英雄・NPC</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>業火の魔神 デギゾニア（Degizonia）</strong>:</li>
+<li>魔族デモニコル貴族の頂点に君臨する冷徹なる支配者（S Rank / 総合791）。</li>
+<li>『死霊招来の魔剣』と『影縛りの黒衣』を纏い、侵入者を『火炎の舌』と『エクリプスフィールド』で影ごと焼き尽くすダークライバル。だがプライベートでは紅茶の淹れ方にうるさい。</li>
+<li><strong>怪盗 マイラ・ウィスカーウィンド（Myra Whiskerwind）</strong>:</li>
+<li>盗賊ギルド所属の猫耳族マスターシーフ（A Rank / 総合661）。</li>
+<li>『破邪の聖短剣』を手に、驚異的な敏捷性（AGI 92）と『シャドウクローク』で影に潜み、『ヴォイドグリップ』で獲物を絡め取る神出鬼没の怪盗。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📜 迷宮群像劇：短編オムニバス（第71階編）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『怪盗の潜入ミッションと、魔界貴族の優雅すぎる紅茶会』</h4>
+<p><strong>登場人物</strong>: マイラ（猫耳怪盗）、デギゾニア（魔界貴族・魔神）、クローミン（兎人司祭）、ミネルヴァ（魔法剣士）</p>
+<p>音のない世界。</p>
+<p>磨き抜かれた黒曜石の床に、天蓋の青白い偽月が冷たく反射している。</p>
+<p>柱の影から、二つの鋭い猫耳がピコピコと動いた。</p>
+<p>「にゃふふ……ここが噂の魔界貴族の宝物庫ね。警備が厳重って聞いてたけど、あたしの『シャドウクローク』の前にはただの素通し通りよ」</p>
+<p>猫耳族のマスターシーフ、マイラ・ウィスカーウィンドである。</p>
+<p>彼女は腰の『破邪の聖短剣』の鯉口をわずかに緩め、黒曜石の回廊を無音で滑るように進む。</p>
+<p>狙うは、庭園の中央に鎮座する純金製のティーセットと、魔神秘蔵の『古代星辰の角砂糖』。</p>
+<p>だが、豪奢なテラスの扉を押し開けた瞬間、マイラの全身の毛が逆立った。</p>
+<p>「ふむ。今日の蒸らし時間は3分45秒……香りの立ち上がりが実に完璧だ」</p>
+<p>テラスの中央。漆黒の外套に身を包んだ長身の魔人——業火の魔神デギゾニアが、白い湯気が立つティーカップを優雅に指でつまみ、静かに口をつけていた。</p>
+<p>その背後には、青白く揺らめく数体の死霊執事たちが、銀のトレイを掲げて直立不動で控えている。</p>
+<p>（げっ……！ デギゾニア本人がこんな時間にティータイム中！？）</p>
+<p>マイラは即座に息を殺し、壁の影と完全に同化するスキル『シャドウクローク』を発動した。姿は完全に消え去り、魔力反応も極小まで抑え込まれる。</p>
+<p>（ふん、見えなきゃあたしの勝ちよ。このまま砂糖だけ掠め取って……）</p>
+<p>カチャリ。</p>
+<p>デギゾニアがカップをソーサーに置いた。</p>
+<p>その真紅の瞳が、何もないマイラの潜む空間へスッと向けられた。</p>
+<p>「そこのネズミ……いや、野良猫か。貴様の纏う安っぽい影の隠蔽など、我が領域においては泥の上に落とした墨汁のように鮮明だぞ」</p>
+<p>「なっ……！？」</p>
+<p>デギゾニアの細い指先が、黒曜石のテーブルを軽く叩いた。</p>
+<p>「エクリプスフィールド（絶対暗黒領域）……展開」</p>
+<p>ズゥゥゥゥン！！</p>
+<p>一瞬にして、テラスを照らしていた偽月の光が完全に消失した。</p>
+<p>光がない。影もない。視覚という概念そのものが塗り潰された絶対の漆黒。</p>
+<p>「うにゃあああっ！？ 真っ暗！？ 何も見えないんだけど！？」</p>
+<p>マイラが思わず叫ぶ。</p>
+<p>「ふっ、我が闇の中においては、あらゆる光は死に絶える。無駄な足掻きを……」</p>
+<p>暗闇の中からデギゾニアの冷酷な嘲笑が響く。だが次の瞬間——。</p>
+<p>パリンッ！ ガシャーン！！</p>
+<p>「ぬわっ！？ 私の最高級ティーカップが！ どこだ、暗すぎてカップの取っ手が見当たらん！」</p>
+<p>「あ、アンタも自分で見えてないんじゃないのよ！！」</p>
+<p>「だ、誰が見えていないと言った！ 影の波動を感じ取っているのだ！ ……痛っ、テーブルの角に小指をぶつけたぞ！」</p>
+<p>冷徹な魔神の威厳が、自らの暗黒魔法によって盛大に瓦解していく。</p>
+<p>その時だった。テラスの扉が勢いよく蹴破られた。</p>
+<p>「ミネルヴァさん、あっちから物凄い邪悪な魔力と、陶器の割れる音が聞こえましたよ！」</p>
+<p>「ええ、油断しないでクローミン！ どんな凶悪な魔獣が潜んでいるか……」</p>
+<p>飛び込んできたのは、兎人高位司祭クローミンと魔法剣士ミネルヴァ。</p>
+<p>「うわっ、真っ暗です！ これじゃ足元が危険です！ 神聖魔法——『楽園の福音照覧（ホーリー・サンシャイン）』！！」</p>
+<p>バカァァァァァンッ！！！！</p>
+<p>クローミンの神聖杖ユートピアから、真夏の直射日光を100倍に凝縮したような超高輝度の白銀閃光が炸裂した。</p>
+<p>「ぎゃあああああっ！！ 目がぁぁぁっ！？ 目が焼けるぅぅぅっ！！」</p>
+<p>暗順応していたデギゾニアが目を押さえて悶絶し、漆黒のローブをバタつかせて転がり回る。</p>
+<p>「ふにゃあああっ！！ 眩しすぎて毛並みが焦げるぅぅぅ！！」</p>
+<p>マイラも爪を立てて床を転がった。</p>
+<p>「あれっ！？ なんでデギゾニア卿と怪盗のマイラさんが一緒にいるんですか！？」</p>
+<p>白銀の光の中、クローミンが長い耳をパタパタさせながらポカンと立ち尽くす。</p>
+<p>「……クローミン、あなたの神聖魔法、威力を加減しなさいとあれほど言ったでしょう」</p>
+<p>ミネルヴァが額を押さえて深いため息をついた。</p>
+<p>白く煙るテラスには、転がった砂糖壺と、目をしばしばさせながら威厳を取り繕う魔界貴族の、何とも言えない気まずい沈黙だけが残されていた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-074" style="margin-top:0;">🌙 第074階：蒼月晶の静寂回廊と白銀の祈祷泉（Silent Corridor of Azure Mooncrystals &amp; Silver Prayer Springs）</h2>
+<blockquote>
+<strong>階層番号</strong>: 第074階<br>
+<strong>環境バイオーム</strong>: 蒼月晶の鍾乳洞窟・冷涼な地下霊泉・月光の屈折回廊・古代祭壇跡<br>
+<strong>踏破ステータス</strong>: 🟢 観測・突破踏破完了（通算第28フロア / Cron 8自律増築 / Ollamaドラフト協調）<br>
+<strong>ナラティブ・モード</strong>: <strong>【① 突破・踏破型（小失敗と連携の妙味）】</strong>（霊眼と跳躍による立体索敵・風断ちの豪快一撃）<br>
+<strong>主要登場人物</strong>: キアラ（兎人族・魔導弓手 / Ollama抜擢）、ロリエル・シルバースプリング（兎人族・風断ち戦士 / 原典DB No.63）<br>
+<strong>連動プロトコル</strong>: 00_Lagrange_Tower_MOC, Lagrange_Tower_Character_Codex（原典DB名簿）, Lagrange_Tower_Bestiary_Codex（第七大聖典）<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🌫️ 階層環境特性とハザード</h3>
+<p>第071階の黒曜石回廊を抜け、重力すら和らぐような緩やかな登り坂を進んだ先に現れるのは、天井一面に青白く澄んだ「蒼月晶」が群生する神秘の鍾乳回廊である。</p>
+<p>洞窟の底には、地下水脈から湧き出る冷涼な白銀の霊泉が静かに波紋を広げ、月光のような柔らかな燐光が空間全体を満たしている。</p>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>環境ハザード</strong>:</li>
+<li><strong>蒼月晶の魔力屈折と幻影</strong>: 蒼月晶が発する冷光が水面に反射し、遠近感を狂わせる光の陽炎を生み出す。慣れない者は通路の端を見誤って深い泉へと落下する。</li>
+<li><strong>冷気と天井の鋭利な鍾乳石</strong>: 天井から無数の鋭利な水晶の槍が垂れ下がっており、高く跳躍しすぎると頭部を強打する危険がある。</li>
+<li><strong>絶対の静寂と音の反響</strong>: 洞窟内は驚くほど音が響く。小石を踏んだ音すら数町先まで木霊し、休眠中の守護者を覚醒させてしまう。</li>
+<li><strong>特産品・採取素材</strong>:</li>
+<li><strong>蒼月晶の破片（Azure Mooncrystal Shard）</strong>: 月光の魔力を蓄えた青い結晶。弓の弦や矢尻に擦り付けると風の抵抗を無効化し、軌道がブレなくなる逸品（銀貨6枚）。</li>
+<li><strong>白銀泉の霊水（Silverspring Holy Water）</strong>: 邪気を祓い、精神の疲労を清める冷泉。水筒に汲んで持ち帰れば、第001階の神殿で銀貨5枚で買い取られる。</li>
+<li><strong>銀毛野兎の冬毛（Silver Hare Down）</strong>: 霊泉のほとりに棲む野兎が岩肌に残した抜け毛。極めて保温性が高く、貴族の外套の縁取りに使われる（銅貨40枚）。</li>
+<li><strong>生息する生物・魔物（第七大聖典準拠）</strong>:</li>
+<li><strong>白銀の角野兎（Silver Horn-Hare / Tier 1 動物）</strong>:</li>
+</ul>
+<p>額に小さな水晶の角を持つ野兎。驚異的な脚力で岩場を跳び回る。肉は淡白で美味だが、野生動物のため金貨や魔石は一切落とさない（肉・毛皮のみ）。</p>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>霜月晶のガーゴイル（Frost-Moon Gargoyle / Tier 3 古代構造体）</strong>:</li>
+</ul>
+<p>蒼月晶と石灰岩が融合した魔導ガーゴイル。静寂を破る侵入者に対して天井から急降下し、冷気の爪を突き立てる。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">👥 滞在冒険者カルテ（主要登場人物）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. キアラ（Chiara）- 好奇心旺盛な兎人族の魔導弓手</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>原典ドラフト</strong>: Char_Draft_キアラ（Ollama gemma3:4b ステージング抜擢）</li>
+<li><strong>種族 / 性別</strong>: Rabbili-an（兎人族） / 女性（18歳）</li>
+<li><strong>クラス</strong>: Arcane Archer（魔導弓手）｜ <strong>Rank C+（総合値 445）</strong></li>
+<li>STR 32 / AGI 78 / INT 62 / MND 58 / VIT 35 / LUK 65 / CON 38 / MAG 45 / Craft 28 / Stl 52 / DEX 72</li>
+<li><strong>主兵装</strong>: <strong>月銀細工の短弓（Moon-Silver Shortbow）</strong>、自作の羽毛矢25本</li>
+<li><strong>防具</strong>: 薄手の白毛皮ベスト、兎革の跳躍ブーツ</li>
+<li><strong>三系統スキル体系</strong>:</li>
+</ul>
+<p>1. <strong>メイン（武芸）</strong>: <strong>迅躍射法（Swiftleap Snipe）</strong></p>
+<p>兎人族特有の強靭なバネで壁や岩を蹴って宙へ跳び上がり、滞空中に死角から矢を撃ち下ろす立体射撃。</p>
+<p>2. <strong>サブ（索敵）</strong>: <strong>霊眼の魔導視（Spirit Sight）</strong></p>
+<p>光の屈折や幻影を見破り、魔物の核や隠された通路を青い輝きとして捉える霊感。</p>
+<p>3. <strong>信仰（加護）</strong>: <strong>月神ルナの静謐（Luna's Serenity）</strong></p>
+<p>月の女神ルナに祈りを捧げることで、精神汚染を防ぎ、暗闇での視界を昼間のように保つ。</p>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>人物録</strong>:</li>
+</ul>
+<p>草原の集落から塔へやってきた駆け出しの弓手。耳が良く跳躍力に長けるが、調子に乗って天井に耳をぶつけるなどドジも多い。先輩のロリエルを「姉貴」と慕う。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. ロリエル・シルバースプリング（Loriel Silverspring）- 烈風の大斧戦士</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>原典DB</strong>: 公式データベース No.63（Vol.2）</li>
+<li><strong>種族 / 性別</strong>: Rabbili-an（兎人族） / 女性（27歳）</li>
+<li><strong>クラス</strong>: Warrior（重戦士）｜ <strong>Rank A（総合値 637）</strong></li>
+<li>STR 82 / AGI 71 / INT 40 / MND 52 / VIT 69 / LUK 55 / CON 68 / MAG 25 / Craft 42 / Stl 38 / DEX 65</li>
+<li><strong>主兵装</strong>: <strong>大斧『風断ち（Windsplitter）』</strong></li>
+<li><strong>防具</strong>: <strong>守護者の篭手（Defender's Gauntlets）</strong>、銀星の軽胸甲</li>
+<li><strong>人物録</strong>:</li>
+</ul>
+<p>同族の若者たちの面倒見が良い歴戦の女性戦士。大柄な体躯から繰り出す大斧の一撃は、暴風を巻き起こして敵の装甲ごと粉砕する。キアラの危なっかしい跳躍をいつもハラハラしながら見守っている。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 短編オムニバス小説：『蒼い月光の跳躍と、割れた水筒』</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. 澄んだ霊泉と、長い耳の警告</h4>
+<p><em>ピチャン……。</em></p>
+<p>静寂を裂いて落ちた水滴の音が、透き通った鐘の音のように回廊の奥へと広がっていった。</p>
+<p>青白い燐光を放つ巨大な水晶柱が林立する洞窟の中、兎人族の少女キアラは、ピンと立った白い長耳を前後にピクピクと動かしながら、岩陰に身を潜めていた。</p>
+<p>「……姉貴、右斜め上の水晶棚。羽を畳んで寝てる奴がいるよ。体長二メートル……霜月晶のガーゴイルだ」</p>
+<p>キアラが細い声で囁き、短弓に銀色の矢をつがえた。</p>
+<p>背後で巨大な両刃の戦斧『風断ち』を構えたロリエルが、たくましい眉をひそめて頷く。</p>
+<p>「よく見つけたな、キアラ。霊泉を渡る風が冷たすぎると思ったら、あいつの冷気だったか。……あの真下を抜けなきゃ、上層へ続く祭壇には行けないね」</p>
+<p>洞窟の床は、底が透けて見えるほど澄み切った白銀の霊泉で満たされている。</p>
+<p>水深は膝ほどだが、水温は氷のように冷たく、不用意に足を踏み入れれば数分で足先の感覚が麻痺してしまう。</p>
+<p>「どうする、姉貴？ 回り道する？」</p>
+<p>「いや、あいつの耳はあたしたちほど良くないが、この静寂だ。足音ひとつ立てれば飛び起きて襲ってくる。……奇襲で核を割って一気に駆け抜けるよ」</p>
+<p>ロリエルが大斧の柄を握り直す。</p>
+<p>「キアラ、あいつの胸にある青い核を射抜いて体勢を崩しな。落ちてきたところを、あたしの『風断ち』で両断する」</p>
+<p>「了解っ！ 跳躍なら任せてよ！」</p>
+<p>キアラはニッと八重歯を見せて笑い、兎革のブーツで地面を踏みしめた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. 宙を舞う矢、そして天井の激突</h4>
+<p><em>トンッ！</em></p>
+<p>キアラの細い脚が、まるで強靭なバネのように岩盤を弾いた。</p>
+<p>音もなく宙へ舞い上がったキアラは、空中でくるりと身を翻し、壁から突き出た蒼月晶の突起を足場にしてさらに高く跳躍した。</p>
+<p><em>――【迅躍射法：月光射（Swiftleap Snipe）】――</em></p>
+<p>空中で静止したかのような一瞬。</p>
+<p>キアラの両目が、月神ルナの加護を受けて青く澄んだ光を宿した。光の屈折が消え去り、眠るガーゴイルの胸郭の奥で脈打つ、親指ほどの青白い核がはっきりと見えた。</p>
+<p><em>ビュンッ！！</em></p>
+<p>放たれた銀の矢が、鋭い風切り音と共に空を切り裂き、ガーゴイルの胸板の隙間へと吸い込まれた。</p>
+<p><em>ギィィィヤアアアッ――！！</em></p>
+<p>核を射抜かれたガーゴイルが断末魔の絶叫を上げ、水晶の棚から真っ逆さまに落下する！</p>
+<p>「よっしゃ、命中――いったあああああっ！？」</p>
+<p>喜び勇んだキアラだったが、滞空の跳躍が高すぎた。</p>
+<p>天井から垂れ下がっていた鋭利な水晶の鍾乳石に、自慢の白い左耳の先端と額を<em>ゴチィンッ！</em>と盛大にぶつけてしまったのだ。</p>
+<p>「ふぎゃっ！？」</p>
+<p>目から火花を散らしたキアラは、空中でバランスを崩し、そのまま霊泉の水面へと真っ逆さまに落ちていく。</p>
+<p>「ちょ、ちょっとキアラぁぁぁッ！？ 何やってんのさ！！」</p>
+<p>下で待ち構えていたロリエルが叫んだ。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">3. 風断ちの一撃と、びしょ濡れの生還</h4>
+<p>落ちてくるガーゴイル、そして同時に頭から落ちてくるドジな後輩。</p>
+<p>ロリエルは舌打ちしながらも、瞬時に地を蹴った。</p>
+<p>冷たい霊泉の水を豪快に跳ね上げ、落下するガーゴイルの直下へと滑り込む。</p>
+<p>大斧『風断ち』を両手で振り上げ、全身の筋力を乗せて一気に振り抜いた！</p>
+<p><em>――【裂空暴風斬（Windcutter Cleave）】――</em></p>
+<p><em>ズバアアアアアンッ！！</em></p>
+<p>暴風の刃が水晶の肉体を真っ二つに叩き割り、ガーゴイルは青い粉塵となって泉の中に爆散した。</p>
+<p>そしてその直後――</p>
+<p><em>ドッサーーーンッ！！</em></p>
+<p>「ぐぇっ！？」</p>
+<p>ロリエルの背中に、天井から落ちてきたキアラがモロに直撃した。</p>
+<p>二人まとめて冷たい白銀の霊泉に倒れ込み、盛大な水柱が洞窟の天井まで吹き上がる。</p>
+<p>静寂の洞窟に、バシャバシャという派手な水音と、二人の情けない声が響き渡った。</p>
+<p>「……ぷはっ！ つ、冷たいいいいっ！！ 耳が凍るぅぅぅ！！」</p>
+<p>キアラがずぶ濡れになりながら飛び起き、痛む額と左耳を押さえて半泣きで跳ね回る。</p>
+<p>「うう……額にタンコブできた……それに腰に下げてた水筒が岩に当たって割れちゃったよぉ……！」</p>
+<p>水底からずぶ濡れで起き上がったロリエルは、髪から滴る水を払いながら、青筋を立ててキアラの頭にゲンコツを落とした。</p>
+<p><em>ゴツン！</em></p>
+<p>「痛っ！？」</p>
+<p>「この大馬鹿娘！ 誰が天井の鍾乳石まで跳べって言ったんだい！ あたしまで頭から水浸しじゃないか！」</p>
+<p>「だ、だって、蒼月晶が綺麗で、もっと近くで見ようと思ったら目測を誤って……」</p>
+<p>「まったく、跳躍力だけは一人前なんだから……」</p>
+<p>ロリエルは溜息をつき、割れた水筒を見て苦笑いを浮かべた。</p>
+<p>「ほら、座りな。水筒は割れたが、この泉の水自体が霊水だ。額の傷を洗いな、腫れが引くよ」</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">4. 祭壇の焚き火と、温かい月光</h4>
+<p>数十分後。</p>
+<p>回廊の最奥にある、古代の月神祭壇の跡地。</p>
+<p>濡れた毛皮ベストと革手袋を焚き火の周りに干し、二人は湯気の立つ霊水の白湯を木製椀ですすっていた。</p>
+<p>キアラの額には、ミリーから分けてもらった乾燥薬草の湿布が貼られ、左耳の先には包帯が巻かれている。</p>
+<p>「……あー、生き返るぅ。霊水を沸かして飲むと、身体の芯からジンワリ温まるね」</p>
+<p>キアラが両手で椀を抱え、ふにゃりと頬を緩ませた。</p>
+<p>「水筒は割れたが、あのガーゴイルが落とした蒼月晶の角……あれ、ギルドに持ち込めば銀貨8枚にはなるよ。新しい頑丈な真鍮水筒が二つ買ってお釣りがくる」</p>
+<p>ロリエルが大斧の刃を布で拭いながら、焚き火の向こうで笑った。</p>
+<p>「本当！？ やったぁ！ じゃあ、次は絶対に割れないやつにする！」</p>
+<p>「その前に、洞窟の中で天井の高さを測る目を養いな。……耳が千切れなくて本当に良かったんだからね」</p>
+<p>「へへ、姉貴が下にいてくれたから平気だったもん」</p>
+<p>キアラが長い耳を嬉しそうにパタパタと揺らし、ロリエルは呆れ顔でスープの鍋をかき混ぜた。</p>
+<p>天井の蒼月晶が、柔らかな青い光を祭壇へと注いでいる。</p>
+<p>失敗して、頭をぶつけて、冷たい水に落ちて。</p>
+<p>それでも笑い合いながら、温かい白湯を分け合える仲間がいる。</p>
+<p>ラグランジュの塔の静かな夜は、二つの長い影とパチパチ爆ぜる焚き火の音と共に、優しく更けていった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 階層間接続・動線データ</h3>
+<p>```mermaid</p>
+<p>graph TD</p>
+<p>F71[&quot;🌙 第71階：常闇の黒曜石回廊と月光庭園&lt;br&gt;（デギゾニア＆マイラ / 黒曜石茶・月光花）&quot;]</p>
+<p>F74[&quot;🌙 第074階：蒼月晶の静寂回廊と白銀の祈祷泉&lt;br&gt;（キアラ＆ロリエル / 蒼月晶・突破踏破型）&quot;]</p>
+<p>F76[&quot;🔮 第76階：魔導論理結界室と迷宮認証ゲート&lt;br&gt;（エララ常駐 / 二重認証砂時計）&quot;]</p>
+<p>F71 --&gt;|黒曜石回廊の上昇スロープ| F74</p>
+<p>F74 --&gt;|白銀霊泉の奥・古代月神祭壇階段| F76</p>
+<p>```</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Recorded under Lagrange Tower Master Chronicles / 塔務記録局 2026.</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-077" style="margin-top:0;">📚 第77階：天楼大図書館（Celestial Library）</h2>
+<blockquote>
+<strong>親ノート</strong>: 00_Lagrange_Tower_MOC<br>
+<strong>観測状況</strong>: 過去遺物サルベージ完了（塔務局原典記録）<br>
+<strong>環境</strong>: 無限の静寂 / 羊皮紙と古書の乾いた香り / 仄かに灯る浮遊ランタン<br>
+<strong>主要NPC・冒険者</strong>: 迷宮学者たち、沈黙の司書オートマタ、<strong>グレン（狩人）</strong><br>
+<strong>特産アーティファクト</strong>: 禁呪の魔導書、自己増殖するインク瓶、記憶の栞<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🖼️ 公式原典線画（Official Lineart）</h3>
+<p></p>
+<p><em>【図: 天楼大図書館を探索する狩人グレン】</em></p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">📜 原典プロンプト（The Master Prompt）</h4>
+<blockquote>
+<code>Create a landscape oriented, black and white line art image of Glen, a male human hunter, inspired by 1990s Japanese PC RPGs, for a coloring book. Focus on minimal shading and enhance background details of the 'Tower of Lagrange' library setting, featuring extensive bookshelves and subtle hints of small animals. The artwork should capture the entire scene with clear, detailed outlines suitable for an engaging coloring experience.</code><br>
+<em>(世界観設計詳細: Lagrange_Tower_Prompt_Codex)</em><br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🏛️ フロア・カルテ（Floor Overview）</h3>
+<p>天まで届く無数の本棚が並ぶ静謐な階層。ページをめくる微かな音だけが響く中、世界中から集まった学者や魔導士たちが、世界の真理と塔の起源が記された古文書を求めて一生を過ごしている。</p>
+<p>狩人<strong>グレン（Glen）</strong>は、単なる獲物を追う者としてではなく、この膨大な書架の奥深くに眠る「古代の知恵」と「塔の真実」を求め、足音を忍ばせて回廊を歩む。本棚の隙間には、静謐な書庫を住処とする小さな知性ある動物たちが潜んでおり、グレンの研ぎ澄まされた感覚はその微かな温もりと気配を捉えている。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Recorded under Lagrange Tower Chronicles / 塔務記録局 2024.</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-084" style="margin-top:0;">🐉 第084階：巨竜の咆哮・灼熱の断崖（Floor 084: Dragons Roar Cliff）</h2>
+<p></p>
+<blockquote>
+<strong>フロアBGM</strong>: 深地行進曲（Underground March - 轟く重低音ブラスと地底の溶岩を切り裂く不屈の進軍）<br>
+<strong>親ノート</strong>: 00_Lagrange_Tower_MOC<br>
+<strong>開拓ステータス</strong>: 🟢 <strong>原典記録 ＆ AG近代化改修（Retrofit）完了</strong>（塔務局原典記録）<br>
+<strong>階層領域</strong>: 第77階〜第88階 天楼図書館・巨竜断崖・高空風穴過渡区画（祝！第001階〜第084階 大動脈結節点）<br>
+<strong>ナラティブモード</strong>: ①【突破・踏破型】（太陽銅ダガーの疾風陽動、紅蓮巨竜の業火ブレス、大剣ユグドラシルの一撃が角を砕く命懸けの突破劇）<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🧭 階層環境特性＆ハザード（ロア辻褄合わせ）</h3>
+<p>第077階（天楼大図書館）の静謐な羊皮紙の書架群を抜け、塔の側壁を穿つ巨大な防護ゲートを抜けた先。</p>
+<p>塔の内部とは思えないほどの広大な断崖絶壁と、煮え滾るマグマの河が眼下に広がる灼熱の領域が姿を現す。</p>
+<p>ここ第084階は、迷宮の上層でありながら地底の溶岩熱が上昇気流とともに吹き上がる特異区画<strong>「巨竜の咆哮・灼熱の断崖」</strong>である。</p>
+<p>気温は摂氏45度を超え、赤熱するマグマの照り返しが岩肌を真紅に染め上げている。</p>
+<p>硫黄の煙と突風が吹き荒れる断崖の岩棚は、塔の外殻を縄張りにする伝説の紅蓮巨竜（クリムゾン・ドレイク）の狩場となっており、巨大な爪痕と焼き溶かされた岩石が至る所に生々しく残されている。</p>
+<p>```</p>
+<p>[第085階：竜翼風穴の玄武岩吊り橋と飛竜営巣テラス]</p>
+<p>▲</p>
+<p>│ （垂直クラック・直結開通！）</p>
+<p>┌─────────────────┴─────────────────┐</p>
+<p>│  第084階：巨竜の咆哮・灼熱の断崖    │</p>
+<p>│  ・摂氏45℃の灼熱マグマ照り返し     │</p>
+<p>│  ・紅蓮巨竜の業火ブレス            │</p>
+<p>│  ・足場を崩す超重量テイル・スイープ│</p>
+<p>│  ・竜の剛鱗とユグドラシル大剣      │</p>
+<p>└─────────────────┬─────────────────┘</p>
+<p>│ （天楼防護ゲート階段・直結開通！）</p>
+<p>[第077階：天楼大図書館]</p>
+<p>```</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. 主な環境ハザード</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>紅蓮巨竜の火砕ブレス（Crimson Incineration Breath）</strong>:</li>
+<li>巨竜の口腔から放たれる超高温の火炎流。岩石をも融解させる破壊力を持ち、直撃は即死を意味する。断崖の岩陰に身を隠してやり過ごすしかない。</li>
+<li><strong>足場の崩落スラスト（Crag Fracture Tremor）</strong>:</li>
+<li>巨竜が着地する際の衝撃や尾の薙ぎ払いにより、断崖の足場がごっそりと崩落してマグマ溜まりへと滑落する危険が常につきまとう。</li>
+<li><strong>高熱硫黄ガス雲（Sulfurous Choke Cloud）</strong>:</li>
+<li>断崖の亀裂から噴出する黄色い有毒ガス。吸い込むと肺が焼け、視界を著しく奪われる。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">💎 特産品・採取素材</h3>
+<p>1. <strong>大剣ユグドラシル（Greatsword Yggdrasil）</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>迷宮の古代樹の化石と星鉄を鍛え上げた伝説の大剣。炎熱を吸収して威力を増す性質を持ち、巨竜の甲殻をも断ち割る。</li>
+</ul>
+<p>2. <strong>太陽銅の双短剣（Helios Bronze Twin Daggers）</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>刃こぼれを知らぬ神話の金属太陽銅で打たれた連撃短剣。振るうたびに風の真空刃を放ち、俊足シーフの必携武器。</li>
+</ul>
+<p>3. <strong>竜の剛鱗（Dragon's Hardened Scale）</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>巨竜の胸部から剥落した真紅の耐火鱗。熱と物理衝撃を極限まで跳ね返す最高峰の防具素材。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">👤 主要NPC・探索パーティー</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">伝説の先駆デュオ（The Pioneer Vanguard）</h4>
+<p>初期から塔の深層を目指して最前線を切り拓いてきた名物コンビ。</p>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>ジャック（Jack the Wind-Runner）</strong>:</li>
+<li>人間 / 俊足シーフ / Rank B+ (冒険者係数: 580)</li>
+<li>茶髪に緑フードの青年。太陽銅二刀流ダガーを構え、巨竜の足元を疾風のように駆け抜けて視線を一身に引きつける命知らずの陽動役。</li>
+<li><strong>マージャス／レイナ（Margeas / Rayna）</strong>:</li>
+<li>人間 / 炎の女戦士 / Rank A- (冒険者係数: 620)</li>
+<li>燃えるような紅髪をポニーテールに束ねた歴戦の女重装戦士。大剣ユグドラシルを一撃で振り抜き、竜の角や甲殻を叩き割る前衛の絶対的エース。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 短編オムニバス小説（四大ナラティブ：突破・踏破型）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『大剣ユグドラシルと、二刀流の疾風陽動』</h4>
+<p>「グルオォォォォォンッ！！」</p>
+<p>耳膜を劈くような咆哮が、真紅に染まる断崖絶壁に轟き渡った。</p>
+<p>全長二十メートルを超える紅蓮の巨竜が、巨大な皮膜の翼を広げて岩棚の上に君臨していた。</p>
+<p>その喉元が、マグマのように赤熱して発光している。火砕ブレスの予兆だ。</p>
+<p>「おいおいおい、冗談だろ！？ でかすぎんだよトカゲ野郎！」</p>
+<p>緑フードを被ったジャックが、両手に握った太陽銅ダガーを器用に回転させながら、マグマの照り返しの中を横一文字に全力疾走した。</p>
+<p>「ジャック、右へ飛べ！」</p>
+<p>背後から鋭い女戦士の怒号が飛ぶ。</p>
+<p>ジャックが咄嗟に岩棚の亀裂へと飛び込んだ瞬間、巨竜の顎から奔流のような紅蓮の火炎が放たれた。</p>
+<p>ドゴォォォォッ！！</p>
+<p>ジャックが先ほどまで立っていた岩肌が一瞬でドロドロに溶け、真紅の溶岩となって滴り落ちる。熱風でフードの端が焦げ付いた。</p>
+<p>「あっっつぅぅ……！ 髪がチリチリになっちまう！」</p>
+<p>ジャックは岩の陰から飛び出すと、ダガーの刃を十字に打ち鳴らし、澄んだ金属音を響かせた。</p>
+<p>「おいデカ物！ こっち見ろ！ 俺の太陽銅で爪楊枝作ってやろうか！？」</p>
+<p>挑発に怒り狂った巨竜が、丸太のような太い尾を水平に薙ぎ払ってきた。</p>
+<p>岩棚を粉砕しながら迫る巨尾。</p>
+<p>だが、ジャックの体はすでに空中にあった。</p>
+<p>風を掴むような神速の跳躍。尾の表面をツツツと靴底で滑るように駆け抜け、ジャックは巨竜の鼻先へと肉薄した。</p>
+<p>「『太陽銅・双十字斬』ッ！」</p>
+<p>両手のダガーが交差する。白銀の真空刃が巨竜の右目に炸裂し、鮮血が噴き上がった。</p>
+<p>「ギシャアアッ！？」</p>
+<p>巨竜が視界を奪われ、苦悶のあまり頭部を大きく反らせた。</p>
+<p>その一瞬の隙――喉元を無防備に晒したその瞬間を、待っていた者がいた。</p>
+<p>「大樹よ、炎を呑み込め――『ユグドラシル・ブレイク』ッ！！」</p>
+<p>断崖の頂上から、紅髪を激しくなびかせた女戦士マージャスが、砲弾のように飛び降りてきた。</p>
+<p>彼女の両腕が握る大剣ユグドラシルが、古代の緑光と周囲の熱風を吸い込んで巨大な光の刃と化していた。</p>
+<p>巨竜が気付いた時には、すでに遅かった。</p>
+<p>マージャスの全身の体重と重力を乗せた渾身の唐竹割りが、巨竜の眉間から伸びる最も太い一本角を、根元から粉々に両断した！</p>
+<p>ズッパァァァンッ！！</p>
+<p>角を失った巨竜は、断崖を揺るがす絶叫を上げ、たまらず翼を羽ばたかせて空へと退避していった。</p>
+<p>舞い散る火の粉と、床に転がる巨大な角の残骸。</p>
+<p>ドスン、と大剣を地面に突き立てて着地したマージャスは、息を荒げながら乱れた紅髪をかき上げた。</p>
+<p>「……ふぅ。逃げられたか」</p>
+<p>「逃げられたか、じゃないよマージャス！ 勝ったんだよ！ 生きてるんだよ俺たち！」</p>
+<p>ジャックがへたり込みながら笑い声を上げた。</p>
+<p>「見てみろよ、あの竜の角！ これトネリコ堂に持って帰ったら、酒場に一生タダで通えるぜ！」</p>
+<p>マージャスは大剣を背の革鞘へと収めると、呆れたように小さく口元を緩めた。</p>
+<p>「お前は相変わらず金と酒のことばかりだな、ジャック。……だが、いい陽動だった。お前の短剣が目を奪ってくれなければ、私の首が飛んでいた」</p>
+<p>「へへっ、前衛の相棒を死なせたら、シーフの看板に傷がつくからな」</p>
+<p>ジャックは立ち上がり、断崖の奥へと続く岩肌の亀裂――上層の第085階へと吹き抜ける涼やかな風の通り道を見上げた。</p>
+<p>「……上から風が来てる。雲海の上に出られそうだぜ、マージャス」</p>
+<p>「ああ。行こう、ジャック。この塔のてっぺんを拝むまでは、立ち止まる気はない」</p>
+<p>二人の伝説の足跡は、灼熱の断崖を越え、高空の風穴（第085階）へと確かに刻まれていった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 水平エリア展開：裏断崖の竜骨風裏ポケットと耐火砂利の乾酪工房（Dragonbone Lee Pocket &amp; Roasted Cheese Cove）</h3>
+<p>紅蓮巨竜が陣取る中央断崖から東側へ約五百メートル迂回した、切り立つ玄武岩の割れ目の奥。</p>
+<p>かつて神代の時代に討ち果てた超巨大古竜の肋骨化石が、まるで巨大な鳥かごのように岩壁からせり出し、頭上からの火砕ブレスや落石を物理的に防ぐ天然のアーチ屋根を形成している。</p>
+<p>谷底のマグマの熱波は化石竜骨の防壁によって遮断され、岩盤の細いスリットから吹き抜ける上層（第085階）の冷風によって、内部は摂氏28度前後の過ごしやすい室温に保たれている。</p>
+<p>床面には、長年の地熱で焼かれて粉砕された「耐火砂利（Fireproof Gravel）」が敷き詰められており、触れるとホカホカと温かい。高層への無謀な挑戦で靴底を焦がし、命からがら逃げ込んできた中堅冒険者たちが、冷え切った保存食を温めて胃袋を満たす「成層圏の隠れ野営地」として愛用されている。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">追加登場人物カルテ</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>泥臭い生活者バディ『錆びた釘』（Rusty Nail）</strong>:</li>
+<li><strong>ブラム（Bram the Iron-Nail）</strong>:</li>
+<li>種族 / クラス: ドワーフ / 重装盾戦士（Rank D+ 310）</li>
+<li>装備: 凹みだらけのドワーフ製鋳鉄丸盾、柄の短い鉄槌、耐熱油引きマント</li>
+<li>人物像: ギルドの掲示板で「竜の剛鱗の剥落片：金貨十枚」という法外な買い取り額に目が眩み、キップを拝み倒して第084階まで背伸びして登ってきた頑固者。巨竜の羽ばたき一発で腰を抜かす。</li>
+<li><strong>キップ（Kip the Rust-Hunter）</strong>:</li>
+<li>種族 / クラス: 人間 / 猟師弓手兼斥候（Rank D 290）</li>
+<li>装備: 弦を外した短弓、骨製鏃の矢、山羊乳の乾酪（ドライチーズ）、薄切り干し塩豚</li>
+<li>人物像: 「だから言っただろ！」が口癖の苦労人。足場崩落で宙吊りになり、死の恐怖で涙目になりながらも、食料袋だけは死守したプロの貧乏性。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 アナザーストーリー：第084階裏断崖</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『背伸びした錆釘と、灼熱岩板の焼きチーズ塩豚』</h4>
+<p><strong>ナラティブモード</strong>: ④【泥臭い撤退・損切り型】（成層圏の背伸び・滑落寸前・現場メシ）</p>
+<p>#### 1. 竜の羽ばたきと、崩れゆく足場</p>
+<p><em>ゴォォォォォォッッ……ズドドドドンッ！！</em></p>
+<p>「ひ、ひぃぃぃぃぃっ！？ な、なんだあの化け物はぁぁぁっ！？」</p>
+<p>赤熱した断崖の細い犬走り。ドワーフの盾戦士ブラムは、鋳鉄の丸盾を頭上に掲げながら、岩肌にへばりついていた。</p>
+<p>五百メートル先の岩棚の上で、全長二十メートルを超える紅蓮の巨竜が翼を羽ばたかせただけで、台風のような熱風と火の粉の嵐が吹き荒れ、ブラムの髭の先をチリチリと焦がしていく。</p>
+<p>「だから言っただろ、ブラムの馬鹿野郎！！」</p>
+<p>後ろの岩の裂け目で、キップが短弓を抱え込んで絶叫した。</p>
+<p>「Rank Dの俺たちが第084階なんて成層圏に来ていいわけねえんだ！ 『竜の鱗を拾うだけの一攫千金』だあ！？ 鱗にたどり着く前に、トカゲの鼻息で炭化するわ！！」</p>
+<p>「だ、だってよぉ！ 金貨十枚だぞ！？ トネリコ堂の借金を一括返済して、跳ね兎亭の権利書が買える額なんだぞ……って、うわっ！？」</p>
+<p>直後――巨竜がジャックとマージャスの陽動に怒り狂い、岩棚へ尾を叩きつけた。</p>
+<p>その衝撃波（足場崩落スラスト）が断崖の地盤を直撃した。</p>
+<p><em>メキメキメキッ……ガラガラガラッ！！</em></p>
+<p>「あ」</p>
+<p>キップの足元の岩板が、音を立てて真っ二つに割れた。</p>
+<p>「うわああああっ！？」</p>
+<p>足場ごと、キップの体が千メートルのマグマの谷底へ向けて真っ逆さまに滑落した！</p>
+<p>「キップぅぅぅっ！！」</p>
+<p>ブラムの身体が反射的に動いた。</p>
+<p>ドワーフの短い足を踏み出し、愛用の鋳鉄丸盾の縁を岩盤の亀裂へと渾身の力で蹴り込む！</p>
+<p><em>ガキンッ！</em> と火花が散り、丸盾が楔となって岩に食い込んだ。</p>
+<p>同時に、ブラムは伸ばした左手で、落下していくキップの背嚢の革ベルトをギリギリで鷲掴みにした。</p>
+<p><em>グギィィィッ……！</em></p>
+<p>ドワーフの肩の関節が軋み、激痛が走る。</p>
+<p>眼下では、ドロドロに煮え滾るオレンジ色のマグマの河が、獲物を待ち受けるように口を開けていた。</p>
+<p>「ぶ、ブラム……！ 腕が抜ける……！ 落ちる……！！」</p>
+<p>「抜けてたまるかぁっ！ 貴様が死んだら……誰が俺の愚痴を聞くんだよぉぉっ！！」</p>
+<p>ブラムは歯が折れるほど食いしばり、顔を真っ赤にして腕を引き絞った。</p>
+<p>大地の主神グンドルへの祈りか、それとも貧乏冒険者の意地か。</p>
+<p><em>ズズズッ</em>と丸盾が軋みながらも持ちこたえ、ブラムはキップの襟首を強引に引きずり上げ、背後の竜骨の隙間――『裏断崖の風裏ポケット』へと転がり込んだ。</p>
+<p>#### 2. 化石の鳥かご、震える手足</p>
+<p><em>ハァッ……ハァッ……ハァッ……！</em></p>
+<p>竜骨の化石が作り出すアーチの下で、二人は大の字になって倒れ込んでいた。</p>
+<p>外の断崖では、巨竜の咆哮と火砕ブレスの炸裂音が地鳴りのように響いている。だが、この化石竜の肋骨の内側には、熱風も火の粉も一切届かない。</p>
+<p>天井の隙間から、ひんやりとした上層の冷風が通り抜け、汗だくの肌を心地よく冷ましていった。</p>
+<p>「……生きてる……よな？」</p>
+<p>キップが掠れた声で呟いた。手足が生まれたての小鹿のようにガタガタと震え、止まらない。</p>
+<p>「ああ……。五体満足だ……」</p>
+<p>ブラムは仰向けになったまま、擦り切れた自分の左手を見つめた。掌の皮がめくれ、血が滲んでいたが、指は五本とも動いた。</p>
+<p>「……おい、ブラム」</p>
+<p>「……なんだよ」</p>
+<p>「竜の鱗、拾いに行くか？」</p>
+<p>「行くわけねえだろ、この大馬鹿野郎！！」</p>
+<p>ブラムが怒鳴り、それから二人で顔を見合わせ、引き攣った笑い声を上げた。</p>
+<p>「ハハ……ハハハッ！ 死ぬかと思ったぜ、クソッ！」</p>
+<p>「俺たちの身の丈は、第004階の石灰掘りか、第026階の水門掃除がお似合いだよ……！」</p>
+<p>死の淵から生還した安堵感が、熱い涙となって二人の頬を伝った。</p>
+<p>#### 3. 灼熱岩板の焼きチーズ塩豚トースト</p>
+<p>「……腹が減ったな」</p>
+<p>恐怖の興奮が収まると、胃袋が猛烈に痙攣した。</p>
+<p>キップは震える手で背嚢を探り、底から油紙に包まれた固まりを取り出した。</p>
+<p>第008階のオアシス市場で買い込んだ、石のようにカチカチの【山羊乳のドライチーズ】と、薄切りの【塩豚の干し肉】、それに硬質ライ麦パンの欠片だ。</p>
+<p>「火を起こす元気もねえぞ……」</p>
+<p>キップが溜息をつくと、ブラムが床を指差した。</p>
+<p>「火なら要らねえ。この床の砂利を見ろ」</p>
+<p>敷き詰められた耐火砂利は、直下のマグマの地熱を程よく吸い込み、まるで良質な蒸し風呂の床のように熱を帯びていた。</p>
+<p>ブラムは平らな玄武岩のプレートを砂利の上に置き、その上に硬質パンを並べた。</p>
+<p>さらに、薄切りの塩豚を載せ、その上からナイフで削り落とした山羊乳チーズを山盛りに被せた。</p>
+<p><em>ジュウウウウウッ……！</em></p>
+<p>岩板の熱がパンを通じて塩豚とチーズへと伝わった瞬間、爆発的な香りが竜骨のポケットを満たした。</p>
+<p>山羊乳チーズがドロリと黄金色に溶け出し、塩豚から染み出た透明な脂と混ざり合って、ジュワジュワと激しく泡立つ。</p>
+<p>硬かったパンの底が、脂を吸ってキツネ色にこんがりと焼き上がっていく。</p>
+<p>「う、うわぁぁぁ……！ チーズが溶けてる……！」</p>
+<p>キップが息を呑んだ。</p>
+<p>「ほら食え、キップ。成層圏で食う、世界一高い贅沢メシだ」</p>
+<p>ブラムが岩板から熱々のトーストを掴み、キップに手渡した。</p>
+<p>熱で指を火傷しそうになりながら、二人はトーストにかぶりついた。</p>
+<p><em>サクッ……トロリィィィッ！</em></p>
+<p>「……っっっ！！ あつっ……んまいっっっ！！」</p>
+<p>キップの口から、呻き声のような歓喜が漏れた。</p>
+<p>香ばしくカリカリに焼けたパンの歯ごたえ。そこに絡みつく、濃厚でコクのある熱々の溶けチーズと、ガツンと効いた塩豚の塩気と肉汁！</p>
+<p>極度の恐怖で凍りついていた胃袋と心臓に、熱いマグマのようなエネルギーが染み渡っていく。</p>
+<p>「うまい……うまいなぁ、ブラム……！」</p>
+<p>「ああ。死に損なった後に食うメシは、いつだって最高だ」</p>
+<p>ブラムも口の周りを黄色いチーズまみれにしながら、豪快にトーストを噛み締めた。</p>
+<p>遠くで、マージャスの大剣が巨竜の角を叩き割る轟音が響いた。</p>
+<p>英雄たちは竜を討ち、さらに高みへと登っていくのだろう。</p>
+<p>だが、この岩の割れ目で、震える手で熱いチーズパンを分け合う二人の凡人にも、等しく生きる歓びと尊い時間がある。</p>
+<p>「キップ、食い終わったら、第077階の大図書館まで滑り台みたいに逃げ帰るぞ」</p>
+<p>「おうよ！ トネリコ堂に帰って、バルカス爺さんに言ってやるんだ。『竜の角は折れなかったけど、最高に美味いチーズを焼いてきたぜ』ってな！」</p>
+<p>二人の屈託のない笑い声が、灼熱の断崖の片隅で、静かに、そして力強く響き渡っていった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 階層見取り図・接続図</h3>
+<p>```</p>
+<p>[第085階：竜翼風穴の玄武岩吊り橋と飛竜営巣テラス]</p>
+<p>▲</p>
+<p>│ （垂直クラック・直結開通！）</p>
+<p>[第084階：巨竜の咆哮・灼熱の断崖] ── 【ジャック＆マージャスの突破劇】</p>
+<p>│</p>
+<p>▼ （天楼防護ゲート階段・直結開通！）</p>
+<p>[第077階：天楼大図書館]</p>
+<p>│</p>
+<p>▼ （完全一本化連続直結動脈）</p>
+<p>[第001階：グランドロビー・トネリコ堂]</p>
+<p>```</p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <div id="top" class="log-selector" style="justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+      <a href="chronicles_5.html" class="log-btn">◀ 前の巻（第5巻）</a>
+      <a href="chronicles.html" class="log-btn">📖 物語目次へ</a>
+      <a href="chronicles_7.html" class="log-btn">次の巻（第7巻） ▶</a>
+    </div>
+  </main>
+
+  <footer>
+    <div>⚔️ [LAGRANGE TOWER OFFICIAL CHRONICLES] // MULTI-PAGE GRAND ARCHIVE // LAST BUILD: 2026-11-15 21:05 ⚔️</div>
+    <div>CURATED BY THE FORTRESS ARCHIVE (5-LAYER IP &amp; SECURITY QUARANTINED). ALL RIGHTS RESERVED.</div>
+  </footer>
+
+  <script>
+    function switchLog(logId, btn) {
+      document.querySelectorAll('article.prose-container').forEach(a => a.style.display = 'none');
+      document.querySelectorAll('.log-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(logId).style.display = 'block';
+      btn.classList.add('active');
+    }
+    function filterChars(tier, btn) {
+      document.querySelectorAll('.char-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.char-entry').forEach(entry => {
+        entry.style.display = (tier === 'all' || entry.getAttribute('data-tier') === tier) ? 'block' : 'none';
+      });
+    }
+    function filterItems(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.item-entry').forEach(entry => {
+        entry.style.display = (cat === 'all' || entry.getAttribute('data-category') === cat) ? 'block' : 'none';
+      });
+    }
+    function filterZones(zone, btn) {
+      document.querySelectorAll('.zone-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.floor-entry').forEach(entry => {
+        entry.style.display = (zone === 'all' || entry.getAttribute('data-zone') === zone) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
