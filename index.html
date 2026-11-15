@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>天頂迷宮ラグランジュの塔 // 公式冒険者年代記・博物誌</title>
+  <title>総合案内所 (Index) // 天頂迷宮ラグランジュの塔 公式博物誌</title>
   <style>
     :root {
       --bg-deep: #120f0d;
@@ -321,16 +321,101 @@
       color: var(--text-muted);
     }
   </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.18rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .anya-stamp {
+      border: 1px solid var(--crimson-seal);
+      background: rgba(168, 56, 56, 0.12);
+      padding: 14px 18px;
+      border-radius: 3px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #f2dada;
+    }
+    .anya-stamp-title {
+      color: #ff9999;
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 0.94rem;
+    }
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 22px 0;
+      font-size: 0.9rem;
+    }
+    .book-table th, .book-table td {
+      border: 1px solid var(--border-brass);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .book-table th {
+      background: #282018;
+      color: var(--gold-bright);
+    }
+    .book-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+  </style>
 </head>
 <body>
-
   <header>
     <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // OFFICIAL GUILD ARCHIVE ⚔️</div>
     <h1>天頂迷宮ラグランジュの塔 観測年代記</h1>
     <div class="subtitle">
       天を突く全100階層の神代遺構。配管の蒸気で芋を蒸し、靴底の減りを気にしながら今日を生き延びる冒険者たちの群像記録と博物誌。
     </div>
-    <div class="hero-frame">
+        <div class="hero-frame">
       <img src="lagrandulum_hero.jpg" alt="階層の中心核・重力均衡の大振り子『ラグランデュラム』と宿場街の風景">
       <div class="hero-caption">
         ▲ 各階層の中心にそびえ立つ重力均衡の大振り子『ラグランデュラム（Lagrandulum）』と、その足元に広がる宿場街の灯り
@@ -338,112 +423,78 @@
     </div>
   </header>
 
-  <!-- Navigation Bar (5 Main Tabs) -->
   <div class="nav-bar">
     <nav class="nav-tabs">
-      <button class="tab-btn active" onclick="switchTab('tab-chronicles', this)">📖 物語・観測記録</button>
-      <button class="tab-btn" onclick="switchTab('tab-roster', this)">👥 人物・パーティ名鑑</button>
-      <button class="tab-btn" onclick="switchTab('tab-lexicon', this)">🎒 アイテム・奇品辞典</button>
-      <button class="tab-btn" onclick="switchTab('tab-atlas', this)">🗺️ 階層・ロケーション図鑑</button>
-      <button class="tab-btn" onclick="switchTab('tab-codex', this)">⚖️ 世界観・塔の法則</button>
+      <a href="index.html" class="tab-btn active">🏠 総合案内所 (Index)</a>
+      <a href="chronicles.html" class="tab-btn">📖 物語・観測記録</a>
+      <a href="library.html" class="tab-btn">📚 迷宮内専門書庫</a>
+      <a href="roster.html" class="tab-btn">👥 人物・パーティ名鑑</a>
+      <a href="lexicon.html" class="tab-btn">🎒 アイテム・奇品辞典</a>
+      <a href="atlas.html" class="tab-btn">🗺️ 階層・ロケーション図鑑</a>
+      <a href="codex.html" class="tab-btn">⚖️ 世界観・塔の法則</a>
     </nav>
   </div>
 
-  <!-- ==================== TAB 1: Observation Logs ==================== -->
-  <main id="tab-chronicles" class="tab-panel active">
-    <div class="log-selector">
-      <button class="log-btn active" onclick="switchLog('log-1', this)">📜 第1録：湿った坑道のカンテラと干し芋（第002階）</button>
-      <button class="log-btn" onclick="switchLog('log-2', this)">📜 第2録：熱泥の靴底と蒸気孔の塩芋（第022階）</button>
-      <button class="log-btn" onclick="switchLog('log-3', this)">📜 第3録：エララと開かずの木箱（第075階保安室）</button>
+  <main class="tab-panel active">
+    <div class="prose-container" style="margin-bottom: 24px;">
+      <h2>🏛️ 王立大図書館・総合目録（Portal Directory）</h2>
+      <p>『ラグランジュの塔』公式博物誌へようこそ。本アーカイブは外界から遮断された閉域環境にて日々自律的に成長しており、各専門書架（別ページ）にて物語全文、迷宮内専門書、人物名鑑、アイテム事典、階層図鑑を閲覧できます。</p>
+
+      <div class="hub-grid">
+        <a href="chronicles.html" class="hub-card">
+          <div>
+            <div class="hub-card-title"><span>📖 物語・観測記録</span><span>➔</span></div>
+            <div class="hub-card-desc">泥這い小隊の現場メシ、老剣士と少年の熱泥突破、防衛魔術師エララの事件簿など、代表エピソード全文と日々自動追加される最新観測日誌を収録。</div>
+          </div>
+          <div class="hub-card-meta"><span>収録：本編3話 ＋ 自律日誌 9件</span><span>毎日自動追加</span></div>
+        </a>
+
+        <a href="library.html" class="hub-card" style="border-top-color: var(--crimson-seal);">
+          <div>
+            <div class="hub-card-title"><span>📚 迷宮内専門書・研究叢書</span><span>➔</span></div>
+            <div class="hub-card-desc">【第025階・大図書館蔵書】苦渋茸と偽茸の傘裏ヒダ識別法、晶華小蜂の気門解剖学、熱泥での靴底膠耐久試験など、塔の住人以外が読んでも誰も得しないガチ実用書群（三女アーニャの検閲印付き）。</div>
+          </div>
+          <div class="hub-card-meta"><span>収録：専門書全4巻（全文閲覧可）</span><span>大図書館特別書架</span></div>
+        </a>
+
+        <a href="roster.html" class="hub-card">
+          <div>
+            <div class="hub-card-title"><span>👥 人物・パーティ名鑑</span><span>➔</span></div>
+            <div class="hub-card-desc">泥這い小隊、特売日バディ（トーラ＆ラピータ）、白兎の司祭クローミン、塔務局の公務員三姉妹、そして並行世界に挑む歴代挑戦者たちの名鑑。</div>
+          </div>
+          <div class="hub-card-meta"><span>収録：全 14 組（常連8組＋並行世界6世代）</span><span>世代交代連動</span></div>
+        </a>
+
+        <a href="lexicon.html" class="hub-card">
+          <div>
+            <div class="hub-card-title"><span>🎒 アイテム・奇品大辞典</span><span>➔</span></div>
+            <div class="hub-card-desc">針金括りの鉄フライパン槍、底知らずの麻袋、嘘吐きコンパス、割れ水晶温泉卵、重力均衡の大振り子『ラグランデュラム』など迷宮の奇品・武具事典。</div>
+          </div>
+          <div class="hub-card-meta"><span>収録：全 26 種（毎日自律発掘）</span><span>5層検疫済</span></div>
+        </a>
+
+        <a href="atlas.html" class="hub-card">
+          <div>
+            <div class="hub-card-title"><span>🗺️ 階層・ロケーション図鑑</span><span>➔</span></div>
+            <div class="hub-card-desc">第001階の跳ね兎亭、第021階の翡翠温泉街、三姉妹の職員社宅と秘密の裏階層『第-256階：星辰の保守控室』、および日々測量される新規水平開拓エリア。</div>
+          </div>
+          <div class="hub-card-meta"><span>収録：主要階層 ＋ 新規支線 13 区画</span><span>全 75 フロア直結</span></div>
+        </a>
+
+        <a href="codex.html" class="hub-card">
+          <div>
+            <div class="hub-card-title"><span>⚖️ 世界観・塔の法則＆市場経済</span><span>➔</span></div>
+            <div class="hub-card-desc">『ラグランデュラム』による到達記録と未踏同行不可の法則、経済圏の濃淡、およびリアルタイムに変動するトネリコ堂の市場価格・魔物学習観測報。</div>
+          </div>
+          <div class="hub-card-meta"><span>動態エコノミー連動稼働中</span><span>リアルタイム更新</span></div>
+        </a>
+      </div>
     </div>
 
-    <!-- Episode 1 -->
-    <article id="log-1" class="prose-container">
-      <h2>⛏️ 第002階：『湿った坑道のカンテラと、干し芋のスープ』</h2>
+    <section class="prose-container">
+      <h2>📡 直近の自律観測速報（Latest Autonomous Feed）</h2>
       <blockquote>
-        【舞台ロケーション】第002階：旧採炭坑道（LOC-002-A） ➔ 地熱漏れの岩壁溜まり（LOC-002-B）<br>
-        【登場人物】元炭鉱夫ガリク、泥這い小隊（ロルフ、ダン、ミリー、ペコ）<br>
-        【記録種別】平熱・日常譚（戦闘なし・カンテラ油節約・現場メシの温もり）
-      </blockquote>
-
-      <h3>1. ツルハシの反響と、石炭の匂い</h3>
-      <p>カツン……カツン……カツン……。</p>
-      <p>暗がりの中に、乾いた金属音が規則正しく響いていた。真鍮製の小さなカンテラが、岩肌の突起に掛けられ、頼りない橙色の光で周囲数歩をぼんやりと照らし出している。</p>
-      <p>「ふぅ……。ここらの鉱脈は、もう搾りかすだな。黄鉄鉱ばっかりだ」</p>
-      <p>汗をぬぐいながら息を吐いたのは、煤けた革手袋をはめた中年男――元炭鉱夫のガリクだった。削り落とした石炭の破片を革袋に詰め込みながら、彼は天井を見上げた。腐りかけた松材の支保工が、きしみ音を立てながら頭上の巨大な岩盤を支えている。</p>
-      <p>「おい、ガリク！ 休憩にしようぜ。カンテラの油がもったいねぇ」</p>
-      <p>坑道の奥から、ドスンと重い足音を響かせて現れたのは、熊人族の大男ダンだった。その背後には、長槍を杖代わりに歩く隊長のロルフ、耳をピクピクさせている猫耳族のペコ、そして見習い僧侶のエルフ少女ミリーが続いていた。駆け出し冒険者パーティ『泥這い小隊』の面々だ。</p>
-
-      <h3>2. 地熱配管と、カチカチの干し芋</h3>
-      <p>「ダン、声が大きいニャ。支保工がパラパラ埃を落としてるニャ……」</p>
-      <p>ペコが頭を抱えながら尖った猫耳を伏せる。第004階でヒグマに突進されて槍を折られ、辛勝したものの武具修理代に困窮した彼らは、比較的安全なこの第002階で小銭稼ぎの鉱石拾いに降りてきていた。</p>
-      <p>「ほら、湯が沸いたわよ。カンテラの芯を少し下げて」</p>
-      <p>ミリーが小さな真鍮の鍋を、岩壁の割れ目から漏れ出る微弱な地熱配管の上に置いた。ぐつぐつと煮え立つ湯の中に、ガリクが腰の麻袋から取り出した『干し芋の切れ端』と粗塩が放り込まれる。</p>
-      <p>「贅沢は言えねぇが……このスープ、芋の甘みが出てて悪くねぇな」</p>
-      <p>ロルフが欠けた木製椀をすすりながら、ふっと口元を緩めた。暗闇の中で、五つの湯気が白く立ち上り、煤けた顔をほのかに温める。</p>
-      <p>「チートも魔法の剣もねぇがな、今日も生きて温かい芋を食えた。迷宮じゃ、それだけで上等な一日さ」</p>
-      <p>ガリクの言葉に、若いペコが小さく頷いた。カンテラの橙色の炎が揺れ、泥にまみれた五人の影が、黒い石炭の壁に寄り添うように揺れていた。</p>
-    </article>
-
-    <!-- Episode 2 -->
-    <article id="log-2" class="prose-container" style="display: none;">
-      <h2>♨️ 第022階：『熱泥の靴底と、蒸気孔のほくほく塩芋』</h2>
-      <blockquote>
-        【舞台ロケーション】第022階・支線：黒曜石の熱泥回廊と蒸気孔テラス（LOC-022-B）<br>
-        【登場人物】荷駄運びベルンハルト＆懐モグラのポコ、見習い斥候ティオ<br>
-        【記録種別】平熱・日常譚（靴底の膠剥がれ・松脂修繕・蒸気孔の現場メシ）
-      </blockquote>
-
-      <h3>1. 煮え滾る黒曜石と、ベロッと逝った靴底</h3>
-      <p>ボコッ、ボコボコッ……シュウウウウウッ！</p>
-      <p>第021階の翡翠温泉から漏れ出た地熱蒸気が、黒い岩肌の割れ目から白い龍のように吹き上がっている。猫耳をペタリと倒した見習い斥候ティオが、片足立ちで跳ねながら悲鳴を上げた。</p>
-      <p>「あっつ！ 熱いニャ！ ベルンハルト、足の裏がフライパンの上のソーセージみたいになってるニャ……あ、あれ？ *ベロンッ*！？」</p>
-      <p>ティオが恐る恐る右足を持ち上げると、蚤の市で銀貨三枚で買い叩いた中古ブーツの靴底が、つま先から踵まで真っ二つに口を開けていた。熱泥の熱気に当てられ、古い接着膠（にかわ）が完全に溶け落ちたのだ。</p>
-      <p>「ひにゃあああっ！！ 底が剥がれたニャーッ！ 裸足じゃ肉球が焼き肉になっちゃうよぉぉ……！」</p>
-      <p>「泣くなティオ。俺の肩に乗れ。次の蒸気テラスまで背負ってやる」</p>
-      <p>身長215cmの温厚なミノタウロス――ベルンハルトは、百キロを超える『底知らずの麻袋』を背負ったまま巨大な膝を折り、涙目のティオをひょいと肩に担ぎ上げた。胸ポケットから顔を出した懐モグラのポコが「キュキュッ！」と鳴き、地中の微振動から安全な冷えた岩盤ルートを案内していく。</p>
-
-      <h3>2. 蒸気孔の皮付き塩芋と、冷たい山葡萄水</h3>
-      <p>辿り着いた『蒸気孔テラス』で、ベルンハルトは真鍮のワイヤーネットを取り出した。土付きの赤芋を洗って粗塩を擦り込み、濡れ麻布で包んで、過熱蒸気が噴き出す穴の上にすっぽりと被せる。</p>
-      <p>「薪なんか要らんさ。十五分も蒸せば、カチカチの赤芋も蜜のように甘くなる」</p>
-      <p>芋が蒸し上がるまでの間、ベルンハルトは蒸気で溶かした松脂（まつやに）をティオのブーツに流し込み、太い麻糸で靴底を二重に縫い留めてやった。「塔の中じゃ、武器の手入れより足元の手入れの方がよっぽど大事なんだよ」</p>
-      <p>やがて麻布を剥ぎ取ると、黄金色の果肉から湯気を吹き上げる蒸し芋が現れた。</p>
-      <p>「んんんーーっ！！ 甘い！ お塩がピリッときて、皮がパリッとしてて最高ニャ！！」</p>
-      <p>冷たい竹筒の山葡萄水で喉を潤し、直ったばかりのブーツの靴紐を固く結び直す。湯守狐の小祠に芋の皮をひとかけら供え、二人は再び湯気の向こうへと歩き出した。</p>
-    </article>
-
-    <!-- Episode 3 -->
-    <article id="log-3" class="prose-container" style="display: none;">
-      <h2>🛡️ 第075階：『エララと開かずの木箱』</h2>
-      <blockquote>
-        【舞台ロケーション】第075階：境界大検問所・第075保安室（LOC-075-A）<br>
-        【登場人物】見習い防衛魔術師エララ、書記バーナビー<br>
-        【記録種別】迷宮塔務日誌（鍵の複雑性と現場のドタバタ事件簿）
-      </blockquote>
-
-      <h3>1. エララと十六文字の絶対封印</h3>
-      <p>天を突く巨大迷宮「ラグランジュの塔」、第075階『境界大検問所』。公文書を守る第075保安室に、分室長からの通達が下りたのは朝の鐘が鳴った直後だった。</p>
-      <p>「影泥棒の暗躍を防ぐため、今日中にすべての書類保管箱の鍵を、従来の4桁から『16文字の完全ランダム古代ルーン配列』に強化してくれたまえ！」</p>
-      <p>青いローブの新米防衛魔術師エララは、満面に笑みを浮かべて杖を構えた。</p>
-      <p>「お任せください！ 保安の強化こそ、私の役目です！ えーいっ、【十六文字の絶対封印】！」</p>
-      <p>パァァッ！ と眩い光が弾け、木箱の鍵穴の周りに、複雑怪奇な古代ルーン文字『ᚠᚢᚦᚨᚱᚲᚷᚹᚺᚾᛁᛃᛇᛈᛉ』が浮かび上がった。</p>
-
-      <h3>2. 紙切れ紛失と、プチ・ファイアの悲劇</h3>
-      <p>解錠コードの羊皮紙を渡された同僚の書記バーナビーは、八の字眉で絶望していた。「エララさん、ぼく、昨日の晩ご飯すら思い出せないのに90日ごとにこれを覚えるの……！？」</p>
-      <p>そして午後の鐘が鳴った直後、至急の台帳確認要請が入った。バーナビーは顔面蒼白でポケットを探った。</p>
-      <p>「な、ない……！ 解錠コードを書いた紙、さっき林檎パイの包み紙と一緒にゴミ箱に捨てちゃったかも……！？」</p>
-      <p>焦ったバーナビーの脳裏に、魔が差した考えが浮かんだ。「鍵穴にちょっとだけ火の魔法を流し込んで、熱で膨らませたら外れるんじゃ……【プチ・ファイア】！」</p>
-      <p>カチリ。防犯用の魔導インクが不正熱を感知し、直後に**ドーーーーンッ！！** と派手な音とともに、紫色の消えない防犯インクが執務室中に炸裂した。頭から紫インクまみれになった二人が呆然と顔を見合わせる。</p>
-      <p>「……鍵を難しくしすぎて、誰も仕事ができなくなっちゃいましたぁ〜……！」</p>
-      <p>長女エリアのため息と真鍮レンチの音が廊下に響くのは、それからわずか数分後のことだった。</p>
-    </article>
-
-    <!-- AUTONOMOUS_CHRONICLE_START -->
-    <section class="prose-container" style="margin-top: 28px; border-top: 2px solid var(--gold-antique);">
-      <h2>📡 塔務局・自律観測クロニクル（日々増える冒険日誌・検疫済フィード）</h2>
-      <blockquote>
-        【閉域自律拡張ステータス】全 <strong>75</strong> フロア記録済 ／ 並行世界観測：第 <strong>6</strong> 世代稼働中 ／ 最終検疫ビルド：<strong>2026-11-15 13:44</strong><br>
-        ※本セクションは外界から遮断された閉域環境にて毎日自律生成され、5層検疫（著作権・他社IPブラックリスト検疫、三姉妹の正体秘匿、機密・パス遮断、スクリプト無害化）を通過した最新エピソードのみを自動追加しています。
+        【最終検疫ビルド】<strong>2026-11-15 14:05</strong> ｜ 全件をご覧になる場合は <a href="chronicles.html" style="color: var(--gold-bright);">📖 物語・観測記録ページ</a> または <a href="atlas.html" style="color: var(--gold-bright);">🗺️ 階層・ロケーション図鑑</a> へお進みください。
       </blockquote>
       <div class="location-list">
         <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--emerald-astral);">
@@ -467,7 +518,7 @@
             本層の西側断層には、第021階の翡翠温泉源泉から漏れ出た高温の鉱泉と地下蒸気が黒曜石の亀裂を伝って噴き出す『熱泥回廊』が広がる。白銀の菌糸は地熱を嫌って天井高くに退行しているが、足元は沸騰する鉱泥がボコッ、ボコッと鈍い音を立て、滑らかな黒曜石の岩棚の至るところにある『蒸気孔（スチーム・ベント）』から周期的に白い蒸気が噴出する。靴底の膠（にかわ）を溶かす熱気と硫黄臭に満ちているが、この蒸気孔は冒険者たちにとって最高の「無煙調理場」かつ「湿布休憩所」として重宝されている。回廊の最奥、蒸気煙が渦巻く岩壁の窪みには、湯気の奥に鎮座する『湯守狐神オタマの素焼き小祠』がひっそりと祀られている。
           </div>
           <div class="loc-desc" style="color: #d8cbb8; font-style: italic; font-size: 0.88rem; border-top: 1px dashed #3d3127; padding-top: 6px;">
-            「――ボコッ、ボコボコッ……シュウウウウウッ！ 黒曜石の床面から立ち上る地熱が、分厚い地下の冷気を押し返していた。 第022階の主回廊を覆うあの青白い幻光茸と白銀の菌糸は、この西側断層には一本も生えていない。菌類どもが嫌悪する高熱の鉱泉蒸気が、黒い岩肌の割れ目から白い龍のように吹き上がっているからだ。 「あっつ！ 熱いニャ！ ベルンハルト、足の裏がフライパンの上のソーセージみたいになってるニャ！」」
+            「――ボコッ、ボコボコッ……シュウウウウウッ！ 黒曜石の床面から立ち上る地熱が、分厚い地下の冷気を押し返していた。 第022階の主回廊を覆うあの青白い幻光茸と白銀の菌糸は、この西側断層には一本も生えていない。菌類どもが嫌悪する高熱の鉱泉蒸気が、黒い岩肌の割れ目から白い龍のように吹き上がっているからだ。 「あっつ！ 熱いニャ！ ベルンハルト、足の裏がフライパンの上のソーセージみたいになってるニャ！」 猫耳をペタリと倒したティオが、片足立ちでピョンピョン跳ねながら悲鳴を上げた。」
           </div>
         </div>
         <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--gold-bright);">
@@ -482,874 +533,44 @@
             本層の紅葉林の北東、冷涼な秋風が霧となって滞留する玄武岩の谷間に広がる深部支線エリア。
           </div>
           <div class="loc-desc" style="color: #d8cbb8; font-style: italic; font-size: 0.88rem; border-top: 1px dashed #3d3127; padding-top: 6px;">
-            「「ぶぇっくしょん！ ゲホッ、ゴホッ！ なんだこの煙みたいな粉はぁ！？」 熊人族の大槌戦士ダンが、鼻を真っ赤にして盛大なくしゃみを放った。 紅葉の森を抜けて北東の谷間へと踏み込んだ泥這い小隊の頭上には、見渡す限りの巨大な発光傘茸が重なり合い、その隙間から豪快な大瀑布が轟音を立てていた。 そして、滝の飛沫とともに、傘茸のひだから無数の胞子が、まるで濃密な霧雨のようにサラサラ……と降り注いでいた。」
-          </div>
-        </div>
-        <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--gold-bright);">
-          <div class="loc-title">
-            <span>📜 🏛️ 第017階：古代巨樹の洞道と螢石の夜想水脈 // 水平開拓記録</span>
-            <span class="loc-code">観測日時: 2026-11-14 19:01 [検疫合格]</span>
-          </div>
-          <div class="loc-desc" style="color: var(--emerald-astral); font-size: 0.86rem; margin-bottom: 6px;">
-            🧭 新規開拓支線：『螢光水芹の冷涼テラスと清冽水磐小神祠』
-          </div>
-          <div class="loc-desc" style="margin-bottom: 8px; font-size: 0.9rem;">
-            本層の主水路（洞道運河）から東へ分岐した、巨樹の空洞根の隙間から冷涼な天然軟水が滾々と湧き出る段々畑状のテラス。
-          </div>
-          <div class="loc-desc" style="color: #d8cbb8; font-style: italic; font-size: 0.88rem; border-top: 1px dashed #3d3127; padding-top: 6px;">
-            「」
-          </div>
-        </div>
-        <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--gold-bright);">
-          <div class="loc-title">
-            <span>📜 ⚙️ 第27階：万年錆の歯車回廊と絡繰り温室 // 『酒樽アーマーと、歯車温室の蒸しカブ』</span>
-            <span class="loc-code">観測日時: 2026-11-14 11:01 [検疫合格]</span>
-          </div>
-          <div class="loc-desc" style="color: var(--emerald-astral); font-size: 0.86rem; margin-bottom: 6px;">
-            🧭 新規開拓支線：『万年錆の主軸水門室と歯車小神祠』
-          </div>
-          <div class="loc-desc" style="margin-bottom: 8px; font-size: 0.9rem;">
-            本層の西側水耕テラスから、巨大な蒸気配管の束に沿ってさらに奥深くへと進んだ先、かつて塔全体の給排水と歯車駆動を統括していたとされる半円ドーム状の主軸室。
-          </div>
-          <div class="loc-desc" style="color: #d8cbb8; font-style: italic; font-size: 0.88rem; border-top: 1px dashed #3d3127; padding-top: 6px;">
-            「「すっげえええええっ！ 見てよキップ、ロッティ！ 天井も床も、ぜーんぶ歯車だぞ！」 カシュン、コト……カシュン、コト……。 重厚な真鍮の駆動音と、温かい機械油の芳香が立ち込める第027階の回廊。 少年戦士パスカルは、胸に着けた『酒樽の底板胸当て』をカポカポと鳴らしながら、目を輝かせて駆け出していた。」
-          </div>
-        </div>
-        <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--gold-bright);">
-          <div class="loc-title">
-            <span>📜 🏛️ 第019階：鏡喰いの回廊と虚像の残響迷宮 // 『曇り銅鏡の道標と、塩イモリ麦粥』</span>
-            <span class="loc-code">観測日時: 2026-11-14 08:24 [検疫合格]</span>
-          </div>
-          <div class="loc-desc" style="color: var(--emerald-astral); font-size: 0.86rem; margin-bottom: 6px;">
-            🧭 新規開拓支線：『影祓いの磨き銅鏡テラスと鏡面小神祠』
-          </div>
-          <div class="loc-desc" style="margin-bottom: 8px; font-size: 0.9rem;">
-            本層の主通路（合わせ鏡の交差回廊）から南側の黒曜石断層を迂回した先、光を乱反射させない鈍い白雲母と微細な結晶砂に包まれた天然のドーム状テラス。
-          </div>
-          <div class="loc-desc" style="color: #d8cbb8; font-style: italic; font-size: 0.88rem; border-top: 1px dashed #3d3127; padding-top: 6px;">
-            「「クソがッ！　どいつもこいつも、俺のドワーフ髭を真似しやがって！」 ガギィィィンッ！ ブラムの構えた真鍮大盾が、漆黒の影の爪を真正面から跳ね飛ばした。 重い金属音が鏡面の壁に反響し、幾重にも重なって耳朶を打つ。」
-          </div>
-        </div>
-        <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--gold-bright);">
-          <div class="loc-title">
-            <span>📜 🕰️ 第030階：狂時計の螺旋庭園と真鍮の時鳥 // 『遅延場のヤカンと、胃痛に沁みるカモミール』</span>
-            <span class="loc-code">観測日時: 2026-11-13 03:03 [検疫合格]</span>
-          </div>
-          <div class="loc-desc" style="color: var(--emerald-astral); font-size: 0.86rem; margin-bottom: 6px;">
-            🧭 新規開拓支線：『絡繰り時鐘の裏水路テラスと健胃の聖水小祠』
-          </div>
-          <div class="loc-desc" style="margin-bottom: 8px; font-size: 0.9rem;">
-            本層の螺旋階段を支える巨大真鍮歯車群の真裏に位置する、冷却用伏流水とオイル排水が流れる静かな水路テラス。
-          </div>
-          <div class="loc-desc" style="color: #d8cbb8; font-style: italic; font-size: 0.88rem; border-top: 1px dashed #3d3127; padding-top: 6px;">
-            「カチ……コチ……カチカチカチッ。 「……ううっ、主よ……。なぜこの階層は、歩くたびに秒針の音が胃壁に直接響くのでしょうか……キリキリと、まるで針で刺されるように痛む……」 第030階の薄暗い真鍮回廊。高位僧侶のザビエルは、銀の聖印を握りしめながら、もう片方の手で胃のあたりを強く押さえて脂汗を浮かべていた。 そのすぐ前を、カツカツと小気味よい足音を立てて進むのは、エルフの前線錬金術師ユーナ・ヴェイルだ。」
+            「「ぶぇっくしょん！ ゲホッ、ゴホッ！ なんだこの煙みたいな粉はぁ！？」 熊人族の大槌戦士ダンが、鼻を真っ赤にして盛大なくしゃみを放った。 紅葉の森を抜けて北東の谷間へと踏み込んだ泥這い小隊の頭上には、見渡す限りの巨大な発光傘茸が重なり合い、その隙間から豪快な大瀑布が轟音を立てていた。 そして、滝の飛沫とともに、傘茸のひだから無数の胞子が、まるで濃密な霧雨のようにサラサラ……と降り注いでいた。 「ダン、大声を出すと胞子を吸い込んじゃうわ！ 濡れ手ぬぐいで鼻を覆いなさい！」」
           </div>
         </div>
       </div>
     </section>
-    <!-- AUTONOMOUS_CHRONICLE_END -->
-  </main>
-
-  <!-- ==================== TAB 2: Character & Party Roster ==================== -->
-  <main id="tab-roster" class="tab-panel">
-    <div class="filter-bar">
-      <button class="char-btn active" onclick="filterChars('all', this)">[すべて表示 (8組)]</button>
-      <button class="char-btn" onclick="filterChars('mundane', this)">[🛡️ 下層・生活派パーティ]</button>
-      <button class="char-btn" onclick="filterChars('veteran', this)">[⚔️ 中層・上層の熟練探索者]</button>
-      <button class="char-btn" onclick="filterChars('staff', this)">[🏛️ 塔務局職員・拠点住人]</button>
-    </div>
-
-    <div class="roster-grid">
-      <div class="char-entry" data-tier="mundane">
-        <div class="item-header">
-          <span class="item-name">🍲 泥這い小隊 ＆ 見習い少年ピップ（The Mud-Crawlers & Pip）</span>
-          <span class="item-tag">🛡️ 下層〜中層・生活派 / Rank D〜C-</span>
-        </div>
-        <div class="item-owner">メンバー：ロルフ（長槍隊長）、ダン（熊人族の槌戦士）、ミリー（エルフ見習い僧侶）、ペコ（猫耳斥候）＋ ピップ（フライパン槍の少年）</div>
-        <div class="item-desc">
-          一攫千金の英雄譚よりも「今日の武具の修理代と温かい晩飯」のために泥を這って生きる等身大の4人組と、彼らに同行する見習い少年ピップ。ピップが持つ『針金括りの鉄フライパン槍』は、魔物の牙を防ぐ盾でありながら、第010階の蒸気配管に押し当てれば3分で半熟目玉焼きが焼けるパーティーの生命線。いつも金欠だが、どんな窮地でも温かい現場メシを囲んで笑い合うしぶとさを持つ。
-        </div>
-      </div>
-
-      <div class="char-entry" data-tier="mundane">
-        <div class="item-header">
-          <span class="item-name">🛒 特売日バディ：トーラ ＆ ラピータ（The Bargain-Day Buddy）</span>
-          <span class="item-tag">🛡️ 下層〜中層・生活派 / Rank C</span>
-        </div>
-        <div class="item-owner">メンバー：トーラ（大盾の人間軽戦士・女） ＆ ラピータ（お買い物鞄の兎人族僧侶・女）</div>
-        <div class="item-desc">
-          第001階のよろず屋『トネリコ堂』の頑固親父に日歩の借金を返しながら迷宮を潜る仲良し女性コンビ。ラピータは長い兎耳を揺らして特売品情報に目を光らせ、大きなお買い物鞄に常に『特売ヤシ油』を詰め込んでいる。強敵に遭遇すると、床にヤシ油をぶちまけてトーラの大盾に二人で飛び乗り、時速40キロのボブスレー滑走でどんな危機からも逃げ切る俊足コンビ。
-        </div>
-      </div>
-
-      <div class="char-entry" data-tier="mundane">
-        <div class="item-header">
-          <span class="item-name">🐂 荷駄運びベルンハルト＆ポコ と 見習い斥候ティオ</span>
-          <span class="item-tag">🛡️ 樹海・温泉圏の運び屋＆斥候 / Rank E〜C</span>
-        </div>
-        <div class="item-owner">メンバー：ベルンハルト（ミノタウロス荷運び）＆ ポコ（懐モグラ）、ティオ（猫耳見習い斥候）、アルヴィス（エルフ斥候）</div>
-        <div class="item-desc">
-          身長215cmの巨漢ながら極めて温厚で面倒見が良い牛人族ベルンハルトと、彼の胸ポケットから顔を出して地鳴りを嗅ぎ分けるモグラのポコ。百キロを超える『底知らずの麻袋』を背負い、熱泥で靴底が剥がれて大泣きするそそっかしい猫耳少女ティオを肩に乗せてやる頼れるお兄さん。仲間のエルフ斥候アルヴィスと共に、階層間の険しい自然領域を行き来している。
-        </div>
-      </div>
-
-      <div class="char-entry" data-tier="mundane">
-        <div class="item-header">
-          <span class="item-name">🛢️ 水路探検隊：樽胸当てのパスカル、キップ、ロッティ</span>
-          <span class="item-tag">🛡️ 下層水路・砂漠圏 / Rank E〜D</span>
-        </div>
-        <div class="item-owner">メンバー：パスカル（見習い騎士）、キップ（地図描き少年）、ロッティ（大鍋蓋の祈祷師）</div>
-        <div class="item-desc">
-          実家の漬物屋が傾いて古樽の底板を鎧代わりにしている少年パスカル、高価な羊皮紙とインク代にいつも胃を痛めている地図描きキップ、そして「両手で耳たぶを引っ張りながら片足三段跳びをしないと発動しない」珍妙な治癒術を使うロッティの若手3人組。パスカルの樽アーマーは走るたびカランコロンと鳴るが、深水に落ちた時は抜群の浮き輪になる。
-        </div>
-      </div>
-
-      <div class="char-entry" data-tier="veteran">
-        <div class="item-header">
-          <span class="item-name">☀️ 太陽の哨所・極光防衛戦線（オールデン、ヘレナ、エリアス）</span>
-          <span class="item-tag">⚔️ 上層寒冷・雷撃帯 / Rank A〜S</span>
-        </div>
-        <div class="item-owner">メンバー：オールデン（太陽の聖騎士）、ヘレナ（豪槍の戦司祭）、エリアス（風の魔法剣士）</div>
-        <div class="item-desc">
-          第051階『極光と雷鳴の大渓谷』を拠点とする熟練3人組。極寒対策の名鎧『霜氷の鎧』を着ているせいで「直射日光を浴びると冷却反作用で自分の両足が地面にガチガチに凍りついて一歩も動けなくなる」暑苦しい熱血漢オールデンと、氷漬けになった彼を大槍の柄で引っ掛けてズルズル引きずり回す豪快な姉御ヘレナ、そして騒がしい脳筋二人に毒舌を吐きつつ緻密な『旋風の罠』で戦局を支配するエルフの参謀エリアスという抜群のコンビネーションを誇る。
-        </div>
-      </div>
-
-      <div class="char-entry" data-tier="veteran">
-        <div class="item-header">
-          <span class="item-name">🪽 天上の守護天使ラリエル と 雲海空賊団『シルフィード号』</span>
-          <span class="item-tag">⚔️ 上層雲海圏 / Rank A〜SS</span>
-        </div>
-        <div class="item-owner">メンバー：静謐のラリエル（天使騎士）、シルヴィアン船長（エルフ空賊）、エレヴァン（雷撃剣士）、ケイリン（鳥人航海士）</div>
-        <div class="item-desc">
-          第058階の暴風雲海を飛空艇『シルフィード号』で翔ける粋な空賊団と、彼らが「生涯無償の特等客」として迎え入れた四枚翼の天使ラリエル。ラリエルは一歩歩くだけで床が抜け、レバーに触れればマストが折れ、晴天でも彼女にだけ雷が落ちるほどの超絶不運体質（「歩く天変地異」）だが、実は周囲の人々に降りかかるはずの不運をすべて一身に引き受けている心優しき聖女。
-        </div>
-      </div>
-
-      <div class="char-entry" data-tier="veteran">
-        <div class="item-header">
-          <span class="item-name">🌟 白兎の高位司祭クローミン ＆ 剣姫ミネルヴァ ＋ 怪盗マイラ</span>
-          <span class="item-tag">⚔️ 全階層踏破・最深部探索 / Rank S〜SS</span>
-        </div>
-        <div class="item-owner">メンバー：クローミン（白兎耳族の司祭）、ミネルヴァ（人間の魔法剣士）、マイラ（黒猫耳族の怪盗）</div>
-        <div class="item-desc">
-          黄金欲に塗れた第001階の表神殿に異を唱えて破門されながらも、困っている者を見捨てず天頂を目指す生真面目な白兎の司祭クローミンと、彼を誰よりも深く信頼して寄り添う気高き剣姫ミネルヴァ。クローミンはなぜか肌身離さず『林檎パイのレシピが書かれた日記帳』を持ち歩いている。そんな二人の周りには、古代錠前を3秒で開ける神出鬼没の黒猫怪盗マイラがいつも勝手に合流しては騒動を巻き起こす。
-        </div>
-      </div>
-
-      <div class="char-entry" data-tier="staff">
-        <div class="item-header">
-          <span class="item-name">🔧 ラグランジュ塔務局・保全＆審査の公務員三姉妹（エリア、エララ、アーニャ）</span>
-          <span class="item-tag">🏛️ 塔務局駐在職員（第025・050・075階）</span>
-        </div>
-        <div class="item-owner">メンバー：長女エリア（第050階インフラ保全課主任）、次女エララ（第075階保安室・見習い魔術師）、三女アーニャ（第025階大図書館・規程審査官）</div>
-        <div class="item-desc">
-          広大な塔の蒸気配管や検問所、大図書館を維持管理するため、それぞれの階層の職員社宅（官舎）で暮らしながら働いている仲良し三姉妹。黒髪ショートボブに深紅のワークシャツを着て真鍮レンチを振るう頼れる姉御肌のエリアに対し、青いローブの次女エララは鍵を難しくしすぎて自分自身が部屋から締め出されるロックアウト常習犯。金髪おさげに丸眼鏡の三女アーニャは、ボヤ騒ぎの消火にすら「規程により三者署名が必要です！」と泣き叫ぶ生真面目すぎる優等生。仕事終わりにはエリアが見つけた秘密の控室（第-256階）に集まり、3人でお茶とお菓子を囲むのが何よりの息抜き。
-        </div>
-      </div>
-
-      <!-- AUTONOMOUS_ROSTER_START -->
-      <div class="char-entry" data-tier="mundane">
-        <div class="item-header">
-          <span class="item-name">🎲 【並行世界 Tower_01】 [[PROTAGONIST\</span>
-          <span class="item-tag">ヴァレン・ミラー]] ／ 結末: 第018階 / 蜂巣の晶華回廊 (・穂先の折れた油焼き樫木柄（回収済） / ・鍛冶神グンドルの錆びた安物鉄貨（回収済） / ・結晶化した晶華蜂の刺針（回収済）)</span>
-        </div>
-        <div class="item-owner">最高到達深度：Rank E / 荷運び槍兵 ｜ 継承・獲得遺品：晶華小蜂の刺針貫通 ＋ 結晶性神経毒 / （槍穂先の破断・手首捻挫・解毒薬未所持）</div>
-        <div class="item-desc">
-          観測記録：💀 ロスト
-        </div>
-      </div>
-      <div class="char-entry" data-tier="mundane">
-        <div class="item-header">
-          <span class="item-name">🎲 【並行世界 Tower_02】 [[Tower_02/PROTAGONIST\</span>
-          <span class="item-tag">バーナード・クレイ]] ／ 結末: 第018階 / 蜂巣の晶華回廊 (【Tower_01遺品2件を無事回収・生還】 / 晶華蜂結晶核×2を換金)</span>
-        </div>
-        <div class="item-owner">最高到達深度：Rank E+ / 石工見習いメイス兵 ｜ 継承・獲得遺品：激闘後・戦略的一時撤退（第001階へ帰還） / （メイスで蜂粉砕・解毒薬即時使用・銀貨70枚純利）</div>
-        <div class="item-desc">
-          観測記録：🛡️ 生還
-        </div>
-      </div>
-      <div class="char-entry" data-tier="mundane">
-        <div class="item-header">
-          <span class="item-name">🎲 【並行世界 Tower_03】 [[Tower_03/PROTAGONIST\</span>
-          <span class="item-tag">パスカル]] ／ 結末: 第025階 / 落葉の古廟 (【Tower_01全遺品を第001階へ完全返還】 / ・奇品『嘘吐きコンパス』新規獲得 / ・グンドルの鉄貨（保持）)</span>
-        </div>
-        <div class="item-owner">最高到達深度：Rank E+ / 見栄張り新米騎士 ｜ 継承・獲得遺品：第2幕完結・第025階到達後に戦略的撤退生還 / （第022階の1.4倍胞子雲を『嘘吐きコンパス』逆探知で突破・銀貨45枚獲得）</div>
-        <div class="item-desc">
-          観測記録：🛡️ 生還
-        </div>
-      </div>
-      <div class="char-entry" data-tier="mundane">
-        <div class="item-header">
-          <span class="item-name">🎲 【並行世界 Tower_04】 [[Tower_04/PROTAGONIST\</span>
-          <span class="item-tag">ベルンハルト]] ／ 結末: 第026階 / 浸食水門の水路 (・『第025階・踏破刻印証』獲得（ムーンゲート開通） / ・奇品『底知らずの麻袋』保持)</span>
-        </div>
-        <div class="item-owner">最高到達深度：Rank E+ / 牛人族の魔獣使い ｜ 継承・獲得遺品：第2幕完結・第026階到達（最高記録更新！）後に第025階ムーンゲート経由で生還 / （水門大鋏ガニを角突進で粉砕・銀貨60枚と蟹味噌甲羅獲得）</div>
-        <div class="item-desc">
-          観測記録：🛡️ 生還
-        </div>
-      </div>
-      <div class="char-entry" data-tier="mundane">
-        <div class="item-header">
-          <span class="item-name">🎲 【並行世界 Tower_05】 [[Tower_05/PROTAGONIST\</span>
-          <span class="item-tag">ドス・ノクト]] ／ 結末: 第025階 / 落葉の古廟・星見広場 (・『第025階・踏破刻印証』獲得（ムーンゲート認証） / ・奇品『逆さ鳴りの砂時計（鶏鳴き）』保持 / ・『発光菌の胞子嚢』『星見石の細片』換金)</span>
-        </div>
-        <div class="item-owner">最高到達深度：Rank E+ / 梟人族の前線錬金術士 ｜ 継承・獲得遺品：第2幕〜第3幕完結・第025階到達後にムーンゲート経由で戦略的撤退生還 / （熱泥・胞子瀑布を鶏鳴き砂時計で突破・第025階刻印証獲得・銀貨18枚純利）</div>
-        <div class="item-desc">
-          観測記録：🛡️ 生還
-        </div>
-      </div>
-      <div class="char-entry" data-tier="mundane">
-        <div class="item-header">
-          <span class="item-name">🎲 【並行世界 Tower_06】 [[Tower_06/PROTAGONIST\</span>
-          <span class="item-tag">モルディ]] ／ 結末: 第025階 / 落葉の古廟・星見広場 (・『第025階・踏破刻印証』獲得（ムーンゲート認証） / ・琥珀原石の微粉末、翡翠温泥パック保持)</span>
-        </div>
-        <div class="item-owner">最高到達深度：Rank E+ / モールキンの見習い左官職人 ｜ 継承・獲得遺品：第4幕完結・第025階到達後にムーンゲート経由で戦略的一時撤退生還！ / （第018階モルタル壁突破・第025階刻印証獲得・トネリコ堂借金完済・銀貨18枚純利・Rank D昇格）</div>
-        <div class="item-desc">
-          観測記録：🛡️ 生還
-        </div>
-      </div>
-      <!-- AUTONOMOUS_ROSTER_END -->
-    </div>
-  </main>
-
-  <!-- ==================== TAB 3: Item & Relic Lexicon ==================== -->
-  <main id="tab-lexicon" class="tab-panel">
-    <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterItems('all', this)">[すべて表示 (14種)]</button>
-      <button class="filter-btn" onclick="filterItems('gear', this)">[🛠️ 生活武具・装備]</button>
-      <button class="filter-btn" onclick="filterItems('mgi', this)">[🔮 迷宮の奇品 (MGI)]</button>
-      <button class="filter-btn" onclick="filterItems('ration', this)">[🍖 現場メシ・特産食材]</button>
-      <button class="filter-btn" onclick="filterItems('relic', this)">[📜 神代モニュメント・遺物]</button>
-    </div>
-
-    <div class="lexicon-grid">
-      <div class="item-entry" data-category="gear">
-        <div class="item-header">
-          <span class="item-name">🍳 針金括りの鉄フライパン槍（Wire-Bound Skillet Spear）</span>
-          <span class="item-tag">🛠️ 生活武具 / Rank E</span>
-        </div>
-        <div class="item-owner">主な所持者：見習い少年ピップ（泥這い小隊同行）｜ 出現層：第001階〜第024階</div>
-        <div class="item-desc">
-          頑丈な樫の棒の先端に、故郷の母ちゃんから貰った使い古しの黒鉄フライパンを太い番線（針金）でぐるぐる巻きに固定した即席の打撃槍。魔物の噛みつきを防ぐ丸盾として機能するほか、第010階の蒸気配管バルブにそのまま押し当てれば、わずか3分で半熟の目玉焼きやキノコソテーが焼ける万能調理兵装。
-        </div>
-      </div>
-
-      <div class="item-entry" data-category="gear">
-        <div class="item-header">
-          <span class="item-name">🛢️ 酒樽の底板胸当て・三番板（Oak Barrel-Lid Breastplate）</span>
-          <span class="item-tag">🛠️ 生活武具 / Rank E</span>
-        </div>
-        <div class="item-owner">主な所持者：見習い騎士パスカル（水路探検隊）｜ 出現層：第005階〜第027階</div>
-        <div class="item-desc">
-          実家の漬物屋が傾き、鉄の鎧が買えなかった少年パスカルが古樽のオーク底板に麻縄を通して仕立てた手製の胸当て。走るたびにカランコロンと情けない音が鳴り、かすかに古漬けの匂いが漂うが、乾燥オーク材の圧倒的な浮力により、第009階や第027階の深水に転落した際は「絶対に沈まない天然の救命胴衣」として命を救う。
-        </div>
-      </div>
-
-      <div class="item-entry" data-category="gear">
-        <div class="item-header">
-          <span class="item-name">❄️ 霜氷の鎧（Frost-Ice Armor）</span>
-          <span class="item-tag">🛠️ 呪われし名鎧 / Rank A</span>
-        </div>
-        <div class="item-owner">主な所持者：太陽の聖騎士オールデン｜ 出現層：第012階・第051階（太陽の哨所）</div>
-        <div class="item-desc">
-          吹雪と極寒を完全に無効化する白銀の名鎧。しかし「直射日光を浴びると冷却反作用が暴走し、周囲の空気中の水分を急速凍結させて着用者の両足を地面にガチガチに氷漬けにする」という致命的な欠陥を抱える。日向に立つたび一歩も動けなくなったオールデンを、戦司祭ヘレナが大槍の柄で引っ掛けてズルズル引きずり回すのが日常の光景。
-        </div>
-      </div>
-
-      <div class="item-entry" data-category="gear">
-        <div class="item-header">
-          <span class="item-name">📏 地図職人の定規剣（Cartographer's Ruler-Blade）</span>
-          <span class="item-tag">🛠️ 専門職兵装 / Rank A</span>
-        </div>
-        <div class="item-owner">主な所持者：空賊航海士ケイリン（シルフィード号）｜ 出現層：第058階（雲海ドック）</div>
-        <div class="item-desc">
-          幅広で反りのない直刀の峰に沿って、ミリ単位の精密な縮尺目盛りと分度器が刻まれた航海士専用の剣。白兵戦での受け流しに使われるよりも、不運な天使ラリエルの落雷で狂った海図の引き直しや、甲板の修理木材の寸法測りに酷使されている。
-        </div>
-      </div>
-
-      <div class="item-entry" data-category="mgi">
-        <div class="item-header">
-          <span class="item-name">🎒 底知らずの麻袋（Bag of Unlightened Holding）</span>
-          <span class="item-tag">🔮 迷宮奇品 (MGI)</span>
-        </div>
-        <div class="item-owner">主な所持者：荷駄運びベルンハルト｜ 出現層：第014階〜第025階</div>
-        <div class="item-desc">
-          一見するとただの古びた大麻袋だが、空間拡張の魔術が織り込まれており、丸太でも鉄鍋でも丸石でも無限に詰め込むことができる。ただし**「中に入れた物の重量だけは1グラムたりとも軽減されず、そのまま背負う者の肩と腰にダイレクトにのしかかる」**という、筋力自慢のミノタウロス以外には到底扱えない泥臭い魔法袋。
-        </div>
-      </div>
-
-      <div class="item-entry" data-category="mgi">
-        <div class="item-header">
-          <span class="item-name">🏮 泣き虫のランタン（Weeping Brass Lantern）</span>
-          <span class="item-tag">🔮 迷宮奇品 (MGI)</span>
-        </div>
-        <div class="item-owner">主な所持者：中層探索者・斥候全般｜ 出現層：第018階〜第058階</div>
-        <div class="item-desc">
-          微弱な知覚魔術が宿った真鍮製の油ランタン。半径30メートル以内に格上の魔物や致死性の環境ハザードが迫ると、中の炎が豆粒のように青白く縮こまり、ガラスホヤがカタカタと情けなく震え出して危険を知らせる。明かりとしては頼りないが、奇襲防止の警報器としては一級品。
-        </div>
-      </div>
-
-      <div class="item-entry" data-category="mgi">
-        <div class="item-header">
-          <span class="item-name">🧭 嘘吐きコンパス（Liar's Compass）</span>
-          <span class="item-tag">🔮 迷宮奇品 (MGI)</span>
-        </div>
-        <div class="item-owner">主な所持者：梟騎士パスカル（並行世界Tower_03）｜ 出現層：第018階〜第025階</div>
-        <div class="item-desc">
-          北を指すことを放棄し、常に「周囲でもっとも殺気や毒素が濃い方角（一番行ってはいけない危険地帯）」だけを正確に指し示すへそ曲がりな羅針盤。針が指す方向の真逆へ進めば確実に安全地帯へ抜けられるため、仕組みを理解した熟練者からは命の恩人として重宝される。
-        </div>
-      </div>
-
-      <div class="item-entry" data-category="mgi">
-        <div class="item-header">
-          <span class="item-name">⏳ 逆さ鳴りの鶏鳴き砂時計（Rooster-Crow Hourglass）</span>
-          <span class="item-tag">🔮 迷宮奇品 (MGI)</span>
-        </div>
-        <div class="item-owner">主な所持者：梟人錬金術士ノクト（Tower_05）｜ 出現層：第018階〜第024階</div>
-        <div class="item-desc">
-          3分間の砂が落ち切った瞬間、昼夜を問わず地下迷宮のど真ん中で「コケコッコーーーッ！！」と凄まじい音量の鶏の鳴き声を響かせる迷惑な砂時計。しかし、通路の奥へ投げ込んでおけば、時間差で鳴り響く大音響に驚いた魔物の群れをそちらへ誘導できる最高の音響デコイ（囮）となる。
-        </div>
-      </div>
-
-      <div class="item-entry" data-category="ration">
-        <div class="item-header">
-          <span class="item-name">🥚 訳ありの割れ水晶温泉卵（Cracked Jade Hot-Spring Egg）</span>
-          <span class="item-tag">🍖 現場メシ・特産食</span>
-        </div>
-        <div class="item-owner">主な産地：第021階『翡翠の温泉宿場・翡翠亭』｜ 価格：銅貨8枚（特売）</div>
-        <div class="item-desc">
-          第021階の翡翠源泉で茹で上げられた水鳥の卵のうち、殻にヒビが入って正規品として出せなくなった訳あり品。殻を剥くと翡翠色のミネラルが染み込んだ白身と、ねっとり濃厚な黄金の黄身が現れる。背嚢の底で潰れやすいのが玉に瑕だが、疲労困憊の探索者にとって最高の贅沢品。
-        </div>
-      </div>
-
-      <div class="item-entry" data-category="ration">
-        <div class="item-header">
-          <span class="item-name">🦎 塩漬けイモリの干物（Salted Newt Jerky）</span>
-          <span class="item-tag">🍖 現場メシ・保存食</span>
-        </div>
-        <div class="item-owner">主な所持者：ベルンハルト、ブラム、下層冒険者全般｜ 価格：銅貨5枚（一束）</div>
-        <div class="item-desc">
-          第001階の雑貨屋『トネリコ堂』で束売りされている下層冒険者の定番保存食。そのまま齧ると奥歯が折れそうなほど硬く猛烈に塩辛いが、水筒の水漏れでふやけた黒パンの耳や麦と一緒に小鍋で煮込むと、驚くほど深い旨味の出汁が出る。
-        </div>
-      </div>
-
-      <div class="item-entry" data-category="ration">
-        <div class="item-header">
-          <span class="item-name">🥥 トネリコ堂の特売ヤシ油（Bargain Palm Oil Jug）</span>
-          <span class="item-tag">🍖 調理油 兼 逃走用滑走剤</span>
-        </div>
-        <div class="item-owner">主な所持者：軽戦士トーラ ＆ 兎人僧侶ラピータ｜ 出現層：第001階・第016階・第031階</div>
-        <div class="item-desc">
-          本来は揚げ物やランプの燃料として使われる安価な植物油。しかし特売日バディのトーラとラピータの手にかかれば、石畳の坂道や氷の回廊にぶちまけられ、大盾をソリ代わりにして強敵から時速40キロのボブスレー滑走で逃げ切るための「緊急脱出ローション」へと変貌する。
-        </div>
-      </div>
-
-      <div class="item-entry" data-category="ration">
-        <div class="item-header">
-          <span class="item-name">🍠 蒸気孔の皮付き塩芋（Steam-Vent Salted Red Potato）</span>
-          <span class="item-tag">🍖 現場メシ・調理品</span>
-        </div>
-        <div class="item-owner">主な調理者：荷駄運びベルンハルト｜ 調理層：第022階『黒曜石の熱泥回廊』</div>
-        <div class="item-desc">
-          第006階の湿地で採れる安価な赤芋に粗塩を擦り込み、濡らした麻布と真鍮ワイヤーネットで包んで、第022階の過熱蒸気孔の真上に15分間放置して蒸し上げた現場メシ。焚き火の煙を一切出さずに調理でき、割ると黄金色の果肉から蜜が滲み出るほど甘くホクホクに仕上がる。
-        </div>
-      </div>
-
-      <div class="item-entry" data-category="relic">
-        <div class="item-header">
-          <span class="item-name">⚖️ 重力均衡の大振り子・ラグランデュラム（The Lagrandulum）</span>
-          <span class="item-tag">📜 神代中心核モニュメント</span>
-        </div>
-        <div class="item-owner">設置場所：全100階層のフロア中心部｜ 備考：一度自力で到達した階層のみ記録・転移可</div>
-        <div class="item-desc">
-          各階層の中心にそびえ立つ、真鍮の天球儀リング・釣り合い分銅・翡翠色の星辰結晶錘からなる神代の巨大振り子。触れた冒険者個人の「一度自力で到達したことのある階層」を記録し、記録済みの階層間を自由に転移させる。ただし**「まだ一度も行ったことがない未踏階層」へは、たとえ熟練者と手を繋いでも絶対に同行転移できない**。そのため環境の良い階層のラグランデュラム周辺には宿場と経済圏が栄え、雲海などの過酷な階層には人が寄り付かない（※なお、塔務局の職員三姉妹だけは、なぜかまだ行ったことがない階層へも平気で転移している姿が目撃されている）。
-        </div>
-      </div>
-
-      <div class="item-entry" data-category="relic">
-        <div class="item-header">
-          <span class="item-name">📖 星辰綴じのソウルバウンド・ダイアリー（Chrono-Bound Grimoire）</span>
-          <span class="item-tag">📜 神代特権遺物 / SSランク</span>
-        </div>
-        <div class="item-owner">主な所持者：白兎の高位司祭クローミン｜ 出現層：全階層</div>
-        <div class="item-desc">
-          白兎の高位司祭クローミンが自身の魂に直接縫い付けるようにして肌身離さず持ち歩いている古い日記帳。どんな過酷な探索でもこの帳面の文字だけは決して損なわれず、1ページ目には「目が覚めたらミネルヴァさんと合言葉を照合すること」と「大好きな林檎パイのレシピ」が切実な筆跡で記されている。
-        </div>
-      </div>
-
-      <!-- AUTONOMOUS_LEXICON_START -->
-      <div class="item-entry" data-category="gear">
-        <div class="item-header">
-          <span class="item-name">🧪 魂喰らいの石板（#ITM-001）</span>
-          <span class="item-tag">📦 自律発掘・検疫済 / 護符 / 闇属性、精神強化</span>
-        </div>
-        <div class="item-owner">塔務局鑑定登録日：2026-10-05 08:43:13</div>
-        <div class="item-desc">
-          朽ち果てた魔導師の魂が封じ込まれた石板。着用者は一時的に精神力を増幅させ、敵の弱点を見抜く力を得る。しかし、その代償として、自身の記憶の一部を奪い去り、闇の囁きに傾倒させる危険性がある。かつて、深淵の魔王を討伐した英雄の魂が、この石板に囚われたという伝説が残る。
-        </div>
-      </div>
-      <div class="item-entry" data-category="gear">
-        <div class="item-header">
-          <span class="item-name">🧪 魂喰らいの鏡（#ITM-001）</span>
-          <span class="item-tag">📦 自律発掘・検疫済 / 鏡 / 虚 / 精神汚染</span>
-        </div>
-        <div class="item-owner">塔務局鑑定登録日：2026-10-06 11:00:10</div>
-        <div class="item-desc">
-          鏡面には見る者の魂の深淵を映し出す。触れる者を狂気と虚無に誘い、その魂を徐々に吸収する。かつて、塔の深淵に潜む虚無の眷属が自身の姿を映し出すために使用したと伝えられる。使用者の精神力を蝕み、幻覚と妄想を増幅させる。
-        </div>
-      </div>
-      <div class="item-entry" data-category="gear">
-        <div class="item-header">
-          <span class="item-name">🧪 鉄血の沈黙の守護者（#ITM-001）</span>
-          <span class="item-tag">📦 自律発掘・検疫済 / 護符 / 鉄属性、防御</span>
-        </div>
-        <div class="item-owner">塔務局鑑定登録日：2026-10-08 11:00:11</div>
-        <div class="item-desc">
-          朽ちかけた鉄の巨人の心臓を模した護符。身につける者に、敵の攻撃を僅かに軽減する。かつて、この巨人は階層の深淵に潜む悪夢を鎮めるために自らを捧げた戦士の魂を宿していたとされる。沈黙の守護者と呼ばれるのは、その魂が言葉を発しないため。
-        </div>
-      </div>
-      <div class="item-entry" data-category="gear">
-        <div class="item-header">
-          <span class="item-name">🧪 鉄血の聖歌（#ITM-001）</span>
-          <span class="item-tag">📦 自律発掘・検疫済 / 聖歌隊の防具 / 信仰</span>
-        </div>
-        <div class="item-owner">塔務局鑑定登録日：2026-10-10 04:59:02</div>
-        <div class="item-desc">
-          鉄の如き堅牢さと、神聖なる信仰の力が共存する防具。着用者は、魂を清め、精神を安定させる聖歌を内なる声として聞くことができる。しかし、その力は、信仰心の薄弱な者には無駄となるだろう。かつて、地下深くに眠る悪魔の脅威を打ち払った聖歌隊の遺産である。
-        </div>
-      </div>
-      <div class="item-entry" data-category="gear">
-        <div class="item-header">
-          <span class="item-name">🧪 鉄錆の聖歌碑（#ITM-002）</span>
-          <span class="item-tag">📦 自律発掘・検疫済 / 楽器 / 聖属性、防具 / 精神防御、消耗品 / 精神安定</span>
-        </div>
-        <div class="item-owner">塔務局鑑定登録日：2026-10-25 07:40:57</div>
-        <div class="item-desc">
-          朽ち果てた石の竪琴。未踏階層の深淵に眠る悪夢の低徊を鎮める聖歌を奏でる。演奏者の精神力を高め、狂気や恐怖を打ち消す効果を持つが、使用後は音を失い、再び眠りにつく。かつて、この歌を歌い続けた聖歌隊が、塔の深淵に引き込まれたという伝承がある。
-        </div>
-      </div>
-      <div class="item-entry" data-category="gear">
-        <div class="item-header">
-          <span class="item-name">🧪 煙狼の灯籠（#ITM-002）</span>
-          <span class="item-tag">📦 自律発掘・検疫済 / 灯籠 / 火属性、耐火陶器</span>
-        </div>
-        <div class="item-owner">塔務局鑑定登録日：2026-11-02 07:51:39</div>
-        <div class="item-desc">
-          内部に微炭を封じ込め、炎を安定的に燃焼させる。煙を放出し、視界を遮ることなく、火の使用を最小限に抑え暗所での活動を支援する。古都の罠職が、迷宮の奥底で獲物を待ち伏せする際に使用したと伝えられる。
-        </div>
-      </div>
-      <div class="item-entry" data-category="gear">
-        <div class="item-header">
-          <span class="item-name">🧪 影葉の壺（#ITM-003）</span>
-          <span class="item-tag">📦 自律発掘・検疫済 / 薬壺 / 精神安定</span>
-        </div>
-        <div class="item-owner">塔務局鑑定登録日：2026-11-02 07:51:39</div>
-        <div class="item-desc">
-          灰色の耐火陶器製壺。内部には薄紫色の液体が澱んでいる。口周りを覆う影葉（かげよう）が微かに震え、精神疲労や幻覚を和らげる効果を持つ。長年、旅人達の休息場所で用いられていたと伝えられる。
-        </div>
-      </div>
-      <div class="item-entry" data-category="mgi">
-        <div class="item-header">
-          <span class="item-name">🔮 紡ぎ足の幽雀（つむぎあしのごうじゃく）（#MGI-001）</span>
-          <span class="item-tag">📦 自律発掘・検疫済 / 容器 / 精霊の溜め息</span>
-        </div>
-        <div class="item-owner">塔務局鑑定登録日：2026-11-05 06:03:13</div>
-        <div class="item-desc">
-          粗末な麻袋仕立ての雀の形をした容器。触れると微かに精霊の息吹が感じられ、触れたものを小さく染め上げる。染め色は微弱で、服や小道具程度。過度な触れ合いは、周囲の糸を絡ませて実用性を損なう。伝承によれば、かつて塔の紡ぎ師が、孤独を癒すための玩具として製作したとされる。
-        </div>
-      </div>
-      <div class="item-entry" data-category="mgi">
-        <div class="item-header">
-          <span class="item-name">🔮 星影の宵壺（ほしのきょうほけ）（#MGI-001）</span>
-          <span class="item-tag">📦 自律発掘・検疫済 / 壺 / 星辰属性</span>
-        </div>
-        <div class="item-owner">塔務局鑑定登録日：2026-11-07 05:58:06</div>
-        <div class="item-desc">
-          古代星辰硝子製。闇夜に浮かぶ星影を閉じ込め、注ぐと薄紫色の液体が瞬時に生成される。温めることで、野営料理の風味を増し、疲労回復を促す効果がある。星影の光を浴びた者は、一時的に周囲の暗視能力を高める。
-        </div>
-      </div>
-      <div class="item-entry" data-category="mgi">
-        <div class="item-header">
-          <span class="item-name">🔮 星影の紡ぎ針（#MGI-001）</span>
-          <span class="item-tag">📦 自律発掘・検疫済 / 紡ぎ針 / 微光</span>
-        </div>
-        <div class="item-owner">塔務局鑑定登録日：2026-11-08 07:54:52</div>
-        <div class="item-desc">
-          粗末な紡ぎ針。染め糸の微光を吸収し、紡ぎ進めるごとに星雲の模様を織り出す。完成した布は、微かな暖かさと安堵感をもたらす。かつて、迷宮の深淵で夜を明かす旅人たちのために作られたが、今は忘れ去られている。
-        </div>
-      </div>
-      <div class="item-entry" data-category="gear">
-        <div class="item-header">
-          <span class="item-name">🧪 淵影の石瓶（#ITM-002）</span>
-          <span class="item-tag">📦 自律発掘・検疫済 / 陶器 / 精神安定</span>
-        </div>
-        <div class="item-owner">塔務局鑑定登録日：2026-11-10 08:22:49</div>
-        <div class="item-desc">
-          粗末な耐火陶器瓶。内部には特殊なオイルが充填され、傾けると微かに緑色の煙を漏らす。オイルは精神疲労を和らげ、幻覚を見る者の心を鎮める効果を持つと伝えられている。この瓶は、塔の奥深くで孤独に生きる研究者によって、自身の精神を研ぎ澄ますための道具として用いられてきた。
-        </div>
-      </div>
-      <div class="item-entry" data-category="gear">
-        <div class="item-header">
-          <span class="item-name">🧪 淵光の紡錘（#ITM-002）</span>
-          <span class="item-tag">📦 自律発掘・検疫済 / 道具 / 結晶ガラス、水属性</span>
-        </div>
-        <div class="item-owner">塔務局鑑定登録日：2026-11-14 08:20:59</div>
-        <div class="item-desc">
-          複雑な模様の結晶ガラスで紡がれた紡錘状の道具。周囲の瘴気を吸収し、水筒内の液体を浄化する。罠の感知と解除に用いられ、暗所での視認性を高める効果がある。職人ギルドの老練な罠職が、過酷な環境下での任務を支えるため製作したとされる。
-        </div>
-      </div>
-      <!-- AUTONOMOUS_LEXICON_END -->
-    </div>
-  </main>
-
-  <!-- ==================== TAB 4: Floor & Location Atlas ==================== -->
-  <main id="tab-atlas" class="tab-panel">
-    <div class="filter-bar">
-      <button class="zone-btn active" onclick="filterZones('all', this)">[全階層・ロケーション]</button>
-      <button class="zone-btn" onclick="filterZones('lower', this)">[⬇️ 下層生活・坑道圏 (F001-F010)]</button>
-      <button class="zone-btn" onclick="filterZones('water', this)">[♨️ 樹海・温泉・菌糸圏 (F011-F025)]</button>
-      <button class="zone-btn" onclick="filterZones('mid', this)">[⚙️ 中層書庫・動力炉圏 (F026-F050)]</button>
-      <button class="zone-btn" onclick="filterZones('upper', this)">[⚡ 上層極光・雲海・検問圏 (F051-F100)]</button>
-    </div>
-
-    <div class="atlas-grid">
-      <div class="floor-entry" data-zone="lower">
-        <div class="floor-header">
-          <span class="floor-name">🏛️ 第001階：始まりの円形宿場街と表裏の神殿群</span>
-          <span class="floor-tag">⬇️ 下層生活圏 / 最大の経済拠点</span>
-        </div>
-        <div class="floor-summary">環境特性：中央のラグランデュラムを取り囲むように屋台と宿場が密集する全探索者の出発点。</div>
-        <div class="location-list">
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 冒険者酒場『跳ね兎亭（Jumping Rabbit Inn）』</span><span class="loc-code">LOC-001-A</span></div>
-            <div class="loc-desc">安酒と排熱シチューの湯気が充満する下層最大の情報交換所。泥這い小隊やトーラ＆ラピータが今日の稼ぎを計算しながら黒パンを齧る定番の溜まり場。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 日用雑貨・古道具『トネリコ堂』</span><span class="loc-code">LOC-001-B</span></div>
-            <div class="loc-desc">頑固親父が切り盛りするよろず屋。塩漬けイモリの干物から特売ヤシ油、銀貨3枚の中古ブーツまで何でも揃うが、ツケの取り立てと日歩の計算には一切の容赦がない。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 路地裏の『灰被り裏神殿』</span><span class="loc-code">LOC-001-C</span></div>
-            <div class="loc-desc">表の大神殿の法外な蘇生寄進金を払えない草の根冒険者が担ぎ込まれる救済所。白兎の司祭クローミンの同志たちが無償に近い価格で蘇生を行うが、迷宮の絶対法則により「天寿の1割剥奪」の代償が刻まれる。</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="floor-entry" data-zone="lower">
-        <div class="floor-header">
-          <span class="floor-name">⛏️ 第002階：黄鉄鉱の廃鉱山と石炭地下回廊</span>
-          <span class="floor-tag">⬇️ 下層採掘圏 / 暗黒・小崩落</span>
-        </div>
-        <div class="floor-summary">環境特性：古代文明が掘り尽くした放棄坑道。松明の煙が充満しやすいため真鍮カンテラが必須となる。</div>
-        <div class="location-list">
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 本道：崩落木組みの旧採炭坑道</span><span class="loc-code">LOC-002-A</span></div>
-            <div class="loc-desc">腐食した松材の支保工が軋む暗黒回廊。大声や衝撃で石炭塊がパラパラと落ちてくるため、元炭鉱夫ガリクのように静かにツルハシを振るう慎重さが求められる。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 支線：地熱漏れの岩壁溜まり</span><span class="loc-code">LOC-002-B</span></div>
-            <div class="loc-desc">坑道奥の袋小路にある、下層の微弱な地熱配管が露出した安全スポット。高価なカンテラ油を消費せずに小鍋の湯を沸かし、干し芋のスープを作ることができる。</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="floor-entry" data-zone="lower">
-        <div class="floor-header">
-          <span class="floor-name">💨 第010階：蒸気配管の温室段丘と中継宿場</span>
-          <span class="floor-tag">⬇️ 下層中継圏 / 経済隆盛フロア</span>
-        </div>
-        <div class="floor-summary">環境特性：太い真鍮蒸気配管が張り巡らされた温暖な段丘。ラグランデュラムの周囲に中継市場が栄えている。</div>
-        <div class="location-list">
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 本道：高圧蒸気バルブの中継広場</span><span class="loc-code">LOC-010-A</span></div>
-            <div class="loc-desc">百度の蒸気が流れるバルブが並んだ休憩所。ピップのように鉄フライパンをバルブの継ぎ目に押し当てれば、薪を使わずに3分で極上の半熟目玉焼きが焼ける天然の厨房。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 支線：配管裏のドラム缶燻製工房</span><span class="loc-code">LOC-010-B</span></div>
-            <div class="loc-desc">料理人ユーナが排熱煙突をハックして構えた燻製所。第009階で獲れた川ナマズを香草と廃材チップでじっくり燻し、上層登攀用の保存食へと加工している。</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="floor-entry" data-zone="water">
-        <div class="floor-header">
-          <span class="floor-name">🍃 第014階：巨根天蓋の吊り橋テラス</span>
-          <span class="floor-tag">♨️ 樹海・風穴圏 / 強酸性霧</span>
-        </div>
-        <div class="floor-summary">環境特性：巨大な樹木の根が空中に絡み合う大縦穴。下層から周期的に金属や革を溶かす「強酸性霧」が吹き上げる。</div>
-        <div class="location-list">
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 本道：大風穴の揺れる蔦吊り橋</span><span class="loc-code">LOC-014-A</span></div>
-            <div class="loc-desc">谷底から吹き上げる乱気流に晒される危険な吊り橋。森の斥候アルヴィスのように「風が眠る半刻の凪」を見極めて渡らなければ、酸霧で装備ごとボロボロにされる。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 支線：南側巨根の風裏洞（湯守狐の小祠）</span><span class="loc-code">LOC-014-B</span></div>
-            <div class="loc-desc">太い樹根が盾となり酸性霧を完全に遮断する隠れ洞穴。湯守狐神オタマの白檀香がほのかに漂い、風待ちの運び屋や斥候たちが薄荷茶やふやけた黒パンのスープを囲むオアシス。</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="floor-entry" data-zone="water">
-        <div class="floor-header">
-          <span class="floor-name">♨️ 第021階：水晶鍾乳洞と翡翠の温泉宿場</span>
-          <span class="floor-tag">♨️ 温泉保養圏 / 一大湯治経済圏</span>
-        </div>
-        <div class="floor-summary">環境特性：淡く光る水晶鍾乳石の下に豊かな温泉が湧き出す保養フロア。一度到達した多くの冒険者がここへ転移して逗留する。</div>
-        <div class="location-list">
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 本館：温泉宿『翡翠亭』大浴場と湯治街</span><span class="loc-code">LOC-021-A</span></div>
-            <div class="loc-desc">女将タマモが仕切る活気あふれる温泉街。鎧の錆を落とし、刀傷や神経毒を癒やす探索者たちで賑わう。店頭では名物の水晶温泉卵が売られている。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 支線：裏源泉の羽毛干しテラス</span><span class="loc-code">LOC-021-B</span></div>
-            <div class="loc-desc">湯気と心地よい乾燥風が吹き抜ける裏手の木造デッキ。梟人族のパスカルやノクトなど、湿気で重くなった羽毛を広げて香油で手入れする有翼種たちの特等席。</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="floor-entry" data-zone="water">
-        <div class="floor-header">
-          <span class="floor-name">🍄 第022階：菌糸螺旋の沈黙庭園と熱泥断層</span>
-          <span class="floor-tag">♨️ 菌糸・地熱圏 / 幻覚胞子・熱泥</span>
-        </div>
-        <div class="floor-summary">環境特性：温泉の地熱と水分を吸って巨大化した菌類が蠢くフロア。場所によって「冷たい胞子庭園」と「灼熱の黒曜石泥回廊」の全く異なる二つの顔を持つ。</div>
-        <div class="location-list">
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 本道：幻光胞子の螺旋庭園</span><span class="loc-code">LOC-022-A</span></div>
-            <div class="loc-desc">青白く光る幻光茸が「老衰と死の悪夢」を見せる胞子毒を撒き散らす主回廊。数時間ごとに白銀の菌糸が動いて通路を塞ぐため、ハッカ酢マスクと細剣での切除が不可欠。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 支線：黒曜石の熱泥回廊と蒸気孔テラス</span><span class="loc-code">LOC-022-B</span></div>
-            <div class="loc-desc">西側断層に広がる高温の鉱泥エリア。菌類は生えないが、熱気で安物ブーツの靴底が剥がれるハザードがある。一方で噴き出す蒸気孔は、塩芋を蒸したり松脂を溶かして靴を縫う最高の休憩テラスとなる。</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="floor-entry" data-zone="mid">
-        <div class="floor-header">
-          <span class="floor-name">⚙️ 第025階〜第050階：王立大図書館・沈黙の書庫・中央大動力炉</span>
-          <span class="floor-tag">⚙️ 中層機構圏 / 古代知識と蒸気機関</span>
-        </div>
-        <div class="floor-summary">環境特性：自然洞窟から神代の巨大建築・機械機構へと変貌する中層エリア。</div>
-        <div class="location-list">
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 第025階：王立大図書館・審査官室 ＆ アーニャの司書官舎（社宅）</span><span class="loc-code">LOC-025-A</span></div>
-            <div class="loc-desc">三女アーニャが勤務する巨大図書館と、その脇にある職員社宅。彼女の自室には分厚い規程台帳や三者署名スタンプ、几帳面にラベル貼りされた資料箱が山積みにされている。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 第031階：沈黙の書庫と紙魚の巣穴</span><span class="loc-code">LOC-031-A</span></div>
-            <div class="loc-desc">幾千万の羊皮紙と古書が眠る巨大書庫。物音を立てると革装丁を食い破る巨大紙魚が群がるが、床の大理石が滑らかなためヤシ油を撒けば一気に滑走突破できる。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 第050階：中央大動力炉・インフラ保全課 ＆ エリアの宿直社宅</span><span class="loc-code">LOC-050-A</span></div>
-            <div class="loc-desc">塔の全階層へマナと蒸気を供給する心臓部。長女エリアが予備タービンの鳩の巣や配管詰まりと日々格闘しており、隣接する彼女の社宅自室には大小の真鍮レンチや青写真、深紅のワークシャツが掛けられている。</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="floor-entry" data-zone="upper">
-        <div class="floor-header">
-          <span class="floor-name">⚡ 第051階〜第075階：極光大渓谷・雲海ドック・境界検問所</span>
-          <span class="floor-tag">⚡ 上層過酷圏 / 氷雷・暴風・検問所</span>
-        </div>
-        <div class="floor-summary">環境特性：熟練の探索者や飛空艇のみが到達できる雲海より上の過酷領域。定住者は極めて少ない。</div>
-        <div class="location-list">
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 第051階：極光と雷鳴の大渓谷『太陽の哨所』</span><span class="loc-code">LOC-051-A</span></div>
-            <div class="loc-desc">オーロラと落雷が交錯する氷の鉄橋地帯。太陽の聖騎士オールデンが日向で氷漬けになり、戦司祭ヘレナに引きずられながら風の魔法剣士エリアスと雷獣を迎え撃つ前線基地。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 第058階：逆巻く暴風雲海と浮遊飛空艇ドック</span><span class="loc-code">LOC-058-A</span></div>
-            <div class="loc-desc">塔の外壁から雲海へ突き出した過酷な空中港。一般の冒険者は寄り付かないが、シルヴィアン船長の空賊船『シルフィード号』が母港としており、不運な守護天使ラリエルが乗船するたび避雷針が火花を散らす。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>📍 第075階：境界大検問所・第075保安室 ＆ エララの保安官舎（社宅）</span><span class="loc-code">LOC-075-A</span></div>
-            <div class="loc-desc">天頂領域への通行証と公文書を管理する保安区画。次女エララは隣接する職員社宅の自室ドアにまで複雑なルーン錠前を取り付けているため、夜中にトイレへ出たあと自分自身が部屋から締め出される事件が絶えない。</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SECRET FLOOR -256 -->
-      <div class="floor-entry" data-zone="upper" style="border-left-color: var(--crimson-seal);">
-        <div class="floor-header">
-          <span class="floor-name">🔒 第-256階：星辰の保守控室（Unlisted Bastion Sanctuary）</span>
-          <span class="floor-tag" style="color: #ff9999; border-color: var(--crimson-seal);">☕ 番外階層 / 一般地図未記載</span>
-        </div>
-        <div class="floor-summary">環境特性：通常の階層番号（1〜100）の外側にひっそりと存在する、塔務局の職員三姉妹（エリア・エララ・アーニャ）だけが出入りしている小さな秘密フロア。</div>
-        <div class="location-list">
-          <div class="loc-box" style="border-left-color: var(--crimson-seal);">
-            <div class="loc-title"><span>📍 中央茶室：丸テーブルのティーサロン</span><span class="loc-code">LOC-N256-A</span></div>
-            <div class="loc-desc">普段は第025階・第050階・第075階の社宅で暮らす三姉妹が、長女エリアに呼ばれてお茶やお菓子を食べに集まる温かい小部屋。エララとアーニャもなぜ自分たちだけがここに来られるのか理由は分かっていないが、「この部屋のことは誰にも内緒よ」という約束を固く守っている。</div>
-          </div>
-          <div class="loc-box" style="border-left-color: var(--crimson-seal);">
-            <div class="loc-title"><span>📍 奥の回廊：三姉妹それぞれのプライベート個室（3室）</span><span class="loc-code">LOC-N256-B</span></div>
-            <div class="loc-desc">茶室の奥に並ぶ、エリア・エララ・アーニャ専用の3つの寝室。各主階層の慌ただしい社宅とは異なり、どこまでも静謐で懐かしい空気に満たされており、仕事で疲れ果てた週末には3人でここにお泊まりしてゆっくり羽を休める。</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- AUTONOMOUS_ATLAS_START -->
-      <div class="floor-entry" data-zone="mid" style="border-left-color: var(--emerald-astral);">
-        <div class="floor-header">
-          <span class="floor-name">🧭 塔務局・新規水平開拓ロケーション台帳（自動追加・最新 12 区画）</span>
-          <span class="floor-tag">📡 自律測量フィード</span>
-        </div>
-        <div class="floor-summary">日々の探索（Cron 8）によって新たに発見・測量された各階層の隠れ支線・蒸気孔テラス・小神祠のリアルタイム記録。</div>
-        <div class="location-list">
-          <div class="loc-box">
-            <div class="loc-title"><span>🧭 🏛️ 第022階：菌糸螺旋の沈黙庭園と幻光胞子回廊 ➔ 支線：黒曜石の熱泥回廊と蒸気孔テラス（Obsidian Sludge &amp; Steam Terrace）</span><span class="loc-code">開拓日: 2026-11-15</span></div>
-            <div class="loc-desc">本層の西側断層には、第021階の翡翠温泉源泉から漏れ出た高温の鉱泉と地下蒸気が黒曜石の亀裂を伝って噴き出す『熱泥回廊』が広がる。白銀の菌糸は地熱を嫌って天井高くに退行しているが、足元は沸騰する鉱泥がボコッ、ボコッと鈍い音を立て、滑らかな黒曜石の岩棚の至るところにある『蒸気孔（スチーム・ベント）』から周期的に白い蒸気が噴出する。靴底の膠（にかわ）を溶かす熱気と硫黄臭に満ちているが、この蒸気孔は冒険者たちにとって最高の「無煙調理場」かつ「湿布休憩所」として重宝されている。回廊の最奥、蒸気煙が渦巻く岩壁の窪みには、湯気の奥に鎮座する『湯守狐神オタマの素焼き小祠』がひっそりと祀られている。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>🧭 🗼 第024階『紅葉に染まった神秘の森と星角獣の追跡路』 ➔ 支線：『菌糸天蓋の胞子大瀑布と秋露小神祠』</span><span class="loc-code">開拓日: 2026-11-15</span></div>
-            <div class="loc-desc">本層の紅葉林の北東、冷涼な秋風が霧となって滞留する玄武岩の谷間に広がる深部支線エリア。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>🧭 🏛️ 第017階：古代巨樹の洞道と螢石の夜想水脈 ➔ 支線：『螢光水芹の冷涼テラスと清冽水磐小神祠』</span><span class="loc-code">開拓日: 2026-11-14</span></div>
-            <div class="loc-desc">本層の主水路（洞道運河）から東へ分岐した、巨樹の空洞根の隙間から冷涼な天然軟水が滾々と湧き出る段々畑状のテラス。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>🧭 ⚙️ 第27階：万年錆の歯車回廊と絡繰り温室 ➔ 支線：『万年錆の主軸水門室と歯車小神祠』</span><span class="loc-code">開拓日: 2026-11-14</span></div>
-            <div class="loc-desc">本層の西側水耕テラスから、巨大な蒸気配管の束に沿ってさらに奥深くへと進んだ先、かつて塔全体の給排水と歯車駆動を統括していたとされる半円ドーム状の主軸室。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>🧭 🏛️ 第019階：鏡喰いの回廊と虚像の残響迷宮 ➔ 支線：『影祓いの磨き銅鏡テラスと鏡面小神祠』</span><span class="loc-code">開拓日: 2026-11-14</span></div>
-            <div class="loc-desc">本層の主通路（合わせ鏡の交差回廊）から南側の黒曜石断層を迂回した先、光を乱反射させない鈍い白雲母と微細な結晶砂に包まれた天然のドーム状テラス。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>🧭 🕰️ 第030階：狂時計の螺旋庭園と真鍮の時鳥 ➔ 支線：『絡繰り時鐘の裏水路テラスと健胃の聖水小祠』</span><span class="loc-code">開拓日: 2026-11-13</span></div>
-            <div class="loc-desc">本層の螺旋階段を支える巨大真鍮歯車群の真裏に位置する、冷却用伏流水とオイル排水が流れる静かな水路テラス。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>🧭 🏛️ 第018階：蜂巣の晶華回廊と刺針の共鳴空洞 ➔ 支線：『白晶華の裏巣房テラスと蜂鳴避難窪地』</span><span class="loc-code">開拓日: 2026-11-12</span></div>
-            <div class="loc-desc">本層の主坑道から分岐した、晶華蜂たちが冬眠と蜜の熟成に使う急斜面の裏巣房領域。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>🧭 🌧️ 第015階：酸性雨の巨葉天蓋と腐毒の泥濘溝 ➔ 支線：『巨葉の雨宿り岩棚と鍛冶神グンドルの錆鉄祠』</span><span class="loc-code">開拓日: 2026-11-12</span></div>
-            <div class="loc-desc">第015階の泥濘溝を南西へと進んだ、巨樹の太い支根が天然の庇（ひさし）を形成している高台の岩棚エリア。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>🧭 🏛️ 第013階：苔生す古代彫像の回廊と滴る樹液溜まり ➔ 支線：『苔生す琥珀回廊の奥、乾いた石灰の隠れ宿場と幸運の賽神祠』</span><span class="loc-code">開拓日: 2026-11-12</span></div>
-            <div class="loc-desc">本層の主通路（彫像列）から西へ逸れた、崩落した大梁の陰に広がる支線エリア。</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>🧭 🏛️ 第011階：通水大水門と揚水タービンの狭窄路 ➔ 支線：旧揚水タービン排熱坑と、鍛冶神グンドルの油差し小祠（Old Turbine Exhaust Pit &amp; Gundor's Oil-Can Shrine）</span><span class="loc-code">開拓日: 2026-11-10</span></div>
-            <div class="loc-desc">&gt; 開拓分類: ①【SAO的・各層の未踏新エリア追加】× ②【既存フロアのアナザーストーリー（水門開通後の合流編）】× ④【神祇と信仰の深掘り（鍛冶と歯車の神グンドル）】</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>🧭 🌊 第009階：伏流水の段丘池と揚水水車の地下放水路 ➔ 支線：旧水車小屋の排水溜まりと、結露小神ヌーマの苔水盤祠（Old Waterwheel Spillway &amp; Numa's Moss Basin Shrine）</span><span class="loc-code">開拓日: 2026-11-09</span></div>
-            <div class="loc-desc">&gt; 開拓分類: ①【SAO的・各層の未踏新エリア追加】× ②【既存フロアのアナザーストーリー（リベンジ＆合流編）】× ④【神祇と信仰の深掘り（結露と水たまりの小神ヌーマ）】</div>
-          </div>
-          <div class="loc-box">
-            <div class="loc-title"><span>🧭 🐟 第08階：幻影砂漠のオアシス市場と青魚の神殿 ➔ 支線：オアシス市場・黄金酢の炭火串焼き横丁と炉火の祠（Oasis Charcoal Skewer Alley &amp; Hearth Shrine）</span><span class="loc-code">開拓日: 2026-11-09</span></div>
-            <div class="loc-desc">&gt; 開拓分類: ①【SAO的・各層の未踏新エリア追加】× ②【既存フロアのアナザーストーリー】× ④【神祇と信仰の深掘り（太陽と炉火の女神ソラリス＆賭博神フォルトゥナ）】</div>
-          </div>
-        </div>
-      </div>
-      <!-- AUTONOMOUS_ATLAS_END -->
-    </div>
-  </main>
-
-  <!-- ==================== TAB 5: World Protocol (Codex) ==================== -->
-  <main id="tab-codex" class="tab-panel">
-    <div class="prose-container">
-      <h2>⚖️ 天頂迷宮ラグランジュの塔 // 世界観と探索の理</h2>
-      <blockquote>
-        【世界観憲章】天を突く全100階層の神代巨塔。マナ枯渇の時代において、選ばれし勇者の無双を排し、靴底の損耗、松明の油代、冷えたスープの温もりを生きる「凡人たち」の生活圏。
-      </blockquote>
-
-      <h3>1. 塔の基本構造と「凡人リアリズム」</h3>
-      <p>『ラグランジュの塔』は、地底から成層圏の星辰境界へと垂直にそびえ立つ神代の遺構である。各フロアは単なる一本道の通路ではなく、独立した広大な大地（バイオーム）を形成しており、同じ階層の中にも「本道」「支線」「宿場」「隠れ祠」など無数のロケーションが水平に広がっている。</p>
-      <p>この世界には「都合の良いご都合主義（プロットアーマー）」は存在しない。狭い坑道で松明を焚けば煙が充満して窒息し、重すぎる鎧を着れば泥濘に足を取られ、熱泥を踏めば安物のブーツの靴底が剥がれる。知恵と工夫、そして仲間と囲む温かい現場メシこそが、迷宮を生き抜く唯一の武器である。</p>
-
-      <h3>2. 重力均衡モニュメント『ラグランデュラム』と経済の濃淡</h3>
-      <p>各階層の中心には、神代の巨大振り子モニュメント<strong>『ラグランデュラム（Lagrandulum）』</strong>がそびえ立っている。ラグランデュラムは冒険者ごとに「一度自力で到達したことのある階層」を個別に記録し、記録済みの階層へは特定の階層制限なく転移することができる。ただし、<strong>「まだ一度も行ったことがない階層」へは、たとえ上層到達者とパーティを組んでいても絶対に同行転移することはできない</strong>。</p>
-      <p>この物理法則により、未踏の階層へ進むには水平に広がる大地を自らの足で歩き抜くしかない。また、探索を終えた冒険者たちは危険な雲海層（第058階）などには留まらず、既に記録済みの「温かく安全な階層（第001階の宿場街、第010階の蒸気段丘、第021階の翡翠温泉街など）」へ戻って逗留するため、特定の階層のラグランデュラム周辺にだけ人が集まり、豊かな経済圏が隆盛している。</p>
-
-      <h3>3. 水平ロケーション拡張システム（Horizontal Expansion）</h3>
-      <p>塔の階層は第001階から第100階まで存在するが、各階層には未踏の支線や生活区画（ロケーションコード：`LOC-XXX-A/B/C...`）が無限に存在する。これにより、同じ階層であっても異なるロケーションを舞台にすることで、世界観の整合性を保ったまま無数の冒険者の物語をどこまでも拡張することができる。</p>
-
-      <!-- AUTONOMOUS_CODEX_START -->
-      <h3>4. 迷宮動態エコノミー＆魔物学習観測報（自律更新）</h3>
-      <blockquote>
-        【市場物価指数】インフレ係数：<strong>x1.18</strong> ｜ 直近の変動要因：Tower_03 (Pascal Act 1: Floor 018 Smokeball Victory) &amp; Floor 017 Pip's Diamond Crab Miracle
-      </blockquote>
-      <p>ラグランジュの塔では、冒険者の生還報告や特定のアイテムの流行に応じて、第001階『トネリコ堂』や第021階『翡翠亭』の市場価格および魔物の行動パターンがリアルタイムに変動する。</p>
-      <ul>
-<li><strong>辛子草の燻煙筒（Mustard Smokeball）</strong>：現在価格 <code>38銀貨（高騰・品薄）</code>（在庫：極少（トネリコ堂で1人1本制限））— パスカルが第018階を無傷突破した武勇伝が跳ね兎亭で広まり、若手冒険者による買い占めが発生。</li>
-<li><strong>汎用解毒薬（General Antidote）</strong>：現在価格 <code>20銀貨（需要高止まり）</code>（在庫：安定（薬師シンゴとユーナの増産））— タワー1の惨劇とタワー2の生還報告により、低層〜中層登攀の必須保険として定着。</li>
-<li><strong>激マズ苦渋茸（Bitter-Rot Mushroom）</strong>：現在価格 <code>25銀貨（投機バブル）</code>（在庫：市場枯渇・第015階で乱獲中）— ピップが金剛真珠（500銀貨）を得た奇跡が伝わり、一攫千金を夢見る貧乏冒険者が湿原で乱獲。</li>
-<li><strong>割れ水晶温泉卵（Cracked Crystal Egg）</strong>：現在価格 <code>50銅貨（価格据え置き）</code>（在庫：安定（第021階・翡翠亭裏源泉））— 女将タマモの『苦労してる若造からぼったくるんじゃないよ』という粋な計らいにより価格維持。</li>
-<li><strong>硬質ライ麦パン（Hard Rye Ration）</strong>：現在価格 <code>5銅貨</code>（在庫：潤沢）— ルパートや泥這い小隊の常備食として安定流通。</li>
-      </ul>
-      <p><strong>【魔物生態系の学習・適応状況】</strong></p>
-      <ul>
-<li><strong>晶華小蜂（Crystal Wasp）（Floor_018 / Smoke-Aware (煙幕学習・換気孔退避)）</strong>：タワー3・パスカルの辛子草燻煙筒により手痛い敗北を喫した群れが適応。煙幕や刺激臭を感知すると即座に天井換気孔へ一時退避し、煙が晴れた直後に死角から急降下する行動パターンを獲得。次回以降、単純な煙幕投擲だけでは完全無力化できない。</li>
-<li><strong>金剛ヤドカリ（Diamond Hermit Crab / 0.05%極稀）（Floor_017 / Mouth-Shielding (口部防御強化)）</strong>：ピップの『激マズ苦渋茸槍』で同族が悶絶昇天したため、接近戦では巨大な左鋏で口元を執拗にガードする習性を獲得。</li>
-      </ul>
-      <!-- AUTONOMOUS_CODEX_END -->
-    </div>
   </main>
 
   <footer>
-    <div>⚔️ [LAGRANGE TOWER OFFICIAL CHRONICLES] // REVISION: 2026.11 ⚔️</div>
-    <div>CURATED BY THE FORTRESS ARCHIVE. ALL RIGHTS RESERVED.</div>
+    <div>⚔️ [LAGRANGE TOWER OFFICIAL CHRONICLES] // MULTI-PAGE GRAND ARCHIVE // LAST BUILD: 2026-11-15 14:05 ⚔️</div>
+    <div>CURATED BY THE FORTRESS ARCHIVE (5-LAYER IP &amp; SECURITY QUARANTINED). ALL RIGHTS RESERVED.</div>
   </footer>
 
   <script>
-    function switchTab(tabId, btn) {
-      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      
-      document.getElementById(tabId).classList.add('active');
-      btn.classList.add('active');
-    }
-
     function switchLog(logId, btn) {
-      document.querySelectorAll('#tab-chronicles article').forEach(a => a.style.display = 'none');
+      document.querySelectorAll('article.prose-container').forEach(a => a.style.display = 'none');
       document.querySelectorAll('.log-btn').forEach(b => b.classList.remove('active'));
-      
       document.getElementById(logId).style.display = 'block';
       btn.classList.add('active');
     }
-
     function filterChars(tier, btn) {
       document.querySelectorAll('.char-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
       document.querySelectorAll('.char-entry').forEach(entry => {
-        if (tier === 'all' || entry.getAttribute('data-tier') === tier) {
-          entry.style.display = 'block';
-        } else {
-          entry.style.display = 'none';
-        }
+        entry.style.display = (tier === 'all' || entry.getAttribute('data-tier') === tier) ? 'block' : 'none';
       });
     }
-
     function filterItems(cat, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
       document.querySelectorAll('.item-entry').forEach(entry => {
-        if (cat === 'all' || entry.getAttribute('data-category') === cat) {
-          entry.style.display = 'block';
-        } else {
-          entry.style.display = 'none';
-        }
+        entry.style.display = (cat === 'all' || entry.getAttribute('data-category') === cat) ? 'block' : 'none';
       });
     }
-
     function filterZones(zone, btn) {
       document.querySelectorAll('.zone-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
       document.querySelectorAll('.floor-entry').forEach(entry => {
-        if (zone === 'all' || entry.getAttribute('data-zone') === zone) {
-          entry.style.display = 'block';
-        } else {
-          entry.style.display = 'none';
-        }
+        entry.style.display = (zone === 'all' || entry.getAttribute('data-zone') === zone) ? 'block' : 'none';
       });
     }
   </script>
