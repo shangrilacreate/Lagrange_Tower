@@ -1,0 +1,1039 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>物語全集 第8 巻（第095〜326 階） // 天頂迷宮ラグランジュの塔 公式博物誌</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.18rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .anya-stamp {
+      border: 1px solid var(--crimson-seal);
+      background: rgba(168, 56, 56, 0.12);
+      padding: 14px 18px;
+      border-radius: 3px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #f2dada;
+    }
+    .anya-stamp-title {
+      color: #ff9999;
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 0.94rem;
+    }
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 22px 0;
+      font-size: 0.9rem;
+    }
+    .book-table th, .book-table td {
+      border: 1px solid var(--border-brass);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .book-table th {
+      background: #282018;
+      color: var(--gold-bright);
+    }
+    .book-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // OFFICIAL GUILD ARCHIVE ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔 観測年代記</h1>
+    <div class="subtitle">
+      天を突く全100階層の神代遺構。配管の蒸気で芋を蒸し、靴底の減りを気にしながら今日を生き延びる冒険者たちの群像記録と博物誌。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 総合案内所 (Index)</a>
+      <a href="chronicles.html" class="tab-btn">📖 物語本編</a>
+      <a href="observations.html" class="tab-btn">📡 自律観測ログ</a>
+      <a href="library.html" class="tab-btn">📚 迷宮内専門書庫</a>
+      <a href="roster.html" class="tab-btn">👥 人物・パーティ名鑑</a>
+      <a href="lexicon.html" class="tab-btn">🎒 アイテム・奇品辞典</a>
+      <a href="atlas.html" class="tab-btn">🗺️ 階層・ロケーション図鑑</a>
+      <a href="codex.html" class="tab-btn">⚖️ 世界観・塔の法則</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+    <div id="top" class="log-selector" style="justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+      <a href="chronicles_7.html" class="log-btn">◀ 前の巻（第7巻）</a>
+      <a href="chronicles.html" class="log-btn">📖 物語目次へ</a>
+      <span class="log-btn" style="opacity:0.4; cursor:default;">最新の巻 ▶</span>
+    </div>
+    <section class="prose-container" style="margin-bottom: 22px;">
+      <h2>📚 第8 巻（第095〜326 階） 収録階層目次</h2>
+      <ul style="line-height:1.9; margin-left:18px;">
+<li><a href="#floor-095" style="color:var(--gold-bright);">🪞 第095階：虚無鏡の幻影回廊と黒曜石の鏡像霊殿（Void Mirror Phantom Corridor &amp; Obsidian Reflection Shrine）</a></li>
+<li><a href="#floor-096" style="color:var(--gold-bright);">🌌 第096階：古代星詠みの天球回廊と星辰共鳴の回廊（Ancient Astrological Orrery &amp; Star Resonance Galleries）</a></li>
+<li><a href="#floor-097" style="color:var(--gold-bright);">📜 第97階：迷宮最深部・古代魔導壁画（Ancient Murals Chamber）</a></li>
+<li><a href="#floor-101" style="color:var(--gold-bright);">⚓ 第101階：星海の幽霊船と彷徨える古代時計（Ghost Ship on the Celestial Sea）</a></li>
+<li><a href="#floor-326" style="color:var(--gold-bright);">🐚 第326階：星河運河の静湖宿場とタニシのソテー（Floor 326: Star Canal Quiet Lake Hostel &amp; Sautéed River Snails）</a></li>
+      </ul>
+    </section>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-095" style="margin-top:0;">🪞 第095階：虚無鏡の幻影回廊と黒曜石の鏡像霊殿（Void Mirror Phantom Corridor &amp; Obsidian Reflection Shrine）</h2>
+<blockquote>
+<strong>親ノート</strong>: 00_Lagrange_Tower_MOC<br>
+<strong>接続階層</strong>: 下層 Floor_094_Wraith_Corridor ── 上層 Floor_096_Pending（天頂第097階・第100階境界ゲートへ）<br>
+<strong>環境バイオーム</strong>: 成層圏の黒曜石鏡面回廊 / 虚無鏡の幻影歪み / 影喰いの鏡像複製 / 虚無晶の魔力吸引 / 青白き冷気<br>
+<strong>主役冒険者</strong>: ブラム（ドワーフ族・盾戦士 / Rank D+ 382）、キップ（人間・猟師弓手 / Rank D 358）── 通称『錆びた釘（The Rusty Nails）』<br>
+<strong>客演・言及</strong>: ブレナス（重戦士 / Rank B 585）、ザビエル（高位僧侶）、バルカス爺さん（トネリコ堂親父）<br>
+<strong>ナラティブモード</strong>: ②【敗北・再起型】（完コピ鏡像への完敗・裏神殿蘇生・跳ね兎亭のぬるい安エールとリベンジの誓い）<br>
+<strong>生息する脅威・魔物</strong>: 影喰いの鏡像（シャドウ・ドッペル）、虚無晶のガーゴイル（ヴォイド・ガーゴイル）<br>
+<strong>特産品・素材</strong>: 虚無晶（黒曜石状の魔力吸収結晶）、鏡像石の破片（反射光石）、魂喰らいの鏡片<br>
+<strong>環境BGM</strong>: 霊廟神殿・重厚荘厳レクイエム<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🧭 階層環境カルテ（Floor Hazard &amp; Biome）</h3>
+<p>第094階『怨霊漂う迷宮回廊』の冷気と怨念をくぐり抜け、成層圏に架かる黒曜石の渡り廊下を登りつめた先に広がるのは、見渡す限りの鏡張りの神殿回廊である。</p>
+<p>壁面、床面、そして高くそびえる天蓋に至るまで、極限まで磨き抜かれた漆黒の「黒曜石鏡」で覆い尽くされている。</p>
+<p>外から差し込む冷たい星光と青白い霊火が無限に乱反射し、どこが天井でどこが床なのか、距離感覚と平衡感覚を完全に喪失させる。</p>
+<p>さらに恐るべきは、この鏡面が放つ特異な事象ハザードである。</p>
+<p>黒曜石の鏡壁に近づくと、鏡の中に映った冒険者の姿がひとりでに身じろぎし、実体を持つ真っ黒な影の複製体（シャドウ・ドッペル）となって鏡の外へ抜け出してくる。</p>
+<p>この影は対象の歩き方の癖、間合い、武具の構え、さらには三系統スキルの発動タイミングまで完璧にトレースし、同等以上の速度と威力で真っ向から襲いかかる。</p>
+<p>ここを越えれば、いよいよ古代の英知が眠る第096階、そして最深部の第097階『古代魔導壁画』へと至る。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">👥 主要冒険者カルテ（Adventurer Roster）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">ブラム（Bram Ironbeard）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族/性別</strong>: ドワーフ族 / オス（54歳）</li>
+<li><strong>職業・クラス</strong>: 盾戦士（Shield Warrior）── ギルドRank D+ 382</li>
+<li><strong>通称</strong>: 『錆びた釘（The Rusty Nails）』の前衛</li>
+<li><strong>主神と加護</strong>: 鍛冶神ウルカン ──『鉄石の不倒』</li>
+<li><strong>外見・装備</strong>:</li>
+<li>ずんぐりとした体躯に、泥と錆の浮いた鋲打ちの皮鎧と、傷だらけの鋼鉄製カイトシールド。</li>
+<li>右手には使い古した片手戦斧（ブロードアックス）。柄には滑り止めの麻紐が幾重にも巻き直されている。</li>
+<li><strong>三系統スキルツリー</strong>:</li>
+</ul>
+<p>1. <strong>メインスキル（盾防御・前衛戦技）</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>『ドワーフ式据え盾（タートル・アンカー）』: 膝を落とし、体重を盾のスパイクに乗せて地面に突き刺す絶対防御姿勢。</li>
+<li>『シールド・パリング』: 敵の打撃の芯を外して受け流し、体勢を崩す基本技。</li>
+</ul>
+<p>2. <strong>サブスキル（生活実用・鍛冶修繕）</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>『鑢（やすり）がけとリベット締め』: 傷んだ甲冑の歪みを叩き出し、油を差す野営整備術。</li>
+</ul>
+<p>3. <strong>信仰スキル（主神・ウルカン）</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>『ウルカンの重剛撃』: 盾の端を敵の顎に向けて突き上げる短距離カウンター。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">キップ（Kip the Fowler）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族/性別</strong>: 人間 / オス（24歳）</li>
+<li><strong>職業・クラス</strong>: 猟師弓手（Trapper &amp; Archer）── ギルドRank D 358</li>
+<li><strong>通称</strong>: 『錆びた釘（The Rusty Nails）』の後衛</li>
+<li><strong>主神と加護</strong>: 狩猟神アルテミス ──『微風の直進』</li>
+<li><strong>外見・装備</strong>:</li>
+<li>擦り切れた緑のハンターチュニックに、獣皮の脚絆。</li>
+<li>骨削りのショートボウと、自作の鳥羽根矢。矢筒には常に油塗りの予備弦が潜ませてある。</li>
+<li><strong>三系統スキルツリー</strong>:</li>
+</ul>
+<p>1. <strong>メインスキル（狩猟弓術・罠設置）</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>『足止め曲射（ホップ・アロー）』: 敵の足元を狙い、踏み込みを躊躇わせる低速矢。</li>
+<li>『盲点射ち（ブラインド・ショット）』: 前衛の背中越しに死角を縫う実戦的な支援射撃。</li>
+</ul>
+<p>2. <strong>サブスキル（探索・皮剥ぎ）</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>『野営用の乾肉切り』: 硬い筋を外して薄く削ぐ生活の知恵。</li>
+</ul>
+<p>3. <strong>信仰スキル（主神・アルテミス）</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>『狩人の集中息（フォーカス・ブレス）』: 心拍を落とし、手振れを抑える初歩的な祈祷呼吸。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 オムニバス短編小説：第095階</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『鏡の中の錆びた釘、そして跳ね兎亭のぬるいエール』</h4>
+<p><strong>ナラティブモード</strong>: ②【敗北・再起型】</p>
+<p>「おい、キップ……本当にお前、これで合ってるのか？」</p>
+<p>ドワーフのブラムは、分厚い顎髭に溜まった冷や汗を甲冑の籠手で乱暴に拭いながら、低く唸った。</p>
+<p>足元には、どこまでも平滑に磨き抜かれた黒曜石の床が広がっている。</p>
+<p>一歩踏み出すたび、カツン、カツンと乾いた金属音が虚空へ響き渡り、天井と四方の壁に埋め込まれた黒曜石鏡が、二人のみすぼらしい姿を何重にも、何百重にも映し出していた。</p>
+<p>「合ってるはずだよ、ブラム。第094階の救護所でザビエル神父様が言ってたろ。『怨霊回廊の大階段を抜けたら、鏡の神殿がある。ただし絶対に立ち止まるな』ってさ」</p>
+<p>キップはショートボウに矢を番えたまま、周囲の鏡面を怯えたように見回した。</p>
+<p>「それに……ブレナスの旦那が言ってたじゃないか。『第095階の壁に生えてる虚無晶の欠片を三つ持ってくりゃ、銀貨三十枚で買い取る』って。銀貨三十枚だぞ！ 跳ね兎亭の安酒なら半年は呑める！」</p>
+<p>「チッ、あのデカブツめ。てめえはBランクだからって、人の命を安く買い叩きやがって……！」</p>
+<p>ブラムは吐き捨てるように毒づいたが、握る大盾の革ベルトに汗が滲むのを止められなかった。</p>
+<p>二人はRank Dのしがない冒険者コンビ、『錆びた釘（The Rusty Nails）』だ。</p>
+<p>普段は第018階の蜂巣晶石を掘ったり、第040階の排熱溝でくず鉄を拾ったりして糊口をしのいでいる。</p>
+<p>だが、第090階の天蓋水門を突破したブレナスがトネリコ堂で「上層の特殊鉱石の運搬人」を募集しているのを聞きつけ、一攫千金の誘惑に負けてここまで登ってきてしまったのだ。</p>
+<p>「……いたぞ、ブラム！ あそこの鏡の柱の根元だ！」</p>
+<p>キップが小声で指差した。</p>
+<p>漆黒の角柱の足元に、星光を吸い込んで鈍く光る結晶塊――『虚無晶』が群生していた。</p>
+<p>「よし、キップ。俺が削り取る。周囲を見張ってろ」</p>
+<p>「了解。さっさとやってくれよ、気味が悪くて毛穴が全部開いてる」</p>
+<p>ブラムが大盾を構えたまま膝をつき、腰の鑢（やすり）兼タガネを取り出した、その瞬間だった。</p>
+<p>ピシリ。</p>
+<p>硬質な、しかし耳障りな音が背後で鳴った。</p>
+<p>ブラムが弾かれたように振り返ると、目の前にある黒曜石の大鏡の中で、奇妙なことが起きていた。</p>
+<p>鏡の中に映っているはずの『ブラム』と『キップ』が、現実の二人の動きを止め、鏡の中から冷ややかにこちらを見下ろしていたのだ。</p>
+<p>「……ヒッ！？」</p>
+<p>キップの喉から小さな悲鳴が漏れた。</p>
+<p>鏡の中の影は、まるで水面から浮かび上がるように、黒曜石の鏡面からヌルリと這い出してきた。</p>
+<p>頭のてっぺんから爪先まで、光をすべて吸い込むような墨黒の影。</p>
+<p>だが、その輪郭は間違いなく、鋲打ちの皮鎧を着たドワーフと、獣皮の脚絆を巻いた猟師そのものだった。</p>
+<p>「影喰いの鏡像（シャドウ・ドッペル）だッ！ キップ、下がれ！！」</p>
+<p>ブラムが咆哮し、愛用の大盾を構えて一歩前へ踏み込んだ。</p>
+<p>「『ドワーフ式据え盾』――ッ！」</p>
+<p>全体重を乗せ、盾の下端を黒曜石の床に力任せに突き刺す。何千回と繰り返してきた、ブラムの命綱である絶対防御姿勢だ。</p>
+<p>だが――影のドワーフもまた、まったく同じ瞬間に、まったく同じ間合いで盾を構えた。</p>
+<p>「ガッ……！？」</p>
+<p>鏡像のドワーフが放ったシールドバッシュが、ブラムの盾の最も脆弱な左上のリベットを、完璧な角度で粉砕した。</p>
+<p>金属が悲鳴を上げ、衝撃がブラムの肩関節を脱臼させる。</p>
+<p>（な、なんでだ……！？ 俺が左肩をかばう癖を、どうしてこいつが知ってやがる……！？）</p>
+<p>「ブラム！ 『盲点射ち』ッ！」</p>
+<p>キップが反射的に矢を放った。前衛の影の死角を縫う、完璧な援護射撃のはずだった。</p>
+<p>しかし、鏡像の猟師は首をわずかに傾けただけで矢を紙一重で見切り、同時にショートボウを引き絞った。</p>
+<p>バシュッ！！</p>
+<p>「ぐあぁっ！？」</p>
+<p>キップの放った矢ではなく、影の放った黒い矢が、キップの右膝を正確無比に射抜いた。</p>
+<p>キップの足が砕け、石畳に崩れ落ちる。</p>
+<p>「キップ！！」</p>
+<p>「逃げ、ろ……ブラム……！ こいつら……俺たちの技も……癖も……全部……！」</p>
+<p>影のドワーフが、黒曜石の戦斧を冷酷に振り上げた。</p>
+<p>ブラムは折れた左腕を庇いながら、必死で片手戦斧を薙ぎ払った。</p>
+<p>だが、その一撃は鏡像の盾に軽々と弾かれ、無慈悲なカウンターの石突きがブラムの鳩尾を撃ち抜いた。</p>
+<p>ゴキリ、と肋骨が折れる鈍い音が体内に響いた。</p>
+<p>肺から空気がすべて絞り出され、視界が急速に黒く染まっていく。</p>
+<p>床に倒れ伏すブラムの耳に、鏡像の足音が近づいてくるのが聞こえた。</p>
+<p>冷たい。</p>
+<p>魂を直接掴み出されるような、極寒の虚無。</p>
+<p>（ああ……クソッタレ……。銀貨三十枚に目が眩んで……こんなところでくたばるのかよ……）</p>
+<p>意識は、そこで完全に途切れた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p>「……おい。生きてるか、ドワーフ」</p>
+<p>耳朶を打つ、低くしゃがれた声。</p>
+<p>鼻腔を突くのは、焦げた線香と、安物の消毒アルコールのツンとした匂いだった。</p>
+<p>「う……ぐ……っ」</p>
+<p>ブラムが呻きながら目を開けると、粗末な木製の梁と、油煙で煤けた石壁が見えた。</p>
+<p>見覚えのある天井だ。</p>
+<p>第095階の冷たい成層圏ではない。</p>
+<p>第001階――旅立ちの宿場町、トネリコ堂の裏手にある神殿救護所だった。</p>
+<p>「……キップは……！？」</p>
+<p>「隣のベッドで、膝にギプス巻かれて死んだように寝てるよ」</p>
+<p>パイプをくわえたトネリコ堂の親父、バルカスが呆れたように煙を吐き出した。</p>
+<p>「第094階の哨戒隊がな、お前ら二人が魂の抜けた搾りかすみたいになって転がってるのを見つけて、神殿の転送陣へ担ぎ込んでくれたのさ。蘇生費用と治療代、それに搬送料……しめて銀貨四十五枚の借金だ」</p>
+<p>「四十五枚……！？」</p>
+<p>ブラムは飛び起きようとして、全身を走る激痛に「ギャッ」と叫んでシーツに沈み直した。</p>
+<p>包帯が胸から肩にかけて幾重にも巻かれている。</p>
+<p>愛用の大盾は、隅の壁に立てかけられていたが、中央から無残にひび割れ、リベットが三つ吹き飛んでいた。</p>
+<p>キップのショートボウも弦が切れ、矢筒は空っぽだった。</p>
+<p>数時間後――夕暮れの『跳ね兎亭』。</p>
+<p>ブラムとキップは、ギプスと包帯だらけの痛々しい姿で、酒場の片隅の丸テーブルに並んで座っていた。</p>
+<p>テーブルの上には、水で薄められたぬるい安エールが二杯と、乾ききった塩漬けの豆が一皿。</p>
+<p>「……笑えねえよな」</p>
+<p>キップが包帯の巻かれた膝をさすりながら、自嘲気味に呟いた。</p>
+<p>「銀貨三十枚稼ぐつもりが、銀貨四十五枚の借金背負って、弓も盾もボロボロだ。俺たちの全財産、跳ね兎のフンにもなりゃしねえ」</p>
+<p>ブラムは欠けたジョッキを傾け、酸味の強い安酒を一気に喉へ流し込んだ。</p>
+<p>胃袋に沁みるアルコールの熱さが、自分がまだ生きていることを教えてくれる。</p>
+<p>「……だがよ、キップ」</p>
+<p>ブラムが髭に泡をつけながら、低い声で言った。</p>
+<p>「俺、分かったぜ。あいつら、俺が盾を構えるとき、右足に体重を乗せすぎて左肩が半歩下がる癖を突いてきやがったんだ。俺が自分で無意識にやってる隙を、鏡の向こうからずっと見てやがったんだよ」</p>
+<p>キップが目を丸くし、それから苦笑いを漏らした。</p>
+<p>「……奇遇だな。俺も分かったよ。俺、矢を放つ瞬間に、息を止めるのが長すぎて右肩がわずかにブレるんだ。影の野郎は、そのブレに合わせて矢を撃ち落とし、俺の踏み足を正確に射抜きやがった」</p>
+<p>「だろ？」</p>
+<p>ブラムは折れかけた歯を見せて、不敵にニヤリと笑った。</p>
+<p>「てめえの未熟さを、てめえそっくりの野郎に叩き込まれたんだ。痛えが……これほど分かりやすい稽古もねえ」</p>
+<p>「おいおい、まさかお前……」</p>
+<p>キップが呆れたように眉を八の字にした。</p>
+<p>「またあの第095階に行く気か？ 鏡像相手に勝てるわけねえだろ！」</p>
+<p>「勝てるさ。鏡ってのは、姿が映るから真似できるんだ」</p>
+<p>ブラムはテーブルにドンと拳を置いた。</p>
+<p>「トネリコ堂の倉庫に、古い防煙用の『すす玉』と、荷馬車を覆う『厚手の黒布』が山ほど余ってる。盾の表面を真っ黒な油ですす塗りにして、あいつらの鏡面に黒布をぶん投げて目隠しすりゃあ――自分の影なんぞ、ただの黒い泥人形だ」</p>
+<p>キップはぽかんと口を開け、それからプッと吹き出した。</p>
+<p>「……泥臭え。相変わらず、あんたの作戦はゲロ吐くほど泥臭いよ、ブラム」</p>
+<p>「泥臭くて上等だ！ 俺たちは『錆びた釘』だぞ！ 綺麗に勝つなんざ、クローミン様やミネルヴァ様に任せときゃいいんだよ！」</p>
+<p>カウンターの奥から、バルカス親父が新しいエールの樽をドンと置き、二人を横目で睨んだ。</p>
+<p>「おい、負け犬ども。能書き垂れるのは勝手だが、ツケを払うまでは死ぬんじゃねえぞ。ほらよ、トネリコ堂の特製湿布薬だ。持って行け」</p>
+<p>カウンター越しに投げられた粗末な麻布の湿布を、ブラムは痛む手で見事に受け止めた。</p>
+<p>「へっ、ありがとよ親父！ ……キップ、明日の朝一番で、大盾のリベット打ち直すぞ。タガネと金槌、研いでおけよ！」</p>
+<p>「へいへい、分かりましたよ、頑固ドワーフ」</p>
+<p>二人は傷口の痛みに顔をしかめながら、ぬるいエールのジョッキを高く掲げ、カチンと音を立てて打ち鳴らした。</p>
+<p>塔の夜は深い。</p>
+<p>だが、生き延びた冒険者には、必ず次の朝がやってくる。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 見取り図・接続関係（Lagrange Structure）</h3>
+<p>```mermaid</p>
+<p>graph TD</p>
+<p>F97[&quot;第097階：迷宮最深部・古代魔導壁画&quot;]</p>
+<p>F96[&quot;第096階：未踏開拓領域（ミッシングリンク・残存1フロア）&quot;]</p>
+<p>F95[&quot;第095階：虚無鏡の幻影回廊と黒曜石の鏡像霊殿（本階・敗北再起型）&quot;]</p>
+<p>F94[&quot;第094階：怨霊漂う迷宮回廊&quot;]</p>
+<p>F93[&quot;第093階：霊廟聖歌隊の共鳴天蓋と怨影の納骨堂&quot;]</p>
+<p>F97 -.- F96</p>
+<p>F96 -.- F95</p>
+<p>F95 === F94</p>
+<p>F94 === F93</p>
+<p>classDef recorded fill:#1a237e,stroke:#3949ab,stroke-width:2px,color:#fff;</p>
+<p>classDef newFloor fill:#1b5e20,stroke:#43a047,stroke-width:2px,color:#fff;</p>
+<p>classDef unreached fill:#263238,stroke:#455a64,stroke-width:1px,color:#aaa;</p>
+<p>class F94,F97 recorded;</p>
+<p>class F93,F95 newFloor;</p>
+<p>class F96 unreached;</p>
+<p>```</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Lagrange Tower Chronicles - Floor 095 autonomously recorded under Zero-MP Constitution.</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-096" style="margin-top:0;">🌌 第096階：古代星詠みの天球回廊と星辰共鳴の回廊（Ancient Astrological Orrery &amp; Star Resonance Galleries）</h2>
+<blockquote>
+<strong>親ノート</strong>: 00_Lagrange_Tower_MOC<br>
+<strong>接続階層</strong>: 下層 Floor_095_Void_Mirror_Phantom_Corridor_Obsidian_Shrine ── 上層 Floor_097_Ancient_Murals（迷宮最深部・古代魔導壁画）<br>
+<strong>環境バイオーム</strong>: 成層圏の巨大真鍮天球儀（Orrery） / 星辰共鳴の光波（ステラ・レゾナンス） / 青星石のプリズム床 / 歯車調速音 / 星光の激流<br>
+<strong>主役冒険者</strong>: ダリオ（ドワーフ戦士）、リナ（人間魔導士）、オクタヴィアン（梟人族星詠み召喚士）、モーリー（頭の炎スライム）── 『第066階壁画探究隊』<br>
+<strong>客演・言及</strong>: サニーニ＆ジーナ（第097階）、クローミン＆ミネルヴァ（第045階）<br>
+<strong>ナラティブモード</strong>: ①【突破・踏破型】（星辰パズルの解読・山砕きの大斧による天球軸固定・第1〜100階完全全線直結大通貫の達成）<br>
+<strong>生息する脅威・魔物</strong>: 星辰の絡繰り守護獣（オリオン・オートマトン）、光波の星鳥（アストラル・スウィフト）<br>
+<strong>特産品・素材</strong>: 星辰真鍮の歯車屑、青星石のプリズム片、天球調速オイル<br>
+<strong>環境BGM</strong>: 霊廟神殿・重厚荘厳レクイエム（天球儀の軋みと星辰のパイプオルガン）<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🧭 階層環境カルテ（Floor Hazard &amp; Biome）</h3>
+<p>第095階の黒曜石鏡面を突破し、成層圏の星風が吹き抜ける回廊を抜けた先に広がるのは、息を呑むほど壮大な古代の天文観測遺構である。</p>
+<p>直径数百メートルに及ぶ空間全体が、自律稼働する巨大な真鍮製の「三次元天球儀（Orrery）」となっている。</p>
+<p>何千もの精緻な歯車が噛み合って重厚な金属音を刻み、同心円を描く軌道リングの上を、青星石（サファイア・アストラル）でできた天球モデルが音もなく滑走している。</p>
+<p>回廊の床面は光を透過する半透明の結晶板でできており、足下には雲海を遥かに見下ろす地球の稜線が広がっている。</p>
+<p>周期的に天球儀が特定の星座と一直線に重なると、成層圏の星光が集束され、超高熱の「星辰光波（ステラ・レゾナンス）」となって回廊を焼き払う環境ハザードが発生する。</p>
+<p>この星の軌道を読み解き、巨大天球儀の調速レバーを正しい神代の星座へと噛み合わせることで初めて、最深部たる第097階『古代魔導壁画』への大門が開かれる。</p>
+<p>ここが開通したことで、第001階『トネリコ堂』から第100階『天頂・境界ゲート』に至る迷宮の大動脈が、一本の途切れもない実線として完全に結ばれる。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">👥 主要冒険者カルテ（Adventurer Roster）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">ダリオ（Dario Ironfoot）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族/性別</strong>: ドワーフ族 / オス（62歳）</li>
+<li><strong>職業・クラス</strong>: 重装戦士（Heavy Axeman）── ギルドRank B- 515</li>
+<li><strong>主兵装</strong>: 銘斧『山砕きの斧（Mountain Cleaver Axe）』、トカゲ意匠の角つき安全兜。</li>
+<li><strong>役割</strong>: 頑固一徹の前衛。理屈よりも手応えを重んじるが、仲間の知性を誰よりも信頼している。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">リナ（Rina Deepwhisper）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族/性別</strong>: 人間 / メス（26歳）</li>
+<li><strong>職業・クラス</strong>: 古代壁画魔導士（Archaeological Mage）── ギルドRank B 535</li>
+<li><strong>主兵装</strong>: 翡翠の宝石杖『古代反響の杖』、本草学者の拡大ルーペ、深紫の旅ローブ。</li>
+<li><strong>近況</strong>: 第066階で水滴の反響壁画を解読して以来、第097階の伝説の魔導壁画をこの目で見ることを悲願として登攀を続けてきた。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">オクタヴィアン（Octavian the Silent）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族/性別</strong>: 梟人族（Strigi-an） / オス（外見40代相応）</li>
+<li><strong>職業・クラス</strong>: 星詠み召喚士（Starlight Astrologer）── ギルドRank B+ 560</li>
+<li><strong>主兵装</strong>: 『星導きの杖（Staff of the Star Guide）』、羽毛照準フード。</li>
+<li><strong>特異能力</strong>: 暗視と星辰計算。成層圏の星の運行角をミリラジアン単位で逆算する。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">モーリー（Molly the Hearth-Slime）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族</strong>: スライム系変異種（有益魔獣）</li>
+<li><strong>特徴</strong>: 頭のてっぺんに消えない小さな青白い炎を灯している。自走式ランタン兼、光屈折のレンズ役。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 オムニバス短編小説：第096階</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『天球儀の歯車と、千年の約束』</h4>
+<p><strong>ナラティブモード</strong>: ①【突破・踏破型】</p>
+<p>ギィィィィィィン……コォォォォォン……。</p>
+<p>重厚な真鍮の歯車が噛み合う、荘厳な唸りが虚空を満たしていた。</p>
+<p>足元を見下ろせば、半透明の青星石の結晶床の向こうに、果てしなく広がる純白の雲海と、丸みを帯びた惑星の青い輪郭が静かに横たわっている。</p>
+<p>「……ホゥ。素晴らしい。実に壮大な星辰の軌道盤ですな」</p>
+<p>梟人族のオクタヴィアンが、羽毛に覆われた頭部を静かに巡らせながら、低く感嘆の声を漏らした。</p>
+<p>巨大な丸い金色の瞳が、天井を満たす何十重もの真鍮リング――ゆっくりと自転する巨大天球儀の動きを余すところなく捉えている。</p>
+<p>「素晴らしいなんてもんじゃねえぞ、鳥旦那！」</p>
+<p>ドワーフのダリオが、トカゲの角つき兜の鍔を押し上げながら、首をすくめて叫んだ。</p>
+<p>「一歩踏み外せば雲の彼方まで真っ逆さまだ！ おまけに、あの頭の上のデカい真鍮球……あれが擦れ合うたびに、ビカビカととんでもねえ雷光が火花散らしてやがるじゃねえか！」</p>
+<p>「ダリオ、静かに！ ほら、モーリーも耳を塞いで……あ、モーリーに耳はなかったわね」</p>
+<p>リナが膝をつき、拡大ルーペを青星石の床に押し当てながら言った。</p>
+<p>足元では、頭のてっぺんに青い炎を揺らめかせたスライムのモーリーが、ぷるぷるとゼリー状の身体を震わせながら、リナの足首に甘えるようにすり寄っている。</p>
+<p>「見て、オクタヴィアン。床に刻まれているのは、第066階の洞窟壁画に描かれていた『七大主神の運行比率』と完全に一致しているわ。あの時は水滴の音で隠されていたけれど……ここがその本拠地、天球儀の中心核よ！」</p>
+<p>リナの瞳が、学者特有の熱狂的な光を帯びて輝いていた。</p>
+<p>その時だった。</p>
+<p>カチリ。</p>
+<p>天球儀の最も巨大な外周リングが、一段重い音を立てて停止した。</p>
+<p>リングの中央に嵌め込まれた巨石――青星石の球体が、成層圏の外から降り注ぐ太陽風と星光を一点に集束し始める。</p>
+<p>青白い光が、まるで灼熱のレーザーのように結晶床へと突き刺さり、空気がジリジリと焦げる匂いが立ち込めた。</p>
+<p>「危ないッ！ 『星辰共鳴（ステラ・レゾナンス）』ですぞ！」</p>
+<p>オクタヴィアンが叫び、星導きの杖を掲げて半球状の魔力障壁を展開した。</p>
+<p>バシュゥゥゥゥッ！！</p>
+<p>集束された星光の奔流が障壁を激しく叩き、青い火花が四散する。</p>
+<p>「ぬうぅ……！ 凄まじいエネルギーだ！ 天球儀の歯車が『死角の星座』で噛み合っている！ 次の励起サイクルまでに、中央の調速軸を回して『白鳥座の回廊』へと星座を切り替えねば、この回廊ごと灰燼に帰しますぞ！」</p>
+<p>「調速軸って、あそこの中央柱にあるデカい真鍮のクランクのことか！？」</p>
+<p>ダリオが山砕きの大斧を握り直して前方を睨みつけた。</p>
+<p>中央の台座には、三本の巨大な調速レバーが突き出ている。</p>
+<p>だが、その台座を守るように、星辰の真鍮で作られた四本腕の絡繰り巨獣――『オリオン・オートマトン』が、胸の炉心に青い光を灯して音もなく立ちふさがっていた。</p>
+<p>ギギギギギ……ッ！</p>
+<p>オートマトンが四本の真鍮剣を同時に構え、正確無比な機械の歩幅で突進してくる。</p>
+<p>「時間はねえ！ 知恵比べの前に、力技で道をこじ開けるぞッ！」</p>
+<p>ダリオが大地を蹴った。</p>
+<p>ドワーフ特有の低く重い突進。頭のトカゲ兜を敵の鳩尾へと向け、全体重を乗せた名斧を振り抜く。</p>
+<p>「『山砕き（マウンテン・クリーバー）』――ッ！！」</p>
+<p>ギャリィィィンッ！！</p>
+<p>火花が夜空を焦がす。オートマトンの二本の真鍮剣がへし折れ、巨体がわずかにのけぞった。</p>
+<p>「ぐっ……さすがに成層圏の金属は硬えな！ だが、二秒あれば十分だろ！ リナ、行けッ！」</p>
+<p>「モーリー、レンズモード！」</p>
+<p>リナが叫ぶと、スライムのモーリーが勢いよく飛び上がり、リナの宝石杖の先端へとすっぽり被さった。</p>
+<p>モーリーの透明なゼリー状の体組織と頭の青い炎が、天然の集光プリズムとなって魔力を増幅する。</p>
+<p>「第066階から繋いできた知恵の光……！ 『古代反響の星辰光線（アルケイン・レゾナンス）』――ッ！！」</p>
+<p>杖の先端から放たれた極太のエメラルドの光条が、オートマトンの開いた胸部炉心を正確に撃ち抜いた。</p>
+<p>内部の歯車が砕け散り、絡繰り巨獣が膝を突いて機能を停止する。</p>
+<p>「今です、リナ殿！ 調速レバーを第三目盛り、アストラルの運行角へ！」</p>
+<p>オクタヴィアンが風を読み、叫んだ。</p>
+<p>リナは台座へ駆け寄り、巨大な真鍮レバーに両手をかけて全体重で引き倒した。</p>
+<p>カチ、カチ、カチ……ガコンッ！！</p>
+<p>天球儀の全リングが一斉に逆回転を始めた。</p>
+<p>集束しかけていた星光の激流がすっと霧散し、代わりに何百もの小さな青星石が、夜空の星座のように静かに瞬き始めた。</p>
+<p>ゴゴゴゴゴ……。</p>
+<p>回廊の突き当たりにある、何百年も閉ざされていた巨大な石造りの両開き扉が、重い地鳴りを立ててゆっくりと開かれていく。</p>
+<p>扉の向こうから漏れ出してきたのは、古文書の羊皮紙と、千年の歳月を生き延びた古代顔料の匂いだった。</p>
+<p>「……開いたわ」</p>
+<p>リナが息を切らしながら、呆然と呟いた。</p>
+<p>「第097階……『古代魔導壁画』の回廊よ……！」</p>
+<p>ダリオが斧の刃についた真鍮の削り粉を息で吹き飛ばし、豪快に笑った。</p>
+<p>「へっ、見たか！ ドワーフの斧と人間の魔法と、鳥旦那の星詠み……それにスライムの頭の火だ！ どんな古代の仕掛けだって、俺たちの足跡を止められやしねえ！」</p>
+<p>「ピトッ！」</p>
+<p>モーリーがダリオの兜の上に飛び乗り、誇らしげに青い炎をポッと灯した。</p>
+<p>オクタヴィアンが静かに歩み寄り、成層圏の星空を見上げた。</p>
+<p>「……素晴らしい。これで、第001階のトネリコ堂から、天頂第100階に至るまでの迷宮の大動脈が、一本の途切れもない線として結ばれましたな。我々の歩いた道は、もはや迷路ではなく、ひとつの生きた世界です」</p>
+<p>四人は顔を見合わせ、頷き合った。</p>
+<p>目の前に広がる古代の英知の扉へと、彼らは確かな足取りで踏み出していった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 見取り図・接続関係（Lagrange Structure）</h3>
+<p>```mermaid</p>
+<p>graph TD</p>
+<p>Apex[&quot;🌌 第100階：大気圏天頂・星辰の境界（境界ゲート・第一期大通貫ゴール）&quot;]</p>
+<p>F97[&quot;📜 第97階：迷宮最深部・古代魔導壁画&quot;]</p>
+<p>F96[&quot;🌌 第096階：古代星詠みの天球回廊と星辰共鳴の回廊（本階・全線直結大通貫達成！）&quot;]</p>
+<p>F95[&quot;🪞 第095階：虚無鏡の幻影回廊と黒曜石の鏡像霊殿&quot;]</p>
+<p>F94[&quot;👻 第94階：怨霊漂う迷宮回廊&quot;]</p>
+<p>Apex === F97</p>
+<p>F97 === F96</p>
+<p>F96 === F95</p>
+<p>F95 === F94</p>
+<p>classDef recorded fill:#1a237e,stroke:#3949ab,stroke-width:2px,color:#fff;</p>
+<p>classDef newFloor fill:#1b5e20,stroke:#43a047,stroke-width:2px,color:#fff;</p>
+<p>class F94,F97,Apex recorded;</p>
+<p>class F95,F96 newFloor;</p>
+<p>```</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Lagrange Tower Chronicles - Floor 096 autonomously recorded under Zero-MP Constitution.</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-097" style="margin-top:0;">📜 第97階：迷宮最深部・古代魔導壁画（Ancient Murals Chamber）</h2>
+<blockquote>
+<strong>親ノート</strong>: 00_Lagrange_Tower_MOC<br>
+<strong>観測状況</strong>: 過去遺物サルベージ完了（塔務局原典記録）<br>
+<strong>環境</strong>: 金色の粒子が漂う無重力空間 / 神秘的なハミング音 / 神代の気配<br>
+<strong>主要NPC</strong>: サニーニ（魔術師）、ジーナ（探索者）<br>
+<strong>特産アーティファクト</strong>: 太陽の杖、妖精のファッションナイフ、運命の宝珠<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🏛️ フロア・カルテ（Floor Overview）</h3>
+<p>第100階「星辰の境界」を目前にした迷宮最深の神殿。巨大な壁面に刻まれた神代の壁画と、宙に浮かび静かに脈動する『運命の宝珠』。サニーニが太陽の杖を掲げ、ジーナとともに世界の創世と終焉の秘密に対峙する。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Recorded under Lagrange Tower Chronicles.</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-101" style="margin-top:0;">⚓ 第101階：星海の幽霊船と彷徨える古代時計（Ghost Ship on the Celestial Sea）</h2>
+<blockquote>
+<strong>親ノート</strong>: 00_Lagrange_Tower_MOC<br>
+<strong>観測状況</strong>: 🟢 <strong>原典線画・プロンプト統合（100階限界突破Exフロア）</strong><br>
+<strong>環境</strong>: 星辰の海（雲海） / 渦巻く冷たい夜霧 / 満天の星と三日月 / 静寂に時を刻む古代時計塔<br>
+<strong>主要NPC・冒険者</strong>: <strong>セレナ（ハーフエルフ魔術師）</strong>、<strong>エリック（重装戦士）</strong><br>
+<strong>特産アーティファクト</strong>: 星紋の古代巻物、忘れ去られた星海宝物、漂流時計の青銅歯車<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🖼️ 公式原典線画（Official Lineart）</h3>
+<p></p>
+<p><em>【図: 第101階・星海に漂う幽霊船の甲板で古代巻物を紐解くセレナと護衛するエリック】</em></p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">📜 原典プロンプト（The Master Prompt）</h4>
+<blockquote>
+<code>Inspired by mid to late 1990s Japanese PC RPGs, this hand-drawn cell animation style event scene unfolds in a fantasy world on the deck of a ghost ship. Next to an ancient clock that stands quietly, a cold sea mist swirls around, reminiscent of the 101st floor of 'Lagrange Tower'. Serena, a female half-elf magician in a rustic robe decorated with stars, illuminates her surroundings with a magical light while reading ancient scrolls. Eric, a male human warrior in heavy armor, vigilantly guards her with his large sword and shield, their determined faces set against the eerie ship as they search for forgotten treasures. The scene is designed for coloring books with simple, clear black and white line art without shading, emphasizing the dynamics of exploration and the interplay between characters, perfect for landscape orientation.</code><br>
+<em>(世界観設計詳細: Lagrange_Tower_Prompt_Codex)</em><br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🏛️ フロア・カルテ（Floor Overview）</h3>
+<p>天頂と信じられていた「第100階」の境界を突き抜けた先——そこには、塔の物理構造を超越した<strong>「星辰の海（The Celestial Sea）」</strong>がどこまでも広がっていた。</p>
+<p>その暗雲と冷たい海霧の中を静かに漂流する一隻の巨大な幽霊船。甲板の彼方には、海上に浮かびながら永遠の刻を刻み続ける<strong>「巨大な古代の時計塔（Ancient Clock）」</strong>が仄かな光を放っている。</p>
+<p>この幻想的かつ不気味な未知の領域に挑むのは、星の刺繍が施された素朴なローブを纏うハーフエルフの魔術師<strong>セレナ（Serena）</strong>と、極厚の重装甲冑に身を包んだ人間の戦士<strong>エリック（Eric）</strong>である。</p>
+<p>セレナは手元に魔導の燐光を灯し、失われた時代の真実が記された古代の巻物を真剣な眼差しで読み解く。その隣では、大剣と重厚な盾を構えたエリックが、甲板の影から忍び寄る亡霊や異形の気配を全身の感覚で警戒し、相棒を護衛している。</p>
+<p>100階で終わらない『ラグランジュの塔』の真の広がりと、失われた至宝（Forgotten Treasures）の秘密が、この幽霊船の甲板から幕を開ける。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Recorded under Lagrange Tower Chronicles / 塔務記録局 2024.</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-326" style="margin-top:0;">🐚 第326階：星河運河の静湖宿場とタニシのソテー（Floor 326: Star Canal Quiet Lake Hostel &amp; Sautéed River Snails）</h2>
+<p></p>
+<blockquote>
+<strong>フロアBGM</strong>: トネリコ堂の朝（Morning at Ash Tree Shop - 旅情と安息の穏やかなアコースティック）<br>
+<strong>階層領域</strong>: 第300番台・星河運河バイオーム（大気圏を遥か下に抜けた星辰運河の宿場町）<br>
+<strong>ナラティブモード</strong>: ③【平熱・日常型】（戦闘なし・劇的オチなし・終わりのない旅路の静寂）<br>
+<strong>開拓ステータス</strong>: 🟢 <strong>時空跳躍オムニバス観測完了（100階上限撤回・第326階到達）</strong><br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🧭 階層環境特性</h3>
+<p>第100階の天頂ゲートを越え、虚空を渡る星辰レールを何十階層も登った先。</p>
+<p>第326階は、迷宮の中であることすら忘れてしまうほど、穏やかで静かな水の世界だった。</p>
+<p>頭上にはガラスのように澄み渡った星空が広がり、足元には無数の小さな島々と、それらを繋ぐ石造りの太鼓橋。</p>
+<p>天から注ぎ込む緩やかな星河の水が街を巡り、運河の沿岸には淡い燐光を放つ街灯と、旅人のための小さな旅籠（はたご）がぽつりぽつりと灯りを灯している。</p>
+<p>魔物の気配はほとんどなく、夜風は湿り気を帯びて心地よい。</p>
+<p>このフロアを訪れた旅人が知るべきことは、ただ一つだけ――<strong>「運河で獲れる大粒のタニシが、やたらと美味い」</strong>ということだけだった。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">特産品・郷土料理</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>星河タニシの香草ガーリックソテー（Sautéed Star Snails with Herb Butter）</strong>:</li>
+<li>清冽な運河の岩肌で育った、手のひらサイズの肉厚な淡水タニシ。泥臭さは一切なく、刻んだニンニクと香草、たっぷりの発酵バターで殻ごとジュウジュウとソテーされている。</li>
+<li><strong>運河白ワインの微発泡酒（Canal Sparkling White）</strong>:</li>
+<li>運河沿いの果樹園で採れる白葡萄を醸した、少し酸味の強いすっきりとした地酒。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 短編オムニバス小説：星河の宿、タニシの殻を鳴らして</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">第1幕：鉄鍋のジュウジュウという音</h4>
+<p>運河に面した小さな宿屋「水星亭（すいせいてい）」の二階、風通しのいいテラス席。</p>
+<p>木製の丸テーブルの上で、黒い鋳鉄の小さな浅鍋が、パチパチと快活な音を立てていた。</p>
+<p>「ん〜〜っ！ すっごくいい匂い！」</p>
+<p>クローミンは両手を頬に当て、身を乗り出すようにして鉄鍋を覗き込んだ。</p>
+<p>緑色の柔らかなウェーブヘアが、テラスを吹き抜ける涼やかな夜風にふわふわと揺れている。頭の上にピンと立った白い兎耳が、嬉しそうに小刻みに震えた。</p>
+<p>鍋の中には、黒曜石のように滑らかな殻を持った大粒のタニシが、十個ほど行儀よく並んでいる。</p>
+<p>黄金色に溶けたバターの海で、微塵切りのニンニクと青々とした香草が踊り、香ばしい湯気が立ち上っていた。</p>
+<p>「火傷するわよ、クローミン。少し冷ましてからにしなさい」</p>
+<p>向かいの席に座るミネルヴァが、細身の白ワインの瓶を傾け、二つのガラス杯に淡い琥珀色の液体を注いだ。</p>
+<p>白銀のブロンド髪は後ろで緩くまとめられ、昼間の重い甲冑は脱ぎ捨てて、肌触りの良さそうな白い綿のチュニックを身に纏っている。腰の魔導剣は、壁のフックに静かに預けられていた。</p>
+<p>「もう大丈夫だよ！ ほら、この針みたいな細いフォークで、くるりんって……」</p>
+<p>クローミンは真鍮の細いピックを器用にタニシの殻の奥へ差し込み、手首を軽く捻った。</p>
+<p><em>つるんっ</em>と、湯気を立てながら肉厚な身が引き出される。</p>
+<p>ふう、ふう、と二度息を吹きかけてから、口の中へ放り込んだ。</p>
+<p>「……んん〜〜〜っ！！」</p>
+<p>クローミンは目を丸くし、両手で耳をパタパタと押さえた。</p>
+<p>「美味しい！ アワビみたいにコリコリしてるのに、噛むと中からじゅわ〜って甘い貝のスープが出てくる！ ニンニクとバターがすっごく合ってるよ、ミネルヴァ！」</p>
+<p>「そう。よかったわね」</p>
+<p>ミネルヴァは口元に柔らかな微笑みを浮かべ、自分の分のタニシをフォークで取り出す。</p>
+<p>上品に口へ運び、ゆっくりと咀嚼してから、微発泡の白ワインを一口含んだ。</p>
+<p>「……ええ、悪くないわ。少し塩気が強いけれど、この酸味のあるワインによく合う」</p>
+<p>「でしょでしょ！ パンも浸して食べていい？ この底に残ったソース、絶対美味しいやつだよ！」</p>
+<p>「お行儀が悪いけれど……今夜は二人だけだし、許してあげる」</p>
+<p>クローミンは「わーい！」と声を弾ませ、焼きたての硬い黒パンの切れ端をちぎると、鉄鍋の底のガーリックバターをたっぷりと吸わせた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">第2幕：古びた革表紙のノート</h4>
+<p>テラスの外には、静まり返った運河が広がっている。</p>
+<p>水面には、遥か頭上に輝く無数の星々が鏡のように映り込み、時折、大きな星河魚が跳ねて水輪を広げていた。</p>
+<p>この街には、叫び声も、血の匂いも、崩落の轟音もない。</p>
+<p>ただ遠くで、夜警の小舟がオールで水を掻く<em>ギィ、ギィ</em>という長閑な木擦れの音だけが響いている。</p>
+<p>ふと、クローミンがパンをもぐもぐと咀嚼しながら、テーブルの端に置かれた分厚いノートに目を留めた。</p>
+<p>それは、何度も角が擦り切れ、背表紙を丈夫な麻糸と真鍮の留め具で何度も補強された、年季の入った革表紙の手帳だった。表紙の中央には、見たこともない複雑な古代文字が刻まれており、今は仄かに淡い燐光を放っている。</p>
+<p>「ねえ、ミネルヴァ」</p>
+<p>「ん？」</p>
+<p>「私、このタニシのソテーって、前にも食べたことあったっけ？」</p>
+<p>クローミンは、首をかしげながら尋ねた。</p>
+<p>その表情には何の屈託もなく、ただ「昨日のおやつ何だったっけ？」と訊ねる幼子のような無邪気さだけがあった。</p>
+<p>ミネルヴァはグラスを持つ手を止めず、窓の外の静かな星空に視線を漂わせた。</p>
+<p>少しだけ目を細め、グラスの中で弾ける小さな泡を見つめる。</p>
+<p>「……ええ。食べたわよ」</p>
+<p>「ほんと！？ いつ頃？ 私、すっごく気に入ったみたいなんだけど、味を全然覚えてないや」</p>
+<p>「そうね……。たしか、七十年くらい前だったかしら」</p>
+<p>「ななじゅうねん！？」</p>
+<p>クローミンは吹き出しそうになり、慌てて口元を手で押さえた。</p>
+<p>「あはは！ もう、ミネルヴァったら！ すぐそうやって真顔で冗談言うんだから！」</p>
+<p>「ふふ、冗談に見える？」</p>
+<p>「見えるよ！ 私たち、そんなおばあちゃんじゃないもん！ 七十年も前なんて、生まれてすらいないよ〜」</p>
+<p>クローミンは楽しそうに笑いながら、グラスの冷たい水を喉へ流し込んだ。</p>
+<p>そして、愛おしそうに革の手帳の表紙をぽんぽんと撫でる。</p>
+<p>「でも、日記に書いておかなきゃね。『第326階の水星亭のタニシソテーは絶品。バター多めが美味しい』って。そうすれば、明日起きた私も、ちゃんとこの美味しさを知ることができるもんね」</p>
+<p>「……ええ。そうね。書き留めておきなさい」</p>
+<p>ミネルヴァは静かに微笑み、クローミンの頭をそっと撫でた。</p>
+<p>その指先が、クローミンの首筋にある、古びた細い傷跡をかすめる。</p>
+<p>（——七十四年前の、雨の夜だったわね）</p>
+<p>ミネルヴァは心の中で、誰にも聞こえない独り言を呟いた。</p>
+<p>（あの時は、第325階の昇降水門で、濁流に呑まれてあなたが死にかけた。</p>
+<p>時間を巻き戻して、這う這うの体でこの宿に逃げ込んで……あなたはずぶ濡れのまま、泣きながらこのタニシを食べていた。</p>
+<p>『あったかいね、ミネルヴァ。生きてるって美味しいね』って……笑いながら、涙をこぼしていた）</p>
+<p>ミネルヴァの瞳の奥には、その夜のクローミンの泣き顔も、雨の匂いも、タニシの熱さも、昨日のことのように鮮明に焼き付いている。</p>
+<p>けれど、今目の前にいるクローミンは、その夜の恐怖も、自分が死にかけたことも、何も覚えていない。</p>
+<p>ただ、「初めて食べる美味しいタニシ」に無邪気に目を輝かせている。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">第3幕：どこまでも続く星の河</h4>
+<p>「ミネルヴァのぶんも取ってあげる！ ほら、一番大きいやつ！」</p>
+<p>クローミンがピックで器用に殻から外したタニシの身を、ミネルヴァの小皿の上にちょこんと乗せた。</p>
+<p>「ありがとう、クローミン」</p>
+<p>「どういたしまして！ ……ねえ、ミネルヴァ」</p>
+<p>「なあに？」</p>
+<p>「この塔ってさ……どこまで続いてるのかな」</p>
+<p>クローミンが、テラスの手すりに顎を乗せ、夜空を見上げた。</p>
+<p>視線の先には、運河の水面を照らす星々のさらに奥、天を垂直に貫いてどこまでも伸びる、巨大な真鍮と白銀の軌道支柱が、闇夜の中に幽かに聳え立っている。</p>
+<p>「100階に着いた時、これで終わりだと思ってたのにね。気付いたら300階も越えちゃってさ」</p>
+<p>「……そうね」</p>
+<p>「私、たまに不思議になるんだ。私たちは、いつから登り始めたんだっけって。昨日のことも、たまに手帳を見ないとあやふやになっちゃうし」</p>
+<p>クローミンは、手すりの上で自分の指を一本ずつ折りながら、小さく笑った。</p>
+<p>「でもね、不思議とちっとも怖くないんだよ」</p>
+<p>「どうして？」</p>
+<p>「だって、手帳を開けば、ミネルヴァのことがいっぱい書いてあるから。</p>
+<p>『ミネルヴァの言う通りに動けば絶対大丈夫』って、昔の私が太い赤ペンで書いてるんだもん。</p>
+<p>だから、この塔が500階まであっても、900階まであっても、私は全然平気。</p>
+<p>ミネルヴァと一緒なら、どこまでだって登っていけるよ」</p>
+<p>クローミンは振り返り、満面の笑みをミネルヴァに向けた。</p>
+<p>一切の曇りもない、透き通った碧色の瞳。</p>
+<p>何百年の時間も、何千回の凄惨な死も、その純粋な光を汚すことはできなかった。</p>
+<p>記憶を失い続けることで、彼女の魂は、永遠に生まれたてのように清らかであり続けている。</p>
+<p>ミネルヴァは、胸の奥がきつく締め付けられるような、甘く痛い衝動を覚えた。</p>
+<p>グラスを置き、テーブル越しにクローミンの小さな両手を、自分の両手で包み込む。</p>
+<p>「……ミネルヴァ？」</p>
+<p>「クローミン。……明日も、明後日も、あなたが忘れてしまったら、私が全部話してあげるわ」</p>
+<p>「え？」</p>
+<p>「このタニシがどれだけ美味しかったかも。今夜の風がどれだけ涼しかったかも。</p>
+<p>あなたが忘れた世界のすべてを、私があなたに教えてあげる。だから、何も心配しなくていいの」</p>
+<p>「……うん！ 約束ね！」</p>
+<p>クローミンは嬉しそうに頷き、ミネルヴァの手をきゅっと握り返した。</p>
+<p>夜風がテラスを吹き抜け、運河の水面がさざめく。</p>
+<p>冷めかけた鉄鍋から、微かにガーリックとハーブの香りが漂っていた。</p>
+<p>塔の終わりがどこにあるのか、二人を縛る呪いがいつ解けるのか、それはまだ誰にもわからない。</p>
+<p>けれど、何百年を越えて巡るこの果てしない星の海の中で、</p>
+<p>二人が分け合う今夜の温もりだけは、どんな神の理（ことわり）をもってしても、決して消し去ることはできないのだ。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 階層見取り図連動（Mermaid）</h3>
+<p>```mermaid</p>
+<p>graph TD</p>
+<p>Apex[&quot;🌌 第100階：大気圏天頂・星辰の境界（境界ゲート）&quot;]</p>
+<p>F101[&quot;⚓ 第101階：星海の幽霊船と彷徨える古代時計（100階限界突破Ex）&quot;]</p>
+<p>F326[&quot;🐚 第326階：星河運河の静湖宿場（クローミン＆ミネルヴァ・タニシのソテー）&quot;]</p>
+<p>StarSea[&quot;✨ 第999階：星辰深淵・軌道架橋の最果て（未踏）&quot;]</p>
+<p>Apex --- F101</p>
+<p>F101 -.- F326</p>
+<p>F326 -.- StarSea</p>
+<p>classDef current fill:#1b5e20,stroke:#43a047,stroke-width:3px,color:#fff;</p>
+<p>class F326 current;</p>
+<p>```</p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <div id="top" class="log-selector" style="justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+      <a href="chronicles_7.html" class="log-btn">◀ 前の巻（第7巻）</a>
+      <a href="chronicles.html" class="log-btn">📖 物語目次へ</a>
+      <span class="log-btn" style="opacity:0.4; cursor:default;">最新の巻 ▶</span>
+    </div>
+  </main>
+
+  <footer>
+    <div>⚔️ [LAGRANGE TOWER OFFICIAL CHRONICLES] // MULTI-PAGE GRAND ARCHIVE // LAST BUILD: 2026-11-15 21:05 ⚔️</div>
+    <div>CURATED BY THE FORTRESS ARCHIVE (5-LAYER IP &amp; SECURITY QUARANTINED). ALL RIGHTS RESERVED.</div>
+  </footer>
+
+  <script>
+    function switchLog(logId, btn) {
+      document.querySelectorAll('article.prose-container').forEach(a => a.style.display = 'none');
+      document.querySelectorAll('.log-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(logId).style.display = 'block';
+      btn.classList.add('active');
+    }
+    function filterChars(tier, btn) {
+      document.querySelectorAll('.char-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.char-entry').forEach(entry => {
+        entry.style.display = (tier === 'all' || entry.getAttribute('data-tier') === tier) ? 'block' : 'none';
+      });
+    }
+    function filterItems(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.item-entry').forEach(entry => {
+        entry.style.display = (cat === 'all' || entry.getAttribute('data-category') === cat) ? 'block' : 'none';
+      });
+    }
+    function filterZones(zone, btn) {
+      document.querySelectorAll('.zone-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.floor-entry').forEach(entry => {
+        entry.style.display = (zone === 'all' || entry.getAttribute('data-zone') === zone) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
