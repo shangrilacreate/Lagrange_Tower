@@ -1,0 +1,700 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>物語・観測記録 // 天頂迷宮ラグランジュの塔 公式博物誌</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.18rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .anya-stamp {
+      border: 1px solid var(--crimson-seal);
+      background: rgba(168, 56, 56, 0.12);
+      padding: 14px 18px;
+      border-radius: 3px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #f2dada;
+    }
+    .anya-stamp-title {
+      color: #ff9999;
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 0.94rem;
+    }
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 22px 0;
+      font-size: 0.9rem;
+    }
+    .book-table th, .book-table td {
+      border: 1px solid var(--border-brass);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .book-table th {
+      background: #282018;
+      color: var(--gold-bright);
+    }
+    .book-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // OFFICIAL GUILD ARCHIVE ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔 観測年代記</h1>
+    <div class="subtitle">
+      天を突く全100階層の神代遺構。配管の蒸気で芋を蒸し、靴底の減りを気にしながら今日を生き延びる冒険者たちの群像記録と博物誌。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 総合案内所 (Index)</a>
+      <a href="chronicles.html" class="tab-btn active">📖 物語・観測記録</a>
+      <a href="library.html" class="tab-btn">📚 迷宮内専門書庫</a>
+      <a href="roster.html" class="tab-btn">👥 人物・パーティ名鑑</a>
+      <a href="lexicon.html" class="tab-btn">🎒 アイテム・奇品辞典</a>
+      <a href="atlas.html" class="tab-btn">🗺️ 階層・ロケーション図鑑</a>
+      <a href="codex.html" class="tab-btn">⚖️ 世界観・塔の法則</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+
+    <div class="log-selector">
+      <button class="log-btn active" onclick="switchLog('log-1', this)">📜 第1録：湿った坑道のカンテラと干し芋（第002階）</button>
+      <button class="log-btn" onclick="switchLog('log-2', this)">📜 第2録：熱泥の靴底と蒸気孔の塩芋（第022階）</button>
+      <button class="log-btn" onclick="switchLog('log-3', this)">📜 第3録：エララと開かずの木箱（第075階保安室）</button>
+    </div>
+
+    <!-- Episode 1 -->
+    <article id="log-1" class="prose-container">
+      <h2>⛏️ 第002階：『湿った坑道のカンテラと、干し芋のスープ』</h2>
+      <blockquote>
+        【舞台ロケーション】第002階：旧採炭坑道（LOC-002-A） ➔ 地熱漏れの岩壁溜まり（LOC-002-B）<br>
+        【登場人物】元炭鉱夫ガリク、泥這い小隊（ロルフ、ダン、ミリー、ペコ）<br>
+        【記録種別】平熱・日常譚（戦闘なし・カンテラ油節約・現場メシの温もり）
+      </blockquote>
+
+      <h3>1. ツルハシの反響と、石炭の匂い</h3>
+      <p>カツン……カツン……カツン……。</p>
+      <p>暗がりの中に、乾いた金属音が規則正しく響いていた。真鍮製の小さなカンテラが、岩肌の突起に掛けられ、頼りない橙色の光で周囲数歩をぼんやりと照らし出している。</p>
+      <p>「ふぅ……。ここらの鉱脈は、もう搾りかすだな。黄鉄鉱ばっかりだ」</p>
+      <p>汗をぬぐいながら息を吐いたのは、煤けた革手袋をはめた中年男――元炭鉱夫のガリクだった。削り落とした石炭の破片を革袋に詰め込みながら、彼は天井を見上げた。腐りかけた松材の支保工が、きしみ音を立てながら頭上の巨大な岩盤を支えている。</p>
+      <p>「おい、ガリク！ 休憩にしようぜ。カンテラの油がもったいねぇ」</p>
+      <p>坑道の奥から、ドスンと重い足音を響かせて現れたのは、熊人族の大男ダンだった。その背後には、長槍を杖代わりに歩く隊長のロルフ、耳をピクピクさせている猫耳族のペコ、そして見習い僧侶のエルフ少女ミリーが続いていた。駆け出し冒険者パーティ『泥這い小隊』の面々だ。</p>
+
+      <h3>2. 地熱配管と、カチカチの干し芋</h3>
+      <p>「ダン、声が大きいニャ。支保工がパラパラ埃を落としてるニャ……」</p>
+      <p>ペコが頭を抱えながら尖った猫耳を伏せる。第004階でヒグマに突進されて槍を折られ、辛勝したものの武具修理代に困窮した彼らは、比較的安全なこの第002階で小銭稼ぎの鉱石拾いに降りてきていた。</p>
+      <p>「ほら、湯が沸いたわよ。カンテラの芯を少し下げて」</p>
+      <p>ミリーが小さな真鍮の鍋を、岩壁の割れ目から漏れ出る微弱な地熱配管の上に置いた。ぐつぐつと煮え立つ湯の中に、ガリクが腰の麻袋から取り出した『干し芋の切れ端』と粗塩が放り込まれる。</p>
+      <p>「贅沢は言えねぇが……このスープ、芋の甘みが出てて悪くねぇな」</p>
+      <p>ロルフが欠けた木製椀をすすりながら、ふっと口元を緩めた。暗闇の中で、五つの湯気が白く立ち上り、煤けた顔をほのかに温める。</p>
+      <p>「チートも魔法の剣もねぇがな、今日も生きて温かい芋を食えた。迷宮じゃ、それだけで上等な一日さ」</p>
+      <p>ガリクの言葉に、若いペコが小さく頷いた。カンテラの橙色の炎が揺れ、泥にまみれた五人の影が、黒い石炭の壁に寄り添うように揺れていた。</p>
+    </article>
+
+    <!-- Episode 2 -->
+    <article id="log-2" class="prose-container" style="display: none;">
+      <h2>♨️ 第022階：『熱泥の靴底と、蒸気孔のほくほく塩芋』</h2>
+      <blockquote>
+        【舞台ロケーション】第022階・支線：黒曜石の熱泥回廊と蒸気孔テラス（LOC-022-B）<br>
+        【登場人物】荷駄運びベルンハルト＆懐モグラのポコ、見習い斥候ティオ<br>
+        【記録種別】平熱・日常譚（靴底の膠剥がれ・松脂修繕・蒸気孔の現場メシ）
+      </blockquote>
+
+      <h3>1. 煮え滾る黒曜石と、ベロッと逝った靴底</h3>
+      <p>ボコッ、ボコボコッ……シュウウウウウッ！</p>
+      <p>第021階の翡翠温泉から漏れ出た地熱蒸気が、黒い岩肌の割れ目から白い龍のように吹き上がっている。猫耳をペタリと倒した見習い斥候ティオが、片足立ちで跳ねながら悲鳴を上げた。</p>
+      <p>「あっつ！ 熱いニャ！ ベルンハルト、足の裏がフライパンの上のソーセージみたいになってるニャ……あ、あれ？ *ベロンッ*！？」</p>
+      <p>ティオが恐る恐る右足を持ち上げると、蚤の市で銀貨三枚で買い叩いた中古ブーツの靴底が、つま先から踵まで真っ二つに口を開けていた。熱泥の熱気に当てられ、古い接着膠（にかわ）が完全に溶け落ちたのだ。</p>
+      <p>「ひにゃあああっ！！ 底が剥がれたニャーッ！ 裸足じゃ肉球が焼き肉になっちゃうよぉぉ……！」</p>
+      <p>「泣くなティオ。俺の肩に乗れ。次の蒸気テラスまで背負ってやる」</p>
+      <p>身長215cmの温厚なミノタウロス――ベルンハルトは、百キロを超える『底知らずの麻袋』を背負ったまま巨大な膝を折り、涙目のティオをひょいと肩に担ぎ上げた。胸ポケットから顔を出した懐モグラのポコが「キュキュッ！」と鳴き、地中の微振動から安全な冷えた岩盤ルートを案内していく。</p>
+
+      <h3>2. 蒸気孔の皮付き塩芋と、冷たい山葡萄水</h3>
+      <p>辿り着いた『蒸気孔テラス』で、ベルンハルトは真鍮のワイヤーネットを取り出した。土付きの赤芋を洗って粗塩を擦り込み、濡れ麻布で包んで、過熱蒸気が噴き出す穴の上にすっぽりと被せる。</p>
+      <p>「薪なんか要らんさ。十五分も蒸せば、カチカチの赤芋も蜜のように甘くなる」</p>
+      <p>芋が蒸し上がるまでの間、ベルンハルトは蒸気で溶かした松脂（まつやに）をティオのブーツに流し込み、太い麻糸で靴底を二重に縫い留めてやった。「塔の中じゃ、武器の手入れより足元の手入れの方がよっぽど大事なんだよ」</p>
+      <p>やがて麻布を剥ぎ取ると、黄金色の果肉から湯気を吹き上げる蒸し芋が現れた。</p>
+      <p>「んんんーーっ！！ 甘い！ お塩がピリッときて、皮がパリッとしてて最高ニャ！！」</p>
+      <p>冷たい竹筒の山葡萄水で喉を潤し、直ったばかりのブーツの靴紐を固く結び直す。湯守狐の小祠に芋の皮をひとかけら供え、二人は再び湯気の向こうへと歩き出した。</p>
+    </article>
+
+    <!-- Episode 3 -->
+    <article id="log-3" class="prose-container" style="display: none;">
+      <h2>🛡️ 第075階：『エララと開かずの木箱』</h2>
+      <blockquote>
+        【舞台ロケーション】第075階：境界大検問所・第075保安室（LOC-075-A）<br>
+        【登場人物】見習い防衛魔術師エララ、書記バーナビー<br>
+        【記録種別】迷宮塔務日誌（鍵の複雑性と現場のドタバタ事件簿）
+      </blockquote>
+
+      <h3>1. エララと十六文字の絶対封印</h3>
+      <p>天を突く巨大迷宮「ラグランジュの塔」、第075階『境界大検問所』。公文書を守る第075保安室に、分室長からの通達が下りたのは朝の鐘が鳴った直後だった。</p>
+      <p>「影泥棒の暗躍を防ぐため、今日中にすべての書類保管箱の鍵を、従来の4桁から『16文字の完全ランダム古代ルーン配列』に強化してくれたまえ！」</p>
+      <p>青いローブの新米防衛魔術師エララは、満面に笑みを浮かべて杖を構えた。</p>
+      <p>「お任せください！ 保安の強化こそ、私の役目です！ えーいっ、【十六文字の絶対封印】！」</p>
+      <p>パァァッ！ と眩い光が弾け、木箱の鍵穴の周りに、複雑怪奇な古代ルーン文字『ᚠᚢᚦᚨᚱᚲᚷᚹᚺᚾᛁᛃᛇᛈᛉ』が浮かび上がった。</p>
+
+      <h3>2. 紙切れ紛失と、プチ・ファイアの悲劇</h3>
+      <p>解錠コードの羊皮紙を渡された同僚の書記バーナビーは、八の字眉で絶望していた。「エララさん、ぼく、昨日の晩ご飯すら思い出せないのに90日ごとにこれを覚えるの……！？」</p>
+      <p>そして午後の鐘が鳴った直後、至急の台帳確認要請が入った。バーナビーは顔面蒼白でポケットを探った。</p>
+      <p>「な、ない……！ 解錠コードを書いた紙、さっき林檎パイの包み紙と一緒にゴミ箱に捨てちゃったかも……！？」</p>
+      <p>焦ったバーナビーの脳裏に、魔が差した考えが浮かんだ。「鍵穴にちょっとだけ火の魔法を流し込んで、熱で膨らませたら外れるんじゃ……【プチ・ファイア】！」</p>
+      <p>カチリ。防犯用の魔導インクが不正熱を感知し、直後に**ドーーーーンッ！！** と派手な音とともに、紫色の消えない防犯インクが執務室中に炸裂した。頭から紫インクまみれになった二人が呆然と顔を見合わせる。</p>
+      <p>「……鍵を難しくしすぎて、誰も仕事ができなくなっちゃいましたぁ〜……！」</p>
+      <p>長女エリアのため息と真鍮レンチの音が廊下に響くのは、それからわずか数分後のことだった。</p>
+    </article>
+
+    <!-- AUTONOMOUS_CHRONICLE_START -->
+    <section class="prose-container" style="margin-top: 28px; border-top: 2px solid var(--gold-antique);">
+      <h2>📡 塔務局・自律観測クロニクル（日々増える冒険日誌・検疫済フィード）</h2>
+      <blockquote>
+        【閉域自律拡張ステータス】全 <strong>75</strong> フロア記録済 ／ 並行世界観測：第 <strong>6</strong> 世代稼働中 ／ 最終検疫ビルド：<strong>2026-11-15 14:05</strong><br>
+        ※本セクションは外界から遮断された閉域環境にて毎日自律生成され、5層検疫（著作権・他社IPブラックリスト検疫、三姉妹の正体秘匿、機密・パス遮断、スクリプト無害化）を通過した最新エピソードのみを自動追加しています。
+      </blockquote>
+      <div class="location-list">
+        <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--emerald-astral);">
+          <div class="loc-title">
+            <span>🌌 【並行世界観測：Tower_06】 📜 並行世界タワー06：踏破航海日誌（Act 4完結：第001階〜第025階・一時撤退凱旋）</span>
+            <span class="loc-code">自動更新: 2026-11-15 05:01 [検疫合格]</span>
+          </div>
+          <div class="loc-desc" style="color: #d8cbb8; font-size: 0.9rem;">
+            - 【第025階：落葉の古廟・北翼ムーンゲート星見広場（大到達！）】 - 古代の石造り円形神殿と星見盤が静かに回転する聖域へ到達！ - 広場中央に鎮座する青白い『月齢転移門（北翼ムーンゲート）』の守護石盤に触れ、見事『第025階・踏破刻印証（真鍮ペンダント）』の認証を獲得！ - 決断の背景: - 現在の所持物資：水 0.8L、食料 1日分、解毒薬 残り1本、速乾モルタル（完全枯渇）。 - 第026階以降は『浸食水門の絡繰り水路』および『霜氷の裂罅回廊』が待ち受けており、水流と氷結の複合ハザー……
+          </div>
+        </div>
+        <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--gold-bright);">
+          <div class="loc-title">
+            <span>📜 🏛️ 第022階：菌糸螺旋の沈黙庭園と幻光胞子回廊 // 『熱泥の靴底と、蒸気孔のほくほく塩芋』</span>
+            <span class="loc-code">観測日時: 2026-11-15 11:02 [検疫合格]</span>
+          </div>
+          <div class="loc-desc" style="color: var(--emerald-astral); font-size: 0.86rem; margin-bottom: 6px;">
+            🧭 新規開拓支線：黒曜石の熱泥回廊と蒸気孔テラス（Obsidian Sludge &amp; Steam Terrace）
+          </div>
+          <div class="loc-desc" style="margin-bottom: 8px; font-size: 0.9rem;">
+            本層の西側断層には、第021階の翡翠温泉源泉から漏れ出た高温の鉱泉と地下蒸気が黒曜石の亀裂を伝って噴き出す『熱泥回廊』が広がる。白銀の菌糸は地熱を嫌って天井高くに退行しているが、足元は沸騰する鉱泥がボコッ、ボコッと鈍い音を立て、滑らかな黒曜石の岩棚の至るところにある『蒸気孔（スチーム・ベント）』から周期的に白い蒸気が噴出する。靴底の膠（にかわ）を溶かす熱気と硫黄臭に満ちているが、この蒸気孔は冒険者たちにとって最高の「無煙調理場」かつ「湿布休憩所」として重宝されている。回廊の最奥、蒸気煙が渦巻く岩壁の窪みには、湯気の奥に鎮座する『湯守狐神オタマの素焼き小祠』がひっそりと祀られている。
+          </div>
+          <div class="loc-desc" style="color: #d8cbb8; font-style: italic; font-size: 0.88rem; border-top: 1px dashed #3d3127; padding-top: 6px;">
+            「――ボコッ、ボコボコッ……シュウウウウウッ！ 黒曜石の床面から立ち上る地熱が、分厚い地下の冷気を押し返していた。 第022階の主回廊を覆うあの青白い幻光茸と白銀の菌糸は、この西側断層には一本も生えていない。菌類どもが嫌悪する高熱の鉱泉蒸気が、黒い岩肌の割れ目から白い龍のように吹き上がっているからだ。 「あっつ！ 熱いニャ！ ベルンハルト、足の裏がフライパンの上のソーセージみたいになってるニャ！」 猫耳をペタリと倒したティオが、片足立ちでピョンピョン跳ねながら悲鳴を上げた。」
+          </div>
+        </div>
+        <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--gold-bright);">
+          <div class="loc-title">
+            <span>📜 🗼 第024階『紅葉に染まった神秘の森と星角獣の追跡路』 // 『胞子の雨と、鉄フライパンの焼きキノコ』</span>
+            <span class="loc-code">観測日時: 2026-11-15 03:01 [検疫合格]</span>
+          </div>
+          <div class="loc-desc" style="color: var(--emerald-astral); font-size: 0.86rem; margin-bottom: 6px;">
+            🧭 新規開拓支線：『菌糸天蓋の胞子大瀑布と秋露小神祠』
+          </div>
+          <div class="loc-desc" style="margin-bottom: 8px; font-size: 0.9rem;">
+            本層の紅葉林の北東、冷涼な秋風が霧となって滞留する玄武岩の谷間に広がる深部支線エリア。
+          </div>
+          <div class="loc-desc" style="color: #d8cbb8; font-style: italic; font-size: 0.88rem; border-top: 1px dashed #3d3127; padding-top: 6px;">
+            「「ぶぇっくしょん！ ゲホッ、ゴホッ！ なんだこの煙みたいな粉はぁ！？」 熊人族の大槌戦士ダンが、鼻を真っ赤にして盛大なくしゃみを放った。 紅葉の森を抜けて北東の谷間へと踏み込んだ泥這い小隊の頭上には、見渡す限りの巨大な発光傘茸が重なり合い、その隙間から豪快な大瀑布が轟音を立てていた。 そして、滝の飛沫とともに、傘茸のひだから無数の胞子が、まるで濃密な霧雨のようにサラサラ……と降り注いでいた。 「ダン、大声を出すと胞子を吸い込んじゃうわ！ 濡れ手ぬぐいで鼻を覆いなさい！」」
+          </div>
+        </div>
+        <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--gold-bright);">
+          <div class="loc-title">
+            <span>📜 🏛️ 第017階：古代巨樹の洞道と螢石の夜想水脈 // 水平開拓記録</span>
+            <span class="loc-code">観測日時: 2026-11-14 19:01 [検疫合格]</span>
+          </div>
+          <div class="loc-desc" style="color: var(--emerald-astral); font-size: 0.86rem; margin-bottom: 6px;">
+            🧭 新規開拓支線：『螢光水芹の冷涼テラスと清冽水磐小神祠』
+          </div>
+          <div class="loc-desc" style="margin-bottom: 8px; font-size: 0.9rem;">
+            本層の主水路（洞道運河）から東へ分岐した、巨樹の空洞根の隙間から冷涼な天然軟水が滾々と湧き出る段々畑状のテラス。
+          </div>
+          <div class="loc-desc" style="color: #d8cbb8; font-style: italic; font-size: 0.88rem; border-top: 1px dashed #3d3127; padding-top: 6px;">
+            「」
+          </div>
+        </div>
+        <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--gold-bright);">
+          <div class="loc-title">
+            <span>📜 ⚙️ 第27階：万年錆の歯車回廊と絡繰り温室 // 『酒樽アーマーと、歯車温室の蒸しカブ』</span>
+            <span class="loc-code">観測日時: 2026-11-14 11:01 [検疫合格]</span>
+          </div>
+          <div class="loc-desc" style="color: var(--emerald-astral); font-size: 0.86rem; margin-bottom: 6px;">
+            🧭 新規開拓支線：『万年錆の主軸水門室と歯車小神祠』
+          </div>
+          <div class="loc-desc" style="margin-bottom: 8px; font-size: 0.9rem;">
+            本層の西側水耕テラスから、巨大な蒸気配管の束に沿ってさらに奥深くへと進んだ先、かつて塔全体の給排水と歯車駆動を統括していたとされる半円ドーム状の主軸室。
+          </div>
+          <div class="loc-desc" style="color: #d8cbb8; font-style: italic; font-size: 0.88rem; border-top: 1px dashed #3d3127; padding-top: 6px;">
+            「「すっげえええええっ！ 見てよキップ、ロッティ！ 天井も床も、ぜーんぶ歯車だぞ！」 カシュン、コト……カシュン、コト……。 重厚な真鍮の駆動音と、温かい機械油の芳香が立ち込める第027階の回廊。 少年戦士パスカルは、胸に着けた『酒樽の底板胸当て』をカポカポと鳴らしながら、目を輝かせて駆け出していた。 「ちょっとパスカル、走らないでよ！ 羊皮紙の地図にインクが跳ねちゃうだろ！」」
+          </div>
+        </div>
+        <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--gold-bright);">
+          <div class="loc-title">
+            <span>📜 🏛️ 第019階：鏡喰いの回廊と虚像の残響迷宮 // 『曇り銅鏡の道標と、塩イモリ麦粥』</span>
+            <span class="loc-code">観測日時: 2026-11-14 08:24 [検疫合格]</span>
+          </div>
+          <div class="loc-desc" style="color: var(--emerald-astral); font-size: 0.86rem; margin-bottom: 6px;">
+            🧭 新規開拓支線：『影祓いの磨き銅鏡テラスと鏡面小神祠』
+          </div>
+          <div class="loc-desc" style="margin-bottom: 8px; font-size: 0.9rem;">
+            本層の主通路（合わせ鏡の交差回廊）から南側の黒曜石断層を迂回した先、光を乱反射させない鈍い白雲母と微細な結晶砂に包まれた天然のドーム状テラス。
+          </div>
+          <div class="loc-desc" style="color: #d8cbb8; font-style: italic; font-size: 0.88rem; border-top: 1px dashed #3d3127; padding-top: 6px;">
+            「「クソがッ！　どいつもこいつも、俺のドワーフ髭を真似しやがって！」 ガギィィィンッ！ ブラムの構えた真鍮大盾が、漆黒の影の爪を真正面から跳ね飛ばした。 重い金属音が鏡面の壁に反響し、幾重にも重なって耳朶を打つ。 だが、衝撃を受け止めたブラムの両足は、磨き抜かれた白水晶の床の上でツルリと滑り、半歩後退を余儀なくされた。」
+          </div>
+        </div>
+        <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--gold-bright);">
+          <div class="loc-title">
+            <span>📜 🕰️ 第030階：狂時計の螺旋庭園と真鍮の時鳥 // 『遅延場のヤカンと、胃痛に沁みるカモミール』</span>
+            <span class="loc-code">観測日時: 2026-11-13 03:03 [検疫合格]</span>
+          </div>
+          <div class="loc-desc" style="color: var(--emerald-astral); font-size: 0.86rem; margin-bottom: 6px;">
+            🧭 新規開拓支線：『絡繰り時鐘の裏水路テラスと健胃の聖水小祠』
+          </div>
+          <div class="loc-desc" style="margin-bottom: 8px; font-size: 0.9rem;">
+            本層の螺旋階段を支える巨大真鍮歯車群の真裏に位置する、冷却用伏流水とオイル排水が流れる静かな水路テラス。
+          </div>
+          <div class="loc-desc" style="color: #d8cbb8; font-style: italic; font-size: 0.88rem; border-top: 1px dashed #3d3127; padding-top: 6px;">
+            「カチ……コチ……カチカチカチッ。 「……ううっ、主よ……。なぜこの階層は、歩くたびに秒針の音が胃壁に直接響くのでしょうか……キリキリと、まるで針で刺されるように痛む……」 第030階の薄暗い真鍮回廊。高位僧侶のザビエルは、銀の聖印を握りしめながら、もう片方の手で胃のあたりを強く押さえて脂汗を浮かべていた。 そのすぐ前を、カツカツと小気味よい足音を立てて進むのは、エルフの前線錬金術師ユーナ・ヴェイルだ。 「気のせいです、ザビエル。それは音波のせいではなく、あなたが朝食の冷えた干し肉を咀嚼もせずに飲み込んだことによる単純な消化不良です」」
+          </div>
+        </div>
+        <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--gold-bright);">
+          <div class="loc-title">
+            <span>📜 🏛️ 第018階：蜂巣の晶華回廊と刺針の共鳴空洞 // 『特売ヤシ油の丸盾ボブスレーと、結晶針蜜パン』</span>
+            <span class="loc-code">観測日時: 2026-11-12 19:03 [検疫合格]</span>
+          </div>
+          <div class="loc-desc" style="color: var(--emerald-astral); font-size: 0.86rem; margin-bottom: 6px;">
+            🧭 新規開拓支線：『白晶華の裏巣房テラスと蜂鳴避難窪地』
+          </div>
+          <div class="loc-desc" style="margin-bottom: 8px; font-size: 0.9rem;">
+            本層の主坑道から分岐した、晶華蜂たちが冬眠と蜜の熟成に使う急斜面の裏巣房領域。
+          </div>
+          <div class="loc-desc" style="color: #d8cbb8; font-style: italic; font-size: 0.88rem; border-top: 1px dashed #3d3127; padding-top: 6px;">
+            「ヴヴヴヴヴヴ……ッ！ 「おいラピータ！　跳ね兎亭の掲示板にあった『第018階の晶華針蜜、小瓶一本で銀貨八枚買い取り』って話、本当なんだろうな！？」 白晶華の六角柱がびっしりと立ち並ぶ急傾斜の岩棚で、トーラはトネリコの杖を岩の隙間に突き立てながら叫んだ。 背後では、兎耳をピンと逆立てたラピータが、大きなキャンバス地の買い物鞄を両手で抱きしめていた。 「本当よ！　ギルドの調合士ギルドが全量買い上げですって！　この空き瓶三本に蜜を詰めて帰れば、トネリコ堂の日歩の借金が今月分ぜんぶチャラになるのよ！」」
+          </div>
+        </div>
+        <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--gold-bright);">
+          <div class="loc-title">
+            <span>📜 🌧️ 第015階：酸性雨の巨葉天蓋と腐毒の泥濘溝 // 『酸性雨のフライパン傘と、湿原ガエルの香草焼き』</span>
+            <span class="loc-code">観測日時: 2026-11-12 11:02 [検疫合格]</span>
+          </div>
+          <div class="loc-desc" style="color: var(--emerald-astral); font-size: 0.86rem; margin-bottom: 6px;">
+            🧭 新規開拓支線：『巨葉の雨宿り岩棚と鍛冶神グンドルの錆鉄祠』
+          </div>
+          <div class="loc-desc" style="margin-bottom: 8px; font-size: 0.9rem;">
+            第015階の泥濘溝を南西へと進んだ、巨樹の太い支根が天然の庇（ひさし）を形成している高台の岩棚エリア。
+          </div>
+          <div class="loc-desc" style="color: #d8cbb8; font-style: italic; font-size: 0.88rem; border-top: 1px dashed #3d3127; padding-top: 6px;">
+            「ボタボタボタッ……ジュウウゥッ……。 「うわぁっ！　隊長、頭上のシダの葉から落ちてくる雨粒、服に当たるとジュウジュウ鳴ってますよ！」 頭上に掲げた鉄フライパンに大粒の雨水が直撃するたび、ピップはビクッと肩を跳ね上げた。 第015階の泥濘湿原。上空を覆い尽くす巨大シダの天蓋から滴り落ちる酸性雨は、革の合羽すらじわじわと溶かす希硫酸のシャワーだった。 パカッ、パカッ、パカッ。」
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- AUTONOMOUS_CHRONICLE_END -->
+  
+  </main>
+
+  <footer>
+    <div>⚔️ [LAGRANGE TOWER OFFICIAL CHRONICLES] // MULTI-PAGE GRAND ARCHIVE // LAST BUILD: 2026-11-15 14:05 ⚔️</div>
+    <div>CURATED BY THE FORTRESS ARCHIVE (5-LAYER IP &amp; SECURITY QUARANTINED). ALL RIGHTS RESERVED.</div>
+  </footer>
+
+  <script>
+    function switchLog(logId, btn) {
+      document.querySelectorAll('article.prose-container').forEach(a => a.style.display = 'none');
+      document.querySelectorAll('.log-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(logId).style.display = 'block';
+      btn.classList.add('active');
+    }
+    function filterChars(tier, btn) {
+      document.querySelectorAll('.char-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.char-entry').forEach(entry => {
+        entry.style.display = (tier === 'all' || entry.getAttribute('data-tier') === tier) ? 'block' : 'none';
+      });
+    }
+    function filterItems(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.item-entry').forEach(entry => {
+        entry.style.display = (cat === 'all' || entry.getAttribute('data-category') === cat) ? 'block' : 'none';
+      });
+    }
+    function filterZones(zone, btn) {
+      document.querySelectorAll('.zone-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.floor-entry').forEach(entry => {
+        entry.style.display = (zone === 'all' || entry.getAttribute('data-zone') === zone) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
