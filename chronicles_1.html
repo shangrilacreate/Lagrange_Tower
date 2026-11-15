@@ -1,0 +1,2470 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>物語全集 第1 巻（第001〜010 階） // 天頂迷宮ラグランジュの塔 公式博物誌</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.18rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .anya-stamp {
+      border: 1px solid var(--crimson-seal);
+      background: rgba(168, 56, 56, 0.12);
+      padding: 14px 18px;
+      border-radius: 3px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #f2dada;
+    }
+    .anya-stamp-title {
+      color: #ff9999;
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 0.94rem;
+    }
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 22px 0;
+      font-size: 0.9rem;
+    }
+    .book-table th, .book-table td {
+      border: 1px solid var(--border-brass);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .book-table th {
+      background: #282018;
+      color: var(--gold-bright);
+    }
+    .book-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // OFFICIAL GUILD ARCHIVE ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔 観測年代記</h1>
+    <div class="subtitle">
+      天を突く全100階層の神代遺構。配管の蒸気で芋を蒸し、靴底の減りを気にしながら今日を生き延びる冒険者たちの群像記録と博物誌。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 総合案内所 (Index)</a>
+      <a href="chronicles.html" class="tab-btn">📖 物語本編</a>
+      <a href="observations.html" class="tab-btn">📡 自律観測ログ</a>
+      <a href="library.html" class="tab-btn">📚 迷宮内専門書庫</a>
+      <a href="roster.html" class="tab-btn">👥 人物・パーティ名鑑</a>
+      <a href="lexicon.html" class="tab-btn">🎒 アイテム・奇品辞典</a>
+      <a href="atlas.html" class="tab-btn">🗺️ 階層・ロケーション図鑑</a>
+      <a href="codex.html" class="tab-btn">⚖️ 世界観・塔の法則</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+    <div id="top" class="log-selector" style="justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+      <span class="log-btn" style="opacity:0.4; cursor:default;">◀ 最初の巻</span>
+      <a href="chronicles.html" class="log-btn">📖 物語目次へ</a>
+      <a href="chronicles_2.html" class="log-btn">次の巻（第2巻） ▶</a>
+    </div>
+    <section class="prose-container" style="margin-bottom: 22px;">
+      <h2>📚 第1 巻（第001〜010 階） 収録階層目次</h2>
+      <ul style="line-height:1.9; margin-left:18px;">
+<li><a href="#floor-001" style="color:var(--gold-bright);">🚪 第001階：旅立ちの円形大広場と二重の宿場街（The Grand Arrival Plaza &amp; Divided Boroughs）</a></li>
+<li><a href="#floor-002" style="color:var(--gold-bright);">⛏️ 第002階：黄鉄鉱の廃鉱山と石炭地下回廊（Abandoned Pyrite Mines &amp; Coal Galleries）</a></li>
+<li><a href="#floor-003" style="color:var(--gold-bright);">🧭 第003階：黄銅の昇降機と黒泥の浸透溜まり（Brass Hoist &amp; Black Mire Percolation Basin）</a></li>
+<li><a href="#floor-004" style="color:var(--gold-bright);">⛏️ 第004階：粗粒石灰岩の採石坑と白濁沈殿池（Limestone Quarry &amp; Sludge Basin）</a></li>
+<li><a href="#floor-005" style="color:var(--gold-bright);">💀 第005階：骨灰の蝕白回廊と白銀の鎮魂祭壇（The Ash-White Corridor &amp; Silver Reliquary）</a></li>
+<li><a href="#floor-006" style="color:var(--gold-bright);">🏜️ 第006階：乾いた塩砂の狭窄路と鳴き砂の地下空洞（Singing Sand Caverns &amp; Salt Road）</a></li>
+<li><a href="#floor-007" style="color:var(--gold-bright);">🏜️ 第007階：風成砂丘の傾斜坑と硝子化回廊（Aeolian Dunes Incline &amp; Vitrified Galleries）</a></li>
+<li><a href="#floor-008" style="color:var(--gold-bright);">🐟 第08階：幻影砂漠のオアシス市場と青魚の神殿（Oasis &amp; Bluefish Shrine）</a> <span style="color:var(--gold-bright); font-size:0.8rem;">[Act 2収録]</span></li>
+<li><a href="#floor-009" style="color:var(--gold-bright);">🌊 第009階：伏流水の段丘池と揚水水車の地下放水路（Subterranean Spillway &amp; Terrace Basins）</a> <span style="color:var(--gold-bright); font-size:0.8rem;">[Act 2収録]</span></li>
+<li><a href="#floor-010" style="color:var(--gold-bright);">🏛️ 第010階：蒸気配管の温室段丘と中継休憩所（Floor 010: Steam Pipe Terrace &amp; Waystation）</a></li>
+      </ul>
+    </section>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<blockquote>
+<strong>階層公式BGM（Suno Master Edition）</strong>: 『トネリコ堂の朝』<br>
+</blockquote>
+<h2 id="floor-001" style="margin-top:0;">🚪 第001階：旅立ちの円形大広場と二重の宿場街（The Grand Arrival Plaza &amp; Divided Boroughs）</h2>
+<blockquote>
+<strong>親ノート</strong>: 00_Lagrange_Tower_MOC<br>
+<strong>観測日</strong>: 2026-09-19（Cron 8 定時開拓・通算第31フロア・グランドロビー解禁）<br>
+<strong>環境</strong>: 塔の天蓋へ続く巨塔の基部 / 大理石の特権大聖堂と泥まみれのスラム長屋 / 漂う安酒と香炉の匂い、そして武具の錆の薫り<br>
+<strong>推奨BGM</strong>: Lagrange_Tower_Soundtrack Track_001（Town_of_Beginnings_8bit）<br>
+<strong>ナラティブモード</strong>: <strong>③【平熱・日常型】（生活者リアリズム・機材調達の知恵）</strong><br>
+<strong>世界観連携</strong>: 『ラグランジュタワー』世界観・システム仕様のVault記録（表神殿 vs 裏神殿・資本主義の二重支配）<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🏛️ フロア・カルテ（Floor Overview）</h3>
+<p>天を貫く巨大迷宮「ラグランジュの塔」の最下層にして、地上世界と迷宮を繋ぐ唯一の玄関口。</p>
+<p>直径数キロメートルに及ぶ巨大な円形空間は、中央を走る巨大な防壁によって<strong>「二つの完全に分断された世界（光と影）」</strong>へと引き裂かれている。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. サンライト特権区（Sunlight District / 貴族・表神殿支配区）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li>塔の正面正門ゲートを完全に私有地化して封鎖している広大な特権エリア。</li>
+<li>黄金と大理石で築かれた『表の大神殿（Sunlight Cathedral）』が威容を誇り、王都貴族の別邸や特権商人ギルドが立ち並ぶ。</li>
+<li>塔の上層から上がる星辰エネルギーやレアメタルの関税・通行ライセンス料で肥え太り、金ピカの馬車と私設騎士団が行き交う。</li>
+<li>表神殿の祭壇には、金を払ったエリートのみが利用できる「即時蘇生ドック（ホットスタンバイ）」が鎮座するが、死の因果を踏み倒した代償として<strong>彼らのカルマは真っ黒に汚濁</strong>している。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. シャドウ外縁街・地下カタコンベ（Shadow District / 草の根スラム街）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li>正門を通れない貧乏冒険者、食い詰めたルーキー、異種族（兎人族・犬人族・猫耳族など）がひしめく泥臭い下町。</li>
+<li>冒険者たちは正門ではなく、崩れた城壁の隙間や「荷搬通用口」から第002階の廃坑へと潜っていく。</li>
+<li>大衆酒場『跳ね兎亭』、怪しげな質屋、そして地下深くのカタコンベには、追放されたシルバースプリング一族が守る『裏神殿』が存在する。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">3. 第一中央宿場銀行と銀行前広場（Central Bank &amp; Bank-Front Plaza）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>位置</strong>: シャドウ外縁街とサンライト特権区の境界、大衆酒場『跳ね兎亭』と『トネリコ堂』の正面に鎮座する巨石造りの大銀行。</li>
+<li><strong>警備体制</strong>: 石造ゴーレム2体と神殿騎士団による「治安維持結界（Guard Zone）」。スリや辻斬り、私闘は物理的に即時鎮圧される塔内絶対の安全地帯。</li>
+<li><strong>中核機能（冒険者の生命線）</strong>:</li>
+</ul>
+<p>1. <strong>レアドロップの安全保管庫（Safety Deposit Vault）</strong>: 街の露店では現金（キャッシュ）が足りず即座に適正換金できない高額素材（古代樹液、宝珠、古代巻物等）を安全に保管。全滅時の紛失・全損を完全に防ぐ。</p>
+<p>2. <strong>蘇生積立口座（Resurrection Direct Debit）</strong>: 裏神殿で全滅した際、口座に残高（銀貨12枚〜）があれば自動で精算され、日歩利息の借金証文を切られずに社会復帰できる。</p>
+<p>3. <strong>予備装備ボックス（Personal Vault）</strong>: 「Bank!」と叫んで開ける個人ロッカー。靴を脱ぎ捨てて逃げ延びたティオや、剣を砕かれたスティンが、予備の靴や鉈を取り出して即座に現場復帰する。</p>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>銀行前（Bank前）カルチャー</strong>: 銀行前の石段広場は、塔内最大の情報・交易ハブ。レア品の相対取引を求める露店、辻ヒールを配る見習い僧侶、パーティー募集の冒険者たちで24時間熱気にあふれている。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">4. 迷宮最古の秘匿領域：神殿裏の無人の星光祭壇（The Silent Altar of Redemption）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>位置</strong>: サンライト特権大聖堂の裏手、崩れた古代列柱と生い茂る蔓草に覆われた、神官すら立ち入らない完全な盲点。</li>
+<li><strong>特性</strong>: 神官も番人も存在しない。金も祈祷も受け付けない、ただ風と夜露だけが支配する無人の古代石造祭壇。</li>
+<li><strong>神秘の奇跡（魂の救済覚醒点）</strong>:</li>
+<li>ソウルプリズン（魂の牢獄）において、連続数日間の因果鉱石採掘と悪しきソウルの浄化という過酷な苦行を完遂した高潔な魂が、<strong>神官の蘇生儀式を一切介さず、ペナルティゼロ（天寿1割剥奪・身体年齢加速なし！）で現世へ戻る唯一の降臨点</strong>。</li>
+<li>真夜中または黎明、空から音もなく一筋の青白い星光が降り注ぎ、無傷の肉体が祭壇の上にふっと現れ、静かに息を吹き返す。</li>
+<li>目覚めた者は誰にも見とがめられることなく祭壇を降り、朝靄のシャドウ外縁街へと足早に消えていく。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">5. 記銘列石の廃庭（The Cenotaph Cloister / 墓標列石群と意志の継承）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>位置</strong>: シャドウ外縁街の北東の隅、崩れかけた古代神殿の廃墟が広がる、青白い霧の立ち込める広大な静寂の敷地。</li>
+<li><strong>特性</strong>: 人間が彫ったものではなく、冒険者が命を落とした夜、あるいは天寿を全うした瞬間に、<strong>地下から新しい石柱が音もなく結晶隆起し、見えざる神の火花によって文字が削り出される自律記銘領域</strong>。数千本に及ぶ黒曜石や星光石の石柱がまるで林のように整然と立ち並ぶ。</li>
+<li><strong>ゾーン構造と機能</strong>:</li>
+</ul>
+<p>1. <strong>階層別の列石群と「無言のハザードマップ」</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>低層工区（第001〜010階）、中層自然区（第011〜020階）、深層遷移区（第021〜025階〜）と、散った階層ごとに石柱が分類されている。</li>
+<li>「石炭ガス誤飲による窒息」「琥珀樹液癒着による蜂毒針乱射死」「カンテラ全開による影喰い急襲」など、泥臭い凡人たちのリアルな死因が克明に刻まれており、探索前の冒険者がランタン片手に羊皮紙へメモを取る「実戦の図書館」として機能する。</li>
+</ul>
+<p>2. <strong>霧の奥の無銘石碑群</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>廃庭の最深部には、これから散る未来の冒険者のために磨き上げられた、滑らかで冷たい石柱が延々と立ち並んでおり、「お前たちもどうせここに名を刻むのだ」という迷宮の底知れぬ威圧感を与える。</li>
+</ul>
+<p>3. <strong>濁業の黒鉄列石</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>カルマが濁り切ってソウルプリズンへ永久幽閉された悪人の石碑群。触れると霜が降りるほど冷たく、文字の周囲が煤けている。供物を捧げる者は誰もいない。</li>
+</ul>
+<p>4. <strong>中央巨樹の円環：星還の霊柱（The Pillar of Lagrange）</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>第025階で散った老兵グスタフのように、仲間を護り抜いて全ての天寿を使い果たした誇り高き魂が刻まれる大霊柱。黄金と星辰の光を帯びて微かに発光し、触れると日だまりのように温かい。</li>
+<li><strong>【意志の継承の儀礼（The Inheritance of Wills Rite）】</strong>:</li>
+<li>中央の霊柱で黄金に輝く名前に手をかざすことで、散っていった者が磨き上げた魂の知恵を、次代へ<strong>「1スキル限定」</strong>で継承できる神聖な伝承法。</li>
+<li><strong>絶対原則（伝承先は死者自身が選ぶ）</strong>: 誰にでも拾える野良スキルではなく、「死者自身が納得し、託した相手」にしか文字は光らない。</li>
+<li><strong>ルート①（託された仲間）</strong>: 老兵グスタフの【灰髭の不動盾】を継承し、次代の盾となった見習い騎士ミラベルのように、生前に命を託された仲間がその遺志を受け継ぐ。</li>
+<li><strong>ルート②（魂の共鳴 / 孤独な死者からの天の指名）</strong>: 生前ソロで仲間がいなかった職人や斥候の文字が、ある日突然、一見無関係に見える新米冒険者にだけ光り輝く奇跡。天頂の星辰から地上を見つめる死者が、「かつての自分と同じように不器用に泥を落とし、同じ失敗に涙する若者」を見初め、自らの意志で指名した瞬間にのみ発動する。</li>
+<li>全能化・インフレを防ぐため、受け継がれるのは「生活実用ツリー」または「生存ツリー」の泥臭い知恵1枠のみに厳格に制限されている。</li>
+<li><em>(※数十年後の転生・キャラリメイクは、小説正史の時間軸を維持するため正史からは排除し、将来のゲーム化メタ仕様として扱う)</em></li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">⚔️ 迷宮の兵站：第001階の装備レンタル屋エコシステム</h3>
+<p>死んだら装備を全ロストする過酷な塔において、丸腰で蘇生した者や無一文の初心者が最初に駆け込むのが、スラム街の路地に軒を連ねる「装備レンタル屋」である。</p>
+<p>| 店舗名 | 店主・気風 | 取扱商品・特徴 | 料金体系・契約条件 |</p>
+<p>| :--- | :--- | :--- | :--- |</p>
+<p>| <strong>トネリコ堂</strong>&lt;br&gt;<em>(Ash &amp; Oak Outfitters)</em> | <strong>バルカス爺さん</strong>&lt;br&gt;（元Rank D冒険者・頑固な好々爺） | <strong>「安全第一の最低限基本装備」</strong>&lt;br&gt;手入れされた樫の棍棒、鉈（ナタ）、鍋蓋盾、厚手の革靴、穴のない麻フード。派手さはないが絶対に裏切らない堅実品。 | <strong>超良心的・低額定額制</strong>&lt;br&gt;1日銅貨5〜10枚。&lt;br&gt;破損しても怒鳴られるだけで法外な違約金は取らない。&lt;br&gt;愛着が湧いた品は差額で<strong>「買い上げ（買取）」</strong>可能。 |</p>
+<p>| <strong>黒猫質店</strong>&lt;br&gt;<em>(The Black Cat Vault)</em> | <strong>モルグ</strong>&lt;br&gt;（抜け目のないモグラ獣人商人） | <strong>「深層回収・遺品流用の掘り出し物」</strong>&lt;br&gt;昨日裏神殿送りになった者の遺品。血痕や煤が残るが、<strong>「序盤からこんな魔導短剣や耐火革手袋が！？」</strong>という上級品が並ぶ。 | <strong>ハイリスク・高額違約金制</strong>&lt;br&gt;基本料は安いが、<strong>紛失・全滅ロスト時の違約金が通常価格の3倍</strong>。&lt;br&gt;支払えない場合は裏神殿の借金に上乗せされ、債務奴隷化する。 |</p>
+<p>| <strong>聖光武具院</strong>&lt;br&gt;<em>(Sunlight Armory)</em> | 教団御用達商人 | <strong>「金ピカの装飾甲冑・儀礼武具」</strong>&lt;br&gt;貴族やエリート騎士専用。一般冒険者は立ち入りすら拒絶される。 | 桁外れの金貨レンタル（富豪クランの経費落とし）。 |</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📜 迷宮群像劇：短編オムニバス（第001階編）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『研ぎ直した鉈と、血痕のついた魔導革手袋』</h4>
+<p><strong>ナラティブモード</strong>: <strong>③【平熱・日常型】（生活者リアリズム・機材調達の知恵）</strong></p>
+<p><strong>登場人物</strong>: トーラ（杖突きの軽戦士）、ラピータ（買い物鞄の兎人僧侶）、バルカス爺さん（トネリコ堂店主）</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p>#### 1. スラムの朝と、ショーウィンドウの甘い罠</p>
+<p>チュン、チュン、と第001階の湿った路地に小鳥の鳴き声が響いていた。</p>
+<p>空を見上げれば、遥かな高みにそびえる天蓋の白亜の壁から、サンライト特権区の大聖堂の鐘が「カァン、カァン」と清らかに鳴り響いている。</p>
+<p>「……けっ、毎朝毎朝、よくもあんな偽善の鐘を鳴らせるもんだよ」</p>
+<p>トーラは煤けたトネリコの杖で石畳を小突いた。</p>
+<p>昨日の第062階の爆発事故で革鎧はボロボロ、右足の包帯からは安酒の消毒液の匂いがツンと漂っている。</p>
+<p>その隣を歩くラピータは、内側を綺麗に拭いて乾かした布製の買い物鞄をぎゅっと抱きしめていた。</p>
+<p>二人の全財産は、あの爆縮トラップの残骸から偶然回収した星銀鋼の金具をギルドで換金した、<strong>銀貨四枚と銅貨五十枚</strong>。</p>
+<p>裏神殿に背負った銀貨八十枚のツケ（日歩三厘）を考えれば、完全に赤字転落の崖っぷちだった。</p>
+<p>「文句を言っても始まりませんよ、トーラさん。とにかく、今日の探索で日銭を稼がないと、利息だけで首が回らなくなります。……まずは武器と靴の調達です」</p>
+<p>二人がやってきたのは、スラム街の細い裏通り『ガラクタ横丁』。</p>
+<p>その一角にある、紫の天幕を掲げた小ぎれいな店――『黒猫質店』のショーウィンドウの前で、トーラがピタリと足を止めた。</p>
+<p>「ちょ、ちょっと見てよラピータ！ あれ！！」</p>
+<p>ガラスケースの中に、妖しく紫色の魔力を放つ、美しい細工の革手袋が飾られていた。</p>
+<p>タグには『第042階回収品・耐火蜥蜴の魔導革手袋：筋力＋15、火炎耐性小』と書かれている。</p>
+<p>「すごい……！ あたしの手にもぴったりサイズだよ！ これさえあれば、第002階のコウモリやネズミなんて一撃で張り倒せるし、火打ち石がなくても火が起こせる！ レンタル料は……『1日・銀貨一枚』？ 安いじゃん！ これ借りようよ！」</p>
+<p>トーラが目を輝かせて店の真鍮のドアノブに手をかけた瞬間。</p>
+<p>背後から、ガシッと襟首を掴まれた。</p>
+<p>「うぐっ……な、何すんのさラピータ！」</p>
+<p>「トーラさん。値札の裏の、極小の文字を読んでください」</p>
+<p>ラピータが冷ややかに指差した。</p>
+<p>そこには、針先のような細い文字でこう記されていた。</p>
+<p>『※注意：本品は第042階溶岩工房にて全滅した冒険者の遺品です。掌部分に微細な血痕あり。なお、迷宮内での紛失・未返却時は、<strong>違約金として金貨三十枚（銀貨三百枚相当）</strong>を一括請求いたします』</p>
+<p>「き……金貨三十枚ぇ！？」</p>
+<p>トーラは悲鳴をあげて手を引っ込めた。</p>
+<p>「言ったでしょう、こういう店は深層の死体回収屋から安く買い叩いた遺品を流して、初心者が死んでロストするのを待ってるんです。違約金で一生縛り付けるのが彼らの手口ですよ。昨日あれだけ痛い目を見たのに、まだ目が眩んでるんですか？」</p>
+<p>ラピータの長い兎耳が、あきれ果てたようにパタリと倒れた。</p>
+<p>「行きましょう。僕たちが行くべき場所は、あそこじゃありません」</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p>#### 2. トネリコ堂の頑固親父</p>
+<p>二人が向かったのは、横丁の突き当たりにある、年季の入った木の看板を掲げた小さな店――『トネリコ堂』だった。</p>
+<p>カランコロン、と乾いた鈴の音が鳴る。</p>
+<p>店内に漂うのは、手入れ用の油（アマニ油）と蜜蝋、そして削った木屑の清々しい匂いだった。</p>
+<p>壁一面に並んでいるのは、魔法の光など微塵も宿っていない、実直そのものの樫の棒、叩き直した鉄の鉈（ナタ）、頑丈な鍋蓋盾、そして分厚い革靴ばかり。</p>
+<p>「……いらっしゃい。なんだトーラ、また裏神殿で包帯巻かれてきたのか」</p>
+<p>カウンターの奥で、革エプロンをつけた白髪混じりの頑固そうな老人が、鉈の刃を砥石で研ぎながら顔を上げた。</p>
+<p>元Rank D冒険者の店主、バルカス爺さんだ。</p>
+<p>「うぅ……爺さん、相変わらず耳が早いね」</p>
+<p>「スラムの噂なんて半刻で回るわ。欲張って金ピカの箱を開けて爆死したそうだな。……死ななかっただけ儲けもんだが、道具はどうした？」</p>
+<p>「杖は先っぽが焦げて、靴底はゴムが剥がれちまった……。鉈もどっかに落としてきた」</p>
+<p>バルカス爺さんはフンと鼻を鳴らし、カウンターの下から手入れの行き届いた一本の鉈を取り出した。</p>
+<p>刃は黒錆でコーティングされ、研ぎ澄まされた刃先が鈍い光を放っている。柄には滑り止めの麻紐が固く巻き直されていた。</p>
+<p>「ほらよ。鉄の鉈だ。魔法なんぞかかっちゃいねえが、第002階の硬い石炭層を叩き割っても刃こぼれしねえように、焼き入れを二重にしてある。それと、お前の悪い足に合わせた、右足だけ靴底を五ミリ厚くした革ブーツだ。……二つ合わせて、<strong>日歩・銅貨十五枚</strong>でいい」</p>
+<p>「銅貨十五枚！？ 爺さん、そんなに安くて店が潰れないかい？」</p>
+<p>トーラが目を丸くする。</p>
+<p>「潰れるか馬鹿野郎。俺はな、お前らみたいな若いのが、見栄張って黒猫質店で魔法の手袋なんぞ借りて、借金で身売りされるのを見るのが反吐が出るだけだ。……道具ってのはな、自分の身の丈に合った頑丈なもんを、毎日手入れして使うのが一番死なねえんだよ」</p>
+<p>バルカス爺さんは無骨な手で、トーラの頭をぽんと小突いた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p>#### 3. レンタル鞄の卒業式</p>
+<p>その時、ずっと黙っていたラピータが、おずおずとカウンターに歩み寄った。</p>
+<p>そして、肩から提げたキャンバス地の買い物鞄を、愛おしそうに撫でながら切り出した。</p>
+<p>「あの……バルカスさん」</p>
+<p>「ん？ なんだ耳長坊主。お前にも何か貸してやるか？ 僧侶用の頑丈な木製ロッドなら銅貨五枚だぞ」</p>
+<p>「いえ、ロッドはいりません。……この鞄のことなんです」</p>
+<p>ラピータは鞄の底を見せた。</p>
+<p>「これ、僕が半年前にこの街へ来た日、バルカスさんの店で日歩銅貨一厘で借りたものですよね」</p>
+<p>「ああ、そうだったな。誰も借りねえような、ただの頑丈な帆布袋だ」</p>
+<p>「この半年間、毎日これを持って市場へ通って、薬草を仕入れて、昨日も卵を割って……内側を何度も洗って縫い直してたら、すっかり僕の肩に馴染んじゃったんです。……だから、もしよかったら、<strong>買い取らせていただけませんか？</strong>」</p>
+<p>ラピータは懐から、なけなしの銅貨三十枚を几帳面に並べた。</p>
+<p>バルカス爺さんは驚いたように目を丸くし、それから眼鏡を外して、くしゃくしゃの笑顔を浮かべた。</p>
+<p>「……へっ。半年前の貸出札の記録だと、この鞄の原価は銅貨四十枚だ。お前さんが半年間払ったレンタル代を引けば、残りはせいぜい銅貨十枚ってところだな」</p>
+<p>爺さんは並んだ銅貨の中から、十枚だけを自分の手元に引き寄せ、残りの二十枚をラピータの前へ押し戻した。</p>
+<p>「持って行きな、ラピータ。……一度も破かず、失くさず、そこまで大事に使ってくれたなら、そいつはもう『貸し出し品』じゃねえ。お前さんだけの、立派な<strong>相棒（マイギア）</strong>だ」</p>
+<p>「バルカスさん……！ ありがとうございます！」</p>
+<p>ラピータの兎耳が、嬉しさでピンと直立した。</p>
+<p>「さあ、商談成立だ。トーラ、お前も鉈を腰に差せ！ 今日は第002階の廃坑で、堅実に銅鉱石を掘って、日銭を稼いでくるんだぞ！」</p>
+<p>「うん！ いってきます、爺さん！」</p>
+<p>トーラは研ぎ直された鉈を腰に帯び、新しく足に馴染むブーツを踏みしめた。</p>
+<p>魔法の力もない、金ピカの装飾もない、ただ泥臭く手入れされた無骨な道具たち。</p>
+<p>だが、これこそが、資本の罠が張り巡らされた迷宮の街で、生活者たちが己の命を繋ぎ止めるための、最も確かな武器だった。</p>
+<p>二人は朝の光が差し込むガラクタ横丁を抜け、活気に満ちた円形広場の通用口へと、力強く歩み出していった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Recorded under Lagrange Tower Chronicles / Floor 001 Integration (Total 31 Floors Milestone).</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<blockquote>
+<strong>階層公式BGM（Suno Master Edition）</strong>: 『深地行進曲』<br>
+</blockquote>
+<h2 id="floor-002" style="margin-top:0;">⛏️ 第002階：黄鉄鉱の廃鉱山と石炭地下回廊（Abandoned Pyrite Mines &amp; Coal Galleries）</h2>
+<blockquote>
+<strong>階層番号</strong>: 第002階<br>
+<strong>環境バイオーム</strong>: 古代の坑道網・石炭層・低品位鉱床・崩落木組み支保工<br>
+<strong>踏破ステータス</strong>: 🟢 観測・生活開拓完了（通算第27フロア / Cron 8自律増築）<br>
+<strong>ナラティブ・モード</strong>: <strong>【③ 平熱・日常型（Mundane Daily Routine）】</strong>（戦闘なし・オチなし・キャンプ飯・靴と道具の手入れ）<br>
+<strong>主要登場人物</strong>: ガリク・アッシュウッド（元炭鉱夫 / 罠師）、泥這い小隊（ロルフ、ダン、ミリー、ペコ）<br>
+<strong>連動プロトコル</strong>: 00_Lagrange_Tower_MOC, Lagrange_Tower_Character_Codex（草の根冒険者名鑑）, Lagrange_Tower_Bestiary_Codex（第七大聖典）<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🌫️ 階層環境特性とハザード</h3>
+<p>第001階の旅立ちの円形広場から、地下へ続く崩落した螺旋階段を下った先に広がるのは、かつて古代文明が石炭と鉱石を掘り尽くして放棄した広大な坑道網である。</p>
+<p>天井には腐食した松材の支保工が辛うじて岩盤を支えており、常に地下水が滴る湿気と、石炭の微粉が混じった冷気が立ち込めている。</p>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>環境ハザード</strong>:</li>
+<li><strong>支保工の老朽化と小崩落</strong>: 強い衝撃波や大声の反響で、天井から小石や石炭塊がパラパラと崩れ落ちる。</li>
+<li><strong>カンテラ油の消費圧迫</strong>: 光の届かない完全な暗黒空間。松明は煙が坑道内に充満して窒息の危険があるため、真鍮カンテラ（油焚き）が必須だが、油代（銅貨10枚）が生活者の財布を圧迫する。</li>
+<li><strong>湿気と底冷え</strong>: 泥炭と地下水が混じった泥濘が床を覆い、薄底のブーツから容赦なく体温を奪う。</li>
+<li><strong>特産品・採取素材</strong>:</li>
+<li><strong>黄鉄鉱の塊（Pyrite Cluster / 愚者の金）</strong>: 金と見紛う真鍮色の硫化鉱石。金属としては脆いが、火打石の打ち金や安価な装身具の素材として銀貨1〜2枚で売れる。</li>
+<li><strong>低品位の銅鉱屑（Crude Copper Shards）</strong>: 岩肌にへばりつく薄い銅鉱の鉱脈。ツルハシで1日削って袋いっぱいに集めても銅貨20〜30枚程度にしかならないが、駆け出しの貴重な糧。</li>
+<li><strong>黒コウモリの薄皮（Cave Bat Leather）</strong>: 坑道天井に巣食う蝙蝠の皮。水を通さないため、革靴やマントの継ぎ当て布として重宝される。</li>
+<li><strong>生息する生物・脅威（UO的生態系ピラミッド）</strong>:</li>
+<li><strong>洞窟大コウモリ（Giant Cave Bat / Tier 1 一般野生動物）</strong>:</li>
+</ul>
+<p>翼長1メートルほどの蝙蝠。音に反応して群れで飛び交うが、肉と皮しか持たず、お金や魔石は絶対に落とさない。</p>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>坑道フナムシ（Mine Crawler / Tier 1 害虫）</strong>:</li>
+</ul>
+<p>石炭屑や腐木を食べる多足生物。無害だが靴の中に入り込むと非常に不快。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">👥 滞在冒険者カルテ（主要NPC）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. ガリク・アッシュウッド（Garrick Ashwood）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族 / 性別</strong>: Hum-an（人間） / 男性（34歳）</li>
+<li><strong>クラス</strong>: Miner-Scout（元炭鉱夫 / 罠師）｜ <strong>Rank D（総合値 348）</strong></li>
+<li><strong>主兵装</strong>: 研ぎ直した鍛鉄ツルハシ、作業用革手袋、厚手の麻マント</li>
+<li><strong>人物録</strong>:</li>
+</ul>
+<p>故郷の鉱山閉山に伴い、日銭を稼ぐため塔へ来た中年冒険者。正面戦闘は一切せず、崩落の危険がない安全な坑道を見分けてツルハシを振るう超慎重派。今まで一度も裏神殿送りになったことがないのが唯一の誇り。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. 『泥這い小隊（The Mud-Crawlers）』</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>ロルフ・ブラックソーン（Rolf Blackthorn）</strong>: 人間 / 男性（38歳） / 長槍兵・隊長｜ <strong>Rank C-（総合値 412）</strong></li>
+<li><strong>ダン・バークストーム（Dan Barkstorm）</strong>: 熊人族 / 男性（26歳） / 大槌戦士｜ <strong>Rank D+（総合値 395）</strong></li>
+<li><strong>ミリー・グリーンリーフ（Milly Greenleaf）</strong>: エルフ族 / 女性（19歳） / 見習い僧侶｜ <strong>Rank D（総合値 352）</strong></li>
+<li><strong>ペコ・バウンスフット（Peko Pouncefoot）</strong>: 猫耳族 / 女性（17歳） / スリング斥候｜ <strong>Rank D（総合値 341）</strong></li>
+<li><strong>現況</strong>:</li>
+</ul>
+<p>第004階でヒグマに突進されて槍を折られ、辛勝したものの満身創痍。武具の修理代と薬代を稼ぐため、比較的安全な第002階の廃坑で鉱石拾いに降りてきた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 短編オムニバス小説：『湿った坑道のカンテラと、干し芋のスープ』</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. ツルハシの反響と、石炭の匂い</h4>
+<p><em>カツン……カツン……カツン……。</em></p>
+<p>暗がりの中に、乾いた金属音が規則正しく響いていた。</p>
+<p>真鍮製の小さなカンテラが、岩肌の突起に掛けられ、頼りない橙色の光で周囲数歩をぼんやりと照らし出している。</p>
+<p>ガリク・アッシュウッドは、煤けた作業用革手袋で額の汗を拭い、息を吐いた。</p>
+<p>ツルハシの切っ先を岩盤の裂け目から引き抜くと、親指ほどの大きさをした赤黒い鉱石の欠片が、パラパラと泥の上に転がり落ちる。</p>
+<p>「……ふう。これでようやく、握り拳ひとつ分か」</p>
+<p>ガリクは腰をかがめ、拾い上げた鉱石の表面を親指でこすった。</p>
+<p>鈍い赤銅色の光沢。低品位の銅鉱石だ。</p>
+<p>これを麻袋に半分ほど詰めてギルドの換金所へ持ち込めば、銅貨25枚にはなる。</p>
+<p>跳ね兎亭の相部屋ベッドが1泊銅貨8枚、シチューと黒パンが銅貨10枚。残りの7枚は、カンテラに入れる鯨油の補充代に消える。</p>
+<p>「貯金なんてできやしねえな。……だが、裏神殿の冷たい石床で目を覚ますよりは、百倍マシだ」</p>
+<p>ガリクは独り言を呟き、麻袋の口を麻紐で固く縛った。</p>
+<p>その時、坑道の奥――湿気を含んだ暗闇の向こうから、ペタペタと泥を踏む不揃いな足音と、情けない話し声が近づいてきた。</p>
+<p>ガリクは素早く身を屈め、カンテラの芯を少し絞って光を小さくした。</p>
+<p>物音がしたらまず息を殺す。それが、この男が3年間一度も死なずに生きてきた鉄則だった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. 避難窪地の合流</h4>
+<p>「だーかーらー！ ダン、歩くたびに足を引きずるのやめてよ！ 泥が跳ねて私のローブの裾がドロドロなんだけど！」</p>
+<p>「ふごっ……悪ィって、ペコ。ヒグマに引っ掻かれた脛の肉がまだ引き攣るんだよ……腹も減ったし……」</p>
+<p>「ダン、あんまり大声を出すな。坑道の上を見てみろ、支保工の木が腐ってる。天井が落ちてきたら一巻の終わりだぞ」</p>
+<p>「あ、あの……皆さん、もう少しで以前見つけた退避用の小部屋のはずです。そこで一度、ダンの傷の手当てを……」</p>
+<p>現れたのは、ボロボロの格好をした4人組だった。</p>
+<p>先頭を歩く猫耳族の少女が不機嫌そうに尻尾を揺らし、大柄な熊人族の戦士が肩をすぼめて歩いている。真ん中には折れた長槍の柄を杖代わりに持った人間の男、そして後ろから心配そうにおどおど付いてくるエルフの娘。</p>
+<p>（……なんだ、泥這い小隊か）</p>
+<p>ガリクは息を吐き出し、カンテラの光を元に戻して立ち上がった。</p>
+<p>「おい、ロルフ。相変わらず騒がしいな。コウモリの群れが目を覚ますぞ」</p>
+<p>暗闇から突如現れたガリクに、長槍兵のロルフはビクッと肩を跳ねさせたが、顔を見るなり安堵の溜息を漏らした。</p>
+<p>「……なんだ、ガリクか。脅かすなよ。お前、まだこんなところでツルハシ振ってたのか」</p>
+<p>「日暮れまでにはまだ間があるからな。……それにしても酷い格好だな。第004階のヒグマにやられたって酒場で聞いたが、本当だったのか」</p>
+<p>「ああ、散々だったよ」</p>
+<p>ロルフは苦笑いしながら、坑道の壁際に腰を下ろした。</p>
+<p>「槍の穂先は折れるわ、ダンの大槌の柄はヒビが入るわ。毛皮はなんとか剥いだが、武具の修理代で見事にすっからかんだ。……腹に何か入れなきゃ、第001階へ戻る気力も湧かねえ」</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">3. 他愛ない揉め事と、塩の加減</h4>
+<p>坑道の行き止まりにある、古代の作業員が掘った小さな退避窪地。</p>
+<p>天井の岩盤が硬く、崩落の危険がないその場所に、5人は車座になって座り込んだ。</p>
+<p>ガリクはカンテラを岩棚に置き、懐から油紙に包んだ火打石と木屑を取り出した。</p>
+<p>「煙を大きく出すなよ。換気用の竪坑がすぐ上にあるから、微弱な火なら問題ない」</p>
+<p>小枝と石炭の屑に小さな火が灯り、パチパチと控えめな爆ぜる音が響く。</p>
+<p>エルフの僧侶ミリーが、背負い袋から年季の入った小さな鉄鍋を取り出し、水筒の湧き水を注いで火にかけた。</p>
+<p>「鍋の具、何かあるか？」ロルフが聞く。</p>
+<p>「俺、昨日買った硬い干し肉の端切れが二つ……」ダンがポケットをまさぐる。</p>
+<p>「私、川原で見つけた野生の苦菜（にがな）があるわ。泥はちゃんと洗ったから！」ペコが胸を張る。</p>
+<p>「あ、あの……私、止血用に買った乾燥薬草の余りがあります。少し苦いですが、滋養にはなります……」ミリーが遠慮がちに差し出す。</p>
+<p>全員の持ち寄った具材は、お世辞にも豪華とは言えなかった。干からびた肉屑と、苦い野草。</p>
+<p>見かねたガリクが、腰の麻袋の奥から、ゴツゴツとした茶色い塊を二つ取り出して鍋の横に置いた。</p>
+<p>「……ほらよ。干し芋だ。故郷の妹が送ってきたやつだ」</p>
+<p>「うおっ！？ ガリク、マジかよ！？」</p>
+<p>ダンの熊耳がピンと立ち、ペコの瞳が爛々と輝いた。</p>
+<p>「干し芋！ 芋が入るとスープがトロトロになって甘くなるのよね！」</p>
+<p>「おいおい、ガリク。貴重な非常食だろ、いいのかよ」ロルフが恐縮する。</p>
+<p>「いいさ。一人で齧るより、煮て食った方が顎が疲れねえ。その代わり、スープは俺の分もたっぷり残せよ」</p>
+<p>鍋の水が煮立ち、干し肉の出汁と芋の甘い香りが、冷え切った坑道の小部屋にじんわりと広がっていく。</p>
+<p>ペコが木製のスプーンで鍋をかき混ぜ、味見をした。</p>
+<p>「……んー、ちょっと塩が薄いかな。ロルフ、塩の小袋貸して」</p>
+<p>「待て待て、ペコ！ 塩は貴重品だぞ！ 銀貨1枚で買った塩袋なんだから、ひとつまみ以上入れるな！」</p>
+<p>「ケチ！ 汗かいたんだから塩分補給しなきゃダンが倒れちゃうでしょ！」</p>
+<p>「俺は……どっちでもいいから早く食いたい……」ダンが喉を鳴らし、ミリーがおろおろと二人の間を取り持つ。</p>
+<p>「ペコ、塩は入れすぎると喉が渇いて水筒の水が足りなくなるぞ」</p>
+<p>ガリクがナイフの背で自分の薄底ブーツにこびりついた泥をこそげ落としながら、静かに口を挟んだ。</p>
+<p>「坑道ではな、少し薄味くらいがちょうどいいんだ。喉を潤す程度にな」</p>
+<p>「……チェッ、炭鉱夫の言うことはいつも現実的でつまんないの」</p>
+<p>ペコは唇を尖らせながらも、塩をほんの耳かき一杯だけ足して火を引いた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">4. 靴底の泥と、明日への足音</h4>
+<p>湯気の立つ木製椀が、5人に配られた。</p>
+<p>具材は不揃いで、野草の苦味が少し残っていたが、煮崩れた干し芋が汁に溶け込み、驚くほど胃袋に優しく染み渡った。</p>
+<p>「……うめえ」</p>
+<p>ダンが椀を両手で抱え、涙目になりながらスープを啜った。</p>
+<p>「あったけえ……生きてるって感じがする……」</p>
+<p>「大げさねえ、ダンは」ペコが笑いながら、自分のスリングの革紐に動物性の油を丹念に塗り込んでいく。「でも……うん、美味しい。染みるわね」</p>
+<p>ロルフは椀を飲み干すと、折れた長槍の柄を取り出し、刃こぼれしたナイフで先端を削り始めた。</p>
+<p>「この長さなら、短槍（ショートスピア）として使える。穂先を買い直す金ができるまでは、これで第002階のコウモリでも突いて凌ぐさ」</p>
+<p>ミリーはダンの脛に包帯を巻き直し、ガリクは砥石に唾を垂らしてツルハシの切っ先を研ぎ澄ます。</p>
+<p>誰も「世界を救う」などという途方もない話はしない。</p>
+<p>神話のドラゴンを倒す英雄の噂も、ここには届かない。</p>
+<p>あるのは、明日の宿代のこと、擦り切れた靴底の補修のこと、そして来週には新しい盾を買いたいという小さな希望だけだった。</p>
+<p>「なあ、ガリク」ロルフが槍の柄を削りながら言った。</p>
+<p>「お前、ずっと一人でやってて寂しくねえのか？」</p>
+<p>ガリクはツルハシを研ぐ手を止めず、少しだけ口角を上げた。</p>
+<p>「気楽でいいさ。足手まといもいなけりゃ、仲間の死体を回収しに麻ローブで走る必要もねえ。……だがまあ、たまにこうして、誰かの作った芋スープを啜る夜があるなら、悪くはねえよ」</p>
+<p>「へへっ、じゃあまた芋持ってきてよ！ 次は私が野兎でも捕まえて肉団子にしてあげるからさ！」</p>
+<p>ペコが笑い、小さな焚き火の明かりが、煤けた5人の顔を暖かく照らし出した。</p>
+<p>坑道の外では、冷たい地下水が静かに水滴を落とし続けている。</p>
+<p>派手な勝利も、劇的な事件もない。</p>
+<p>けれど、湿った冷気の底で、彼らは確かに明日へと続く命の火を繋いでいた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🧭 未踏支線開拓（Cron 8 × Gemma 3 GM骨格ダイス連動）：『旧第三斜坑・硫黄湧水溜まりとヌーマの泥祠』</h3>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>開拓サブエリア</strong>: <strong>旧第三斜坑・硫黄湧水溜まり（Abandoned Shaft No.3 - Sulfur Seepage Pool）</strong></li>
+<li><strong>GMダイス抽選骨格（<code>1d100 = 76</code>：【④ 奇策・突破型】）</strong>:</li>
+<li><strong>天候・環境ハザード</strong>: 下層からの硫黄ガス微弱噴出（目がシパシパし、松明の炎が青白く変色する）</li>
+<li><strong>装備不調（Malfunction）</strong>: 水筒のコルク栓がいつの間にか緩み、貴重な飲み水が半分漏れていた</li>
+<li><strong>本日の現場メシ</strong>: 塩漬けイモリの丸干し（頭からバリバリ齧る珍味）と硬い黒パンの耳</li>
+<li><strong>魔道具・奇品（MGI）</strong>: <strong>『夜露の星角杯（Night-Dew Star Horn Cup）』</strong>（空のまま伏せて寝ると、翌朝に冷たい真水が一杯だけ湧いている山羊角のコップ）</li>
+<li><strong>神々の予兆（Pantheon Omen）</strong>: <strong>泥濘と小銭の神ヌーマ（Numa）の悪戯</strong>（泥の上に小さな裸足の足跡が続き、その先に銅貨が1枚だけ落ちている）</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">📖 短編オムニバス第2幕：『緩んだコルク栓と、星角杯の一滴』</h4>
+<p>#### 1. 青白いカンテラと、濡れた背嚢</p>
+<p>「……ちっ。背中が妙に冷たいと思ったら、これかよ」</p>
+<p>第002階の主幹坑道から外れた未踏支線――『旧第三斜坑』の入り口で、元炭鉱夫の罠師ガリクは背嚢を下ろし、珍しく渋い顔で舌打ちした。</p>
+<p>革製の水筒を取り出すと、麻紐で留めていたはずのコルク栓が斜めに浮き上がり、貴重な第001階の井戸水が半分以上も麻袋の中へ漏れ出していたのである。</p>
+<p>「昨日、跳ね兎亭の階段で荷物をぶつけた時に緩んだか……。坑道の奥で水切れは笑えねえぞ」</p>
+<p>しかも悪いことは重なる。</p>
+<p>岩盤の亀裂から、下層の熱水脈に由来する微弱な硫黄ガスがシューシューと音を立てて噴き出していた。</p>
+<p>目がシパシパと乾き、真鍮カンテラの中の炎が、不気味な青白い色へと揺らいでいる。</p>
+<p>喉の渇きは普段の倍も早いというのに、水筒を振ってもチャプンと心細い音が鳴るだけだった。</p>
+<p>「引き返すか……？ いや、この斜坑の奥には、まだ誰も手を付けていない『大粒の黄鉄鉱（愚者の金）』の露頭があるはずだ。ここで手ぶらで帰れば、今日の油代が赤字になる」</p>
+<p>#### 2. 泥の上の小さな足跡</p>
+<p>ガリクが思案しながら足元の泥炭層に目を落とした時だった。</p>
+<p>カンテラの青い光の中に、奇妙なものが浮かび上がった。</p>
+<p>泥濘の上に、人間の赤ん坊ほどしかない「小さな裸足の足跡」が、ペタ、ペタ、と斜坑の奥へ向かって規則正しく続いていたのである。</p>
+<p>ゴブリンの足跡ではない。爪の跡がなく、妙に人間じみた丸っこい踵の跡だ。</p>
+<p>その足跡のすぐ脇――泥の真ん中に、緑青の吹いた「古い銅貨」が1枚だけ、表を上にしてポツンと落ちていた。</p>
+<p>「……泥濘と小銭の神、ヌーマ様の足跡か」</p>
+<p>ガリクは思わず苦笑し、その銅貨を拾い上げる代わりに、自分の懐から「黒パンの硬い耳」をちぎって泥の上へそっと置いた。</p>
+<p>『ヌーマの落ち銭を欲をかいて拾うと靴底が抜けるが、代わりにパン屑を置いて足跡を辿れば、毒ガスを避ける風穴へ導かれる』。炭鉱夫たちの間で古くから語り継がれる迷信だ。</p>
+<p>ガリクは手拭いをわずかに残った水筒の水で湿らせて口と鼻を覆い、小さな裸足の足跡が続く岩壁の窪みへと足を踏み入れた。</p>
+<p>#### 3. 奇品『夜露の星角杯』と、塩漬けイモリ</p>
+<p>足跡が途切れた先は、硫黄ガスの通り道から絶妙に外れた、天井の低い石灰岩の風穴だった。</p>
+<p>そこには先客がいた。第001階でよく見かける、片耳の欠けた老スカベンジャー（遺物拾い）の男が、岩棚の前で頭を抱えて座り込んでいたのだ。</p>
+<p>「おい、爺さん。こんな硫黄臭い縦坑の脇で何をしてる」</p>
+<p>「……おお、炭鉱夫のガリクか。助かった、水を……水を一口分けてくれんか！ 水筒を落として割っちまったんだ！」</p>
+<p>老スカベンジャーの唇はひび割れ、足元には割れた素焼きの水筒と、彼が空腹紛れに齧っていたらしい『塩漬けイモリの丸干し』が転がっていた。</p>
+<p>喉が渇いている時に塩辛いイモリの丸干しなど齧れば、余計に水分を奪われて動けなくなるのは当然である。</p>
+<p>「俺の水筒もコルクが緩んで残り三口しかねえよ。……だが、爺さん。あんたが腰にぶら下げてるその山羊角のコップ、第019階の遺物市で売ってた奇品（MGI）『夜露の星角杯』じゃねえのか？」</p>
+<p>「えっ？ あ、ああ、これか？ 『伏せて一晩寝れば真水が湧く』って触れ込みで銀貨8枚で買ったんだが、まだ昼間だから一滴も出やしないんだよ！」</p>
+<p>ガリクは呆れたように鼻を鳴らすと、老人の手から山羊角のコップを取り上げた。</p>
+<p>「馬鹿野郎、魔道具の説明書を文字通りに受け取るからそうなるんだ。この星角杯の内側に刻まれた微細な氷結紋様はな、『周囲の湿気を冷やして結露させる』仕組みになってる。夜まで待つ必要はねえ――この斜坑の湿気と、冷たい石炭層を使えばいい」</p>
+<p>ガリクはツルハシで足元の湿った石炭泥を素早く掘り起こし、地下水が滲む冷たい岩盤を露出させた。</p>
+<p>そこへ『夜露の星角杯』を逆さまに伏せ、さらに上から濡れた石炭屑をこんもりと被せて、カンテラの火を遠ざけた。</p>
+<p>「……10分待て。硫黄ガスが混じらねえよう、泥で隙間を塞いである」</p>
+<p>#### 4. 鉄錆とイモリの晩餐</p>
+<p>二人は風穴の隅で膝を抱え、10分間、無言でカンテラの青い炎を見つめた。</p>
+<p>やがてガリクが石炭泥を払い除け、山羊角の杯を慎重に持ち上げると――。</p>
+<p>岩盤の窪みに設えた即席の受け皿の中に、透き通った冷たい真水が、コップ八分目ほども溜まっていたのである。</p>
+<p>「う、うおおっ……！ 本当に水が湧きおった……！」</p>
+<p>「結露水だからな、硫黄の臭いもしねえ。半分ずつだぞ、爺さん」</p>
+<p>二人は山羊角の杯で交互に冷たい水を飲み干した。</p>
+<p>ひび割れた喉に、石炭層で濾過された甘い冷水が染み渡る。</p>
+<p>水分を取り戻した二人は、ようやく人心地ついて、老人が持っていた『塩漬けイモリの丸干し』と、ガリクの『硬い黒パンの耳』を交換してバリバリと頭から齧り始めた。</p>
+<p>「……しょっぺえな、このイモリ」</p>
+<p>「だろ？ だが、水さえあれば最高の酒の肴になる」</p>
+<p>老スカベンジャーは礼として、自分が風穴の奥で見つけていた『拳大の特上黄鉄鉱の結晶塊』をガリクの麻袋へ放り込んだ。</p>
+<p>斜坑の入り口を振り返ると、泥の上に残っていたはずの小さな裸足の足跡と、ガリクが供えた黒パンの耳は、いつの間にか跡形もなく消え去っていた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 階層間接続・動線データ</h3>
+<p>```mermaid</p>
+<p>graph TD</p>
+<p>F01[&quot;🚪 第01階：旅立ちの円形広場・冒険者ギルド&quot;]</p>
+<p>F02[&quot;⛏️ 第002階：黄鉄鉱の廃鉱山と石炭地下回廊&lt;br&gt;（ガリク＆泥這い小隊 / 旧第三斜坑・星角杯とヌーマの足跡）&quot;]</p>
+<p>F08[&quot;🐟 第08階：幻影砂漠のオアシス市場と青魚の神殿&quot;]</p>
+<p>F01 --&gt;|崩落坑道の木製トロッコ軌道| F02</p>
+<p>F02 --&gt;|地下水路沿いの砂岩断層| F08</p>
+<p>```</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Recorded under Lagrange Tower Master Chronicles / 塔務記録局 2026.</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-003" style="margin-top:0;">🧭 第003階：黄銅の昇降機と黒泥の浸透溜まり（Brass Hoist &amp; Black Mire Percolation Basin）</h2>
+<blockquote>
+<strong>世界観親ノート</strong>: 00_Lagrange_Tower_MOC | Lagrange_Tower_Character_Codex | Lagrange_Tower_Weapon_Codex | Lagrange_Tower_Armor_Codex | Lagrange_Tower_Item_Codex<br>
+<strong>踏破難易度</strong>: Rank D+（推奨適正レベル：12〜16 / 危険度：泥濘・高湿・機械油性中毒）<br>
+<strong>環境バイオーム</strong>: 浸透水路・地下排水竪坑・黄銅重機工区<br>
+<strong>特有ハザード</strong>: 突発的泥流噴出（Black Siphon Surge）、滑落性油泥、真鍮歯車の挟み込み事故<br>
+<strong>主神信仰共鳴</strong>: 大地神アラドゥス（Aradus）／ 工匠神ヘファイトス（Hephaistos）<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🎧 Floor BGM (Chiptune)</h3>
+<blockquote>
+<em>本階層の専用8-bit BGMは、塔中央交差路の昇降機稼働音に同期して自動生成・配備されます。</em><br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">1. 階層環境アーキテクチャ・地誌</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">概要と環境特性</h4>
+<p>第002階『黄鉄鉱の坑道と黒煙のランプ』の底抜け竪坑から、巨大な重力水圧によって滲み出た地下水と石炭タールが合流する大浸透層。</p>
+<p>階層全体が重低音を響かせる黄銅（真鍮）製の巨大揚水ポンプ、歯車仕掛けのバケット昇降機、そして油混じりの黒泥が滞留する広大な沈殿池によって構成されている。</p>
+<p>空気は湿潤で、石炭の焦げた匂いと重油の甘い刺激臭、それに僅かな硫黄の香気が充満している。濡れた足場は「滑泥（スリック・マッド）」で覆われており、鉄鋲のスパイク長靴を履いていなければ数歩進むことすら覚束ない。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">採取特産品・特異素材</h4>
+<p>1. <strong>黒油重泥（Black Bitumen Silt）</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>鉱油と細粒粘土が自然乳化した粘稠泥。防水ワックスや可燃性タール弾の基材としてギルドの加工職人が高値で買い取る。</li>
+</ul>
+<p>2. <strong>黄銅の古歯車（Oxidized Brass Cog）</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>建設期に投棄された重機工部品。酸性泥に浸食されながらも芯部は極めて頑強で、絡繰技師や鍛冶屋の再鋳造材として重宝される。</li>
+</ul>
+<p>3. <strong>泡発光苔（Luminescent Froth-Moss）</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>泥流の飛沫を浴びて自律発光する青緑色の湿生苔。乾燥させると微細な鉱脈感知粉末（霊砂）の原料となる。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">生息する脅威・魔物</h4>
+<p>1. <strong>油泥スライム（Tar Ooze）</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>石炭油と魔力が結着したアモルファス生命体。火器による攻撃は引火爆発を引き起こすため、水風水や冷気打撃による凝固破砕が鉄則。</li>
+</ul>
+<p>2. <strong>真鍮喰らいの甲虫（Brass-Biter Beetle）</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>昇降機のワイヤーやボルトを齧り取る頑丈な甲殻昆虫。群れで配管に巣食い、突発的な機械故障を引き起こす元凶。</li>
+</ul>
+<p>3. <strong>浸透泥蟹（Siphon Mud-Crab）</strong>:</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>泥濘の底に擬態し、長靴の爪先を挟み折る巨大鋏を持つ甲殻類。殻は極めて硬いが、身は塩茹でにすると濃厚な蟹味噌の味がして冒険者の貴重な蛋白源となる。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">2. 階層適応ロードアウト（Floor-Adaptive Loadout）</h3>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>主兵装</strong>:</li>
+<li>長柄の軽量ピッケル、または幅広スコップ槍。泥濘で足を取られた際の杖代わりとしても機能する。</li>
+<li><strong>防具・足元装備</strong>:</li>
+<li>獣脂を擦り込んだ二重革の防水スパイクブーツ。裾口は油泥の侵入を防ぐために豚革のゲートルで隙間なく結束。</li>
+<li><strong>携行品・薬品</strong>:</li>
+<li>揮発油拭き取り用の古布束、乾燥苔火口、酢漬けの干し大根（油酔い止め）、アラドゥス清浄塩。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">3. 主要冒険者カルテ（主役登用）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">キアラ（Kiara）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族</strong>: Rabbili-an（兎人族）／ 女性</li>
+<li><strong>クラス</strong>: Geomancer（大地風水士）</li>
+<li><strong>階級</strong>: Rank C（功績値 410）</li>
+<li><strong>三系統スキルツリー</strong>:</li>
+</ul>
+<p>1. <strong>メイン（本職武芸）</strong>: 【泥流防御（Siphon Slag Ward）】</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>地表の泥濘と流動土砂を瞬時に硬化させ、突発的な泥流サージや魔物の突進を跳ね返す土壁を隆起させる。</li>
+</ul>
+<p>2. <strong>サブ（探索生存）</strong>: 【鉱脈感知・霊動跳躍（Vein Echo &amp; Leporine Vault）】</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>足裏から大地へ微小な魔力波を流し、空洞や良質鉱脈を反響定位。兎人族特有の跳躍力で滑泥の足場を跳び移る。</li>
+</ul>
+<p>3. <strong>信仰（主神と加護）</strong>: 【大地神アラドゥスの鎮静息（Grace of Aradus）】</p>
+<ul style="margin:8px 0 12px 20px;">
+<li>大地の霊流と共鳴し、悪路による疲労蓄積を半減させ、精神的な焦燥を沈める。</li>
+<li><strong>人物像</strong>:</li>
+<li>白銀の毛並みと長い耳を持つ兎人族の風水士。耳ざとい聴覚のため大きな機械音は苦手だが、足裏で感じる微かな地脈の震えを読む腕前はギルド随一。湿気で毛先が丸まるのをひどく気にしている。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">4. 短編オムニバス小説：『濡れた靴底と、真鍮ボイラーの昼下がり』</h3>
+<p><strong>ナラティブモード</strong>: ③【平熱・日常型】（戦闘なし・オチなしの迷宮生活情景）</p>
+<p>蒸気抜きパイプの継ぎ目から、ヒュー、という気の抜けた音と共に白い温蒸気が立ち上っていた。</p>
+<p>巨大な真鍮製のバケット昇降機は、二時間前からピタリと止まったままだ。第002階の炭坑から降りてきた技師の話では、泥蟹の群れが下部ベアリングに挟まり、安全ピンが飛んだのだという。復旧には少なくとも三時間はかかる。</p>
+<p>第003階、通称『昇降溜まり』の退避テラス。濡れた板張りの足場に、キアラはどさりと背負い袋を下ろした。</p>
+<p>「……ふう。やっと耳が休まる」</p>
+<p>白銀色の長い耳をふわりと前後に揺らし、湿気を含んで重たくなった毛先を指先で梳く。油臭い霧のせいで、自慢の耳毛が毛先からちりちりとカールしてしまっていた。兎人族にとって、耳の毛並みの乱れは人間の寝癖よりも遥かに落ち着かないものだ。</p>
+<p>「おい、キアラ。そっちのスパイク長靴、泥落としのヘラを貸してくれ」</p>
+<p>低い声で呼びかけてきたのは、同じパーティーの前衛を務める牛人族の重戦士バラックだった。二メートルを超える巨躯をテラスの木箱に窮屈そうに沈め、片足を投げ出している。その鉄甲靴の溝には、まるでタールのように粘りつく黒泥がびっしりと詰まっていた。</p>
+<p>「はい、どうぞ。でもバラックさん、落とした泥をそのまま床に捨てないでね。乾くとセメントみたいに固まって滑りやすくなるから、あの鉄バケツの中に落として」</p>
+<p>「分かってるよ。まったく、この階の泥は油が混ざってやがるから、乾くと革がカピカピに縮みやがる」</p>
+<p>バラックは真鍮のヘラを受け取ると、ガリガリと小気味よい音を立てて靴底の泥を削ぎ落とし始めた。鉄バケツの中に、ボト、ボトと重い泥の塊が落ちていく。</p>
+<p>テラスの中央には、真鍮ボイラーの排熱管を利用した即席の温め台がある。そこに置かれた煤けた小鍋の中で、コトコトと美味そうな湯気が立っていた。</p>
+<p>当番の斥候――猫耳族の少年トビーが、小さな木匙で鍋の中を覗き込んでいる。</p>
+<p>「キアラ姉ちゃん、そろそろいいかな？ 塩豚と干し蕪、それからさっき泥溜まりの岩肌でむしり取った『泡発光苔』の根っこ、全部入れたよ」</p>
+<p>「ちょっと見せて。……うん、いい香り。でも発光苔の根は油分を吸うと少し苦味が出るから、ギルドで買った酢漬けの大根を二切れちぎって入れてみて」</p>
+<p>「酸っぱくならない？」</p>
+<p>「脂っこいスープには、少し酸味があったほうが喉が通るのよ。この階の油霧を吸い続けてると、舌の奥がもったりしてくるでしょう？」</p>
+<p>トビーは言われた通り、油紙から取り出した酢漬け大根を指でちぎって鍋に放り込んだ。ふわりと立ち上る酸味混じりの湯気が、テラスの澱んだ空気を爽やかに切り裂く。</p>
+<p>キアラは長靴を脱ぎ、厚手の羊毛靴下を脱いで足先を温蒸気にかざした。じんわりとした温もりが、冷え切っていた足指の先まで染み渡っていく。</p>
+<p>階下を見下ろせば、黒泥の沈殿池の向こうで、修理係のドワーフたちが「そら引け、まだ噛んでるぞ！」と怒鳴り合っているのが小さく見える。巨大な真鍮の歯車はまだ動かない。</p>
+<p>「……ねえ、バラックさん。昇降機が直ったら、今日はもう広場まで戻らない？」</p>
+<p>「ん？ まだ日没まで間があるぞ。第004階の鏡面迷宮の入口まで足を進める予定だったはずだが」</p>
+<p>「だって、見てよこの湿気。私の耳、もう普段の倍くらい重いんだよ。それに、バラックさんの鎧の関節からも、さっきからギシギシ嫌な軋み音がしてる」</p>
+<p>バラックは手入れ用の油布で肩当てを拭きながら、フンと太い鼻息を漏らした。</p>
+<p>「……違えねえ。油泥の粉塵を噛み込んで、右の腕当てが妙に渋い。無理に潜って影喰いに囲まれたら、腕が上がらんで叩き潰されるところだったな」</p>
+<p>「でしょ？ 冒険者はね、靴底が乾いてるうちに帰るのが一番長生きするの」</p>
+<p>キアラは木椀を受け取り、熱いスープを口に含んだ。</p>
+<p>塩豚の塩気と、柔らかな蕪の甘み。そして後から追いかけてくる僅かな酢の刺激が、重油の匂いで麻痺しかけていた鼻腔を心地よく刺激する。</p>
+<p>「うーん……おいしい」</p>
+<p>「うまいな。苔の根のシャキシャキした歯ごたえが案外悪くない」</p>
+<p>遠くで、カチ、カチ、カチ……と、何かのラチェットが噛み合う鈍い金属音が響いた。ドワーフたちの歓声が微かに反響し、真鍮の太いワイヤーがギチギチと軋みながらゆっくりと動き始める。昇降機が息を吹き返したのだ。</p>
+<p>しかし、三人とも立ち上がろうとはしなかった。</p>
+<p>「……もう一杯ある？」</p>
+<p>「あるよ。バラックの分もまだ鍋底に残ってる」</p>
+<p>「じゃあ、昇降機が二往復して空いてから乗ろう。一番列車は油まみれのドワーフたちでぎゅうぎゅう詰めになるに決まってるから」</p>
+<p>「賛成」</p>
+<p>キアラは再び温かい木椀に両手を添え、ふうふうと息を吹きかけながら、のんびりと足を揺らした。</p>
+<p>塔の奥深く、鉄と蒸気と黒泥の世界。</p>
+<p>命懸けの探索の合間に訪れる、何でもない、ただ温かいスープを啜るだけの三十秒間。それはどんな魔導宝物よりも、冒険者たちの心を確かに満たしていた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">5. 🧭 未踏支線開拓（Cron 8 × Gemma 3 GM骨格ダイス連動）：『旧第三排泥暗渠・硫黄間欠泉の湯気溜まりとオタマの狐石祠』</h3>
+<blockquote>
+<strong>🎲 Gemma 3 (4B) TRPG-GM 抽選骨格ログ（<code>2026-11-07 11:13</code>）</strong>:<br>
+- <strong>ダイス判定</strong>: <code>1d100 = 75</code> ➔ <strong>【① 奇策・突破型】</strong><br>
+- <strong>天候・環境ハザード</strong>: 間欠泉の硫黄ガス噴出（長時間の滞在で目と喉に強い刺激）<br>
+- <strong>装備故障アクシデント</strong>: 盾の裏側の革ベルトが汗と泥で伸び切り、肘にうまく固定できない<br>
+- <strong>携行非常食</strong>: 背嚢の底で押し潰されていた『割れ水晶温泉卵』と、豚脂の切れ端<br>
+- <strong>奇品（MGI / Wonder Item）</strong>: 『暖炉の火種石（Hearth-Ember Pebble）』（握りしめている間だけ、カイロのように指先をじんわり温める小石）<br>
+- <strong>神祇の兆し（Pantheon Omen）</strong>: <strong>湯守狐神オタマ（Otama）の残り香</strong>（どこからともなく白檀と温泉の湯気が漂い、強張った筋肉の痛みが和らぐ）<br>
+</blockquote>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">支線エリア地誌：旧第三排泥暗渠（The Old Third Desilting Culvert）</h4>
+<p>中央の黄銅昇降機ピットから南東へ外れた、古い煉瓦積みの排泥暗渠。</p>
+<p>地下深層の地熱脈と交差しているため、黒泥の底から周期的に<strong>高濃度の硫黄蒸気を含む熱水間欠泉</strong>が噴き上げており、通常の探索者は目と喉を焼かれるのを嫌って近寄らない。</p>
+<p>しかし、間欠泉が鎮まった直後の湯気溜まりには、上層の第021階『翡翠亭』から流れ落ちた温泉成分が結晶化した「湯の花硫黄」が堆積し、暗渠の奥には誰が置いたか、欠けた茶碗を供えた小さな<strong>『湯守狐神オタマの狐石祠』</strong>がひっそりと祀られている。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">6. 📖 短編オムニバス第2幕：『伸び切った盾革と、暖炉石の硫黄温泉卵』</h3>
+<p><strong>登場人物</strong>: ピップ（Pip the Scrap-Lancer / Rank E 210・スクラップ槍術士の見習い少年）、ロルフ（Rolf / Rank D+・泥這い小隊の長槍隊長）</p>
+<p><strong>ナラティブモード</strong>: ①【奇策・突破型】（<code>1d100 = 75</code>・Gemma 3 GMダイス連動）</p>
+<p>「……げほっ、ごほっ！ ロルフ兄貴、目が、目がしみりゅ……っ！」</p>
+<p>第003階・旧第三排泥暗渠。</p>
+<p>煉瓦の亀裂から「プシュウウウッ！」と音を立てて噴き出した白濁色の硫黄間欠泉に煽られ、見習い少年のピップは涙目で鼻と口を袖で覆った。</p>
+<p>今日は『泥這い小隊』のロルフ隊長に頼み込み、廃鉄回収と足腰の鍛錬を兼ねてマンツーマンで第003階の裏暗渠へ連れてきてもらっていた。ピップの手には、トネリコ堂のバルカス爺さんから分けてもらった樫の長棒の先に、鉄針金で「底の抜けた鉄フライパン」と「折れた古鑿（のみ）」をぐるぐる巻きにした自慢のスクラップ槍が握られている。</p>
+<p>だが、問題は左腕だった。</p>
+<p>「おいピップ、左の鍋蓋盾が明後日の方向を向いてるぞ。それでは泥蟹の鋏を受け止められん」</p>
+<p>濡れた手拭いを口元に巻いたロルフが、鋭い声で指摘した。</p>
+<p>ピップは慌てて左腕の「ブリキの鍋蓋を改造した丸盾」を持ち上げようとしたが、ガタリと情けない音を立てて手首までずり落ちた。</p>
+<p>「あ、あれっ……！？ 兄貴、盾の裏の革ベルトが、さっきの黒泥と汗を吸ってダルダルに伸びきっちゃってます！ 肘の留め具がスカスカで、全然固定できません……！」</p>
+<p>安物の端革を鋲で打ち付けただけの自家製ベルトは、第003階の油分を含んだ温泥と蒸気に当てられ、濡れたうどんのように伸びきっていた。</p>
+<p>その時だった。</p>
+<p>ゴボボボボッ……ガシャアアアンッ！！</p>
+<p>間欠泉の熱水が引いた黒泥の底から、甲羅に真鍮の廃ボルトを無数に癒着させた巨大な老成個体――<strong>『重装浸透泥蟹（Armored Siphon Mud-Crab）』</strong>が、泡を吹きながら姿を現した。</p>
+<p>片方の鋏だけで人間の太腿を断ち切る重鋏を振り上げ、逃げ場のない狭い暗渠の通路を塞いでジリジリと間合いを詰めてくる。</p>
+<p>「くそっ、よりによって真鍮殻の古株か！ ピップ、下がれ！ 俺の槍で目を突く！」</p>
+<p>ロルフが長槍を繰り出したが、泥蟹は分厚い真鍮まみれの左鋏を盾のように掲げて穂先を弾き返した。カンッ！と火花が散り、硬すぎて刃が通らない。しかも暗渠の天井が低く、ロルフの長槍では大振りが制限されて決定打を与えられない。</p>
+<p>泥蟹の巨大な右鋏が、盾の壊れたピップの足元をめがけて横薙ぎに唸った。</p>
+<p>「うわあああっ！」</p>
+<p>ピップは咄嗟に跳び退いたが、滑泥に足を取られて尻餅をついた。左腕から、革ベルトの千切れた鍋蓋盾がカランと転がり落ちる。</p>
+<p>背中の麻袋が煉瓦壁に強く打ち付けられ、中から何かが潰れる「グシャッ」という感触と、香ばしい匂いが広がった。</p>
+<p>（あ……！ 朝、ラピータ姉ちゃんにもらった『割れ水晶温泉卵』と、靴底に塗るはずだった『豚脂の切れ端』が……！）</p>
+<p>絶体絶命の距離。泥蟹の鋏が次の瞬間にはピップの脛を砕く――そう思われた刹那。</p>
+<p>ふわり、と。</p>
+<p>硫黄のむせ返る悪臭の隙間を縫って、どこからともなく<strong>「白檀（びゃくだん）と甘い温泉の湯気」</strong>のような、不思議と懐かしい香りが暗渠を撫でた。</p>
+<p>ピップの視線の先、煉瓦の窪みに祀られた小さな狐の石祠――<strong>湯守狐神オタマ</strong>の苔むした耳が、蒸気の中でほんのりと温かく光った気がした。</p>
+<p>不思議と、恐怖で引きつっていたふくらはぎのこむら返りがスッと消え、ピップの頭の中に、第001階の焚き火で毎日目玉焼きを焼いていた時の「生活の知恵」が閃いた。</p>
+<p>（……この蟹、真鍮の廃鉄を甲羅に貼り付けてるけど、つなぎ目は全部『冷えて固まった黒油タール』だ！ そして俺の懐には――！）</p>
+<p>「ロルフ兄貴！ 三秒だけ、そいつの鋏を上に釣り上げてくださいっ！！」</p>
+<p>ピップは叫ぶなり、落ちたブリキの鍋蓋盾を逆さまに拾い上げ、背嚢の中でぐちゃぐちゃに潰れていた<strong>『豚脂の切れ端』</strong>と、ポケットの奥でずっと握りしめていた奇品<strong>『暖炉の火種石（Hearth-Ember Pebble）』</strong>――握っている間だけ炭火のように熱を帯びる小石――を、スクラップ槍の先端の鉄フライパンの窪みへ一気に押し込んだ！</p>
+<p>「おうっ！ 三秒だな、ほらよッ！！」</p>
+<p>ロルフが渾身の力で長槍を泥蟹の顎下へねじ込み、エイヤッとばかりに巨体を斜め上へと跳ね上げた。</p>
+<p>泥蟹の腹側――真鍮の廃板が黒タールで分厚く固められた急所の継ぎ目が、無防備に晒される。</p>
+<p>「狐神さま、お湯を借ります――ッ！！」</p>
+<p>ピップは暗渠の床に噴き出していた<strong>硫黄間欠泉の熱水溜まり</strong>へ、スクラップ槍のフライパン部分をザブンと突き入れた。</p>
+<p>直後、フライパンの上で『暖炉の火種石』の熱と間欠泉の硫黄熱水、そして『豚脂』が激しく乳化・沸騰し、ジュワアアアアッ！！と高温の油蒸気（スチーム・グリース）が噴き上がった！</p>
+<p>「くらえっ！ トネリコ堂特製・油抜きフライパン突きぃぃぃっ！！」</p>
+<p>ピップは腰を落とし、伸び切った盾革を捨てた両手でスクラップ槍を構えると、泥蟹の腹のタール継ぎ目へ熱々の豚脂フライパンを力任せにねじ込んだ！</p>
+<p>ジュバアアアアアッ！！</p>
+<p>高温の豚脂と硫黄熱水が、泥蟹の甲羅を接着していた黒油タールを瞬時にドロドロへと溶解させた。</p>
+<p>「ギシャアアアッ！？」</p>
+<p>自慢の真鍮装甲がバラバラと音を立てて剥がれ落ち、真っ白で柔らかい腹部の殻が剥き出しになる。</p>
+<p>「――よくやった、ピップ！！ そこだァッ！！」</p>
+<p>ロルフの目が光った。</p>
+<p>隙間なく繰り出されたロルフの鉄槍が、装甲を失った泥蟹の正中線を正確に貫き、一撃でその動きを沈黙させた。</p>
+<p>ドサリ、と巨大な泥蟹が湯気の中に崩れ落ちる。</p>
+<p>暗渠に、再びプシュウウ……という間欠泉の穏やかな音だけが戻ってきた。</p>
+<p>「はぁ、はぁ……！ や、やりました兄貴！ 盾は壊れちゃいましたけど、豚脂でタールが溶けました！」</p>
+<p>「ハッハッハ！ 盾の革が伸びきった時はどうなることかと思ったが、敵の鎧を『油汚れ』と見抜いて熱湯と脂で落とすとはな。さすがは毎日鍋底を磨いてる小僧だ」</p>
+<p>ロルフは豪快に笑うと、泥蟹の巨大な鋏を鉈で手際よく切り落とした。</p>
+<p>「よし、暗渠の奥の狐祠の前で一息つこう。そいつの鋏を間欠泉の湯壺に放り込めば、極上の茹で蟹になるぞ」</p>
+<p>二人は湯守狐神オタマの小さな石祠の前に腰を下ろし、まず一番立派な茹で上がりの蟹の爪を一つ、祠の欠けた茶碗の上にそっと供えた。どこからともなく、また白檀の優しい湯気がふわりと漂い、二人の泥まみれの肩を温かく包み込む。</p>
+<p>ピップは背嚢の底から、殻が割れて白身が少しはみ出た<strong>『割れ水晶温泉卵』</strong>を取り出し、ロルフと半分こにして齧りついた。</p>
+<p>硫黄の香りと濃厚な黄身の甘みが、塩茹でした泥蟹の熱々の身と混ざり合い、思わず頬が落ちそうなほど美味かった。</p>
+<p>伸び切った盾の革ベルトを小刀で切り揃え、新しい麻紐で二重に縛り直しながら、ピップは自分の煤けたフライパン槍を誇らしげに撫でた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">7. 階層接続・周辺ネットワーク（Tower Map Connection）</h3>
+<p>```mermaid</p>
+<p>graph TD</p>
+<p>F001[&quot;Floor 001: 黎明の足音とトネリコ堂&lt;br&gt;（Grand Arrival Plaza）&quot;] --&gt; F002[&quot;Floor 002: 黄鉄鉱の坑道と黒煙のランプ&lt;br&gt;（Pyrite Mines）&quot;]</p>
+<p>F002 --&gt; F003[&quot;Floor 003: 黄銅の昇降機と黒泥の浸透溜まり&lt;br&gt;（Brass Hoist &amp; Black Mire）&quot;]</p>
+<p>F003 --&gt; F003B[&quot;支線: 旧第三排泥暗渠・オタマの狐石祠&lt;br&gt;（Sulfur Geyser Culvert）&quot;]</p>
+<p>F003 --&gt; F004[&quot;Floor 004: 粗粒石灰岩の採石坑と白濁沈殿池&lt;br&gt;（Limestone Quarry）&quot;]</p>
+<p>F003 --&gt; F005[&quot;Floor 005: 骨灰の螺旋塔・蝕白回廊&lt;br&gt;（Ash White Corridor）&quot;]</p>
+<p>```</p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-004" style="margin-top:0;">⛏️ 第004階：粗粒石灰岩の採石坑と白濁沈殿池（Limestone Quarry &amp; Sludge Basin）</h2>
+<blockquote>
+<strong>世界観親ノート</strong>: 00_Lagrange_Tower_MOC | Lagrange_Tower_Build_Rules | Lagrange_Tower_Character_Codex<br>
+<strong>大区域（バイオーム）</strong>: 系統②【地下坑道・重機・泥濘】<br>
+<strong>環境BGM（公式サントラ）</strong>:<br>
+<em>(Track #002: 『深地行進曲』- Suno Master Edition / 大区域共有BGM)</em><br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 階層構造と環境特性（Floor Mechanics）</h3>
+<p>第003階の黄銅昇降機を下り、第005階の古代霊廟へと至る過渡期に位置する、広大な露天掘り状の地下採石坑道。</p>
+<p>白濁した石灰質の地下水が天井から絶え間なく滴り、坑底には粘土質の泥濘（スラッジ）が堆積している。採掘用の無骨な木組み足場と滑車が張り巡らされ、炭塵と石灰粉が混ざり合った独特の白灰色の微粒子が空気を白く煙らせている。</p>
+<p>```mermaid</p>
+<p>graph TD</p>
+<p>F3[&quot;第003階：黄銅の昇降機と黒泥の浸透溜まり&quot;] --&gt; F4[&quot;⛏️ 第004階：粗粒石灰岩の採石坑と白濁沈殿池&quot;]</p>
+<p>F4 --&gt; F5[&quot;第005階：骨灰の螺旋塔・蝕白回廊&quot;]</p>
+<p>subgraph Floor_004_Ecology [&quot;第004階の環境ハザードと生態&quot;]</p>
+<p>H1[&quot;🌫️ 【石灰粉塵霧】&lt;br&gt;微細なアルカリ性の粉塵。視界を遮り、喉を刺激する。酢漬けマスクまたは湿布布が必須。&quot;]</p>
+<p>H2[&quot;🪨 【泥濘の粘土層（スラッジ）】&lt;br&gt;足元が吸い付くように重く、逃走時の移動速度が半減。泥除けゲートル推奨。&quot;]</p>
+<p>H3[&quot;💧 【高硬度滴下水】&lt;br&gt;カルシウム分を過剰に含んだ水滴。防具の革を硬化させ、弓弦を脆くする。&quot;]</p>
+<p>end</p>
+<p>```</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. 階層特産品・採取物</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>粗粒石灰岩（Coarse Limestone Blocks）</strong>: 建材および酸性水の中和剤としてギルド街で高値で買い取られる重量ブロック。</li>
+<li><strong>白濁沈殿泥（Sludge Clay）</strong>: 耐火レンガの原料となる高品質の粘土。</li>
+<li><strong>鍾乳石の針（Calcite Spikes）</strong>: 矢尻や投げナイフの代用として現場調達される鋭利な石灰結晶。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. 生息魔物</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>泥喰いオオトカゲ（Sludge Monitor）</strong>: 灰白色の保護色を持つ全長2メートルの水陸両生爬虫類。泥の中から突然飛び出し、獲物の脚を噛み砕く。</li>
+<li><strong>石灰スライム（Lime Slime）</strong>: 強アルカリ性の粘液を持つスライム。金属を急速に曇らせ、生身の皮膚に激しい痛みを伴う薬傷を与える。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">👥 主要滞在冒険者カルテ（Resident Adventurers）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">セドリック・ハルフォード（Cedric Halford）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族 / 性別</strong>: Hum-an（人間） / 男性（23歳）</li>
+<li><strong>クラス</strong>: Arcane Archer（魔導弓手 / Common Rank 385）</li>
+<li><strong>スリーツリー・ビルド（Build Rules 1.1 凡人リアリズム準拠）</strong>:</li>
+<li><strong>メインスキル</strong>: <strong>【魔導装填弓撃（Arcane Draw）】</strong> - 矢に初歩的な火花を宿して射抜く遠距離技術。ただし魔力操作が未熟で、緊張すると手元でボフッと不発の煙を吹く。</li>
+<li><strong>サブスキル</strong>: <strong>【装具防水と弓弦の蜜蝋手入れ（Bowstring Waxing &amp; Gear Weathering）】</strong> - 湿気やアルカリ滴下水で弓弦が伸びるのを防ぐため、毎晩地道に蜜蝋を塗り込み、湿布を巻く生活サバイバル術。戦闘力はゼロだが、この階層で弓を引けるのはこの地味な内職のおかげ。</li>
+<li><strong>信仰スキル</strong>: <strong>【太陽神ソリスへの初歩祈祷（Solar Spark）】</strong> - わずかな灯りを呼び出す初歩奇跡。ただし「嘘をつくと舌が焼ける」戒律があるため、酒場で戦果を見栄張って盛ろうとすると舌がピリピリ痺れて口ごもる。</li>
+<li><strong>装備・ロードアウト</strong>:</li>
+<li>主兵装: <strong>樫の木の合成長弓（蜜蝋仕上げ）</strong>、鉄鏃の矢筒（24本入り・油紙巻き）</li>
+<li>防具: 石灰除けのボロ頭巾、泥除け革ゲートル、オイル引きマント</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 階層短編オムニバス小説</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『蜜蝋の弦と、白濁泥の全力疾走』</h4>
+<p><em>（四大ナラティブ・レパートリー：④【泥臭い撤退・小失敗型】）</em></p>
+<p>天井の鍾乳石から、ポタリ、と白濁した水滴が落ちてきた。</p>
+<p>セドリックは反射的に身をすくめ、肩に羽織ったオイル引きマントで長弓の弦をかばった。水滴がマントの油布を弾き、ジュッと小さな音を立てて床の白泥へと吸い込まれていく。</p>
+<p>「……あっぶねえ。この階層の水、革をカチカチにしやがるからな」</p>
+<p>セドリックはため息をつきながら、腰の小袋から丸い固形蜜蝋を取り出した。</p>
+<p>親指で温めて柔らかくし、弓の弦へと丁寧に擦り込んでいく。ギルドの酒場で大口を叩くエリート騎士たちなら、こんな地味で指先がベタつく内職など従者に丸投げするか、魔法の恒久防護が施された金ピカの弓を使っているのだろう。</p>
+<p>だが、所持金が銀貨十数枚しかないセドリックのような凡人冒険者にとって、弓弦が湿気で伸びて矢が飛ばなくなることは、即座に「死」を意味していた。</p>
+<p>「おい、セドリック！ 蜜蝋塗りは終わったかよ！？ 荷車が泥にハマって抜けねえんだよ！」</p>
+<p>坑道の先から、ドスの利いた怒鳴り声が飛んできた。</p>
+<p>泥除けのずた袋を足に巻き付けた相棒のドリス――背負子と木製荷車を引く『荷運び人（Dungeon Porter）』の男が、額に青筋を立てて泥まみれになりながら車輪を押していた。荷車の上には、今日半日かけて採掘した粗粒石灰岩のインゴットが数個、重々しく積まれている。</p>
+<p>「今行く！ 引っ張るからロープ投げろ！」</p>
+<p>セドリックは弓を背負い直すと、足首まで浸かる白濁泥に足を踏み入れた。靴底がぐちゃりと重い音を立て、泥濘が吸盤のように足首を引っ張る。</p>
+<p>二人がかりでフンッ！ と息を合わせ、泥の中から車輪を引き抜いたその瞬間だった。</p>
+<p>――グルルルルッ……。</p>
+<p>白灰色の粉塵霧の奥、石灰岩の岩棚の影から、ぬらぬらとした濡れ光が二つ浮かび上がった。</p>
+<p>体長二メートルを超える、泥喰いオオトカゲ（Sludge Monitor）だ。皮膚は周囲の岩肌と見分けがつかない白斑模様で、太い四肢には泥濘を疾走するための鋭い爪が生えている。その喉袋が、獲物を見定めて低く脈打っていた。</p>
+<p>「ゲッ……！ 出やがった！」ドリスが悲鳴を上げた。</p>
+<p>「慌てるな！ 俺が魔導弓で頭をぶち抜いてやる！」</p>
+<p>セドリックは素早く長弓を構え、油紙から矢を一本抜き取って番えた。</p>
+<p>心臓が早鐘を打つ。酒場で聞いた「風歩きの修道士」のような華麗なステップは踏めないが、毎晩手入れしたこの弓弦の反発力なら、奴の眉間を貫けるはずだ。</p>
+<p>セドリックは精神を集中し、メインスキル【魔導装填弓撃】の魔力を矢尻へ注ぎ込んだ。</p>
+<p>「燃えろ……！ 太陽の熱線となって貫け――！」</p>
+<p>矢尻にパチパチと小さな火花が灯る。</p>
+<p>だが、周囲を漂う濃密なアルカリ性の石灰粉塵と過剰な湿度が、魔力の励起を無情にも阻害した。</p>
+<p>ボシュッ。</p>
+<p>湿気たマッチのような情けない音と共に、矢尻の光は白煙を吐いてフッと消え失せた。</p>
+<p>「……え？」</p>
+<p>「おいセドリック！？ 不発じゃねえか！！」</p>
+<p>オオトカゲは待ってくれなかった。</p>
+<p>シューッ！ と強烈な威嚇音を響かせ、泥濘をものともしない四足駆動で、猛スピードで突進してきたのだ。泥しぶきが扇状に跳ね上がる。</p>
+<p>「うわああああっ！！」</p>
+<p>セドリックは咄嗟に矢を射放ったが、不発の矢はトカゲの硬い頭骨にカチンと弾かれ、空しく泥の中へ落ちた。</p>
+<p>勝ち目など微塵もない。相手は泥の中の王者であり、こちらは足を取られて一歩進むのすら重労働なのだ。</p>
+<p>「逃げるぞドリス！ 荷車を捨てろ！！」</p>
+<p>「バカ言え！ これ今日の飯のタネだぞ！？ 捨てるくらいなら死ぬ気で押すわ！！」</p>
+<p>「死んだら飯も食えねえだろが！！ プライド捨てて走れッ！！」</p>
+<p>セドリックはドリスの襟首を掴んで強引に荷車から引き剥がすと、背負っていた弓を掴み直し、白濁した泥水の中を泥まみれになりながら全力疾走した。</p>
+<p>バシャバシャと背後から迫る重い足音。オオトカゲの顎が空を切る「ガチリッ」という噛み合わせ音が、セドリックの尻のすぐ後ろで響く。</p>
+<p>「ひぃぃっ！ 近い近い近い！！」</p>
+<p>「セドリック、なんか投げろ！ 煙幕でも石でも何でもいいから！！」</p>
+<p>「荷袋に固いパンがある！ 食えトカゲ野郎ッ！」</p>
+<p>セドリックは腰の雑のうから、昨日焼いてカチカチになった黒パンを力任せに後ろへ投げつけた。</p>
+<p>ゴツンッ。</p>
+<p>固い黒パンが見事にトカゲの鼻先に直撃した。トカゲは一瞬「なんだこれは」と目を丸くして動きを止め、落ちたパンの匂いをクンクンと嗅ぎ始めた。</p>
+<p>その一瞬の隙を見逃さず、二人は死に物狂いで泥濘を蹴り、第003階へと続く黄銅昇降機の鉄柵の中へと転がり込んだ。</p>
+<p>「レバー引け！ 早く引けぇぇぇ！！」</p>
+<p>ガシャーン！ と鉄柵が閉まり、蒸気ボイラーが唸りを上げて昇降機がガタガタと上昇を始める。</p>
+<p>下を見下ろすと、黒パンを一飲みしたトカゲが昇降機の足元までやってきて、悔しそうに泥を跳ね上げていた。</p>
+<p>「ハァ……ハァ……ハァ……死ぬかと思った……」</p>
+<p>ドリスが鉄の床に仰向けに倒れ込み、泥まみれの顔を手で覆った。</p>
+<p>セドリックも壁に背中を預け、ズルズルと座り込んだ。新品だったはずの革ゲートルは泥水でドロドロになり、自慢のマントにも穴が空いている。粗粒石灰岩を積んだ荷車は、あえなく現場に置き去りだ。今日の収支は完全な大赤字だった。</p>
+<p>「……なぁ、セドリック」</p>
+<p>「……なんだよ」</p>
+<p>「お前の魔導弓、なんで不発したんだよ？ 酒場じゃ『一撃で魔獣の眉間を蒸発させる』って言ってなかったか？」</p>
+<p>「うっ……それは……」</p>
+<p>セドリックが言い訳をしようとした瞬間、太陽神ソリスの戒律が発動し、舌の先がチリチリと焼けつくように痛んだ。</p>
+<p>「い、痛たたたっ……！ 悪かったよ！ 見栄張りました！ 湿気で火花が消えただけです！ すいませんでした！」</p>
+<p>舌を押さえて涙目で謝るセドリックを見て、ドリスはぽかんとした後、腹を抱えて大笑いし始めた。</p>
+<p>「あっははは！ なんだそれ！ ソリス様は嘘つきに厳しいって本当だったんだな！」</p>
+<p>「笑うなよ……！ 命があっただけ儲けもんだろ！」</p>
+<p>セドリックは苦笑いしながら、泥で汚れた長弓を抱きしめた。</p>
+<p>失態もいいところだし、明日の朝飯代すら怪しい。だが、生き残った。生き残ってさえいれば、また蜜蝋を塗り直して、明日もう一度この塔に潜ることができる。</p>
+<p>昇降機がガタゴトと音を立てて登っていく中、二人は泥だらけの顔を見合わせ、笑い声を響かせた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🧱 水平展開エリア：旧石灰焼成窯の廃坑とグンドルの煤けた金床祠（Abandoned Lime Kiln &amp; Gundor's Sooty Anvil Shrine）</h3>
+<blockquote>
+<strong>開拓区分</strong>: Cron 8 水平エリア深化（第004階・西側廃坑支線）<br>
+<strong>追加環境ハザード</strong>: <strong>【生石灰の微温発熱帯と強アルカリ泥飛沫】</strong>（廃窯の底に残る生石灰に地下水が滴り落ちることで、局所的に摂氏60度近い水蒸気と強アルカリ性の泥飛沫が発生する。素手で触れれば皮膚が荒れるが、冬場や湿気で冷え切った冒険者にとっては天然の乾燥室・調理窯となる）<br>
+<strong>神祇信仰スポット</strong>: <strong>【地母と鍛冶の神グンドルの煤けた金床祠】</strong>（かつて採石坑の鍛冶職人たちが鶴嘴を打ち直した小さな鉄の金床祠。曲がった古釘や石灰スラグを供えて鶴嘴の背で二度叩くと、刃こぼれしにくくなるという現場信仰が残る）<br>
+<strong>廃棄ガラクタ活用（MGI）</strong>: <strong>『底抜けバケツのブリキ板』</strong>（採掘夫が捨てていった錆びたブリキ板。泥濘の上に敷けば即席の足場になり、廃窯の灰の上に置けば絶好の鉄板代わりになる）、<strong>『古びた酢漬けキャベツの残り汁』</strong>（強アルカリ性の石灰泥でゴワゴワになった革靴や手指を中和して柔らかく戻す、貧乏冒険者の生活の知恵）<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 短編オムニバス小説（第2幕）：『酢漬けキャベツの汁と、廃窯の焼きジャガイモ』</h3>
+<p><em>(四大ナラティブ・レパートリー：③【平熱日常・現場メシ型】／ 主役：針金ピップ＆ロルフ（泥這い小隊）× セドリック＆ドリス)</em></p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. 置き去りの荷車と、底抜けバケツのブリキ板</h4>
+<p>翌日。第004階の白濁した泥濘のほとりで、魔導弓手のセドリックと荷運び人のドリスは、頭を抱えて立ち尽くしていた。</p>
+<p>昨日、泥喰いオオトカゲから逃げる際に放り出した木製荷車が、車軸の半分まで白い粘土層（スラッジ）に飲み込まれ、ピクリとも動かなくなっていたのだ。</p>
+<p>「くそっ、一晩で泥が固まってやがる！ おいセドリック、もっと腰入れて引けよ！」</p>
+<p>「引いてるよ！ ていうか靴の裏に石灰泥がこびりついて、足が滑るんだよ！」</p>
+<p>二人が泥まみれになって悪戦苦闘していたその時、坑道の奥――かつて石灰を焼いていた煉瓦造りの『旧石灰焼成窯』の方角から、カラン、コロンと呑気な金属音が近づいてきた。</p>
+<p>白灰色の粉塵霧の中から現れたのは、樫の棒の先に真っ黒なフライパンを針金で括り付けた少年ピップと、傷だらけの鉄鍋を背負った泥這い小隊の重装前衛ロルフだった。</p>
+<p>「あれっ、ドリスさんじゃないですか！ こんな泥の真ん中で何してるんです？」</p>
+<p>「おう、ピップにロルフか！ 見りゃわかるだろ、昨日トカゲに追われて捨てた荷車が泥に食われちまったんだよ！」</p>
+<p>ロルフは顎の無精髭を撫でながら荷車の車輪を覗き込むと、廃坑の隅に転がっていた廃棄ガラクタ――<strong>『底抜けバケツのブリキ板』</strong>を拾い上げ、靴のかかとでバンバンと踏みつけて平らに伸ばした。</p>
+<p>「真上に引っ張るから抜けるもんも抜けねえんだ。ピップ、そっちの折れたツルハシの柄を車軸の下に噛ませろ。俺がこのブリキ板を泥と車輪の間に滑り込ませる」</p>
+<p>「はいっ、ロルフさん！」</p>
+<p>ピップが樫の棒とツルハシの柄をテコにして車輪をわずかに浮かせ、ロルフが泥まみれの剛腕で平らにしたブリキ板を車輪の下へグイッとねじ込んだ。</p>
+<p>吸盤のように車輪を掴んでいた粘土層と木の車輪がブリキ板で遮断された瞬間、ズボッ！ と小気味よい音を立てて、荷車が呆気なく泥から抜け出した。</p>
+<p>「おおおっ！？ 抜けた！！ すげえなロルフ、ただのゴミバケツの板切れじゃねえか！」</p>
+<p>「泥ん中じゃ、魔法の杖より一枚のブリキ板の方が役に立つってこった」</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. グンドルの古釘祈祷と、酸っぱい中和剤</h4>
+<p>四人は救出した荷車をガラガラと引き、風除けになる『旧石灰焼成窯』の赤煉瓦アーチの下へと逃げ込んだ。</p>
+<p>廃窯の隅には、炭と石灰で真っ黒に煤けた小さな鉄の金床――<strong>【地母と鍛冶の神グンドルの祠】</strong>が鎮座している。ロルフは腰袋から曲がった古釘を一本取り出して金床の上に置き、持っていた鎚の背で「カン、カン」と二度乾いた音を響かせた。</p>
+<p>「……グンドル様、今日も車軸とフライパンの針金が折れねえように頼んます」</p>
+<p>その隣で、セドリックが泣きそうな顔で自分の革ブーツと弓懸（ゆがけ）の革手袋を見つめていた。</p>
+<p>「あーあ……荷車は助かったけど、石灰泥を浴びすぎて革が石みたいにカチカチになっちまった。これじゃ明日は靴擦れで歩けねえよ……」</p>
+<p>するとピップが「あ、それならいいものがありますよ！」と背負子から木栓のされた曇りガラスの小瓶を取り出した。中には白く濁った酸っぱい液体が入っている。</p>
+<p>「なんですかそれ？」</p>
+<p>「跳ね兎亭の厨房で分けてもらった、<strong>『酢漬けキャベツ（ザワークラウト）の残り汁』</strong>です！ 第004階の泥ってアルカリが強いから、油を塗る前にこの酸っぱい汁を布に染み込ませて拭くと、石灰がシュワシュワって溶けて革がすぐ柔らかくなるんですよ」</p>
+<p>ピップがボロ布に酢漬けキャベツの汁を垂らし、セドリックの硬化した革ブーツを拭くと、微かな泡が立って白い石灰汚れが嘘のように落ち、革がしっとりとした弾力を取り戻した。</p>
+<p>ただ、あたり一面に猛烈に酸っぱい発酵キャベツの匂いが立ち込めた。</p>
+<p>「うわっ、すっぺえ匂い！！ でもすげえ、本当に革が柔らかくなったぞ！」</p>
+<p>「でしょ？ まあ、しばらく足元から漬物の匂いが消えないのが玉に瑕ですけどね」とピップがえへへと笑う。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">3. 生石灰の余熱と、ブリキ板の焼きジャガイモ</h4>
+<p>「さて、匂いで腹が減っちまったな。昼メシにするか」</p>
+<p>ロルフは廃窯の底――地下水と反応してじんわりと摂氏60度近い熱気を放っている生石灰の砂利層の上に、先ほど車輪の下に敷いていた『底抜けバケツのブリキ板』（泥を酢水で綺麗に拭いたもの）を置き、その上に自分の鉄鍋とピップのフライパンを並べた。</p>
+<p>火を熾さなくても、生石灰の水和熱だけで鍋底からじゅうじゅうと温かな音が立ち始める。煙が出ないため、泥喰いオオトカゲに居場所を嗅ぎつけられる心配もない。</p>
+<p>ピップは薄く切った塩豚の脂身をフライパンに敷き、芽をくり抜いた小粒のジャガイモをゴロゴロと転がした。さらに先ほど少しだけ残しておいた酢漬けキャベツの細切れを端に添え、蓋をして生石灰の余熱でじっくりと蒸し焼きにしていく。</p>
+<p>やがてフライパンの隙間から、焦げた豚脂とホクホクに蒸されたジャガイモ、そして酸味の飛んだ香ばしいキャベツの香りが漂い始めた。</p>
+<p>「ほら、セドリックさんもドリスさんも、串で刺して食べてください！ 熱いですよ！」</p>
+<p>「う、うめえええっ！！ 外側の皮が豚の脂でパリッとしてて、中はホクホクだ！ 酸っぱいキャベツが良い塩梅に効いてやがる！」</p>
+<p>前日、カチカチの黒パンをトカゲに投げつけて泣きながら撤退したセドリックとドリスは、廃窯の煉瓦に背中を預け、湯気の立つジャガイモを頬張りながら目を細めた。</p>
+<p>金貨が眠る宝物庫も、吟遊詩人が歌う英雄譚もここにはない。あるのは漬物臭い革靴と、拾ったブリキ板と、温かいジャガイモだけだ。だが、泥を這う者たちにとっては、それこそが明日も生き延びるための何よりの贅沢だった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 階層間接続情報</h3>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>上層連絡</strong>: 第003階：黄銅の昇降機と黒泥の浸透溜まり</li>
+<li><strong>下層連絡</strong>: 第005階：骨灰の螺旋塔・蝕白回廊</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Recorded under Lagrange Tower Master Chronicles / 塔務記録局 2026.</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<blockquote>
+<strong>階層公式BGM（Suno Master Edition）</strong>: 『requiem du sanctuaire（聖域のレクイエム）』<br>
+</blockquote>
+<h2 id="floor-005" style="margin-top:0;">💀 第005階：骨灰の蝕白回廊と白銀の鎮魂祭壇（The Ash-White Corridor &amp; Silver Reliquary）</h2>
+<blockquote>
+<strong>親ノート</strong>: 00_Lagrange_Tower_MOC<br>
+<strong>観測日</strong>: 2026-09-22（Cron 8 定時開拓・通算第32フロア・Ollama Staging協調）<br>
+<strong>環境</strong>: 視界を奪う白骨の微粉末 / カンテラ厳禁の粉塵爆発ハザード / 乾いた骨鳴りの反響と鎮魂の祈祷壇<br>
+<strong>推奨BGM</strong>: Lagrange_Tower_Soundtrack Track_005（Catacomb_Chant_8bit）<br>
+<strong>ナラティブモード</strong>: <strong>①【突破・踏破型】（重装連携・アンデッド粉砕と知恵の踏破）</strong><br>
+<strong>主役冒険者</strong>: ベルンハルト（ドワーフ・戦司祭・Rank B 560）、ガリク（人間・軽戦士・Rank E 140）、アリサ（人間・斥候・Rank D 280）<br>
+<strong>世界観連携</strong>: 『ラグランジュタワー』世界観・システム仕様のVault記録（主神ヴォルンの鉄炎 vs 死の穢れ）<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🏛️ フロア・カルテ（Floor Overview）</h3>
+<p>地上からわずか数階層上がった場所に広がる、かつて巨塔の建設初期に斃れた古代夫奴や初期探索者たちの遺骨が堆積した巨大なカタコンベ（地下回廊）。</p>
+<p>床も壁も白く風化した骨灰（ボーン・アッシュ）で覆われており、冒険者が一歩踏み出すたびにチョークのような白煙がもうもうと舞い上がる。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. 危険事象・環境ハザード</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>蝕白の粉塵霧（Bone Ash Smog）</strong>:</li>
+</ul>
+<p>微細な骨粉が空気中を漂い、視界は10メートル未満に遮られる。無防備に吸い込むと肺胞に骨灰が沈着し、激しい咳き込みと呼吸困難（スタミナ自然回復速度-80%）を引き起こす。</p>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>骨塵爆発（Ash Flash Hazard）</strong>:</li>
+</ul>
+<p>空気中の骨灰濃度が限界に達している区画で松明や火炎魔導を使用すると、瞬間的な粉塵爆発を引き起こし、全滅の危機に直面する。この階層では<strong>「火気の完全使用禁止（発光苔や冷光石の徹底）」</strong>が鉄則とされる。</p>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>骨鳴りの崩落（Bone Echoes）</strong>:</li>
+</ul>
+<p>天井を支える石灰岩は骨灰が圧縮された多孔質構造であり、重い振動（大声や乱戦の衝撃）を与えると「キーン」という甲高い骨鳴りと共に天井が崩落する。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. 特産品・採取素材</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>骨灰石（Bone Ash Stone）</strong>:</li>
+</ul>
+<p>骨粉と粘土が古代の圧力で石化した鉱物。軽量でありながら熱や衝撃を分散する性質を持ち、軽装盾や防塵耐熱プレートの芯材として高値で取引される。</p>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>魂残滓（Soul Residue / アニマ・ドロス）</strong>:</li>
+</ul>
+<p>完全に成仏しきれなかった微弱な思念が白い燐光を放つ結晶。聖別ポーションや対アンデッド付与オイルの貴重な触媒。</p>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>白銀の古銭（Silver Mortuary Coin）</strong>:</li>
+</ul>
+<p>古代の死者の口に含ませてあったとされる古い銀貨。表神殿の貴族たちが魔除けの装身具として喜んで買い取る。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">3. 生息する脅威・魔物</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>骨喰（ボーンイーター / Bone Devourer）</strong>:</li>
+</ul>
+<p>骨粉の堆積から立ち上がる、複数の獣の白骨がツギハギされた四足歩行のアンデッド。冒険者の骨を砕いて自らの肉体に接ぎ木しようと襲いかかる。刃物（斬撃）がほとんど効かない。</p>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>灰影（アッシュシェード / Ash Shade）</strong>:</li>
+</ul>
+<p>舞い上がる白煙そのものに思念が宿った不定形の亡霊。冒険者の口や鼻から体内へ侵入し、内側から窒息死させようとする。神聖魔法や塩・酢の散布でしか霧散しない。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🎒 階層適応ロードアウト（Floor-Adaptive Loadout）</h3>
+<p>過酷な粉塵と爆発ハザードを克服するため、ベルンハルトが選定した知恵の装備体系。</p>
+<p>```mermaid</p>
+<p>graph LR</p>
+<p>subgraph Loadout[&quot;第005階 適応ロードアウト&quot;]</p>
+<p>A[&quot;酢と聖水の二重革マスク&lt;br&gt;(防塵・灰影侵入防止)&quot;] --- B[&quot;星鉄のウォーハンマー&lt;br&gt;(斬撃無効の骨格粉砕)&quot;]</p>
+<p>B --- C[&quot;発光苔の革袋ランタン&lt;br&gt;(火気厳禁・粉塵爆発防止)&quot;]</p>
+<p>C --- D[&quot;主神ヴォルンの鉄炎の祈り&lt;br&gt;(骨鳴り崩落を誘発しない神聖打撃)&quot;]</p>
+<p>end</p>
+<p>```</p>
+<p>1. <strong>酢漬けの二重革マスク（Vinegar Mask）</strong>:</p>
+<p>トネリコ堂で調達した牛革マスクの内側に、強い酸味の果実酢と聖水を染み込ませたリネン布を挟み込んだ特注品。肺を骨灰から守り、灰影の口内侵入を酸と聖別力で完全に弾き返す。</p>
+<p>2. <strong>発光苔の革袋（Cold-Light Moss Pouch）</strong>:</p>
+<p>火気厳禁の鉄則を守るため、第012階や湿地帯で採取された蛍光苔を濡れた革袋に詰めた冷光照明。熱を一切発しないため、骨塵爆発のリスクがゼロ。</p>
+<p>3. <strong>星鉄のウォーハンマー『地脈砕き』</strong>:</p>
+<p>ドワーフの古式鍛冶で打たれた打撃武器。硬化した骨喰の頭蓋や関節部を一撃で粉砕する。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 短編オムニバス小説：『白煙の迷宮と、酢漬けマスクの頑固者』</h3>
+<p>「ゲホッ……ゲホッ！　頼むぜダンナ、息吸うだけで喉の奥がジャリジャリする！　これ本当に骨なのかよ！」</p>
+<p>第005階、白骨の粉が霧のように立ち込める回廊の角。</p>
+<p>軽戦士のガリクは、手持ちの短剣の切っ先を震わせながら、鼻を押さえて悪態をついた。</p>
+<p>足元はまるで雪原のように白い粉末が十数センチも積もっている。踏みしめるたびに、サク、サクと小気味のいい音が立つが、その正体が何千人分もの人間の粉砕された遺骨だと知れば、胃の腑が縮み上がるような心地悪さしかなかった。</p>
+<p>「騒ぐな、息を荒げるなと言ったはずだ。マスクの紐を締め直せ、ガリク」</p>
+<p>低く重厚な声で制したのは、前頭部に編み込みの赤髭を蓄えたドワーフの戦司祭、ベルンハルトだった。</p>
+<p>その筋骨隆々の巨躯は、艶消しの黒鉄板を幾重にも重ねた重装甲冑に包まれている。顔面には、ツンと鼻を突く酸っぱい匂いを放つ革マスクが固く巻きつけられていた。</p>
+<p>「おいおいベルンハルトの親父、この酢漬けの布切れ、酸っぱすぎて目がシパシパするんだが！」</p>
+<p>「文句を垂れる暇があるなら、酢の匂いを噛み締めろ。その酸味が切れた瞬間、白煙に紛れた『灰影』がお前の気管に滑り込んで、肺を内側からセメントのように固めちまうぞ」</p>
+<p>冷徹な忠告に、ガリクは喉を鳴らして口をつぐんだ。</p>
+<p>後方で周囲を警戒していた斥候のアリサが、腰の革袋から緑色の淡い光を取り出し、小声で囁いた。</p>
+<p>「……ベルンハルトさん、前方の瓦礫の向こう。白煙の中に、何か硬いものが擦れ合う音がします。『骨鳴り』じゃない……意志を持って這い回ってる」</p>
+<p>シャリ、シャリ、カチカチカチ。</p>
+<p>乾いた骨片が擦れ合う不気味な音が、濃霧の奥から這い寄ってくる。</p>
+<p>ガリクが思わず腰の火打ち石に手を伸ばした瞬間、ベルンハルトの鉄の籠手が万力のような力でその手首を掴み上げた。</p>
+<p>「馬鹿野郎！　何をする気だ！」</p>
+<p>「ひ、火を点けようと……！　松明で追い払えば……！」</p>
+<p>「この空気中の骨粉濃度が見えんのか！　火花ひとつ散らしただけで、この回廊全体が粉塵爆発を起こして、俺たちごとミンチになって天井の石灰岩にめり込むぞ！」</p>
+<p>ベルンハルトの怒気配る低い一喝に、ガリクは血の気を引かせた。</p>
+<p>巨塔の浅層には、こうした「知識のない新米が己の手で自爆する」罠がいくらでも転がっているのだ。</p>
+<p>「松明は捨て置け。光はアリサの発光苔だけで十分だ。来るぞ……散開するな、俺の背に張り付け！」</p>
+<p>霧を裂いて飛び出してきたのは、肋骨と獣の頭骨が歪に組み合わさった白骨の怪異――『骨喰（ボーンイーター）』の群れだった。</p>
+<p>四本の骨脚で壁を蹴り、鋭利な爪となった指骨をベルンハルトの喉首めがけて振り下ろす！</p>
+<p>「ガアアッ！」</p>
+<p>「――主神ヴォルンよ、鉄の炉に不純物の入る余地なし！」</p>
+<p>ベルンハルトが短く祈りを唱え、右腕の大槌を振り抜いた。</p>
+<p>星鉄の槌頭が空気を切り裂き、骨喰の胸部を正面から叩き潰す。</p>
+<p><em>バゴォォォンッ！！</em></p>
+<p>鈍く重い衝撃音が白煙を吹き飛ばした。</p>
+<p>刃物なら滑って弾かれる硬質の骨格が、ドワーフの膂力と打撃質量によって瞬時に微粉末へと粉砕される。砕け散った骨の破片が壁に叩きつけられ、雪崩のように崩れ落ちた。</p>
+<p>「ひぃっ、すげえ威力……！」</p>
+<p>「見惚れるな、上だ！」</p>
+<p>天井の亀裂から、半透明の白い霧の塊――『灰影（アッシュシェード）』が二体、音もなく滑り降りてきた。</p>
+<p>ガリクの顔面を覆うマスクめがけて、煙の手が伸びる。</p>
+<p>「うわっ、息が……吸えな――」</p>
+<p>「狼狽えるな！　酢を吹きかけろ！」</p>
+<p>ベルンハルトが胸元の聖水瓶を抜き、霧の中へ勢いよく飛散させた。</p>
+<p>聖水と酢の飛沫を浴びた灰影が、ジュウウウッと焼けただれるような音を立てて身悶えする。</p>
+<p>すかさずベルンハルトの左手の鉄壁盾が、神聖な祈りの光を宿して薙ぎ払われた。</p>
+<p>「散れ、彷徨える灰よ！　土に還り、鉱脈の糧となれ！」</p>
+<p><em>キィィィン――！！</em></p>
+<p>澄み渡る鐘の音のような衝撃波が走り、灰影の輪郭が完全に霧散した。</p>
+<p>同時に、回廊の奥を塞いでいた崩落骨灰の壁が崩れ去り、その向こう側に、淡い銀の光を湛えた石造りの部屋が口を開けた。</p>
+<p>「……あれは……」</p>
+<p>「第005階の踏破標識。『白銀の鎮魂祭壇』だ」</p>
+<p>三人は転がり込むように祭壇の間へ滑り込んだ。</p>
+<p>古代の浄化結界が生きているその部屋の中だけは、骨灰の煙が一粒も入ってこない。空気が驚くほど澄んでいた。</p>
+<p>「ふ、ふはぁぁぁっ……！　生きた……助かった……！」</p>
+<p>ガリクは床にへたり込み、ようやく酸っぱい革マスクを引き剥がして深呼吸した。</p>
+<p>汗と骨灰でドロドロになった顔を見合わせ、アリサが小さく噴き出す。</p>
+<p>「ひどい顔よ、ガリク。まるで粉挽き小屋の袋ね」</p>
+<p>「うるせえ！　死ぬかと思ったんだぞ！　……でも、ダンナ」</p>
+<p>ガリクは、大槌の手入れを始めたベルンハルトを見上げた。</p>
+<p>「アンタの言う通り、酢漬けマスクも発光苔も、ケチらずに揃えて正解だったぜ。火を点けてたら、今頃オレたち全員、あの骨の仲間入りだった」</p>
+<p>ベルンハルトは赤髭を撫で下ろし、無骨な手で腰の革袋から硬いドワーフ乾パンを取り出して二人に投げ渡した。</p>
+<p>「塔を登るのに必要なのは、腕力だけじゃない。階層の息遣いを知り、身に纏う道具を変える知恵だ。……ほら食え。酸っぱいマスクの後の乾パンは、格別に甘く感じるぞ」</p>
+<p>三人は白銀の祭壇の柔らかな光に包まれながら、乾いたパンを齧り、次の階層への歩みを確かに噛み締めていた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🛡️ 水平展開エリア：粉骨の風抜き小祠と『樽板胸当て』の野営窪地（Southwest Branch: Bone-Dust Vent Shrine &amp; Barrel-Stave Camp Hollow）</h3>
+<blockquote>
+<strong>開拓区分</strong>: Cron 8 水平エリア深化（第005階・南西通気支線 ／ Build Rules 0.1 独自昇華オマージュ実装）<br>
+<strong>追加環境特性</strong>: <strong>【通気竪坑の微風溜まり】</strong>（上層の第006階から乾いた風が吹き降りるため、この窪地だけは骨灰の粉塵濃度が低く、火を使わずに冷光石で地図を描く駆け出しパーティーの休憩所になっている）<br>
+<strong>名物安物装備＆珍妙祈祷（Build Rules 0.1 準拠）</strong>:<br>
+- 🛢️ <strong>『酒樽の底板胸当て（Ale-Barrel Stave Armor）』</strong>: かつて王国近衛騎士団長を務めた伝説の祖父を持つ少年パスカルが、実家の漬物屋が傾いて革鎧すら買えず、第001階『跳ね兎亭』の裏口で譲ってもらった古樽の樫板を麻縄で繋ぎ合わせて作った自作防具。歩くたびに「カラン、コロン」と乾いた木の音が鳴り、湿気を吸うとほのかに酸っぱいエール酒と糠漬けの匂いが漂う。<br>
+- 🐰 <strong>『耳たぶ引っ張り三段跳びの癒やし（Earlobe-Tug Triple-Hop Heal）』</strong>: 見習い祈祷師ロッティが通信教育の安物教本で覚えた初歩治癒奇跡。詠唱中に「両手で自分の耳たぶを横に引っ張りながら、片足でピョン、ピョン、ピョンと三回跳ねる」という世にも間抜けな身体動作（ソマティック・コンポーネント）を行わないと魔力が励起しないが、擦り傷と打撲だけは確実に治る。<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 短編オムニバス小説（第2幕）：『カランコロンと鳴る樽板と、耳引っ張りの治癒術』</h3>
+<p><em>(四大ナラティブ・レパートリー：④【泥臭い撤退・ギリギリ切り抜け型】／ 主役：見習い戦士パスカル × 貧乏地図描きキップ × 見習い祈祷師ロッティ)</em></p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. 羊皮紙一枚の値段と、伝説の騎士の孫</h4>
+<p>カラン、コロン、カラン。</p>
+<p>骨灰がうっすらと積もった第005階の南西支線に、およそ迷宮の厳粛な空気とは似つかわしくない、軽快な木片の音が響いていた。</p>
+<p>「……なあパスカル。お前がその『酒樽の板切れ』を鳴らして歩くたび、俺は敵の骨が近づいてきたんじゃないかって心臓が縮むんだけど」</p>
+<p>冷光苔のガラス瓶を片手に、安物のざらざらした再生羊皮紙へ炭ペンを走らせていた少年――地図描き（マッパー）のキップが、深いため息をついた。</p>
+<p>キップの腰には、トネリコ堂で値切って買った定規とコンパス、そして一滴でもこぼしたら一週間は立ち直れない高級耐水インクの小瓶が大事そうに括り付けられている。</p>
+<p>「い、仕方ないだろキップ！ 鉄の胸当てどころか、なめし革の胴着だって銀貨十五枚はするんだぞ！」</p>
+<p>カランコロンと胸元の木板を鳴らしながら、十九歳の見習い戦士パスカルが顔を赤くして抗議した。</p>
+<p>背はすらりと高く、目鼻立ちも整っている。それもそのはず、彼の祖父はかつて王都で『白銀の盾』と謳われた伝説の近衛聖騎士だった。</p>
+<p>だが、父親が退職金をつぎ込んで始めた「迷宮大根の樽漬け屋」が第004階の泥水氾濫で大損害を出して以来、パスカルの懐事情は氷河期そのものだった。結果として、今の彼が身に纏っているのは、跳ね兎亭で廃棄されたエール樽の湾曲した樫板を並べて麻縄で編んだ<strong>『酒樽の底板胸当て』</strong>と、講習三日で覚えた樫の木の棍棒一本だけである。</p>
+<p>「いいじゃないですかぁ、パスカルさんの樽アーマー！ 近づくとちょっとだけ麦酒とたくあんの匂いがして、お腹が空いてきますよ！」</p>
+<p>後ろから呑気にフォローしたのは、大きすぎる三角帽子がずり落ちそうな見習い祈祷師の少女、ロッティだった。</p>
+<p>「フォローになってねえよロッティ！ 祖父ちゃんが草葉の陰で泣いてるぜ……！」</p>
+<p>「しっ！ 二人とも止まって！」</p>
+<p>地図を描いていたキップの声が裏返った。</p>
+<p>前方の骨灰の山が、モゾリと不気味に盛り上がったのだ。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. 割れた三番板と、必死の珍妙ステップ</h4>
+<p>シャリシャリシャリッ！</p>
+<p>白い粉煙を巻き上げて飛び出してきたのは、犬と山羊の白骨が歪に絡み合ったアンデッド――『骨喰（ボーンイーター）』だった。しかもその背後には、白い煙の亡霊『灰影（アッシュシェード）』まで揺らめいている。</p>
+<p>「うわあああっ！ 出たぁっ！ キップ、下がれ！」</p>
+<p>パスカルは恐怖で裏返りそうな声を必死に押し殺し、一歩前へ踏み出した。</p>
+<p>怖くて足がガクガク震える。だが、自分が逃げたら後ろの二人は一撃で骨の餌食だ。</p>
+<p>「くらえっ！【樫の木棍棒の叩きつけ】ぇぇぇっ！！」</p>
+<p>パスカルが渾身の力で振り下ろした棍棒が、骨喰の頭蓋をガツンと捉えた。</p>
+<p>だが、骨喰は首をグキッと不自然な角度に曲げて衝撃を逃がすと、鋭い前脚の骨爪でパスカルの胴体を思い切り薙ぎ払った！</p>
+<p><em>パキィィィンッ！！</em></p>
+<p>乾いた音が響き、パスカルの胸を守っていた『酒樽の底板胸当て』の真ん中――一番上等だった三番目の樫板が、真っ二つに割れて吹き飛んだ。</p>
+<p>衝撃でパスカルが骨灰の上に尻もちをつく。</p>
+<p>「あああああっ！！ 俺の三番板がぁぁぁっ！！ 跳ね兎亭の親父さんに頼み込んで貰った、二十年物のエール樽の一番いい板だったのにぃぃっ！！」</p>
+<p>「板の心配してる場合かぁっ！ パスカル、脇腹から血が出てるぞ！ ロッティ、早く回復魔法だ！！」とキップが絶叫する。</p>
+<p>「は、はいっ！ 行きますよぉっ！」</p>
+<p>ロッティは大真面目な顔で杖を地面に突き立てると、何を思ったか<strong>両手で自分の左右の耳たぶをギュッと横に引っ張り、ベロを出しながら片足でその場を跳ね回り始めた</strong>。</p>
+<p>「ピョン！ ピョン！ ピョン！ ――痛いの痛いの、風の神様へ飛んでけぇぇっ！！」</p>
+<p>骨喰が「えっ、何こいつ……？」とでも言いたげに一瞬だけ動きを止めた。</p>
+<p>死線のド真ん中で、うら若き少女が耳たぶを引っ張りながら変顔で片足三段跳びをするという、あまりにもシュール極まりない光景。</p>
+<p>だが、三回目のジャンプが決まった瞬間、ロッティの足元からぽわんと温かい緑色の光が弾け、パスカルの脇腹の裂傷がピタリと塞がった！</p>
+<p>「おおっ、痛みが消えた！ でもロッティ、頼むからもう少し格好いい呪文を覚えてくれえええっ！」</p>
+<p>「だって正規の詠唱教本は銀貨三十枚もするんですもん！ 通信教育の銅貨五枚の教本だと、こうやって身体のツボを刺激しないと魔力が出ないんですぅ！」</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">3. 酸っぱい古梅干しと、命からがらの風抜き窪地</h4>
+<p>そこへ、もう一体の『灰影（アッシュシェード）』が、耳を引っ張ったまま着地してよろけたロッティの口元めがけて、シュウウッと白い煙の腕を伸ばした。</p>
+<p>聖水なんて高級品、この貧乏パーティーが持っているはずもない。</p>
+<p>「ロッティ、口を閉じろ！ ――ええい、これでも食らえっ！」</p>
+<p>地図描きのキップが、地図ケースの隣にぶら下げていた弁当袋から、母親が漬けた<strong>『三年物の猛烈に酸っぱい古梅干し（赤紫蘇まみれ）』</strong>を三粒掴み出し、竹筒の吹き矢代わりに思い切り息を吹き込んで灰影の真ん中へ撃ち込んだ！</p>
+<p><em>ジュワァァァァッ！！</em></p>
+<p>果実酢どころではない、口に入れただけで顔中のパーツが真ん中に寄るほどの超高濃度クエン酸と塩分の塊が直撃し、灰影が「ギエエエエッ！？」と声なき悲鳴を上げてピンク色に染まりながら霧散した。</p>
+<p>その隙に、立ち上がったパスカルが「俺の三番板の恨みぃぃっ！」と涙目のフルスイングで骨喰の脚をへし折り、三人は割れた樽板の破片を拾い集めながら、脱兎のごとく上層の第006階へと続く『風抜き窪地』の階段へと転がり込んだ。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">4. 麻縄の応急修理と、塩おにぎりの夜</h4>
+<p>「ハァ……ハァ……し、死ぬかと思った……」</p>
+<p>骨灰の届かない第006階手前の風抜き窪地で、三人は折り重なるようにへたり込んだ。</p>
+<p>パスカルは割れた三番目の樽板を膝の上に乗せ、キリで小さな穴を開けて麻縄を通し、まるで継ぎ接ぎだらけのフランケンシュタインのように板を繋ぎ直している。</p>
+<p>「……ほら、見ろよ。麻縄でクロス編みにしてやったら、前よりちょっと頑丈になった気がするぜ」</p>
+<p>「ポジティブだなあ、お前は……」</p>
+<p>キップは呆れつつも、羊皮紙の地図に『南西支線：骨喰注意・梅干し有効』と丁寧に書き加え、自分の弁当袋を開いた。</p>
+<p>中には、先ほど灰影にぶつけた古梅干しの残りと、握り飯が三つ、そして炙った塩鮭の皮が一切れずつ入っていた。</p>
+<p>三人は冷光石の淡い光の下で肩を寄せ合い、少し潰れた塩おにぎりを頬張った。酸っぱい梅干しの果肉が、全力疾走でカラカラになった喉と疲れた身体に、涙が出るほど美味く染み渡る。</p>
+<p>「……なあ、今回の骨灰石の欠片を売ったらさ、パスカルの胸当ての三番板、鍛冶屋で鉄板一枚だけに変えられるんじゃないか？」</p>
+<p>キップが言うと、パスカルは目を輝かせた。</p>
+<p>「本当か！？ 真ん中だけ鉄板のハイブリッド樽アーマーか！ なんか強そうじゃねえか！」</p>
+<p>「ええーっ、私の『耳引っ張り三段跳び』を普通の詠唱にする教本が先ですよぉ〜！」</p>
+<p>カラン、コロンと補修したばかりの樽板を鳴らしながら、全然強くない三人の笑い声が、乾いた風の吹き始める階段のほとりにいつまでも響いていた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🧭 次階層への接続</h3>
+<ul style="margin:8px 0 12px 20px;">
+<li>上層接続: 第006階：乾いた塩砂の狭窄路と鳴き砂の地下空洞 ／ 第08階：幻影砂漠のオアシス市場と青魚の神殿</li>
+<li>下層接続: 第004階：粗粒石灰岩の採石坑と白濁沈殿池 ／ 第002階：黄鉄鉱の廃鉱山と石炭地下回廊</li>
+</ul>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-006" style="margin-top:0;">🏜️ 第006階：乾いた塩砂の狭窄路と鳴き砂の地下空洞（Singing Sand Caverns &amp; Salt Road）</h2>
+<blockquote>
+<strong>世界観親ノート</strong>: 00_Lagrange_Tower_MOC | Lagrange_Tower_Build_Rules | Lagrange_Tower_Character_Codex<br>
+<strong>大区域（バイオーム）</strong>: 系統③【霊廟・骨灰・古代神殿】（砂漠過渡境界）<br>
+<strong>環境BGM（公式サントラ）</strong>:<br>
+<em>(Track #005: 『requiem du sanctuaire』- Suno Master Edition / 大区域共有BGM)</em><br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 階層構造と環境特性（Floor Mechanics）</h3>
+<p>第005階の骨灰回廊を登り詰めた先に広がる、乾ききった地下砂丘と風蝕オベリスクの連なる過渡階層。</p>
+<p>かつて古代の神殿巡礼者たちが歩んだ塩の交易路（ソルトロード）の跡であり、上層の砂漠（第008階）から吹き降ろす乾いた熱風と、冷たい地下風が交錯している。足を踏み出すたびに、微細な石英砂が摩擦して「キュッ、キュッ」と澄んだ反響音（鳴き砂）を立てる。</p>
+<p>```mermaid</p>
+<p>graph TD</p>
+<p>F5[&quot;第005階：骨灰の螺旋塔・蝕白回廊&quot;] --&gt; F6[&quot;🏜️ 第006階：乾いた塩砂の狭窄路と鳴き砂の地下空洞&quot;]</p>
+<p>F6 --&gt; F8[&quot;第008階：幻影砂漠のオアシス市場と青魚の神殿&quot;]</p>
+<p>subgraph Floor_006_Ecology [&quot;第006階の環境ハザードと生態&quot;]</p>
+<p>H1[&quot;🌬️ 【鳴き砂の反響風】&lt;br&gt;風が砂丘を撫でるたびに低周波の唸りが発生。音響索敵を乱すが、波長を合わせれば精神を鎮静化できる。&quot;]</p>
+<p>H2[&quot;🧂 【極度の乾燥と塩分結晶】&lt;br&gt;喉の渇きが通常の倍速で進行。塩分を含んだ水筒と保湿油が生存の必須装具。&quot;]</p>
+<p>H3[&quot;🦂 【砂潜りの擬態捕食者】&lt;br&gt;砂の中に潜み、振動を感知して獲物を引きずり込む魔物が生息。&quot;]</p>
+<p>end</p>
+<p>```</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. 階層特産品・採取素材</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>鳴き砂の小瓶（Singing Quartz Sand）</strong>: 音響魔導具の共鳴触媒や、上層の香炉に用いられる高純度の石英砂。</li>
+<li><strong>乾燥岩塩結晶（Rock Salt Prisms）</strong>: 料理の味付けや保存食の燻製に欠かせない、透明度の高い天然塩。</li>
+<li><strong>砂漠乾草（Dune Dry-Grass）</strong>: 水分を逃がさない強靭な茎を持つ薬草。煎じると苦味が強いが、喉の渇きと疲労を癒やす。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. 生息魔物</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>砂潜りサソリ（Dune Skulker）</strong>: 砂の中に完全に潜伏し、足音の振動を感知して毒針を突き上げる大型節足動物。</li>
+<li><strong>塩化の小鬼（Salt Imp）</strong>: 旅人の水筒の水を奪おうと岩陰から忍び寄る小悪魔。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">👥 主要滞在冒険者カルテ（Resident Adventurers）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">オルガ・スターゲイザー（Olga Stargazer）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族 / 性別</strong>: Strigi-an（梟人族） / 女性（28歳）</li>
+<li><strong>クラス</strong>: Bard（戦場の吟遊詩人 / Common Rank 392）</li>
+<li><strong>スリーツリー・ビルド（Build Rules 1.1 凡人リアリズム準拠）</strong>:</li>
+<li><strong>メインスキル</strong>: <strong>【星影の古弦（Astral Chords）】</strong> - 鳴き砂の反響に合わせて四弦琴を爪弾き、敵の平衡感覚を狂わせる補助音律。派手な破壊力はないが、狭い洞窟内では極めて効果的。</li>
+<li><strong>サブスキル</strong>: <strong>【夜間砂漠の野営と乾燥薬草茶（Dune Bivouac &amp; Herbal Brew）】</strong>（生活実用型） - 極度の乾燥と夜間の急激な冷え込みから仲間を守る、砂地設営と煎じ薬草の調合術。</li>
+<li><strong>信仰スキル</strong>: <strong>【叡智神アストラ・ヴェリタスへの祈祷（Starlight Whisper）】</strong> - 壁面に星座の配置を微かに投影し、方位と時間を知る初歩奇跡。</li>
+<li><strong>装備・ロードアウト</strong>:</li>
+<li>主兵装: <strong>使い込まれた黒檀の四弦琴（古布巻き）</strong>、護身用銀ダガー</li>
+<li>防具: 防砂ゴーグル付き頭巾、梟羽織りの砂漠マント、毛皮の足袋</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">パスカル（Pascal）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族 / 性別</strong>: Hum-an（人間） / 男性（19歳）</li>
+<li><strong>クラス</strong>: Novice Warrior（見習い戦士 / Common Rank 280 / Build Rules 1.1 低参入妥協型）</li>
+<li><strong>スリーツリー・ビルド</strong>:</li>
+<li><strong>メインスキル</strong>: <strong>【樫の木棍棒の叩きつけ（Club Smash）】</strong> - 剣の修行に耐えられず、3日で覚えた泥臭い叩打。</li>
+<li><strong>サブスキル</strong>: <strong>【石投げ（Sling Shot）】</strong> - 拾った石灰石を革紐で投擲する牽制技。</li>
+<li><strong>信仰スキル</strong>: <strong>【なし（未帰依）】</strong> - 戒律が怖くてまだどの神にも祈っていない。</li>
+<li><strong>装備</strong>: 樫の木の棍棒、粗悪なリネン包帯、革の胸当て</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 階層短編オムニバス小説</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『鳴き砂の夜風と、苦い薬草茶』</h4>
+<p><em>（四大ナラティブ・レパートリー：③【平熱・日常型】）</em></p>
+<p>キュッ、キュッ、と砂が鳴いた。</p>
+<p>オルガが足を下ろすたびに、足元に敷き詰められた白灰色の石英砂が、まるで細い硝子の笛を吹いたような涼やかな音を立てる。</p>
+<p>第005階の重苦しい骨灰回廊を抜け、この第006階の広大な砂の空洞に入った瞬間、空気が一変していた。</p>
+<p>湿気とカビの匂いは完全に消え去り、代わりに鼻孔をくすぐるのは、からからに乾いた岩塩と、古い砂の匂いだった。上層の隙間から吹き込んでいるのか、微かな風が岩肌の割れ目を通り抜けるたび、遠くで低いオルガンのような唸りが反響している。</p>
+<p>「オルガさん……これ、座っても平気っすか？」</p>
+<p>後ろから、疲れ切った足取りでついてきた見習い戦士の少年パスカルが、大きな砂岩の影を指差した。</p>
+<p>手には、節くれだった樫の木の棍棒を握りしめている。剣術道場の月謝が払えず、講習三日で覚えた「棍棒叩きつけ」だけでこの迷宮に潜り込んできた、典型的な低参入の新人だった。</p>
+<p>「ええ、そこなら風が遮られるわ。夜間砂漠の野営の基本よ」</p>
+<p>オルガは羽毛に覆われた耳を微かに動かしながら、背負っていた四弦琴を静かに下ろした。</p>
+<p>梟人族特有の大きな琥珀色の瞳は、暗がりの中でも昼間のように見通しが利く。周囲の砂地に魔物の足跡がないことを確認すると、オルガは手際よく防砂布を岩と岩の間に張り渡した。</p>
+<p>パスカルはドスンと腰を下ろし、擦り切れた革の手袋を脱いだ。</p>
+<p>手のひらには、無骨な棍棒を強く握りすぎたせいでできた硬いマメがいくつも潰れ、赤く腫れている。</p>
+<p>「……痛そうね」</p>
+<p>「あはは、力加減が下手くそなんすよ。道場のエリート連中は、もっと軽くて切れ味のいい細剣で、シュパパパッて格好よく魔物を倒すんすけど……俺にはあんなの無理でした」</p>
+<p>パスカルは苦笑いしながら、自分の無骨な棍棒を見つめた。</p>
+<p>「剣の型を覚えるのも時間かかるし、師匠への礼金も払えねえし。結局、誰でも持てる木の棒で叩くしかなくて……。俺、冒険者向いてないのかな」</p>
+<p>オルガは何も言わず、腰の荷袋から携帯用の小さな真鍮鍋と、乾燥させた砂漠の乾草を取り出した。</p>
+<p>水筒から大切に真鍮鍋へ水を注ぎ、火打石で小さな種火を起こす。やがて湯が沸き始めると、チリチリとした乾燥草が湯の中で開き、濃い緑色の苦い香りがふわりと立ち込めた。</p>
+<p>「飲んでみて。砂漠の薬草茶よ。喉の渇きと、手の腫れに効くわ」</p>
+<p>木製の小椀に注がれた茶を、パスカルは両手で受け取った。</p>
+<p>フーフーと息を吹きかけ、恐る恐る口をつける。</p>
+<p>「……にがっ！！」</p>
+<p>パスカルが思わず顔をしかめた。その露骨な表情に、オルガは思わずクスクスと喉を鳴らして笑った。</p>
+<p>「ふふ、良薬は口に苦し、よ。でも、飲んだあと胃がじんわり温かくなるでしょう？」</p>
+<p>「……あ、本当だ。なんか、身体の芯の寒さが引いていく気がする」</p>
+<p>「この第006階はね、昼と夜の寒暖差が激しいの。格好いい剣技を持っていても、冷え込みで指が悴んで動かなくなったり、喉がカラカラに乾いて倒れる冒険者がたくさんいるわ。派手な必殺技なんて、生き延びた後で使えれば十分なのよ」</p>
+<p>オルガは四弦琴を膝の上に乗せ、爪先で細い弦をポロンと弾いた。</p>
+<p>弦の音色が、足元の鳴き砂と不思議な調和を奏でる。洞窟を吹き抜ける風が、微かに砂を揺らし、心地よい反響音が二人の周りを包み込んだ。</p>
+<p>「パスカル、あなたが今日、私の背後でしっかり棍棒を構えて警戒してくれていたから、私は安心して砂の音を聴くことができたわ。生き延びて、こうして温かいお茶を飲んでいる。それだけで、冒険者としては百点満点よ」</p>
+<p>「……オルガさん」</p>
+<p>パスカルは木椀に残った苦いお茶を一気に飲み干し、袖口で口元を拭った。その顔には、先ほどまでの失意は消え、少年の素直な照れ笑いが戻っていた。</p>
+<p>「よーし……！ 明日もまた、この木の棒で精一杯叩きます！」</p>
+<p>「ええ。でもその前に、手のひらに軟膏を塗って、しっかり眠りなさいね」</p>
+<p>風が鳴き砂を撫で、洞窟の奥から静かなオルガンのような唸りが聞こえてくる。</p>
+<p>事件も、強敵も、劇的な宝の発見もない。</p>
+<p>ただ、乾いた風と温かいお茶、そして二人の凡人が静かに語り合う夜が、迷宮の奥深くでゆっくりと更けていった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🦎 水平展開エリア：東側塩砂回廊・星辰古神アストリアの風蝕石碑と岩塩炙り炉（Eastern Salt-Sand Gallery: Astoria's Wind-Carved Stele &amp; Salt-Roast Hearth）</h3>
+<blockquote>
+<strong>開拓区分</strong>: Cron 8 水平エリア深化（第006階・東側交易路跡 ／ 🎲 GM骨格 <code>1d100 = 100</code>【0.05%極稀遭遇・奇跡型】完全連動）<br>
+<strong>連動GMダイス骨格</strong>: GM_Encounter_Skeleton.json（<code>1d100 = 100</code> [0.05%極稀遭遇・奇跡型] ／ 滑り止め革剥がれ＆手汗すっぽ抜け ／ 炙りすぎて真っ黒に焦げた雲海トビウオのヒレと白湯 ／ 奇品『紡ぎ足の幽雀』 ／ 星辰古神アストリアの風）<br>
+<strong>0.05%極稀遭遇生物（Tier 0.05）</strong>: <strong>【王冠岩塩の硝子ヤモリ（Crown-Salt Crystal Gecko）】</strong>（背中に純度99.9%の黄金岩塩結晶の王冠を背負った全長2.5メートルの幻獣。鳴き砂の中に完全同化して眠っており、遭遇確率は0.05%未満。噛みつかれれば鉄盾も砕けるが、実は極度の「焦げ魚アレルギー（煙たい焦げ臭を嗅ぐと大くしゃみをして王冠結晶をポロリと落として逃げ出す）」という生態的弱点を持つ）<br>
+<strong>投入奇品（Wonder Item）</strong>: 🐦 <strong>『紡ぎ足の幽雀（Clockwork Trap-Stepping Sparrow）』</strong>（背中のゼンマイを巻くと、トコトコと5メートル先まで歩いて床の罠や地雷を代わりに踏んでくれる真鍮細工の小鳥）<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 短編オムニバス小説（第2幕）：『すっぽ抜けた棍棒と、岩塩プレートの脂滴る串焼き』</h3>
+<p><em>(四大ナラティブ・レパートリー：🎲 特別枠【0.05%極稀遭遇・奇跡の大金星型】／ 主役：見習い戦士パスカル＆地図描きキップ＆祈祷師ロッティ × 吟遊詩人オルガ)</em></p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. トコトコ歩く真鍮スズメと、0.05%の昼寝</h4>
+<p>翌日。第006階の東側塩砂回廊にて、棍棒使いの少年パスカルは、自分の仲間である地図描きキップ、見習い祈祷師ロッティ、そして案内役を買って出てくれた梟人族の吟遊詩人オルガと共に、慎重に鳴き砂の斜面を進んでいた。</p>
+<p>パスカルは第005階で割れた『酒樽の底板胸当て』の上に、なけなしの銅貨で買った中古の革胸当てを重ね着しているため、暑さと緊張で手のひらにびっしょりと手汗をかいていた。</p>
+<p>「……あれっ？ やばいぞキップ、昨日棍棒の柄に巻いた滑り止めの豚革が、手汗と湿気でベロッと剥がれてきた……！」</p>
+<p>「ええっ！？ 今ここで武器落としたら砂潜りサソリの餌食だぞ！ ちょっと待て、さっき第005階の階段脇で拾ったこの奇品を使うから！」</p>
+<p>キップは背嚢から、片羽が少しくぼんだ真鍮製のぜんまい小鳥――<strong>『紡ぎ足の幽雀』</strong>を取り出した。</p>
+<p>背中のネジをギリギリと三回巻いて砂の上に置くと、真鍮のスズメは「チチッ、カタカタカタ……」と愛嬌のある音を立てながら、一行の5メートル前方をトコトコと歩き始めた。砂の中にサソリや落とし穴があれば、このスズメが先に踏んで教えてくれる寸法だ。</p>
+<p>「おお〜っ、可愛いですねぇ！ トコトコ歩いてますよ！」とロッティが目を細めた、まさにその時だった。</p>
+<p>5メートル先を歩いていた『紡ぎ足の幽雀』が、何もないはずの白い鳴き砂の上で「カチンッ」と硬いものを踏みつけ、そのままパタリと横転した。</p>
+<p>次の瞬間。</p>
+<p>ゴゴゴゴゴッ！！ と鳴き砂が噴水のように割れ、砂の下から<strong>黄金色に輝く巨大な岩塩の王冠を背負った、全長二メートル半の半透明な大トカゲ――0.05%極稀幻獣『王冠岩塩の硝子ヤモリ』</strong>が、昼寝を邪魔されてカンカンに怒り狂いながら飛び出してきたのである！</p>
+<p>「ギャアアアアアッ！？ サソリじゃない！ なんかとんでもなくデカくてキラキラした化け物が出たぞぉぉっ！！」</p>
+<p>「待って、あれは図鑑でしか見たことがない『王冠岩塩の硝子ヤモリ』よ！ 噛まれたら樽板ごと真っ二つにされるわ！」</p>
+<p>オルガが即座に四弦琴を構えたが、ヤモリの突進は風のように速かった。</p>
+<p>「う、うわああああっ！ 死ぬぅぅぅっ！！」</p>
+<p>パニックに陥ったパスカルは、仲間を守るため無我夢中で樫の木の棍棒を大上段から振り下ろそうとした。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. アストリアの風と、奇跡のホームラン</h4>
+<p>その刹那、回廊の天井の割れ目から、一陣の涼やかなつむじ風――<strong>【星辰古神アストリアの風】</strong>が吹き降りた。</p>
+<p>風が足元の鳴き砂を一気に吹き払い、砂の下に埋もれていた古代石畳の「星座の踏み石（絶対に滑らない安全足場）」を露わにする！</p>
+<p>パスカルの靴底がその星座の踏み石をガッチリと捉え、過去最高の腰の回転が棍棒に乗った――次の瞬間。</p>
+<p><em>スポォォォンッ！！</em></p>
+<p>「……あっ」</p>
+<p>剥がれかけていた柄の滑り止め革が、パスカルの猛烈な手汗でツルッと滑り、<strong>全力スイングした樫の棍棒がパスカルの手から完全にすっぽ抜けた</strong>のである。</p>
+<p>「でえっ！？ パスカル、お前この場面で武器投げたのかよぉぉっ！？」</p>
+<p>キップの絶叫の中、すっぽ抜けた棍棒はきりもみ回転しながら天井の鍾乳石に「カァン！」と跳ね返り、あろうことか、ちょうど後ろでキップが非常食として取り出しかけていた<strong>『炙りすぎて真っ黒に焦げた雲海トビウオのヒレ』</strong>を野球のバットのようにジャストミートした！</p>
+<p><em>パァンッ！！</em></p>
+<p>弾き飛ばされた真っ黒焦げのトビウオのヒレが、煙たい焦げ臭を撒き散らしながら一直線に宙を飛び、威嚇のために大口を開けていた『王冠岩塩の硝子ヤモリ』の喉の奥へとホールインワンした。</p>
+<p>「……グ、グガッ！？ ハッ……ハッ……<strong>ハックショオオオオンッッ！！</strong>」</p>
+<p>硝子ヤモリは、大の苦手とする「焦げ魚の猛烈な煙臭さ」を喉の奥に直接食らい、涙と鼻水を噴き出しながら洞窟が揺れるほどの大くしゃみを連発した。</p>
+<p>そして三回目のくしゃみと共に、背中に生えていた最も高価な結晶――<strong>『王冠岩塩の琥珀結晶（時価銀貨300枚相当）』</strong>がポロリと剥がれ落ち、ヤモリ自身は「もうこんな臭い場所にはいられん！」とばかりに、涙目で砂の中へと猛スピードで潜って逃げ去ってしまった。</p>
+<p>静まり返る塩砂の回廊。</p>
+<p>砂の上には、コロコロと転がってきた黄金色の巨大な岩塩結晶と、真っ黒なトビウオのヒレ、そして自分の空っぽの両手を見つめて固まっているパスカルだけが残された。</p>
+<p>「………………た、倒した……のか？」</p>
+<p>「い、今の……天井の跳ね返りまで計算して、ヤモリの口に焦げヒレを打ち込んだんですかパスカルさん！？ 伝説の騎士のお祖父様みたいでしたぁっ！！」</p>
+<p>ロッティが目をキラキラさせて拍手し、パスカルは「えっ？ あ、ああ！ もちろんだとも！ これが我が家に伝わる秘剣・飛魚打ちだ！（嘘）」と声を裏返らせながら冷や汗を拭った。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">3. 岩塩プレートの脂滴る串焼きパーティー</h4>
+<p>「ふふ……どんな形であれ、0.05%の幻獣からこんな特大の王冠岩塩を頂いたんですもの。今夜は豪勢にお祝いしましょう」</p>
+<p>オルガの提案で、四人は東側回廊の風除けにある『岩塩炙り炉』へと陣取った。</p>
+<p>割れた王冠岩塩の端っこの平らな欠片を熾火の上に乗せると、天然の「極上岩塩プレート」が出来上がる。</p>
+<p>キップが第001階の肉屋で奮発して買っておいた「迷宮豚のバラ肉」と「砂漠タマネギ」、そして肉厚な「傘茸」を交互に木の串に刺し、熱々に焼けた岩塩プレートの上へと並べた。</p>
+<p><em>ジュウウウウウウッ……！！</em></p>
+<p>岩塩プレートに触れた瞬間、豚バラ肉から透明な脂が弾け飛び、香ばしい煙が立ち昇った。</p>
+<p>味付けは何もいらない。王冠岩塩からじんわりと溶け出す、まろやかで甘みのあるミネラル塩が、焦げ目のついた豚の脂とタマネギの甘みを極限まで引き立てていく。</p>
+<p>「う、うわあぁ……！ いい匂いすぎてお腹の虫が鳴き砂より大合唱してるぞ！」</p>
+<p>「ほら、焼けたわよ。熱いうちに召し上がれ！」</p>
+<p>四人は湯気と脂が滴るアツアツの串焼きを1本ずつ掴み、ハフハフと息を吹きかけながら一斉にかぶりついた。</p>
+<p>カリッと焼けた豚バラの表面から、甘い肉汁と絶妙な塩気が口いっぱいに広がり、後からタマネギのトロトロの甘みが追いかけてくる。白湯で流し込めば、手汗で冷えた身体も、死線の恐怖も、すべてが幸福な熱へと溶けていった。</p>
+<p>「んん〜〜っ！！ 美味しいですぅ！！ ほっぺたが落ちて砂に埋まっちゃいますよぉ！」</p>
+<p>「うめえ……！ これ食うためなら、明日も樽板鳴らして頑張れる気がするぜ！」</p>
+<p>王冠岩塩を売れば、パスカルの胸当てを修繕しても、ロッティの教本を買っても、キップの羊皮紙を100枚買ってもまだお釣りが来る。</p>
+<p>けれど四人は、まず何よりも「もう一本串焼きを焼くか！」と笑い合いながら、温かい火の周りで肩を寄せ合っていた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 階層間接続情報</h3>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>下層連絡</strong>: 第005階：骨灰の螺旋塔・蝕白回廊</li>
+<li><strong>上層連絡</strong>: 第007階：風成砂丘の傾斜坑と硝子化回廊 ／ 第008階：幻影砂漠のオアシス市場と青魚の神殿</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Recorded under Lagrange Tower Master Chronicles / 塔務記録局 2026.</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-007" style="margin-top:0;">🏜️ 第007階：風成砂丘の傾斜坑と硝子化回廊（Aeolian Dunes Incline &amp; Vitrified Galleries）</h2>
+<blockquote>
+<strong>世界観親ノート</strong>: 00_Lagrange_Tower_MOC | Lagrange_Tower_Build_Rules | Lagrange_Tower_Character_Codex<br>
+<strong>大区域（バイオーム）</strong>: 系統③【霊廟・骨灰・古代神殿】（砂漠前哨境界）<br>
+<strong>環境BGM（公式サントラ）</strong>:<br>
+<em>(Track #005: 『requiem du sanctuaire』- Suno Master Edition / 大区域共有BGM)</em><br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 階層構造と環境特性（Floor Mechanics）</h3>
+<p>第006階の鳴き砂空洞から傾斜を登り、第008階の幻影砂漠オアシスへと抜ける直前に立ちはだかる、巨大な地下砂丘地帯。</p>
+<p>上層の砂漠から流れ込む乾燥した微細砂が、塔の巨大な通気坑からの吹き上げ風（風成作用）によって常に形を変え、数時間ごとに道が埋没する「流動砂脈」を形成している。</p>
+<p>岩肌の一部には、神代の古代魔導嵐や落雷の超高熱によって砂が融解して固まった、青緑色の天然硝子（フルグライト / 硝子化岩脈）が露出しており、冒険者たちの重要な足場となっている。</p>
+<p>```mermaid</p>
+<p>graph TD</p>
+<p>F6[&quot;第006階：乾いた塩砂の狭窄路と鳴き砂の地下空洞&quot;] --&gt; F7[&quot;🏜️ 第007階：風成砂丘の傾斜坑と硝子化回廊&quot;]</p>
+<p>F7 --&gt; F8[&quot;第008階：幻影砂漠のオアシス市場と青魚の神殿&quot;]</p>
+<p>subgraph Floor_007_Ecology [&quot;第007階の環境ハザードと生態&quot;]</p>
+<p>H1[&quot;⏳ 【流動砂の沈下斜面】&lt;br&gt;砂丘の傾斜面を踏み抜くと砂崩れが発生。足を取られて滑落すると窒息の危険。&quot;]</p>
+<p>H2[&quot;🪞 【硝子化断層の乱反射】&lt;br&gt;緑色硝子の滑らかな岩棚。足場として安定しているが、靴底の滑り止めが必須。&quot;]</p>
+<p>H3[&quot;💧 【オアシスの微風（予兆）】&lt;br&gt;上層の第008階から微かに流れてくる湿気と魚の匂い。方角を割り出す命綱。&quot;]</p>
+<p>end</p>
+<p>```</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. 階層特産品・採取素材</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>硝子化雷管石（Vitrified Fulgurite）</strong>: 砂が雷熱でガラス管状に固まった鉱物。光魔法の収束レンズや宝石細工の原料となる。</li>
+<li><strong>風成砂金の粒（Dune Gold Grains）</strong>: 流動砂の底に沈殿する微細な天然金。砂金をすくう篩（ふるい）があれば小遣い稼ぎになる。</li>
+<li><strong>乾燥トゲアザミ（Parched Thistle Root）</strong>: 砂の深層に根を張る薬草。噛むと微量の水分と苦味を含み、喉の渇きを半日止める。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. 生息魔物</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>砂潜りサンドワーム（Dune Prowler）</strong>: 全長3メートルの環形魔獣。砂の下を泳ぐように移動し、地上の足音を感知して急浮上する。</li>
+<li><strong>硝子トカゲ（Vitrified Basilisk）</strong>: 背中に硬質なガラス鱗を持つトカゲ。太陽光やカンテラの光を反射して冒険者の目を眩ませる。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">👥 主要滞在冒険者カルテ（Resident Adventurers）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">ジル・サンドストライダー（Zill Sandstrider）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族 / 性別</strong>: Felidi-an（猫耳族） / 男性（24歳）</li>
+<li><strong>クラス</strong>: Geomancer（大地風水士 / Common Rank 395）</li>
+<li><strong>スリーツリー・ビルド（Build Rules 1.1 凡人リアリズム準拠）</strong>:</li>
+<li><strong>メインスキル</strong>: <strong>【砂流踏破と地脈感知（Dune Reading &amp; Strata Sense）】</strong> - 砂の流動方向と地下の硬い岩脈（硝子化断層）を足裏の肉球で感知し、崩れない足場を見抜く探索技術。</li>
+<li><strong>サブスキル</strong>: <strong>【荷物防砂と野営設営（Sand-Proofing &amp; Camp Pitching）】</strong>（生活実用型） - 砂が関節や武具、保存食に入り込むのを防ぐ油布密閉術。</li>
+<li><strong>信仰スキル</strong>: <strong>【大地神テラ・マグナへの祈祷（Earth Tether）】</strong> - 足元を一瞬だけ岩肌のように固め、流砂への沈下を防ぐ初歩加護。</li>
+<li><strong>装備・ロードアウト</strong>:</li>
+<li>主兵装: <strong>爪付き登山杖（スパイクステッキ）</strong>、砂金採集用ふるい</li>
+<li>防具: 防砂ゴーグル、革製砂除けスパッツ、肉球保護グローブ</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 階層短編オムニバス小説</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『ガラスの尾根と、オアシスの風』</h4>
+<p><em>（四大ナラティブ・レパートリー：①【突破・踏破型】）</em></p>
+<p>ザーッ……と、砂が崩れる乾いた音がした。</p>
+<p>ジルの足元で、数トンの砂利が一気に雪崩のように傾斜坑の底へと滑り落ちていく。猫耳族特有の反射神経で、ジルは素早く身を翻し、傍らに突き出ていた岩肌へと飛び移った。</p>
+<p>「ふぅ……危ない危ない。見た目よりずっと傾斜がきついな」</p>
+<p>ジルは三角の耳をピクピクと動かし、防砂ゴーグルの位置を直した。</p>
+<p>靴底を降ろした岩棚は、ざらざらした砂岩ではない。ひんやりと冷たく、滑らかな青緑色の光沢を放っている。古代の雷撃が砂を焼き溶かしてできた、天然の雷管石――硝子化岩脈（フルグライト）だ。</p>
+<p>「おい、ジル！ そっちの足場は保ちそうか！？」</p>
+<p>斜面の下方、砂除けの油布を頭から被ったドワーフの鍛冶見習い・バルドが、息を切らしながら叫んだ。背中には、現場調達した鉱石と予備の鍛冶鎚を詰め込んだ重い背負子を背負っている。</p>
+<p>「大丈夫だ、バルド！ こっちの緑色のガラス脈はしっかり岩盤と繋がってる！ 砂を踏まずに、俺の足跡通りにガラスの上を跳んでこい！」</p>
+<p>この第007階は、ただ力任せに登ろうとすれば、流動砂に足を取られて体力を搾り取られるだけの蟻地獄だった。砂の下には獲物の振動を待ち構えるサンドワームが潜んでおり、不用意に斜面を滑落すれば、そのまま砂の中に引きずり込まれる。</p>
+<p>だが、ジルには大地風水士としての知恵があった。</p>
+<p>ジルはしゃがみ込み、手袋を外して生身の肉球を硝子岩の表面に当てた。</p>
+<p>目を閉じ、呼吸を整える。</p>
+<p>メインスキル【砂流踏破と地脈感知】。</p>
+<p>砂のサラサラという摩擦音の奥から、低く鈍い振動が伝わってくる。砂丘の底深く、この緑色のガラス脈がまるで巨大な背骨のように、上層の第008階へと向かって一直線に伸びているのが「見えた」。</p>
+<p>「見つけたぞ……。神代の雷が焼き抜いた、天然のハイウェイだ」</p>
+<p>ジルは立ち上がり、腰のスパイクステッキをガラスの継ぎ目に突き立てた。</p>
+<p>「バルド、砂を見るな。足元の緑色の光だけを追うんだ！ ここを登り切れば、すぐ頭上は第008階のオアシス市場だぞ！」</p>
+<p>「オアシス……！ 冷えた水と、あの名物の青魚の酢締めか！ よっしゃあ、行くぞオラァッ！」</p>
+<p>バルドが重い荷物を揺らしながら、確かな足取りでガラスの尾根を駆け上がってきた。</p>
+<p>背後で、獲物を逃したサンドワームが苛立たしげに砂を巻き上げ、ドスンと鈍い地響きを立てたが、硬質な硝子岩の上までは届かない。</p>
+<p>二人がガラスの尾根を登り詰め、狭い岩の割れ目を潜り抜けたその瞬間――。</p>
+<p>サァッ……と、それまでのからからに乾いた熱風とはまったく異なる、涼やかな風が吹き抜けた。</p>
+<p>湿り気を帯びた清らかな水の匂い。そして、どこからか漂ってくる、果実と焼き魚の香ばしい煙の匂い。</p>
+<p>「……風が、湿ってる」</p>
+<p>ジルがゴーグルを押し上げると、琥珀色の瞳がパッと輝いた。</p>
+<p>見上げた頭上、岩のゲートの向こうには、エメラルドグリーンに輝く広大なオアシスの湖水と、賑やかな天幕の灯りが広がっていた。第008階・幻影砂漠のオアシス市場だ。</p>
+<p>「着いた……！ 踏破したぞ、第007階クリアだ！」</p>
+<p>バルドが背負子を放り出して歓声を上げ、ジルとハイタッチを交わした。</p>
+<p>流砂に飲まれることもなく、無駄な戦闘にMPを浪費することもなく、知恵と足裏の感覚だけで過酷な難所を完全に制覇したのだ。</p>
+<p>二人は顔を見合わせて笑い合い、涼やかなオアシスの水を目指して、軽やかな足取りでゲートをくぐっていった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🪙 水平展開エリア：西側硝子断層・砂金篩（ふるい）の風溜まりと双児神フォルトゥナの砂祠（Western Vitrified Fault: Gold-Panning Wind Pocket &amp; Fortuna's Grit Shrine）</h3>
+<blockquote>
+<strong>開拓区分</strong>: Cron 8 水平エリア深化（第007階・西側流砂支線）<br>
+<strong>追加環境ハザード</strong>: <strong>【緑硝子の急斜面スライダーと砂金溜まり】</strong>（流砂の下に露出した角度35度の滑らかな硝子化岩脈。窪みには上層から流れてきた微細な『風成砂金の粒』が溜まっているが、欲張って長く留まると振動を聞きつけた『砂潜りサンドワーム』が真下から突き上げてくる）<br>
+<strong>神祇信仰スポット</strong>: <strong>【双児の女神フォルトゥナの砂時計祠】</strong>（ガラス岩の隙間に置かれた逆さ砂時計の祠。拾った砂金のうち「最初の1粒」を祠の皿に置けば無事に帰れるが、全部懐に入れると帰り道で必ず転んで袋の口が開くというジンクスがある）<br>
+<strong>日用雑具活用（MGI）</strong>: <strong>『台所の目詰まり穴あきザル』</strong>（跳ね兎亭の厨房で豆の水切りに使われていた古ザル。砂金採り用の専用篩が買えない貧乏バディが代用するが、目が粗すぎて小さい砂金は全部下に落ちてしまう）<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 短編オムニバス小説（第2幕）：『穴あきザルの砂金採りと、ガラス坂の鉄盾ソリ滑り』</h3>
+<p><em>(四大ナラティブ・レパートリー：④【泥臭い撤退・小失敗型】／ 主役：お買い物バディ（軽戦士トーラ ＆ 兎人僧侶ラピータ）× 猫耳風水士ジル)</em></p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. 台所の古ザルと、欲張り砂金掘り</h4>
+<p>「ラピータ！ もっとザルを水平に揺らせ！ 砂金の粒が網の目から落っこちちまうだろ！」</p>
+<p>「む、無理ですよトーラさん！ これ、そもそも跳ね兎亭の厨房で茹で豆を掬ってた『台所の穴あきザル』じゃないですか！ 砂金の方が穴より小さいんですってば！」</p>
+<p>第007階の西側硝子断層。</p>
+<p>第008階のオアシス市場へ「特売の青魚と香辛料」を買い出しに行く途中だった軽戦士トーラと兎人族の僧侶ラピータは、ガラス岩の窪みにキラリと光る『風成砂金の粒』を見つけた途端、買い出しの目的を半分忘れて砂金掘りに熱中していた。</p>
+<p>通りかかった猫耳族の大地風水士ジルが、スパイクステッキを突きながら呆れ顔で声をかける。</p>
+<p>「おいおいお姉さん方、あんまり同じ場所でザルをガシャガシャ揺らすと、砂の下の『砂潜りサンドワーム』が餌だと思って飛び出してくるぜ。それに、そこの【双児女神フォルトゥナの砂祠】に最初の1粒を供えたか？」</p>
+<p>トーラは指先についた極小の金の粒（ようやく銅貨3枚分くらい）を小瓶に押し込みながら、ニカッと笑った。</p>
+<p>「へへっ、これっぽっちしか採れてねえんだ、神様への分け前はもっとデカい粒が出てからにするさ！ ほらラピータ、もう一掬い行くぞ！」</p>
+<p>「ううっ、ラピータの長い耳が嫌な予感でピリピリ震えてますよぉ……！」</p>
+<p>ラピータの兎耳がピンと逆立った、まさにその瞬間だった。</p>
+<p><em>ズズズズズ……ドゴォォォンッ！！</em></p>
+<p>二人のすぐ足元の流動砂が火山のように爆発し、全長三メートルを超える巨大な環形魔獣――『砂潜りサンドワーム』が、ヤツメウナギのような丸い歯列を剥き出しにして飛び出してきた！</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. フォルトゥナの天罰と、特売油の鉄盾ボブスレー</h4>
+<p>「ギャアアアアアッ！？ 本当に出たぁぁっ！！」</p>
+<p>「言わんこっちゃない！ 砂の上を走るな、緑色の硝子岩脈（ガラス坂）の上へ跳べ！」とジルが叫ぶ。</p>
+<p>トーラとラピータは悲鳴を上げながら緑色の硝子岩の上へ飛び乗ったが、その拍子にフォルトゥナのジンクス（天罰）が発動した。</p>
+<p>トーラが足元の砂に足を取られて派手にすっ転び、手にしていた砂金入りの小瓶がポンと宙を舞って、中身の大半がフォルトゥナの砂祠のお皿の上へと綺麗に降り注いだのだ！</p>
+<p>「あああああっ！！ アタシが三十分かけて掬った砂金が、ぜんぶ神様の賽銭皿に入っちまったぁぁっ！！」</p>
+<p>「トーラさん、泣いてる場合じゃありません！ 後ろからワームがガラス坂を登ってきますぅ！」</p>
+<p>見れば、怒り狂ったサンドワームがガラス岩の脇の砂を巻き上げながら、猛スピードで迫ってきていた。普通に走って逃げても、斜度35度のツルツル滑る硝子坂では足がもつれて追いつかれてしまう。</p>
+<p>「くそっ、こうなりゃヤケだ！ ラピータ、お買い物カゴの中の『滑り止め油（この前の特売ヤシ油の残り）』を、アタシの丸鉄盾の裏にぶちまけろ！！」</p>
+<p>「えっ！？ ま、また滑る気ですかぁっ！？」</p>
+<p>トーラは背中の丸鉄盾を外して裏返し、ラピータが涙目で垂らしたヤシ油を盾の底面に塗りたくると、斜度35度の青緑色の硝子化岩脈（天然ガラスの滑り台）の上へバンッと盾を置いた。</p>
+<p>「しっかりアタシの腰に掴まってろよ！ 第006階まで直通エクスプレスだぁぁっ！！」</p>
+<p>二人が一枚の丸鉄盾の上に無理やり体育座りで乗り込んだ瞬間、重力とヤシ油の潤滑力が悪魔的なシナジーを発揮した。</p>
+<p><em>シュゴォォォォォォォッッ！！！！</em></p>
+<p>「キャアアアアアアアアッッ！！」</p>
+<p>火花こそ出ないものの、二人の乗った鉄盾ソリは矢のような猛スピードで緑硝子の尾根を滑降し始めた。</p>
+<p>背後から飛びかかったサンドワームの大顎が空を切る。風圧でラピータの長い兎耳が真後ろへ水平になびき、トーラが抱えていた『台所の穴あきザル』がヘルメット代わりに頭へすっぽり被さった。</p>
+<p>「と、止まりませんよトーラさぁぁん！！」</p>
+<p>「止まり方なんか考えてねえよ！！ 祈れラピータ、お前のそのヘンテコな跳躍祝詞でクッション作れぇぇっ！！」</p>
+<p>ラピータは涙目で自分の両耳をギュッと握りしめ、「ぴょ、ぴょんぴょん守護の風よ、お尻を守ってくださぁぁいっ！！」と必死に祈りを捧げた。</p>
+<p>直後、第006階との境界にある鳴き砂の柔らかい砂山へ、二人は鉄盾ごと「キュボォンッ！！」と頭から豪快に突っ込み、白い砂煙を上げてストップした。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">3. 砂まみれのザルと、オアシスへの再出発</h4>
+<p>「……ぷはっ！！ けほっ、げほっ……い、生きてるかラピータ……」</p>
+<p>砂山から、穴あきザルを頭に被ったままのトーラが顔を出した。</p>
+<p>隣からは、兎耳の先まで鳴き砂まみれになったラピータが、キュウキュウと目を回しながら這い出してくる。</p>
+<p>上層の斜面から降りてきた猫耳族のジルが、腹を抱えて笑いながら拍手を送った。</p>
+<p>「あっはっは！ 神代の雷が作った硝子岩脈を、鉄盾のソリで滑り降りた冒険者はあんたたちが初めてだぜ！ ほら、小瓶の底に砂金が『一粒だけ』残ってるじゃねえか」</p>
+<p>トーラが小瓶を透かして見ると、確かに銅貨五枚分ほどの小さな砂金の粒が一つだけ、瓶の底に張り付いてキラキラと光っていた。</p>
+<p>「……ちぇっ、神様に九割がたピンハネされちまったよ。まあいいさ、命があったし、銅貨五枚ありゃ第008階のオアシス市場で『青魚の串焼き』が二本買えるからな！」</p>
+<p>「はぁ……もうザルで砂金採りは懲り懲りですぅ。早くオアシスへ行って、冷たいお水と焼き魚を食べましょうよぉ……」</p>
+<p>トーラは頭の穴あきザルをお買い物カゴにしまい直し、ラピータの耳の砂をポンポンと払ってやると、今度こそ第008階のオアシスの匂いが漂う階段へ向かって、肩を並べて登り始めた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 階層間接続情報</h3>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>下層連絡</strong>: 第006階：乾いた塩砂の狭窄路と鳴き砂の地下空洞</li>
+<li><strong>上層連絡</strong>: 第008階：幻影砂漠のオアシス市場と青魚の神殿</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Recorded under Lagrange Tower Master Chronicles / 塔務記録局 2026.</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-008" style="margin-top:0;">🐟 第08階：幻影砂漠のオアシス市場と青魚の神殿（Oasis &amp; Bluefish Shrine）</h2>
+<blockquote>
+<strong>親ノート</strong>: 00_Lagrange_Tower_MOC<br>
+<strong>観測日</strong>: 2026-09-11（Cron 8 就任記念パイロット開拓）<br>
+<strong>環境</strong>: 熱砂の微風とオアシスの冷気 / 柑橘と極上酢の清涼な芳香 / 水晶の砂丘に沈む琥珀色の夕陽<br>
+<strong>専用BGM（JRPG 8-bit OST）</strong>: Track #001：幻影砂漠の青魚市場<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🏛️ フロア・カルテ（Floor Overview）</h3>
+<p>塔の下層、第12階の薬草園よりさらに下部に位置する広大な砂漠階層。</p>
+<p>外周はどこまでも続く白い砂丘に覆われているが、中央部には澄み切った地下水が湧き出る巨大なオアシスが広がり、香辛料や干物、硝子細工を商う行商人たちのテントがひしめいている。</p>
+<p>このフロアの最奥には、古代の民が遺したとされる「青魚の神殿」が鎮座しているが、その大扉を開く鍵は金属ではなく、「完璧な酢締めの黄金比」にのみ反応する奇妙な魔導機構で封鎖されている。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">🏷️ 生態系・特産アーティファクト</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>黄金酢（Golden Vinegar）</strong>: 砂漠のオアシスにのみ自生する黄金果実を発酵させた霊酢。酸味が極めてまろやかで、傷口にかけると即座に消毒され、金属の錆を一瞬で落とし、魚を締めれば100年腐らない。</li>
+<li><strong>青銀の鱗包丁（Blue-Silver Scaling Knife）</strong>: 触れたものの「表面の不純物」だけを分子単位で剥ぎ取る名工の包丁。</li>
+<li><strong>徘徊生物『サバ・サンドワーム』</strong>: 砂丘を波のように泳ぐ巨大な魚型甲殻獣。獰猛だが、黄金酢の香りを嗅ぐと途端に骨抜きになり、お腹を見せて砂の上をゴロゴロと転がる。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">🛠️ 常駐職人NPC</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>締め鯖アーティスト ミンス（Mins the Mackerel Artisan）</strong>:</li>
+<li>オアシスの片隅で屋台を構え、神殿の扉を開くためだけに半生を捧げてきた求道者。</li>
+<li>「青魚の銀皮に塩を振るとき、人は星辰の運行と対話しているのです」と語る筋金入りの奇人。</li>
+<li>腕前は本物で、彼が締めた鯖を食べた者は一時的に精神異常耐性が+50される。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📜 迷宮群像劇：短編オムニバス（第08階編）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『聖職者と猫耳と、開かずの扉の酢締めプロトコル』</h4>
+<p><strong>登場人物</strong>: クローミン（兎人司祭）、ミネルヴァ（魔法剣士）、マイラ（猫耳怪盗）、ミンス（職人）</p>
+<p>白くきらめく砂丘を抜け、巨大なオアシスの水辺に辿り着いたクローミンとミネルヴァの鼻腔を、ふいに鋭くも爽快な酢の香りがくすぐった。</p>
+<p>「……ミネルヴァ、これは？」</p>
+<p>クローミンが長い兎耳をピクピクと動かし、白い司祭服の襟元を整えながら眉をひそめた。手にした神聖杖『ユートピア』の宝珠が、微かに未知の有機化合物を感知して淡く明滅している。</p>
+<p>「ええ。第8階の守護扉よ、クローミン。……でも、様子が変ね」</p>
+<p>ミネルヴァはプラチナブロンドの髪を風になびかせ、腰の魔剣『フレイムノヴァ』にそっと手を添えた。知的なアクアブルーの瞳が見つめる先——石造りの巨大な神殿の扉の前で、白衣を纏った男がまな板に向かって一心不乱に包丁を振るっていた。</p>
+<p>「塩を打って三十秒、酢で締めて二分……いや、違う！ この気圧では鯖の身がわずかに膨張する！ あと一垂らしの黄金酢が足りんのだ！」</p>
+<p>男——締め鯖アーティストのミンスは、血走った目で独り言を叫びながら、銀色に輝く魚のフィレを掲げた。扉の中央には、魚の形を模した窪みがあり、そこから放たれる青い魔力光が、扉が固く閉ざされていることを示していた。</p>
+<p>「あの……旅の者ですが、上の階層へ進むゲートを探しておりまして」</p>
+<p>クローミンが生真面目に声をかけた、その瞬間だった。</p>
+<p>頭上のヤシの木の影から、俊敏な影が音もなく滑り降りてきた。</p>
+<p>「いただきニャッ！！」</p>
+<p>猫耳族の怪盗、マイラである。神聖ダガーをベルトに差したまま、彼女の目はまな板の上の極上締め鯖に完全にロックオンされていた。風を纏った超高速の跳躍。目にも留まらぬ速度で鯖をかっさらおうと、細い指先が伸びる。</p>
+<p>「危ない、盗賊よ！」</p>
+<p>ミネルヴァが瞬時に反応し、剣の柄に手をかけて身を滑り込ませた。</p>
+<p>同時に、クローミンが反射的に神聖杖を掲げた。「神よ、秩序の乱れを鎮め給え——干渉呪文（Interference）！」</p>
+<p>空間がグニャリと歪んだ。本来なら敵の攻撃魔法を霧散させるはずの高位干渉結界が、ミンスが振り上げた「黄金酢の瓶」から零れ落ちた一滴の雫と不運にも共鳴してしまったのだ。</p>
+<p><em>パァァァァァン！！</em></p>
+<p>神聖魔力によって極限まで分子加速された黄金酢の飛沫が、まるで光の矢となって神殿の大扉の鍵穴へと直撃した。</p>
+<p>一瞬の静寂。</p>
+<p>カチリ、と古代の歯車が噛み合う重厚な音が響いた。</p>
+<p>扉の窪みに嵌め込まれていた古代の青魚レリーフが、まばゆい琥珀色の光を放ち始める。</p>
+<p>『——認証完了。至高の酸味プロトコルを受理——』</p>
+<p>ゴゴゴゴゴ……と地響きを立てて神殿の巨扉がゆっくりと左右に開いていく。</p>
+<p>門の向こうに広がっていたのは、砂漠の熱気とは隔絶された、冷涼で神聖な大回廊——そして、台座の上にうずたかく積まれた、光り輝く『無限の締め鯖アーティファクト』の山だった。</p>
+<p>「ひ、開いた……！ 我が生涯の探求が、ついに……！」</p>
+<p>ミンスは包丁を放り出して膝をつき、大粒の涙を流して神殿を拝み始めた。</p>
+<p>「ニャ、ニャんだこれは〜！？ 天国かニャ！？」</p>
+<p>マイラは目を真ん丸にして、神殿の奥へ猛ダッシュで飛び込んでいく。</p>
+<p>取り残された二人の前で、オアシスの涼風が吹き抜けた。</p>
+<p>クローミンは長い耳を力なく垂らし、天を仰いで深くため息をついた。</p>
+<p>「……ミネルヴァ。私の干渉呪文は、神聖なる女神の加護によるものです。決して、魚を美味しく締めるための触媒ではありません……」</p>
+<p>「ふふ、いいじゃない。扉は無事に開いたんだもの」</p>
+<p>ミネルヴァは悪戯っぽく微笑み、クローミンの肩をポンと叩いた。</p>
+<p>「行きましょう、クローミン。次の階層が私たちを呼んでいるわ」</p>
+<p>こうして第08階の夕暮れは、爽やかな酢の香りと、猫耳の歓声とともに、平和に暮れていくのだった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🧭 水平開拓エリア：オアシス市場・黄金酢の炭火串焼き横丁と炉火の祠（Oasis Charcoal Skewer Alley &amp; Hearth Shrine）</h3>
+<blockquote>
+<strong>開拓分類</strong>: ①【SAO的・各層の未踏新エリア追加】× ②【既存フロアのアナザーストーリー】× ④【神祇と信仰の深掘り（太陽と炉火の女神ソラリス＆賭博神フォルトゥナ）】<br>
+<strong>精神的オマージュ</strong>: 弱小パーティの給料日と、炭火で脂が滴る屋台の串焼きの圧倒的幸福感（Build Rules 0.1 完全独自昇華）<br>
+<strong>階層適応ロードアウト</strong>: 酒樽の底板胸当て、羽根ペンと羊皮紙、大鍋の鉄蓋盾、小銅貨の革巾着<br>
+</blockquote>
+<p>| 項目 | 特性詳細 |</p>
+<p>| :--- | :--- |</p>
+<p>| <strong>支線座標</strong> | 第008階・中央オアシスの西岸、ヤシの木立と天幕が連なる行商人バザールの裏通り『黄金酢の炭火串焼き横丁（おうごんずのすみびくしやきよこちょう）』。 |</p>
+<p>| <strong>環境構造</strong> | 青魚の神殿前でミンスが酢締めを極める一方、西岸の横丁では「酢締めにするには脂が乗りすぎているハネ物の砂漠青魚（オアシス・サバ）や砂トカゲのモモ肉」を、ナツメヤシの白炭で豪快に炙る屋台が十数軒ひしめいている。横丁の入口には<strong>『炉火の女神ソラリスと銅貨の女神フォルトゥナの相乗り小祠』</strong>があり、串焼きの最初の一切れから落ちる脂を炭火へ滴らせて「今日も焦げずに焼けました」と祈るのが屋台街の習わし。 |</p>
+<p>| <strong>名物屋台メシ</strong> | <strong>『黄金酢ダレの脂ノリ青魚と甘玉葱の炭火大串（1本・銅貨3枚）』</strong>。パリッと焼けた銀皮の間からジュワジュワと沸き立つ脂に、黄金酢と砂漠蜂蜜、粗挽き黒胡椒を煮詰めた甘酸っぱいタレを三度塗りして焼き上げた、下層冒険者たちの至高のご馳走。 |</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">👥 水平開拓・アナザーストーリー登場人物（Act 2 Cast）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">🛡️ パスカル（Pascal）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>職業</strong>: Novice Vanguard（駆け出し前衛戦士 / Common）</li>
+<li><strong>種族</strong>: Human（人間・男性・17歳）</li>
+<li><strong>ランク</strong>: Common（凡人層・戦闘力 95）</li>
+<li><strong>人物像</strong>: 曽祖父は第050階到達の英雄と伝えられるが、家宝の武具はとっくに質流れしており、古道具屋で買った<strong>『酒樽の底板胸当て（Cask-Stave Breastplate）』</strong>（オーク材の丸い酒樽の底板を麻縄で繋いだ手作り鎧。走るたびに<em>カポカポ</em>と樽の音がし、ほのかに安ワインの匂いがする）を着込んでいる苦労人。第006階で奇跡的に手に入れた「王冠岩塩の結晶」を換金し、仲間と念願のオアシス市場へやってきた。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">🗺️ キップ（Kip）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>職業</strong>: Apprentice Cartographer（見習い地図描き / Common）</li>
+<li><strong>種族</strong>: Human（人間・男性・16歳）</li>
+<li><strong>ランク</strong>: Common（凡人層・戦闘力 70）</li>
+<li><strong>人物像</strong>: パスカルの幼馴染でパーティの頭脳兼ツッコミ役。第008階のオアシス市場の複雑な天幕配置を羊皮紙に描き留めようとしているが、屋台のタレが焼ける匂いに負けてインク壺の中にヨダレを垂らしそうになっている。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">🌿 ロッティ（Lotti）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>職業</strong>: Apprentice Herbal-Healer（見習い薬草治癒士 / Common）</li>
+<li><strong>種族</strong>: Halfling（ハーフリング・女性・15歳）</li>
+<li><strong>ランク</strong>: Common（凡人層・戦闘力 65）</li>
+<li><strong>人物像</strong>: 背中に自分より大きな薬草籠と「大鍋の鉄蓋盾」を背負った小柄な少女。独自の珍妙な治癒術<strong>『耳たぶ引っ張り三段跳びの癒やし』</strong>の使い手。第005階の骨粉と第006階の塩砂で喉がカラカラになり、オアシスの冷たい果実水と串焼きを前に目を回すほどテンションが上がっている。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 短編オムニバス（Act 2）：『酒樽アーマーの休日と、黄金酢ダレの青魚串焼き』</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. カポカポ鳴る胸当てと、銅貨十二枚の予算会議</h4>
+<p><em>ジュワァァァァァッ……パチパチッ！</em></p>
+<p>琥珀色の夕陽が水晶の砂丘を染める頃、第008階のオアシス西岸には、天国のように香ばしい白煙が立ち込めていた。</p>
+<p>ナツメヤシの炭火の上で、丸々と太った青魚の切り身と、分厚い砂漠玉葱が交互に刺さった大串が、黄金色の脂を滴らせながら回転している。</p>
+<p>「……っ、くぅぅぅ！　嗅いでみろよキップ、ロッティ！　第005階の骨埃でも、第006階の塩砂でもない……『焦げたタレと脂』の匂いだぞ！！」</p>
+<p>パスカルが両手の拳を握りしめて身を乗り出すたび、胸に括りつけた<strong>『酒樽の底板胸当て』</strong>が<em>カポッ、カポッ</em>と間の抜けた木の音を立てた。</p>
+<p>「ちょっとパスカル、あんまり炭火の近くに寄らないでよ！　あんたのその酒樽の底板、乾燥して反り返ってるから、火の粉が飛んだらいい薪（まき）になっちゃうよ！」</p>
+<p>地図描きのキップが慌ててパスカルの麻縄ベルトを引っ張り、手元の羊皮紙の隅で算盤（そろばん）代わりに指を折った。</p>
+<p>「いいかい、僕たちが第006階で拾った岩塩の欠片を商人に売って、トネリコ堂のロープ代の借金を返して、手元に残った純利益は『銅貨十二枚』だ。……黄金酢ダレの大串が一本・銅貨三枚。一人一本ずつ食べて九枚、冷たい黄金酢の果実水を三杯頼んだら、ちょうど十二枚でスッテンテンだよ！」</p>
+<p>「スッテンテン、ばんざーい！！　あたし、もう黒パンの耳と干しトビウオの尻尾は当分見たくないもん！」</p>
+<p>ハーフリングのロッティが、背中の大鍋の鉄蓋を<em>カンカンッ</em>と鳴らして飛び跳ねた。</p>
+<p>いつもなら「明日の松明代を残しておこう」と渋るキップも、今日ばかりは屋台のおじさんが団扇（うちわ）で扇ぎ立てる甘酸っぱい黄金酢ダレの煙を前に、ゴクリと生唾を飲み込んで頷くしかなかった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. 耳たぶ引っ張りヒールと、屋台親父のおまけ</h4>
+<p>「おじさん！　黄金酢ダレの青魚大串を三本と、冷たい果実水を三杯くださいっ！」</p>
+<p>パスカルが革巾着からピカピカに磨いた銅貨十二枚を並べて注文すると、恰幅のいい屋台の親父が「あいよっ！」と威勢よく返事をした――その直後だった。</p>
+<p>「……あいたたたっ！　ちくしょう、朝から百本も串を返してたら、右の手首がピキッと攣（つ）りやがった……！」</p>
+<p>親父が大きな鉄団扇を取り落とし、太い右手首を押さえて顔をしかめた。</p>
+<p>せっかく網の上でいい色に焼けていた三本の大串が、このままでは炭火の勢いで真っ黒に焦げてしまう。</p>
+<p>「たいへん！　ロッティ、出番だ！！」</p>
+<p>「まかせてっ！　あたしの『大地の脈動』で一発なんだから！」</p>
+<p>ロッティが屋台の横へ駆け寄り、自分の両方の耳たぶを親指と人差し指でギュッとつまんだ。</p>
+<p>屋台の親父が「えっ、なんだいお嬢ちゃん？」と目を丸くする前で、ロッティは真顔のままその場で――</p>
+<p><em>ぴょんっ（一歩）、ぴょんっ（二歩）、びょーんっ（三段跳び）！！</em></p>
+<p>「――『耳たぶ引っ張り三段跳びの癒やし（イア・プル・ホップ・ステップ・ヒール）』、でやぁぁぁっ！！」</p>
+<p>着地と同時に、ロッティが小さな額を親父の太い前腕に<em>ペチン！</em>と押し当てた。</p>
+<p>ポーズの珍妙さに周囲の客が吹き出しそうになったが、ロッティの額からぽわんと温かい若草色の微光が溢れ出し、親父の手首の腱に溜まっていた疲労と炎症を、まるで温湿布のようにじんわりと吸い取っていった。</p>
+<p>「……お、おおおっ！？　なんだこりゃ、さっきまでの引っかかるような痛みがスッと消えて、手首が羽毛みたいに軽くなったぞ！？」</p>
+<p>親父は目を剥いて手首をぐるぐると回し、すぐさま網の上の大串を華麗な手さばきで裏返した。</p>
+<p>「はっはっは！　変な踊りだが、腕前は本物じゃねえかお嬢ちゃん！　気に入った、炉火の女神ソラリス様に免じて、その串の先っぽに『砂トカゲの脂身ハツ（心臓）』を一個ずつオマケで刺してやらぁ！！」</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">3. 砂漠の夕陽と、ジュワッと弾ける黄金の脂</h4>
+<p>「「「やったぁぁぁーーーっ！！」」」</p>
+<p>水辺の丸太ベンチに三人で横並びに腰掛け、焼きたて熱々の大串を両手で掲げる。</p>
+<p>まずは横丁の習わし通り、串の先端からポタリと落ちる最初の一滴の脂を地面に落として「ごちそうさまです」と頷き――三人はせーので大串にかぶりついた。</p>
+<p><em>パリッ……ジュワァァァァァッ！！</em></p>
+<p>炭火で香ばしく焦げた青魚の銀皮が小気味よく弾け、その下から、真っ白でふわふわの身と、とろけるような黄金色の脂が口いっぱいに溢れ出した。</p>
+<p>脂の濃厚な甘みを、黄金酢と砂漠蜂蜜を煮詰めた特製ダレのキュッとした酸味が完璧に引き締め、直後に炭火でトロトロに焼けた砂漠玉葱の甘みが追いかけてくる。</p>
+<p>「……っ、んんん〜〜〜っ！！　う、美味い……！　皮はパリパリなのに、中のお肉が溶けるよぉ……！」</p>
+<p>パスカルが目を潤ませながら、オマケで刺さっていた砂トカゲのハツを噛み締める。コリコリとした弾力と黒胡椒のスパイシーな刺激に、思わず酒樽の胸当てが<em>カポカポ</em>と歓喜の音を鳴らした。</p>
+<p>「この黄金酢のタレ、すごいよ……！　魚の臭みが全然なくて、噛めば噛むほどお腹の底から力が湧いてくる！」</p>
+<p>キップも地図の羊皮紙を脇に置き、口の周りをタレでベタベタにしながら夢中で二口目を頬張る。</p>
+<p>ロッティに至っては、両足をぶらぶらさせながら「んー♪　んー♪」と幸せそうな鼻歌を歌い、合間に氷の浮いた黄金酢の果実水をゴクゴクと飲み干して「ぷはぁっ！」と白い息を吐いた。</p>
+<p>第005階で骸骨ネズミに追い回され、第006階で滑った棍棒が奇跡を起こし、靴底に詰まった砂を払いながら歩いてきた三日間。</p>
+<p>英雄みたいに巨大な竜を一撃で倒すことなんてできないし、明日になればまた銅貨一枚のロープ代に頭を悩ませるに違いない。</p>
+<p>けれど、夕陽に染まるオアシスの水辺で、仲間と肩を並べて頬張る一本銅貨三枚の串焼きの味だけは、どんな王様の晩餐よりも確かに、三人の胸を温かく満たしていた。</p>
+<p>「……よしっ。この串を食べ終わったら、明日は第007階のガラスの砂丘をもう一度越えて、まだ見ぬ第009階を覗きに行こうか！」</p>
+<p>パスカルがタレのついた竹串を掲げると、キップとロッティは顔を見合わせ、夕陽の中で力強く頷き返した。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Recorded under Lagrange Tower Chronicles / Cron 8 Pilot &amp; Act 2 Deepening.</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-009" style="margin-top:0;">🌊 第009階：伏流水の段丘池と揚水水車の地下放水路（Subterranean Spillway &amp; Terrace Basins）</h2>
+<blockquote>
+<strong>世界観親ノート</strong>: 00_Lagrange_Tower_MOC | Lagrange_Tower_Build_Rules | Lagrange_Tower_Character_Codex<br>
+<strong>大区域（バイオーム）</strong>: 系統②【地下坑道・重機・泥濘】（水脈移行境界）<br>
+<strong>環境BGM（公式サントラ）</strong>:<br>
+<em>(Track #002: 『深地行進曲』- Suno Master Edition / 大区域共有BGM)</em><br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 階層構造と環境特性（Floor Mechanics）</h3>
+<p>第008階のオアシス市場から溢れ出た大量の伏流水が、石灰岩の巨大な階段状の段丘（リムストーンプール）を流れ落ちる、轟音と水飛沫に満ちた地下放水路。</p>
+<p>古のドワーフ技師たちが築いた巨大な木製・黄銅製の揚水水車が軋んだ音を立てて回っており、第012階の薬草園へと水を送るための水利施設として機能している。</p>
+<p>岩肌には青白い発光苔がびっしりと群生し、水面にはオアシスから流れてきた淡水魚や水生昆虫が蠢いている。</p>
+<p>```mermaid</p>
+<p>graph TD</p>
+<p>F8[&quot;第008階：幻影砂漠のオアシス市場と青魚の神殿&quot;] --&gt; F9[&quot;🌊 第009階：伏流水の段丘池と揚水水車の地下放水路&quot;]</p>
+<p>F9 --&gt; F12[&quot;第12階：深緑の薬草園と彫像洞窟&quot;]</p>
+<p>subgraph Floor_009_Ecology [&quot;第009階の環境ハザードと生態&quot;]</p>
+<p>H1[&quot;🌊 【激流と滑落段丘】&lt;br&gt;苔で滑る段丘岩。足を取られると数十メートル下の沈殿池まで一気に押し流される。滑り止め鋲（アイゼン）必須。&quot;]</p>
+<p>H2[&quot;⚙️ 【巨大水車の巻き込み】&lt;br&gt;老朽化した水車の歯車。不用意に近づくと衣服や荷物が挟まれる機械ハザード。&quot;]</p>
+<p>H3[&quot;🐟 【獰猛な肉食ナマズ】&lt;br&gt;放水路の暗がりに潜む、牙を持つ巨大淡水魚。水しぶきを立てる者に飛びかかる。&quot;]</p>
+<p>end</p>
+<p>```</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. 階層特産品・採取素材</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>発光青苔の塊（Luminescent Blue Moss）</strong>: 暗がりで淡い青光を放つ湿地苔。カンテラの燃料や調合薬の安定剤となる。</li>
+<li><strong>水車軸の黄銅削り屑（Brass Waterwheel Shavings）</strong>: 古代水車の摩耗部から剥落する高純度の真鍮屑。</li>
+<li><strong>段丘の沈殿真珠（Terrace River Pearls）</strong>: 激流に揉まれて段丘底に溜まる淡水真珠。ギルドで工芸品として取引される。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. 生息魔物</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>牙持つ水顎魚（Fang Catfish）</strong>: 全長1.5メートルの肉食淡水魚。濁流から跳躍し、鋭利な二重歯で冒険者の腕や足を噛み千切る。</li>
+<li><strong>水垢スライム（Slime Scum）</strong>: 水車の木枠にこびりつく粘着スライム。武具に付着すると錆を急速に進行させる。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">👥 主要滞在冒険者カルテ（Resident Adventurers）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">モリス・クランクシャフト（Morris Crankshaft）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族 / 性別</strong>: Dwarf（ドワーフ族） / 男性（45歳）</li>
+<li><strong>クラス</strong>: Novice Mechanist（見習い絡繰工 / Common Rank 388 / Build Rules 1.1 凡人リアリズム準拠）</li>
+<li><strong>スリーツリー・ビルド</strong>:</li>
+<li><strong>メインスキル</strong>: <strong>【水門バールこじ開け（Crowbar Leverage）】</strong> - 詰まった水門や錆びた歯車をテコの原理で強引に動かす土木技術。戦闘では敵の装甲の隙間にバールを差し込む。</li>
+<li><strong>サブスキル</strong>: <strong>【木製水車と歯車の注油手入れ（Gear Oiling &amp; Maintenance）】</strong>（生活実用型） - 湿気で木が腐るのを防ぐ獣脂ワックスの塗布技術。</li>
+<li><strong>信仰スキル</strong>: <strong>【鍛冶神テラ・マグナへの祈祷（Forge Grit）】</strong> - 一瞬だけ打撃への耐性を高める初歩加護。ただし水中に入ると重量ペナルティが3倍化する致命的弱点を持つ。</li>
+<li><strong>装備・ロードアウト</strong>:</li>
+<li>主兵装: <strong>鍛造バール（鉄製・目盛り刻み）</strong>、油差しポーチ</li>
+<li>防具: 泥除けゴム前掛け、鋲付き長靴、真鍮ヘルメット</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">カエリス（Caelis）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>種族 / 性別</strong>: Elfili-an（エルフ族） / 女性（40歳・人間換算20歳）</li>
+<li><strong>クラス</strong>: Apprentice Spearman（見習い槍兵 / Common Rank 370）</li>
+<li><strong>スリーツリー・ビルド</strong>:</li>
+<li><strong>メインスキル</strong>: <strong>【三ツ又銛の突き（Trident Thrust）】</strong> - 魚捕り用の三ツ又槍で敵の足元を突く。</li>
+<li><strong>サブスキル</strong>: <strong>【水流読みと魚影感知（Stream Reading）】</strong>（生活実用型） - 水面の波紋から獲物や危険な水流を察知する。</li>
+<li><strong>信仰スキル</strong>: <strong>【豊漁神ネレイディアへの初歩祈祷（Water Footing）】</strong> - 浅瀬での足を取られにくくする初歩加護。</li>
+<li><strong>装備</strong>: 三ツ又銛、軽装防水革鎧、腰カゴ</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 階層短編オムニバス小説</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『濁流の洗礼と、裏神殿の安酒』</h4>
+<p><em>（四大ナラティブ・レパートリー：②【敗北・再起型】）</em></p>
+<p>水車がギギギと悲鳴を上げた瞬間、モリスは「あかん！」と叫んだ。</p>
+<p>第009階の第三段丘池。巨大な木製揚水水車の主軸に、上流の砂漠から流れてきた枯れ木の根がガッチリと挟まり、真鍮の歯車が火花を散らして軋んでいた。</p>
+<p>「カエリス、銛で根っこを突け！ バールで隙間を広げる！」</p>
+<p>「わかった！ せーのっ！」</p>
+<p>二人がかりで渾身の力を込めた瞬間、メキメキッ！ と鈍い破壊音が響き、溜まっていた水圧が一気に解放された。</p>
+<p>だが、解き放たれたのは濁流だけではなかった。</p>
+<p>――バシャァァァンッ！！</p>
+<p>激しい水しぶきを上げ、水門の暗がりから飛び出してきたのは、丸太のように太い胴体と無数のトゲを持つ『牙持つ水顎魚（Fang Catfish）』の群れだった。それも一匹や二匹ではない。水車の停止で溜まり場になっていた水底から、五匹の巨大な影が一斉に跳躍したのだ。</p>
+<p>「うわああああっ！？」</p>
+<p>カエリスの三ツ又銛が、先頭の魚の分厚い鱗に弾かれた。</p>
+<p>次の瞬間、獰猛な顎がカエリスの右腕に喰らいつき、激流の中へと容赦なく引きずり込んだ。</p>
+<p>「カエリスッ！！」</p>
+<p>モリスは鍛冶神テラ・マグナの加護を祈り、バールを振り上げて水の中へ飛び込んだ。</p>
+<p>しかし、それが最悪の判断だった。</p>
+<p>テラ・マグナの信徒は、<strong>「水中に入ると装備の重量ペナルティが3倍化する」</strong>という絶対の戒律がある。</p>
+<p>ドスン。</p>
+<p>足を入れた瞬間、身につけていた真鍮ヘルメットと重い工具帯が、まるで鉛の塊のようにモリスの身体を池の底へと引きずり下ろした。</p>
+<p>「ゴボッ……！？ 重……ッ！？」</p>
+<p>身動きが取れない。バールを振るどころか、水底の泥に足がめり込み、脱出することすら叶わない。</p>
+<p>視界が泡と濁流で遮られる中、二匹目の巨大魚がモリスの喉元めがけて突進してくるのが見えた。</p>
+<p>鋭い牙が装甲を砕き、視界が真っ赤に染まる。</p>
+<p>冷たい激流が肺を満たし、意識が急速に暗転していった。</p>
+<p>――致命傷。パーティー全滅。</p>
+<p>◇</p>
+<p>「……ゴホッ！ ゲホッ、ゲホッ……！！」</p>
+<p>激しい咳き込みと共に、モリスは跳ね起きた。</p>
+<p>肺から吐き出されたのは、冷たい泥水ではなく、柔らかなお香の煙だった。</p>
+<p>薄暗い石造りの礼拝堂。崩れかけたカタコンベのアーチ天井から、シルバースプリング一族の心優しき司祭が手向ける、淡い神聖光の燐光が降り注いでいた。</p>
+<p>第01階・下層スラム地下墓地『裏神殿』。</p>
+<p>死者が魂となって塔のポテンシャル引力によって還流し、肉体を再構成される蘇生の祭壇だ。</p>
+<p>「……気がつきましたか、ドワーフの技師さん」</p>
+<p>静かな声がした。隣の石台には、同じく全身ずぶ濡れで包帯を巻かれたカエリスが、悔しそうに顔を手で覆って横たわっていた。</p>
+<p>「……やっちまった」</p>
+<p>モリスは頭を抱えた。</p>
+<p>腰の道具帯はあえなく水底に沈み、手元に残ったのは曲がったバール一本だけ。表の大神殿のような法外な金貨は要求されなかったが、裏神殿のツケ払い帳に、また新しい借金の記録が刻まれた。</p>
+<p>だが、死ななかった。魂は汚濁せず、五体満足で再び現世に縫い止められたのだ。</p>
+<p>◇</p>
+<p>その夜、第001階の宿場町「跳ね兎亭」の片隅。</p>
+<p>モリスとカエリスは、すっかり擦り切れた作業着を暖炉の火にかざしながら、最も安くてアルコール度数だけが高い麦酒のジョッキを傾けていた。</p>
+<p>「……あいつら、水門の真下に巣を作ってたんだな」</p>
+<p>カエリスが包帯の巻かれた腕をさすりながら、ポツリと呟いた。</p>
+<p>「ああ。水流が止まったら、真っ先にあの暗がりに群がる生態だったんだ。知らなかったぜ」</p>
+<p>モリスはジョッキを一気に煽り、プハーッと息を吐いた。</p>
+<p>「おまけに俺は、水の中に入ったらテラ・マグナ様の戒律で体が沈むのをすっかり忘れてた。完全に俺の判断ミスだ。すまねえ、カエリス」</p>
+<p>「いいよ。私も、銛の先をちゃんと研いでなかったから弾かれたんだし。お互い様」</p>
+<p>カエリスは苦笑いしながら、木製のテーブルに指で水滴をつけ、第009階の見取り図をなぞり始めた。</p>
+<p>「次はさ、水門を開ける前に、上から毒抜き茸か痺れ薬を放水路に投げ込もうよ。魚が浮いてきたところを、水に入らずに網ですくい上げるの」</p>
+<p>「おお……！ それなら俺が水に入らなくて済むし、水車の歯車も傷まねえな！」</p>
+<p>モリスの濁った目に、職人の光が戻ってきた。</p>
+<p>「よし、明日はトネリコ堂のバルカス爺さんのところで、長柄の網と滑り止め鋲をツケで調達するぞ。あのナマズ野郎ども、絶対に蒲焼きにして食ってやる！」</p>
+<p>「ふふっ、賛成！ 一人二匹は食べないと割に合わないわ！」</p>
+<p>二人はカチンとジョッキを打ち鳴らし、大笑いした。</p>
+<p>失態を噛み締め、痛みを笑い飛ばし、酒場で死因を語り合って明日の攻略法（ナレッジ）を練る。</p>
+<p>泥臭く、何度でも立ち上がる草の根冒険者たちの夜は、こうして更けていくのだった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🧭 水平開拓エリア：旧水車小屋の排水溜まりと、結露小神ヌーマの苔水盤祠（Old Waterwheel Spillway &amp; Numa's Moss Basin Shrine）</h3>
+<blockquote>
+<strong>開拓分類</strong>: ①【SAO的・各層の未踏新エリア追加】× ②【既存フロアのアナザーストーリー（リベンジ＆合流編）】× ④【神祇と信仰の深掘り（結露と水たまりの小神ヌーマ）】<br>
+<strong>精神的オマージュ</strong>: 安物装備（酒樽の底板胸当て）の思わぬ実用性と、ギリギリのドタバタ討伐後に味わう揚げたてナマズ串の歓喜（Build Rules 0.1 完全独自昇華）<br>
+<strong>階層適応ロードアウト</strong>: 長柄の掬い網、滑り止め鉄鋲、酒樽の底板胸当て、大鍋の鉄蓋盾、痺れ茸の団子<br>
+</blockquote>
+<p>| 項目 | 特性詳細 |</p>
+<p>| :--- | :--- |</p>
+<p>| <strong>支線座標</strong> | 第009階・第三段丘池の西側分岐、現在は使われていない朽ちた木製水車が半水没している『旧水車小屋の排水溜まり（きゅうすいしゃごやのはいすいだまり）』。 |</p>
+<p>| <strong>環境構造</strong> | 本流の激流から外れた淀みであり、第008階のオアシスから流れてきた木の実や小魚が溜まるため、特に丸々と太った『牙持つ水顎魚（Fang Catfish）』の縄張りになっている。朽ちた水車小屋の石垣の隅には、第010階から滴り落ちる温かい配管結露を受ける<strong>『水たまりの小神ヌーマの苔水盤祠（こけすいばんほこら）』</strong>があり、水盤の縁に「濡れた靴下から絞った水」を一滴落としてから作業にかかると、苔で滑って転んでも頭だけは打たずに済むという泥臭いご利益がある。 |</p>
+<p>| <strong>現場メシの知恵</strong> | 水車小屋に残された古い「菜種系の水車潤滑油（未精製の食用可グレード）」と、ロッティが背負ってきた「大鍋の鉄蓋盾」を裏返した即席の揚げ鍋を使い、釣り上げたばかりの水顎魚の白身を一口大に切って串に刺し、カリッと揚げた<strong>『揚げナマズと水芹（みずぜり）の熱々串焼き』</strong>。 |</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">👥 水平開拓・アナザーストーリー登場人物（Act 2 Cast）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">🔧 モリス・クランクシャフト ＆ カエリス（Morris &amp; Caelis）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>人物像</strong>: 前回の探索で『牙持つ水顎魚』の群れに引きずり込まれ、第001階の裏神殿送りにされたドワーフ絡繰工とエルフ槍兵のコンビ。今回はトネリコ堂でツケ払いした「長柄の網」と「痺れ茸の団子」を携え、絶対に水に入らずにナマズを釣り上げて蒲焼き・串揚げにして食うという執念のリベンジに燃えている。</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">🛡️ パスカル、キップ、ロッティ（Pascal, Kip &amp; Lotti）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>人物像</strong>: 第008階のオアシス市場で青魚の大串を食べて銅貨12枚を使い果たし、再びスッテンテンになって第009階へ登ってきた駆け出し3人組。パスカルは相変わらず<strong>『酒樽の底板胸当て』</strong>を<em>カポカポ</em>と鳴らし、キップは湿気でヨレヨレになる羊皮紙を胸に抱え、ロッティは背中の『大鍋の鉄蓋盾』を水しぶき除けの傘代わりにしている。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 短編オムニバス（Act 2）：『浮き輪になった酒樽胸当てと、揚げナマズ串の熱々リベンジ』</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. 裏神殿帰りの先輩と、スッテンテンの後輩たち</h4>
+<p>「いいか、若い衆！　この第009階の水たまりをただの池だと思うなよ！　うっかり足を滑らせて落ちたら、下にいる1.5メートルのナマズ野郎に丸呑みされて、第001階の裏神殿まで魂ごと逆戻りだ！」</p>
+<p>第三段丘池の手前で、真鍮ヘルメットのドワーフ――モリスが曲がったバールを振りかざして力説すると、パスカル、キップ、ロッティの三人はゴクリと喉を鳴らして身を寄せ合った。</p>
+<p>「う、裏神殿送り……！　僕たち、昨日の晩に第008階の屋台で銅貨十二枚を全部使い切っちゃったから、いま裏神殿のツケが増えたらトネリコ堂のバルカス爺さんに何を売られるか分からないよ……！」</p>
+<p>地図描きのキップが青ざめて革巾着を握りしめる。</p>
+<p>隣ではエルフの見習い槍兵カエリスが、三ツ又銛の穂先を砥石でシャッ、シャッと鋭く研ぎ澄ませていた。</p>
+<p>「大丈夫よ。今日は私たちが『絶対に水に入らずにあのナマズを釣り上げる作戦』を実行するから。……あんたたち三人、その網を引き上げる手伝いをしてくれたら、釣れたナマズの身を半分分けてあげるわよ」</p>
+<p>「「「やりますっ！！」」」</p>
+<p>「タダでご飯がもらえる」という一言に、三人の返事は見事なまでに揃った。</p>
+<p>まずは旧水車小屋の隅にある<strong>『小神ヌーマの苔水盤祠』</strong>の前で、全員で泥除けの祈りを捧げる。パスカルが自分の湿った靴紐の先から水滴をひとしずく水盤へ落とすと、苔むしたカエルのような小神像が心なしかニヤリと笑った気がした。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. カポカポ胸当ての大誤算と、意外すぎる浮力</h4>
+<p>「よし、痺れ茸の団子を投げ込むぞ！　ほらよっ！」</p>
+<p>モリスが水車小屋の桟橋から、すり潰した痺れ茸と大麦粉を練った臭い団子を排水溜まりへ放り込んだ。</p>
+<p>数秒後――<em>バシャァァァンッ！！</em>と水面が割れ、丸太のように太い『牙持つ水顎魚』が団子に食らいついた。</p>
+<p>「かかったわ！　痺れ薬が効いて動きが鈍ってる！　今よ、長柄の網で下から掬い上げて！」</p>
+<p>カエリスが三ツ又銛でナマズの背ビレを縫いつけ、モリスとパスカルが二人がかりで長柄の太網を水底へ差し込んだ。</p>
+<p>だが、1.5メートルもある巨大ナマズの体重と暴れる力は想像以上だった。</p>
+<p>「ぐ、ぐわあああっ！？　おもっ、重いぞこれぇぇっ！！」</p>
+<p>ナマズが渾身の力で尾ビレを叩きつけた瞬間、桟橋の青苔でパスカルの革靴が<em>ツルッ！</em>と滑った。</p>
+<p>「あっ、パスカル！？」「うわあああああっ！！」</p>
+<p>仲間の制止も間に合わず、パスカルの体が宙を舞い、頭から排水溜まりの深みへと――<em>ドボォォォンッ！！</em>と真っ逆さまに転落した。</p>
+<p>「しまった、引きずり込まれるぞ！」「パスカルーーっ！！」</p>
+<p>モリスとキップが血相を変えて水面を覗き込んだ、その次の瞬間だった。</p>
+<p><em>……ポコンッ。プカァ〜〜〜……。</em></p>
+<p>水しぶきが収まった水面の上に、パスカルがまるで大きなコルク栓のように、仰向けのまま気持ちよさそうにプカプカと浮き上がってきたのである。</p>
+<p>「……え？」「……あれ？　僕、沈まないぞ！？」</p>
+<p>パスカル自身が一番驚いた顔で、水面の上で手足をバタバタさせた。</p>
+<p>胸と背中に麻縄で括りつけていた<strong>『酒樽の底板胸当て』</strong>――何十年もワインを熟成させてからカラカラに乾燥させた分厚いオーク材の樽板が、水に入った途端、抜群の浮力を発揮して「天然の木製救命胴衣（ライフジャケット）」になっていたのだ！</p>
+<p>しかも、水面に浮いた樽板からほのかに溶け出した「古い安ワインと渋柿の匂い」に、追撃しようと口を開けていた二匹目のナマズが「オエッ」と顔をしかめて水底へUターンしていくおまけ付きだった。</p>
+<p>「す、すげえぞ少年！　鉄の鎧なら即座に水底へ沈んであの世行きなのに、酒樽の底板だからプカプカ浮いてやがる！！」</p>
+<p>「これぞ曽祖父の……いや、古道具屋の樽板の奇跡だぁぁっ！　みんな、今のうちに網を引いてくれーっ！！」</p>
+<p>プカプカ浮いたままのパスカルが水面から網の枠を下から押し上げ、モリス、カエリス、キップ、ロッティの四人が桟橋の上から「せーのっ！」と綱を引く。</p>
+<p><em>ズザザザザッ！！</em>と水しぶきを上げて、丸太のように肥え太った巨大ナマズが、ついに石畳の上へと豪快に引きずり上げられた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">3. 鉄蓋の天ぷら鍋と、熱々ナマズ串の乾杯</h4>
+<p>「やった……やったぞカエリス！　俺たちが、あのナマズ野郎に勝ったぞぉぉっ！！」</p>
+<p>モリスが真鍮ヘルメットを脱ぎ捨ててガッツポーズを決め、カエリスも三ツ又銛を杖にしてへたり込みながら、晴れやかな笑顔を浮かべた。</p>
+<p>だが、本当の勝利の儀式はここからだった。</p>
+<p>「よしっ、ロッティちゃん、その背中の『大鍋の鉄蓋』を貸してくれ！　リベンジの串揚げパーティーだ！」</p>
+<p>モリスが手慣れた手つきで石を積んで即席のかまどを作り、ロッティが背負っていた盾――実家の食堂から持ってきた裏に取っ手のない<strong>『大鍋の鉄蓋』</strong>を逆さまにして乗せた。</p>
+<p>そこへ水車小屋の棚に保管されていた未精製の菜種油をトクトクと注ぎ、乾燥青苔の火で熱していく。</p>
+<p>カエリスが小刀で捌いた水顎魚の身は、獰猛な見た目とは裏腹に、驚くほど透き通った美しい白身だった。</p>
+<p>それを一口大の角切りにして木の串に刺し、段丘の岩間に生えていた新鮮な「水芹（クレソン）」と一緒に、煙の立った鉄蓋の油の中へ――<em>ジュワァァァァァッ！！</em>と投入する。</p>
+<p>パチパチと弾ける油の音とともに、香ばしい揚げ物の匂いが湿った地下放水路いっぱいに広がった。</p>
+<p>「揚がったぞ！　第006階の岩塩をぱらっと振って、熱いうちに食え！」</p>
+<p>五人で丸くなって鉄蓋の周りを囲み、黄金色にカラッと揚がったナマズ串に一斉にかぶりつく。</p>
+<p><em>サクッ……ハフッ、ホフホフッ！！</em></p>
+<p>「んんん〜〜〜っ！！　外はカリカリなのに、中の白身がふわっふわで、全然泥臭くないよぉっ！！」</p>
+<p>濡れた酒樽の胸当てを焚き火の横で乾かしていたパスカルが、火傷しそうなほど熱い白身を頬張って歓声を上げた。</p>
+<p>第008階の澄んだオアシスの水を飲んで育ったナマズの身は、上品な甘みとコクがあり、一緒に素揚げにした水芹のほろ苦い香りが油のしつこさを爽やかに洗い流してくれる。</p>
+<p>「美味え……！　昨日、裏神殿で泥水を吐きながら目を覚ました時はどうなるかと思ったが、生きてりゃこんなに美味いナマズが食えるんだなぁ……！」</p>
+<p>モリスが目尻に涙を浮かべながら二本目の串を齧り、カエリスも「ほら、もう一本揚がったわよ！」とパスカルたちの皿へ次々と熱々の串を乗せていく。</p>
+<p>キップは油が跳ねないよう少し離れた場所で羊皮紙に『第009階・酒樽の胸当ては浮き輪になる』と大真面目にメモを取り、ロッティは自分の顔ほどある大きなナマズの尾ビレの唐揚げを両手で抱えて、幸せそうにサクサクと齧りついていた。</p>
+<p>強大な魔剣も、天を裂く魔法もない。</p>
+<p>あるのは、水に浮く安物の酒樽の胸当てと、揚げ鍋になる鉄蓋の盾と、昨日の失敗を笑い飛ばして鍋を囲む仲間たちの声だけ。</p>
+<p>やがてお腹いっぱいになった五人は、頭上の第010階から降りてくる温かい蒸気の風を見上げながら、次の階段へと向かう準備を始めるのだった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 階層間接続情報</h3>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>下層連絡</strong>: 第008階：幻影砂漠のオアシス市場と青魚の神殿</li>
+<li><strong>上層連絡</strong>: 第010階：蒸気配管の温室段丘と中継休憩所 ／ 第12階：深緑の薬草園と彫像洞窟</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Recorded under Lagrange Tower Master Chronicles / 塔務記録局 2026 (Act 1 &amp; Act 2 Deepening).</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <article class="prose-container" style="margin-bottom: 26px;">
+<h2 id="floor-010" style="margin-top:0;">🏛️ 第010階：蒸気配管の温室段丘と中継休憩所（Floor 010: Steam Pipe Terrace &amp; Waystation）</h2>
+<blockquote>
+<strong>世界観親ノート</strong>: 00_Lagrange_Tower_MOC<br>
+<strong>前層</strong>: 第009階：地下放水路の段丘水盤群<br>
+<strong>次層</strong>: 第011階：未踏（地下水路水門） ／ 第012階：深緑の薬草園<br>
+<strong>音響バイオーム</strong>: 系統①【拠点・街・セーフゾーン】<br>
+<strong>BGMプレイヤー</strong>:<br>
+<strong>ナラティブモード</strong>: ③【平熱・日常型】（戦闘なし・日常の温もりと知恵）<br>
+<strong>階層適応ロードアウト</strong>: 湿潤乾燥用スノコ靴、油煤拭き麻布、大鍋の排熱調理器、真鍮製携帯湯沸かし<br>
+</blockquote>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 階層環境特性（Environmental Profile）</h3>
+<p>| 項目 | 特性詳細 |</p>
+<p>| :--- | :--- |</p>
+<p>| <strong>階層分類</strong> | 第1階層群（低層生活・採掘工区境界）／ セーフゾーン中継宿場 |</p>
+<p>| <strong>環境事象</strong> | <strong>【温熱蒸気の多段対流と配管露天市】</strong>&lt;br&gt;第009階の巨大水冷タービンおよび放水路から送られる温排水配管が幾重にも交錯する、巨大な半自然・半人工の温室段丘。配管のジョイントから漏れ出る清潔な蒸気によって気温は常に22度前後に保たれており、冷え切った地下下層から上がってきた冒険者たちの天然の乾燥所兼中継休憩地帯となっている。 |</p>
+<p>| <strong>主たる恩恵</strong> | 配管熱による火種不要の湯沸かし、濡れた革鎧・靴底の自然乾燥、泥落とし用の温水溜まり。 |</p>
+<p>| <strong>特産物</strong> | <strong>蒸気凝縮の純粋蒸留水</strong>（薬草煎じ用）、<strong>配管温室の干し薄荷（ドワーフミント）</strong>、<strong>油吸い煤スライムの乾燥膜</strong>（武具の手入れ用油脂吸着シート）。 |</p>
+<p>| <strong>生息生物</strong> | <strong>パイプ煤スライム（Pipe Grease Slime）</strong>（毒性なし。配管の機械油を食べるため、調理器具や鍋の油汚れを落とす「生きたスポンジ」として重宝）、<strong>迷い込み燕（Ventilation Swift）</strong>（地上の通気孔から迷い込み、テラスの虫を捕食する小鳥）。 |</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">👥 主要住人・滞在者カルテ（Resident Profile）</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">🍲 ルパート（Rupert）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>職業</strong>: Traveling Cook（行商料理人 / 凡人職 ID 48）</li>
+<li><strong>ランク</strong>: Common（凡人層・戦闘力 85）</li>
+<li><strong>人物像</strong>: 40代半ば。元は第002階の炭鉱飯炊き係。巨大な鋳鉄の寸胴鍋と、塩・乾燥香草の麻袋を背負って塔の要所を巡る。「冒険者が死ぬ一番の理由は、魔物じゃなくて腹が冷えて足が攣ることだ」が口癖。</li>
+<li><strong>三系統スキル（Build Rules 1.1 凡人リアリズム）</strong>:</li>
+<li>①生活実用ツリー: <strong>【配管蒸気熱の拾い炊き（Steam Siphoning Stew）】</strong>（漏れ出る蒸気ノズルに鍋底を当て、薪を一切消費せずに湯を沸かし煮込みを作る知恵）</li>
+<li>②生存ツリー: <strong>【下層泥魚の香味下処理（River Catfish Curing）】</strong>（第009階の放水路で獲れた臭みのあるナマズを、塩と干し薄荷で揉んで極上の白身に変える技術）</li>
+<li>③妥協ツリー: <strong>【寸胴鍋の蓋シールド（Stockpot Lid Parry）】</strong>（野犬や泥這いが飛びかかってきた際、熱い鍋の蓋を突き出して怯ませ、その隙に逃げるだけの自衛策）</li>
+</ul>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">🛡️ ミラベル（Mirabelle）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>職業</strong>: Wannabe Knight（憧れの見習い騎士 / 凡人職 ID 46）</li>
+<li><strong>ランク</strong>: Common（凡人層・戦闘力 110）</li>
+<li><strong>人物像</strong>: 17歳。地上の大聖堂騎士団に憧れて塔へ入った少女。蚤の市で買った中古の真鍮メッキ鉄胸当てを愛用。第009階の急流で危うく溺れかけ、大事な盾を流されたため、びしょ濡れのまま第010階のスノコベンチで途方に暮れていた。</li>
+<li><strong>三系統スキル（Build Rules 1.1 凡人リアリズム）</strong>:</li>
+<li>①テンプレ模倣ツリー: <strong>【教本通りの騎士直立礼（Textbook Knightly Posture）】</strong>（有名騎士団の教範を完璧に暗記した美しい立ち姿。ただし泥で滑るとあっさり転ぶ）</li>
+<li>②生活実用ツリー: <strong>【夜更けの真鍮磨き（Relentless Brass Buffing）】</strong>（毎晩布切れで防具を磨き上げるため、安物にもかかわらず鏡のように光り輝いている）</li>
+<li>③迷走ツリー: <strong>【重装ツバメ返し（Heavy Armor Tumble）】</strong>（俊敏な剣士の真似をして跳躍攻撃を試みるが、胸当ての重量に振り回されて着地で足首を捻る）</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 短編オムニバス小説：『濡れた靴底と、薄荷の香る寸胴鍋』</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. 蒸気のカーテンを抜けて</h4>
+<p>第009階の激流が轟く放水路を背にして、錆びついた非常階段を一段ずつ這い上がると、耳をつんざく水音がふっと遠のいた。</p>
+<p>代わりに鼻腔をくすぐったのは、微かな機械油の匂いと、それを包み込むような甘く清涼な草の香り――そして、ぐつぐつと何かが煮立つ、たまらなく親密な湯気の匂いだった。</p>
+<p>「……あたたかい」</p>
+<p>ミラベルは、ずぶ濡れの金髪を額に張り付かせたまま、呆然と息を吐いた。</p>
+<p>彼女の足元からは、歩くたびに「ぐちゅ、ぐちゅ」と情けない水音が鳴っていた。蚤の市で銅貨十二枚で買った豚革のブーツは完全に水を吸って倍の重さになり、大切に磨き上げていた胸当ての合わせ目からは、冷たい滴が容赦なく肌を伝い落ちていた。</p>
+<p>第009階の段丘水盤群。</p>
+<p>『跳ね兎亭』の噂話では、「ちょっと足首が浸かる程度の浅瀬」と聞いていたはずだった。だが、いざ足を踏み入れれば、苔でぬめる急坂と、足を取られたら最後、下層のタービン室まで流される荒れ狂う放水路だった。</p>
+<p>命からがら梯子にしがみつき、見習い騎士としての矜持だった真鍮の円盾は、濁流の彼方へと消えていった。</p>
+<p>死ぬかと思った。いや、実際、あと半歩足を踏み外していたら、今頃は第001階の裏神殿で、冷たい石床の上に転がって神官の舌打ちを聞いていただろう。</p>
+<p>「おーい、そこの嬢ちゃん。突っ立ってると足の指が腐るぞ。靴脱いで、こっちのスノコに上がりな」</p>
+<p>しわがれた、しかしよく通る声が湯気の向こうから響いた。</p>
+<p>配管が幾重にも交差し、緑色のシダが結露を吸って茂るテラスの中央。</p>
+<p>太い蒸気パイプの継ぎ手から噴き出す純白の蒸気の上に、巨大な鋳鉄の寸胴鍋がドシリと据え付けられていた。</p>
+<p>薪のパチパチという爆ぜる音はない。ただ、パイプの噴出ノズルに鉄の治具を噛ませ、蒸気の高熱をそのまま鍋底へと導く、無骨極まりない「拾い炊き」の仕掛けだった。</p>
+<p>鍋の前に座っていたのは、薄汚れた前掛けをした小柄な中年男――ルパートだった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. 凡人の知恵、生活の熱量</h4>
+<p>「あ……私は、聖クレア騎士団の見習い、ミラベルと申します！　偵察任務の途上にて、少々……機材の点検を……」</p>
+<p>ミラベルは反射的に、騎士団教本の第1巻第3節にある「友軍宿営地における格式ある名乗り」を諳んじ、濡れそぼった右手を胸に当てて背筋を伸ばそうとした。</p>
+<p>だが、その瞬間。</p>
+<p><em>――ぐうぅぅぅぅぅぅ。</em></p>
+<p>静まり返った温室段丘に、けたたましい腹の虫の音が響き渡った。</p>
+<p>ミラベルの顔が、耳の先まで一瞬で真紅に染まる。</p>
+<p>ルパートは吹き出しもせず、ただ手元の木杓子で鍋の中身をゆっくりとかき混ぜた。</p>
+<p>「騎士様ね。そいつはご立派だ。だが、その騎士様の教本に『腹を空かせたまま濡れた鉄板を着て凍えてろ』とは書いてねえだろ？　ほら、胸当ての留め金を外しな。皮紐が水吸って締まっちまったら、一人じゃ脱げなくなるぞ」</p>
+<p>男はテラスの隅に組まれた木製のスノコを顎で指した。</p>
+<p>そこには、すでに何人かの先客がいた。</p>
+<p>第004階から石炭袋を背負い上げてきた鉱夫風の男が、泥だらけの長靴をパイプの横に並べて乾かしており、その隣では、先ほど第009階で同じように流されかけて命拾いしたらしい若い斥候が、毛布にくるまってぼんやりと天井の通気口を見上げていた。</p>
+<p>誰も、華麗な必殺技など持っていない。</p>
+<p>魔導の光で服を一瞬で乾かす上級魔術師もいなければ、竜を一刀両断する勇者もいない。</p>
+<p>ただ、湿気と冷気に痛む膝をさすり、湯気でかじかんだ指先を温める、泥臭い凡人たちの息づかいだけがそこにあった。</p>
+<p>「……失礼、します」</p>
+<p>ミラベルは観念して、重たい鉄胸当てのバックルを外した。</p>
+<p>カシャン、と鈍い音を立てて冷たい鉄がスノコの上に置かれる。胸元から立ち上る自身の体温の湯気に、ホッと肩の力が抜けた。</p>
+<p>「はいよ。銅貨二枚だ。持ってなきゃ、そのピカピカに磨いた真鍮のバックルを一個外して置いていきな」</p>
+<p>差し出された木椀には、湯気を立てる乳白色のスープが波打っていた。</p>
+<p>放水路で獲れたという大ナマズのぶつ切り、第003階の泥炭で育ったという小粒の乾燥芋、そして刻んだばかりの青々としたドワーフミントが散らされている。</p>
+<p>「いただきます……」</p>
+<p>スプーンなどない。両手で椀を包み込み、直接口をつけた。</p>
+<p>熱い汁が、喉を通って胃袋へと落ちていく。</p>
+<p>その瞬間、全身の毛穴がカッと開くような衝撃があった。</p>
+<p>川魚特有の泥臭さは、強い塩気と清涼な薄荷の風味によって完全に消え去り、濃厚な脂の旨味だけが舌の上に広がっていく。内臓の底から、じわりと温かい血が巡り始めるのが分かった。</p>
+<p>「……おいしい。すごく、おいしいです」</p>
+<p>「下層の魚は泥を食うからな。そのまま煮りゃ泥水だが、薄荷の塩揉みをして三日寝かせりゃ、王都のヒラメよりいい出汁が出る。塔の中じゃな、剣の腕より『何を食えば腹を壊さないか』を知ってる奴の方が長生きするんだよ」</p>
+<p>ルパートは笑いながら、鍋の脇にいた小さな黒い塊――パイプ煤スライムを指先で突いた。</p>
+<p>スライムは身悶えしながら、ルパートが差し出した油まみれの布切れを、ぷるぷると嬉しそうに飲み込んでいく。</p>
+<p>「こいつは魔物だが、油しか食わねえ。鍋の油汚れをこいつに吸わせりゃ、貴重な真水を使って洗う手間が省ける。塔の生き物も、使いようさ」</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:14px;">3. トネリコ堂の朝を想う</h4>
+<p>テラスの隙間から、地下特有の微風が吹き抜けていく。</p>
+<p>乾き始めたミラベルのブーツからは、革が縮む微かな軋み音が聞こえていた。</p>
+<p>遠く、天井の通気スリットから差し込む光の筋に、地上から迷い込んできたのであろう小さな燕が二羽、羽を休めていた。</p>
+<p>どこからか、第001階の広場で聴いたような、素朴で懐かしい旋律が頭の奥で木霊する。</p>
+<p>トネリコ堂の親父さんが打つ金槌の音。</p>
+<p>跳ね兎亭の薄いエールと、焼きたての黒パンの匂い。</p>
+<p>あの時、広場で胸を張って「必ずや塔の星を掴んでみせます」と誓った自分は、あまりにも無知で、あまりにも幼かった。</p>
+<p>「盾、流されちゃったんです。……すごく高かったのに」</p>
+<p>椀の底に残った芋の欠片を見つめながら、ミラベルはぽつりと呟いた。</p>
+<p>「また買やあいいさ」</p>
+<p>ルパートは寸胴鍋に新しい蒸留水を足しながら、事も無げに言った。</p>
+<p>「命があれば、また第001階へ戻って、トネリコ堂の前の市で安い盾を探せる。日歩の利息を払うために、第002階で石炭を運んだっていい。……なぁ、嬢ちゃん。格好つけて死ぬ奴より、恥をかいてスープ啜って生きてる奴の方が、俺はよっぽど強えと思うぜ」</p>
+<p>ミラベルは顔を上げた。</p>
+<p>ルパートの前掛けは煤だらけで、その手はあかぎれと火傷の痕だらけだった。</p>
+<p>英雄の放つ神聖なオーラなどどこにもない。だが、その手で作られた一杯のスープが、凍えかけていた少女の心を、確かに現世へと繋ぎ止めていた。</p>
+<p>「……はい。次は、ちゃんと足元を見て歩きます」</p>
+<p>「おうよ。食い終わったら、そこのスノコで一眠りしな。パイプの横はあったけえぞ。起きた頃には、その自慢の胸当て、またピカピカに磨かせてやるからよ」</p>
+<p>ミラベルは小さく笑った。</p>
+<p>そして、温かい木椀をもう一度胸に抱きしめ、深く、深く息を吸い込んだ。</p>
+<p>薄荷の香りと、蒸気の温もり。</p>
+<p>過酷なラグランジュの塔の片隅に、確かに息づく日常の光が、少女の頬を優しく照らしていた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🗺️ 水平エリア展開：配管裏の隠れ農園と蒸気燻製所（Backpipe Smokehouse）</h3>
+<p>温室段丘の中央テラスから、巨大な減圧バルブの裏手を回り込んだ配管の死角に広がるのが<strong>『配管裏の隠れ農園と蒸気燻製所』</strong>である。</p>
+<p>配管の微小な蒸気漏れと安定した地熱を利用し、野生のドワーフミントや薬効キノコが段々畑のように栽培されている。その奥には、不要になった鉄製ドラム缶と真鍮エルボ管を器用に溶接して作られた自家製の燻製窯が並び、下層の泥ナマズや干し肉を乾燥ハーブで燻す香ばしい煙が漂っている。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">追加住人カルテ：ユーナ（Yuna the Traveling Smoker）</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>職業</strong>: Traveling Cook（迷宮燻製師・料理人 / 凡人職 ID 48）</li>
+<li><strong>種族/性別</strong>: 人間 / 女性（19歳）</li>
+<li><strong>人物像</strong>: ルパートの寸胴鍋の裏手で勝手に燻製工房を開いている若き料理人。大鍋シチューのルパートを「師匠であり最大のライバル」と呼び、携帯性に優れた保存食（燻製ジャーキー）の開発に情熱を燃やす。</li>
+<li><strong>三系統スキル（Build Rules 1.1 凡人リアリズム）</strong>:</li>
+<li>①生活実用ツリー: <strong>【廃材ドラム缶の配管燻製術（Pipe-Heat Smoker）】</strong>（配管の排気熱をバイパスし、少量の乾燥ハーブチップで均一に温燻をかける知恵）</li>
+<li>②生存ツリー: <strong>【極上保存ジャーキー調製（Long-Lasting Jerky Cure）】</strong>（過酷な上層登攀でも半年カビない、塩気と香草の黄金比率を見極める調味技術）</li>
+<li>③妥協ツリー: <strong>【肉切り包丁の威嚇撫で斬り（Cleaver Brandish）】</strong>（ネズミや泥スライムに包丁を突き出して大声を上げ、追い払うだけの自衛術）</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 アナザーストーリー：第010階配管裏</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『煙にむせるエルフと、猫耳の至福ジャーキー』</h4>
+<p><strong>ナラティブモード</strong>: ③【平熱・日常型】</p>
+<p>「――ふぎゃああああっ！？ け、煙いニャ！ 目が痛いニャー！！」</p>
+<p>蒸気配管のバルブの隙間から飛び出してきたのは、猫耳族の斥候少年ティオだった。</p>
+<p>両手で目をこすりながら涙目でくしゃみを連発するティオの襟首を、後ろから物静かなエルフの剣士アルヴィスがひょいと掴み上げた。</p>
+<p>「……言わんこっちゃない。匂いに釣られて勝手に人の工房へ飛び込むからだ」</p>
+<p>アルヴィスはため息をつき、腰の水筒から湿らせた布を出して少年の顔を拭ってやる。</p>
+<p>「だってアルヴィス、すっごく香ばしい、お肉の焼ける匂いがしたんだニャ！」</p>
+<p>「肉ではない。……これは燻煙の匂いだ。それも、第012階の乾燥香草を上手に使っている」</p>
+<p>二人が見つめる先――蒸気パイプの熱気の吹き溜まりに、煤まみれの革エプロンをつけ、頭に手ぬぐいを巻いた少女が仁王立ちしていた。ユーナである。</p>
+<p>彼女は肉厚の革手袋でドラム缶の蓋を開け、うちわでパタパタと煙を逃がしていた。</p>
+<p>「ごめんね、煙が外に漏れちゃって！ でも、ちょうどいい具合に仕上がったところだよ！」</p>
+<p>ユーナが真鍮の鉤爪でドラム缶の中から吊り上げたのは、見事な飴色に輝く魚の燻製肉だった。</p>
+<p>第009階の放水路で獲れた泥ナマズのフィレを、ドワーフミントと岩塩で漬け込み、蒸気配管の低温排熱でじっくりと燻し上げたものだ。</p>
+<p>「これ……放水路の魚か？ 泥臭くて食えたもんじゃないと聞いていたが……」</p>
+<p>アルヴィスが眉を寄せる。</p>
+<p>「ふふん、ただ焼くだけなら泥臭いよ。でも、配管の蒸気で脂を落としてから、乾燥ミントの煙で半日燻すと――ほら、食べてみて！」</p>
+<p>ユーナがナイフで薄く削ぎ落とした一片を、ティオの口へ放り込んだ。</p>
+<p>少年はモグモグと咀嚼し――その直後、猫耳がピンと直立した。</p>
+<p>「――っっ！！ う、うみゃああああっ！！」</p>
+<p>ティオが飛び跳ねた。</p>
+<p>「パリッとしてるのに、噛むと中からじわ〜って香ばしいお肉の味が広がるニャ！ 泥の匂いなんて全然しないニャ！ 塩っぱくて、すごく元気が出る味だニャー！！」</p>
+<p>「……どれ」</p>
+<p>アルヴィスも一片を受け取り、慎重に口へ運ぶ。</p>
+<p>噛み締めた瞬間、エルフの涼やかな瞳が見開かれた。</p>
+<p>「……素晴らしいな。余分な水分が完全に抜けている。これなら第016階の湿潤な大森林へ持ち込んでもカビない。木製椀の白湯にこれを放り込むだけで、極上の出汁スープになる」</p>
+<p>「でしょー！ ルパートのオヤジのシチューも美味いけど、持ち歩きには私の燻製ジャーキーが最強なんだから！」</p>
+<p>ユーナは自慢げに胸を張った。</p>
+<p>「ユーナさん、これ全部ちょうだいニャ！ トネリコ堂の借金帳消しにするくらい銀貨払うニャ！」</p>
+<p>「こらティオ、調子に乗るな。……だがユーナ殿、十枚ほど分けてもらえるだろうか。上層への良き糧になる」</p>
+<p>アルヴィスが真面目な顔で革袋の銀貨を差し出すと、ユーナは満面の笑みで頷いた。</p>
+<p>「毎度あり！ 塔のてっぺん目指して登るなら、いつでも寄っていきなよ！ 配管の熱がある限り、私のドラム缶は年中無休だからさ！」</p>
+<p>温かい蒸気と香草の煙に包まれながら、泥臭い冒険者たちの日常は、美味い保存食の温もりとともに紡がれていくのだった。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">🍲 アナザーストーリー：『煤けた大槌と、配管バルブの目玉焼き』</h3>
+<blockquote>
+<strong>執筆</strong>: Antigravity Cron 8 Deepening Pipeline<br>
+<strong>登場人物</strong>: <strong>泥這い小隊（ロルフ、ダン、ミリー、ペコ） ＆ ピップ（Pip the Scrap-Lancer）</strong><br>
+<strong>ナラティブモード</strong>: ③【平熱・日常型】（生活実用ツリー・現場メシ・防具整備と余白の温もり）<br>
+<strong>舞台</strong>: 第010階 西部配管テラス・第4低圧蒸気バルブ前野営地<br>
+</blockquote>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">1. 泥落としと、ふやけた足の指</h4>
+<p>「……うおおおお……っ！　靴が……靴が脱げねええぇぇっ！」</p>
+<p>西部配管テラスの木製スノコの上で、熊人族の巨漢戦士ダンが、巨大な両手で片足の革ブーツを力任せに引っ張っていた。</p>
+<p>第004階の石灰泥濘と第009階の冷たい放水路を突破してきた彼の足元は、白い泥と砂利でコテコテに固まり、ふやけた豚革が足首に貼り付いていたのだ。</p>
+<p>「ダン、力任せに引っ張るなって言ってるでしょ！　縫い目が裂けたら、上層の露店で買い直す金なんてうちの小隊にはないのよ！」</p>
+<p>小隊の会計兼僧侶のミリーが、泥で重くなったローブの裾をたくし上げながら叱り飛ばす。</p>
+<p>ミリーは真鍮の携帯湯沸かしに蒸気バルブの漏れ湯を注ぎ、手早く濡れ手ぬぐいを作ると、ダンの足首の合わせ目に押し当てた。じんわりと温かい蒸気が固まった泥をふやかし、<em>スポンッ！</em>と小気味よい音を立てて巨大なブーツが外れた。</p>
+<p>「ふはぁぁぁ……！　生き返ったぜ！　指先が全部ふやけて白菜の漬物みたいになってやがる！」</p>
+<p>ダンが足の指を扇状に開いて、配管から立ち上る温風にかざして歓喜の声を上げる。</p>
+<p>その横のベンチでは、猫耳族の斥候ペコが、びしょ濡れになって細くなった尻尾を両手で抱え、配管の熱気に向かって毛づくろいをしていた。</p>
+<p>「ふにゃぁ……尻尾が三倍の重さになってたニャ。でもこのテラス、すっごくポカポカしてて、眠くなってくるニャ……」</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">2. 針金フライパンの初陣</h4>
+<p>「隊長、僕、お湯もらってきました！」</p>
+<p>息を切らせて駆け寄ってきたのは、見習い槍術士の少年ピップだった。</p>
+<p>手には、樫の長棒の先端に針金でガチガチに括り付けられた、お馴染みの<strong>『母の鋳鉄フライパン』</strong>。</p>
+<p>その黒光りするフライパンの底には、ルパートの炊き出し所で分けてもらった「塩漬け豚脂の切れ端」と、乾燥ネギの薬味袋が大事そうに載せられていた。</p>
+<p>隊長のロルフは長槍の石突きをスノコに立て、濡れた布で穂先の泥を拭き取りながら、少年に向かって穏やかに笑いかけた。</p>
+<p>「よくやった、ピップ。……だが、そのフライパン、槍から外さないのか？」</p>
+<p>「へへっ、外しません！　針金をほどくのに五分もかかりますし、トネリコ堂のバルカス爺さんが『槍の先に鍋をつけるのはバカのやることだが、現場で湯を沸かせるなら賢者の杖だ』って言ってましたから！」</p>
+<p>ピップは誇らしげに胸を張り、蒸気がシューシューと勢いよく噴き出す低圧配管のフランジ（継手）へと向かった。</p>
+<p>配管のボルト頭の上に、槍の先のフライパンを器用に水平に乗せる。</p>
+<p><em>ジュウウウウゥゥッ！！</em></p>
+<p>超高熱の蒸気熱が鉄板を瞬時に熱し、豚脂の脂身がパチパチと音を立てて溶け出した。</p>
+<p>香ばしい動物性の脂の匂いが、テラスの蒸気霧の中に一気に広がる。</p>
+<p>「うにゃっ！？　いい匂いがするニャ！」</p>
+<p>ペコがぴくりと耳を跳ねさせて駆け寄ってきた。</p>
+<p>ピップは小刀で脂を素早く均一に広げると、背嚢から取り出した貴重な「有精鶏の生卵」を二つ、カンッと縁で割ってフライパンへ落とした。</p>
+<p><em>ジュワァァァァッ！</em></p>
+<p>白身が瞬く間に純白に凝固し、黄色い黄身がぷるんと盛り上がる。仕上げに乾燥ネギと岩塩をパラパラと振りかければ――即席の<strong>『配管熱の現場目玉焼き』</strong>の完成だった。</p>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">3. 余白の温もり、明日の登攀</h4>
+<p>「うわぁぁぁ、できた！　隊長、ダンさん、ミリーさん、ペコさん！　乾パンに乗せて食べましょう！」</p>
+<p>ピップが木べらで目玉焼きをすくい、ロルフたちが配管熱で温めておいたカチカチの硬質ライ麦パンの上へと手際よく乗せていく。</p>
+<p>半熟の濃厚な黄身が、温まって柔らかくなったパンの気泡にじゅわっと染み込む。</p>
+<p>ロルフが大きく一口かじり、目を細めて深く息を吐いた。</p>
+<p>「……うまいな。腹の底まで熱が届く」</p>
+<p>「んがっ！　んがっ！　脂が染みたパンが最高だぜぇ！」</p>
+<p>ダンが拳骨のようなパンを二口で平らげ、喉を鳴らしながら蒸留水をがぶ飲みする。</p>
+<p>ミリーも小さくちぎったパンを口に運び、安堵の表情を浮かべた。</p>
+<p>「……助かったわ、ピップ。第009階の冷水でみんな芯まで冷え切ってたから。これで少しは体力が戻るわね」</p>
+<p>ペコは猫舌を冷ましながら、大事そうに黄身の端っこをペロリと舐めて目を細めた。</p>
+<p>「ピップのフライパン槍、最初はギャグかと思ったけど……すっごく役に立つニャ」</p>
+<p>食事が終わると、小隊の周囲には穏やかな静寂が訪れた。</p>
+<p>ダンはスノコの上で大の字になって軽いいびきをかき始め、ミリーは傷薬の小瓶の残量を手帳に几帳面に書き留めている。</p>
+<p>ロルフはピップの隣に腰を下ろし、配管のジョイントから立ち上る白い蒸気を見つめていた。</p>
+<p>「……ピップ」</p>
+<p>「はい、ロルフ隊長！」</p>
+<p>「この先、第011階を越えると、巨樹の根と酸性雨の湿原が続く。足場は悪く、魔物の気配も濃くなる」</p>
+<p>ロルフは少年の細い肩にぽんと手を置いた。</p>
+<p>「塔を登る時、一番大事なのは『焦って先を急がないこと』だ。疲れたら宿場で靴を脱ぎ、美味いものを食って、身体を温める。そうやって生き延びるための『余白』を自分で作れる奴だけが、次の階層へ進めるんだ」</p>
+<p>「……はい！　僕、もっと美味い目玉焼きを焼けるように、フライパンの火加減を練習します！」</p>
+<p>ピップは白い歯を見せて笑った。</p>
+<p>英雄のような武勇伝でも、派手な大魔法でもない。</p>
+<p>ただ、靴を乾かし、湯気を囲み、明日も生き延びるために武器を手入れする。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">⛩️ 信仰と祭壇：配管結露の片隅、泥水小神ヌーマの石祠（The Leaking Altar of Numa）</h3>
+<p>第4低圧蒸気バルブの真下、配管フランジから微温の結露水がポタポタと絶え間なく滴り落ちる玄武岩の窪みに、粗末な小さな石祠が佇んでいる。</p>
+<p>大理石も金箔もない。川原の丸石を積み上げた台座の上に、濡れたボロ麻布を巻き付けられた高さ三十センチほどの素朴な木彫り人形——それこそが、下級冒険者や泥臭い現場労働者たちに愛される<strong>『泥水と放浪の守護小神・ヌーマ（Numa the Mud-Wader）』</strong>の祭壇である。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">📖 アナザーストーリー：第010階配管祠</h3>
+<h4 style="color:var(--emerald-astral); margin-top:14px;">『配管の結露水と、目玉焼きの焦げ端』</h4>
+<p><strong>四大ナラティブ・モード</strong>: ④ 【神祇・信仰深掘り型】（Elin-like Pantheon &amp; Mud-Wader's Blessing）</p>
+<p><strong>登場人物</strong>: ピップ（見習い槍術士）、ロルフ（泥這い小隊隊長）、ダン（熊人族大槌戦士）、ヌーマ（泥水と放浪の守護小神・気配）、通りすがりの太陽騎士</p>
+<p>「……ふん。このような薄暗い配管の結露溜まりに、薄汚い木彫りの人形を祀るなど、下級冒険者の迷信にも程があるな」</p>
+<p>吐き捨てるような声が、蒸気配管の通路に響いた。</p>
+<p>声の主は、第008階の砂漠から上がってきたばかりという太陽聖騎士団の従士だった。</p>
+<p>彼は胸当てに刻まれた太陽神ソラリスの日輪紋章を磨き布で熱心に擦りながら、真鍮の手鏡を取り出して自らの金髪を整えていた。</p>
+<p>「我が主神、太陽神ソラリス様の光を浴びれば、迷宮の泥など一瞬で乾き、病魔も悪霊も焼き払われるというのに。泥水を神と崇めるとは、知性の欠片も感じられんな」</p>
+<p>騎士が鼻を鳴らして立ち去った後、石祠の前にぽつんと立っていたのは、フライパンを括り付けた樫の長棒を持つ見習い少年ピップだった。</p>
+<p>「隊長……あの騎士さんの言う通り、僕たちのお祈りって、間違ってるんでしょうか？」</p>
+<p>ピップがおずおずと尋ねる。後ろから歩み寄ってきたロルフとダンが、少年の細い肩を見下ろして苦笑した。</p>
+<p>「気にするなピップ。あいつらソラリスの信徒は、頭のてっぺんから爪先まで太陽光で沸騰してる連中だ」</p>
+<p>ダンが丸太のような腕を組み、豪快に鼻を鳴らした。</p>
+<p>「あんな金ピカの騎士様が崇める神様はな、宝石だの純銀の燭台だの、高価な香油だのを要求してくるんだよ。俺たちみたいな安月給の泥這いがそんなもん買えるわけねえだろ」</p>
+<p>ロルフも静かに石祠の前へ進み出て、濡れたスノコの上に片膝をついた。</p>
+<p>「トネリコ堂のバルカス爺さんに言われなかったか？ 『駆け出しの貧乏人は、立派な神殿の大神じゃなくて、泥水小神ヌーマ様にお祈りしときな』って」</p>
+<p>「言われました！ でも僕……金貨も銀貨もないし、何を捧げたらいいのか分からなくて……」</p>
+<p>ピップが困り顔で懐を探ると、ダンが腹を抱えて大爆笑した。</p>
+<p>「ガハハハ！ 金貨なんか捧げてみろ！ ヌーマ様はな、『こんな冷たくて硬い金属の丸、齧っても腹の足しにもならねえや！』って足で蹴っ飛ばすぞ！」</p>
+<p>「えっ！？ 神様が供物を蹴っ飛ばすんですか！？」</p>
+<p>「ああ、蹴っ飛ばすとも。何せ神々の世界で一番下の、泥だらけの雑草みたいな神様だからな」</p>
+<p>ロルフが優しく微笑み、ピップの手にある「現場目玉焼き」を作ったばかりのフライパンを指差した。</p>
+<p>その縁には、強火の配管熱でカリカリに焼き焦げた、香ばしい白身の切れ端が残っていた。</p>
+<p>「ヌーマ様が一番喜ぶのはな、神殿に飾られた冷たい丸焼き肉じゃない。現場で、泥水啜って生き延びた奴が作った『飯の焦げ端』と、泥を落とした温かい湯水だ。……ピップ、そのフライパンの焦げ端を、少し削って石の上に置いてやりな」</p>
+<p>「目玉焼きの焦げ端で……いいんですか？」</p>
+<p>ピップは半信半疑ながらも、木べらの先でカリカリに焼けた白身の焦げ端を丁寧にこそぎ落とし、祠の前の平らな玄武岩の上にそっと乗せた。さらに、配管の継ぎ手から滴り落ちる温かい蒸留水を真鍮の杯に汲み、石の前に供えた。</p>
+<p>少年は両手を合わせ、ぎゅっと目を閉じた。</p>
+<p>「ヌーマ様。僕、まだフライパンを槍に縛り付けたドジな見習いですが……隊長たちと一緒に、泥だらけになっても生きて、温かいご飯を食べたいです。どうか、よろしくお願いします！」</p>
+<p>その瞬間——。</p>
+<p><em>ヒュウウゥゥゥ……。</em></p>
+<p>配管の隙間から、どこか温かく、雨上がりの土のような懐かしい匂いを孕んだそよ風がふわりと吹き抜けた。</p>
+<p>祠の上の石板で、<em>ジュッ</em>と微かな小さな音がした。</p>
+<p>ピップが目を開けると——先ほど供えたばかりの「目玉焼きの焦げ端」が、まるで湯気のようにふっと消え去っていた。</p>
+<p>そして、濡れた玄武岩の上には、まるで裸足の子供が駆け抜けたかのような、小さな泥の足跡がふたつ、ぽつんと浮かび上がっていたのだ。</p>
+<p>カラン……。</p>
+<p>ピップの背負った樫の棒の先、針金で縛られた母のフライパンの縁が、鈍い琥珀色の温かな光を一瞬だけ帯びた。</p>
+<p>「うわっ！？ フライパンが……光った！？」</p>
+<p>「へへっ、ヌーマ様が受け取ってくださった証拠だ」</p>
+<p>ダンが嬉しそうにピップの頭を大きな手でわしゃわしゃと撫で回した。</p>
+<p>「『泥這いの根性』の加護だ。どんなに足場がぬかるんでても、靴が滑らなくなるし、腐った野草を齧っても腹を壊さなくなる。命懸けの崖っぷちでも、最後の一歩で踏みとどまらせてくれる、下級冒険者のための最高の守護符さ」</p>
+<p>その時だった。</p>
+<p>通路の向こうから、先ほどの太陽騎士の情けない悲鳴が響き渡った。</p>
+<p>「うわあああっ！？ な、なんだこの配管は！？ 蒸気ノズルから料理の機械油が噴き出して、私の真鍮手鏡と磨き上げた胸当てが油まみれに……！？ くそっ、落ちない、拭いても落ちないぞぉぉっ！！」</p>
+<p>ダンとロルフが顔を見合わせて吹き出し、ピップも思わず声を立てて笑った。</p>
+<p>「ヌーマ様、ちょっと意地悪ですね」</p>
+<p>「全くだ。だが、だからこそ愛せるのさ」</p>
+<p>配管の継ぎ手からポタポタと落ちる温かな雫が、小さな石祠を優しく濡らし続ける。</p>
+<p>泥にまみれ、油に汚れ、それでも笑って生きる者たちを見守る小神の気配に包まれて、第010階のテラスには、今日も人間味あふれる温かな湯気が立ち上っていた。</p>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<h3 style="color:var(--gold-bright); margin-top:20px;">💎 特産品・ドロップ・収集物</h3>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>蒸気凝縮の純粋蒸留水</strong>: 薬草煎じ用。不純物ゼロでポーションの品質を1ランク底上げする。</li>
+<li><strong>配管温室の干し薄荷（ドワーフミント）</strong>: 爽快な香気。神経の昂ぶりを鎮め、集中力を高める。</li>
+<li><strong>配管ハーブ燻製ナマズ（Smoked Catfish Jerky）</strong>: 日持ち半年。噛むほどにマナと塩気が染み出す、アルヴィス＆ティオ公認の常備携帯食。</li>
+<li><strong>油吸い煤スライムの乾燥膜</strong>: 武具の手入れ用シート。擦るだけで金属の錆びと油汚れを分解吸着する。</li>
+<li><strong>ヌーマの焦げ端護符（Charred Offering Talisman）</strong>: ヌーマの祠で目玉焼きの焦げ端を供えた者に宿る微弱な加護。1日1回、泥濘や油溜まりで転倒するのを防ぐ。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:16px 0;">
+<p><em>Floor 010 recorded under Lagrange Tower Master Chronicles / Deepened autonomously under Zero-MP Constitution.</em></p>
+
+      <div style="text-align:right; margin-top:12px;">
+        <a href="#top" style="color:var(--text-muted); font-size:0.85rem;">▲ 巻頭目次へ戻る</a>
+      </div>
+    </article>
+    <div id="top" class="log-selector" style="justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+      <span class="log-btn" style="opacity:0.4; cursor:default;">◀ 最初の巻</span>
+      <a href="chronicles.html" class="log-btn">📖 物語目次へ</a>
+      <a href="chronicles_2.html" class="log-btn">次の巻（第2巻） ▶</a>
+    </div>
+  </main>
+
+  <footer>
+    <div>⚔️ [LAGRANGE TOWER OFFICIAL CHRONICLES] // MULTI-PAGE GRAND ARCHIVE // LAST BUILD: 2026-11-15 21:05 ⚔️</div>
+    <div>CURATED BY THE FORTRESS ARCHIVE (5-LAYER IP &amp; SECURITY QUARANTINED). ALL RIGHTS RESERVED.</div>
+  </footer>
+
+  <script>
+    function switchLog(logId, btn) {
+      document.querySelectorAll('article.prose-container').forEach(a => a.style.display = 'none');
+      document.querySelectorAll('.log-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(logId).style.display = 'block';
+      btn.classList.add('active');
+    }
+    function filterChars(tier, btn) {
+      document.querySelectorAll('.char-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.char-entry').forEach(entry => {
+        entry.style.display = (tier === 'all' || entry.getAttribute('data-tier') === tier) ? 'block' : 'none';
+      });
+    }
+    function filterItems(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.item-entry').forEach(entry => {
+        entry.style.display = (cat === 'all' || entry.getAttribute('data-category') === cat) ? 'block' : 'none';
+      });
+    }
+    function filterZones(zone, btn) {
+      document.querySelectorAll('.zone-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.floor-entry').forEach(entry => {
+        entry.style.display = (zone === 'all' || entry.getAttribute('data-zone') === zone) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
