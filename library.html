@@ -1,0 +1,632 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第025階・迷宮内専門書庫 // 天頂迷宮ラグランジュの塔 公式博物誌</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.18rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .anya-stamp {
+      border: 1px solid var(--crimson-seal);
+      background: rgba(168, 56, 56, 0.12);
+      padding: 14px 18px;
+      border-radius: 3px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #f2dada;
+    }
+    .anya-stamp-title {
+      color: #ff9999;
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 0.94rem;
+    }
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 22px 0;
+      font-size: 0.9rem;
+    }
+    .book-table th, .book-table td {
+      border: 1px solid var(--border-brass);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .book-table th {
+      background: #282018;
+      color: var(--gold-bright);
+    }
+    .book-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // OFFICIAL GUILD ARCHIVE ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔 観測年代記</h1>
+    <div class="subtitle">
+      天を突く全100階層の神代遺構。配管の蒸気で芋を蒸し、靴底の減りを気にしながら今日を生き延びる冒険者たちの群像記録と博物誌。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 総合案内所 (Index)</a>
+      <a href="chronicles.html" class="tab-btn">📖 物語・観測記録</a>
+      <a href="library.html" class="tab-btn active">📚 迷宮内専門書庫</a>
+      <a href="roster.html" class="tab-btn">👥 人物・パーティ名鑑</a>
+      <a href="lexicon.html" class="tab-btn">🎒 アイテム・奇品辞典</a>
+      <a href="atlas.html" class="tab-btn">🗺️ 階層・ロケーション図鑑</a>
+      <a href="codex.html" class="tab-btn">⚖️ 世界観・塔の法則</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+    <div class="log-selector">
+      <button class="log-btn active" onclick="switchLog('book-1', this)">📘 第1巻：実用野草と擬態菌類の識別図譜</button>
+      <button class="log-btn" onclick="switchLog('book-2', this)">📗 第2巻：晶華小蜂の戦術変遷と甲殻類解剖学</button>
+      <button class="log-btn" onclick="switchLog('book-3', this)">📙 第3巻：靴底接着膠と松脂縫合の耐久比較録</button>
+      <button class="log-btn" onclick="switchLog('book-4', this)">📕 第4巻：蒸気弁の調理音と特売ヤシ油の摩擦係数</button>
+    </div>
+
+    <article id="book-1" class="prose-container">
+      <h2>📘 第1巻：『迷宮中層・実用野草および擬態菌類の識別図譜（改訂第4版）』</h2>
+      <blockquote>
+        【著者】第012階常駐・達人薬師 シンゴ（補注：見習い調合師 ユーナ）<br>
+        【装丁】撥水蜜蝋引き羊皮紙・全42頁（押し花の標本跡とハッカ油の強い匂いあり）<br>
+        【書庫分類】第025階・王立大図書館 実用博物学書架（塔外の人間が読んでも1ミリも得しない専門書）
+      </blockquote>
+
+      <h3>1. 『苦渋の泥染め茸（激マズ苦渋茸）』と『偽しゃっくり茸』の傘裏ヒダ識別法</h3>
+      <p>第015階〜第017階の泥濘湿原に自生するドス黒い小茸『苦渋の泥染め茸（学名：amarus-limus）』は、かつては豚すら吐き出す雑草キノコとして見向きもされなかった。しかし近年、0.05%の極稀怪異『金剛ヤドカリ』の口腔内に突っ込むことで魔力反射結界を逆流・麻痺させる特効毒となることが判明し、第001階トネリコ堂での買取価格が1銅貨から25銀貨へと暴騰している。</p>
+      <p>だが、乱獲者の増加に伴い、酷似した外見を持つ<strong>『偽しゃっくり茸（学名：singultus-falsus）』</strong>を誤って採取し、金剛ヤドカリに突き出して返り討ちに遭う事故が後を絶たない。両者は表面のドス黒い粘液こそ瓜二つだが、<strong>傘を裏返してカンテラの光を斜め45度から当て、ヒダ（菌褶）の本数を数える</strong>ことで確実に識別できる。</p>
+
+      <table class="book-table">
+        <thead>
+          <tr>
+            <th>識別項目</th>
+            <th>本物：『苦渋の泥染め茸（激マズ苦渋茸）』</th>
+            <th>偽物：『偽しゃっくり茸（ハズレ茸）』</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>傘裏のヒダの本数</strong></td>
+            <td><strong>必ず偶数（24本または28本）</strong>で放射状に整列</td>
+            <td><strong>必ず奇数（21本または23本）</strong>で途中で枝分かれする</td>
+          </tr>
+          <tr>
+            <td><strong>茎を折った際の断面色</strong></td>
+            <td>10秒以内に<strong>濁った青紫色</strong>へ変色し、古雑巾のような異臭を放つ</td>
+            <td>断面の変化なし（微かに甘い栗のような匂いがする）</td>
+          </tr>
+          <tr>
+            <td><strong>誤食時の人体影響</strong></td>
+            <td>舌が3時間麻痺し、涙とよだれが止まらなくなる（無毒だが絶望的に不味い）</td>
+            <td>味は悪くないが、横隔膜が痙攣し<strong>丸3日間「ヒック！」としゃっくりが止まらず隠密行動が不可能になる</strong></td>
+          </tr>
+          <tr>
+            <td><strong>金剛ヤドカリへの効果</strong></td>
+            <td><strong>特効（一撃で泡を吹いて昏倒・金剛真珠を吐き出す）</strong></td>
+            <td><strong>無効（美味しく咀嚼された挙句、しゃっくりしながら鋏で真っ二つにされる）</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>2. 第022階『幻光茸』の老衰幻覚に対する鼻腔ハッカ原液療法の薬理</h3>
+      <p>第022階の白銀菌糸帯に群生する『幻光茸』の青碧色胞子は、鼻腔の嗅神経から直接大脳辺縁系へ侵入し、「自身の寿命が削られ老いさらばえる悪夢」を見せる。これを防ぐには酢を染み込ませた麻布マスクが有効だが、万が一吸い込んでしまった場合、生ぬるい解毒薬を飲んでも胃から吸収される前にパニック死する。</p>
+      <p>唯一の即効処置は、<strong>第012階産の『風裏薄荷（ミント）』を百倍濃縮した原液を小指に塗り、患者の鼻の穴の奥へ直接ねじ込むこと</strong>である。頭蓋骨が吹き飛ぶほどの灼熱痛が生じるが、三叉神経への強烈な痛覚ショックが幻覚回路を物理的にショートさせ、3秒で正気を取り戻させる。</p>
+
+      <div class="anya-stamp">
+        <div class="anya-stamp-title">💮 【第025階・王立大図書館 規程審査官アーニャの検閲印】 承認番号：LIB-025-BOT-004</div>
+        「シンゴ様、貴重な図譜の納本ありがとうございます！ ただし第2節の『鼻の穴への百倍ハッカ原液ねじ込み処置』は、塔務局医療安全規程第12条（粘膜保護基準）を大幅に逸脱しております！ ……とはいえ、胞子獣に食べられるよりは百倍マシですので、『緊急避難措置』として赤字注釈付きで閲覧を許可します！」
+      </div>
+    </article>
+
+    <article id="book-2" class="prose-container" style="display: none;">
+      <h2>📗 第2巻：『六角晶華小蜂の集団戦術変遷と、甲殻類口部防御に関する解剖学的考察』</h2>
+      <blockquote>
+        【著者】梟人族の前線錬金術士 ドス・ノクト（並行世界第5世代・生還報告論文）<br>
+        【装丁】灰青色の革装丁・全68頁（羽根ペンの几帳面な細字と、緻密な昆虫気門の解剖図付き）
+      </blockquote>
+
+      <h3>1. なぜ第018階の『晶華小蜂』は煙幕を見ると天井換気孔へ逃げるようになったのか？</h3>
+      <p>かつて第018階『六角晶華回廊』に棲息する晶華小蜂（Crystal Wasp）の群れは、辛子草の燻煙筒（Mustard Smokeball）を焚けば一網打尽に無力化できた。しかし直近の観測において、導火線に火がつく「シュッ」という摩擦音と辛子成分の初期分子を触角第3節の化学受容器が検知した瞬間、<strong>群れの92%がわずか1.8秒以内に天井の通気ダクトへ垂直退避し、煙が晴れた直後に死角から急降下刺突を行う</strong>という恐るべき学習適応が確認された。</p>
+      <p>私が第018階で採取した個体の翅（はね）と気門を解剖した結果、以下の構造的弱点が明らかになった。</p>
+      <ul>
+        <li><strong>結晶質の翅の比重限界</strong>：晶華小蜂の翅はケイ素結晶を含み、毎秒140回の高速羽ばたきで巨体を浮かせているが、揚力の安全マージンはわずか<strong>自重の1.12倍</strong>しかない。</li>
+        <li><strong>油霧・粘着水滴による撃墜式</strong>：したがって、煙（気体）ではなく、<strong>微細な油滴（トネリコ堂の特売ヤシ油を水で3倍に乳化させた霧）または粘着樹液</strong>を空間に散布すると、翅の表面張力が崩れて重量が14%増加し、蜂は天井へ逃げるどころか石畳へボタボタと墜落する。</li>
+        <li><strong>音響デコイの有効性</strong>：晶華小蜂は視覚よりも「六角柱の壁面反響音」で獲物の位置を特定している。そのため、奇品『逆さ鳴りの鶏鳴き砂時計』を通路の曲がり角へ投擲し、大音響の鶏鳴き音を反響させると、方向感覚を完全に喪失して同士討ちを始める。</li>
+      </ul>
+
+      <div class="anya-stamp">
+        <div class="anya-stamp-title">💮 【第025階・王立大図書館 規程審査官アーニャの検閲印】 承認番号：LIB-025-ZOO-019</div>
+        「ノクト様の解剖図の美しさと論理構成は今年の納本論文の中で随一です！ ただ、付録として添付されていた『鶏鳴き砂時計の実物サンプル』が昨日の深夜、書庫のど真ん中で突然『コケコッコーーーッ！！』と大爆発音で鳴り響き、私が腰を抜かしてインク壺をひっくり返しましたので、実物の館内持ち込みは永久禁止とします！！」
+      </div>
+    </article>
+
+    <article id="book-3" class="prose-container" style="display: none;">
+      <h2>📙 第3巻：『黒曜石熱泥および酸性湿地における靴底接着膠（にかわ）と松脂縫合の耐久比較録』</h2>
+      <blockquote>
+        【著者】ミノタウロスの荷駄運び ベルンハルト（計測助手：見習い斥候 ティオ、懐モグラの ポコ）<br>
+        【装丁】厚手の麻布綴じ・全28頁（松脂の香ばしい匂いと、猫耳斥候の肉球スタンプ付き）
+      </blockquote>
+
+      <h3>1. 「武器の刃こぼれ」で死ぬ者は1割、「靴底の剥離」で死ぬ者は6割</h3>
+      <p>下層から中層へ足を踏み入れる若き冒険者たちに告ぐ。トネリコ堂で銀貨50枚を奮発して立派な鉄剣を買う前に、まず自分の履いているブーツの裏を見ろ。もしお前が履いているのが、蚤の市で銀貨3枚で売られている『再生革の膠貼りブーツ』なら、第015階の酸性泥濘か第022階の黒曜石熱泥に入った瞬間、お前は裸足になる。</p>
+
+      <table class="book-table">
+        <thead>
+          <tr>
+            <th>靴底の接合・補修方式</th>
+            <th>材料費</th>
+            <th>第015階（酸性泥濘）耐久歩数</th>
+            <th>第022階（75℃熱泥）耐久歩数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>① 安物の魚膠（ぎょこう）接着のみ</strong></td>
+            <td>銀貨3枚の靴に標準使用</td>
+            <td>約 1,200歩（酸で白濁溶解）</td>
+            <td><strong>わずか 85歩（熱で即座にベロンと剥離）</strong></td>
+          </tr>
+          <tr>
+            <td><strong>② 牛骨膠 ＋ 鉄鋲（びょう）打ち</strong></td>
+            <td>銅貨40枚</td>
+            <td>約 3,500歩（鉄鋲が酸で錆びて抜ける）</td>
+            <td>約 4,000歩（鉄鋲が熱を伝えて足裏が火傷する）</td>
+          </tr>
+          <tr>
+            <td><strong>③ 第014階産『古樹の松脂』流し込み ＋ 蝋引き麻糸の二重コバ縫い（推奨）</strong></td>
+            <td><strong>銅貨15枚（自力採取ならタダ）</strong></td>
+            <td><strong>38,000歩以上（酸を完全に弾く）</strong></td>
+            <td><strong>42,000歩以上（蒸気孔の熱でも糸が緩まない）</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>2. 現場での「蒸気孔・松脂リペア」手順</h3>
+      <p>靴底が剥がれたら絶対に無理して歩くな。安全な蒸気テラスまで仲間の肩を借りて移動し、剥がれた隙間の泥を水筒の水で洗い流す。第014階の樹皮から削り取った『松脂の塊』をナイフの先に乗せ、蒸気孔の噴出蒸気（約100度）でトロトロの琥珀色に溶かして靴底の隙間へ塗り込み、固まりきる前に蜜蝋引きの太麻糸でコバ（縁）を八の字に二重縫いせよ。これで第025階まで絶対に剥がれない。</p>
+
+      <div class="anya-stamp">
+        <div class="anya-stamp-title">💮 【第025階・王立大図書館 規程審査官アーニャの検閲印】 承認番号：LIB-025-ENG-008</div>
+        「大変実践的で素晴らしい検証記録です！ 塔務局の遭難救助統計でも、第015階〜第022階での救助要請のじつに64%が『靴底破損による移動不能』に起因しています。本書を『第001階ギルド新米講習の必読指定図書』に選定いたします！（なお、末尾に押されているティオさんの泥だらけの肉球スタンプも、そのまま原本保存といたします）」
+      </div>
+    </article>
+
+    <article id="book-4" class="prose-container" style="display: none;">
+      <h2>📕 第4巻：『蒸気配管の圧力弁音から判別する最適調理時間と、特売ヤシ油の摩擦係数覚書』</h2>
+      <blockquote>
+        【著者】フライパン槍の見習い ピップ ＆ 燻製工房の料理人 ユーナ（特別寄稿：特売日バディ ラピータ）<br>
+        【装丁】油染みのある小冊子・全19頁（焦げた玉ねぎの匂いと、ラピータの可愛い兎イラスト入り）
+      </blockquote>
+
+      <h3>1. 真鍮蒸気バルブの「鳴き声」による火加減早見表</h3>
+      <p>第010階『蒸気配管の温室段丘』や第022階『蒸気孔テラス』では、薪を焚かずに迷宮の地熱蒸気で調理ができる。しかし、バルブや噴出孔によって蒸気の温度と圧力が全く異なるため、音を聞き分けずにフライパンを当てると「外は黒焦げ、中は生」という悲劇が起きる。</p>
+      <ul>
+        <li><strong>音色A：『シュウウウ……（低く湿った溜め息音）』［推定85〜92℃］</strong>：『割れ水晶温泉卵』や『黒パンの塩イモリ粥』向き。小鍋を置いて<strong>11分</strong>で黄身がねっとり黄金色の半熟に仕上がる。</li>
+        <li><strong>音色B：『カン、カン、シュバババッ！（金属脈動を伴う中圧蒸気）』［推定105〜115℃］</strong>：ピップ特製『鉄フライパン槍の半熟目玉焼き』向き。黒鉄フライパンの底をバルブの継ぎ目に強く押し当てて<strong>3分15秒</strong>！</li>
+        <li><strong>音色C：『ピーーーーーーッ！（口笛のような高音過熱蒸気）』［推定135℃以上］</strong>：ベルンハルト直伝『濡れ麻布包みの皮付き塩赤芋』向き。直接油を当てると発火するため、必ず濡れ麻布とワイヤーネットで包んで<strong>14分40秒</strong>放置すること。</li>
+      </ul>
+
+      <h3>2. 【特別付録】トネリコ堂『特売ヤシ油』の石畳滑走距離チャート（文責：ラピータ）</h3>
+      <p>トネリコ堂で毎月5のつく日に銅貨12枚で特売される『大瓶ヤシ油』は、強敵から逃げる際の<strong>「大盾ボブスレー滑走剤」</strong>として大活躍します！ 床の材質別の滑走距離は以下の通りです：</p>
+      <ul>
+        <li><strong>第016階（湿った苔と巨樹の根）</strong>：油1本で<strong>約45メートル滑走</strong>（推定時速32キロ。途中のキノコで跳ねるのでお尻注意！）</li>
+        <li><strong>第018階（六角晶華の結晶床）</strong>：油1本で<strong>約120メートル滑走</strong>（推定時速48キロ！ 壁の手前で麻袋を錨代わりに投げること！）</li>
+        <li><strong>第031階（沈黙の書庫の大理石床）</strong>：油半分で<strong>端から端までノンストップ滑走</strong>（紙魚の群れを完全に振り切れます！）</li>
+      </ul>
+
+      <div class="anya-stamp">
+        <div class="anya-stamp-title">💮 【第025階・王立大図書館 規程審査官アーニャの検閲印】 承認番号：LIB-025-CUL-012</div>
+        「前半分（ピップ君とユーナさんの蒸気調理音チャート）は、現場探索者の栄養改善に資する優良図書として承認します！ <strong>ですが後半のラピータさんの付録！！ 第031階の書庫の大理石床にヤシ油を撒いて大盾で滑走する行為は、器物損壊および転倒危険行為として全面禁止です！！</strong> 先週、床掃除のゴーレムが油でツルツル滑って本棚ごとひっくり返ったのはあなたたちの仕業だったのですね！？ 後で第025階審査室へ出頭してください！！」
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div>⚔️ [LAGRANGE TOWER OFFICIAL CHRONICLES] // MULTI-PAGE GRAND ARCHIVE // LAST BUILD: 2026-11-15 14:05 ⚔️</div>
+    <div>CURATED BY THE FORTRESS ARCHIVE (5-LAYER IP &amp; SECURITY QUARANTINED). ALL RIGHTS RESERVED.</div>
+  </footer>
+
+  <script>
+    function switchLog(logId, btn) {
+      document.querySelectorAll('article.prose-container').forEach(a => a.style.display = 'none');
+      document.querySelectorAll('.log-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(logId).style.display = 'block';
+      btn.classList.add('active');
+    }
+    function filterChars(tier, btn) {
+      document.querySelectorAll('.char-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.char-entry').forEach(entry => {
+        entry.style.display = (tier === 'all' || entry.getAttribute('data-tier') === tier) ? 'block' : 'none';
+      });
+    }
+    function filterItems(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.item-entry').forEach(entry => {
+        entry.style.display = (cat === 'all' || entry.getAttribute('data-category') === cat) ? 'block' : 'none';
+      });
+    }
+    function filterZones(zone, btn) {
+      document.querySelectorAll('.zone-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.floor-entry').forEach(entry => {
+        entry.style.display = (zone === 'all' || entry.getAttribute('data-zone') === zone) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
