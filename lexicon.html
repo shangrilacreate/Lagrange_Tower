@@ -1,0 +1,759 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アイテム・奇品大辞典 // 天頂迷宮ラグランジュの塔 公式博物誌</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.18rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .anya-stamp {
+      border: 1px solid var(--crimson-seal);
+      background: rgba(168, 56, 56, 0.12);
+      padding: 14px 18px;
+      border-radius: 3px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #f2dada;
+    }
+    .anya-stamp-title {
+      color: #ff9999;
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 0.94rem;
+    }
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 22px 0;
+      font-size: 0.9rem;
+    }
+    .book-table th, .book-table td {
+      border: 1px solid var(--border-brass);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .book-table th {
+      background: #282018;
+      color: var(--gold-bright);
+    }
+    .book-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // OFFICIAL GUILD ARCHIVE ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔 観測年代記</h1>
+    <div class="subtitle">
+      天を突く全100階層の神代遺構。配管の蒸気で芋を蒸し、靴底の減りを気にしながら今日を生き延びる冒険者たちの群像記録と博物誌。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 総合案内所 (Index)</a>
+      <a href="chronicles.html" class="tab-btn">📖 物語・観測記録</a>
+      <a href="library.html" class="tab-btn">📚 迷宮内専門書庫</a>
+      <a href="roster.html" class="tab-btn">👥 人物・パーティ名鑑</a>
+      <a href="lexicon.html" class="tab-btn active">🎒 アイテム・奇品辞典</a>
+      <a href="atlas.html" class="tab-btn">🗺️ 階層・ロケーション図鑑</a>
+      <a href="codex.html" class="tab-btn">⚖️ 世界観・塔の法則</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterItems('all', this)">[すべて表示 (14種)]</button>
+      <button class="filter-btn" onclick="filterItems('gear', this)">[🛠️ 生活武具・装備]</button>
+      <button class="filter-btn" onclick="filterItems('mgi', this)">[🔮 迷宮の奇品 (MGI)]</button>
+      <button class="filter-btn" onclick="filterItems('ration', this)">[🍖 現場メシ・特産食材]</button>
+      <button class="filter-btn" onclick="filterItems('relic', this)">[📜 神代モニュメント・遺物]</button>
+    </div>
+
+    <div class="lexicon-grid">
+      <div class="item-entry" data-category="gear">
+        <div class="item-header">
+          <span class="item-name">🍳 針金括りの鉄フライパン槍（Wire-Bound Skillet Spear）</span>
+          <span class="item-tag">🛠️ 生活武具 / Rank E</span>
+        </div>
+        <div class="item-owner">主な所持者：見習い少年ピップ（泥這い小隊同行）｜ 出現層：第001階〜第024階</div>
+        <div class="item-desc">
+          頑丈な樫の棒の先端に、故郷の母ちゃんから貰った使い古しの黒鉄フライパンを太い番線（針金）でぐるぐる巻きに固定した即席の打撃槍。魔物の噛みつきを防ぐ丸盾として機能するほか、第010階の蒸気配管バルブにそのまま押し当てれば、わずか3分で半熟の目玉焼きやキノコソテーが焼ける万能調理兵装。
+        </div>
+      </div>
+
+      <div class="item-entry" data-category="gear">
+        <div class="item-header">
+          <span class="item-name">🛢️ 酒樽の底板胸当て・三番板（Oak Barrel-Lid Breastplate）</span>
+          <span class="item-tag">🛠️ 生活武具 / Rank E</span>
+        </div>
+        <div class="item-owner">主な所持者：見習い騎士パスカル（水路探検隊）｜ 出現層：第005階〜第027階</div>
+        <div class="item-desc">
+          実家の漬物屋が傾き、鉄の鎧が買えなかった少年パスカルが古樽のオーク底板に麻縄を通して仕立てた手製の胸当て。走るたびにカランコロンと情けない音が鳴り、かすかに古漬けの匂いが漂うが、乾燥オーク材の圧倒的な浮力により、第009階や第027階の深水に転落した際は「絶対に沈まない天然の救命胴衣」として命を救う。
+        </div>
+      </div>
+
+      <div class="item-entry" data-category="gear">
+        <div class="item-header">
+          <span class="item-name">❄️ 霜氷の鎧（Frost-Ice Armor）</span>
+          <span class="item-tag">🛠️ 呪われし名鎧 / Rank A</span>
+        </div>
+        <div class="item-owner">主な所持者：太陽の聖騎士オールデン｜ 出現層：第012階・第051階（太陽の哨所）</div>
+        <div class="item-desc">
+          吹雪と極寒を完全に無効化する白銀の名鎧。しかし「直射日光を浴びると冷却反作用が暴走し、周囲の空気中の水分を急速凍結させて着用者の両足を地面にガチガチに氷漬けにする」という致命的な欠陥を抱える。日向に立つたび一歩も動けなくなったオールデンを、戦司祭ヘレナが大槍の柄で引っ掛けてズルズル引きずり回すのが日常の光景。
+        </div>
+      </div>
+
+      <div class="item-entry" data-category="gear">
+        <div class="item-header">
+          <span class="item-name">📏 地図職人の定規剣（Cartographer's Ruler-Blade）</span>
+          <span class="item-tag">🛠️ 専門職兵装 / Rank A</span>
+        </div>
+        <div class="item-owner">主な所持者：空賊航海士ケイリン（シルフィード号）｜ 出現層：第058階（雲海ドック）</div>
+        <div class="item-desc">
+          幅広で反りのない直刀の峰に沿って、ミリ単位の精密な縮尺目盛りと分度器が刻まれた航海士専用の剣。白兵戦での受け流しに使われるよりも、不運な天使ラリエルの落雷で狂った海図の引き直しや、甲板の修理木材の寸法測りに酷使されている。
+        </div>
+      </div>
+
+      <div class="item-entry" data-category="mgi">
+        <div class="item-header">
+          <span class="item-name">🎒 底知らずの麻袋（Bag of Unlightened Holding）</span>
+          <span class="item-tag">🔮 迷宮奇品 (MGI)</span>
+        </div>
+        <div class="item-owner">主な所持者：荷駄運びベルンハルト｜ 出現層：第014階〜第025階</div>
+        <div class="item-desc">
+          一見するとただの古びた大麻袋だが、空間拡張の魔術が織り込まれており、丸太でも鉄鍋でも丸石でも無限に詰め込むことができる。ただし**「中に入れた物の重量だけは1グラムたりとも軽減されず、そのまま背負う者の肩と腰にダイレクトにのしかかる」**という、筋力自慢のミノタウロス以外には到底扱えない泥臭い魔法袋。
+        </div>
+      </div>
+
+      <div class="item-entry" data-category="mgi">
+        <div class="item-header">
+          <span class="item-name">🏮 泣き虫のランタン（Weeping Brass Lantern）</span>
+          <span class="item-tag">🔮 迷宮奇品 (MGI)</span>
+        </div>
+        <div class="item-owner">主な所持者：中層探索者・斥候全般｜ 出現層：第018階〜第058階</div>
+        <div class="item-desc">
+          微弱な知覚魔術が宿った真鍮製の油ランタン。半径30メートル以内に格上の魔物や致死性の環境ハザードが迫ると、中の炎が豆粒のように青白く縮こまり、ガラスホヤがカタカタと情けなく震え出して危険を知らせる。明かりとしては頼りないが、奇襲防止の警報器としては一級品。
+        </div>
+      </div>
+
+      <div class="item-entry" data-category="mgi">
+        <div class="item-header">
+          <span class="item-name">🧭 嘘吐きコンパス（Liar's Compass）</span>
+          <span class="item-tag">🔮 迷宮奇品 (MGI)</span>
+        </div>
+        <div class="item-owner">主な所持者：梟騎士パスカル（並行世界Tower_03）｜ 出現層：第018階〜第025階</div>
+        <div class="item-desc">
+          北を指すことを放棄し、常に「周囲でもっとも殺気や毒素が濃い方角（一番行ってはいけない危険地帯）」だけを正確に指し示すへそ曲がりな羅針盤。針が指す方向の真逆へ進めば確実に安全地帯へ抜けられるため、仕組みを理解した熟練者からは命の恩人として重宝される。
+        </div>
+      </div>
+
+      <div class="item-entry" data-category="mgi">
+        <div class="item-header">
+          <span class="item-name">⏳ 逆さ鳴りの鶏鳴き砂時計（Rooster-Crow Hourglass）</span>
+          <span class="item-tag">🔮 迷宮奇品 (MGI)</span>
+        </div>
+        <div class="item-owner">主な所持者：梟人錬金術士ノクト（Tower_05）｜ 出現層：第018階〜第024階</div>
+        <div class="item-desc">
+          3分間の砂が落ち切った瞬間、昼夜を問わず地下迷宮のど真ん中で「コケコッコーーーッ！！」と凄まじい音量の鶏の鳴き声を響かせる迷惑な砂時計。しかし、通路の奥へ投げ込んでおけば、時間差で鳴り響く大音響に驚いた魔物の群れをそちらへ誘導できる最高の音響デコイ（囮）となる。
+        </div>
+      </div>
+
+      <div class="item-entry" data-category="ration">
+        <div class="item-header">
+          <span class="item-name">🥚 訳ありの割れ水晶温泉卵（Cracked Jade Hot-Spring Egg）</span>
+          <span class="item-tag">🍖 現場メシ・特産食</span>
+        </div>
+        <div class="item-owner">主な産地：第021階『翡翠の温泉宿場・翡翠亭』｜ 価格：銅貨8枚（特売）</div>
+        <div class="item-desc">
+          第021階の翡翠源泉で茹で上げられた水鳥の卵のうち、殻にヒビが入って正規品として出せなくなった訳あり品。殻を剥くと翡翠色のミネラルが染み込んだ白身と、ねっとり濃厚な黄金の黄身が現れる。背嚢の底で潰れやすいのが玉に瑕だが、疲労困憊の探索者にとって最高の贅沢品。
+        </div>
+      </div>
+
+      <div class="item-entry" data-category="ration">
+        <div class="item-header">
+          <span class="item-name">🦎 塩漬けイモリの干物（Salted Newt Jerky）</span>
+          <span class="item-tag">🍖 現場メシ・保存食</span>
+        </div>
+        <div class="item-owner">主な所持者：ベルンハルト、ブラム、下層冒険者全般｜ 価格：銅貨5枚（一束）</div>
+        <div class="item-desc">
+          第001階の雑貨屋『トネリコ堂』で束売りされている下層冒険者の定番保存食。そのまま齧ると奥歯が折れそうなほど硬く猛烈に塩辛いが、水筒の水漏れでふやけた黒パンの耳や麦と一緒に小鍋で煮込むと、驚くほど深い旨味の出汁が出る。
+        </div>
+      </div>
+
+      <div class="item-entry" data-category="ration">
+        <div class="item-header">
+          <span class="item-name">🥥 トネリコ堂の特売ヤシ油（Bargain Palm Oil Jug）</span>
+          <span class="item-tag">🍖 調理油 兼 逃走用滑走剤</span>
+        </div>
+        <div class="item-owner">主な所持者：軽戦士トーラ ＆ 兎人僧侶ラピータ｜ 出現層：第001階・第016階・第031階</div>
+        <div class="item-desc">
+          本来は揚げ物やランプの燃料として使われる安価な植物油。しかし特売日バディのトーラとラピータの手にかかれば、石畳の坂道や氷の回廊にぶちまけられ、大盾をソリ代わりにして強敵から時速40キロのボブスレー滑走で逃げ切るための「緊急脱出ローション」へと変貌する。
+        </div>
+      </div>
+
+      <div class="item-entry" data-category="ration">
+        <div class="item-header">
+          <span class="item-name">🍠 蒸気孔の皮付き塩芋（Steam-Vent Salted Red Potato）</span>
+          <span class="item-tag">🍖 現場メシ・調理品</span>
+        </div>
+        <div class="item-owner">主な調理者：荷駄運びベルンハルト｜ 調理層：第022階『黒曜石の熱泥回廊』</div>
+        <div class="item-desc">
+          第006階の湿地で採れる安価な赤芋に粗塩を擦り込み、濡らした麻布と真鍮ワイヤーネットで包んで、第022階の過熱蒸気孔の真上に15分間放置して蒸し上げた現場メシ。焚き火の煙を一切出さずに調理でき、割ると黄金色の果肉から蜜が滲み出るほど甘くホクホクに仕上がる。
+        </div>
+      </div>
+
+      <div class="item-entry" data-category="relic">
+        <div class="item-header">
+          <span class="item-name">⚖️ 重力均衡の大振り子・ラグランデュラム（The Lagrandulum）</span>
+          <span class="item-tag">📜 神代中心核モニュメント</span>
+        </div>
+        <div class="item-owner">設置場所：全100階層のフロア中心部｜ 備考：一度自力で到達した階層のみ記録・転移可</div>
+        <div class="item-desc">
+          各階層の中心にそびえ立つ、真鍮の天球儀リング・釣り合い分銅・翡翠色の星辰結晶錘からなる神代の巨大振り子。触れた冒険者個人の「一度自力で到達したことのある階層」を記録し、記録済みの階層間を自由に転移させる。ただし**「まだ一度も行ったことがない未踏階層」へは、たとえ熟練者と手を繋いでも絶対に同行転移できない**。そのため環境の良い階層のラグランデュラム周辺には宿場と経済圏が栄え、雲海などの過酷な階層には人が寄り付かない（※なお、塔務局の職員三姉妹だけは、なぜかまだ行ったことがない階層へも平気で転移している姿が目撃されている）。
+        </div>
+      </div>
+
+      <div class="item-entry" data-category="relic">
+        <div class="item-header">
+          <span class="item-name">📖 星辰綴じのソウルバウンド・ダイアリー（Chrono-Bound Grimoire）</span>
+          <span class="item-tag">📜 神代特権遺物 / SSランク</span>
+        </div>
+        <div class="item-owner">主な所持者：白兎の高位司祭クローミン｜ 出現層：全階層</div>
+        <div class="item-desc">
+          白兎の高位司祭クローミンが自身の魂に直接縫い付けるようにして肌身離さず持ち歩いている古い日記帳。どんな過酷な探索でもこの帳面の文字だけは決して損なわれず、1ページ目には「目が覚めたらミネルヴァさんと合言葉を照合すること」と「大好きな林檎パイのレシピ」が切実な筆跡で記されている。
+        </div>
+      </div>
+
+      <!-- AUTONOMOUS_LEXICON_START -->
+      <div class="item-entry" data-category="gear">
+        <div class="item-header">
+          <span class="item-name">🧪 魂喰らいの石板（#ITM-001）</span>
+          <span class="item-tag">📦 自律発掘・検疫済 / 護符 / 闇属性、精神強化</span>
+        </div>
+        <div class="item-owner">塔務局鑑定登録日：2026-10-05 08:43:13</div>
+        <div class="item-desc">
+          朽ち果てた魔導師の魂が封じ込まれた石板。着用者は一時的に精神力を増幅させ、敵の弱点を見抜く力を得る。しかし、その代償として、自身の記憶の一部を奪い去り、闇の囁きに傾倒させる危険性がある。かつて、深淵の魔王を討伐した英雄の魂が、この石板に囚われたという伝説が残る。
+        </div>
+      </div>
+      <div class="item-entry" data-category="gear">
+        <div class="item-header">
+          <span class="item-name">🧪 魂喰らいの鏡（#ITM-001）</span>
+          <span class="item-tag">📦 自律発掘・検疫済 / 鏡 / 虚 / 精神汚染</span>
+        </div>
+        <div class="item-owner">塔務局鑑定登録日：2026-10-06 11:00:10</div>
+        <div class="item-desc">
+          鏡面には見る者の魂の深淵を映し出す。触れる者を狂気と虚無に誘い、その魂を徐々に吸収する。かつて、塔の深淵に潜む虚無の眷属が自身の姿を映し出すために使用したと伝えられる。使用者の精神力を蝕み、幻覚と妄想を増幅させる。
+        </div>
+      </div>
+      <div class="item-entry" data-category="gear">
+        <div class="item-header">
+          <span class="item-name">🧪 鉄血の沈黙の守護者（#ITM-001）</span>
+          <span class="item-tag">📦 自律発掘・検疫済 / 護符 / 鉄属性、防御</span>
+        </div>
+        <div class="item-owner">塔務局鑑定登録日：2026-10-08 11:00:11</div>
+        <div class="item-desc">
+          朽ちかけた鉄の巨人の心臓を模した護符。身につける者に、敵の攻撃を僅かに軽減する。かつて、この巨人は階層の深淵に潜む悪夢を鎮めるために自らを捧げた戦士の魂を宿していたとされる。沈黙の守護者と呼ばれるのは、その魂が言葉を発しないため。
+        </div>
+      </div>
+      <div class="item-entry" data-category="gear">
+        <div class="item-header">
+          <span class="item-name">🧪 鉄血の聖歌（#ITM-001）</span>
+          <span class="item-tag">📦 自律発掘・検疫済 / 聖歌隊の防具 / 信仰</span>
+        </div>
+        <div class="item-owner">塔務局鑑定登録日：2026-10-10 04:59:02</div>
+        <div class="item-desc">
+          鉄の如き堅牢さと、神聖なる信仰の力が共存する防具。着用者は、魂を清め、精神を安定させる聖歌を内なる声として聞くことができる。しかし、その力は、信仰心の薄弱な者には無駄となるだろう。かつて、地下深くに眠る悪魔の脅威を打ち払った聖歌隊の遺産である。
+        </div>
+      </div>
+      <div class="item-entry" data-category="gear">
+        <div class="item-header">
+          <span class="item-name">🧪 鉄錆の聖歌碑（#ITM-002）</span>
+          <span class="item-tag">📦 自律発掘・検疫済 / 楽器 / 聖属性、防具 / 精神防御、消耗品 / 精神安定</span>
+        </div>
+        <div class="item-owner">塔務局鑑定登録日：2026-10-25 07:40:57</div>
+        <div class="item-desc">
+          朽ち果てた石の竪琴。未踏階層の深淵に眠る悪夢の低徊を鎮める聖歌を奏でる。演奏者の精神力を高め、狂気や恐怖を打ち消す効果を持つが、使用後は音を失い、再び眠りにつく。かつて、この歌を歌い続けた聖歌隊が、塔の深淵に引き込まれたという伝承がある。
+        </div>
+      </div>
+      <div class="item-entry" data-category="gear">
+        <div class="item-header">
+          <span class="item-name">🧪 煙狼の灯籠（#ITM-002）</span>
+          <span class="item-tag">📦 自律発掘・検疫済 / 灯籠 / 火属性、耐火陶器</span>
+        </div>
+        <div class="item-owner">塔務局鑑定登録日：2026-11-02 07:51:39</div>
+        <div class="item-desc">
+          内部に微炭を封じ込め、炎を安定的に燃焼させる。煙を放出し、視界を遮ることなく、火の使用を最小限に抑え暗所での活動を支援する。古都の罠職が、迷宮の奥底で獲物を待ち伏せする際に使用したと伝えられる。
+        </div>
+      </div>
+      <div class="item-entry" data-category="gear">
+        <div class="item-header">
+          <span class="item-name">🧪 影葉の壺（#ITM-003）</span>
+          <span class="item-tag">📦 自律発掘・検疫済 / 薬壺 / 精神安定</span>
+        </div>
+        <div class="item-owner">塔務局鑑定登録日：2026-11-02 07:51:39</div>
+        <div class="item-desc">
+          灰色の耐火陶器製壺。内部には薄紫色の液体が澱んでいる。口周りを覆う影葉（かげよう）が微かに震え、精神疲労や幻覚を和らげる効果を持つ。長年、旅人達の休息場所で用いられていたと伝えられる。
+        </div>
+      </div>
+      <div class="item-entry" data-category="mgi">
+        <div class="item-header">
+          <span class="item-name">🔮 紡ぎ足の幽雀（つむぎあしのごうじゃく）（#MGI-001）</span>
+          <span class="item-tag">📦 自律発掘・検疫済 / 容器 / 精霊の溜め息</span>
+        </div>
+        <div class="item-owner">塔務局鑑定登録日：2026-11-05 06:03:13</div>
+        <div class="item-desc">
+          粗末な麻袋仕立ての雀の形をした容器。触れると微かに精霊の息吹が感じられ、触れたものを小さく染め上げる。染め色は微弱で、服や小道具程度。過度な触れ合いは、周囲の糸を絡ませて実用性を損なう。伝承によれば、かつて塔の紡ぎ師が、孤独を癒すための玩具として製作したとされる。
+        </div>
+      </div>
+      <div class="item-entry" data-category="mgi">
+        <div class="item-header">
+          <span class="item-name">🔮 星影の宵壺（ほしのきょうほけ）（#MGI-001）</span>
+          <span class="item-tag">📦 自律発掘・検疫済 / 壺 / 星辰属性</span>
+        </div>
+        <div class="item-owner">塔務局鑑定登録日：2026-11-07 05:58:06</div>
+        <div class="item-desc">
+          古代星辰硝子製。闇夜に浮かぶ星影を閉じ込め、注ぐと薄紫色の液体が瞬時に生成される。温めることで、野営料理の風味を増し、疲労回復を促す効果がある。星影の光を浴びた者は、一時的に周囲の暗視能力を高める。
+        </div>
+      </div>
+      <div class="item-entry" data-category="mgi">
+        <div class="item-header">
+          <span class="item-name">🔮 星影の紡ぎ針（#MGI-001）</span>
+          <span class="item-tag">📦 自律発掘・検疫済 / 紡ぎ針 / 微光</span>
+        </div>
+        <div class="item-owner">塔務局鑑定登録日：2026-11-08 07:54:52</div>
+        <div class="item-desc">
+          粗末な紡ぎ針。染め糸の微光を吸収し、紡ぎ進めるごとに星雲の模様を織り出す。完成した布は、微かな暖かさと安堵感をもたらす。かつて、迷宮の深淵で夜を明かす旅人たちのために作られたが、今は忘れ去られている。
+        </div>
+      </div>
+      <div class="item-entry" data-category="gear">
+        <div class="item-header">
+          <span class="item-name">🧪 淵影の石瓶（#ITM-002）</span>
+          <span class="item-tag">📦 自律発掘・検疫済 / 陶器 / 精神安定</span>
+        </div>
+        <div class="item-owner">塔務局鑑定登録日：2026-11-10 08:22:49</div>
+        <div class="item-desc">
+          粗末な耐火陶器瓶。内部には特殊なオイルが充填され、傾けると微かに緑色の煙を漏らす。オイルは精神疲労を和らげ、幻覚を見る者の心を鎮める効果を持つと伝えられている。この瓶は、塔の奥深くで孤独に生きる研究者によって、自身の精神を研ぎ澄ますための道具として用いられてきた。
+        </div>
+      </div>
+      <div class="item-entry" data-category="gear">
+        <div class="item-header">
+          <span class="item-name">🧪 淵光の紡錘（#ITM-002）</span>
+          <span class="item-tag">📦 自律発掘・検疫済 / 道具 / 結晶ガラス、水属性</span>
+        </div>
+        <div class="item-owner">塔務局鑑定登録日：2026-11-14 08:20:59</div>
+        <div class="item-desc">
+          複雑な模様の結晶ガラスで紡がれた紡錘状の道具。周囲の瘴気を吸収し、水筒内の液体を浄化する。罠の感知と解除に用いられ、暗所での視認性を高める効果がある。職人ギルドの老練な罠職が、過酷な環境下での任務を支えるため製作したとされる。
+        </div>
+      </div>
+<!-- AUTONOMOUS_LEXICON_END -->
+    </div>
+  
+  </main>
+
+  <footer>
+    <div>⚔️ [LAGRANGE TOWER OFFICIAL CHRONICLES] // MULTI-PAGE GRAND ARCHIVE // LAST BUILD: 2026-11-15 14:05 ⚔️</div>
+    <div>CURATED BY THE FORTRESS ARCHIVE (5-LAYER IP &amp; SECURITY QUARANTINED). ALL RIGHTS RESERVED.</div>
+  </footer>
+
+  <script>
+    function switchLog(logId, btn) {
+      document.querySelectorAll('article.prose-container').forEach(a => a.style.display = 'none');
+      document.querySelectorAll('.log-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(logId).style.display = 'block';
+      btn.classList.add('active');
+    }
+    function filterChars(tier, btn) {
+      document.querySelectorAll('.char-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.char-entry').forEach(entry => {
+        entry.style.display = (tier === 'all' || entry.getAttribute('data-tier') === tier) ? 'block' : 'none';
+      });
+    }
+    function filterItems(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.item-entry').forEach(entry => {
+        entry.style.display = (cat === 'all' || entry.getAttribute('data-category') === cat) ? 'block' : 'none';
+      });
+    }
+    function filterZones(zone, btn) {
+      document.querySelectorAll('.zone-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.floor-entry').forEach(entry => {
+        entry.style.display = (zone === 'all' || entry.getAttribute('data-zone') === zone) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
