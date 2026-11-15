@@ -1,0 +1,632 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人物・パーティ名鑑 // 天頂迷宮ラグランジュの塔 公式博物誌</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.18rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .anya-stamp {
+      border: 1px solid var(--crimson-seal);
+      background: rgba(168, 56, 56, 0.12);
+      padding: 14px 18px;
+      border-radius: 3px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #f2dada;
+    }
+    .anya-stamp-title {
+      color: #ff9999;
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 0.94rem;
+    }
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 22px 0;
+      font-size: 0.9rem;
+    }
+    .book-table th, .book-table td {
+      border: 1px solid var(--border-brass);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .book-table th {
+      background: #282018;
+      color: var(--gold-bright);
+    }
+    .book-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // OFFICIAL GUILD ARCHIVE ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔 観測年代記</h1>
+    <div class="subtitle">
+      天を突く全100階層の神代遺構。配管の蒸気で芋を蒸し、靴底の減りを気にしながら今日を生き延びる冒険者たちの群像記録と博物誌。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 総合案内所 (Index)</a>
+      <a href="chronicles.html" class="tab-btn">📖 物語・観測記録</a>
+      <a href="library.html" class="tab-btn">📚 迷宮内専門書庫</a>
+      <a href="roster.html" class="tab-btn active">👥 人物・パーティ名鑑</a>
+      <a href="lexicon.html" class="tab-btn">🎒 アイテム・奇品辞典</a>
+      <a href="atlas.html" class="tab-btn">🗺️ 階層・ロケーション図鑑</a>
+      <a href="codex.html" class="tab-btn">⚖️ 世界観・塔の法則</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+
+    <div class="filter-bar">
+      <button class="char-btn active" onclick="filterChars('all', this)">[すべて表示 (8組)]</button>
+      <button class="char-btn" onclick="filterChars('mundane', this)">[🛡️ 下層・生活派パーティ]</button>
+      <button class="char-btn" onclick="filterChars('veteran', this)">[⚔️ 中層・上層の熟練探索者]</button>
+      <button class="char-btn" onclick="filterChars('staff', this)">[🏛️ 塔務局職員・拠点住人]</button>
+    </div>
+
+    <div class="roster-grid">
+      <div class="char-entry" data-tier="mundane">
+        <div class="item-header">
+          <span class="item-name">🍲 泥這い小隊 ＆ 見習い少年ピップ（The Mud-Crawlers & Pip）</span>
+          <span class="item-tag">🛡️ 下層〜中層・生活派 / Rank D〜C-</span>
+        </div>
+        <div class="item-owner">メンバー：ロルフ（長槍隊長）、ダン（熊人族の槌戦士）、ミリー（エルフ見習い僧侶）、ペコ（猫耳斥候）＋ ピップ（フライパン槍の少年）</div>
+        <div class="item-desc">
+          一攫千金の英雄譚よりも「今日の武具の修理代と温かい晩飯」のために泥を這って生きる等身大の4人組と、彼らに同行する見習い少年ピップ。ピップが持つ『針金括りの鉄フライパン槍』は、魔物の牙を防ぐ盾でありながら、第010階の蒸気配管に押し当てれば3分で半熟目玉焼きが焼けるパーティーの生命線。いつも金欠だが、どんな窮地でも温かい現場メシを囲んで笑い合うしぶとさを持つ。
+        </div>
+      </div>
+
+      <div class="char-entry" data-tier="mundane">
+        <div class="item-header">
+          <span class="item-name">🛒 特売日バディ：トーラ ＆ ラピータ（The Bargain-Day Buddy）</span>
+          <span class="item-tag">🛡️ 下層〜中層・生活派 / Rank C</span>
+        </div>
+        <div class="item-owner">メンバー：トーラ（大盾の人間軽戦士・女） ＆ ラピータ（お買い物鞄の兎人族僧侶・女）</div>
+        <div class="item-desc">
+          第001階のよろず屋『トネリコ堂』の頑固親父に日歩の借金を返しながら迷宮を潜る仲良し女性コンビ。ラピータは長い兎耳を揺らして特売品情報に目を光らせ、大きなお買い物鞄に常に『特売ヤシ油』を詰め込んでいる。強敵に遭遇すると、床にヤシ油をぶちまけてトーラの大盾に二人で飛び乗り、時速40キロのボブスレー滑走でどんな危機からも逃げ切る俊足コンビ。
+        </div>
+      </div>
+
+      <div class="char-entry" data-tier="mundane">
+        <div class="item-header">
+          <span class="item-name">🐂 荷駄運びベルンハルト＆ポコ と 見習い斥候ティオ</span>
+          <span class="item-tag">🛡️ 樹海・温泉圏の運び屋＆斥候 / Rank E〜C</span>
+        </div>
+        <div class="item-owner">メンバー：ベルンハルト（ミノタウロス荷運び）＆ ポコ（懐モグラ）、ティオ（猫耳見習い斥候）、アルヴィス（エルフ斥候）</div>
+        <div class="item-desc">
+          身長215cmの巨漢ながら極めて温厚で面倒見が良い牛人族ベルンハルトと、彼の胸ポケットから顔を出して地鳴りを嗅ぎ分けるモグラのポコ。百キロを超える『底知らずの麻袋』を背負い、熱泥で靴底が剥がれて大泣きするそそっかしい猫耳少女ティオを肩に乗せてやる頼れるお兄さん。仲間のエルフ斥候アルヴィスと共に、階層間の険しい自然領域を行き来している。
+        </div>
+      </div>
+
+      <div class="char-entry" data-tier="mundane">
+        <div class="item-header">
+          <span class="item-name">🛢️ 水路探検隊：樽胸当てのパスカル、キップ、ロッティ</span>
+          <span class="item-tag">🛡️ 下層水路・砂漠圏 / Rank E〜D</span>
+        </div>
+        <div class="item-owner">メンバー：パスカル（見習い騎士）、キップ（地図描き少年）、ロッティ（大鍋蓋の祈祷師）</div>
+        <div class="item-desc">
+          実家の漬物屋が傾いて古樽の底板を鎧代わりにしている少年パスカル、高価な羊皮紙とインク代にいつも胃を痛めている地図描きキップ、そして「両手で耳たぶを引っ張りながら片足三段跳びをしないと発動しない」珍妙な治癒術を使うロッティの若手3人組。パスカルの樽アーマーは走るたびカランコロンと鳴るが、深水に落ちた時は抜群の浮き輪になる。
+        </div>
+      </div>
+
+      <div class="char-entry" data-tier="veteran">
+        <div class="item-header">
+          <span class="item-name">☀️ 太陽の哨所・極光防衛戦線（オールデン、ヘレナ、エリアス）</span>
+          <span class="item-tag">⚔️ 上層寒冷・雷撃帯 / Rank A〜S</span>
+        </div>
+        <div class="item-owner">メンバー：オールデン（太陽の聖騎士）、ヘレナ（豪槍の戦司祭）、エリアス（風の魔法剣士）</div>
+        <div class="item-desc">
+          第051階『極光と雷鳴の大渓谷』を拠点とする熟練3人組。極寒対策の名鎧『霜氷の鎧』を着ているせいで「直射日光を浴びると冷却反作用で自分の両足が地面にガチガチに凍りついて一歩も動けなくなる」暑苦しい熱血漢オールデンと、氷漬けになった彼を大槍の柄で引っ掛けてズルズル引きずり回す豪快な姉御ヘレナ、そして騒がしい脳筋二人に毒舌を吐きつつ緻密な『旋風の罠』で戦局を支配するエルフの参謀エリアスという抜群のコンビネーションを誇る。
+        </div>
+      </div>
+
+      <div class="char-entry" data-tier="veteran">
+        <div class="item-header">
+          <span class="item-name">🪽 天上の守護天使ラリエル と 雲海空賊団『シルフィード号』</span>
+          <span class="item-tag">⚔️ 上層雲海圏 / Rank A〜SS</span>
+        </div>
+        <div class="item-owner">メンバー：静謐のラリエル（天使騎士）、シルヴィアン船長（エルフ空賊）、エレヴァン（雷撃剣士）、ケイリン（鳥人航海士）</div>
+        <div class="item-desc">
+          第058階の暴風雲海を飛空艇『シルフィード号』で翔ける粋な空賊団と、彼らが「生涯無償の特等客」として迎え入れた四枚翼の天使ラリエル。ラリエルは一歩歩くだけで床が抜け、レバーに触れればマストが折れ、晴天でも彼女にだけ雷が落ちるほどの超絶不運体質（「歩く天変地異」）だが、実は周囲の人々に降りかかるはずの不運をすべて一身に引き受けている心優しき聖女。
+        </div>
+      </div>
+
+      <div class="char-entry" data-tier="veteran">
+        <div class="item-header">
+          <span class="item-name">🌟 白兎の高位司祭クローミン ＆ 剣姫ミネルヴァ ＋ 怪盗マイラ</span>
+          <span class="item-tag">⚔️ 全階層踏破・最深部探索 / Rank S〜SS</span>
+        </div>
+        <div class="item-owner">メンバー：クローミン（白兎耳族の司祭）、ミネルヴァ（人間の魔法剣士）、マイラ（黒猫耳族の怪盗）</div>
+        <div class="item-desc">
+          黄金欲に塗れた第001階の表神殿に異を唱えて破門されながらも、困っている者を見捨てず天頂を目指す生真面目な白兎の司祭クローミンと、彼を誰よりも深く信頼して寄り添う気高き剣姫ミネルヴァ。クローミンはなぜか肌身離さず『林檎パイのレシピが書かれた日記帳』を持ち歩いている。そんな二人の周りには、古代錠前を3秒で開ける神出鬼没の黒猫怪盗マイラがいつも勝手に合流しては騒動を巻き起こす。
+        </div>
+      </div>
+
+      <div class="char-entry" data-tier="staff">
+        <div class="item-header">
+          <span class="item-name">🔧 ラグランジュ塔務局・保全＆審査の公務員三姉妹（エリア、エララ、アーニャ）</span>
+          <span class="item-tag">🏛️ 塔務局駐在職員（第025・050・075階）</span>
+        </div>
+        <div class="item-owner">メンバー：長女エリア（第050階インフラ保全課主任）、次女エララ（第075階保安室・見習い魔術師）、三女アーニャ（第025階大図書館・規程審査官）</div>
+        <div class="item-desc">
+          広大な塔の蒸気配管や検問所、大図書館を維持管理するため、それぞれの階層の職員社宅（官舎）で暮らしながら働いている仲良し三姉妹。黒髪ショートボブに深紅のワークシャツを着て真鍮レンチを振るう頼れる姉御肌のエリアに対し、青いローブの次女エララは鍵を難しくしすぎて自分自身が部屋から締め出されるロックアウト常習犯。金髪おさげに丸眼鏡の三女アーニャは、ボヤ騒ぎの消火にすら「規程により三者署名が必要です！」と泣き叫ぶ生真面目すぎる優等生。仕事終わりにはエリアが見つけた秘密の控室（第-256階）に集まり、3人でお茶とお菓子を囲むのが何よりの息抜き。
+        </div>
+      </div>
+
+      <!-- AUTONOMOUS_ROSTER_START -->
+      <div class="char-entry" data-tier="mundane">
+        <div class="item-header">
+          <span class="item-name">🎲 【並行世界 Tower_01】 [[PROTAGONIST\</span>
+          <span class="item-tag">ヴァレン・ミラー]] ／ 結末: 第018階 / 蜂巣の晶華回廊 (・穂先の折れた油焼き樫木柄（回収済） / ・鍛冶神グンドルの錆びた安物鉄貨（回収済） / ・結晶化した晶華蜂の刺針（回収済）)</span>
+        </div>
+        <div class="item-owner">最高到達深度：Rank E / 荷運び槍兵 ｜ 継承・獲得遺品：晶華小蜂の刺針貫通 ＋ 結晶性神経毒 / （槍穂先の破断・手首捻挫・解毒薬未所持）</div>
+        <div class="item-desc">
+          観測記録：💀 ロスト
+        </div>
+      </div>
+      <div class="char-entry" data-tier="mundane">
+        <div class="item-header">
+          <span class="item-name">🎲 【並行世界 Tower_02】 [[Tower_02/PROTAGONIST\</span>
+          <span class="item-tag">バーナード・クレイ]] ／ 結末: 第018階 / 蜂巣の晶華回廊 (【Tower_01遺品2件を無事回収・生還】 / 晶華蜂結晶核×2を換金)</span>
+        </div>
+        <div class="item-owner">最高到達深度：Rank E+ / 石工見習いメイス兵 ｜ 継承・獲得遺品：激闘後・戦略的一時撤退（第001階へ帰還） / （メイスで蜂粉砕・解毒薬即時使用・銀貨70枚純利）</div>
+        <div class="item-desc">
+          観測記録：🛡️ 生還
+        </div>
+      </div>
+      <div class="char-entry" data-tier="mundane">
+        <div class="item-header">
+          <span class="item-name">🎲 【並行世界 Tower_03】 [[Tower_03/PROTAGONIST\</span>
+          <span class="item-tag">パスカル]] ／ 結末: 第025階 / 落葉の古廟 (【Tower_01全遺品を第001階へ完全返還】 / ・奇品『嘘吐きコンパス』新規獲得 / ・グンドルの鉄貨（保持）)</span>
+        </div>
+        <div class="item-owner">最高到達深度：Rank E+ / 見栄張り新米騎士 ｜ 継承・獲得遺品：第2幕完結・第025階到達後に戦略的撤退生還 / （第022階の1.4倍胞子雲を『嘘吐きコンパス』逆探知で突破・銀貨45枚獲得）</div>
+        <div class="item-desc">
+          観測記録：🛡️ 生還
+        </div>
+      </div>
+      <div class="char-entry" data-tier="mundane">
+        <div class="item-header">
+          <span class="item-name">🎲 【並行世界 Tower_04】 [[Tower_04/PROTAGONIST\</span>
+          <span class="item-tag">ベルンハルト]] ／ 結末: 第026階 / 浸食水門の水路 (・『第025階・踏破刻印証』獲得（ムーンゲート開通） / ・奇品『底知らずの麻袋』保持)</span>
+        </div>
+        <div class="item-owner">最高到達深度：Rank E+ / 牛人族の魔獣使い ｜ 継承・獲得遺品：第2幕完結・第026階到達（最高記録更新！）後に第025階ムーンゲート経由で生還 / （水門大鋏ガニを角突進で粉砕・銀貨60枚と蟹味噌甲羅獲得）</div>
+        <div class="item-desc">
+          観測記録：🛡️ 生還
+        </div>
+      </div>
+      <div class="char-entry" data-tier="mundane">
+        <div class="item-header">
+          <span class="item-name">🎲 【並行世界 Tower_05】 [[Tower_05/PROTAGONIST\</span>
+          <span class="item-tag">ドス・ノクト]] ／ 結末: 第025階 / 落葉の古廟・星見広場 (・『第025階・踏破刻印証』獲得（ムーンゲート認証） / ・奇品『逆さ鳴りの砂時計（鶏鳴き）』保持 / ・『発光菌の胞子嚢』『星見石の細片』換金)</span>
+        </div>
+        <div class="item-owner">最高到達深度：Rank E+ / 梟人族の前線錬金術士 ｜ 継承・獲得遺品：第2幕〜第3幕完結・第025階到達後にムーンゲート経由で戦略的撤退生還 / （熱泥・胞子瀑布を鶏鳴き砂時計で突破・第025階刻印証獲得・銀貨18枚純利）</div>
+        <div class="item-desc">
+          観測記録：🛡️ 生還
+        </div>
+      </div>
+      <div class="char-entry" data-tier="mundane">
+        <div class="item-header">
+          <span class="item-name">🎲 【並行世界 Tower_06】 [[Tower_06/PROTAGONIST\</span>
+          <span class="item-tag">モルディ]] ／ 結末: 第025階 / 落葉の古廟・星見広場 (・『第025階・踏破刻印証』獲得（ムーンゲート認証） / ・琥珀原石の微粉末、翡翠温泥パック保持)</span>
+        </div>
+        <div class="item-owner">最高到達深度：Rank E+ / モールキンの見習い左官職人 ｜ 継承・獲得遺品：第4幕完結・第025階到達後にムーンゲート経由で戦略的一時撤退生還！ / （第018階モルタル壁突破・第025階刻印証獲得・トネリコ堂借金完済・銀貨18枚純利・Rank D昇格）</div>
+        <div class="item-desc">
+          観測記録：🛡️ 生還
+        </div>
+      </div>
+<!-- AUTONOMOUS_ROSTER_END -->
+    </div>
+  
+  </main>
+
+  <footer>
+    <div>⚔️ [LAGRANGE TOWER OFFICIAL CHRONICLES] // MULTI-PAGE GRAND ARCHIVE // LAST BUILD: 2026-11-15 14:05 ⚔️</div>
+    <div>CURATED BY THE FORTRESS ARCHIVE (5-LAYER IP &amp; SECURITY QUARANTINED). ALL RIGHTS RESERVED.</div>
+  </footer>
+
+  <script>
+    function switchLog(logId, btn) {
+      document.querySelectorAll('article.prose-container').forEach(a => a.style.display = 'none');
+      document.querySelectorAll('.log-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(logId).style.display = 'block';
+      btn.classList.add('active');
+    }
+    function filterChars(tier, btn) {
+      document.querySelectorAll('.char-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.char-entry').forEach(entry => {
+        entry.style.display = (tier === 'all' || entry.getAttribute('data-tier') === tier) ? 'block' : 'none';
+      });
+    }
+    function filterItems(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.item-entry').forEach(entry => {
+        entry.style.display = (cat === 'all' || entry.getAttribute('data-category') === cat) ? 'block' : 'none';
+      });
+    }
+    function filterZones(zone, btn) {
+      document.querySelectorAll('.zone-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.floor-entry').forEach(entry => {
+        entry.style.display = (zone === 'all' || entry.getAttribute('data-zone') === zone) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
