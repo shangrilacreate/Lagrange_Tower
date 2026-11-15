@@ -130,5 +130,89 @@
         "bpm":  120,
         "scale":  "C Whole Tone (Floating Cyber Disconnect)",
         "description":  "Archive track #011 with C Whole Tone (Floating Cyber Disconnect)."
+    },
+    {
+        "id":  "012",
+        "date":  "2026-09-14",
+        "title":  "Echo_786_Overload",
+        "filename":  "2026-09-14_Echo_786_Overload.wav",
+        "audio_path":  "audio/2026-09-14_Echo_786_Overload.wav",
+        "note_path":  "notes/2026-09-14_Echo_786_Overload.md",
+        "duration_sec":  15,
+        "bpm":  120,
+        "scale":  "D Diminished / Corrupted Minor",
+        "description":  "Archive track #012 with D Diminished / Corrupted Minor."
+    },
+    {
+        "id":  "013",
+        "date":  "2026-09-15",
+        "title":  "Subnet_807_NullPointer",
+        "filename":  "2026-09-15_Subnet_807_NullPointer.wav",
+        "audio_path":  "audio/2026-09-15_Subnet_807_NullPointer.wav",
+        "note_path":  "notes/2026-09-15_Subnet_807_NullPointer.md",
+        "duration_sec":  15,
+        "bpm":  90,
+        "scale":  "D Diminished / Corrupted Minor",
+        "description":  "Archive track #013 with D Diminished / Corrupted Minor."
+    },
+    {
+        "id":  "014",
+        "date":  "2026-09-16",
+        "title":  "Void_199_Abyss",
+        "filename":  "2026-09-16_Void_199_Abyss.wav",
+        "audio_path":  "audio/2026-09-16_Void_199_Abyss.wav",
+        "note_path":  "notes/2026-09-16_Void_199_Abyss.md",
+        "duration_sec":  15,
+        "bpm":  120,
+        "scale":  "A Phrygian Dominant (Dark Apocalyptic)",
+        "description":  "Archive track #014 with A Phrygian Dominant (Dark Apocalyptic)."
+    },
+    {
+        "id":  "015",
+        "date":  "2026-09-17",
+        "title":  "Subnet_327_ZeroDay",
+        "filename":  "2026-09-17_Subnet_327_ZeroDay.wav",
+        "audio_path":  "audio/2026-09-17_Subnet_327_ZeroDay.wav",
+        "note_path":  "notes/2026-09-17_Subnet_327_ZeroDay.md",
+        "duration_sec":  15,
+        "bpm":  60,
+        "scale":  "C Whole Tone (Floating Cyber Disconnect)",
+        "description":  "Archive track #015 with C Whole Tone (Floating Cyber Disconnect)."
+    },
+    {
+        "id":  "016",
+        "date":  "2026-09-19",
+        "title":  "Echo_150_ZeroDay",
+        "filename":  "2026-09-19_Echo_150_ZeroDay.wav",
+        "audio_path":  "audio/2026-09-19_Echo_150_ZeroDay.wav",
+        "note_path":  "notes/2026-09-19_Echo_150_ZeroDay.md",
+        "duration_sec":  15,
+        "bpm":  60,
+        "scale":  "E Locrian (Dissonant / Forbidden Fifth)",
+        "description":  "Archive track #016 with E Locrian (Dissonant / Forbidden Fifth)."
+    },
+    {
+        "id":  "017",
+        "date":  "2026-09-20",
+        "title":  "Phantom_428_Decay",
+        "filename":  "2026-09-20_Phantom_428_Decay.wav",
+        "audio_path":  "audio/2026-09-20_Phantom_428_Decay.wav",
+        "note_path":  "notes/2026-09-20_Phantom_428_Decay.md",
+        "duration_sec":  15,
+        "bpm":  120,
+        "scale":  "A Phrygian Dominant (Dark Apocalyptic)",
+        "description":  "Archive track #017 with A Phrygian Dominant (Dark Apocalyptic)."
+    },
+    {
+        "id":  "018",
+        "date":  "2026-09-21",
+        "title":  "Echo_629_ZeroDay",
+        "filename":  "2026-09-21_Echo_629_ZeroDay.wav",
+        "audio_path":  "audio/2026-09-21_Echo_629_ZeroDay.wav",
+        "note_path":  "notes/2026-09-21_Echo_629_ZeroDay.md",
+        "duration_sec":  15,
+        "bpm":  120,
+        "scale":  "E Locrian (Dissonant / Forbidden Fifth)",
+        "description":  "Archive track #018 with E Locrian (Dissonant / Forbidden Fifth)."
     }
 ]
