@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登場人物・現在ステート // 天頂迷宮ラグランジュの塔『揺籃の淵からの双曲線』</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // KASIM &amp; FREYJA ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔</h1>
+    <div class="subtitle">
+      『揺籃の淵からの双曲線』―― ステータス画面も天の声も存在しない迷宮で、記憶を失った二人の漂着者が物理法則と知恵だけを頼りに生き延びる硬派サバイバル年代記。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 トップ (Index)</a>
+      <a href="story.html" class="tab-btn">📖 本編（カシム＆フレイア）</a>
+      <a href="characters.html" class="tab-btn active">👥 登場人物・現在ステート</a>
+      <a href="world.html" class="tab-btn">⚖️ 舞台と3つの絶対法則</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+    <article class="prose-container" style="margin-bottom: 24px; border-left: 4px solid var(--gold-bright);">
+      <h2>🛡️ カシム（Kasim）</h2>
+      <ul>
+        <li><strong>種族・性別・役割</strong>：人間・男 ／ 初心者剣士（盾兵）</li>
+        <li><strong>性格・特性</strong>：やや内向的で口下手だがパニックに陥りにくく、地形の起伏・足場の状態・敵の死角・退路を冷静に観測する空間把握能力に長ける。</li>
+        <li><strong>記憶の状態</strong>：因果律検疫により前世の具体記憶を喪失。「幻想世界への憧れ」という感情の残滓のみを保持。</li>
+      </ul>
+      <h3 style="color:var(--emerald-astral); margin-top:16px;">📊 最新ステート（本編連動）</h3>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>HP / 身体状態</strong>: 軽度の冷えと疲労はあるが、湧水による水分補給と『苔喰いイモリ（2匹）』『食用緑苔』の生食により、初期の脱水症状と低血糖は解消。外傷なし。</li>
+<li><strong>所持品と劣化度</strong>:</li>
+<li><strong>油気の抜けた木の棒</strong>: 乾燥して脆いが、放棄された盾の革帯をグリップに巻き付けたことで保持力と手への負担が改善（劣化度：小）。</li>
+<li><strong>ささくれた木製円盾</strong>: 湿気で一部歪んでいる。左腕から外し、革帯を継ぎ足して背中へのスリング懸架（即座に投棄可能・背中の防寒断熱材兼用）に改修（劣化度：中）。</li>
+<li><strong>尖った石片（×2）</strong>: 投擲・解体・近接補助用に腰紐へ保持。</li>
+<li><strong>麻の貫頭衣・底の薄い革靴</strong>: 砂の湿気で裾と靴底が湿っている（摩耗度：小）。</li>
+<li><strong>精神状態</strong>: 前世の記憶の欠落とシステムUI不在の現実に直面したものの、パニックを抑え込み、地形観察とカロリー・体温管理を優先する冷静なサバイバル思考へ移行完了。</li>
+<li><strong>フレイアへの認識</strong>: 水溜まりで遭遇した「同じ貫頭衣を着た細身の少女」。言葉は交わしていないが、即座に木盾を捨てて石片を選び、砂地の硬いラインを蹴って死角へ消えた彼女の合理的な身のこなしから、間接的に砂地の歩き方と装備の取捨選択を学んだ。危険かつ有能な先行者として警戒中。</li>
+<li><strong>現在地</strong>: 『第000階：揺籃の淵（クレイドル・アビス）』北東部の折れた石柱近くの湧水溜まりを見下ろせる、二本の傾いた石柱の間の風除けの窪地（ラグランデュラムはまだ遠い霧の彼方）。</li>
+</ul>
+
+    </article>
+
+    <article class="prose-container" style="border-left: 4px solid var(--crimson-seal);">
+      <h2>🗡️ フレイア（Freyja）</h2>
+      <ul>
+        <li><strong>種族・性別・役割</strong>：人間・女 ／ 初心者盗賊（斥候）</li>
+        <li><strong>性格・特性</strong>：強い人間不信を抱え他者を信用せず単独行動に固執する。しかし「誰にも奪われたくない・死にたくない」という過剰な警戒心が、危機察知・隠密・死角発見の才能として機能している。</li>
+        <li><strong>記憶の状態</strong>：因果律検疫により前世の具体記憶を喪失。</li>
+      </ul>
+      <h3 style="color:var(--emerald-astral); margin-top:16px;">📊 最新ステート（本編連動）</h3>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>HP / 身体状態</strong>: 軽度の擦過傷と刺し傷（左親指の付け根に円盾のささくれによる出血跡）。逃走と登攀によるカロリー・水分の消耗、および冷気による軽度の体温低下（微光苔と岩フナムシの摂取により最低限の飢餓・脱水は回避）。</li>
+<li><strong>所持品と劣化度</strong>:</li>
+<li><strong>鋭く割れた黒曜頁岩の石片</strong>: 水溜まりで獲得。刃先は鋭利だが、強い衝撃で欠けやすい簡易ナイフ状態。</li>
+<li><strong>油気の抜けた木の棒</strong>: 初期装備。乾燥して軽く、強く叩けば折れる懸念あり。</li>
+<li><strong>粗末な麻の貫頭衣</strong>: 初期装備。砂と汗で湿り、裾の一部を石片の滑り止めに使用。</li>
+<li><strong>底の薄い革靴</strong>: 初期装備。水分を吸って重くなり、岩場の登攀で靴底の摩耗が進行。</li>
+<li>※『ささくれた木製円盾』は水溜まりの砂の上に完全放棄（所持品から喪失・カシムが革帯を回収）。</li>
+<li><strong>精神状態</strong>: 極度の人間不信とパラノイア（被害妄想）が覚醒状態。孤独への恐怖よりも「他者に発見され奪われる恐怖」が優越しており、周囲の気配や視線に対して過剰なほど鋭敏になっている。</li>
+<li><strong>カシムへの認識</strong>: 水溜まりで待ち伏せし、自分の弱り具合を測って襲おうとしていた「危険な追跡者・略奪者」。顔や名前は知らず、絶対に近づいてはならない敵として警戒している。</li>
+<li><strong>現在地</strong>: 第000階『揺籃の淵』・水溜まりから離れた倒壊石柱群の「高所の岩棚の死角」（床面から約3メートル上、下方への一方的な視界を確保した隠れ場所）。</li>
+</ul>
+
+    </article>
+
+    <div class="prose-container" style="margin-top:24px; opacity:0.65;">
+      <p style="margin:0; font-size:0.9rem; color:var(--text-muted);">🔒 その他の登場人物は、カシムとフレイアが物語の中で出会うにつれて順次解放されます。</p>
+    </div>
+  </main>
+
+  <footer>
+    Lagrange Tower Web Archive // 最終検疫ビルド: 2026-11-16 22:44
+  </footer>
+</body>
+</html>
