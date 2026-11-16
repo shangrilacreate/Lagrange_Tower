@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>総合案内所 (Index) // 天頂迷宮ラグランジュの塔 公式博物誌</title>
+  <title>トップ (Index) // 天頂迷宮ラグランジュの塔『揺籃の淵からの双曲線』</title>
   <style>
     :root {
       --bg-deep: #120f0d;
@@ -325,7 +325,7 @@
     a.tab-btn { text-decoration: none; display: inline-block; }
     .hub-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 18px;
       margin-top: 10px;
     }
@@ -350,7 +350,7 @@
       box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
     }
     .hub-card-title {
-      font-size: 1.18rem;
+      font-size: 1.15rem;
       font-weight: bold;
       color: var(--gold-bright);
       margin-bottom: 8px;
@@ -372,263 +372,83 @@
       display: flex;
       justify-content: space-between;
     }
-    .anya-stamp {
-      border: 1px solid var(--crimson-seal);
-      background: rgba(168, 56, 56, 0.12);
-      padding: 14px 18px;
-      border-radius: 3px;
-      margin-top: 20px;
-      font-size: 0.9rem;
-      color: #f2dada;
-    }
-    .anya-stamp-title {
-      color: #ff9999;
-      font-weight: bold;
-      margin-bottom: 6px;
-      font-size: 0.94rem;
-    }
-    .book-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 16px 0 22px 0;
-      font-size: 0.9rem;
-    }
-    .book-table th, .book-table td {
-      border: 1px solid var(--border-brass);
-      padding: 10px 12px;
-      text-align: left;
-      vertical-align: top;
-    }
-    .book-table th {
-      background: #282018;
-      color: var(--gold-bright);
-    }
-    .book-table tr:nth-child(even) {
-      background: rgba(255, 255, 255, 0.02);
-    }
   </style>
 </head>
 <body>
   <header>
-    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // OFFICIAL GUILD ARCHIVE ⚔️</div>
-    <h1>天頂迷宮ラグランジュの塔 観測年代記</h1>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // KASIM &amp; FREYJA ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔</h1>
     <div class="subtitle">
-      天を突く全100階層の神代遺構。配管の蒸気で芋を蒸し、靴底の減りを気にしながら今日を生き延びる冒険者たちの群像記録と博物誌。
+      『揺籃の淵からの双曲線』―― ステータス画面も天の声も存在しない迷宮で、記憶を失った二人の漂着者が物理法則と知恵だけを頼りに生き延びる硬派サバイバル年代記。
     </div>
         <div class="hero-frame">
-      <img src="lagrandulum_hero.jpg" alt="階層の中心核・重力均衡の大振り子『ラグランデュラム』と宿場街の風景">
+      <img src="lagrandulum_hero.jpg" alt="重力均衡の大振り子『ラグランデュラム』">
       <div class="hero-caption">
-        ▲ 各階層の中心にそびえ立つ重力均衡の大振り子『ラグランデュラム（Lagrandulum）』と、その足元に広がる宿場街の灯り
+        ▲ 迷宮各層の中心にそびえ立つ重力均衡の大振り子『ラグランデュラム（Lagrandulum）』
       </div>
     </div>
   </header>
 
   <div class="nav-bar">
     <nav class="nav-tabs">
-      <a href="index.html" class="tab-btn active">🏠 総合案内所 (Index)</a>
-      <a href="chronicles.html" class="tab-btn">📖 物語本編</a>
-      <a href="observations.html" class="tab-btn">📡 自律観測ログ</a>
-      <a href="library.html" class="tab-btn">📚 迷宮内専門書庫</a>
-      <a href="roster.html" class="tab-btn">👥 人物・パーティ名鑑</a>
-      <a href="lexicon.html" class="tab-btn">🎒 アイテム・奇品辞典</a>
-      <a href="atlas.html" class="tab-btn">🗺️ 階層・ロケーション図鑑</a>
-      <a href="codex.html" class="tab-btn">⚖️ 世界観・塔の法則</a>
+      <a href="index.html" class="tab-btn active">🏠 トップ (Index)</a>
+      <a href="story.html" class="tab-btn">📖 本編（カシム＆フレイア）</a>
+      <a href="characters.html" class="tab-btn">👥 登場人物・現在ステート</a>
+      <a href="world.html" class="tab-btn">⚖️ 舞台と3つの絶対法則</a>
     </nav>
   </div>
 
   <main class="tab-panel active">
     <div class="prose-container" style="margin-bottom: 24px;">
-      <h2>🆕 最近の更新履歴（Update History）</h2>
-      <p style="font-size:0.92rem; color:var(--text-muted); margin-bottom:12px;">最終ビルド日時：<strong>2026-11-16 22:10</strong> ｜ 直近の物語追加・薬草＆アイテム拡充・冒険者ギルド活動日誌の更新履歴です。</p>
-      <ul style="padding-left:0; margin:0;">
-        <li style="margin-bottom:8px; list-style:none; padding:8px 12px; background:rgba(28,22,18,0.65); border-left:3px solid var(--gold-bright); border-radius:4px;">
-          <span style="color:var(--text-muted); font-size:0.84rem; margin-right:8px;">[2026-11-16 21:22]</span>
-          <span style="color:var(--emerald-astral); font-size:0.84rem; margin-right:8px;">🌌 冒険者ギルド活動日誌（全文）</span><br>
-          <a href="observations.html#sim-Tower_08" style="color:var(--gold-bright); font-weight:bold; text-decoration:none;">📜 ギルド活動日誌 #08（デュアルコア特別編）：『揺籃の淵からの双曲線（カシム ＆ フレイア）』 ➔</a>
-        </li>
-        <li style="margin-bottom:8px; list-style:none; padding:8px 12px; background:rgba(28,22,18,0.65); border-left:3px solid var(--gold-bright); border-radius:4px;">
-          <span style="color:var(--text-muted); font-size:0.84rem; margin-right:8px;">[2026-11-16 19:01]</span>
-          <span style="color:var(--emerald-astral); font-size:0.84rem; margin-right:8px;">📖 物語・水平開拓（Act 2収録）</span><br>
-          <a href="chronicles_3.html#floor-028" style="color:var(--gold-bright); font-weight:bold; text-decoration:none;">⚙️ 第028階：調速振子の脱進回廊と蒸気選別溝（Floor 028: Pendulum Escapement Galleries &amp; Steam Sifting Trenches） ➔</a>
-        </li>
-        <li style="margin-bottom:8px; list-style:none; padding:8px 12px; background:rgba(28,22,18,0.65); border-left:3px solid var(--gold-bright); border-radius:4px;">
-          <span style="color:var(--text-muted); font-size:0.84rem; margin-right:8px;">[2026-11-16 11:01]</span>
-          <span style="color:var(--emerald-astral); font-size:0.84rem; margin-right:8px;">📖 物語・水平開拓（Act 2収録）</span><br>
-          <a href="chronicles_4.html#floor-034" style="color:var(--gold-bright); font-weight:bold; text-decoration:none;">🐝 第034階：自律採蜜機の絡繰り巣房テラスと濃縮蜜蝋回廊（Floor 034: Clockwork Hive Terraces &amp; Concentrated Wax Galleries） ➔</a>
-        </li>
-        <li style="margin-bottom:8px; list-style:none; padding:8px 12px; background:rgba(28,22,18,0.65); border-left:3px solid var(--gold-bright); border-radius:4px;">
-          <span style="color:var(--text-muted); font-size:0.84rem; margin-right:8px;">[2026-11-16 08:06]</span>
-          <span style="color:var(--emerald-astral); font-size:0.84rem; margin-right:8px;">📖 階層物語更新</span><br>
-          <a href="chronicles_1.html#floor-002" style="color:var(--gold-bright); font-weight:bold; text-decoration:none;">⛏️ 第002階：黄鉄鉱の廃鉱山と石炭地下回廊（Abandoned Pyrite Mines &amp; Coal Galleries） ➔</a>
-        </li>
-        <li style="margin-bottom:8px; list-style:none; padding:8px 12px; background:rgba(28,22,18,0.65); border-left:3px solid var(--gold-bright); border-radius:4px;">
-          <span style="color:var(--text-muted); font-size:0.84rem; margin-right:8px;">[2026-11-16 05:02]</span>
-          <span style="color:var(--emerald-astral); font-size:0.84rem; margin-right:8px;">🌌 冒険者ギルド活動日誌（全文）</span><br>
-          <a href="observations.html#sim-Tower_07" style="color:var(--gold-bright); font-weight:bold; text-decoration:none;">📜 Tower_07 踏破航海日誌（EXPEDITION_LOG：カシア・モス） ➔</a>
-        </li>
-        <li style="margin-bottom:8px; list-style:none; padding:8px 12px; background:rgba(28,22,18,0.65); border-left:3px solid var(--gold-bright); border-radius:4px;">
-          <span style="color:var(--text-muted); font-size:0.84rem; margin-right:8px;">[2026-11-16 03:00]</span>
-          <span style="color:var(--emerald-astral); font-size:0.84rem; margin-right:8px;">📖 物語・水平開拓（Act 2収録）</span><br>
-          <a href="chronicles_4.html#floor-036" style="color:var(--gold-bright); font-weight:bold; text-decoration:none;">🗼 第036階『赤土岩盤の地下渓谷と古代加圧掘削工区』 ➔</a>
-        </li>
-        <li style="margin-bottom:8px; list-style:none; padding:8px 12px; background:rgba(28,22,18,0.65); border-left:3px solid var(--gold-bright); border-radius:4px;">
-          <span style="color:var(--text-muted); font-size:0.84rem; margin-right:8px;">[2026-11-15 20:46]</span>
-          <span style="color:var(--emerald-astral); font-size:0.84rem; margin-right:8px;">📖 階層物語更新</span><br>
-          <a href="chronicles_8.html#floor-101" style="color:var(--gold-bright); font-weight:bold; text-decoration:none;">⚓ 第101階：星海の幽霊船と彷徨える古代時計（Ghost Ship on the Celestial Sea） ➔</a>
-        </li>
-        <li style="margin-bottom:8px; list-style:none; padding:8px 12px; background:rgba(28,22,18,0.65); border-left:3px solid var(--gold-bright); border-radius:4px;">
-          <span style="color:var(--text-muted); font-size:0.84rem; margin-right:8px;">[2026-11-15 20:46]</span>
-          <span style="color:var(--emerald-astral); font-size:0.84rem; margin-right:8px;">📖 階層物語更新</span><br>
-          <a href="chronicles_8.html#floor-097" style="color:var(--gold-bright); font-weight:bold; text-decoration:none;">📜 第97階：迷宮最深部・古代魔導壁画（Ancient Murals Chamber） ➔</a>
-        </li>
-      </ul>
+      <h2>📖 物語の導入（Synopsis）</h2>
+      <p>前世の記憶も、都合の良いステータス画面も、導きの「天の声」も一切ない。</p>
+      <p>湿った白砂が広がる閉鎖領域<strong>『第000階：揺籃の淵（クレイドル・アビス）』</strong>で目を覚ましたのは、内向的だが冷静に地形と死角を見極める青年<strong>カシム</strong>と、極度の人間不信を抱えながらも生存への執着で危険を嗅ぎ分ける少女<strong>フレイア</strong>。</p>
+      <p>あるのは「油気の抜けた木の棒」と「ささくれた木製円盾」だけ。二人は別々の視点から、飢えと渇き、装備の重さと劣化、そして名も知らぬ脅威に晒されながら、やがて同じ迷宮の奥へと歩みを進めていく――。</p>
     </div>
 
     <div class="prose-container" style="margin-bottom: 24px;">
-      <h2>🏛️ 王立大図書館・総合目録（Portal Directory）</h2>
-      <p>『ラグランジュの塔』公式博物誌へようこそ。本アーカイブは各専門書架（別ページ）にて全階層の物語全文、迷宮内学術書、人物名鑑、アイテム事典、階層図鑑を閲覧できます。</p>
-
-      <div class="hub-grid">
-        <a href="chronicles.html" class="hub-card">
-          <div>
-            <div class="hub-card-title"><span>📖 物語本編（クロニクル全集）</span><span>➔</span></div>
-            <div class="hub-card-desc">全（第1〜）で収録。冒険者・パーティ別索引や全階層ダイレクト一覧からもすぐ読めます。</div>
-          </div>
-          <div class="hub-card-meta"><span>収録：全＋冒険者索引</span><span>省略なしフルテキスト</span></div>
-        </a>
-
-        <a href="observations.html" class="hub-card">
-          <div>
-            <div class="hub-card-title"><span>📡 塔務局・自律観測ログ</span><span>➔</span></div>
-            <div class="hub-card-desc">閉域環境にて毎日自律生成・5層検疫される全75階層の冒険日誌フィード、歴代遠征隊の記録ステータス、および最新ビルド記録を別室として独立収録。</div>
-          </div>
-          <div class="hub-card-meta"><span>収録：自律日誌 9件</span><span>5層検疫済フィード</span></div>
-        </a>
-
-        <a href="library.html" class="hub-card" style="border-top-color: var(--crimson-seal);">
-          <div>
-            <div class="hub-card-title"><span>📚 迷宮内学術書・専門研究叢書</span><span>➔</span></div>
-            <div class="hub-card-desc">【第025階・大図書館蔵書】王立植物学教授の『擬態菌類分類大系』、魔物解剖官の『晶華小蜂気門調査』、靴職人元老の『魚膠と松脂の耐酸試験紀要』、薬草・物理化学実務書など、塔外の人間が読んでも誰も得しないガチ学術書群（三女アーニャの整理印付き）。</div>
-          </div>
-          <div class="hub-card-meta"><span>収録：学術書・技術紀要 全8巻</span><span>大図書館特別書架</span></div>
-        </a>
-
-        <a href="roster.html" class="hub-card">
-          <div>
-            <div class="hub-card-title"><span>👥 人物・パーティ名鑑</span><span>➔</span></div>
-            <div class="hub-card-desc">泥這い小隊、特売日バディ（トーラ＆ラピータ）、白兎の司祭クローミン、塔務局の公務員三姉妹、そして冒険者ギルド活動日誌に名を刻む挑戦者たちの名鑑。</div>
-          </div>
-          <div class="hub-card-meta"><span>収録：全 16 組（常連8組＋ギルド日誌8件）</span><span>ギルド台帳連動</span></div>
-        </a>
-
-        <a href="lexicon.html" class="hub-card">
-          <div>
-            <div class="hub-card-title"><span>🎒 アイテム・奇品大辞典</span><span>➔</span></div>
-            <div class="hub-card-desc">針金括りの鉄フライパン槍、底知らずの麻袋、嘘吐きコンパス、割れ水晶温泉卵、重力均衡の大振り子『ラグランデュラム』など迷宮の奇品・武具事典。</div>
-          </div>
-          <div class="hub-card-meta"><span>収録：全 51 種（毎日自律発掘）</span><span>5層検疫済</span></div>
-        </a>
-
-        <a href="atlas.html" class="hub-card">
-          <div>
-            <div class="hub-card-title"><span>🗺️ 階層・ロケーション図鑑</span><span>➔</span></div>
-            <div class="hub-card-desc">第001階の跳ね兎亭、第021階の翡翠温泉街、三姉妹の職員社宅と秘密の裏階層『第-256階：星辰の保守控室』、および日々測量される新規水平開拓エリア。</div>
-          </div>
-          <div class="hub-card-meta"><span>収録：主要階層 ＋ 新規支線 15 区画</span><span>全 75 フロア直結</span></div>
-        </a>
-
-        <a href="codex.html" class="hub-card">
-          <div>
-            <div class="hub-card-title"><span>⚖️ 世界観・塔の法則＆市場経済</span><span>➔</span></div>
-            <div class="hub-card-desc">『ラグランデュラム』による到達記録と未踏同行不可の法則、経済圏の濃淡、およびリアルタイムに変動するトネリコ堂の市場価格・魔物学習観測報。</div>
-          </div>
-          <div class="hub-card-meta"><span>動態エコノミー連動稼働中</span><span>リアルタイム更新</span></div>
-        </a>
+      <h2>🆕 更新状況 ＆ 各話目次（Episode Index）</h2>
+      <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:12px;">最終更新：<strong>2026-11-16 21:22</strong> ｜ カシム視点（Side A）とフレイア視点（Side B）の二視点で進行します。</p>
+      <ul style="padding-left:0; margin:0 0 16px 0;">
+<li style="margin-bottom:8px; list-style:none;"><a href="story.html#ep-1" style="color:var(--gold-bright); font-weight:bold; text-decoration:none;">📖 🌑 Episode 1：第000階『揺籃の淵』―― 目覚めとブートストラップ ➔</a></li>
+      </ul>
+      <div style="border-top:1px dashed #3d3127; padding-top:12px; font-size:0.88rem; color:var(--text-muted);">
+        <strong>今後の連載予定（Season 1：第000階〜第002階 創世編）</strong><br>
+        ・第I章（Ep.1〜3）：第000階『揺籃の淵』サバイバルと零号振子からの降臨<br>
+        ・第II章（Ep.4〜7）：第001階『蘇生の裏神殿・ギルド・安宿』洗礼と敗北からの反省<br>
+        ・第III章（Ep.8〜12）：第002階『黄鉄廃坑』再起と不器用なバディ仮契約
       </div>
     </div>
 
-    <section class="prose-container">
-      <h2>📡 直近の自律観測速報（Latest Autonomous Feed）</h2>
-      <blockquote>
-        【最終検疫ビルド】<strong>2026-11-16 22:10</strong> ｜ 全件をご覧になる場合は <a href="observations.html" style="color: var(--gold-bright);">📡 自律観測ログ</a> または <a href="atlas.html" style="color: var(--gold-bright);">🗺️ 階層・ロケーション図鑑</a> へお進みください。
-      </blockquote>
-      <div class="location-list">
-        <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--emerald-astral);">
-          <div class="loc-title">
-            <span>📜 【冒険者ギルド活動日誌 #08】 📜 ギルド活動日誌 #08（デュアルコア特別編）：『揺籃の淵からの双曲線（カシム ＆ フレイア）』</span>
-            <span class="loc-code">記帳日時: 2026-11-16 21:22 [検疫合格]</span>
-          </div>
-          <div class="loc-desc" style="color: #d8cbb8; font-size: 0.9rem;">
-            何度も方向を変え、背の高い人間では通り抜けにくい低い岩の裂け目を潜り抜けた末、フレイアは倒壊した古代石柱が幾重にも重なり合った、崖のような岩場に行き着いた。 下からの視線が完全に遮られる角度を見極め、指先と靴のつま先を岩の僅かな凹凸に引っ掛けて、床面から三メートルほどの高さにある「岩棚の死角」へとよじ登った。 狭い岩棚の奥へ身を捩じ込むと、そこは外からはただの亀裂にしか見えない完全な死角になっていた。一方で、内側の隙間からは下の通路を一方的に見下ろすことができる。 フレイアはようやく口元から手を離し、肩を激しく上下……
-          </div>
+    <div class="hub-grid">
+      <a href="story.html" class="hub-card">
+        <div>
+          <div class="hub-card-title"><span>📖 本編を読む</span><span>➔</span></div>
+          <div class="hub-card-desc">『揺籃の淵からの双曲線』本編全文（Side A：カシム視点 ／ Side B：フレイア視点）。各話末尾の【現在ステート】も収録。</div>
         </div>
-        <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--gold-bright);">
-          <div class="loc-title">
-            <span>📜 ⚙️ 第028階：調速振子の脱進回廊と蒸気選別溝 // 『振子の拍子と、鉄蓋炙りの川エビ』</span>
-            <span class="loc-code">観測日時: 2026-11-16 19:01 [検疫合格]</span>
-          </div>
-          <div class="loc-desc" style="color: var(--emerald-astral); font-size: 0.86rem; margin-bottom: 6px;">
-            🧭 新規開拓支線：『蒸気選別溝の裏冷却水路と調速の安堵小祠』
-          </div>
-          <div class="loc-desc" style="margin-bottom: 8px; font-size: 0.9rem;">
-            本層の巨大振子回廊の下層脇、蒸気選別溝の余剰熱水と下層からの冷たい伏流水が合流して温度を下げている半暗渠の水路テラス。
-          </div>
-          <div class="loc-desc" style="color: #d8cbb8; font-style: italic; font-size: 0.88rem; border-top: 1px dashed #3d3127; padding-top: 6px;">
-            「カチ、コチ、ガキン！ ……カチ、コチ、ガキン！ 第028階の蒸気選別溝から立ち上る白い霧の中、パスカルの『酒樽の底板胸当て』が湿気を吸ってわずかに重みを増し、歩くたびにカポ、カポと鈍い音を立てていた。 「うわっ、ちょっと待ってよパスカル！ 今の蒸気ジェットで羊皮紙の端っこがベコベコになっちゃったじゃないか！」 キップが背中の地図筒を抱え直して悲鳴を上げる。 「ご、ごめんキップ！ でも頭上の振子のリズム、二・四秒に一回しか止まらないんだよ！ ほら、次の『ガキン』が鳴ったら――せーの！」」
-          </div>
+        <div class="hub-card-meta"><span>収録：現在 1 話</span><span>フルテキスト</span></div>
+      </a>
+
+      <a href="characters.html" class="hub-card">
+        <div>
+          <div class="hub-card-title"><span>👥 登場人物・現在ステート</span><span>➔</span></div>
+          <div class="hub-card-desc">カシムとフレイアの基本プロフィール、装備の劣化状況、負傷や精神状態、互いへの認識を最新話に連動して記録。</div>
         </div>
-        <div class="loc-box" style="margin-bottom: 14px; border-left: 3px solid var(--gold-bright);">
-          <div class="loc-title">
-            <span>📜 🐝 第034階：自律採蜜機の絡繰り巣房テラスと濃縮蜜蝋回廊 // 『真鍮張り大盾と、蜜蝋炙りの黒パン』</span>
-            <span class="loc-code">観測日時: 2026-11-16 11:01 [検疫合格]</span>
-          </div>
-          <div class="loc-desc" style="color: var(--emerald-astral); font-size: 0.86rem; margin-bottom: 6px;">
-            🧭 新規開拓支線：『裏巣房の余熱精製テラスと燻製蜜蝋の鍛冶小祠』
-          </div>
-          <div class="loc-desc" style="margin-bottom: 8px; font-size: 0.9rem;">
-            本層の真鍮ハニカムテラスの東奥、巨大な濾過タンク群の裏手に位置する水平支線エリア。
-          </div>
-          <div class="loc-desc" style="color: #d8cbb8; font-style: italic; font-size: 0.88rem; border-top: 1px dashed #3d3127; padding-top: 6px;">
-            「ブオオオオオン……シュウウウウッ！ 再び足を踏み入れた第034階の空気は、相変わらず煮詰まった百花蜜の甘い香りと、焼けた機械油の匂いでむせ返るようだった。 だが今回、キップの足取りには前回のような浮かれた軽薄さはなかった。 「よし、ブラム。底は厚手の耐熱革だ。おまけにゲートルで足首まで二重に巻いてある。もう蜜蝋なんぞにブーツを食われねえぞ」 「当たり前だ。前回お前の靴下ダッシュに付き合わされて、俺の寿命が三年縮んだんだからな」」
-          </div>
+        <div class="hub-card-meta"><span>最新ステート自動同期</span><span>ネタバレなし</span></div>
+      </a>
+
+      <a href="world.html" class="hub-card">
+        <div>
+          <div class="hub-card-title"><span>⚖️ 舞台と3つの絶対法則</span><span>➔</span></div>
+          <div class="hub-card-desc">塔を支配する物理制約（等価排熱・因果律監査・重量と劣化）と、二人が実際に到達した階層『第000階：揺籃の淵』の解説。</div>
         </div>
-      </div>
-    </section>
+        <div class="hub-card-meta"><span>物語の進行に合わせて解放</span><span>硬派サバイバル仕様</span></div>
+      </a>
+    </div>
   </main>
 
   <footer>
-    <div>⚔️ [LAGRANGE TOWER OFFICIAL CHRONICLES] // MULTI-PAGE GRAND ARCHIVE // LAST BUILD: 2026-11-16 22:10 ⚔️</div>
-    <div>CURATED BY THE FORTRESS ARCHIVE (5-LAYER IP &amp; SECURITY QUARANTINED). ALL RIGHTS RESERVED.</div>
+    Lagrange Tower Web Archive // 最終検疫ビルド: 2026-11-16 22:44
   </footer>
-
-  <script>
-    function switchLog(logId, btn) {
-      document.querySelectorAll('article.prose-container').forEach(a => a.style.display = 'none');
-      document.querySelectorAll('.log-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById(logId).style.display = 'block';
-      btn.classList.add('active');
-    }
-    function filterChars(tier, btn) {
-      document.querySelectorAll('.char-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.char-entry').forEach(entry => {
-        entry.style.display = (tier === 'all' || entry.getAttribute('data-tier') === tier) ? 'block' : 'none';
-      });
-    }
-    function filterItems(cat, btn) {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.item-entry').forEach(entry => {
-        entry.style.display = (cat === 'all' || entry.getAttribute('data-category') === cat) ? 'block' : 'none';
-      });
-    }
-    function filterZones(zone, btn) {
-      document.querySelectorAll('.zone-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.floor-entry').forEach(entry => {
-        entry.style.display = (zone === 'all' || entry.getAttribute('data-zone') === zone) ? 'block' : 'none';
-      });
-    }
-  </script>
 </body>
 </html>
