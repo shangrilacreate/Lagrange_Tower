@@ -1,0 +1,549 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>本編（カシム＆フレイア） // 天頂迷宮ラグランジュの塔『揺籃の淵からの双曲線』</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // KASIM &amp; FREYJA ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔</h1>
+    <div class="subtitle">
+      『揺籃の淵からの双曲線』―― ステータス画面も天の声も存在しない迷宮で、記憶を失った二人の漂着者が物理法則と知恵だけを頼りに生き延びる硬派サバイバル年代記。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 トップ (Index)</a>
+      <a href="story.html" class="tab-btn active">📖 本編（カシム＆フレイア）</a>
+      <a href="characters.html" class="tab-btn">👥 登場人物・現在ステート</a>
+      <a href="world.html" class="tab-btn">⚖️ 舞台と3つの絶対法則</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+    <div class="prose-container" style="margin-bottom: 20px;">
+      <p style="font-size:0.9rem; color:var(--text-muted); margin:0;">
+        <strong>各話ジャンプ</strong>：
+      </p>
+      <ul style="padding-left:0; margin:8px 0 0 0;">
+<li style="margin-bottom:8px; list-style:none;"><a href="story.html#ep-1" style="color:var(--gold-bright); font-weight:bold; text-decoration:none;">📖 🌑 Episode 1：第000階『揺籃の淵』―― 目覚めとブートストラップ ➔</a></li>
+      </ul>
+    </div>
+    <article class="prose-container" id="sim-Tower_08">
+<h2 style="margin-top:0;">📜 ギルド活動日誌 #08（デュアルコア特別編）：『揺籃の淵からの双曲線（カシム ＆ フレイア）』</h2>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:20px 0;">
+<h3 id="ep-1" style="color:var(--gold-bright); margin-top:24px; border-bottom:1px solid var(--border-brass); padding-bottom:6px;">🌑 Episode 1：第000階『揺籃の淵』―― 目覚めとブートストラップ</h3>
+<h4 style="color:var(--emerald-astral); margin-top:18px; font-size:1.08rem;">🛡️ [Side A: カシム視点] 湿った白砂と、置き去りの円盾</h4>
+<p>頬に張り付く湿った砂の冷たさと、喉の奥を焼き焦がすような渇きが、カシムを浅い泥濘のような眠りから引きずり出した。</p>
+<p>「……っ、ごほっ……」</p>
+<p>肺の底からせり上がった咳とともに、唇の端に付着していた白い砂粒がこぼれ落ちる。唾を飲み込もうとしたが、舌の上にはざらついた砂の感触しかなく、食道がひりついて痛んだ。</p>
+<p>重いまぶたを押し開けると、視界を埋めたのは鈍い灰白色の薄闇だった。はるか頭上、岩盤の天井に走る無数の亀裂に発光する苔が張り付き、頼りない微光を落としている。太陽もなければ、月もない。湿気を帯びた重い空気が、肌にまとわりついていた。</p>
+<p>（ここは……どこだ。俺は……）</p>
+<p>頭蓋の奥を探ろうとした瞬間、思考が白い靄のような壁に突き当たった。</p>
+<p>自分の名前が『カシム』であることは分かる。だが、昨日までどこで暮らし、誰と言葉を交わし、なぜこんな場所で倒れていたのか――具体的な記憶の糸を手繰り寄せようとしても、指の間から乾いた砂がこぼれ落ちるように何ひとつ掴めない。</p>
+<p>ただ、胸の奥底にだけ、消え残った燠火（おきび）のような感情の残滓があった。</p>
+<p>かつて自分は、剣や魔法が息づく幻想の世界に、焦がれるほど強い憧れを抱いていた。灰色の退屈な日常から抜け出し、未知の迷宮へ踏み出す物語を夢見ていたはずだ。</p>
+<p>だが、現実に彼を迎えたのは、壮麗なファンファーレでもなければ、親切な導きの声でもなかった。</p>
+<p>カシムは薄暗い空間に向けて何度かまばたきを繰り返した。網膜に浮かび上がるはずの文字盤も、自分の能力を示す便利な一覧表も、どこにも存在しない。頭の中に直接響く『天の声』もなければ、行き先を示す案内板すらない。</p>
+<p>あるのは、濡れた白砂に体温を奪われていく背中の冷えと、規則正しく鼓動する自らの心臓の音、そして――遥か彼方、立ち込める霧の向こう側で、一定の周期で揺れ動く巨大な『何か』が放つ、鈍い翡翠色の光だけだった。</p>
+<p>「……冗談、じゃないのか」</p>
+<p>かすれた呟きは、林立する風化した古代石柱の隙間に吸い込まれて消えた。</p>
+<p>カシムはゆっくりと上体を起こし、自分の身体を確かめた。身を包んでいるのは、繊維が粗く肌を刺す麻の貫頭衣が一枚。足元には底の薄い革靴が履かされているだけで、砂の湿気と冷たさが足の裏からじわじわと浸透してくる。</p>
+<p>傍らの白砂の上には、二つの道具が転がっていた。『油気の抜けた木の棒』と、『ささくれた木製円盾』である。</p>
+<p>右手で木の棒を掴み、持ち上げてみる。鉄の剣のような重厚感はないが、芯まで乾燥しきって油気が抜けており、打ち所が悪ければ簡単に折れてしまいそうな頼りなさがある。グリップの加工も雑で、素手で強く握り続ければすぐに手のひらの皮が剥けるだろう。</p>
+<p>さらに厄介だったのは、左手で拾い上げた木製円盾だった。湿気を吸って一部の木材が歪に膨張しており、縁は無数にささくれ立っている。裏側の革帯に左腕を通してみた途端、ずしりとした不均衡な重量が左肩へ食い込んだ。ただでさえ重心が左へ引っ張られるうえ、構えると視界の左半分が大きく塞がれてしまう。</p>
+<p>立ち上がろうとして、カシムは思わずよろめいた。</p>
+<p>湿った白砂は見た目以上に足を取られやすく、薄い革靴の踵がずぶりと沈み込む。左腕の円盾の重みも相まって、ただ一歩踏み出すだけでもふくらはぎとアキレス腱に嫌な負荷がかかった。</p>
+<p>（このまま闇雲に歩けば、あの遠い翡翠色の光に辿り着く前に、足の筋肉が攣るか、体温と体力を奪われて動けなくなる）</p>
+<p>パニックに陥りかけた思考を、カシムは深呼吸ひとつで冷やした。幻想への憧れがどれほど無残に裏切られようと、今ここにある肉体が飢えと渇きで死ぬという物理法則だけは疑いようがない。</p>
+<p>最優先すべきは、水分の確保だ。</p>
+<p>カシムは遠くの翡翠色の振子から一度目を離し、周囲に林立する古代石柱の配置と、白砂の起伏を観察した。砂地は完全に平坦ではなく、北東側の折れた巨大な石柱の根元に向かって、わずかにすり鉢状の傾斜を描いている。そして、その石柱の根元付近だけ、天井から落ちる微光を受けて苔の色が濃く、瑞々しく見えた。水気が集まっている証拠だ。</p>
+<p>カシムは呼吸を浅く整え、約三十歩先の折れた石柱へ向かって歩き出した。砂に足を取られないよう歩幅を詰め、重心を低く保ちながら霧の溜まる窪地へと近づく。</p>
+<p>その時だった。</p>
+<p>折れた石柱の向こう側、霧のヴェールのすぐ先に、人影が見えた。</p>
+<p>カシムの足がピタリと止まる。</p>
+<p>石柱の根元に湧き出した小さな水溜まりの前に、誰かがしゃがみ込んでいた。自分と同じ、粗末な麻の貫頭衣をまとった細身の少女だ。濡れた髪が白い首筋に張り付き、肩が小さく上下している。</p>
+<p>（……人だ。俺と同じように、ここで目を覚ましたのか？）</p>
+<p>喉の奥まで、呼びかけの言葉が出かかった。ここがどこなのか、何か知っていることはないか、声をかけて確かめ合うべきではないか。</p>
+<p>だが、唇を開きかけた瞬間、カシムの足は逆に半歩後ろへと引かれていた。</p>
+<p>もともと見知らぬ他者と話すのは得意ではない。複数の人間と調子を合わせるくらいなら、一人で壁の染みを眺めている方がマシな性分だ。それ以上に、彼の冷静な観察眼が警鐘を鳴らしていた。</p>
+<p>この場所には、秩序も保護もない。わずかな湧水を巡って、相手がどう出るか分からない状況で不用意に正体を晒すのは危険すぎる。</p>
+<p>カシムは音もなく近くの石柱の陰に身を滑り込ませ、息を殺した。</p>
+<p>しかし、底の薄い革靴が湿った砂を噛んだ、ほんの微かな摩擦音が霧を伝ったらしい。</p>
+<p>水溜まりの前の少女が、弾かれたように全身を硬直させた。</p>
+<p>振り向いた少女の瞳が、霧越しにカシムの隠れる石柱の陰を正確に射抜く。そこにあったのは、迷子の怯えではなく、縄張りを侵された野獣のような鋭い警戒の色だった。</p>
+<p>少女は言葉を発しなかった。立ち上がりざま、左腕に通していた木製円盾が石柱の角にぶつかって鈍い音を立てる。すると彼女は、心底邪魔くさそうに腕を抜き、その木製円盾を砂の上へ無造作に放り捨てた。</p>
+<p>代わりに彼女の細い指が掴み取ったのは、石柱の根元に落ちていた、縁の鋭く尖った石片だった。</p>
+<p>身のこなしを劇的に軽くした少女は、カシムから視線を切らないまま後ずさり、次の瞬間には音もなく岩陰の死角へと溶けるように消え去った。</p>
+<p>「…………」</p>
+<p>カシムはすぐには動かず、心の中でゆっくりと百まで数を数えた。少女が死角から回り込んで襲ってくる気配がないこと、周囲の砂地に新しい足音がないことを耳と目で徹底的に確認してから、ようやく石柱の陰を出た。</p>
+<p>湧水溜まりのほとりには、少女が捨てていった木製円盾と、くっきりとした足跡が残されていた。</p>
+<p>カシムは水に触れる前に、まずその痕跡を観察した。</p>
+<p>少女が盾を持っていた場所の足跡は踵まで深く砂にめり込んでいるが、盾を捨てて石柱際の小石が混じる硬い砂地を蹴った足跡は、つま先側だけで浅く抜けていた。</p>
+<p>（なるほど。白砂の真ん中ではなく、石柱の根元に沿った砂利混じりのラインを選べば、足を取られずに済むのか。それに……）</p>
+<p>カシムは砂に転がる少女の盾と、自分の左腕に食い込む盾を見比べた。</p>
+<p>視界を塞ぎ、体力を削るだけの粗悪な木盾は、いざという時の足枷にしかならない。彼女はそれを一瞬で見切って、確実な殺傷力と軽さを兼ね備えた『石片』を選んだのだ。</p>
+<p>カシムは自分の左腕から木製円盾を外した。ただし、完全に捨てることはせず、少女が捨てた盾から革帯だけをナイフ代わりの鋭い石角で切り外し、自分の盾を背中に斜め掛けできるよう結び直した。こうすれば両手と視界が空き、背後からの不意打ちを防ぐ最低限の板として機能するし、邪魔になれば留め具を引くだけで即座に投棄できる。</p>
+<p>さらに、残った革帯の切れ端を『油気の抜けた木の棒』の握り部分に固く巻き付け、ささくれで手のひらが裂けるのを防ぐ滑り止めにした。そして少女に倣い、手の中に収まる重く角張った石片を二つ拾い上げ、麻の貫頭衣の腰紐の間に挟み込んだ。</p>
+<p>準備を終えてから、カシムはようやく湧水溜まりに膝をついた。</p>
+<p>いきなり顔を突っ込むような真似はしない。まず指先で水を掬い、腐敗臭や異臭がないか嗅ぎ、舌先でわずかに舐めて刺激がないことを確かめる。それから、冷え切った胃袋が驚かないよう、両手で少しずつ掬っては口の中で温めるようにして喉へ流し込んだ。</p>
+<p>石灰質の微かな苦みを含んだ冷水が、干上がった粘膜に染み渡っていく。それだけで、霞んでいた視界の輪郭が一段階はっきりとするのが分かった。</p>
+<p>だが、水だけでは体温は維持できない。</p>
+<p>水溜まりの縁の湿った石肌に目を凝らすと、そこには体長十センチほどの灰白色の生き物――分厚い苔を喰んでいる鈍重な『苔喰いイモリ』が数匹へばりついていた。</p>
+<p>カシムは迷わなかった。木の棒の先端でイモリの頭を石肌に素早く押さえつけ、腰から抜いた石片の角で頸椎を潰す。同じ手順で二匹を仕留め、さらにイモリが食べていたことで無毒と分かる肉厚の緑苔をひと掴み剥ぎ取った。</p>
+<p>火を起こす道具はない。ここで時間をかければ、他の漂着者や未知の捕食者が水場へ寄ってくるリスクがある。</p>
+<p>カシムは水溜まりから十数歩離れた、二本の傾いた石柱が屋根のように重なり合う小さな窪地を見つけた。周囲よりわずかに高く、背後の風を防ぎながら水場へのアプローチを一方的に見下ろせる死角だ。</p>
+<p>窪地に身を潜めたカシムは、仕留めたばかりのイモリの皮を石片の刃で裂き、生ぬるく泥臭い肉を奥歯で噛み潰した。吐き気を催すような青臭さと粘り気だったが、緑苔と一緒に水で無理やり胃の奥へと流し込む。わずかな塩分とカロリーが、冷え切った内臓に小さな熱を灯すのを感じた。</p>
+<p>背中の円盾を石柱の冷たい岩肌との間に挟んで断熱材代わりとし、木の棒を胸元に抱きかかえるようにして膝を折る。</p>
+<p>遥か霧の向こうで揺れる翡翠色の光を見据えながら、カシムはいつでも飛び起きられるよう片目の意識を残したまま、揺籃の淵での最初の休息に入った。</p>
+<h5 style="color:var(--gold-dim); margin-top:14px; font-size:0.95rem;">【現在ステート：カシム（Episode 1 終了時）】</h5>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>HP / 身体状態</strong>: 軽度の冷えと疲労はあるが、湧水による水分補給と『苔喰いイモリ（2匹）』『食用緑苔』の生食により、初期の脱水症状と低血糖は解消。外傷なし。</li>
+<li><strong>所持品と劣化度</strong>:</li>
+<li><strong>油気の抜けた木の棒</strong>: 乾燥して脆いが、放棄された盾の革帯をグリップに巻き付けたことで保持力と手への負担が改善（劣化度：小）。</li>
+<li><strong>ささくれた木製円盾</strong>: 湿気で一部歪んでいる。左腕から外し、革帯を継ぎ足して背中へのスリング懸架（即座に投棄可能・背中の防寒断熱材兼用）に改修（劣化度：中）。</li>
+<li><strong>尖った石片（×2）</strong>: 投擲・解体・近接補助用に腰紐へ保持。</li>
+<li><strong>麻の貫頭衣・底の薄い革靴</strong>: 砂の湿気で裾と靴底が湿っている（摩耗度：小）。</li>
+<li><strong>精神状態</strong>: 前世の記憶の欠落とシステムUI不在の現実に直面したものの、パニックを抑え込み、地形観察とカロリー・体温管理を優先する冷静なサバイバル思考へ移行完了。</li>
+<li><strong>フレイアへの認識</strong>: 水溜まりで遭遇した「同じ貫頭衣を着た細身の少女」。言葉は交わしていないが、即座に木盾を捨てて石片を選び、砂地の硬いラインを蹴って死角へ消えた彼女の合理的な身のこなしから、間接的に砂地の歩き方と装備の取捨選択を学んだ。危険かつ有能な先行者として警戒中。</li>
+<li><strong>現在地</strong>: 『第000階：揺籃の淵（クレイドル・アビス）』北東部の折れた石柱近くの湧水溜まりを見下ろせる、二本の傾いた石柱の間の風除けの窪地（ラグランデュラムはまだ遠い霧の彼方）。</li>
+</ul>
+<hr style="border:0; border-top:1px dashed #3d3127; margin:20px 0;">
+<h4 style="color:var(--emerald-astral); margin-top:18px; font-size:1.08rem;">🗡️ [Side B: フレイア視点] 刺さる視線と、黒曜頁岩の牙</h4>
+<p>冷たく湿った白砂が、張り付いた頬の皮膚から体温を奪い続けていた。</p>
+<p>フレイアは奥歯に挟まった砂粒のざらつきと、肺の奥を刺すような黴（かび）臭い冷気で意識を取り戻した。激しく咳き込みながら身を起こすと、粗末な麻の貫頭衣が肌に擦れてチクチクと痛んだ。</p>
+<p>視界は薄暗く、ぼやけている。見上げた遥か頭上、巨大な岩盤天井を走る無数の亀裂に灰白色の微光苔がへばりつき、死人の肌のような頼りない光を落としていた。周囲には風化して角の欠けた古代石柱が墓標のように林立し、その間を白濁した霧が音もなく流れている。霧のずっと奥、距離感すら掴めないほど遠い空間の果てで、巨大な何か――鈍い翡翠色の光を放つ『零号振子（ラグランデュラム）』が、一定の周期で重々しく揺れているのだけが微かに見えた。</p>
+<p>「……ここ、どこ……」</p>
+<p>掠れた声は、湿った砂に吸い込まれて消えた。</p>
+<p>目の前に便利な文字が浮かび上がることもなければ、頭の中に親切な「天の声」が響いて状況を説明してくれることもない。自分の状態を示す数字も、進むべき道を示す矢印の看板も、どこにも存在しなかった。</p>
+<p>頭蓋の奥を探っても、そこにあるはずの過去の記憶は、まるで鋭利な刃物でこそぎ落とされたかのようにすっぽりと抜け落ちている。ただ、自分の名前が「フレイア」であること。そして、どこかの息苦しい場所から抜け出して「ここではないどこか、幻想の世界へ行きたかった」という、熱病の跡のような微かな渇望だけが残っていた。</p>
+<p>だが、その淡い憧れよりも遥かに強く、黒い泥のように腹の底に澱んでいる感情がある。</p>
+<p>――誰も信じるな。他人は必ず裏切る。近づいてくる奴は、私からすべてを奪う。</p>
+<p>なぜそう思うのか、具体的な顔や出来事は思い出せない。それでも、人間という存在に対する吐き気がするほどの嫌悪と恐怖だけが、骨の髄にまで焼き付いていた。誰かに見つかれば終わりだ。助けを求めれば足元を見られ、利用され、最後には使い潰されて捨てられる。</p>
+<p>震える指先で砂の上を探ると、すぐ傍らに二つの物が転がっていた。</p>
+<p>一つは、表面がひび割れて『油気の抜けた木の棒』。もう一つは、縁の鉄枠が赤く錆びつき、木材の表面が毛羽立つように割れた『ささくれた木製円盾』だった。</p>
+<p>丸腰でいることの恐怖に駆られ、フレイアは慌ててそれらを引き寄せた。木の棒は乾燥して軽かったが、左腕を通した木製円盾は、彼女の細い腕には鉛の塊のように重かった。立ち上がろうとしただけで左肩の関節が嫌な音を立てて軋み、取っ手のささくれが親指の付け根に深く刺さって赤い血が滲んだ。</p>
+<p>喉が焼けつくように渇いていた。呼吸をするたびに気道が張り付き、体内の水分が削られていくのがわかる。</p>
+<p>フレイアは背中を丸め、石柱の影から影へと身を隠すようにして歩を進めた。底の薄い革靴はすでに湿気を吸って重く、砂の下に隠れた小石の形をそのまま足の裏に伝えてくる。何より、左腕にぶら下げた木製円盾の重量が容赦なく体力を奪っていった。数分も歩かないうちに左腕の感覚が痺れてなくなり、盾の下端が白砂を引きずって不格好な溝を作った。</p>
+<p>やがて、霧の切れ間に「折れた石柱の根元の湧水溜まり」が見えてきた。</p>
+<p>崩落した太い石柱の根元から、わずかな地下水が滲み出し、澄んだ小さな水溜まりを作っている。フレイアは周囲の物音に耳を澄ませ、誰もいないことを確かめてから、砂の上に膝をついた。盾の重みで左半身が傾くのを堪えながら、水面に顔を近づけ、ひび割れた唇を浸して貪るように水を啜った。石灰と鉄の混じった冷たい水が食道を流れ落ち、空っぽの胃袋をきゅっと収縮させる。</p>
+<p>三口目を飲み込んだ、その瞬間だった。</p>
+<p>背筋の産毛が逆立ち、首筋の皮膚が粟立った。</p>
+<p>風上から流れてくる湿った空気の僅かな乱れ。砂が誰かの体重で踏み固められる微かな軋み。そして何より――粘りつくような「視線」の圧力。</p>
+<p>フレイアは水を飲む姿勢のまま、眼球だけを動かして風上の石柱を見た。</p>
+<p>いた。</p>
+<p>風化した太い石柱の陰、霧の向こう側に、一人の男が立っていた。男は何も言わず、武器を振りかざすこともせず、ただじっとこちらの様子を観察するように見下ろしていた。</p>
+<p>心臓が早鐘を打ち、視界の端がチカチカと明滅した。</p>
+<p>（見られた。水場で待ち伏せしていたんだ。なんで黙って見てるの？　私の腕が痺れてるのを見抜いたんだ。声をかけて油断させるつもりか、それともこのまま飛びかかってきて、私の頭を踏み潰して、この水も、服も、棒も、全部奪う気だ！）</p>
+<p>一度膨れ上がった猜疑心と恐怖は、もう止められなかった。</p>
+<p>すぐに逃げなければ殺される。フレイアは弾かれたように後ろへ跳び退こうとしたが、左腕の『ささくれた木製円盾』が折れた石柱の角に引っかかり、その重みで体勢が大きく崩れた。痺れきった左腕はもう指一本満足に動かない。こんな重くて嵩張る木の板を抱えていたら、あの男から逃げ切れるはずがない。視界の左半分を塞ぎ、走る速度を奪い、ただ体力を浪費させるだけの棺桶の蓋だ。</p>
+<p>フレイアは躊躇わなかった。</p>
+<p>傷だらけの左腕を強引に引き抜き、その場の湿った白砂の上に『ささくれた木製円盾』を思い切り乗り捨てた。</p>
+<p>同時に、体勢を支えようと石柱の根元に突いた右手のひらに、硬く鋭い感触が当たった。砂利の中に半分埋もれていた、黒く艶のある石――『鋭く割れた黒曜頁岩の石片』だった。片側の縁が貝殻状に薄く剥離し、刃物のように鋭利に尖っている。</p>
+<p>フレイアはそれを掴み取るなり、油気の抜けた木の棒を脇に抱え、風上の男が一歩を踏み出すよりも早く、崩れた石柱群の死角へと音もなく滑り込んだ。</p>
+<p>足跡が残りやすい柔らかな白砂を避け、露出した硬い岩盤の上だけを選んで走る。自分の荒い息遣いが敵に届かないよう、袖口を口元に押し当てて呼吸の音を殺した。盾を捨てた左半身は驚くほど軽く、恐怖によって絞り出されたアドレナリンが細身の身体を獣のように加速させた。</p>
+<p>何度も方向を変え、背の高い人間では通り抜けにくい低い岩の裂け目を潜り抜けた末、フレイアは倒壊した古代石柱が幾重にも重なり合った、崖のような岩場に行き着いた。</p>
+<p>下からの視線が完全に遮られる角度を見極め、指先と靴のつま先を岩の僅かな凹凸に引っ掛けて、床面から三メートルほどの高さにある「岩棚の死角」へとよじ登った。</p>
+<p>狭い岩棚の奥へ身を捩じ込むと、そこは外からはただの亀裂にしか見えない完全な死角になっていた。一方で、内側の隙間からは下の通路を一方的に見下ろすことができる。</p>
+<p>フレイアはようやく口元から手を離し、肩を激しく上下させた。全力で走って岩を登った代償として、体内の熱と水分が一気に失われ、激しい空腹感が胃の壁を雑巾のように絞り上げていた。汗が冷え始め、麻の貫頭衣の下で肌がガタガタと震える。</p>
+<p>「……食べなきゃ。動けなくなる……」</p>
+<p>彼女は岩棚の奥の湿った壁面に目を向けた。そこには天井と同じ灰白色の微光苔が群生し、その根元には、苔を餌にする親指の爪ほどの白い殻を持つ盲目の岩フナムシが数匹へばりついていた。</p>
+<p>フレイアは拾ってきた『鋭く割れた黒曜頁岩の石片』を逆手に握り、逃げる隙間も与えず岩フナムシの胴体を石の刃で突き刺して仕留めた。さらに石片の鋭い縁を使って、水分を含んだ微光苔を根こそぎ削り取る。</p>
+<p>泥と苦味の混じった苔と、生臭く甲殻の硬い小虫を、彼女は涙を浮かべながら無理やり奥歯で噛み潰して飲み込んだ。吐き気がするほど不味かったが、ここでカロリーと水分を補給しなければ、次に誰かに襲われた時に走る力すら残らない。</p>
+<p>最低限の腹を満たすと、フレイアは冷たい隙間風から体温を守るため、両膝を胸の前まで強く抱え込んで丸まった。</p>
+<p>左手には『油気の抜けた木の棒』を、右手には貫頭衣の裾を巻き付けて柄の代わりにした『鋭く割れた黒曜頁岩の石片』を固く握りしめる。水溜まりでこちらを見ていたあの男が、いつこの岩の下を通りかかるかわからない。フレイアは岩の隙間から下の霧を睨みつけたまま、片目ずつ交互に閉じ、物音一つで即座に跳び起きる浅い警戒睡眠へと落ちていった。</p>
+<h5 style="color:var(--gold-dim); margin-top:14px; font-size:0.95rem;">【現在ステート：フレイア（Episode 1 終了時）】</h5>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>HP / 身体状態</strong>: 軽度の擦過傷と刺し傷（左親指の付け根に円盾のささくれによる出血跡）。逃走と登攀によるカロリー・水分の消耗、および冷気による軽度の体温低下（微光苔と岩フナムシの摂取により最低限の飢餓・脱水は回避）。</li>
+<li><strong>所持品と劣化度</strong>:</li>
+<li><strong>鋭く割れた黒曜頁岩の石片</strong>: 水溜まりで獲得。刃先は鋭利だが、強い衝撃で欠けやすい簡易ナイフ状態。</li>
+<li><strong>油気の抜けた木の棒</strong>: 初期装備。乾燥して軽く、強く叩けば折れる懸念あり。</li>
+<li><strong>粗末な麻の貫頭衣</strong>: 初期装備。砂と汗で湿り、裾の一部を石片の滑り止めに使用。</li>
+<li><strong>底の薄い革靴</strong>: 初期装備。水分を吸って重くなり、岩場の登攀で靴底の摩耗が進行。</li>
+<li>※『ささくれた木製円盾』は水溜まりの砂の上に完全放棄（所持品から喪失・カシムが革帯を回収）。</li>
+<li><strong>精神状態</strong>: 極度の人間不信とパラノイア（被害妄想）が覚醒状態。孤独への恐怖よりも「他者に発見され奪われる恐怖」が優越しており、周囲の気配や視線に対して過剰なほど鋭敏になっている。</li>
+<li><strong>カシムへの認識</strong>: 水溜まりで待ち伏せし、自分の弱り具合を測って襲おうとしていた「危険な追跡者・略奪者」。顔や名前は知らず、絶対に近づいてはならない敵として警戒している。</li>
+<li><strong>現在地</strong>: 第000階『揺籃の淵』・水溜まりから離れた倒壊石柱群の「高所の岩棚の死角」（床面から約3メートル上、下方への一方的な視界を確保した隠れ場所）。</li>
+</ul>
+
+    </article>
+  </main>
+
+  <footer>
+    Lagrange Tower Web Archive // 最終検疫ビルド: 2026-11-16 22:44
+  </footer>
+</body>
+</html>
