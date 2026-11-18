@@ -1,0 +1,489 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Side B：🏛️ Episode 4：喧騒の円形広場 ―― 暗い神殿の祭壇と、喧騒の異物感 // 天頂迷宮ラグランジュの塔『揺籃の淵からの双曲線』</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // KASIM &amp; FREYJA ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔</h1>
+    <div class="subtitle">
+      『揺籃の淵からの双曲線』―― ステータス画面も天の声も存在しない迷宮で、記憶を失った二人の漂着者が物理法則と知恵だけを頼りに生き延びる硬派サバイバル年代記。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 トップ (Index)</a>
+      <a href="story_kasim.html" class="tab-btn">🛡️ Side A：カシム編</a>
+      <a href="story_freyja.html" class="tab-btn active">🗡️ Side B：フレイア編</a>
+      <a href="characters.html" class="tab-btn">👥 登場人物・現在ステート</a>
+      <a href="world.html" class="tab-btn">⚖️ 舞台と3つの絶対法則</a>
+      <a href="bestiary.html" class="tab-btn">🐾 魔物・生態図鑑</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+    <div class="prose-container" style="margin: 16px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="freyja_ep3.html" class="tab-btn">◀ 前の話</a>
+        <a href="story_freyja.html" class="tab-btn">📖 目次へ</a>
+        <a href="freyja_ep5.html" class="tab-btn">次の話 ▶</a>
+      </div>
+      <a href="kasim_ep4.html" class="tab-btn" style="border-color:var(--emerald-astral);">🛡️ Episode 4 カシム視点を読む</a>
+    </div>
+    <article class="prose-container" style="border-left: 4px solid var(--crimson-seal);">
+<h3 id="ep-1" style="color:var(--gold-bright); margin-top:24px; border-bottom:1px solid var(--border-brass); padding-bottom:6px;">🏛️ Episode 4：喧騒の円形広場 ―― 暗い神殿の祭壇と、喧騒の異物感</h3>
+<p>冷え切った石柱の背後に背中を押し付け、フレイアは肺の中の空気を少しずつ、音にならないように吐き出した。</p>
+<p>古びた壁掛け布の隙間から覗く正面の木の扉は、わずかに口を開けている。その向こう側にある控えの間から、焦げた獣脂の臭いとともに、感情の抜け落ちた硬い男の声が漏れてきた。</p>
+<p>「――肉体再構成に伴う霊銀触媒費、ならびに祭壇使用料。締めて銀貨四十二枚だ。今ここで現金で払えるか？」</p>
+<p>「ま、待ってくれ……！　持ち物は全部、下の階層で落としたんだ！　手元には銅貨一枚だって……」</p>
+<p>「なら、そこの羊皮紙に親指の血判を押せ。採掘ギルドの債務奴隷枠として身柄を引き渡す。利子と食事代を差し引けば、お前が死ぬまでツルハシを振るえばチャラになる計算だ。嫌ならもう一度ここで首を括るがいい」</p>
+<p>乾いた羽根ペンの擦れる音と、嗚咽（おえつ）を漏らす男の震える声。</p>
+<p>石柱の影でそれを聞いていたフレイアの背筋に、氷水を流し込まれたような悪寒が走った。</p>
+<p>（……やっぱりだ。ここは助けなんかじゃない）</p>
+<p>白砂の空間から送り込まれたこの石造りの神殿は、迷い込んだ人間を保護してくれる救済の場などではなかった。死んだ人間すら金で勘定し、払えない者からは身ぐるみはおろか一生の自由まで剥ぎ取って鉱山へ売り飛ばす、冷酷な「死と借金の処理場」なのだ。もしさっき、何も知らずに正面の扉を叩いて助けを求めていたら、無一文の自分も今ごろどんな書類に血判を押させられていたかわからない。</p>
+<p>その時、フレイアのすぐ背後――暗い祭壇の石床の上で、空気が歪むような低い唸りとともに誰かが叩きつけられる鈍い音が響いた。</p>
+<p>激しく咳き込む低い声。あの白砂の空間で、怪物の背中の甲殻と気味の悪い灰紫色の塊を剥ぎ取っていた男だ。</p>
+<p>フレイアは壁掛け布のさらに奥、石の継ぎ目の暗がりへと深く身を沈めた。</p>
+<p>やがて男が重い足取りで正面の扉を押し開け、控えの間へと出ていく気配がする。先ほどの痩せた神官が「新入りか。金もないならさっさと表へ出ろ、ここは宿屋ではない」と吐き捨てるように言い放ち、男が何も言い返さずに表の門へと抜けていく足音が遠ざかっていった。</p>
+<p>（……今のうちだ）</p>
+<p>フレイアは正面の控えの間には決して近づかず、自分が身を潜めていた壁掛け布の裏手――湿った風が吹き込んでくる狭い勝手口通路へと足を向けた。灰や燃えカスを捨てるために使われているらしい暗い裏通路を、擦り減った革靴の音を殺して早足で通り抜ける。</p>
+<p>朽ちかけた木の裏戸をわずかに押し開け、外の光と空気へ身を滑り出させた瞬間。</p>
+<p>フレイアは、顔面を殴りつけられたかのように立ちすくんだ。</p>
+<p>「――っ、う、ぐ……！」</p>
+<p>圧倒的な「音」と「匂い」の暴力だった。</p>
+<p>神殿の裏路地を抜けた先に広がっていたのは、見渡す限りの石畳が敷き詰められた巨大な円形広場だった。そのはるか頭上、吹き抜けになった天井の虚空からは、白砂の空間にあったものとは比較にならないほど巨大で無骨な『黒鉄の振り子』が吊り下げられ、重苦しい風切り音を響かせながらゆっくりと往復している。</p>
+<p>そして広場を埋め尽くしていたのは、むせ返るような人間の群れだった。</p>
+<p>錆びた鎖帷子（くさりかたびら）を鳴らして闊歩（かっぽ）する男たち、血と泥で汚れた革鎧を身につけた一団、荷車を引いて怒号を飛ばす商人、そして路肩の鉄板で脂の滴る謎の肉の串焼きや大鍋のスープを煮立てる屋台の群れ。焦げた獣脂の煙、安い酒の饐（す）えた臭い、何百人もの人間の汗と体臭、下水の腐臭が一塊の熱風となってフレイアの鼻腔と肺を直撃した。</p>
+<p>激しい目眩（めまい）と吐き気が込み上げ、フレイアは咄嗟に右手で自分の口元と鼻を覆った。</p>
+<p>耳の奥がガンガンと鳴る。誰も彼もが大声で笑い、怒鳴り、鉄の武器を腰に下げて我が物顔で歩いている。</p>
+<p>人間不信が骨の髄まで染み付いた彼女にとって、この活気と熱気は「安全な街の賑わい」などではなく、いつ誰が牙を剥いて襲いかかってくるかわからない「飢えた捕食者の群れ」そのものだった。</p>
+<p>（見られてる。汚い麻布を着て、木の棒なんか持った女が一人で歩いてたら、絶対に目をつけられる……！）</p>
+<p>実際、屋台の前で串焼きを齧っていた目つきの悪い男たちが、白百足の緑色の体液で汚れたフレイアの貫頭衣（かんとうい）を見て、値踏みするような薄笑いを浮かべた気がした。</p>
+<p>その一方で、屋台から流れてくる焼けた肉と塩気の匂いが、空っぽの胃袋を拷問（ごうもん）のように刺激する。唾液が勝手に溢れ出し、みぞおちの奥がきりきりと痛んだ。白砂の空間で啜った泥臭い苔と生の小虫だけでは、怪物を殺して走り回った身体の消耗には到底追いついていない。</p>
+<p>だが、屋台の木札にチョークで書かれた数字を見ても、フレイアの麻布の懐には銅貨一枚すらなかった。</p>
+<p>ここでは、水一杯、肉一切れを手に入れるにも「金」が要る。金を持たない者は、さっきの神殿の男のように借金のカタに売り飛ばされるか、路地裏で野垂れ死ぬしかないのだ。</p>
+<p>（こんな広場の真ん中にいちゃ駄目だ。早く、誰の目も届かない場所へ……！）</p>
+<p>フレイアは口元を片手で押さえたまま、自分の存在を消すように背中を丸め、周囲の人影を敵意と恐怖の入り混じった目で睨みつけながら、建物の壁際を滑るようにして暗い路地裏へと逃げ込もうとした。</p>
+<p>その時だった。</p>
+<p>路地の入り口まであと数歩という広場の端で、人波から弾き出されるようにして立ち尽くしている一人の男の姿が視界に入った。</p>
+<p>先端の曲がった木の棒を杖代わりに突き、左腕には、割れた木盾の表面に『あの白い甲殻』を革紐で不格好に括り付けたものを抱えている。粗末な貫頭衣（かんとうい）には、フレイアと同じ緑色の体液が乾いてこびりついていた。</p>
+<p>あの男だった。広場を行き交う人々の喧騒と屋台の匂いの中で、男もまた無一文の現実に打ちのめされたように呆然（ぼうぜん）と立ち尽くしていた。</p>
+<p>ほんの一瞬だけ、フレイアの視線がその男の横顔を捉えた。</p>
+<p>男もこちらに気づいたように見えたが、フレイアは歩みを緩めることすらなかった。声をかける理由もなければ、近づく理由もない。あいつは自分の盾を直し、私は自分の刃を手に入れた。白砂の空間での利用関係はそこで終わっている。無一文の者同士が群れたところで、互いの足を引っ張り合って共倒れになるだけだ。</p>
+<p>フレイアは無言のまま視線を切り、建物の隙間に口を開けた薄暗い路地裏の闇へと、音もなく溶け込んで距離を切った。</p>
+<p>＊　　　　　　　　＊　　　　　　　　＊</p>
+<p>大通りの喧騒と脂の匂いが遠ざかるまで、彼女は三度、四度と複雑に折れ曲がる細い裏路地を奥へと進んだ。</p>
+<p>最後に辿り着いたのは、使われなくなった古い石階段の下、壊れた荷車の車輪と空の古い木箱が幾重にも積み上げられた袋小路の死角だった。ここなら入り口は一箇所しかなく、大人の男が身体をねじ込まなければ奥まで手は届かない。</p>
+<p>フレイアは木箱の隙間の最も深い暗がりへ身を押し込み、冷たい石壁に背を預けて膝を抱えた。</p>
+<p>左脇に『油気の抜けた木の棒』を立てかけ、右手には麻布を巻いた『白百足の赤錆小顎片（あかさびしょうがくへん）』を、左手には刃先の欠けた『黒曜頁岩（こくようけつがん）の石片』を握りしめる。</p>
+<p>石畳から伝わる底冷えが、薄い革靴と麻の貫頭衣（かんとうい）を通して容赦なく体温を奪っていく。空腹で胃が痙攣（けいれん）し、唇の端が乾いてひび割れていた。</p>
+<p>（……このまま隠れてるだけじゃ、明日か明後日には飢え死にする）</p>
+<p>広場から逃げ込む途中、大通りに面した一角に、ひときわ多くの武装した人間たちが出入りしている<strong>『剣と盾の紋章を掲げた大きな建物』</strong>があったのを、彼女の目は見逃していなかった。建物の前の掲示板のような場所に羊皮紙が何枚も貼られ、武器を持った連中がそこで何かを受け取ったり、金貨や銅貨の入った革袋を検めたりしていた。</p>
+<p>あそこに行けば、金を稼ぐ手段――あるいはこの場所の外へ出て獲物を狩る手がかりがあるはずだ。</p>
+<p>もちろん、そこに集まる人間たちもすべて、隙を見せれば自分を食い物にする敵に違いない。だが、遠目から様子を窺い、仕組みだけを盗み見ることはできるはずだ。</p>
+<p>（誰にも奪わせない。絶対に、一人でも生き延びてやる……）</p>
+<p>フレイアは赤錆色の鋸歯の刃を自分の胸元へ抱き寄せるようにして顎を引き、路地の入り口の暗がりを睨みつけたまま、飢えと寒さに震える浅い眠りへと落ちていった。</p>
+<h4 style="color:var(--emerald-astral); margin-top:18px; font-size:1.08rem;">【現在ステート：フレイア（Episode 4 終了時）】</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>HP / 身体状態</strong>: 全身の打撲痛と足の裏の痛みは継続。左親指の付け根の傷は塞がりつつあるが、白砂の空間から続くカロリー消耗に対し補給が全く追いついておらず、強い空腹感（飢餓初期）と路地裏の底冷えによる体温低下に晒されている。</li>
+<li><strong>所持品と劣化度</strong>:</li>
+<li><strong>白百足の赤錆小顎片（あかさびしょうがくへん）</strong>: メイン武器。柄に麻布を巻いた短剣代わりの刃（劣化なし）。</li>
+<li><strong>鋭く割れた黒曜頁岩（こくようけつがん）の石片</strong>: サブ武器。刃先が半分欠けており威力大幅低下。</li>
+<li><strong>油気の抜けた木の棒</strong>: 牽制・索敵用。乾燥して脆い。</li>
+<li><strong>粗末な麻の貫頭衣（かんとうい）・底の薄い革靴</strong>: 緑色の体液が乾いてこびりつき、裾が破れ、靴底が地面の冷気を直接通す状態。</li>
+<li><strong>所持金</strong>: 0（銅貨一枚すらなし）。</li>
+<li><strong>精神状態</strong>: 神殿で目撃した「債務奴隷」の現実と、広場の圧倒的な人混み・生活臭に当てられ、人間社会そのものへの嫌悪と警戒心が極限に達している。一方で「金がなければ野垂れ死ぬ」という現実を冷徹に認識し、生き延びるための情報収集を決意している。</li>
+<li><strong>カシムへの認識</strong>: 白砂の空間の怪物の白い甲殻で割れた盾を補修していた、自分と同じ無一文の新参者。広場の端で呆然（ぼうぜん）としているのを一瞥したが、群れれば共倒れになると判断し、一切関わらずに路地裏へ姿を消した。</li>
+<li><strong>現在地</strong>: 石畳の円形広場から外れた裏路地の奥、使われていない古い石階段の下にある「積まれた空の木箱と壊れた荷車の隙間の死角」。</li>
+</ul>
+
+    </article>
+    <div class="prose-container" style="margin: 16px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="freyja_ep3.html" class="tab-btn">◀ 前の話</a>
+        <a href="story_freyja.html" class="tab-btn">📖 目次へ</a>
+        <a href="freyja_ep5.html" class="tab-btn">次の話 ▶</a>
+      </div>
+      <a href="kasim_ep4.html" class="tab-btn" style="border-color:var(--emerald-astral);">🛡️ Episode 4 カシム視点を読む</a>
+    </div>
+  </main>
+
+  <footer>
+    Lagrange Tower Web Archive // 最終検疫ビルド: 2026-11-18 22:19
+  </footer>
+</body>
+</html>
