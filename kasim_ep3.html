@@ -1,0 +1,513 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Side A：🌑 Episode 3：白砂の閉鎖空間 ―― 言葉なき利用と、光の振り子からの降臨 // 天頂迷宮ラグランジュの塔『揺籃の淵からの双曲線』</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // KASIM &amp; FREYJA ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔</h1>
+    <div class="subtitle">
+      『揺籃の淵からの双曲線』―― ステータス画面も天の声も存在しない迷宮で、記憶を失った二人の漂着者が物理法則と知恵だけを頼りに生き延びる硬派サバイバル年代記。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 トップ (Index)</a>
+      <a href="story_kasim.html" class="tab-btn active">🛡️ Side A：カシム編</a>
+      <a href="story_freyja.html" class="tab-btn">🗡️ Side B：フレイア編</a>
+      <a href="characters.html" class="tab-btn">👥 登場人物・現在ステート</a>
+      <a href="world.html" class="tab-btn">⚖️ 舞台と3つの絶対法則</a>
+      <a href="bestiary.html" class="tab-btn">🐾 魔物・生態図鑑</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+    <div class="prose-container" style="margin: 16px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="kasim_ep2.html" class="tab-btn">◀ 前の話</a>
+        <a href="story_kasim.html" class="tab-btn">📖 目次へ</a>
+        <a href="kasim_ep4.html" class="tab-btn">次の話 ▶</a>
+      </div>
+      <a href="freyja_ep3.html" class="tab-btn" style="border-color:var(--emerald-astral);">🗡️ Episode 3 フレイア視点を読む</a>
+    </div>
+    <article class="prose-container" style="border-left: 4px solid var(--gold-bright);">
+<h3 id="ep-1" style="color:var(--gold-bright); margin-top:24px; border-bottom:1px solid var(--border-brass); padding-bottom:6px;">🌑 Episode 3：白砂の閉鎖空間 ―― 言葉なき利用と、光の振り子からの降臨</h3>
+<p>石柱の狭い隙間の外で、乾いた白砂が擦れ合う音が絶え間なく響いていた。</p>
+<p>カシムは裂けた左前腕の傷口を麻の貫頭衣（かんとうい）の胸元に強く押し当て、血の匂いと荒い呼気が外へ漏れないよう奥歯を噛み締めた。</p>
+<p>スリットの向こう側では、全長四メートルを超える『大顎白百足（おおあごしろむかで）』が、長い触角を小刻みに震わせながら徘徊している。そしてその斜め上、高さ四メートルほどの崩れた石柱の台座の影には、黒曜頁岩（こくようけつがん）の鋭い石片を握りしめたあの少女が、獲物を狙う蜘蛛のように息を潜めていた。</p>
+<p>（見えているな。あいつにも、俺がここに詰まっていることが）</p>
+<p>言葉で合図を送ることはできない。声を出せば、その瞬間に目を持たぬ巨獣の触角が音源を捉える。仮に言葉を交わせたところで、名も知らぬあの日和見の少女が他人のために危険を冒すはずがなかった。</p>
+<p>だが、カシムには分かっていた。彼女もまた、あの高所から降りることができずに詰んでいるのだ。上から飛び降りて石片を突き立てようにも、白百足が自在に動き回っている状態では、着地の瞬間に赤錆色の大鋏で両断されるだけだ。</p>
+<p>彼女が動くための絶対条件――それは、あの怪物の頭部が「完全に固定され、死角が生まれる一瞬」が目の前に提示されること。</p>
+<p>（利用するしかない。あいつが確実に急所を突ける「真下」まで、俺が移動して頭を止める）</p>
+<p>カシムは震える指先で、腰紐に挟んでいた二つの『尖った石片』のうち一つを抜き取った。</p>
+<p>目標は、少女が潜む高さ四メートルの台座の真下――そこに口を開けている幅四十センチ足らずの楔形の隙間だ。現在の位置からその隙間まで、距離にしておよそ十五メートル。間に横たわる開けた砂地を、眼球のない怪物の触角を欺いて渡りきらなければならない。</p>
+<p>カシムは呼吸を止め、スリットの隙間から右腕だけをわずかに出し、石片を白百足の縄張りのさらに外側――少女の台座とは<strong>真逆の方角</strong>の砂利場へ向かって思い切り放り投げた。</p>
+<p>ぱしん、カラン、と乾いた音を立てて石片が遠くで跳ねる。</p>
+<p>白百足の触角がピクリと跳ね、四メートルを超える巨体がぐるりと旋回して、遠い外縁の石音の方角へと這い出した。今しかない。</p>
+<p>「……っ！」</p>
+<p>カシムは狭い隙間から飛び出すと、足を取られる柔らかい白砂を避け、石柱の根元に沿った硬い砂利のラインだけを蹴って全力でダッシュした。</p>
+<p>薄底の革靴が石を噛む音が、霧の中に小さく響く。約十メートルを駆け抜けたところで、遠くにいた白百足の触角が足音の振動を捉えて激しく逆立ち、巨体が驚異的な速度でこちらへ反転するのが視界の端に映った。</p>
+<p>間に合うか。あと五メートル。</p>
+<p>カシムは減速せず、少女の台座の真下にある楔形の隙間へ向けて、低い姿勢のまま砂利の上をスライディングするように滑り込んだ。肩と背中を岩肌に擦りつけ、間一髪で幅四十センチの隙間の中へと身をねじ込む。</p>
+<p>勢いをつけて飛び込んだ体勢のまま、カシムは息を吐く暇もなく右手の『油気の抜けた木の棒』を振り上げ、自分のすぐ目の前――台座の根元の石柱の内壁を、渾身の力で二度、三度と乱打した。</p>
+<p>カン、カン、カァンッ！！</p>
+<p>台座の真下から響き渡った硬い打撃音に、反転してきた白百足が狂ったように反応した。</p>
+<p>無数の歩脚が白砂を爆発させるように蹴り出し、少女が構える高さ四メートルの台座の真下――カシムが滑り込んだばかりの幅四十センチの隙間へと、真っ直ぐに巨頭をねじ込んできた。</p>
+<p>「……来いっ！」</p>
+<p>ドゴォンッ！ と石柱全体が揺れる凄まじい衝撃とともに、赤錆色の巨大な大顎が隙間の奥へと突き刺さる。カシムは間一髪で身体を奥へ引き、大顎の先端が彼の鼻先わずか数センチの空間を空振りして噛み合わさった。</p>
+<p>勢い余った白百足の頭部と開いた大鋏の根元が、左右の古代石柱の硬い岩肌にガッチリと食い込み、ミシミシと甲殻が軋（きし）む音を立てて完全にスタックする。引き抜こうとして白百足が脚をばたつかせた、そのコンマ数秒の硬直。</p>
+<p>頭上の霧が裂けた。</p>
+<p>声ひとつ上げず、四メートルの高所から飛び降りた少女の影が、重力そのものを刃に変えたかのように白百足の背後へと落下した。</p>
+<p>彼女は白百足の分厚い背甲ではなく、石柱に頭を突っ込んで伸びきった「頭部と胸部の間の柔らかい関節膜」を正確に狙い澄ましていた。両手で逆手に握りしめた黒曜頁岩（こくようけつがん）の石片が、落下速度のすべてを乗せて関節の継ぎ目へと根元まで突き刺さる。</p>
+<p>ギチィッ――！！ と、空気を引き裂くような甲殻の摩擦音と絶叫に近い振動が迸った。</p>
+<p>激痛に狂った白百足が、石柱から無理やり頭を引き抜いて少女を振り落とそうと全身を跳ねさせる。</p>
+<p>「させるかっ……！」</p>
+<p>カシムは狭い隙間の中から前へと躍り出た。すでに中央に大きな亀裂が入っていた『ささくれた木製円盾』を白百足の噛み合った大顎の上から押し当て、木目に沿って折れないようその上から『油気の抜けた木の棒』を横木代わりに十字に添えて、自らの体重のすべてを乗せて下へと抑え込んだ。</p>
+<p>バキバキッ！ と木製円盾が完全に真っ二つに割れ砕け、木の棒が限界までしなって繊維が裂ける音が響く。左肩の打撲と前腕の傷口から激痛が火花のように散ったが、カシムは歯茎から血を滲ませながらテコの原理で大顎を石柱の窪みへと押し留め続けた。</p>
+<p>頭部を固定されたまま、背中の上では少女が全体重をかけて黒曜頁岩（こくようけつがん）の石片を横一文字に引き回し、白百足の太い頸部（けいぶ）神経束を完全に断ち切った。</p>
+<p>緑がかった体液が噴水のように吹き上がり、白百足の巨体が一度大きく痙攣（けいれん）したあと、糸が切れたように白砂の上へと崩れ落ちた。</p>
+<p>二人の間に、言葉は一文字もなかった。</p>
+<p>ただ互いの生存本能と計算が、一瞬だけ同じ一点で交差したに過ぎない。</p>
+<p>白百足の歩脚が完全に動かなくなった瞬間、カシムと少女はほぼ同時に後方へと跳び退いていた。</p>
+<p>カシムは真っ二つに割れた木盾の片割れを左手に、内部繊維が裂けて歪んだ木の棒を右手に構える。三メートルほど離れた砂地に着地した少女もまた、緑の体液に濡れた石片を低く構え、荒い肩で息をしながら氷のような視線をカシムへ向けていた。</p>
+<p>重い沈黙が落ちる。</p>
+<p>互いに体力の限界が近いことは分かっていた。ここで戦利品を巡って殺し合えば、勝った方もただでは済まない。</p>
+<p>カシムは構えを解かないまま、干上がった喉からかすれた声を絞り出した。この揺籃の淵で、初めて他者に向けて発する言葉だった。</p>
+<p>「……俺は、その背中の白い甲殻だけでいい。割れた盾の継ぎ当てに使う」</p>
+<p>少女の鋭い瞳が、カシムの左手にある割れた木盾と、足元の白百足の死骸を交互に見た。数秒の張り詰めた沈黙ののち、彼女の唇から低く乾いた声が返ってきた。</p>
+<p>「……じゃあ、この顎の刃は私が貰う。邪魔はしないで」</p>
+<p>「ああ。好きにしろ」</p>
+<p>それだけだった。名前も名乗らなければ、礼もない。</p>
+<p>少女が白百足の頭部に近づき、大顎の内側にある鋭い鋸歯状の小顎（『白百足の赤錆小顎片（あかさびしょうがくへん）』）を石片で抉（えぐ）り取って折り始めるのと同時に、カシムも胴体の真ん中あたりに膝をつき、残っていたもう一つの『尖った石片』を継ぎ目に差し込んで、硬質な『白百足の石灰甲殻板』を一枚剥がし取った。</p>
+<p>バキッ、と甲殻板を剥がした、その時だった。</p>
+<p>白百足の裂けた胸部神経節（しんけいせつ）のすぐ奥、緑色の肉塊の中に、周囲の生体組織や石灰質とは明らかに異質な「何か」が埋まっているのにカシムの目が留まった。</p>
+<p>少女が小顎の回収に集中しているのを横目で確かめながら、カシムは指先を差し入れてそれを摘まみ出した。</p>
+<p>大きさは親指の爪先（つまさき）ほどしかない。滑らかな多面体のような形をした、冷たく濁った灰紫色の塊（『異質核片』）だった。指の腹に触れた瞬間、氷の粒を握ったかのような気味の悪い冷気が皮膚を刺す。天然の石でもなければ、虫の甲殻でもない。</p>
+<p>（……なんだ、これ。何かの特殊な鉱石の欠片か？）</p>
+<p>正体は皆目見当もつかなかったが、本能的に「ここに捨てていくべきではない」と感じたカシムは、それを腰紐の濡れた食用緑苔の包みの中にそっと押し込んで隠した。</p>
+<p>顔を上げると、すでに少女は獲物の回収を終え、血のついた小顎片を手に立ち上がっていた。彼女はカシムを一瞥だにせず、くるりと背を向けて石柱環状エリアの中心――翡翠色の光を放つ『光の振り子』へと歩き出し、そのまま境界線を越えて光の中へと姿を消した。</p>
+<p>（……消えた。今の戦闘で、通過の条件が満たされたのか）</p>
+<p>カシムは剥がし取った『白百足の石灰甲殻板』を、真っ二つに割れた木製円盾の裏側に革帯の余りで仮止めし、辛うじて一枚の板としての形を保たせた。</p>
+<p>歪んだ木の棒を杖代わりに突きながら立ち上がり、足を引きずって白骨が散らばる環状エリアの境界線へと向かう。</p>
+<p>深く息を吸い込み、カシムは再びその境界線へと右足を踏み入れた。</p>
+<p>先ほどまで彼の胸板を無慈悲に弾き返していたあの冷たい重力反発は、嘘のように霧散していた。自らの血を流し、巨大な捕食者の命を刈り取って生き延びたという確かな「質量と履歴」を刻み込んだ肉体を、巨大な振子は無言のうちに通過させたのだ。</p>
+<p>カシムは翡翠色の燐光に満たされた中心部へと歩を進め、目の前でゆっくりと往復する巨大な結晶の錘へと、血と砂にまみれた左手を伸ばした。</p>
+<p>指先が冷たい翡翠の結晶に触れた、その刹那。</p>
+<p>ガクンッ、と足元の地面が消失したかのような猛烈な重力反転が全身を襲った。</p>
+<p>視界が深い暗闇へと塗り潰され、内臓が喉元まで浮き上がるような落下感の果てに――カシムの膝は、白砂ではなく、氷のように冷たく硬い『石畳の床』へと激しく叩きつけられた。</p>
+<p>「っ、ぐ……！」</p>
+<p>四つん這いのまま激しく咳き込み、カシムはゆっくりと顔を上げた。</p>
+<p>天井の微光苔も、白い霧も、巨大な振子も消え失せていた。周囲を取り囲んでいるのは、精巧に組まれた灰色の石積みの壁と、風化した古代文字が刻まれた重厚な祭壇。空気は乾燥しており、古い埃と石の匂いがした。</p>
+<p>そして――祭壇の奥にある重厚な木の扉の向こう側から、カシムの耳に信じられないものが届いた。</p>
+<p>パチパチと何かが燃える音と、焦げた油と松明（たいまつ）の匂い。さらには、くぐもった複数の『人間の話し声』と、硬い靴底が石床を歩く足音。</p>
+<p>あの白砂の孤独な死の淵を抜け出したカシムは、冷たい降臨祭壇の石床に膝をついたまま、扉の向こうにある未知の「人の気配」に思わず息を呑んだ。</p>
+<h4 style="color:var(--emerald-astral); margin-top:18px; font-size:1.08rem;">【現在ステート：カシム（Episode 3 終了時）】</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>HP / 身体状態</strong>:</li>
+<li>左肩・脇腹の打撲と左前腕の裂傷に加え、大顎白百足の頭部を上から抑え込んだ際の負荷で全身の筋肉に強い疲労と痛み。出血自体はほぼ止まっているが、カロリーと水分を大幅に消耗している。</li>
+<li><strong>所持品と劣化度</strong>:</li>
+<li><strong>油気の抜けた木の棒</strong>: 革帯巻きグリップ。白百足を抑え込んだ負荷で内部繊維が裂け、わずかに湾曲している。強い打撃を与えれば折れる寸前（劣化度：大）。</li>
+<li><strong>ささくれた木製円盾（石灰甲殻板で仮補修）</strong>: 木盾自体は真っ二つに割れたが、『白百足の石灰甲殻板』を革帯で裏打ち・仮止めしたことで最低限の防御板として機能維持（劣化度：大／改修待ち）。</li>
+<li><strong>白百足の石灰甲殻板（×1）</strong>: 割れた木盾の仮補修材として保持中。</li>
+<li><strong>意味不明な異質核片（×1）</strong>: 白百足の胸部神経節（しんけいせつ）の奥から見つけた、爪先（つまさき）ほどの冷たく濁った灰紫色の塊。正体不明のまま腰紐の緑苔の包みの中に隠匿。</li>
+<li><strong>尖った石片（×1）</strong>: 1つは誘導用に投擲消費し、残り1つを保持。</li>
+<li><strong>麻の貫頭衣（かんとうい）・底の薄い革靴</strong>: 砂と白百足の体液、自身の血で汚れている（摩耗度：中）。</li>
+<li><strong>精神状態</strong>:</li>
+<li>言葉を交わさず互いを「利用」し合うことで強敵を突破し、『零号振子』の通過条件（実戦による生存証明）をクリアした達成感と、見知らぬ「人のいる階層」へ降り立ったことへの強い警戒心・緊張感。</li>
+<li><strong>フレイアへの認識</strong>:</li>
+<li>戦闘中は一言も交わさず自分の意図（白百足の頭部固定）を完璧に読み取って急所を仕留め、討伐後も最低限の乾いた取引（甲殻と小顎の分配）だけで去っていった少女。名前も知らないが、極めて合理的で油断ならない「言葉のいらない共犯者」として強く印象に残っている。</li>
+<li><strong>現在地</strong>:</li>
+<li>『第001階：蘇生の裏神殿』最奥の降臨祭壇の冷たい石床の上。重い扉の向こうから松明（たいまつ）の匂いと人間の話し声が聞こえている。</li>
+</ul>
+
+    </article>
+    <div class="prose-container" style="margin: 16px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="kasim_ep2.html" class="tab-btn">◀ 前の話</a>
+        <a href="story_kasim.html" class="tab-btn">📖 目次へ</a>
+        <a href="kasim_ep4.html" class="tab-btn">次の話 ▶</a>
+      </div>
+      <a href="freyja_ep3.html" class="tab-btn" style="border-color:var(--emerald-astral);">🗡️ Episode 3 フレイア視点を読む</a>
+    </div>
+  </main>
+
+  <footer>
+    Lagrange Tower Web Archive // 最終検疫ビルド: 2026-11-18 22:19
+  </footer>
+</body>
+</html>
