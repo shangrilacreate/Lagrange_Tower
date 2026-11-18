@@ -1,0 +1,503 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Side A：🌲 Episode 5：宿場町外縁の裏の森 ―― 飢え凌ぎと、最初の銅貨 // 天頂迷宮ラグランジュの塔『揺籃の淵からの双曲線』</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // KASIM &amp; FREYJA ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔</h1>
+    <div class="subtitle">
+      『揺籃の淵からの双曲線』―― ステータス画面も天の声も存在しない迷宮で、記憶を失った二人の漂着者が物理法則と知恵だけを頼りに生き延びる硬派サバイバル年代記。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 トップ (Index)</a>
+      <a href="story_kasim.html" class="tab-btn active">🛡️ Side A：カシム編</a>
+      <a href="story_freyja.html" class="tab-btn">🗡️ Side B：フレイア編</a>
+      <a href="characters.html" class="tab-btn">👥 登場人物・現在ステート</a>
+      <a href="world.html" class="tab-btn">⚖️ 舞台と3つの絶対法則</a>
+      <a href="bestiary.html" class="tab-btn">🐾 魔物・生態図鑑</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+    <div class="prose-container" style="margin: 16px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="kasim_ep4.html" class="tab-btn">◀ 前の話</a>
+        <a href="story_kasim.html" class="tab-btn">📖 目次へ</a>
+        <a href="kasim_ep6.html" class="tab-btn">次の話 ▶</a>
+      </div>
+      <a href="freyja_ep5.html" class="tab-btn" style="border-color:var(--emerald-astral);">🗡️ Episode 5 フレイア視点を読む</a>
+    </div>
+    <article class="prose-container" style="border-left: 4px solid var(--gold-bright);">
+<h3 id="ep-1" style="color:var(--gold-bright); margin-top:24px; border-bottom:1px solid var(--border-brass); padding-bottom:6px;">🌲 Episode 5：宿場町外縁の裏の森 ―― 飢え凌ぎと、最初の銅貨</h3>
+<p>夜明け前の凍えるような底冷えが、古い石造り倉庫の軒下で丸まっていたカシムの肩を揺り起こした。</p>
+<p>空腹で胃の壁が張り付き、生唾を飲み込むたびに喉の奥がひりつく。広場の大通りでは、そろそろ朝の荷馬車が軋む音を立て始め、パンを焼く香ばしい匂いが風に乗って流れ始めていた。</p>
+<p>だが、カシムの手のひらにあるのは何もない。この石畳の街に居座ったままでは、匂いを嗅ぐだけで夕方までには力尽きる。</p>
+<p>（人が少ないうちに出よう。街の外れなら、水と食べられる草くらいはあるはずだ）</p>
+<p>カシムは湾曲した『油気の抜けた木の棒』を杖代わりに突いて立ち上がり、露店の視線が届かない外縁の石壁に沿って街の北側へと歩いた。建物が途切れ、石畳が踏み固められた土道に変わると、その先には背の高い針葉樹と苔むした岩肌が入り組む薄暗い雑木林――宿場町外縁の『裏の森』が広がっていた。</p>
+<p>湿った腐葉土と青い草の匂いが、街の脂臭さに酔っていた肺を洗ってくれる。人の気配が薄れるにつれて、胸の奥を締め付けていた息苦しさがわずかに緩んだ。</p>
+<p>木立の奥へ百歩ほど進んだところで、カシムは岩の割れ目から滴り落ちる冷たい湧水の細流を見つけた。急がず、まず匂いと舌先で異常がないか確かめてから、両手で掬ってゆっくりと喉を潤す。</p>
+<p>次いで、陽の差し込む倒木の根元で、酸味の強い赤色の小さな野生果実と、苦みはあるが毒のない柔らかな野草の芽をいくつか摘み取り、口へ押し込んだ。胃が重くならない程度のわずかな糖分と水分が、ようやく頭の芯を冴え渡らせた。</p>
+<p>その時だった。</p>
+<p>十歩ほど先の湿った苔の茂みが、がさりと揺れた。</p>
+<p>「――フモッ」</p>
+<p>間抜けたような短い鳴き声とともに顔を覗かせたのは、体長六十センチほど、体重にして十五キロ前後の丸々とした小獣だった。羊毛のようにふかふかした毛並みに垂れた長い耳、それでいて鼻先だけは小さなイノシシのように尖っている。</p>
+<p>（肉だ……あれを仕留めて街へ持ち帰れば、金になるかもしれない）</p>
+<p>カシムは息を殺し、右手に湾曲した『油気の抜けた木の棒』を握り直した。背中の仮補修した盾が揺れないよう左手で押さえ、苔の斜面を低く這うようにして距離を詰める。</p>
+<p>あと三歩の距離で、カシムは木の棒を振りかぶり、小獣の頭めがけて思い切り振り下ろした。</p>
+<p>バキッ、と乾いた嫌な音が響いたのは、小獣の頭ではなく、木の棒の幹だった。</p>
+<p>柔らかい毛皮に弾かれたのか、それとも内部の繊維がすでに限界だったのか、一撃は小獣をわずかに怯ませただけで致命傷には程遠かった。逆に驚いて暴れた小獣の丸い頭がカシムの脛に激しく体当たりし、カシムは苔の上で無様に尻餅をついた。</p>
+<p>「っ、くそ……！」</p>
+<p>小獣は「フモッ！」と甲高く鳴きながら、茂みの隙間を縫って一目散に逃げ出していく。</p>
+<p>カシムは折れかけてささくれた木の棒を見下ろし、唇を噛んだ。攻撃力が絶望的に足りない。あの白砂の空間では石柱の隙間という地形に頼れたから生き延びられたものの、開けた森の中では、この木の棒一本で森の草食獣一匹すら正面からは仕留められないのだ。</p>
+<p>それでも、ここで諦めるわけにはいかない。</p>
+<p>カシムは立ち上がり、先ほど小獣が飛び出してきた茂みの奥――獣道の痕跡を冷静に観測した。</p>
+<p>小獣の足跡は、斜面の途中にある一本の太い倒木の下の「狭い窪み」へと続いている。反対側は切り立った高さ二メートルほどの苔岩の段差になっており、もしあの窪みに別の個体が潜んでいるなら、逃げ道は倒木の下をくぐる一本しかない。</p>
+<p>（正面から叩くのが無理なら、動けない場所へ押し込んで重さで潰す）</p>
+<p>カシムは時間をかけて周囲を探り、両手で抱えるのがやっとの重さを持つ、角の丸い十キロほどの岩塊を二つ拾い集めた。打撲した左肩が悲鳴を上げたが、奥歯を噛み締めて岩棚の上へ運び上げる。</p>
+<p>そして岩棚の陰から、先ほどと同じような「フモッ」という鳴き声とともに別の小獣が窪みの縁へ姿を見せた瞬間を見計らい、カシムは手前の茂みへ小石を一つ投げて退路を塞いだ。</p>
+<p>驚いて倒木の下の狭い窪みへ逃げ込もうとした小獣の頭上へ、カシムは抱えていた重い石塊を真っ直ぐに落とし込んだ。</p>
+<p>ドスッ、という鈍い衝撃音。</p>
+<p>小獣が短い痙攣を一度起こし、そのまま動かなくなった。</p>
+<p>「……はぁ、はぁ……」</p>
+<p>カシムは岩棚から降り、腰紐の『尖った石片（×1）』を取り出して、まだ温かな小獣の前に膝をついた。</p>
+<p>皮を剥がそうとして首元に石片の刃を入れ、恐る恐る引っ張ってみて、カシムは思わず目を見張った。驚くほど皮下と肉の結合が緩く、まるで靴下を脱がせるようにして、わずか数十秒で綺麗な袋状の毛皮がスルリと丸剥ぎできたのだ。しかも毛皮の奥の肉からは、主食にしているらしい香草苔の爽やかな香りがほのかに漂っていた。</p>
+<p>＊　　　　　　　　＊　　　　　　　　＊</p>
+<p>正午近く、森の土と血の匂いを纏ったまま宿場町へ戻ったカシムは、市場の端で解体済みの肉や毛皮を買い取っている露店の老商人の前へ、無言で小獣の毛皮と肉塊を差し出した。</p>
+<p>「なんだ小僧、ずいぶんみすぼらしい格好だな。……ほう、フモ猪か。だが石で潰したせいで背肉が半分傷んでるな。おまけに血抜きも甘い」</p>
+<p>老商人は鼻を鳴らしながら品定めし、カシムの空っぽの掌へ冷たい金属の感触を落とした。</p>
+<p>くすんだ赤銅色の硬貨が、四枚。</p>
+<p>「毛皮と傷んでない分の肉で、銅貨四枚だ。嫌なら他を当たれ」</p>
+<p>「……これで、いいです」</p>
+<p>喉の奥で短く答え、カシムは掌の中の銅貨四枚を強く握りしめた。</p>
+<p>初めて自力で稼ぎ出した、この世界の確かな重み。すぐ近くの屋台へ足を向け、銅貨二枚を差し出して、ずっしりと重い黒パンと、塩気の効いた湯気の立つ豆スープの椀を受け取った。</p>
+<p>通りの隅の石段に腰掛け、黒パンをちぎって熱いスープに浸し、口へ運ぶ。</p>
+<p>噛み締めるほどに広がる麦の香ばしさと、熱い塩気と油分が、昨日まで冷たい苔と生のイモリしか知らなかった胃袋へ雪崩れ込んでいく。思わず目の奥が熱くなるのを堪えながら、カシムは最後の一滴まで木の椀を飲み干した。</p>
+<p>腹が満たされたところで、カシムは残りの銅貨二枚を麻布の腰紐の奥にきつく結び直し、大通りの『剣と盾の紋章を掲げた大きな建物』――冒険者ギルドの入り口付近へと向かった。</p>
+<p>入り口の脇に張り出された掲示板には、薬草採取や倉庫のネズミ退治などの依頼書が並んでいる。文字の細かい部分はまだ曖昧にしか読めないが、描かれた絵と報酬の数字を見れば大体の見当はついた。</p>
+<p>そのすぐ隣、日向の石柵に寄りかかって、真新しい革鎧を着たよく肥えた二人の新米冒険者が大声で笑い合っているのが聞こえてきた。</p>
+<p>「いやあ、俺たちが最初に目を覚ました『第0層』の草原ってほんとのんびりしてたよな！」</p>
+<p>「全くだ！ 木漏れ日の下で野イチゴを摘みながら昼寝して、小さいスライムを木の棒で一匹小突いたら、すぐそこの『第1層』の神殿に飛ばされたんだぜ。こんな楽勝な試練なら毎日でもいいよな！」</p>
+<p>カシムの足が、掲示板の前で凍りついたように止まった。</p>
+<p>（……第0層？　木漏れ日の草原……？　野イチゴに、小さいスライム……？）</p>
+<p>頭の中で、あの白砂の空間での記憶が猛烈な勢いで逆流した。</p>
+<p>冷たい微光苔の薄闇。喉を焼く渇き。吐き気を堪えて飲み込んだ泥臭い苔と生のイモリ。そして何より、わずかな振動で白砂を割り、木盾ごと腕を砕きにきた全長四メートル超の『大顎白百足（おおあごしろむかで）』。</p>
+<p>……あの地獄は、誰もが通る標準的な場所ではなかったのだ。</p>
+<p>自分とあの少女は、数ある区画の中でも極めて異常で過酷な「ハズレ区画」に落とされていただけだったのか。</p>
+<p>理不尽な事実に呆然と立ち尽くしたカシムは、ふと視線を横にずらした。</p>
+<p>ギルドの入り口から少し離れた隣の古道具屋の軒先――影の濃い柱の裏で、同じくその新米たちの笑い話を聞いていたのか、苦々しく顔を歪めて舌打ちでもしそうな目つきで二人を睨みつけている少女の姿があった。</p>
+<p>あの少女だった。</p>
+<p>彼女の腰には、昨日までなかった安物の新しい革紐が巻かれ、その端には麻布に包まれた新しい武器（おそらくあの『白百足の赤錆小顎片』）と小さな革袋が下げられている。彼女もまた、森へ入って自力で獲物を仕留め、最初の銅貨を手にしたのだろう。</p>
+<p>数秒だけ、視線が空中で交わった気がした。</p>
+<p>だが、やはり二人は一言も言葉を交わさず、少女は人混みの影へ、カシムは掲示板の脇へと、それぞれ無言ですれ違った。</p>
+<p>カシムは腰紐の奥に残った「銅貨二枚」を服の上からそっと押さえた。</p>
+<p>あのハズレ区画を生き抜いた甲斐あって、背中にはまだ割れた盾に縛り付けたままの『白百足の石灰甲殻板』がある。だが、右手の『油気の抜けた木の棒』はもう一撃振れば確実に折れる有様だ。</p>
+<p>（この絶望的な木の棒のままでは、第1層の森すら危うい。明日はギルドに登録して、安い仕事か、まともな武器の当てを探さなければ）</p>
+<p>夕暮れが迫る喧騒の広場の隅で、カシムは冷たく現実的な課題を胸に刻み、その日の行動を終えた。</p>
+<h4 style="color:var(--emerald-astral); margin-top:18px; font-size:1.08rem;">【現在ステート：カシム（Episode 5 終了時）】</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>HP / 身体状態</strong>: 森での湧水補給、野生果実、そして街での黒パンと熱い豆スープの摂取により、飢餓・脱水状態から大きく回復。左肩・脇腹の傷は回復途上だが、フモ猪との交戦で脛に軽い打撲が追加された。</li>
+<li><strong>所持品と劣化度</strong>:</li>
+<li><strong>所持金</strong>: 銅貨2枚（フモ猪の毛皮・肉で銅貨4枚を得て、黒パンと豆スープで銅貨2枚を消費）。</li>
+<li><strong>油気の抜けた木の棒</strong>: フモ猪を叩いた際に幹に亀裂が入り、あと一撃で完全に折れる状態（劣化度：限界／要交換）。</li>
+<li><strong>ささくれた木製円盾（石灰甲殻板で仮補修）</strong>: 割れた木盾の裏に『白百足の石灰甲殻板』を革帯で縛り付けたまま維持（まだ職人による正式な加工は未実施）。</li>
+<li><strong>意味不明な異質核片（×1）</strong>: 腰紐の布の折り目に隠匿中。</li>
+<li><strong>尖った石片（×1）</strong>: フモ猪の解体に使用。刃先がやや鈍っている。</li>
+<li><strong>麻の貫頭衣・底の薄い革靴</strong>: 森の土とフモ猪の血汚れが加わった（摩耗度：中〜大）。</li>
+<li><strong>精神状態</strong>: 自力で最初の銅貨を稼ぎ温かい食事にありついた達成感の一方で、木の棒の攻撃力の低さを再認識。ここが『第1層』であり、自分たちが抜けてきた白砂の空間が『第0層』の中でも極端なハズレ区画だったと知り、苦い驚愕を覚えている。</li>
+<li><strong>フレイアへの認識</strong>: ギルド近くの軒先で再視認。新しい革紐と小袋を身につけていたことから、彼女も自力で森などから糧を得たことを察している。同じ「ハズレ区画」の理不尽さを知った無言の共犯者。</li>
+<li><strong>現在地</strong>: 『第1層』の冒険者ギルド入り口付近・大通りの外れ（明日のギルド登録と武器確保に備え、安全な寝床を探している）。</li>
+</ul>
+
+    </article>
+    <div class="prose-container" style="margin: 16px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="kasim_ep4.html" class="tab-btn">◀ 前の話</a>
+        <a href="story_kasim.html" class="tab-btn">📖 目次へ</a>
+        <a href="kasim_ep6.html" class="tab-btn">次の話 ▶</a>
+      </div>
+      <a href="freyja_ep5.html" class="tab-btn" style="border-color:var(--emerald-astral);">🗡️ Episode 5 フレイア視点を読む</a>
+    </div>
+  </main>
+
+  <footer>
+    Lagrange Tower Web Archive // 最終検疫ビルド: 2026-11-18 22:19
+  </footer>
+</body>
+</html>
