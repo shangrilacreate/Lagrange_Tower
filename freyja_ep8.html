@@ -1,0 +1,514 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Side B：🕯️ Episode 8：小規模な廃炭鉱 ―― 死角の開拓と、白い石の目印 // 天頂迷宮ラグランジュの塔『揺籃の淵からの双曲線』</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // KASIM &amp; FREYJA ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔</h1>
+    <div class="subtitle">
+      『揺籃の淵からの双曲線』―― ステータス画面も天の声も存在しない迷宮で、記憶を失った二人の漂着者が物理法則と知恵だけを頼りに生き延びる硬派サバイバル年代記。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 トップ (Index)</a>
+      <a href="story_kasim.html" class="tab-btn">🛡️ Side A：カシム編</a>
+      <a href="story_freyja.html" class="tab-btn active">🗡️ Side B：フレイア編</a>
+      <a href="characters.html" class="tab-btn">👥 登場人物・現在ステート</a>
+      <a href="world.html" class="tab-btn">⚖️ 舞台と3つの絶対法則</a>
+      <a href="bestiary.html" class="tab-btn">🐾 魔物・生態図鑑</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+    <div class="prose-container" style="margin: 16px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="freyja_ep7.html" class="tab-btn">◀ 前の話</a>
+        <a href="story_freyja.html" class="tab-btn">📖 目次へ</a>
+        <span class="tab-btn" style="opacity:0.4; pointer-events:none;">次の話 ▶</span>
+      </div>
+      <a href="kasim_ep8.html" class="tab-btn" style="border-color:var(--emerald-astral);">🛡️ Episode 8 カシム視点を読む</a>
+    </div>
+    <article class="prose-container" style="border-left: 4px solid var(--crimson-seal);">
+<h3 id="ep-1" style="color:var(--gold-bright); margin-top:24px; border-bottom:1px solid var(--border-brass); padding-bottom:6px;">🕯️ Episode 8：小規模な廃炭鉱 ―― 死角の開拓と、白い石の目印</h3>
+<p>狭い個室の板壁が朝霧の冷気でわずかに軋む音で、フレイアは簡易寝台の上から跳ねるように身を起こした。</p>
+<p>枕の下に滑り込ませておいた『白百足の赤錆小顎片』の柄を反射的に握りしめ、扉の内側のかんぬきが外れていないことを確かめてから、小さく息を吐く。誰にも襲われずに朝まで眠り通せた安堵よりも先に、彼女の腹の底からは、まるで内臓そのものが溶けているかのような猛烈な空腹感が突き上げてきていた。</p>
+<p>（……昨日の夜も食べたのに、もうお腹が鳴ってる）</p>
+<p>自分の身体ながら呆れるほどの燃費の悪さだった。だが、空腹で目眩がしたまま動けば、その一瞬の遅れが命取りになる。</p>
+<p>フレイアは灰色の古布と黒ずんだ厚手の麻布で胸元から顔の輪郭まで厳重に隠し、一階の帳場へ降りると、革袋に残っていた『銅貨三枚』のうち『二枚』を払って、塩豚の切れ端が浮いた大盛りの熱い麦粥と焼きパンを買い求めた。</p>
+<p>部屋の隅でそれを一気に胃へと流し込み、ようやく全身の血管に温かい熱が巡り始めるのを感じる。手元に残ったのは、たったの『銅貨一枚』。今夜の宿代（銅貨十五枚）と食事代を稼ぎ出すため、彼女はすぐに宿の裏口から山村の外へと滑り出た。</p>
+<p>午前のうちに彼女が向かったのは、村の奥の廃炭鉱ではなく、昨日越えてきた北の尾根のさらに奥――街の新米たちが決して足を踏み入れない、険しい岩場と倒木が入り組む『裏の森の深部』だった。</p>
+<p>松明の火を使わずに済む昼前の時間帯なら、森の獣を追う方が消耗品を減らさずに済む。</p>
+<p>湿った腐葉土の上を、荒縄を巻いた革靴で音もなく疾走する。</p>
+<p>尾根の谷間に流れる細い沢の近くで、苔を奪い合って鼻を鳴らしている二匹の『フモ猪』を見つけると、フレイアは風下の高い岩棚へと音もなく攀（よ）じ登った。</p>
+<p>枝の上から獲物の真後ろへ飛び降りざま、昨夜あの男と交換した小砥石で研ぎ澄ましたばかりの『白百足の赤錆小顎片』を逆手に閃かせる。</p>
+<p>シュッ、と空気を切る軽い感触とともに、一匹目の頸動脈が断ち切られた。</p>
+<p>隣にいた二匹目が驚いて逃げ出そうと地を蹴るよりも早く、フレイアは低い姿勢のまま地を這うように踏み込み、二匹目の後ろ足の腱を刃の欠けた『黒曜頁岩の石片』で薙ぎ払って転倒させ、その喉元を赤錆小顎片で一突きに仕留めた。</p>
+<p>「……ふぅっ……」</p>
+<p>わずか十秒足らずの早業で二匹のフモ猪を仕留めたものの、全力の跳躍と疾走を繰り返したフレイアの額からは大粒の汗が噴き出し、朝食べたばかりの麦粥の熱量がもう半分以上燃え尽きているのが分かった。</p>
+<p>彼女は素早く二匹の血抜きと皮剥ぎを済ませ、一度山村の入り口へ戻って、交易所のお婆さんに肉と毛皮を預けた。代金は夕方の廃炭鉱の収穫とまとめて受け取る約束にし、手元に残っていた最後の『銅貨一枚』で屋台の大きな焼き芋と塩味の麦餅を買って、歩きながら胃袋へ押し込んだ。</p>
+<p>＊　　　　　　　　＊　　　　　　　　＊</p>
+<p>正午を回った頃、フレイアは山村の奥にある『小規模な廃炭鉱』の坑口へと足を踏み入れた。</p>
+<p>火打ち石で一本の『松脂の携帯松明』に火を灯し、湿った石炭粉の匂いが漂う坑道を進む。</p>
+<p>入口から十数歩先の分岐点に差し掛かったところで、フレイアの足が止まった。</p>
+<p>分岐の中央に立つ古い木柱――昨日の夕方、左の崩れた支道がネズミの巣穴になっていると気づいた彼女が、自分用の目印として刃先で小さな刻み目を入れておいた場所だ。</p>
+<p>その刻み目のすぐ下に、見慣れない印が増えていた。</p>
+<p>柔らかい『白い石灰石の欠片』を擦りつけて引かれた、一本の短い横線。</p>
+<p>左の危険な支道を確認した上で、右側の旧採掘跡へ進んだことを示す、極めて簡潔で分かりやすい印だった。</p>
+<p>（……あいつだ。朝から先に入って、右の通路へ進んだのね）</p>
+<p>フレイアは松明を低く構え、試しに右側の旧採掘跡へと数歩だけ踏み入ってみた。</p>
+<p>第2支柱、第3支柱と進むにつれ、黒い泥濘の上に、あのギザギザの甲殻歯が打ち込まれた革靴の足跡がくっきりと続いている。昨日、街の大炭鉱の側坑で無様に横滑りしていた足跡とはまるで違う、一歩ごとに泥の下の岩盤を正確に噛み締めた足取りだった。</p>
+<p>さらにその先、古いトロッコの残骸が通路を狭めている第4支柱の曲がり角を見て、フレイアはフードの下で小さく息を呑んだ。</p>
+<p>右側の岩壁の亀裂に、松明の柄を差し込んで固定していたらしい新しい煤の跡がある。そして幅六十センチほどの狭い隙間の手前には、灰を振り撒かれて綺麗に中和・凝固した『黒煤スライム』の溶けた跡と、首の付け根や喉元を正確に一突きで絶命させられた『坑道ネズミ』の血痕が四匹分残されていた。</p>
+<p>しかも、周囲の泥には転倒した跡はおろか、慌てて踏み乱した形跡すらなく、第4支柱より奥の浅い区画も同じ手口で手際よく掃除されていた。</p>
+<p>（……昨日の朝、泥の中で死にかけてた奴とは思えない。明かりを壁に固定して逆光を作り、狭い隙間に一匹ずつ誘い込んで、灰で酸を消して仕留めてる……）</p>
+<p>フレイアは背筋にわずかな緊張が走るのを覚えた。</p>
+<p>あの男は、ただ運よく生き延びただけの鈍間（のろま）ではなかった。一度の惨敗から自分の弱点をすべて洗い出し、盾と靴を作り直し、地形と道具を組み合わせて「絶対に負けない手順」を組み立ててみせたのだ。</p>
+<p>（あいつが浅い通路を掃除したなら、同じ場所をうろついても獲物はいないし、鉢合わせするのも邪魔くさい。……私は、あいつの盾じゃ入り込めない奥の足場を行く）</p>
+<p>フレイアは第4支柱の脇を音もなくすり抜け、旧採掘跡のさらに奥――かつて下層から鉱石を巻き上げていたらしい『古い縦坑の縁』へと足を向けた。</p>
+<p>そこは通路の幅が三十センチほどしかなく、腐りかけた太い梁（はり）が暗い縦坑の穴の上に張り出している危険な区画だった。盾を構えて足場を固める戦い方の男には向かないが、身軽なフレイアにとっては絶好の狩場になる。</p>
+<p>彼女は縦坑の縁の梁の上へと猫のように軽やかに飛び乗った。</p>
+<p>真下の湿った岩棚を見下ろすと、そこには誰にも狩られずに残っていた四匹の『黒煤スライム』と、石炭の隙間で蠢く五匹の『坑道ネズミ』が集まっていた。</p>
+<p>フレイアはすぐには飛び降りなかった。</p>
+<p>昨日のあの男との取引で手に入れた『酸中和用の灰袋』の口を緩め、指先でつまんだ少量の灰を、真下の黒煤スライムの頭上へと静かに振り落とした。</p>
+<p>バシュウッ！ と白い蒸気が上がり、強酸の粘液を中和されたスライムが苦し紛れに粘液鞭を虚空へ撃ち出して硬直する。中心の黒い核がむき出しになった、その瞬間。</p>
+<p>フレイアは梁の上から音もなく垂直に落下し、着地と同時に『白百足の赤錆小顎片』の切っ先で二つのスライムの核を連続で抉り出した。</p>
+<p>昨日までの彼女なら、ここでスライムの酸飛沫を浴びて靴底の荒縄を焦がしていたところだが、事前に灰で表面の酸を殺しておいたおかげで、衣服も靴もほとんど傷まない。</p>
+<p>さらに、灰の煙に驚いて飛びかかってきた坑道ネズミの群れに対しても、彼女は狭い縦坑の縁を跳び回りながら死角へと回り込み、研ぎ澄ました赤錆小顎片で一匹ずつ正確に首を刎（は）ねていった。</p>
+<p>午後四時半頃、二本目の松明が短くなったところで、フレイアは縦坑の壁面に露出していた『黄鉄石混じりの良質な石炭塊』を黒曜頁岩の石片で掘り出して麻袋に詰め込み、廃炭鉱から引き上げた。</p>
+<p>麻袋にはスライムの核と五匹のネズミ、それに重い石炭塊がぎっしり詰まっており、朝に預けたフモ猪の分も合わせれば抱えるのがやっとの稼ぎになっていた。ただし、縦坑の梁を何度も跳び回り、激しい高速機動を繰り返したせいで、靴底に巻いていた荒縄は半分ほど擦り切れてほつれ、全身は絞れるほどの汗にまみれていた。そして何より、昼に食べた焼き芋と麦餅はとっくに消え失せ、目の前がチカチカするほどの猛烈な飢餓感が再び喉元まで迫っていた。</p>
+<p>＊　　　　　　　　＊　　　　　　　　＊</p>
+<p>山村の入り口の交易所へ戻り、午前のフモ猪二匹と、廃炭鉱で狩った黒煤スライムの核四つ、坑道ネズミ五匹、さらに黄鉄石混じりの石炭塊をすべて並べると、お婆さんは呆れたように目を丸くした。</p>
+<p>「おやまあ、あんたみたいな細い体のどこにそんな力があるんだい。フモ猪二匹で銅貨十二枚、スライムの核が四つで十二枚、ネズミ五匹と黄鉄石入りの石炭で六枚……全部で『銅貨三十枚』だよ！」</p>
+<p>板の上に積み上がった、三十枚もの銅貨。</p>
+<p>これまでで一番の大金だった。だが、フレイアがその銅貨を革袋に収めた直後、彼女の腹がギュルルッと大きな音を立てて痙攣した。</p>
+<p>フレイアは交易所のすぐ横で煙を上げていた屋台へ駆け寄り、『銅貨三枚』を払って、焼きたてで脂が滴る『フモ猪の大きな脂身串』を三本まとめて買い求めた。</p>
+<p>さらに交易所の棚から、擦り切れた靴底を巻き直すための『新しい松脂塗りの荒縄と厚革の端切れ』、使い減りした『補充用の松脂と中和灰』、そして汗で汚れた肌着の替えとなる『黒ずんだ麻布と晒し布』を選び出し、合わせて『銅貨五枚』を支払う。</p>
+<p>稼ぎは三十枚あったはずなのに、自分の身体を動かし、女であることを隠し、擦り切れる靴底を維持するだけで、あっという間に銅貨八枚が消えていった。</p>
+<p>午後五時半頃、フレイアは買い直した荒縄や替えの布だけを詰めて軽くなった麻袋を足元に置き、片手に湯気の立つ『フモ猪の大きな脂身串』を三本握りしめたまま、ボロ安宿の裏手にある石造りの水場へと向かった。</p>
+<p>冷たい水を流しながら、串の脂身にガツガツと齧りつき、空いた片手で『白百足の赤錆小顎片』についた血脂を洗い落とす。熱い脂の塊が食道を通るたびに、ようやく目の前のチカチカする霞が晴れていく。</p>
+<p>すると、すぐ横の水場の端で、同じように赤銅色のナイフと白い小盾の泥を洗っている男の姿があった。</p>
+<p>三つ隣の部屋の、あの男だった。</p>
+<p>男の足元にも新しく買った麻袋が置かれていたが、彼もまた交易所で換金を済ませてきたらしく中身は薄い。だが、男の呼吸は驚くほど落ち着いており、衣服にも傷一つなく、フレイアのように串焼きを何本も貪り食うような消耗も見せていなかった。</p>
+<p>水場の前で視線がぶつかると、男は洗ったナイフを布で拭きながら、低い声で口を開いた。</p>
+<p>「……昨夜の、左の支道の情報、助かった。本当にネズミの巣になっていたから、右の旧採掘跡だけを回った。第4支柱の先にもまだスライムが残っている」</p>
+<p>フレイアは三本目の串の最後の肉を飲み込み、残った竹串を奥歯でバキッと噛み割りながら、素っ気なく頷いた。</p>
+<p>「……そう。あんたが分岐の柱に白い石で横線を引いてたのを見たから、私は昼からその奥の縦坑の縁を回ったわ。あっちの白い石の印、これからも使った場所には残しておきなさいよ。同じ獲物を追って鉢合わせするのは無駄だから」</p>
+<p>「ああ。そうする」</p>
+<p>短いやり取りは、それだけで終わった。</p>
+<p>フレイアは水気を切った『赤錆小顎片』を腰の革紐に収め、男に背を向けて先に水場を離れた。</p>
+<p>一階の帳場で今夜の宿代『銅貨十五枚』と、夕食および明日の朝食用の『大盛り麦粥と干し肉二食分（銅貨四枚）』を前払いで支払う。</p>
+<p>二階の狭い個室へ戻り、内側から太いかんぬきを下ろして、小さな机の上に革袋の中身をぶちまけた。</p>
+<p>今日一日で三十枚の銅貨を稼ぎ出し、串焼き三本と消耗品・被服・靴底の補修に八枚、宿代に十五枚、二食分の食事に四枚を使った。そして今、明日の朝食まで確保した上で、机の上には純粋な余りとして『銅貨三枚』が残っている。</p>
+<p>（……あいつみたいに器用に節約はできない。私の身体は、走って斬るたびに人一倍お腹が減るし、肌を隠す布も靴の縄もすぐに傷む）</p>
+<p>それでも、机の上で鈍く光る三枚の銅貨と、補充された松明と灰袋、そして小砥石で手入れされた『白百足の赤錆小顎片』は、彼女が誰にも頼らず自分の腕一本で掴み取った確かな前進の証だった。</p>
+<p>そして、三つ隣の部屋にいるあの男と「白い石の印」で狩場を分け合えば、この山村の穴場で無駄な衝突をせずに、毎日少しずつ銅貨を積み上げていける。</p>
+<p>（まずはここで銅貨を貯めて、荒縄じゃない本物の鉄鋲の革靴と、酸を通さない革の胸当てを手に入れる。……あの街の大きな廃坑へ戻るのは、それからだ）</p>
+<p>フレイアは新しい荒縄で革靴の底を固く巻き直すと、夕食の椀を綺麗に平らげ、窄（すぼ）めた目を閉じて深い眠りへと沈んでいった。</p>
+<h4 style="color:var(--emerald-astral); margin-top:18px; font-size:1.08rem;">【現在ステート：フレイア（Episode 8 終了時）】</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>HP / 身体状態</strong>: 無傷（昨夕の左腕の引っ掻き傷も順調に塞がりつつある）。裏の森と縦坑での激しい立体機動により大量のカロリーを消費したが、屋台のフモ猪脂身串3本と大盛りの夕食で完全に補填し、体調は極めて良好。</li>
+<li><strong>所持金</strong>: <strong>銅貨 3枚</strong>（※翌朝の朝食代［銅貨2枚分］まで前払い決済済みのため、実質銅貨5枚分の純資産。本日の収支：朝の3枚から朝食2枚・昼の焼き芋と麦餅1枚で一度0枚に ➔ フモ猪2匹・スライム核4個・ネズミ5匹・黄鉄石混じり石炭の売却で過去最高の＋30枚を獲得 ➔ 屋台の脂身串3本［3枚］・靴底用荒縄と厚革と松脂と灰と替え布［5枚］・今夜の宿代［15枚］・夕食と翌朝食［4枚］を支払い、手元に銅貨3枚を確保）。</li>
+<li><strong>所持品と劣化度</strong>:</li>
+<li><strong>白百足の赤錆小顎片</strong>: メイン武器。水洗いと小砥石での手入れを徹底し、最高の切れ味を維持（劣化なし）。</li>
+<li><strong>松脂の携帯松明（×2）・火打ち石の小箱</strong>: 廃炭鉱で1本消費したが、交易所で松脂を買い足して2本とも使用可能状態に補充済み。</li>
+<li><strong>酸中和用の灰袋（満杯）・携帯用の小砥石（×1）</strong>: 縦坑でのスライム狩りに灰を活用し、交易所で満杯まで補充済み。</li>
+<li><strong>荒縄と厚革で補強した底の薄い革靴</strong>: 縦坑の梁での機動で元の荒縄が擦り切れたため、新しく買った松脂塗りの荒縄と厚革の端切れでより強固に巻き直した状態。</li>
+<li><strong>灰色の古布・黒ずんだ厚手の麻布（替え含む）・粗末な麻の貫頭衣</strong>: 汗で汚れた分を替えの布で清潔に保ち、女性の体つきを完全に隠蔽中。</li>
+<li><strong>鋭く割れた黒曜頁岩の石片・大きな麻袋・小さな革袋・鉛の認識票（ランクE）</strong>: 保持。</li>
+<li><strong>精神状態</strong>: 「やせの大食い」と被服・靴底の消耗によって出費がかさむ自身の体質を受け入れつつ、それを上回る圧倒的な狩猟速度と「灰を使った先制中和＋死角からの一撃」という独自の狩猟スタイルを確立。毎日少しずつでも黒字を積み上げられるようになったことで、冷徹な落ち着きを得ている。</li>
+<li><strong>カシムへの認識</strong>: 分岐柱に残された白い石灰石の横線と、第4支柱の見事な討伐痕から、彼が昨日の惨敗を糧に「理詰めで無傷の狩り」をやってのけたことを把握し、単なる鈍間ではないと再評価。水場で『探索済み箇所に白い石の印を残すルール』を取り交わし、互いの狩場を侵さず効率的に穴場を利用し合うドライな協定関係を結んだ。</li>
+<li><strong>現在地</strong>: 『寂れた山村』のボロ安宿・2階奥から3番目の狭い個室（かんぬきを下ろして就寝中）。鉄鋲靴や革の胸当てを買えるだけの資金が貯まるまでこの穴場で稼ぎ続ける方針。</li>
+</ul>
+
+    </article>
+    <div class="prose-container" style="margin: 16px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="freyja_ep7.html" class="tab-btn">◀ 前の話</a>
+        <a href="story_freyja.html" class="tab-btn">📖 目次へ</a>
+        <span class="tab-btn" style="opacity:0.4; pointer-events:none;">次の話 ▶</span>
+      </div>
+      <a href="kasim_ep8.html" class="tab-btn" style="border-color:var(--emerald-astral);">🛡️ Episode 8 カシム視点を読む</a>
+    </div>
+  </main>
+
+  <footer>
+    Lagrange Tower Web Archive // 最終検疫ビルド: 2026-11-18 22:19
+  </footer>
+</body>
+</html>
