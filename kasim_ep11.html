@@ -1,0 +1,511 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Side A：🏮 Episode 11：エルファスへの買い出し ―― 油ランタンの灯と、白い粉の噂 // 天頂迷宮ラグランジュの塔『揺籃の淵からの双曲線』</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // KASIM &amp; FREYJA ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔</h1>
+    <div class="subtitle">
+      『揺籃の淵からの双曲線』―― ステータス画面も天の声も存在しない迷宮で、記憶を失った二人の漂着者が物理法則と知恵だけを頼りに生き延びる硬派サバイバル年代記。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 トップ (Index)</a>
+      <a href="story_kasim.html" class="tab-btn active">🛡️ Side A：カシム編</a>
+      <a href="story_freyja.html" class="tab-btn">🗡️ Side B：フレイア編</a>
+      <a href="characters.html" class="tab-btn">👥 登場人物・現在ステート</a>
+      <a href="world.html" class="tab-btn">⚖️ 舞台と3つの絶対法則</a>
+      <a href="bestiary.html" class="tab-btn">🐾 魔物・生態図鑑</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+    <div class="prose-container" style="margin: 16px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="kasim_ep10.html" class="tab-btn">◀ 前の話</a>
+        <a href="story_kasim.html" class="tab-btn">📖 目次へ</a>
+        <span class="tab-btn" style="opacity:0.4; pointer-events:none;">次の話 ▶</span>
+      </div>
+      
+    </div>
+    <article class="prose-container" style="border-left: 4px solid var(--gold-bright);">
+<h3 id="ep-1" style="color:var(--gold-bright); margin-top:24px; border-bottom:1px solid var(--border-brass); padding-bottom:6px;">🏮 Episode 11：エルファスへの買い出し ―― 油ランタンの灯と、白い粉の噂</h3>
+<p>十一日目の朝、カシムはいつもと同じ時刻に目を覚ましたが、その足は村の奥の『シルト坑』ではなく、南へ続く山道へと向いていた。</p>
+<p>一階の帳場で前払い済みの熱い麦粥を平らげ、腰紐の奥に十日間かけて蓄えた『銅貨二十枚』がしっかりと結ばれていることを確かめる。左腕には『白殻の小盾』、腰には『銅のナイフ』、そして背中には空にした『丈夫な麻袋』を背負い、カシムは朝霧の立ち込めるコルン村を一人で出発した。</p>
+<p>北尾根を越える古いトロッコ軌道の跡は、十日前に初めて登ってきた時よりもずっと足取りが軽かった。</p>
+<p>爪先と踵に打ち込まれた白百足甲殻の歯が湿った腐葉土と岩角をしっかりと捉え、急な勾配でもふくらはぎに余計な力が入らない。登りの途中で少し息が上がったところで、カシムは懐から昨日あのフードの少女と物々交換した『自家製の干し肉』を一枚取り出し、半分だけ歯で噛みちぎってゆっくりと奥歯で噛み締めた。</p>
+<p>燻されたフモ猪の脂と濃い塩気が唾液と混ざり合い、朝の冷えた身体の芯にじわりと熱を灯す。残りの一枚半は布に包み直して懐へ戻した。</p>
+<p>尾根を下り、浅い『裏の森』を抜けて大都市エルファスの外縁へと出る。</p>
+<p>相変わらず街の大通りは荷馬車の車輪の音と冒険者たちの怒号、屋台の脂の匂いで溢れ返っていた。人混みが苦手なカシムは自然と建物の軒下の影を選んで歩いたが、十日前に泥まみれの貫頭衣と折れかけた木の棒で立ち尽くしていた時のような、胸を押し潰されるような惨めさはもうなかった。今の彼の懐には、誰に恵んでもらったわけでもない、自分の観察と反復で稼ぎ出した二十枚の銅貨がある。</p>
+<p>カシムはまず、冒険者ギルドの隣にある古びた武具・道具屋の暖簾（のれん）をくぐった。</p>
+<p>十日前には値札を見るだけで諦めた棚の前に立ち、吊るされていた小振りな『金属枠の油ランタン』を手に取る。</p>
+<p>「おい店主。この油ランタンと、予備の灯油の小瓶を合わせてくれ」</p>
+<p>「おう、銅貨十二枚だ。新米にしちゃ手堅い買い物をするじゃねえか。そいつは風防の厚ガラスと真鍮（しんちゅう）の遮光板がついてるから、坑道の隙間風くらいじゃ絶対に消えねえし、腰の鉤（かぎ）に引っ掛けておけば両手が空くぞ」</p>
+<p>カシムは革袋から『銅貨十二枚』を数えてカウンターに置き、ずしりと冷たい金属枠のランタンと、琥珀色の灯油が詰まった革張りの小瓶を受け取った。</p>
+<p>残る所持金は『銅貨八枚』。</p>
+<p>カシムはさらに店内を見回し、これからシルト坑のさらに深い地下下層へ潜るために必要なものを冷静に選び出した。</p>
+<p>まず、今まで宿の囲炉裏から素焼きの欠片で種火を持ち出していた手間と、水滴で火が消えた時の危険を潰すため、小さな鉄片と石、乾燥した火口（ほくち）がセットになった『火打ち金と火口箱』を『銅貨一枚』で購入する。</p>
+<p>次に、地下下層でスライムの数が増えた場合に備え、用心のために『予備の酸中和灰（大袋・二袋分）』を『銅貨二枚』で買い足した。</p>
+<p>そして最後に、十日間の探索で裾や肘が擦り切れて薄くなっていた麻の貫頭衣の下に重ね着するための、地厚で丈夫な『灰色の麻の作業シャツ』と修繕用の麻糸を古着棚から見つけ出し、『銅貨三枚』で買い取った。</p>
+<p>（ランタンと灯油で十二枚、火打ち箱と予備の灰二袋で三枚、下に着る厚手の麻シャツで三枚……。よし、全部で十八枚。手元にまだ『銅貨二枚』が残る）</p>
+<p>無一文からの再出発ではなく、不測の事態に備えた銅貨二枚の余力を残した状態で、必要な装備の更新をすべて完了させた。カシムはその場で貫頭衣の下に厚手の麻シャツを着込み、腰の革帯に新しい油ランタンを吊るしてから店を出た。</p>
+<p>＊　　　　　　　　＊　　　　　　　　＊</p>
+<p>午前十時過ぎ、カシムはそのまま帰路につく前に、ギルドの脇から東へ一本入った職人街の路地裏へと足を向けた。</p>
+<p>軒先に獣の角や古革の端切れが吊るされた小さな工房――『白殻の小盾』と『甲殻底の補強革靴』を作ってくれた、あの片眼鏡の老職人の店だ。昨日、宿の水場であの少女にこの工房を教えた手前、一言伝えておくべきだと思ったし、十日間酷使した盾の革帯と靴底の鋲に緩みがないか診てもらいたかったこともある。</p>
+<p>「……ごめんください。十日前に、白百足の甲殻で小盾と靴底を作ってもらった者ですが」</p>
+<p>薄暗い作業場の奥でタガネを振るっていた老職人は、手を止めて片眼鏡の奥の目をカシムへ向けた。</p>
+<p>「ああ、あの白い甲殻の小僧か。まだ坑道でネズミの餌にならずに生きてたとはな。どれ、盾と靴を見せてみろ」</p>
+<p>老職人はカシムが差し出した『白殻の小盾』と靴底を受け取り、鉄槌の柄で鋲の頭を軽く叩いて点検した。</p>
+<p>「……ふん、十日も石炭坑道で使ったわりには、甲殻の表面に傷ひとつ付いちゃいねえ。黒煤スライムの酸を何度も受けた跡があるが、まるで弾き返してやがる。持ち手の革帯の鋲が一つだけ少し馴染んで緩んでるから、今締め直してやる。自分が打った仕事の点検に金は取らねえよ」</p>
+<p>老職人は万力に小盾を挟み、手慣れた槌音とともに革帯の鋲を固く打ち直してくれた。</p>
+<p>その作業の合間に、老職人の視線がカシムの腰に新しく吊るされた『金属枠の油ランタン』と、パンパンに膨らんだ二つの『予備の酸中和灰』の袋に留まった。</p>
+<p>「なんだ小僧、新品のランタンに、そんな大量の灰袋まで買い込みやがって。今までいた浅い坑道じゃなく、さらに下の層へ潜るつもりか？」</p>
+<p>「ええ。今拠点にしている小さな廃炭鉱の奥に、地下下層へ続く連絡斜坑があるんです。明かりと灰を揃えて、そこへ降りてみようかと」</p>
+<p>カシムが正直に答えると、老職人は槌を置き、片眼鏡の奥の目を細めて低い声で言った。</p>
+<p>「いいか小僧、ひとつだけ頭に叩き込んでおけ。浅い層を這い回ってる並の黒煤スライムなら、お前が腰に下げてるその普通の焚き火灰でも酸が固まって核が浮く。だがな、古い廃坑の奥底――風が澱（よど）んで人が何年も入っていないような溜まり場には、まれに並の個体の何倍にも膨れ上がった『変異個体』の大黒煤スライムが居座ってることがある」</p>
+<p>カシムは息を詰め、老職人の言葉に耳を傾けた。</p>
+<p>「そいつが吐き出す超高濃度の強酸はな、そんな安物の灰をいくら袋ごとぶっかけても、ジュッと泡立って飲み込まれるだけで絶対に中和しきやしねえ。盾の甲殻は耐えられても、足元から酸の泥に呑まれたら靴ごと骨まで溶かされるぞ」</p>
+<p>「……普通の灰が効かないなら、どうすればいいんですか」</p>
+<p>「そういう化け物じみた強酸を一発で固めるにはな、石灰と霊草の灰を何重にも焼き抜いて精製した、雪みたいに真っ白な『上級の中和粉』ってやつが必要になる。そいつは粒が細かすぎて空気中の湿気でもすぐ劣化しちまうから、普通は『蝋（ろう）で口を固く密封した小さなガラス瓶』に詰めて持ち歩くもんだ」</p>
+<p>老職人は点検を終えた『白殻の小盾』をカシムへ突き返しながら、鼻を鳴らした。</p>
+<p>「もっとも、今のエルファスの薬屋でその小瓶をまともに買おうとすれば、小瓶ひとつで銀貨が飛ぶような高嶺の花だ。お前みたいな新米が手を出せる代物じゃねえ。……だからいいか、もし地下下層の奥で普通の灰が効かねえほどデカい黒煤の塊を見かけたら、絶対に欲をかいて戦おうとするな。脇目も振らずに走って逃げろ。それが生き残る秘訣だ」</p>
+<p>『蝋で密封された小さなガラス瓶に入った、真っ白な上級の中和粉』。そして『普通の灰が効かない変異個体の大黒煤スライム』。</p>
+<p>カシムはその二つの知識を脳裏に深く刻み込み、老職人に頭を下げた。</p>
+<p>「忠告、ありがとうございます。それと……もしかするとこの後、俺と同じ白い百足の素材――『赤錆色の小顎の刃』を持ったフードの連れが、柄と鞘の加工を頼みにここへ来るかもしれません。その時は、俺が前に置いていった白い甲殻の端材を使ってやってください」</p>
+<p>「あん？ 赤い小顎の刃だと？ ……なるほど、あの白い甲殻の相方ってわけか。面白い、そいつが来たら俺の目で確かめてやろう」</p>
+<p>老職人がニヤリと口の端を歪めるのを見て、カシムは工房の暖簾をくぐって外の路地へと出た。</p>
+<p>午前十時半過ぎ。</p>
+<p>職人街の狭い石畳の路地を大通りへ向かって三十歩ほど歩いた、ちょうど日陰の曲がり角でのことだった。</p>
+<p>向こう側から、灰色の古布をフードのように深く被り、周囲の視線を警戒するように壁際を歩いてくる小柄な人影と鉢合わせになった。</p>
+<p>あの少女だった。</p>
+<p>彼女の左脇には、麻布で厳重に包まれた細長い包み――『白百足の赤錆小顎片』が抱えられており、腰の革袋には十日間で貯め込んだらしい硬貨の重みが揺れている。</p>
+<p>狭い路地の真ん中で、二人は数歩の距離を置いてすれ違った。</p>
+<p>少女のフードの奥の鋭い瞳が、カシムの腰に新しく吊るされた『金属枠の油ランタン』と、貫頭衣の下に重ね着した『厚手の麻シャツ』、そして膨らんだ灰袋を一瞬で観察した。カシムが昨日言った通り、午前中のうちに買い出しを終えたことを理解した目だった。</p>
+<p>人通りのある街中で、二人は足を止めなかったし、言葉も交わさなかった。</p>
+<p>ただカシムが顎をわずかに引いて「この先の工房だ」と目配せを送ると、少女もまた、ほんのわずかだけフードの縁を下げて無言で応え、そのままカシムの横を風のようにすり抜けて老職人の工房へと向かっていった。</p>
+<p>＊　　　　　　　　＊　　　　　　　　＊</p>
+<p>正午過ぎ、一足先に北尾根を越えてコルン村のボロ安宿へと戻ったカシムは、二階の狭い自室へ入って内側からかんぬきを下ろした。</p>
+<p>小さな木の机の上に、今日エルファスで買い揃えたばかりの装備を並べる。</p>
+<p>まず『金属枠の油ランタン』の底の油壺を開け、予備の小瓶から琥珀色の灯油を半分ほど慎重に注ぎ入れた。木綿の芯に油が染み込むのを待ってから、新しく買った『火打ち金と火口箱』を取り出し、石の角を鉄片で強く打ち据える。</p>
+<p>パシッ、と散った火花が火口に燃え移り、それをランタンの芯へと近づけると、小さな橙色の炎が音もなく立ち昇った。</p>
+<p>風防のガラス扉をパチンと閉め、真鍮の遮光板のツマミを動かしてみる。</p>
+<p>窓のない暗い一畳半の個室の中に、松明のような黒煙も、松脂の爆ぜる音もない、驚くほど均一で安定した明るい光の輪が広がった。ランタンを左右に強く振ってみても、ガラスに守られた炎は揺らぐことすらなかった。</p>
+<p>（これなら、地下下層の強い隙間風の中でも絶対に消えない。しかも腰に吊るせば、最初から左手は小盾と灰袋だけに使える）</p>
+<p>カシムは一度ランタンの火を吹き消して油を節約し、腰の革帯の左側にランタンの鉤を引っ掛け、そのすぐ横に今日買い足した『予備の酸中和灰』の袋を二つ並べて括り付けた。</p>
+<p>十日間の反復で手足のように馴染んだ『研ぎ直した銅のナイフ』と『白殻の小盾』、地面を噛む『甲殻底の補強革靴』、そして暗闇と風を克服する『油ランタン』。</p>
+<p>今の自分に整えられる、最高の準備が揃った。</p>
+<p>カシムは懐に残った『自家製の干し肉』の残りを一切れ口に含み、これから挑む『シルト坑・地下下層』の暗い石段を思い描きながら、午後の探索に向けて静かに呼吸を整えた。</p>
+<h4 style="color:var(--emerald-astral); margin-top:18px; font-size:1.08rem;">【現在ステート：カシム（Episode 11 終了時）】</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>HP / 身体状態</strong>: 無傷・万全。朝の山道移動の消費も『自家製の干し肉（0.5枚分消費）』で適切に補給済み。</li>
+<li><strong>所持品と劣化度</strong>:</li>
+<li><strong>所持金</strong>: <strong>銅貨2枚</strong>（Ep.10終了時の純貯蓄［銅貨20枚］から、金属枠の油ランタン＋予備の灯油小瓶［銅貨12枚］、火打ち金と火口箱［銅貨1枚］、予備の酸中和灰・大袋2つ［銅貨2枚］、重ね着用の厚手の麻シャツ＋修繕糸［銅貨3枚］の計18枚を投資し、手元に予備資金として銅貨2枚を保持）。</li>
+<li><strong>金属枠の油ランタン＋予備の灯油小瓶（新規購入）</strong>: 風防ガラスと真鍮の遮光板付き。腰に吊るして両手を空けることができ、地下下層の隙間風でも消えない主力光源（灯油を注いで試運転完了）。</li>
+<li><strong>火打ち金と火口箱（新規購入）</strong>: 宿の種火に頼らず、どこでも着火可能な道具。</li>
+<li><strong>白殻の小盾（×1）</strong>: 加工屋の老職人に革帯の鋲を締め直してもらい、メンテナンス完了（状態：極めて良好）。</li>
+<li><strong>甲殻底の補強革靴</strong>: 老職人の点検済み（状態良好）。</li>
+<li><strong>研ぎ直した銅のナイフ（×1）</strong>: 劣化度：小。</li>
+<li><strong>酸中和用の灰袋（元の袋＋予備の大袋×2）</strong>: 地下下層に備えて大幅に増量。</li>
+<li><strong>松脂の携帯松明（×2）</strong>: ランタンの予備光源として麻袋に保持。</li>
+<li><strong>自家製の干し肉（残り1.5枚）</strong>: 携行食として保持。</li>
+<li><strong>厚手の麻の作業シャツ＋麻の貫頭衣</strong>: 重ね着により防寒性と耐酸・防汚性が向上（改修完了）。</li>
+<li><strong>冒険者ギルドの鉛の認識票（ランクE）・丈夫な麻袋・白い石灰石の欠片・意味不明な異質核片（×1）・尖った石片（×1）・携帯用の小砥石（×1）</strong>: 保持。</li>
+<li><strong>獲得知識（重要伏線）</strong>:</li>
+<li>加工屋の老職人から<strong>「廃坑の奥底に稀にいる変異個体『大黒煤スライム』の強酸には普通の灰が効かず、それを固めるには『蝋（ろう）で口を密封した小さなガラス瓶に入った、真っ白な上級の中和粉』が必要になる（店で買えば銀貨が飛ぶ貴重品）」</strong>という知識を学習。</li>
+<li><strong>精神状態</strong>: 十日間コツコツ貯めた銅貨20枚を計画通り「明かり・防寒・着火・予備灰」へ投資し、なお銅貨2枚の余力を残す手堅い準備を完了。老職人の忠告を胸に刻みつつ、次回の『シルト坑・地下下層』への単独挑戦に向けて静かに闘志を固めている。</li>
+<li><strong>フードの少女への認識</strong>: 午前10時半過ぎ、老職人の工房を出た職人街の路地裏で、赤錆小顎片の包みを抱えて工房へ向かう彼女と無言ですれ違った（目配せのみで挨拶）。事前に老職人へ「同じ白百足の赤い小顎の刃を持った連れが来るから、前の白い甲殻の端材を使ってやってほしい」と口添えを済ませてある。</li>
+<li><strong>現在地</strong>: 『コルン村』のボロ安宿・2階端の狭い個室（油ランタンの試運転を終え、地下下層への出発準備を整えたところ）。</li>
+</ul>
+
+    </article>
+    <div class="prose-container" style="margin: 16px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="kasim_ep10.html" class="tab-btn">◀ 前の話</a>
+        <a href="story_kasim.html" class="tab-btn">📖 目次へ</a>
+        <span class="tab-btn" style="opacity:0.4; pointer-events:none;">次の話 ▶</span>
+      </div>
+      
+    </div>
+  </main>
+
+  <footer>
+    Lagrange Tower Web Archive // 最終検疫ビルド: 2026-11-20 13:45
+  </footer>
+</body>
+</html>
