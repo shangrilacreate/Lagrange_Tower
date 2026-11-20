@@ -1,0 +1,518 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Side B：🗡️ Episode 11：エルファスへの買い出し ―― 『紅牙の短剣』の誕生と、鉄鋲の足音 // 天頂迷宮ラグランジュの塔『揺籃の淵からの双曲線』</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // KASIM &amp; FREYJA ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔</h1>
+    <div class="subtitle">
+      『揺籃の淵からの双曲線』―― ステータス画面も天の声も存在しない迷宮で、記憶を失った二人の漂着者が物理法則と知恵だけを頼りに生き延びる硬派サバイバル年代記。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 トップ (Index)</a>
+      <a href="story_kasim.html" class="tab-btn">🛡️ Side A：カシム編</a>
+      <a href="story_freyja.html" class="tab-btn active">🗡️ Side B：フレイア編</a>
+      <a href="characters.html" class="tab-btn">👥 登場人物・現在ステート</a>
+      <a href="world.html" class="tab-btn">⚖️ 舞台と3つの絶対法則</a>
+      <a href="bestiary.html" class="tab-btn">🐾 魔物・生態図鑑</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+    <div class="prose-container" style="margin: 16px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="freyja_ep10.html" class="tab-btn">◀ 前の話</a>
+        <a href="story_freyja.html" class="tab-btn">📖 目次へ</a>
+        <span class="tab-btn" style="opacity:0.4; pointer-events:none;">次の話 ▶</span>
+      </div>
+      <a href="kasim_ep11.html" class="tab-btn" style="border-color:var(--emerald-astral);">🛡️ Episode 11 カシム視点を読む</a>
+    </div>
+    <article class="prose-container" style="border-left: 4px solid var(--crimson-seal);">
+<h3 id="ep-1" style="color:var(--gold-bright); margin-top:24px; border-bottom:1px solid var(--border-brass); padding-bottom:6px;">🗡️ Episode 11：エルファスへの買い出し ―― 『紅牙の短剣』の誕生と、鉄鋲の足音</h3>
+<p>十一日目の朝、フレイアは簡易寝台の上で目を覚ますと、まず三つ隣の部屋の前を通り過ぎて裏階段を下りていく規則正しい足音に耳を澄ませた。</p>
+<p>あの男が一足先に宿を出て、下の『エルファス』の街へと向かった音だ。</p>
+<p>フレイアは同じ山道で男と並んで歩く気など毛頭なかったため、わざと寝台の上で四半刻ほど時間を置いてから身を起こした。一階の帳場で前払い済みの大盛り麦粥と干し肉の朝食を平らげ、腰帯の内側の小さな革袋に、十日間かけて泥と汗にまみれて貯め込んだ『銅貨二十二枚』が収まっていることを指先で確かめる。</p>
+<p>左脇には、麻布で幾重にも厳重に包んだ『白百足の赤錆小顎片』を抱え、頭から灰色の古布を深く被って顔の輪郭を隠す。</p>
+<p>昨日の夕方、宿の水場で男と交わした約束通り、彼女は村の奥の『シルト坑』へは向かわず、朝霧の残る南の尾根道へと一人で足を踏み出した。</p>
+<p>北尾根を越える古いトロッコ軌道の山道は、十日前に粗暴な三人組から逃げて必死に登ってきた時とはまるで景色が違って見えた。</p>
+<p>当時は少し走るだけで息が上がり、木の根に足を取られて何度も転びかけた斜面を、今のフレイアは十日間の縦坑での反復で鍛えられた足腰で、小枝一本鳴らさずに滑るように下っていく。ただ、靴底に巻き付けた荒縄だけはすでに限界で、岩角を踏むたびにブチブチと繊維が切れる嫌な感触が足裏に伝わってきた。</p>
+<p>尾根を下りきる手前で、早朝の運動で熱を消費した胃袋がキュッと鳴った。</p>
+<p>フレイアは歩きながら懐の包みから『自家製の干し肉』を一枚取り出し、硬い繊維を奥歯で噛み千切って少しずつ咀嚼した。塩気と燻した煙の香りが口の中に広がり、空腹による立ち眩みを未然に抑え込む。</p>
+<p>浅い『裏の森』を抜けて大都市エルファスの外縁へと出ると、十日ぶりの騒音と人混みの熱気が押し寄せてきた。</p>
+<p>フレイアは反射的にフードの縁を強く引き下げ、大通りの真ん中を避けて建物の軒下の濃い影へと身を滑らせた。もし十日前、大炭坑の本坑で罠に落としたあの初心者狩りの三人組が街をうろついていたとしても、当時もフードは外れず顔は見られていない。それでも彼女の警戒心は、すれ違う男たちの腰の武器と視線の向きを一つ残らず睨みつけていた。</p>
+<p>（……早く用事を済ませて、あの静かな村へ戻ろう）</p>
+<p>円形広場の端をかすめ、昨日あの男から聞いた道順の通り、冒険者ギルドの大きな建物の脇から東へ一本入った職人街の路地裏へと折れる。</p>
+<p>午前十時半過ぎ。</p>
+<p>大通りの喧騒が急に遠ざかり、金槌の音や革を鞣（なめ）す渋い匂いが漂う狭い石畳の路地を三十歩ほど進んだ、日陰の曲がり角でのことだった。</p>
+<p>正面の奥から歩いてきた一人の男と、狭い路地の真ん中で鉢合わせになった。</p>
+<p>三つ隣の部屋の、あの男だった。</p>
+<p>フレイアのフードの奥の瞳が、すれ違う男の姿を一瞬で隅々まで観察した。</p>
+<p>男の腰の革帯には、昨日までなかった真新しい『金属枠の油ランタン』が吊るされ、その横にはパンパンに膨らんだ『予備の酸中和灰』の袋が二つも下がっている。さらに擦り切れていた麻の貫頭衣の下には、地厚で丈夫そうな『灰色の麻の作業シャツ』が重ね着されていた。男もまた、十日間で貯めた銅貨を一点の無駄もなく「地下下層で生き残るための道具」へと変えたのだ。</p>
+<p>他人の目がある街中で、二人は足を止めなかったし、声もかけなかった。</p>
+<p>男がわずかに顎を引いて「この先の店だ」と目配せを送り、フレイアもまたフードの縁をほんの少しだけ下げて無言で応じる。ただそれだけの合図で十分だった。二人は風のようにすれ違い、フレイアは男の背後にあった小さな工房――軒先に獣の角や古革の端切れがいくつも吊るされた暖簾をくぐった。</p>
+<p>＊　　　　　　　　＊　　　　　　　　＊</p>
+<p>工房の内部は薄暗く、削られた骨粉と鉄錆、それに古い油の匂いが充満していた。</p>
+<p>奥の作業台の前でタガネを片付けていた『片眼鏡をかけた老職人』が、音もなく入ってきた小柄なフード姿のフレイアを見て、胡散臭そうに片眉を上げた。</p>
+<p>「……なんだお前、客か？ ここは表通りみたいな安物の鉄剣を売る店じゃねえぞ」</p>
+<p>「売ってる剣なんていらないわ。……これを加工してほしくて来たの。さっきここを出た、白い小盾の男から聞いて」</p>
+<p>フレイアは声を低く抑え、左脇に抱えていた麻布の包みを無言で作業台の上に置いた。</p>
+<p>包みを解くと、十日間の血脂で黒ずんだ即席の布巻き柄と、その先で鈍い赤錆色の光を放つ鋸歯状の刃――『白百足の赤錆小顎片』が姿を現した。</p>
+<p>老職人の片眼鏡の奥の目が、ピタリと止まった。</p>
+<p>老職人は無言で小さな鉄槌を手に取ると、赤い小顎片の腹をコン、と軽く一度だけ叩いた。澄んだ硬質な金属にも似た反響音が工房に響く。</p>
+<p>「……ほお。さっきの小僧が帰り際に言ってた『赤い小顎の刃を持った連れ』ってのは、お前さんのことか」</p>
+<p>老職人は刃の根元の断面と、鋭く並んだ鋸歯の先端を食い入るように見つめ、感嘆とも呆れともつかない吐息を漏らした。</p>
+<p>「間違いねえ、十日前にあの小僧が持ち込んできた白い甲殻板と対になる、大顎白百足の内顎の刃だ。鉄より軽くて酸にも錆びず、中層クラスの甲殻すら食い破る極上の素材じゃねえか。……それをまあ、こんな汚えボロ布と安物の革紐を巻いただけで十日も振り回しやがって。見ろ、柄が滑るせいで自分の右手のひらが血豆だらけじゃねえか。素材が泣くぞ、馬鹿野郎が」</p>
+<p>図星を突かれ、フレイアは晒し布を巻いた右手を引っ込めた。</p>
+<p>「……だから、ちゃんとした柄と鞘を拵えてもらいに来たのよ。あの男がここに置いていった『白い甲殻の端材』がまだ残ってるんでしょ。それを使って、血や脂がついても絶対に滑らない柄と、腰の布が裂けない頑丈な鞘を作ってちょうだい。それと……この靴の代わりになる、泥や岩場で滑らない『鉄鋲付きの革靴』も欲しいわ」</p>
+<p>フレイアが革袋から貯め込んだ銅貨を取り出して見せると、老職人は顎を撫でながら作業台の下の木箱を引っ張り出した。</p>
+<p>その中には、十日前にあの男の小盾を削り出した際に残った、分厚く真っ白な『白百足の石灰甲殻板の端材』がいくつも保管されていた。</p>
+<p>「あの小僧からも『端材をこいつに使ってやってくれ』と頼まれてるしな。……よし、こうしよう。この赤い小顎の根元を硬い樫（かし）の木芯で挟み込み、その上からこの『白い甲殻の端材』を削った当て板と、油鞣しの鮫革（さめがわ）を巻いて真鍮の鋲で固める。さらに手が刃の方へ滑らねえよう、白い甲殻で小振りな鍔（つば）も噛ませてやる。鞘の方も、木鞘の入り口――鯉口（こいぐち）と先端の鐺（こじり）をこの白い甲殻の端材で補強してやれば、どれだけ鋭い鋸歯でも内側から裂けることはなくなり、酸を浴びても溶けやしねえ」</p>
+<p>老職人は指を折りながら値段を弾き出した。</p>
+<p>「端材はすでにうちにある分を使うから、特注の柄と甲殻補強の鞘の仕立て代で『銅貨八枚』だ。それから靴だが……ちょうど棚の奥に、足の小さい見習い鉱夫が置いていった『分厚い牛革の炭鉱靴』が一足残ってやがる。お前のそのボロボロの平底靴を下取りにして、中に厚革の中敷きを詰めてお前の足に合わせ、靴底一面に新品の『鉄鋲』をびっしり打ち込んでやる。それで『銅貨九枚』。さらにその傷だらけの右手を守る『革の半指手袋』と、おまけの『中和灰と松脂の補充』をつけて『銅貨二枚』。……全部合わせて『銅貨十九枚』だ。どうだ、払えるか？」</p>
+<p>二十二枚の蓄えのうち、十九枚。手元にまだ『銅貨三枚』が残る計算だった。</p>
+<p>表通りの武具屋なら短剣の加工だけで銅貨二十枚以上は吹っかけられていたはずだ。フレイアは迷わず革袋から『銅貨十九枚』を数えて作業台の上に並べた。</p>
+<p>「払うわ。……今日中に仕上げてちょうだい」</p>
+<p>「威勢のいい娘だ。昼過ぎまでに仕上げてやるから、隅の丸太にでも座って待ってろ」</p>
+<p>老職人はすぐに万力に『赤錆小顎片』を固定し、タガネとドリルで硬い根元に鋲穴を穿（うが）ち始めた。</p>
+<p>甲高い金属音と骨の削れる匂いが響く工房の隅で、フレイアは膝を抱えて作業の手元をじっと見守った。途中で腹が鳴りそうになると、懐から二枚目の『自家製の干し肉』を取り出してフードの陰で静かに口へ運ぶ。</p>
+<p>一時間半ほどが過ぎ、鞘の鯉口に白い甲殻の枠を嵌（は）め込みながら、老職人がふと独り言のようにぼやいた。</p>
+<p>「……しかし、あの白い小盾の小僧といい、お前といい、今どきの新米にしちゃ妙に慎重で目が利いてやがる。表通りでなまくらの鉄剣を買って大騒ぎしてる連中とは面構えがまるで違う。まるで最初から地獄の底でも潜ってきたみてえな目つきだ」</p>
+<p>フレイアは何も答えず、フードの奥から老職人の背中だけを見つめていた。老職人も返事を期待した様子はなく、真鍮の鋲を鉄槌で叩き込みながら低い声で続けた。</p>
+<p>「いいか、小僧の方にも言っておいたが、お前にも一つだけ忠告しておく。この短剣の刃と鞘に使った白百足の殻なら、そこらの黒煤スライムの酸なんざ弾き返す。だがな、古い廃坑の奥底――風が澱んで人が入らねえ溜まり場には、まれに普通の焚き火灰じゃまったく中和できねえ超高濃度の強酸を吐く『変異個体』のデカい黒煤スライムが居座ってることがある」</p>
+<p>フレイアの耳がピクリと動いた。</p>
+<p>「そういう化け物の酸を一発で固めるには、『蝋（ろう）で口を密封した小さなガラス瓶』に入った、雪みたいに真っ白な『上級の中和粉』ってやつが要るんだが、店で買えば銀貨が飛ぶ代物で新米にはまず手に入らねえ。……だから、もし地下下層で普通の灰が効かねえほどデカい黒煤の塊を見かけたら、いくらこの刃があろうが欲をかかずに、その新しい鉄鋲靴で走って逃げろ。命あっての稼ぎだからな」</p>
+<p>『蝋で密封された小瓶入りの、真っ白な上級の中和粉』。そして『普通の灰が効かない変異個体のスライム』。</p>
+<p>フレイアはその言葉を、罠の位置を覚える時と同じ正確さで頭の中に刻み込んだ。</p>
+<p>やがて作業の槌音が止み、老職人が仕上げの油を布で拭き取ってから、一振りの短剣と一足の重厚な革靴をフレイアの前へ差し出した。</p>
+<p>「ほらよ、出来上がりだ。赤錆色の牙に白い甲殻の鍔と鞘――名付けて『紅牙（こうが）の短剣』ってところだな。握って確かめてみろ」</p>
+<p>フレイアはまず、晒し布の上から老職人が出してくれた『革の半指手袋』を右手にはめ、差し出された『紅牙の短剣』の柄をゆっくりと握りしめた。</p>
+<p>その瞬間、フレイアの背筋に、言葉にできない奇妙な感覚が走った。</p>
+<p>白い甲殻の当て板と油鞣しの鮫革で仕立てられた柄が、まるで最初から自分の右手首の骨の一部であったかのように、掌の窪みへと吸い付くように馴染んだのだ。十日間、血豆を作って握り続けてきたあの赤錆色の刃の重心が、柄と鍔を得たことで一点のブレもなく指先の神経と直結し、刀身の奥から微かな温かい脈動のようなものが掌へと伝わってくる。</p>
+<p>試しに白甲殻で補強された木鞘へ納めると、カチャリ、と小気味よい音を立てて刃がぴたりと収まった。逆さにして振っても抜け落ちず、それでいて親指で白い鯉口をわずかに押し上げれば、音もなく一寸の引っ掛かりもなく赤い刃が抜き放てる。</p>
+<p>「……滑らない。全然、前と違う……！」</p>
+<p>続けて彼女はボロボロの薄い革靴を脱ぎ捨て、厚革の中敷きが詰められた『鉄鋲付きの革靴』に足を通して革紐を編み上げた。</p>
+<p>立ち上がって工房の石床を踏みしめると、カツン、と硬く頼もしい金属音が響いた。分厚い牛革が足首までしっかりと包み込み、底に打ち込まれた十数個の鉄鋲が地面をガッチリと噛み締めている。もう毎日ちまちまと荒縄を巻き直す必要はない。</p>
+<p>「気に入ったようだな。鋲が緩んだり鞘が傷んだりしたら、またいつでも持ってきな。あの小盾の小僧ともども、うちの上客にしてやるよ」</p>
+<p>フレイアは『紅牙の短剣』を腰の左側の革帯にしっかりと吊るし、老職人に短く頭を下げて工房を出た。</p>
+<p>＊　　　　　　　　＊　　　　　　　　＊</p>
+<p>午後一時過ぎ、北尾根の山道を驚くほど軽い足取りで駆け上がったフレイアは、コルン村のボロ安宿へと戻り、二階の狭い自室へ入って内側からかんぬきを下ろした。</p>
+<p>新しい『鉄鋲付きの革靴』のおかげで、尾根の急な泥の斜面でも一度たりとも足が滑らなかった。その分だけ脚の筋肉の無駄な緊張が消え、なんとエルファスから村まで一気に登りきっても、いつもより腹が減っていないことに彼女自身が驚いていた。</p>
+<p>狭い個室の机の前に立ち、フレイアは腰の鞘から『紅牙の短剣』を何度か抜き差しして間合いを確かめた。</p>
+<p>革の半指手袋越しに伝わる、吸い付くような柄の感触。白い甲殻の鍔が親指の付け根を支え、最短の振りだけで空気を鋭く切り裂く。腰の布が刃先で裂ける心配も、もう一切ない。</p>
+<p>机の上には、買い物をすべて終えた後でも残った『銅貨三枚』と、補充された『酸中和用の灰袋』、二本の『松脂の携帯松明』、そして残りの『自家製の干し肉（二枚）』が並んでいる。</p>
+<p>三つ隣の部屋からは、少し前に戻ってきたらしいあの男の静かな気配がしていた。男もそろそろ、あの新しい油ランタンを腰に下げてシルト坑へ向かう頃合いだろう。</p>
+<p>（……あいつは油ランタン。私は『紅牙の短剣』と『鉄鋲の革靴』。お互い、浅い場所で足踏みする時期はもう終わった）</p>
+<p>今日から挑むのは、第4支柱のさらに奥――湿った隙間風が吹き上げる『シルト坑・地下下層』だ。</p>
+<p>フレイアは懐の干し肉を一切れ口に放り込んで奥歯で噛み締めると、新しい鉄鋲靴の紐を固く結び直し、午後の単独探索へ向かうべく静かに部屋の扉のかんぬきに手をかけた。</p>
+<h4 style="color:var(--emerald-astral); margin-top:18px; font-size:1.08rem;">【現在ステート：フレイア（Episode 11 終了時）】</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>HP / 身体状態</strong>: 全身の体調は極めて良好。右手のひらの血豆・擦り傷も『革の半指手袋』で保護され、新しい『鉄鋲付きの革靴』によって移動時の無駄な筋力・カロリー消費が大幅に軽減されている（道中で自家製の干し肉を2枚消費し、残り2枚）。</li>
+<li><strong>所持金</strong>: <strong>銅貨 3枚</strong>（Ep.10終了時の純貯蓄［銅貨22枚］から、『紅牙の短剣』の柄・白甲殻鍔・白甲殻補強鞘の特注加工賃［銅貨8枚］、見習い鉱夫用の分厚い牛革靴をベースにした『鉄鋲付きの革靴』［旧靴下取り込みで銅貨9枚］、『革の半指手袋』と中和灰・松脂の補充［銅貨2枚］の計19枚を投資し、手元に予備資金として銅貨3枚を保持）。</li>
+<li><strong>所持品と劣化度</strong>:</li>
+<li><strong>紅牙の短剣（新規特注・初回ソウルバインド品）</strong>: 『白百足の赤錆小顎片』の刀身に、樫の木芯・油鞣しの鮫革・そしてカシムが工房に譲っていた『白百足の石灰甲殻板の端材』を組み合わせて柄と鍔を拵え、鯉口と鐺を白甲殻で補強した専用木鞘を備えた特注レア短剣。掌の窪みに吸い付くように重心が馴染み、血脂でも一切滑らず、抜刀・納刀も完璧な主力武器（劣化なし）。</li>
+<li><strong>鉄鋲付きの革靴（新規調達）</strong>: 分厚い牛革の炭鉱靴に厚革の中敷きを詰めて足に合わせ、靴底一面に新品の鉄鋲を打ち込んだ本格靴。荒縄巻きの限界から完全に脱却し、泥濘や岩場でも抜群のグリップ力と耐摩耗性を発揮（※旧『底の薄い革靴』は下取りに出して消滅）。</li>
+<li><strong>革の半指手袋（新規購入）</strong>: 右手のひらの保護と滑り止めを兼ねた手甲代わりの革手袋。</li>
+<li><strong>松脂の携帯松明（×2）・火打ち石の小箱・酸中和用の灰袋（満杯）・携帯用の小砥石（×1）</strong>: 工房のおまけで灰と松脂を満杯まで補充済み。</li>
+<li><strong>自家製の干し肉（残り2枚）</strong>: 携行食として保持。</li>
+<li><strong>灰色の古布・黒ずんだ厚手の麻布・粗末な麻の貫頭衣</strong>: 鞘ができたことで腰回りの布が裂ける問題が解消。</li>
+<li><strong>鋭く割れた黒曜頁岩の石片・白い石灰石の欠片・大きな麻袋・小さな革袋・鉛の認識票（ランクE）</strong>: 保持。</li>
+<li><strong>獲得知識</strong>:</li>
+<li>加工屋の老職人から<strong>「廃坑の奥底には普通の灰が効かない高濃度の強酸を吐く『変異個体』の巨大スライムが稀におり、その酸を固めるには『蝋で密封した小瓶入りの真っ白な上級の中和粉』（店では銀貨が飛ぶ貴重品）が必要になるため、遭遇したら戦わずに鉄鋲靴で走って逃げろ」</strong>という忠告を受けた。</li>
+<li><strong>精神状態</strong>: 十日間地道に貯めた銅貨22枚で、長年の悩みだった「滑る布巻き柄・鞘なし・すぐ切れる荒縄靴底」を一挙に解決し、掌に吸い付くような『紅牙の短剣』と『鉄鋲付きの革靴』を手に入れたことで、かつてない充実感と冷徹な自信を得ている。</li>
+<li><strong>三つ隣の部屋の男への認識</strong>: 午前10時半過ぎ、エルファス職人街の路地裏で買い出しを終えた彼（新しい金属枠の油ランタン・厚手の麻シャツ・予備の灰袋2つを装備）と無言の目配せだけですれ違った。彼が事前に老職人へ「白い甲殻の端材を使ってやってくれ」と口添えしていたおかげで、最高品質の柄・鍔・鞘を銅貨8枚という破格の加工賃で仕立てることができ、借りを返す意味でも午後からの『シルト坑・地下下層』探索で遅れを取るまいと考えている。また二人とも老職人の工房の『常連（上客）』として認められた。</li>
+<li><strong>現在地</strong>: 『コルン村』のボロ安宿・2階奥から3番目の狭い個室（『紅牙の短剣』と『鉄鋲付きの革靴』の感触を確かめ、午後の『シルト坑・地下下層』単独挑戦へ出発しようとしているところ）。</li>
+</ul>
+
+    </article>
+    <div class="prose-container" style="margin: 16px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="freyja_ep10.html" class="tab-btn">◀ 前の話</a>
+        <a href="story_freyja.html" class="tab-btn">📖 目次へ</a>
+        <span class="tab-btn" style="opacity:0.4; pointer-events:none;">次の話 ▶</span>
+      </div>
+      <a href="kasim_ep11.html" class="tab-btn" style="border-color:var(--emerald-astral);">🛡️ Episode 11 カシム視点を読む</a>
+    </div>
+  </main>
+
+  <footer>
+    Lagrange Tower Web Archive // 最終検疫ビルド: 2026-11-20 18:46
+  </footer>
+</body>
+</html>
