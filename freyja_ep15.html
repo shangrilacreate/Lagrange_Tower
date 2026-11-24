@@ -1,0 +1,507 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Side B：✨ Episode 15：白霧のラム領域と『女神の祝福』 ―― 暗い神殿での蘇生と、コルン村への帰還 // 天頂迷宮ラグランジュの塔『揺籃の淵からの双曲線』</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // KASIM &amp; FREYJA ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔</h1>
+    <div class="subtitle">
+      『揺籃の淵からの双曲線』―― ステータス画面も天の声も存在しない迷宮で、記憶を失った二人の漂着者が物理法則と知恵だけを頼りに生き延びる硬派サバイバル年代記。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 トップ (Index)</a>
+      <a href="story_kasim.html" class="tab-btn">🛡️ Side A：カシム編</a>
+      <a href="story_freyja.html" class="tab-btn active">🗡️ Side B：フレイア編</a>
+      <a href="characters.html" class="tab-btn">👥 登場人物・現在ステート</a>
+      <a href="world.html" class="tab-btn">⚖️ 舞台と3つの絶対法則</a>
+      <a href="bestiary.html" class="tab-btn">🐾 魔物・生態図鑑</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+    <div class="prose-container" style="margin: 16px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="freyja_ep14.html" class="tab-btn">◀ 前の話</a>
+        <a href="story_freyja.html" class="tab-btn">📖 目次へ</a>
+        <a href="freyja_ep16.html" class="tab-btn">次の話 ▶</a>
+      </div>
+      <a href="kasim_ep15.html" class="tab-btn" style="border-color:var(--emerald-astral);">🛡️ Episode 15 カシム視点を読む</a>
+    </div>
+    <article class="prose-container" style="border-left: 4px solid var(--crimson-seal);">
+<h3 id="ep-1" style="color:var(--gold-bright); margin-top:24px; border-bottom:1px solid var(--border-brass); padding-bottom:6px;">✨ Episode 15：白霧のラム領域と『女神の祝福』 ―― 暗い神殿での蘇生と、コルン村への帰還</h3>
+<p>足首から肺の奥までを焼き焦がしていた強酸の激痛が、まるで潮が引くようにふっと消え失せた。</p>
+<p>フレイアが重いまぶたを押し開けると、そこには暗い旧掘削室のドーム天井も、鼻を刺す酸の毒霧もなかった。</p>
+<p>足元に広がっていたのは、音もなく漂う淡い白霧と、雲海の上に築かれた古代の白い石舞台、そしてその上に薄く敷き詰められた柔らかな『白砂』だった。周囲には風化した太い白い石柱が列柱廊のように規則正しく立ち並んでおり――その光景を目にした瞬間、フレイアの背筋が氷のように凍りついた。</p>
+<p>（……っ、嘘でしょ……！ あの白砂の地獄に、戻されたの……！？）</p>
+<p>記憶を失った直後に目を覚まし、泥臭い苔と生臭い虫を泣きながら噛み潰した、あの閉鎖空間の悪夢が脳裏に蘇る。</p>
+<p>だが、震える視線を巡らせると、ここがあの暗い底とは違うことがすぐに分かった。頭上には岩盤の天井がなく、遠くの霧の向こうの虚空では、巨大な真鍮の輪が音ひとつ立てずにゆっくりと回り続けている。見上げれば、屋根のない空へ向かって、無数の淡い翡翠色や琥珀色の光の粒が蛍のように静かに昇っていくところだった。</p>
+<p>すぐ近くの白い石柱に目をやると、その滑らかな柱面には、見知らぬ誰かの名前と、フレイアには何の文字かさっぱり読めない奇妙な記号や数字の羅列が幾千行もびっしりと刻み込まれていた。ちょうど彼女の目の前を漂っていた一粒の『琥珀色の光の粒』が石柱の表面へ吸い込まれるように触れた瞬間、音もなく新たな名前と不可解な文字列が一行、柱の余白へと静かに刻まれるのが見えた。</p>
+<p>風もなければ、寒さもない。自分の心臓の鼓動すら遠くに聞こえるような、圧倒的な静寂。</p>
+<p>ふと横に気配を感じて振り向くと、二歩ほど離れた白砂の石敷きの上に、三つ隣の部屋のあの男が同じように呆然と立ち尽くしていた。</p>
+<p>男と視線がぶつかった、その瞬間だった。</p>
+<p>フレイアは自分の首筋と頬に冷たい空気が直接触れていることに気づき、血の気が引いた。</p>
+<p>いつも頭から深く被っていた『灰色の古布』がない。胸元を二重に隠していた『黒ずんだ厚手の麻布』も消え失せ、今の彼女の身には、最初に白砂の空間で目覚めた時とまったく同じ、清潔な肌着と粗末な麻の貫頭衣、そして底の薄い初期の革靴だけが着せられていたのだ。</p>
+<p>肩に少しかかるくらいの長さの、少しウェーブがかかった赤茶色の髪が白霧の微風に揺れ、これまでフードの奥に厳重に隠し続けてきた彼女の素顔が、すぐ隣の男の目の前に完全に晒されていた。</p>
+<p>「――っ！」</p>
+<p>フレイアは弾かれたように左手で自分の口元と頬を覆い隠し、獲物を威嚇する野良猫のような鋭い目で男を睨みつけながら半歩後ろへ距離を取った。あの白砂の空間の最後に一瞬だけ顔を合わせたことはあったが、こんな至近距離でまじまじと素顔を見られたのは初めてだった。</p>
+<p>ただ、不幸中の幸いか、彼女の右手にはあの『紅牙の短剣』が白甲殻補強の鞘ごとしっかりと握りしめられたまま残っており、男の左腕にもまた、強酸に呑まれたはずの『白殻の小盾』が傷ひとつなく収まっていた。</p>
+<p>「……ここは。俺たちは、あのスライムの酸に呑まれて死んだはずじゃ……」</p>
+<p>男が自分の掌を見つめて低く呟いた、その時だった。</p>
+<p>二人の前方、白い列柱が続く霧の奥――遠くで回る巨大な真鍮の輪の直下に、石のアーチと真鍮の輪に吊るされた『小さな結晶の振り子』が静かに佇んでおり、そのすぐ目の前に一人の女性が道を塞ぐように立っていた。</p>
+<p>人間ではないことだけは、一目で分かった。</p>
+<p>白霧をそのまま織り上げたような長い衣を纏い、背中には淡い光を放つ翼にも似た輪郭が揺らめいている。感情の読めない端正な面差しが二人を穏やかに見据えており、その背後の結晶の振り子はまだ光を帯びずに休眠したまま静止していた。この案内人に話を聞いて許可を得なければ、あの振り子に触れることはできないのだと直感で理解できた。</p>
+<p>男が警戒しながら一歩前へ出て、「……あんたは誰だ。ここはどこなんだ」と問いかけると、案内人の女性の澄んだ声が空気を介さず頭蓋の奥へと直接響き渡った。</p>
+<p>「ここは『白霧（しろぎり）のラム領域』――現世と冥府の狭間にて、霧散した魂の行き先を割り振る静寂の廊です。なぜ古くから『ラム領域』と呼ばれているのかは、私にも分かりませんが……」</p>
+<p>フレイアは片手で口元を隠したまま、その不思議な声に耳を澄ませた。</p>
+<p>「本来であれば、清き魂の履歴を持つあなた方には、ここで二つの道のうち一つを選んでいただく定めとなっております。すなわち――これより霊界の試練へと挑み、自らの力で乗り越えて『奥の祭壇』より帰還し、失う力と霊銀の代償を抑えるか。あるいは試練を受けず、力の減衰と通常の蘇生代償を受け入れて、すぐさま控えの祭壇へと還るか」</p>
+<p>（失う力と、霊銀の代償……っ、あの暗い神殿で神官が言っていた、銀貨四十二枚の借金と採掘奴隷の話だわ！）</p>
+<p>フレイアの指先が冷たくなった。</p>
+<p>だが、案内人の女性はそこで言葉を切ると、二人の魂の輪郭を確かめるようにわずかに目を細め、静かに首を横に振った。</p>
+<p>「……ですが、あなた方はまだ、この地へ降り立って間もない『初月（はつづき）の猶予』――女神が旅立ちの旅人に授ける、最初のひと月の慈悲のうちにあります。ゆえに霊界の試練を受けることなく、力を失うことも銀貨の代償を払うこともなく、即時、そのままの姿で祭壇にて蘇生することができます。……さあ、後ろの振り子へお触れなさい。いつでも現世へお還りになれます」</p>
+<p>案内人が白い袖を翻して一歩脇へ退いた瞬間、今まで光を失っていた背後の『結晶の振り子』が、淡い翡翠青色の光を帯びて静かに揺れ始めた。</p>
+<p>フレイアは隣にいる男と一瞬だけ視線を交わすと、それぞれのタイミングで前へ歩み寄り、翡翠青色に輝く振り子の結晶へと指先を触れた。</p>
+<p>その刹那、内臓が喉元までせり上がるような猛烈な重力反転が全身を襲い、視界が白い閃光に呑まれた。</p>
+<p>＊　　　　　　　　＊　　　　　　　　＊</p>
+<p>「――っ、げほっ……！」</p>
+<p>次の瞬間、フレイアの膝と左肘は、氷のように冷たく硬い『石畳の床』へと叩きつけられていた。</p>
+<p>乾いた埃と、古い安香、そして焦げた獣脂蝋燭の臭いが鼻を突く。</p>
+<p>顔を上げると、そこは見覚えのある窓のない石積みの小部屋――大都市エルファスの『暗い神殿』の最奥にある、あの『奥の祭壇』の床の上だった。</p>
+<p>フレイアは荒い息を吐きながらバネのように跳ね起きると、隣で立ち上がった男に再び素顔を見られないよう、祭壇の隅の物置棚に積まれていた蘇生冒険者用の古い灰色の麻布を咄嗟に引っ掴み、頭からすっぽりと被って目元まで深く覆い隠した。</p>
+<p>布の陰で呼吸を整えながら、自分の身体を確かめる。</p>
+<p>大黒煤スライムの強酸で皮膚ごと焼かれたはずの足首にも、ふくらはぎにも、火傷の跡ひとつ残っていない。それどころか、十日間シルト坑で刃を振るい続けて身体に染み込ませた手首の返しや足運びの感覚も、死ぬ前と何ひとつ変わらずそのまま残っていた。</p>
+<p>だが、自分の腰と足元を見下ろした瞬間、フレイアの顔から再び血の気が引いた。</p>
+<p>右手には『紅牙の短剣』が鞘ごと残っている。しかし、昨日エルファスの老職人の工房で銅貨九枚を払って手に入れたばかりの宝物――『鉄鋲付きの革靴』が消え、足元は見窄（みすぼ）らしい底の薄い初期革靴に戻っていたのだ。右手にはめていた『革の半指手袋』も、腰帯の内側に隠していた全財産の『銅貨八枚』が入った小さな革袋も、鉛の認識票も、小砥石も、何ひとつない。</p>
+<p>横を見れば、男もまた左腕の『白殻の小盾』以外のすべて――腰のオイルランタンも銅のナイフも甲殻底の靴もすべて失い、粗末な麻の貫頭衣姿で唇を噛み締めていた。</p>
+<p>「……小盾と、お前のその短剣以外は、全部あの掘削室の現場に落ちたままか」</p>
+<p>「……ええ。でも、とりあえずここから出ましょう。神官に見つかって借金の話を蒸し返されたら面倒だわ」</p>
+<p>二人は足音を殺して祭壇の重い木扉を押し開け、獣脂蝋燭が燻る控えの間へと滑り出た。</p>
+<p>長椅子には今日も泥まみれで項垂れる冒険者たちが座っていたが、巡回していたあの痩せぎすの下級神官は、奥の祭壇から出てきた真新しい貫頭衣姿の二人を一瞥すると、帳面すら開かずに鼻を鳴らした。</p>
+<p>「なんだ、また奥の祭壇からか。お前ら、降臨からひと月以内のランクEだな？ 『女神の祝福』があるうちは霊銀触媒の借金はなしだ。鉛の札をなくしたなら再発行はギルドで銅貨五枚かかるからな、邪魔になる前にさっさと表の門から出て行け」</p>
+<p>追い払われるように神殿の重い石門を抜け、昼の陽光が眩しく照りつけるエルファスの円形広場の端へ出た時、フレイアはフードの奥で小さく息を吐いた。</p>
+<p>（……本当に、借金もなし、傷もなし。死んでも、あの光の粒になって白い砂の廊を通り、すぐこの神殿の祭壇で目が覚めるだけなの……？）</p>
+<p>誰も教えてくれないこの世界で、初めて自分の身で味わった「死」と「蘇生」。</p>
+<p>もちろん、現場に靴や銅貨を落としてきた痛手はある。だが、あれほど恐れていた死の結末が、肉体が爛れることも借金奴隷に落とされることもなく、ただ一瞬で街の神殿へ戻されるだけのものだと知ってしまったことで――極度の臆病で死を誰よりも恐れていたフレイアの胸の奥ですら、「死」というものが持つ本来の取り返しのつかない重みが、知らず知らずのうちに少しずつ麻痺し始めていた。</p>
+<p>ふと見れば、隣の男が自分の小盾を見つめたまま、何か考え込むように足を止めている。</p>
+<p>フレイアは苛立たしげにフードの縁を抑え、低い声で男を急かした。</p>
+<p>「ちょっと、立ち止まってないで急ぐわよ」</p>
+<p>男がハッとして顔を上げる。フレイアは北の尾根の方角を顎で示した。</p>
+<p>「あの掘削室に落とした私の『鉄鋲付きの革靴』も、あんたの『甲殻底の靴』も、銅貨も全部まだあそこにあるのよ！ ずっと放置して酸の泥に沈んだら、本当に全部おしまいだわ！」</p>
+<p>「ああ、分かっている。まずはコルン村の宿へ戻って、部屋に残してある予備の松明を取ってからすぐシルト坑へ引き返そう！」</p>
+<p>＊　　　　　　　　＊　　　　　　　　＊</p>
+<p>底の薄い初期革靴で小石の食い込む痛みに耐えながら北尾根の山道を駆け上がり、昼過ぎにコルン村のボロ安宿へ飛び込んだ二人は、一階の帳場にいた男店主に事情を話して合鍵で二階のそれぞれの部屋の鉄錠前を開けてもらった。部屋の鍵も坑道の腰紐に落としてきていたからだ。</p>
+<p>自分の部屋へ駆け込んだフレイアは、真っ先に小さな机の引き出しを引き開けた。</p>
+<p>替えの麻布の束の奥に、一昨日拾った『蝋で密封された白い微粉末の小瓶』が手付かずのまま残っているのを確かめて胸を撫で下ろす。彼女は予備の『古い麻布』を取り出して胸元から首筋を厳重に巻き直し、部屋に置いてあった予備の『松脂の携帯松明』と『予備の火打ち石』を掴んで廊下へと飛び出した。三つ隣の部屋からは、机の下の『中古の小さな手挽き石臼』が無事だったことを確認した男が、予備の松明を手に合流してくる。</p>
+<p>「……行くわよ」</p>
+<p>二人は予備の松明を携えてボロ安宿の階段を駆け下り、シルト坑へ向けて急ぎ足で踏み出した。</p>
+<h4 style="color:var(--emerald-astral); margin-top:18px; font-size:1.08rem;">【現在ステート：フレイア（Episode 15 終了時）】</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>HP / 身体状態</strong>: <strong>【完全蘇生・無傷】</strong>。『白霧のラム領域』にて『初月の猶予（女神の祝福）』を受け、霊界の試練も銀貨の借金も力の減衰も一切なくエルファスの暗い神殿の『奥の祭壇』で蘇生。十日間の反復で身につけた短剣捌きや足運びの身体感覚も維持されている。</li>
+<li><strong>所持品と劣化度</strong>:</li>
+<li><strong>所持金</strong>: <strong>銅貨0枚</strong>（※『銅貨8枚』と腰袋一式は旧掘削室の現場にドロップ中）。</li>
+<li><strong>【ソウルバインド主力武器（蘇生時に自動保持）】</strong>:</li>
+<li><strong>紅牙の短剣（初回ソウルバインド品）</strong>: 霧散時も手元から離れず神殿まで持ち帰った主力短剣（劣化なし）。</li>
+<li><strong>【蘇生時に自動支給・現地調達した品】</strong>:</li>
+<li><strong>清潔な肌着・粗末な麻の貫頭衣・初期の薄い革靴</strong>: 『初月の猶予』により蘇生時に自動着用されていたもの。</li>
+<li><strong>古い灰色の麻布（フード代わり）・予備の黒ずんだ厚手の麻布</strong>: 神殿の祭壇脇の棚から掴んだ供物布と、宿の自室に残していた予備布で頭と体つきを隠蔽中。</li>
+<li><strong>【宿の施錠個室に保管・現在携行中】</strong>:</li>
+<li><strong>蝋で口を密封された小瓶入りの白い微粉末（×1）</strong>: 自室の引き出しに無事保管中。</li>
+<li><strong>乾いた替えの毛布・新しい藁袋</strong>: 自室に保管中。</li>
+<li><strong>松脂の携帯松明（×2）・予備の火打ち石</strong>: 遺品回収のため部屋から取り出した予備装備。</li>
+<li><strong>【旧掘削室の現場にドロップ中（次話で回収予定）】</strong>:</li>
+<li><strong>鉄鋲付きの革靴・銅貨8枚・鉛の認識票（ランクE）・携帯用の小砥石・黒曜頁岩の石片・石灰石の欠片・大きな麻袋（換金前の魔物素材入り）・革の半指手袋</strong>。</li>
+<li><strong>現在地</strong>: 『コルン村』のボロ安宿（予備の松明を手に、これから『シルト坑』の遺品回収へ向かうところ）。</li>
+</ul>
+
+    </article>
+    <div class="prose-container" style="margin: 16px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="freyja_ep14.html" class="tab-btn">◀ 前の話</a>
+        <a href="story_freyja.html" class="tab-btn">📖 目次へ</a>
+        <a href="freyja_ep16.html" class="tab-btn">次の話 ▶</a>
+      </div>
+      <a href="kasim_ep15.html" class="tab-btn" style="border-color:var(--emerald-astral);">🛡️ Episode 15 カシム視点を読む</a>
+    </div>
+  </main>
+
+  <footer>
+    Lagrange Tower Web Archive // 最終検疫ビルド: 2026-11-24 23:45
+  </footer>
+</body>
+</html>
