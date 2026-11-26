@@ -1,0 +1,586 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Side A：✨ Episode 18：二度目のボス戦・後編 ―― 完璧な準備での圧勝、宝箱・紫コアの回収とエルファス行きの決断 // 天頂迷宮ラグランジュの塔『揺籃の淵からの双曲線』</title>
+  <style>
+    :root {
+      --bg-deep: #120f0d;
+      --bg-stone: #1b1613;
+      --bg-card: #241e19;
+      --bg-parchment: #2b231d;
+      --gold-bright: #f2cc6e;
+      --gold-antique: #b89246;
+      --gold-dim: #6e5528;
+      --emerald-astral: #4ce8c6;
+      --crimson-seal: #d9534f;
+      --text-main: #ede3d2;
+      --text-muted: #b0a18c;
+      --border-brass: #4f3d24;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #2a211b 0%, #120f0d 75%);
+      color: var(--text-main);
+      font-family: "Palatino Linotype", "Book Antiqua", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      padding: 28px 16px;
+      line-height: 1.8;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Classic MMORPG Ornate Header */
+    header {
+      text-align: center;
+      border: 2px solid var(--gold-dim);
+      background: linear-gradient(180deg, #251e18 0%, #171310 100%);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(184, 146, 70, 0.12);
+      position: relative;
+    }
+    .guild-crest {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-antique);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--gold-bright);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(242, 204, 110, 0.35);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 18px auto;
+    }
+
+    /* Hero Banner Image (Lagrandulum) */
+    .hero-frame {
+      margin: 14px auto 4px auto;
+      max-width: 880px;
+      border: 2px solid var(--gold-antique);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+      background: #000;
+      position: relative;
+    }
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      background: rgba(18, 15, 13, 0.88);
+      border-top: 1px solid var(--gold-dim);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      color: var(--emerald-astral);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* MMORPG Guild Ledger Navigation Tabs */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--gold-dim);
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      background: linear-gradient(180deg, #2a221c 0%, #1b1612 100%);
+      border: 1px solid var(--border-brass);
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-btn:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-antique);
+      background: #302720;
+    }
+    .tab-btn.active {
+      background: linear-gradient(180deg, #3b2f24 0%, #241e19 100%);
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+      font-weight: bold;
+      box-shadow: inset 0 2px 0 var(--gold-bright);
+    }
+
+    /* Tab Content Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Reading / Parchment Prose Styling */
+    .prose-container {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-dim);
+      padding: 32px 28px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-size: 1.03rem;
+      line-height: 2.0;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .prose-container h2 {
+      font-size: 1.38rem;
+      color: var(--gold-bright);
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 10px;
+      margin: 26px 0 18px 0;
+    }
+    .prose-container h2:first-child {
+      margin-top: 0;
+    }
+    .prose-container h3 {
+      font-size: 1.12rem;
+      color: var(--emerald-astral);
+      margin: 24px 0 12px 0;
+    }
+    .prose-container p {
+      margin-bottom: 16px;
+      text-indent: 1em;
+    }
+    .prose-container ul {
+      margin: 12px 0 18px 26px;
+    }
+    .prose-container li {
+      margin-bottom: 10px;
+    }
+    .prose-container blockquote {
+      border-left: 3px solid var(--gold-antique);
+      padding: 12px 18px;
+      background: rgba(184, 146, 70, 0.08);
+      color: #d8cbb8;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Sub-Selector & Filter Buttons */
+    .log-selector, .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .log-btn, .filter-btn, .zone-btn, .char-btn {
+      background: var(--bg-stone);
+      border: 1px solid var(--border-brass);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s ease;
+    }
+    .log-btn:hover, .log-btn.active,
+    .filter-btn:hover, .filter-btn.active,
+    .zone-btn:hover, .zone-btn.active,
+    .char-btn:hover, .char-btn.active {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: #2e241b;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(242, 204, 110, 0.15);
+    }
+
+    /* Cards for Roster, Items, and Floor Atlas */
+    .lexicon-grid, .atlas-grid, .roster-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .item-entry, .floor-entry, .char-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold-antique);
+      padding: 18px 22px;
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .item-entry[data-category="mgi"] { border-left-color: var(--emerald-astral); }
+    .item-entry[data-category="ration"] { border-left-color: var(--gold-bright); }
+    .item-entry[data-category="relic"] { border-left-color: var(--crimson-seal); }
+
+    .char-entry[data-tier="mundane"] { border-left-color: var(--gold-bright); }
+    .char-entry[data-tier="veteran"] { border-left-color: var(--emerald-astral); }
+    .char-entry[data-tier="staff"] { border-left-color: var(--crimson-seal); }
+
+    .floor-entry[data-zone="lower"] { border-left-color: var(--gold-antique); }
+    .floor-entry[data-zone="water"] { border-left-color: var(--emerald-astral); }
+    .floor-entry[data-zone="mid"] { border-left-color: var(--gold-bright); }
+    .floor-entry[data-zone="upper"] { border-left-color: #b388ff; }
+
+    .item-header, .floor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #382d24;
+      padding-bottom: 8px;
+    }
+    .item-name, .floor-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+    }
+    .item-tag, .floor-tag {
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(184, 146, 70, 0.15);
+      padding: 2px 10px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+    .item-owner, .floor-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .item-desc {
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    /* Sub-Location List inside Floor Card */
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .loc-box {
+      background: var(--bg-parchment);
+      border: 1px solid #3d3127;
+      border-left: 3px solid var(--emerald-astral);
+      padding: 12px 16px;
+      border-radius: 3px;
+    }
+    .loc-title {
+      font-size: 0.96rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .loc-code {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .loc-desc {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+  <style>
+    a.tab-btn { text-decoration: none; display: inline-block; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-top: 3px solid var(--gold-antique);
+      padding: 20px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    }
+    .hub-card:hover {
+      border-color: var(--gold-bright);
+      background: #282019;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 204, 110, 0.18);
+    }
+    .hub-card-title {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .hub-card-meta {
+      font-size: 0.8rem;
+      color: var(--emerald-astral);
+      border-top: 1px dashed #3d3127;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="guild-crest">⚔️ CHRONICLES OF LAGRANGE TOWER // KASIM &amp; FREYJA ⚔️</div>
+    <h1>天頂迷宮ラグランジュの塔</h1>
+    <div class="subtitle">
+      『揺籃の淵からの双曲線』―― ステータス画面も天の声も存在しない迷宮で、記憶を失った二人の漂着者が物理法則と知恵だけを頼りに生き延びる硬派サバイバル年代記。
+    </div>
+    
+  </header>
+
+  <div class="nav-bar">
+    <nav class="nav-tabs">
+      <a href="index.html" class="tab-btn">🏠 トップ (Index)</a>
+      <a href="story_kasim.html" class="tab-btn active">🛡️ Side A：カシム編</a>
+      <a href="story_freyja.html" class="tab-btn">🗡️ Side B：フレイア編</a>
+      <a href="characters.html" class="tab-btn">👥 登場人物・現在ステート</a>
+      <a href="world.html" class="tab-btn">⚖️ 舞台と3つの絶対法則</a>
+      <a href="bestiary.html" class="tab-btn">🐾 魔物・生態図鑑</a>
+    </nav>
+  </div>
+
+  <main class="tab-panel active">
+    <div class="prose-container" style="margin: 16px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="kasim_ep17.html" class="tab-btn">◀ 前の話</a>
+        <a href="story_kasim.html" class="tab-btn">📖 目次へ</a>
+        <span class="tab-btn" style="opacity:0.4; pointer-events:none;">次の話 ▶</span>
+      </div>
+      <a href="freyja_ep18.html" class="tab-btn" style="border-color:var(--emerald-astral);">🗡️ Episode 18 フレイア視点を読む</a>
+    </div>
+    <article class="prose-container" style="border-left: 4px solid var(--gold-bright);">
+<h3 id="ep-1" style="color:var(--gold-bright); margin-top:24px; border-bottom:1px solid var(--border-brass); padding-bottom:6px;">✨ Episode 18：二度目のボス戦・後編 ―― 完璧な準備での圧勝、宝箱・紫コアの回収とエルファス行きの決断</h3>
+<p>シルト坑・地下下層の最奥、第5区画の突き当たりに積まれた封鎖壁の前に、二人は再び立っていた。</p>
+<p>倒れた太い梁の死角には、あの日二人を死の淵へと閉じ込めた幅四十センチの暗い亀裂が、静かに口を開けている。その奥からは、かすかな強酸の刺激臭とともに、淡く青白く発光する『白輝鉱』の冷たい燐光が漏れ出していた。</p>
+<p>突入を前に、カシムは自分の腰に括り付けていた三つの特大袋――『自家製・中級中和粉』のうち、二つの袋の紐を解いて少女へと差し出した。</p>
+<p>「俺は左腕に『白殻の小盾』、右手にこの『松脂の携帯松明』を持つから、最初から両手が塞がっている。俺の腰には口を緩めた一袋だけを下げておくから、残りの特大二袋はお前が持ってくれ。お前は松明を持たなくていい分、左手が完全に空くし、あいつの側面へ身軽に回り込める」</p>
+<p>少女は二つのずっしりとした特大袋を受け取り、いつでも片手で引き抜いてぶちまけられるよう自分の腰帯の左右へ浅く括り付けた。</p>
+<p>「……分かったわ。中へ入った瞬間、あいつはまず後ろのこの幅四十センチの亀裂へ粘液を流して退路を塞ごうとするはずよ。最初の一掴みで、まずその出口の床を固めて足場を確保するわね」</p>
+<p>「ああ。退路さえ固まれば、あとは俺が正面へ出て四本の鞭を小盾で受け止め、あいつの意識と重心を完全に前へ釘付けにする。そこへ二人で三袋全部を惜しみなく叩き込むぞ」</p>
+<p>二人は短く頷き合った。</p>
+<p>二週間前のような、未知の鉱脈に目が眩んだ無防備な突入ではない。敵の間合いも、強酸の性質も、それを一瞬で石膏へと変えるだけの圧倒的な「量」と「質」も、すべて計算し尽くした上での再戦だった。</p>
+<p>カシムは右手の携帯松明の炎を身体の中心軸でブレないよう固定し、左腕の『白殻の小盾』を前に構えて、幅四十センチの岩の亀裂へと横向きに滑り込んだ。すぐ後ろから、少女の『鉄鋲付きの革靴』が音もなく続く。</p>
+<p>二人が旧掘削室の岩床へ足を踏み入れた、まさにその瞬間だった。</p>
+<p>ドリュウウウッ――！！</p>
+<p>ドーム状の暗い天井の窪みと、奥の青白く光る鉱石の山の裏側から、待ち構えていた差し渡し二メートル超の巨大変異個体――『大黒煤スライム』が黒い濁流となって落下してきた。</p>
+<p>本体から分かれた黒い強酸の波が、二人の背後にある幅四十センチの亀裂の出口を塗り込めようと猛烈な速さで床を這ってくる。</p>
+<p>「させないわよ！」</p>
+<p>少女は振り返りざま、左腰の特大袋の口を片手で引き開け、銀白色の艶を帯びた『中級中和粉』を三掴みほど、亀裂の手前の岩床へと扇状に力強く振り撒いた。</p>
+<p>ピシィィィッ――！！</p>
+<p>追いかけてきた黒い強酸の泥が、その銀白色の粉のラインに触れた瞬間に、蒸気を上げる暇すらなく真っ白な石灰岩のような堤防となってカチカチに凍りついた。後続の酸の泥がその白い堤防に阻まれてせき止められ、二人の背後の退路と乾いた足場が完璧に確保される。</p>
+<p>「よし、前へ出るぞ！」</p>
+<p>カシムは迷わず部屋の中央へと二歩踏み出し、『甲殻底の補強革靴』の歯を岩盤へ食い込ませて重心を低く落とした。</p>
+<p>正面に立ち上がった二メートル超の大黒煤スライムが、黄色い強酸の毒霧を噴き上げながら、丸太のように太い四本の粘液鞭を同時にカシムめがけて撃ち出してくる。</p>
+<p>「ここだ、全部こっちへ来い！」</p>
+<p>カシムは右手の松明を胸の前でピタリと静止させたまま、左腕の『白殻の小盾』を斜め四十五度に傾けて前に突き出した。</p>
+<p>ドゴォンッ、ガゴォンッ！！ と重い衝撃が連続で小盾を叩き、左肩の筋肉が悲鳴を上げたが、二週間毎日ナイフを持たずに前衛の受け流しだけを反復し続けてきたカシムの体幹は、一寸たりとも後ろへ崩れなかった。</p>
+<p>右肘を脇腹へ固く締め、四本の巨大な粘液鞭の軌道をすべて自分の正面左へと滑らせて受け流す。</p>
+<p>それによって、カシムの右脇に、松明の赤い光が真っ直ぐ奥まで通る「幅五十センチの安全な回廊」がぽっかりと開いた。</p>
+<p>大黒煤スライムが四本の鞭を伸ばしきり、巨大な黒い胴体がカシムの小盾のすぐ目の前まで迫って硬直した――その刹那。</p>
+<p>「くらいなさいっ！！」</p>
+<p>カシムの右脇の光の隙間から、少女が疾風のように飛び出した。</p>
+<p>同時にカシム自身も、松明を脇に挟むようにして空けた右手の指で自分の腰の特大袋の底を掴み、正面から大黒煤スライムの巨大な下部胴体めがけて、特大一袋分の『中級中和粉』を袋ごと全力でぶちまけた。</p>
+<p>さらに側面から回り込んだ少女が、残っていた一袋目の半分と、右腰の二袋目の特大袋の口を全開にし、二メートルの怪物の頭頂部から四本の鞭の根元にかけて、銀白色の粉の吹雪を浴びせかけた。</p>
+<p>ドーム状の旧掘削室が、一瞬にして銀白色の粉塵に包まれる。</p>
+<p>二週間前、村製の木灰を三袋ぶちまけた時には、黒い強酸にジュッと飲み込まれて終わりだった。</p>
+<p>だが、今回は違った。</p>
+<p>カシムが小石臼で黒い殻の七割を取り除いて精製した高純度の結晶粉に、あの『白い上級の中和剤』の六割を均一に溶け込ませた特大三袋分の質量が、大黒煤スライムの全身の粘液と一斉に反応を開始したのだ。</p>
+<p>ピシィィィッ――バキバキバキッ！！</p>
+<p>部屋全体が凍りつくかのような、凄まじい凝固音が響き渡った。</p>
+<p>大黒煤スライムが鞭を引き戻そうと身をよじった途中で、その漆黒の巨体が外側から内側へ向かって猛烈な速さで真っ白な石膏の色へと塗り替えられていく。</p>
+<p>一秒、二秒、三秒。</p>
+<p>黄色い強酸の毒霧が嘘のようにピタリと止み、差し渡し二メートルを超えていた悪夢のような怪物は、カシムの小盾のすぐ目の前で、巨大な白い塩の柱のような塊となって完全に動きを止めた。</p>
+<p>さらに次の瞬間、内側の水分と酸をすべて奪われた白い巨大な塊が、自らの重みに耐えきれず、メキメキと音を立てて無数の深い亀裂を走らせた。</p>
+<p>崩れ落ちた白い石灰状の殻の中心部――床から腰の高さほどの位置に、今まで見たどの核よりも巨大な、握り拳二つ分はあろうかという黒光りする中心核が、半分むき出しになって小刻みに震えているのが見えた。</p>
+<p>「――終わりよっ！」</p>
+<p>白い殻の破片を鉄鋲靴で蹴り砕き、少女が跳んだ。</p>
+<p>麻布を固く巻いた彼女の右手が握る『紅牙の短剣』が、松明の光を受けて赤錆色の閃光を走らせる。中層クラスの白百足の内顎から削り出された鋸歯の刃が、むき出しになった巨大な中心核のど真ん中へ根元まで深く突き刺さり、少女が全体重を乗せて手首をひねった。</p>
+<p>パキィィンッ！！</p>
+<p>硬質なガラスが砕け散るような音が、旧掘削室に木霊した。</p>
+<p>巨大な中心核が真っ二つに割れ砕けた瞬間、残っていた大黒煤スライムの白い巨体は完全に形を保つ力を失い、ザザァッ、と乾いた白い粉の塊と、酸の抜けた無害な黒っぽいゼリー状の残骸となって床一面に崩れ落ちた。</p>
+<p>「……はぁ、はぁ……っ」</p>
+<p>カシムは小盾を構えたまま、ゆっくりと息を吐き出した。</p>
+<p>足元を見る。靴も、貫頭衣も、どこひとつ溶けていない。怪我はかすり傷ひとつなかった。</p>
+<p>二週間前、手も足も出ずに光の粒子へと還されたあの絶望的な怪物を、二人は自分たちの知恵と石臼で積み上げた準備だけで、文字通り完膚なきまでにねじ伏せたのである。</p>
+<p>＊　　　　　　　　＊　　　　　　　　＊</p>
+<p>「……本当に、三袋だけで跡形もなく固まったわね」</p>
+<p>短剣を振って白い粉を払い、鞘へと納めた少女が、崩れ落ちた巨大な白い残骸を見下ろして小さく息を吐いた。</p>
+<p>彼女は自分の胸元の隠しポケットへ手を入れると、最後の保険として底に二割だけ原粉を残しておいた、あの『蝋で密封された白い上級中和剤のガラス小瓶』を取り出した。結局、この最後の二割には手をつける必要すらなかったのだ。</p>
+<p>カシムがその小瓶を見て「調合の比率は間違っていなかったな」と頷いた時、少女は無造作にそのガラス小瓶をカシムの胸元へと差し出してきた。</p>
+<p>「……ほら。この小瓶の残りは、もうあんたにあげるわ」</p>
+<p>「え？ いや、これはお前が見つけた銀貨級の品だろう。まだ底に二割は残っているぞ」</p>
+<p>「いいのよ。私がそのまま持っててもただの白い粉だけど、石臼を持ってるあんたが種粉や見本として使った方が、ずっと役に立つでしょ」</p>
+<p>そこには感傷も照れも一切なく、ただ道具を一番上手く使える場所へ置くという彼女らしい徹底した合理性だけがあった。</p>
+<p>「その代わり、また強い中和粉が必要になった時は、私の分もそれで調合しなさいよ。それで貸し借りはなしね」</p>
+<p>「……分かった。大事に使わせてもらう」</p>
+<p>カシムは礼を言い、底に二割の純白の原粉が残ったガラス小瓶を受け取って懐の奥へ収めた。</p>
+<p>続けて二人は、崩れ落ちた大黒煤スライムの白い殻と、中心部に残った酸の抜けた黒っぽい粘液の塊を棒でかき分け、二週間前に呑み込まれた自分たちの装備を探し始めた。</p>
+<p>まもなく、ドロドロとした粘液の底から、見覚えのある金属と革の塊が次々と姿を現した。</p>
+<p>カシムの『金属枠のオイルランタン（ガラスが割れて枠が少し歪んだ本体）』に、『研ぎ直した銅のナイフ』、そして粘液の膜に包まれていたおかげで完全な溶解を免れていた『厚手の麻の作業シャツ』。さらにそのすぐ横から、少女がずっと取り返したがっていた『革の半指手袋』も見つかった。</p>
+<p>「あった……！ 私の手袋も、あんたのランタンと銅ナイフも溶けずに残ってるわ。……うわ、ちょっと、何よこれ……！」</p>
+<p>拾い上げた少女が、フードの奥で露骨に顔をしかめて鼻を背けた。</p>
+<p>中和粉で酸の毒性と腐食力こそ完全に消えていたものの、スライムの体内に二週間も取り込まれていた装備一式は、カエルかナメクジの卵のようなヌルヌルべったべたの粘液に隙間なくまみれており、指で摘まむと黒い糸を引いて悪臭を放っていたのである。</p>
+<p>カシムもまた、自分の『銅のナイフ』と『オイルランタンの枠』から垂れ落ちる粘液を見て、思わず眉間に深い皺を寄せた。</p>
+<p>「……ここで身につけるのは無理だな。外の沢へ出て水で徹底的に洗い落とすまで、古いボロ布に包んで隔離しておこう」</p>
+<p>二人は顔をしかめながら、ヌルヌルと滑る回収装備を予備の古布で厳重にくるんで麻袋の端へと押し込んだ。</p>
+<p>その直後、スライムの残骸のさらに一番底――過去に呑み込まれた鉱夫の白骨や錆びた鶴嘴の破片が溜まっている窪みを棒で突いていた少女が、カツン、と硬いものに当たって手を止めた。</p>
+<p>「……ねえ、あんた。この底に、何か箱みたいなものが沈んでるわ」</p>
+<p>二人がかりで周囲の白い凝固殻を退かすと、そこから現れたのは、大黒煤スライムの超高濃度の強酸の中に何年も沈んでいたにもかかわらず、角ひとつ溶けていない『やや小さめの宝箱』だった。黒く塗られた古い硬木の表面を、鈍い銀灰色の金属帯が十字に補強している。</p>
+<p>少女が慎重に箱の周囲と留め具を調べ、毒針や罠がないことを確かめてから、錆びた鉄片を差し込んで腐食した掛け金をバチンと弾き開けた。</p>
+<p>蓋が開いた瞬間、松明の火を受けて二つの品が浮かび上がった。</p>
+<p>一つは、奥の岩壁にある原石とは比べ物にならないほど澄み切った、不純物を一粒も含まない握り拳大の六角柱――強い青白い光を内側から脈動させる『白輝鉱の鉱石結晶』だった。</p>
+<p>そしてもう一つは、その結晶の下に丁寧に折り畳まれていた、乾いた血のような深い色合いをした一反の布――触れるとひんやりと冷たく、それでいて鉄の刃も酸も弾き返しそうな濃密な力を宿した『暗赤色の魔力布地』だった。</p>
+<p>「……原石じゃない、完全に透き通った『白輝鉱の結晶』に、この布地……。酸に溶けない宝箱に入っていただけのことはあるわね」</p>
+<p>「ああ。この二つは、ただ素材として売るより、エルファスのあの片眼鏡の老職人のところへ持ち込んで、俺たちの防具や外套に加工できるか見てもらった方がいいかもしれない」</p>
+<p>二人はその『白輝鉱の鉱石結晶』と『暗赤色の魔力布地』を清潔な布で包んで宝箱ごと確保した。</p>
+<p>そして最後に、カシムは少女の短剣によって真っ二つに砕け散った『大黒煤スライムの巨大な中心核』の破片へと向き直った。これも持ち帰って乾かせば、極上の中和剤の原料になるはずだ。</p>
+<p>そう思って割れた巨大核の断面へ手を伸ばしたカシムの指が、ピタリと止まった。</p>
+<p>砕けた黒い核の一番中心、白い中和結晶の層のさらに奥に、周囲の成分とは明らかに異質な「親指の爪先ほどの大きさの、冷たく濁った灰紫色の多面体の塊」がぽつんと埋まっていたのである。</p>
+<p>カシムの背筋に、氷を当てられたような冷たい戦慄が走った。</p>
+<p>彼はそれを指先で摘まみ出し、同時に自分の麻の貫頭衣の腰紐の折り目から、あの最初の白い砂の空間で『大顎白百足』の死骸の奥から抜き取ってずっと隠し持っていた「一つ目の塊」を取り出して、松明の光の下に二つを並べて少女へ見せた。</p>
+<p>「……やっぱりか。これを見ろ。この大黒煤スライムの核の中心にも、これが入っていた」</p>
+<p>カシムが一つ目をどこで拾ったか説明しようと口を開きかけた瞬間、横から二つの灰紫色の塊を覗き込んだ少女が、驚くほど冷めた乾いた声で言った。</p>
+<p>「……ああ、それ。あの最初の白い砂の空間で、あんたが大顎白百足の死骸の胸の奥からこっそり摘まみ出して、腰紐の苔の中に隠してたやつでしょ。とっくに知ってたわよ」</p>
+<p>カシムは思わず瞬きをして少女のフードを見た。あの極限の戦いの直後、小顎片を折り取ることに集中していたはずの彼女は、カシムの指先の動きをすべて視界の端で捉えていたのだ。</p>
+<p>「……気づいていたなら、話が早い」</p>
+<p>カシムは掌の上で不気味な冷気を放つ二つの『灰紫色の異質核片』を見つめ、この二週間ずっと頭の中で組み立てていた推論を静かに口にした。</p>
+<p>「まだ確証はない、あくまで俺の『仮説』だ。だが聞いてくれ。……あの白い砂の空間にいた四メートルの白百足にも、そして資源が枯れたはずのこのシルト坑の奥でここまで異常に肥大化したこの『大黒煤スライム』の核の中心にも、寸分違わぬこの『灰紫色の異質核片』が埋まっていた。</p>
+<p>それに、俺たちがまだ組まずに一人でこのシルト坑を回っていた十日間を思い出してみろ。狩りの速さも短剣の腕も、俺よりお前の方がずっと上だった。なのに、なぜか毎日俺が入った排水路にばかりスライムやネズミが次々と寄り付いてきて、結果として俺とお前がほぼ同じ額の銅貨を稼げていた。俺が最初に一人でこの地下下層へ降りた日も、入口からいきなり五匹の群れが同時に集まってきた。……おそらくこの灰紫色の核片には、『周囲の魔物を引き寄せ、時間をかけて異常に強化・肥大化させる』性質があるんじゃないか」</p>
+<p>少女のフードの奥の瞳が、カシムの掌の上にある二つの灰紫色の塊へと吸い寄せられ、彼女の細い肩が本能的な嫌悪にピクリと強張った。</p>
+<p>カシムはすぐに乾いた厚革と灰塗りの麻布を取り出し、二つの核片を自分の手元へと引き寄せた。</p>
+<p>「ここに捨てていけば、またこの坑道に魔物が溜まって変異個体が生まれるかもしれない。だが、こんな得体の知れない気味の悪いものを、お前に持たせるわけにはいかない。二つとも俺の方で何重にも布と灰で包んで、外へ冷気が漏れないよう隔離して持っておく」</p>
+<p>すると少女は、半歩どころか一歩まるごと後ろへ飛び退き、フードを激しく横に振って言い放った。</p>
+<p>「……冗談じゃないわ、そんな気味の悪いもの、あんたに勧められたって絶対に持たないわよ！ 触るのもごめんだわ、あんたが勝手に全部しまっておきなさい！」</p>
+<p>直観的に危険を嗅ぎ分ける彼女の拒絶は徹底していた。カシムは頷き、二つの『灰紫色の異質核片』を灰をまぶした二重の厚布と革紐で固く封印し、自分の腰紐の一番奥へと隔離してしまい込んだ。</p>
+<p>それが終わると、二人は旧掘削室の最奥に横たわる青白い光の山――『白輝鉱の一山』へと向き直った。</p>
+<p>そこに転がっていた古い鶴嘴を使って岩壁に残っていた最後の鉱脈まで根こそぎ掘り起こし、持参した二人の頑丈な麻袋へと次々に詰め込んでいく。両腕で一抱え以上あった『白輝鉱の一山』は、カシムの『丈夫な麻袋』と少女の『大きな麻袋』の二つをちょうど限界までパンパンに満たす分量になった。これで、シルト坑に残されていた白輝鉱の鉱脈は完全に掘り尽くされたことになる。</p>
+<p>＊　　　　　　　　＊　　　　　　　　＊</p>
+<p>ずっしりと肩に食い込む白輝鉱の麻袋をそれぞれ背負い、シルト坑の坑口の外へと出た二人は、まずすぐ近くの冷たい沢（水場）へと直行した。</p>
+<p>麻袋を下ろし、古布に包んで持ち帰った「ヌルヌルべったべたの奪還装備」を沢の浅瀬へ広げる。</p>
+<p>川砂と冷たい沢の水を使い、二人して無言のまま必死に黒い粘液をこすり落とした。</p>
+<p>しばらく格闘した末にようやく悪臭とぬめりが完全に落ち、少女の手には愛用していた『革の半指手袋』が、カシムの手には『研ぎ直した銅のナイフ』『厚手の麻の作業シャツ』、そしてガラスこそ割れているものの真鍮の遮光板と油壺は無事な『金属枠のオイルランタン』が、きれいな姿で戻ってきた。</p>
+<p>「……やっと落ちたわ。この手袋がないと、やっぱり柄を握る時の収まりが違ったのよね」</p>
+<p>濡れた手袋を絞って岩の上に広げながら、少女が満足そうに呟く。カシムも小砥石で銅ナイフの表面の曇りを軽く撫でて落とし、久しぶりに右腰の鞘へと収めた。</p>
+<p>日が傾きかけた頃、二人は重い二つの麻袋を担いでコルン村の交易所へと立ち寄った。</p>
+<p>まず道中で仕留めた下層スライムの核とネズミの皮を『銅貨三十八枚（折半で一人十九枚＝今夜の宿代と夕・翌朝食代にぴったり一致する額）』で買い取ってもらった後、カシムは背中の麻袋の口を少しだけ開けて、中にぎっしり詰まった青白く光る『白輝鉱の一山』をお婆さんに見せた。</p>
+<p>途端、帳場のお婆さんは椅子から転げ落ちそうになって目を剥いた。</p>
+<p>「ひ、ひゃあ……っ！！ お前さんたち、本当にあの奥の主を退治して『白輝鉱の一山』を丸ごと掘り出してきたのかい！？ 麻袋に二つ分も……！ だがね、前にも言った通り、これだけの『一山』になると銀貨が十枚以上も動く大商いだ。この小さな村の交易所の金庫を全部ひっくり返したって、とても買い取るだけの銀貨なんてありゃしないよ！」</p>
+<p>お婆さんは慌てて麻袋の口を閉じさせ、声を潜めて二人に言い聞かせた。</p>
+<p>「いいかい、こんな宝の山をこの村に長く置いておいたら危ないよ。噂が広がり切る前に、明日の朝一番で下のエルファスの街へ降りて、『冒険者ギルドの素材買取窓口』へ直接持ち込みな。変な大商会や街角の鑑定所に持ち込むと新米だと思って買い叩かれるが、ギルドの買取窓口なら鉛の認識票さえ見せれば、規定相場でその場で銀貨を即金で払ってくれるからね！」</p>
+<p>「分かりました。教えてくれてありがとうございます、お婆さん」</p>
+<p>二人は交易所を出て、ボロ安宿の帳場で今夜の個室代と明日の朝食代（道中の通常素材分で相殺）を支払うと、その夜は宿の麦粥ではなく、村の食料処で再びお互いに『銅貨三枚ずつ（計六枚）』を出し合って、新鮮な『フモ猪の塊肉』と根菜、岩塩、そして薪の束を買い求めた。</p>
+<p>夜の冷気が降りた宿の裏手、石囲いの『共同の野外調理場』。</p>
+<p>カシムが火打ち金で熾した真っ赤な熾火の上で、今夜は奪還して洗い清めたばかりの『研ぎ直した銅のナイフ』で切り分けた分厚いフモ猪の串焼きが、ジュウジュウと香ばしい脂を弾けさせていた。かまどの温かい石の上では、少女の『革の半指手袋』とカシムの『厚手の麻シャツ』が湯気を立てて乾いている。</p>
+<p>焼き上がった熱々の串焼きを少女へ渡し、二人は熾火の赤い光を挟んで、静かな祝勝の肉を噛み締めた。</p>
+<p>二週間前、同じこのかまど場で串焼きを食べた翌日に全滅の屈辱を味わった二人が、今夜はその怪物を完封し、奪われた装備も宝の山もすべて手中に収めて同じ火を囲んでいる。</p>
+<p>五本目の串焼きを平らげた少女が、乾いた革の半指手袋を手に取って右手にはめ直しながら、落ち着いた声で言った。</p>
+<p>「……お婆さんの言う通りね。これだけの『白輝鉱の一山』、噂が広がり切る前に、明日の朝一番ですぐにエルファスへ運んで売却した方がいいわ。ただし、この麻袋二つ分の量と重さは一人じゃとても運べない。明日も二人でそれぞれ一袋ずつ分担して背負って、尾根を越えましょう」</p>
+<p>「ああ、そうしよう。まずエルファスの冒険者ギルドの買取窓口へ行って、この『白輝鉱の一山』を銀貨に換えてきっちり半分に分ける。……それと、あの小さな宝箱から出た透き通った『白輝鉱の鉱石結晶』と『暗赤色の魔力布地』、それに俺のこのガラスが割れた『オイルランタンの枠』と、お前に残しておいた『大黒煤スライムの巨大核の破片』を持って、職人街のあの片眼鏡の老職人の工房へ寄らないか」</p>
+<p>少女は最後の焼き根菜を口に放り込み、フードの奥で異存なさそうに頷いた。</p>
+<p>「ええ。あの加工屋のじいさんなら、この結晶と布地でどんな防具が作れるか一目で分かるでしょうし、買い叩いたりもしないわ。……じゃあ、このコルン村のボロ宿に泊まるのも、今夜が最後ね」</p>
+<p>「ああ。十日以上世話になったが、明日からはエルファスへ拠点を戻すことになるな」</p>
+<p>食事を終え、カシムはいつものように水場の水を汲んできて熾火を完全に消し止めた。</p>
+<p>二階へ上がり、三つ並んだ扉の前で「明日の夜明けに出るぞ」「ええ、遅れないわ」とだけ短く交わして、それぞれの狭い個室へと入る。</p>
+<p>カシムは内側から太い木のかんぬきを下ろし、部屋の隅に置かれたずっしりと重い『白輝鉱の一山（一袋分）』と、二週間自分の腕を育ててくれた『中古の小さな手挽き石臼』を見つめた。</p>
+<p>銀貨を掴み、新しい装備を纏ってエルファスへと戻る明日の朝を思い描きながら、カシムは新しい藁袋の寝台へと深く身を沈めた。</p>
+<h4 style="color:var(--emerald-astral); margin-top:18px; font-size:1.08rem;">【現在ステート：カシム（Episode 18 終了時）】</h4>
+<ul style="margin:8px 0 12px 20px;">
+<li><strong>HP / 身体状態</strong>: <strong>無傷・万全</strong>。特大三袋の『中級中和粉』を用いた完璧な事前準備により、『大黒煤スライム』をかすり傷ひとつ負わずに完封撃破。夜の野外調理場での『フモ猪の串焼き』による祝勝で栄養・体力ともに満ち足りている。</li>
+<li><strong>所持品と劣化度</strong>:</li>
+<li><strong>所持金</strong>: <strong>銅貨59枚</strong>（※道中の通常素材売却分［折半19枚］で今夜の宿代［銅貨15枚］＋翌朝食［銅貨2枚］＋雑費を相殺した上で、Episode 17終了時の純貯蓄［銅貨62枚］から夜の祝勝用の塊肉・根菜・岩塩・薪の折半代［銅貨3枚］を支払い、手元に銅貨59枚を保持。明日エルファスで『白輝鉱の一山』を売却すれば一気に銀貨［1銀貨＝100銅貨］が複数枚手に入る見込み）。</li>
+<li><strong>【今回のボス戦で新規獲得・分担保持中の戦利品】</strong>:</li>
+<li><strong>白輝鉱の一山（グレード④・丈夫な麻袋2袋分のうち1袋をカシムが分担保持）</strong>: 旧掘削室の鉱脈から根こそぎ掘り出した希少鉱石の山。コルン村の交易所では現金（銀貨）不足で買取不可と確認されたため、明朝少女と1袋ずつ分担して背負い、エルファスの冒険者ギルド買取窓口へ運んで換金予定。</li>
+<li><strong>酸に溶けぬやや小さめの宝箱（中身：①『白輝鉱の鉱石結晶［グレード⑤・純結晶］×1』、②『暗赤色の魔力布地×1』）</strong>: 大黒煤スライムの残骸の底から発見した小宝箱と二つの特級素材。明日エルファスの『片眼鏡の老職人（加工屋のじいさん）』の工房へ持ち込んで鑑定・防具加工を相談予定。</li>
+<li><strong>精製された白い上級の中和剤（蝋封ガラス小瓶・原粉残量約2割）</strong>: 決戦で使わずに済んだ最後の2割。討伐後、少女から「石臼を持ってるあんたが種粉や見本に使った方が役に立つ」と小瓶ごと正式に譲り受けた。</li>
+<li><strong>大黒煤スライムの巨大核の破片</strong>: 砕けた巨大核の純粋な結晶部。</li>
+<li><strong>灰紫色の異質核片（計2個・厳重隔離中）</strong>: 1個目は白い砂の空間の白百足から、2個目は今回の『大黒煤スライム』の巨大核の中心から出現したもの。「魔物を引き寄せ、強化・肥大化させる異物ではないか」という仮説を立て、少女が触れることすら拒絶したため、カシムが2個とも灰塗りの厚布と革で厳重に封印して腰紐の最奥に隔離保管している。</li>
+<li><strong>【大黒煤スライムから奪還・沢で洗浄済みの装備】</strong>:</li>
+<li><strong>研ぎ直した銅のナイフ（×1）</strong>: 粘液まみれで回収し、坑口外の沢で洗浄・小砥石で手入れして右腰へ復帰（劣化度：小）。</li>
+<li><strong>金属枠のオイルランタン（風防ガラスが割れた枠本体）</strong>: 沢で粘液を洗浄済み。油壺と真鍮遮光板は無事なため、明日エルファスの老職人の工房でガラスを修理予定。</li>
+<li><strong>厚手の麻の作業シャツ</strong>: 沢で洗浄し、野外調理場のかまどの熱で乾燥済み。</li>
+<li><strong>【ソウルバインド主力防具＆現在装備・宿保管品】</strong>:</li>
+<li><strong>白殻の小盾（×1・初回ソウルバインド品）</strong>: 大黒煤スライムの4本の巨大鞭を完璧に受け流した主力盾（状態：極めて良好）。</li>
+<li><strong>甲殻底の補強革靴・粗末な麻の貫頭衣・清潔な肌着・松脂の携帯松明（残り1本強）・火打ち金と火口箱・冒険者ギルドの鉛の認識票（ランクE）・携帯用の小砥石（×1）・白い石灰石の欠片・部屋の鉄錠前の鍵</strong>: 保持。</li>
+<li><strong>中古の小さな手挽き石臼（×1）＋二重篩い用の麻布</strong>: 自室に保管中（明日のエルファス移動時に携行予定）。</li>
+<li><strong>自家製・中級中和粉</strong>: 特大袋3つすべてを決戦で惜しみなく散布して使い切った（残り0）。</li>
+<li><strong>発現済み隠れスキル・特性（※UI不在のため本人未自覚）</strong>:</li>
+<li><strong>『調合精製（熟練）』</strong>: 自作した特大3袋の『中級中和粉』によって2m超の変異ボスを数秒で石膏状に完全凝固させ、生産スキルがボス攻略の決定打になることを実証した。</li>
+<li><strong>『地形死角分析』</strong>: 突入直後の退路凝固と右脇50cmの刺突回廊の確保を完璧に遂行。</li>
+<li><strong>『観察眼（微）』</strong>: 2つ目の『灰紫色の異質核片』の出現と、これまでの10日間のソロ狩りでの魔物遭遇率の不自然な高さ（少女と同額を稼げていた理由）を結びつけ、「魔物を引き寄せ強化する性質」という核心に近い仮説を導き出した。</li>
+<li><strong>精神状態</strong>: 二週間前の初全滅の雪辱を、一点の危なげもない「準備と理詰めの圧勝」で果たし、奪われた装備と銀貨級の『白輝鉱の一山』および小宝箱の特級素材を手にして深い達成感に満ちている。</li>
+<li><strong>フードの少女への認識</strong>: 特大2袋の散布と『紅牙の短剣』による巨大核粉砕を完璧に決め、残った2割の上級中和剤の小瓶も惜しげなく譲ってくれた最良の共闘相手。また自分が白い砂の空間で1つ目の異質核片を隠していたことも彼女は最初から気づいていたと知り、その観察力に改めて舌を巻いた。明朝、重い『白輝鉱の一山』を1袋ずつ分担して背負い、共にエルファスへ降りる約束を交わした。</li>
+<li><strong>現在地</strong>: 『コルン村』のボロ安宿・2階端の狭い個室（『白輝鉱の一山』の麻袋と小石臼を枕元に置き、コルン村での最後の夜に就寝中）。</li>
+</ul>
+
+    </article>
+    <div class="prose-container" style="margin: 16px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="kasim_ep17.html" class="tab-btn">◀ 前の話</a>
+        <a href="story_kasim.html" class="tab-btn">📖 目次へ</a>
+        <span class="tab-btn" style="opacity:0.4; pointer-events:none;">次の話 ▶</span>
+      </div>
+      <a href="freyja_ep18.html" class="tab-btn" style="border-color:var(--emerald-astral);">🗡️ Episode 18 フレイア視点を読む</a>
+    </div>
+  </main>
+
+  <footer>
+    Lagrange Tower Web Archive // 最終検疫ビルド: 2026-11-27 00:23
+  </footer>
+</body>
+</html>
