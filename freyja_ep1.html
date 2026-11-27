@@ -482,77 +482,7 @@
   </main>
 
   <footer>
-    <span id="lt-stele-trigger" style="cursor:pointer; user-select:none;">Lagrange Tower Web Archive // 最終検疫ビルド: 2026-11-27 09:15</span>
-    <div id="lt-stele-panel" style="display:none; margin-top:8px; font-size:0.78rem; color:var(--emerald-astral); letter-spacing:0.04em;">
-      🗿 魂魄観測碑 ── 訪問者: <strong id="lt-cnt-sess">...</strong> / 累計閲覧: <strong id="lt-cnt-pv">...</strong>
-      <button id="lt-mute-btn" type="button" style="margin-left:10px; background:transparent; border:1px solid var(--border-brass); color:var(--text-muted); font-size:0.72rem; padding:1px 7px; border-radius:3px; cursor:pointer;">自己除外: OFF</button>
-    </div>
+    Lagrange Tower Web Archive // 最終検疫ビルド: 2026-11-27 10:25
   </footer>
-  <script>
-  (function() {
-    var ns = 'lagrange-tower-chronicles';
-    var base = 'https://abacus.jasoncameron.dev';
-    var muteKey = 'lt_observer_mute';
-    var sessKey = 'lt_session_counted';
-    var isLocal = (location.protocol === 'file:');
-    function isMuted() {
-      try { return localStorage.getItem(muteKey) === '1'; } catch (e) { return false; }
-    }
-    function updateMuteBtn() {
-      var b = document.getElementById('lt-mute-btn');
-      if (!b) return;
-      var m = isMuted();
-      b.textContent = m ? '自己除外: ON（計測対象外）' : '自己除外: OFF（タップで除外）';
-      b.style.borderColor = m ? 'var(--emerald-astral)' : 'var(--border-brass)';
-      b.style.color = m ? 'var(--emerald-astral)' : 'var(--text-muted)';
-    }
-    function fetchCount(mode, key, elId) {
-      fetch(base + '/' + mode + '/' + ns + '/' + key)
-        .then(function(r) { return r.ok ? r.json() : null; })
-        .then(function(d) {
-          var el = document.getElementById(elId);
-          if (el && d && typeof d.value === 'number') { el.textContent = String(d.value); }
-          else if (el && d === null) { el.textContent = '0'; }
-        })
-        .catch(function() {
-          var el = document.getElementById(elId);
-          if (el && el.textContent === '...') { el.textContent = '-'; }
-        });
-    }
-    if (!isLocal && !isMuted()) {
-      var counted = false;
-      try { counted = sessionStorage.getItem(sessKey) === '1'; } catch (e) {}
-      if (!counted) {
-        try { sessionStorage.setItem(sessKey, '1'); } catch (e) {}
-        fetchCount('hit', 'tower08-sessions', 'lt-cnt-sess');
-      }
-      fetchCount('hit', 'tower08-pageviews', 'lt-cnt-pv');
-    }
-    var trig = document.getElementById('lt-stele-trigger');
-    var panel = document.getElementById('lt-stele-panel');
-    var btn = document.getElementById('lt-mute-btn');
-    if (trig && panel) {
-      trig.addEventListener('click', function() {
-        var open = (panel.style.display === 'none');
-        panel.style.display = open ? 'block' : 'none';
-        if (open) {
-          updateMuteBtn();
-          fetchCount('get', 'tower08-sessions', 'lt-cnt-sess');
-          fetchCount('get', 'tower08-pageviews', 'lt-cnt-pv');
-        }
-      });
-    }
-    if (btn) {
-      btn.addEventListener('click', function(ev) {
-        ev.stopPropagation();
-        try {
-          if (isMuted()) { localStorage.removeItem(muteKey); }
-          else { localStorage.setItem(muteKey, '1'); }
-        } catch (e) {}
-        updateMuteBtn();
-      });
-    }
-  })();
-  </script>
 </body>
 </html>
